@@ -12,7 +12,7 @@ public abstract class Entity : MonoBehaviour
     
     private Dictionary<string, EntityComponent> components = new Dictionary<string, EntityComponent>();
 
-    internal abstract class EntityComponent
+    public abstract class EntityComponent
     {
         public Entity entity;
         public EntityComponent(Entity e)
@@ -40,7 +40,7 @@ public abstract class Entity : MonoBehaviour
         HashSet<int> dead = new HashSet<int>();
         foreach (int key in keys) {
             allEntities[key].UpdateStatus();
-            if (allEntities[key].isDead()) {
+            if (allEntities[key].IsDead()) {
                 dead.Add(key);
             }
         }
@@ -66,18 +66,18 @@ public abstract class Entity : MonoBehaviour
     {
         // Update components
         foreach (KeyValuePair<string, EntityComponent> kvp in components) {
-            if (kvp.Value is IEntityComponentUpdate) {
-                ((IEntityComponentUpdate)kvp.Value).Update();
+            if (kvp.Value is IEntityComponentUpdate i) {
+                i.Update();
             }
         }
        Movement();
     }
     protected abstract void Movement();
-    public int getId() {
+    public int GetId() {
         return id;
     }
 
-    void die() { 
+    void Die() { 
         Destroy(gameObject);
         dead = true;
     }
@@ -91,7 +91,7 @@ public abstract class Entity : MonoBehaviour
         incomingDamage += a.attackDamage;
     }
 
-    public bool isDead()
+    public bool IsDead()
     {
         return dead;
     }
@@ -101,7 +101,7 @@ public abstract class Entity : MonoBehaviour
         incomingDamage = 0;
         if (health <= 0)
         {
-            die();
+            Die();
         }
     }
 

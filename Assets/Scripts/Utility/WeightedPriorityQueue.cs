@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeightedPriorityQueue<T> {
+public class WeightedPriorityQueue<T>
+{
     /*
     Description: A queue of items sorted by their priorities, items with higher
     priority will be popped first. Additionally, each item has a weight factor
@@ -65,6 +66,9 @@ public class WeightedPriorityQueue<T> {
             node = node.Next;
         }
         container.AddLast(new_node);
+        if (pointer == null) { 
+            pointer = container.First;
+        }
         return key;
     }
 
@@ -73,7 +77,7 @@ public class WeightedPriorityQueue<T> {
             return default(T);
         }
         if (pointer == null) {
-            pointer = container.First;
+            return default(T);
         }
         WeightedPriorityWrapper<T> item = pointer.Value;
         item.weight -= 1;
@@ -127,6 +131,13 @@ public class WeightedPriorityQueue<T> {
         else {
             throw new InvalidKeyException(key + "");
         }
+    }
+
+    public void Reset() {
+        if (size == 0) {
+            return;
+        }
+        pointer = container.First;
     }
 
     private int Compare(WeightedPriorityWrapper<T> x, WeightedPriorityWrapper<T> y)

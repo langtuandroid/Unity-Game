@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class Action : Entity.EntityComponent, Entity.IEntityComponentUpdate
+public class Action : Entity.EntityComponent, Entity.IEntityComponentUpdate
 {
     /* Entity Component that provides access to a variety of movesets, it acts as a container and platform for
      * different kinds of actions and moves which are provided and fully implemented by associated sub-components
@@ -65,6 +65,10 @@ internal class Action : Entity.EntityComponent, Entity.IEntityComponentUpdate
 
     public bool EnqueueAction(string name, Dictionary<string, object> kwargs=null)
     {
+        /* Place the action with the provided keyword arguments into the action
+         * execution queue if the action with 'name' is present in the availableActions
+         * and is not on cooldown
+         */
         string result = FindActionComponent(name);
         if (result != "")
         {
@@ -80,9 +84,29 @@ internal class Action : Entity.EntityComponent, Entity.IEntityComponentUpdate
         }
         return false;
     }
+
+    public bool HaltAction(string name) {
+        /* Stops the execution of the action
+         *  Returns the status of this operation
+         */
+        if (!executing.ContainsKey(name))
+        {
+            return false;
+        }
+        return availableActions[name].HaltActionExecution();
+    }
+
+    public bool AlterArguments(string name, Dictionary<string, object> args) {
+        if (!executing.ContainsKey(name))
+        {
+            return false;
+        }
+        return availableActions[name].AlterArguments(args);
+    }
 }
 
 public delegate void ActionExecutor(Dictionary<string, object> args);
+public delegate void ActionTerminator(Dictionary<string, object> args);
 public class ActionInstance
 {
     /*An action instance
@@ -102,39 +126,50 @@ public class ActionInstance
     public int priority;
     public string id;
     public ActionExecutor action;
+    public ActionTerminator exit;
     public float cooldown;
     public int duration;
 
     private float counter;
     private bool isReady;
+    private int accessKey;
+    private int executing;
 
     private static WeightedPriorityQueue<ActionDelegate> actionQueue = new WeightedPriorityQueue<ActionDelegate>();
 
-    private class ActionDelegate{
+    private struct ActionDelegate{
         public Dictionary<string, object> args;
-        public ActionExecutor action;
+        public ActionInstance action;
+
+        public ActionDelegate(Dictionary<string, object> args, ActionInstance a) { this.args = args;  action = a;}
     }
 
     public static void ExecuteActions()
     {
-        while (actionQueue.Size() > 0)
-        {
-            ActionDelegate a = actionQueue.Dequeue();
-            a.action(a.args);
+        ActionDelegate a;
+        while (!(a = actionQueue.Dequeue()).Equals(default(ActionDelegate)))
+        {   
+            a.action.action(a.args);
+            a.action.executing -= 1;
+            if (a.action.executing == 0) {
+                a.action.accessKey = -1;
+                a.action.exit(a.args);
+            }
         }
+        actionQueue.Reset();
     }
-    public ActionInstance(int p, string i, ActionExecutor a, float c, int d)
+    public ActionInstance(int p, string i, ActionExecutor a, ActionTerminator e, float c, int d)
     {
         priority = p;
         action = a;
+        exit = e; 
         id = i;
         counter = 0;
         cooldown = c;
         duration = d;
-        if (cooldown == 0) {
-            cooldown = -1; // No cooldown
-        }
         isReady = false;
+        accessKey = -1;
+        executing = 0;
      }
 
     public void CountDown() {
@@ -151,13 +186,33 @@ public class ActionInstance
     public bool EnqueueAction(Dictionary<string, object> kwargs) {
         bool result = isReady;
         if (isReady) {
-            ActionDelegate a = new ActionDelegate();
-            a.args = kwargs;
-            a.action = action;
-            actionQueue.Enqueue(a, priority, duration);
+            ActionDelegate a = new ActionDelegate(kwargs, this);
+            accessKey = actionQueue.Enqueue(a, priority, duration);
+            executing = duration;
             isReady = false;
         }
         return result;
+    }
+
+    public bool HaltActionExecution() {
+        if (accessKey == -1) {
+            return false;
+        }
+        actionQueue.SetWeight(accessKey, 0);
+        accessKey = -1;
+        return true;
+    }
+
+    public bool AlterArguments(Dictionary<string, object> args) {
+        if (accessKey == -1) {
+            return false;
+        }
+        actionQueue.SetValue(accessKey, new ActionDelegate(args, this));
+        return true;
+    }
+
+    public ActionInstance Clone() {
+        return new ActionInstance(priority, id, action, exit, cooldown, duration);
     }
 }
 
@@ -165,6 +220,5 @@ public interface IActionImplementor {
     public Dictionary<string, ActionInstance> AvailableActions();
     public ActionInstance GetAction(string actionName);
     public bool HasAction(string actionName);
-
     public void Countdown();
 }
