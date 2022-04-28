@@ -9,7 +9,7 @@ public class AI : Entity
     {
         base.Start();
         Combat o = new Combat(this);
-        SetEntityComponent("Combat", o);
+        new StandardMoveSet(this, o);
         o.SetAttackDamage(50);
         SetHealth(100);
         o.SetDefense(25);
@@ -20,6 +20,6 @@ public class AI : Entity
     {
         transform.Rotate(new Vector3(0, 0, 1), Space.Self);
         GetComponent<Rigidbody2D>().velocity = transform.right * 3;
-        ((Action)GetEntityComponent("Action")).EnqueueAction("guard");
+        ((Action)GetEntityComponent(Setting.COMPONENT_ACTION)).EnqueueAction("guard");
     }
 }

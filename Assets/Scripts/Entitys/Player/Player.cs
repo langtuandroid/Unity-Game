@@ -10,6 +10,8 @@ public class Player : Entity
     float verticalInput;
     [SerializeField] private float speed;
     [SerializeField] private float rotateSpeed;
+    private Vector3 pmouse_pos;
+    private float angle;
     // Start is called before the first frame update
     new void Start()
     {
@@ -17,9 +19,12 @@ public class Player : Entity
         rb = GetComponent<Rigidbody2D>();
         horizontalInput = 0f;
         verticalInput = 0f;
+        angle = 0f;
         Combat o = new Combat(this);
+        new StandardMoveSet(this, o);
         o.SetAttackDamage(50);
-        base.SetHealth(10);
+        SetHealth(10);
+        customTags.Add(Setting.TAG_PLAYER);
     }
 
     // Update is called once per frame
@@ -28,7 +33,7 @@ public class Player : Entity
         verticalInput = Input.GetAxis("Vertical");
         
         if (Input.GetKeyUp(KeyCode.F)) {
-            ((Action)GetEntityComponent("Action")).EnqueueAction("circle_attack");
+            ((Action)GetEntityComponent(Setting.COMPONENT_ACTION)).EnqueueAction("circle_attack");
         }
         
     }
@@ -45,23 +50,24 @@ public class Player : Entity
     private void LateUpdate()
     {
         camera.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 10);
+        FollowMouse();
+    }
 
+    private void FollowMouse() {
+        // If the mouse hasn't moved, do not update the destination angle
         Vector2 mouse_pos = Input.mousePosition;
         Vector2 object_pos = Camera.main.WorldToScreenPoint(transform.position);
-
-        // Define unresponsive radius
-        Vector3 mouse_wpos = camera.ScreenToWorldPoint(new Vector3(mouse_pos.x, mouse_pos.y, 10));
-        float dis = Mathf.Abs(Vector3.Distance(transform.position, mouse_wpos));
-        if (dis < 0.4) {
-            return;
+        Vector2 current = new Vector2(camera.transform.right.x, camera.transform.right.y);
+        if (pmouse_pos != Input.mousePosition)
+        {
+            Vector2 dir = new Vector2(mouse_pos.x - object_pos.x, mouse_pos.y - object_pos.y);
+            angle = Vector2.SignedAngle(current, dir);
         }
 
-        Vector2 current = new Vector2(camera.transform.right.x, camera.transform.right.y);
-        Vector2 dir = new Vector2(mouse_pos.x - object_pos.x, mouse_pos.y - object_pos.y);
-        float angle = Vector2.SignedAngle(current, dir);
         float currentAngle = transform.rotation.eulerAngles.z;
         float angleDif = Mathf.DeltaAngle(angle, currentAngle);
-        if (Mathf.Abs(angleDif) > 0) {
+        if (Mathf.Abs(angleDif) > 0)
+        {
             float rotateMax = rotateSpeed * Time.deltaTime;
             if (Mathf.Abs(angleDif) > rotateMax)
             {
@@ -69,15 +75,18 @@ public class Player : Entity
                 {
                     transform.rotation = Quaternion.Euler(new Vector3(0, 0, currentAngle - rotateMax));
                 }
-                else {
+                else
+                {
                     transform.rotation = Quaternion.Euler(new Vector3(0, 0, currentAngle + rotateMax));
                 }
             }
-            else {
+            else
+            {
                 transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
             }
         }
 
-       
+        // Store the current mouse position for next frame usage
+        pmouse_pos = Input.mousePosition;
     }
 }
