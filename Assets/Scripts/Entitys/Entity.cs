@@ -9,7 +9,10 @@ public abstract class Entity : MonoBehaviour
     private int health;
     private bool dead = false;
     private int incomingDamage;
+    private HashSet<AttackInfo> damageHistory;
+
     protected HashSet<string> customTags;
+    
     
     private Dictionary<string, EntityComponent> components = new Dictionary<string, EntityComponent>();
 
@@ -46,20 +49,6 @@ public abstract class Entity : MonoBehaviour
     internal interface IEntityComponentUpdate { 
         public abstract void Update();
     }
-    public static void UpdateEntityStatus() {
-        Dictionary<int, Entity>.KeyCollection keys = allEntities.Keys;
-        HashSet<int> dead = new HashSet<int>();
-        foreach (int key in keys) {
-            allEntities[key].UpdateStatus();
-            if (allEntities[key].IsDead()) {
-                dead.Add(key);
-            }
-        }
-        foreach (int key in dead)
-        {
-            allEntities.Remove(key);
-        }
-    }
 
     // Start is called before the first frame update
 
@@ -71,6 +60,7 @@ public abstract class Entity : MonoBehaviour
         id = IdDistributor.GetId(Setting.ID_ENTITY);
         allEntities[id] = this;
         customTags = new HashSet<string>();
+        damageHistory = new HashSet<AttackInfo>();
     }
 
     // Update is called once per frame
@@ -82,6 +72,17 @@ public abstract class Entity : MonoBehaviour
                 i.Update();
             }
         }
+        // Update damage history
+        HashSet<AttackInfo> removing = new HashSet<AttackInfo>();
+        foreach (AttackInfo a in damageHistory) {
+            a.Countdown();
+            if (a.Terminated()) { 
+                removing.Add(a);
+            }
+        }
+        foreach (AttackInfo a in removing) {
+            damageHistory.Remove(a);
+        }
        Movement();
     }
     protected abstract void Movement();
@@ -92,14 +93,34 @@ public abstract class Entity : MonoBehaviour
     void Die() { 
         Destroy(gameObject);
         dead = true;
+        int i = 0;
+        HashSet<int> sent = new HashSet<int>();
+        foreach (AttackInfo a in damageHistory) {
+            int attacker = a.GetAttackerId();
+            if (sent.Contains(attacker)) {
+                continue;
+            }
+            if (i == 0)
+            {
+                allEntities[attacker].OnKillEntity(id, true);
+            }
+            else { 
+                allEntities[attacker].OnKillEntity(id, false);
+            }
+            sent.Add(attacker);
+            i++;
+        }
     }
+
+    public virtual void OnKillEntity(int id, bool killingBlow) { }
 
     protected void SetHealth(int amount) { 
         health = amount;
     }
 
     public void RegisterDamage(AttackInfo a) {
-        incomingDamage += a.attackDamage;
+        incomingDamage += a.GetAttackDamage();
+        damageHistory.Add(a);
     }
 
     public bool HasTag(string tag) {
@@ -111,13 +132,14 @@ public abstract class Entity : MonoBehaviour
         return dead;
     }
     
-    private void UpdateStatus() {
+    private void LateUpdate() {
         health -= incomingDamage;
         incomingDamage = 0;
         if (health <= 0)
         {
             Die();
         }
+        allEntities.Remove(id);
     }
 
     public bool HasEntityComponent(string name) {
@@ -130,5 +152,41 @@ public abstract class Entity : MonoBehaviour
 
     internal void SetEntityComponent(string name, EntityComponent component) {
         components[name] = component;
+    }
+}
+
+public class AttackInfo
+{
+    private int id;     // Attacker
+    private int attackDamage;
+    private float duration;
+    private float counter;
+
+    public AttackInfo(int id, int attackDamage)
+    {
+        this.id = id;
+        this.attackDamage = attackDamage;
+        duration = Setting.EXPIRE_ATTACK_TIME;
+        counter = 0;
+    }
+
+    public void Countdown()
+    {
+        counter += Time.deltaTime;
+    }
+
+    public bool Terminated()
+    {
+        return counter >= duration;
+    }
+
+    public int GetAttackerId()
+    {
+        return id;
+    }
+
+    public int GetAttackDamage()
+    {
+        return attackDamage;
     }
 }

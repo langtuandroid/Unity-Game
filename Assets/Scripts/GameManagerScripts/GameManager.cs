@@ -16,6 +16,5 @@ public class GameManager : MonoBehaviour
     void LateUpdate()
     {
         ActionInstance.ExecuteActions();
-        Entity.UpdateEntityStatus();
     }
 }

@@ -10,6 +10,7 @@ public class Player : Entity
     float verticalInput;
     [SerializeField] private float speed;
     [SerializeField] private float rotateSpeed;
+    [SerializeField] private float distance;
     private Vector3 pmouse_pos;
     private float angle;
     // Start is called before the first frame update
@@ -25,6 +26,13 @@ public class Player : Entity
         o.SetAttackDamage(50);
         SetHealth(10);
         customTags.Add(Setting.TAG_PLAYER);
+    }
+
+    public override void OnKillEntity(int id, bool killingBlow)
+    {
+        if (killingBlow) {
+            Debug.Log("Killed entity:" + id);
+        }
     }
 
     // Update is called once per frame
@@ -49,7 +57,7 @@ public class Player : Entity
 
     private void LateUpdate()
     {
-        camera.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 10);
+        camera.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - distance);
         FollowMouse();
     }
 
@@ -69,7 +77,7 @@ public class Player : Entity
         if (Mathf.Abs(angleDif) > 0)
         {
             float rotateMax = rotateSpeed * Time.deltaTime;
-            if (Mathf.Abs(angleDif) > rotateMax)
+            if (Mathf.Abs(angleDif) > rotateMax && rotateSpeed > 0)
             {
                 if (angleDif > 0)
                 {
@@ -86,7 +94,7 @@ public class Player : Entity
             }
         }
 
-        // Store the current mouse position for next frame usage
+        // Store the current mouse position for next frame
         pmouse_pos = Input.mousePosition;
     }
 }

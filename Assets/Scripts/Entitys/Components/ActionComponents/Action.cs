@@ -92,7 +92,7 @@ public class Action : Entity.EntityComponent, Entity.IEntityComponentUpdate
         if (kwargs == null) {
             kwargs = new Dictionary<string, object>();
         }
-        kwargs["_component"] = result;
+        kwargs[Setting.HANDLING_COMPONENT] = result;
         if (availableActions[name].EnqueueAction(kwargs)) {
             executing[name] = availableActions[name].duration;
             return true;

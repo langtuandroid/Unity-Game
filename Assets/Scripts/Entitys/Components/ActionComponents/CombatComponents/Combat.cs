@@ -105,15 +105,3 @@ internal class Combat : Entity.EntityComponent, IActionImplementor
         return attackRange;
     }
 }
-
-public struct AttackInfo
-{
-    public int id;     // Attacker
-    public int attackDamage;
-
-    public AttackInfo(int id, int attackDamage)
-    {
-        this.id = id;
-        this.attackDamage = attackDamage;
-    }
-}

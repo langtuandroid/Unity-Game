@@ -48,7 +48,13 @@ internal class StandardMoveSet : Entity.EntityComponent, IActionImplementor
     // Moveset..........................................................................................................
     private static void CircleAttack(Dictionary<string, object> args)
     {
-        StandardMoveSet attacker = (StandardMoveSet)args["_component"];
+        /* Damages entities in radius of attack range by attack damage, has no effect on the attacker
+         * 
+         * Cooldown: See settings
+         * Arguments:
+         * - ignore: Hashset<int> -> The set of ids of entities to ignore
+         */
+        StandardMoveSet attacker = (StandardMoveSet)args[Setting.HANDLING_COMPONENT];
         GameObject gameObject = attacker.entity.gameObject;
         Transform transform = gameObject.transform;
         float range = attacker.combatComponent.GetAttackRange();
@@ -58,15 +64,23 @@ internal class StandardMoveSet : Entity.EntityComponent, IActionImplementor
             range, 1), Color.yellow, LayerMask.NameToLayer("Default"), SortingLayer.NameToID("Default"));
         Object.Destroy(g, 0.25f);
         int id = attacker.entity.GetId();
+        HashSet<int> ignore = null;
+        if (args.ContainsKey("ignore")) {
+            ignore = (HashSet<int>)args["ignore"];
+        }
 
         foreach (Collider2D collider in colliders)
         {
-            if (!collider.CompareTag("entity"))
+            Entity collided = collider.gameObject.GetComponent<Entity>();
+            if (!collider.CompareTag("entity") ){
+                continue;
+            }
+            int cid = collided.GetId();
+            if (ignore != null && ignore.Contains(cid))
             {
                 continue;
             }
-            Entity collided = collider.gameObject.GetComponent<Entity>();
-            if (collided.GetId() != id)
+            if (cid != id)
             {
                 AttackInfo attackInfo = new AttackInfo(id, damage);
                 collided.RegisterDamage(attackInfo);
@@ -76,7 +90,7 @@ internal class StandardMoveSet : Entity.EntityComponent, IActionImplementor
 
     private static void Guard(Dictionary<string, object> args)
     {
-        StandardMoveSet defender = (StandardMoveSet)args["_component"];
+        StandardMoveSet defender = (StandardMoveSet)args[Setting.HANDLING_COMPONENT];
 
         if (defender.GetIncomingDamage() > 0)
         {
@@ -98,7 +112,7 @@ internal class StandardMoveSet : Entity.EntityComponent, IActionImplementor
     private static void Exit(Dictionary<string, object> args) { } // For moves that don't require additional processing steps after termination
     private static void ExitGuard(Dictionary<string, object> args)
     {
-        StandardMoveSet defender = (StandardMoveSet)args["_component"];
+        StandardMoveSet defender = (StandardMoveSet)args[Setting.HANDLING_COMPONENT];
         defender.animationDestroyed = true;
         Object.Destroy(defender.guardAnimation);
     }

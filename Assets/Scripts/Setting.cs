@@ -4,8 +4,11 @@ using UnityEngine;
 
 public static class Setting
 {
-    // Settings
+    // Game Settings
     public const int TARGET_FRAME_RATE = 120;
+
+    // Attack info duration (seconds)
+    public const float EXPIRE_ATTACK_TIME = 10f;
 
     // Tags
     public const string TAG_ENTITY = "entity";
@@ -33,13 +36,13 @@ public static class Setting
     public const int ACTION_ATTACK_PRIORITY = 1;
     public const int ACTION_DEFEND_PRIORITY = 2;
 
-    // Action Cooldowns
+    // Action Cooldowns (seconds)
     public const float CD_CIRCLE_ATTACK = 1f;
     public const float CD_CIRCLE_GUARD = 1f;
 
     // Action Durations  (Frames)
     public const int DURATION_CIRCLE_ATTACK = 1;
-    public const int DURATION_GUARD = 60;
+    public const int DURATION_GUARD = TARGET_FRAME_RATE / 2;
 
     // Action Animation Durations  (Seconds)
     public const float ADURATION_GUARD = 0.5f;
