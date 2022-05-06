@@ -24,13 +24,15 @@ public static class Setting
     public const int ENTITY_DNE = -1;
     public const string NULL_COMPONENT_IDENTIFIER = "";
 
-    // Component Names
-    public const string COMPONENT_ACTION = "action";
-    public const string COMPONENT_COMBAT = "combat";
-    public const string COMPONENT_STD_MOVESET = "std_moveset";
-
     // Action Arguments
     public const string HANDLING_COMPONENT = "_component";
+    public const string IGNORE_TARGET = "ignore";
+
+    // Action Ids
+
+        // Std moveset
+        public const string STD_CIRCLE_ATTACK = "circle_attack";
+        public const string STD_GUARD = "guard";
 
     // Action Priorities
     public const int ACTION_ATTACK_PRIORITY = 1;

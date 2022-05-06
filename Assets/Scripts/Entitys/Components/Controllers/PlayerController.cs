@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Entity
+[RequireComponent(typeof(Action))]
+[RequireComponent(typeof(Rigidbody2D))]
+public class PlayerController : MonoBehaviour
 {
-    public Camera camera;
+    private Entity player;
+    [SerializeField]private Camera camera;
     Rigidbody2D rb;
     float horizontalInput;
     float verticalInput;
@@ -13,62 +16,51 @@ public class Player : Entity
     [SerializeField] private float distance;
     private Vector3 pmouse_pos;
     private float angle;
-    // Start is called before the first frame update
-    new void Start()
-    {
-        base.Start(); 
-        rb = GetComponent<Rigidbody2D>();
+
+    public void Start(){
+        player = GetComponent<Entity>();
+        rb = player.GetComponent<Rigidbody2D>();
         horizontalInput = 0f;
         verticalInput = 0f;
         angle = 0f;
-        Combat o = new Combat(this);
-        new StandardMoveSet(this, o);
-        o.SetAttackDamage(50);
-        SetHealth(10);
-        customTags.Add(Setting.TAG_PLAYER);
     }
-
-    public override void OnKillEntity(int id, bool killingBlow)
+    public void Update()
     {
-        if (killingBlow) {
-            Debug.Log("Killed entity:" + id);
-        }
-    }
-
-    // Update is called once per frame
-    protected override void Movement() {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        
-        if (Input.GetKeyUp(KeyCode.F)) {
-            ((Action)GetEntityComponent(Setting.COMPONENT_ACTION)).EnqueueAction("circle_attack");
+
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+            GetComponent<Action>().EnqueueAction(Setting.STD_CIRCLE_ATTACK);
         }
-        
     }
 
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
         float temp = speed;
-        if (horizontalInput != 0 && verticalInput != 0) {
+        if (horizontalInput != 0 && verticalInput != 0)
+        {
             temp /= Mathf.Sqrt(2);
         }
-        rb.velocity = new Vector2(horizontalInput *temp, verticalInput * temp);
+        rb.velocity = new Vector2(horizontalInput * temp, verticalInput * temp);
     }
 
-    private void LateUpdate()
+    public void LateUpdate()
     {
         camera.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - distance);
         FollowMouse();
     }
 
-    private void FollowMouse() {
+    private void FollowMouse()
+    {
         // If the mouse hasn't moved, do not update the destination angle
         Vector2 mouse_pos = Input.mousePosition;
+        Transform transform = player.transform;
         Vector2 object_pos = Camera.main.WorldToScreenPoint(transform.position);
-        Vector2 current = new Vector2(camera.transform.right.x, camera.transform.right.y);
+        Vector2 current = new(camera.transform.right.x, camera.transform.right.y);
         if (pmouse_pos != Input.mousePosition)
         {
-            Vector2 dir = new Vector2(mouse_pos.x - object_pos.x, mouse_pos.y - object_pos.y);
+            Vector2 dir = new(mouse_pos.x - object_pos.x, mouse_pos.y - object_pos.y);
             angle = Vector2.SignedAngle(current, dir);
         }
 

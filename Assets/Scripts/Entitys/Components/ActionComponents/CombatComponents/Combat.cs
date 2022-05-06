@@ -1,40 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-internal class Combat : Entity.EntityComponent, IActionImplementor
-{
-    private int attackDamage;
-    private float attackRange;
-    private int defense;
-    private Dictionary<string, IActionImplementor> components;
-    Action actionComponent;
 
-    public Combat(Entity e) : base(e)
+[System.Serializable]
+public enum CombatComponents { 
+    StandardMoveSet
+}
+
+[System.Serializable]
+public class Combat : ActionImplementor
+{
+    [SerializeField] private int attackDamage;
+    [SerializeField] private float attackRange;
+    [SerializeField] private int defense;
+    [SerializeField] private CombatComponentDictionary components;
+    [SerializeReference] Action actionComponent;
+
+    public Combat(Entity e)  : base(e)
     {
-        attackDamage = 0;
+        attackDamage = 50;
         attackRange = 2f;
-        defense = 0;
-        components = new Dictionary<string, IActionImplementor>();
-        if (!e.HasEntityComponent(Setting.COMPONENT_ACTION))
-        {
-            actionComponent = new Action(e);
-        }
-        else { 
-            actionComponent = (Action)e.GetEntityComponent(Setting.COMPONENT_ACTION);
-        }
-        
-        actionComponent.AddComponent(Setting.COMPONENT_COMBAT, this);
+        defense = 25;
+        components = new CombatComponentDictionary();
+        actionComponent = e.GetComponent<Action>();
+        actionComponent.AddComponent(ActionComponents.Combat, this);
     }
 
-    public void AddComponent(string name, IActionImplementor i) {
+    public void AddComponent(CombatComponents name, ActionImplementor i) {
         components[name] = i; 
-        actionComponent.UpdateActions(Setting.COMPONENT_COMBAT);
+        actionComponent.UpdateActions(ActionComponents.Combat);
     }
 
     // Implements <IActionImplementor>......................................................................
-    public Dictionary<string, ActionInstance> AvailableActions() {
+    public override Dictionary<string, ActionInstance> AvailableActions() {
         Dictionary<string, ActionInstance> result = new Dictionary<string, ActionInstance>();
-        foreach (IActionImplementor e in components.Values) {
+        if (components == null) {
+            Debug.Log("");
+        }
+        foreach (ActionImplementor e in components.Values) {
             foreach (KeyValuePair<string, ActionInstance> a in e.AvailableActions()) {
                 result[a.Key] = a.Value;
             }
@@ -42,9 +45,9 @@ internal class Combat : Entity.EntityComponent, IActionImplementor
         return result;
     }
 
-    ActionInstance IActionImplementor.GetAction(string actionName)
+    public override ActionInstance GetAction(string actionName)
     {
-        foreach (IActionImplementor a in components.Values) {
+        foreach (ActionImplementor a in components.Values) {
             if (a.HasAction(actionName)) {
                 return a.GetAction(actionName);
             }
@@ -52,9 +55,9 @@ internal class Combat : Entity.EntityComponent, IActionImplementor
         return default;
     }
 
-    bool IActionImplementor.HasAction(string actionName)
+    public override bool HasAction(string actionName)
     {
-        foreach (IActionImplementor a in components.Values)
+        foreach (ActionImplementor a in components.Values)
         {
             if (a.HasAction(actionName))
             {
@@ -64,10 +67,14 @@ internal class Combat : Entity.EntityComponent, IActionImplementor
         return false;
     }
 
-    public IActionImplementor GetIdentifier(string actionName) {
-        foreach (IActionImplementor a in components.Values)
+    public override ActionImplementor GetIdentifier(string actionName) {
+        if (components == null)
         {
-            IActionImplementor r = a.GetIdentifier(actionName);
+            Debug.Log("");
+        }
+        foreach (ActionImplementor a in components.Values)
+        {
+            ActionImplementor r = a.GetIdentifier(actionName);
             if (r != default)
             {
                 return r;
@@ -103,5 +110,12 @@ internal class Combat : Entity.EntityComponent, IActionImplementor
 
     public float GetAttackRange() {
         return attackRange;
+    }
+}
+
+public class CombatSubComponent { 
+    public Entity entity;
+    public CombatSubComponent(Entity entity) {
+        this.entity = entity;
     }
 }

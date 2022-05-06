@@ -1,8 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Action : Entity.EntityComponent, Entity.IEntityComponentUpdate
+[Serializable]
+public enum ActionComponents { 
+    Combat,
+    Move
+}
+
+[RequireComponent(typeof(Entity))]
+[Serializable]
+public class Action : MonoBehaviour
 {
     /* Entity Component that provides access to a variety of movesets, it acts as a container and platform for
      * different kinds of actions and moves which are provided and fully implemented by associated sub-components
@@ -13,11 +22,12 @@ public class Action : Entity.EntityComponent, Entity.IEntityComponentUpdate
     components: The set of sub-components that provides implementation to the available actions stored as Dictionary<ClassName, Sub-component>
 
      */
-    private Dictionary<string, IActionImplementor> components = new Dictionary<string, IActionImplementor>();
-    private Dictionary<string, int> executing = new Dictionary<string, int>();
-    private Dictionary<string, ActionInstance> availableActions = new Dictionary<string, ActionInstance>();
-
-    public Action(Entity e) : base(e){ e.SetEntityComponent(Setting.COMPONENT_ACTION, this); }
+    [HideInInspector]
+    public ActionComponentDictionary components = new ActionComponentDictionary();
+    [HideInInspector]
+    public StringIntDictionary executing = new StringIntDictionary();
+    [HideInInspector]
+    public ActionInstanceDictionary availableActions = new ActionInstanceDictionary();
 
     public void Update()
     {
@@ -35,22 +45,39 @@ public class Action : Entity.EntityComponent, Entity.IEntityComponentUpdate
             executing.Remove(name);
         }
     }
-    public bool HasComponent(string name) {
+    public bool HasComponent(ActionComponents name) {
         return components.ContainsKey(name);
     }
 
-    public void AddComponent(string name, IActionImplementor component) {
+    public void AddComponent(ActionComponents name, ActionImplementor component) {
         components[name] = component;
         UpdateActions(name);
     }
 
-    public void UpdateActions(string name) {
+    public void UpdateActions(ActionComponents name) {
         if (components.ContainsKey(name)) {
             Dictionary<string, ActionInstance> ats = components[name].AvailableActions();
             foreach (string id in ats.Keys)
             {
                 availableActions[id] = ats[id];
             }
+        }
+    }
+
+    public void RemoveComponent(ActionComponents name) {
+        if (!components.ContainsKey(name)) {
+            return;
+        }
+        RemoveActions(name);
+        components.Remove(name);
+    }
+
+    public void RemoveActions(ActionComponents name) {
+        if (!components.ContainsKey(name)) { 
+            return ;
+        }
+        foreach (string id in components[name].AvailableActions().Keys) {
+            availableActions.Remove(id);
         }
     }
 
@@ -63,12 +90,12 @@ public class Action : Entity.EntityComponent, Entity.IEntityComponentUpdate
         }
     }
 
-    public IActionImplementor FindActionComponent(string name) {
+    public ActionImplementor FindActionComponent(string name) {
         /* Returns the key to the sub-component that provides this action, 
          *  If such action does not exist, return empty string
          */
-        foreach (KeyValuePair<string, IActionImplementor> kvp in components) {
-            IActionImplementor r = kvp.Value.GetIdentifier(name);
+        foreach (KeyValuePair<ActionComponents, ActionImplementor> kvp in components) {
+            ActionImplementor r = kvp.Value.GetIdentifier(name);
             if (r != default) {
                 return r;
             }
@@ -85,7 +112,7 @@ public class Action : Entity.EntityComponent, Entity.IEntityComponentUpdate
         if (!availableActions.ContainsKey(name)) {
             return false;
         }
-        IActionImplementor result = FindActionComponent(name);
+        ActionImplementor result = FindActionComponent(name);
         if (result == default) {
             throw new System.Exception();
         }
@@ -122,6 +149,8 @@ public class Action : Entity.EntityComponent, Entity.IEntityComponentUpdate
 
 public delegate void ActionExecutor(Dictionary<string, object> args);
 public delegate void ActionTerminator(Dictionary<string, object> args);
+
+[Serializable]
 public class ActionInstance
 {
     /*An action instance
@@ -140,8 +169,7 @@ public class ActionInstance
      */
     public int priority;
     public string id;
-    public ActionExecutor action;
-    public ActionTerminator exit;
+    public string action;
     public float cooldown;
     public int duration;
 
@@ -163,21 +191,22 @@ public class ActionInstance
     {
         ActionDelegate a;
         while (!(a = actionQueue.Dequeue()).Equals(default(ActionDelegate)))
-        {   
-            a.action.action(a.args);
+        {
+            ActionExecutor action = ActionDelegates.Executor(a.action.action);
+            action(a.args);
             a.action.executing -= 1;
             if (a.action.executing == 0) {
                 a.action.accessKey = -1;
-                a.action.exit(a.args);
+                ActionTerminator exit = ActionDelegates.Terminator(a.action.action);
+                exit(a.args);
             }
         }
         actionQueue.Reset();
     }
-    public ActionInstance(int p, string i, ActionExecutor a, ActionTerminator e, float c, int d)
+    public ActionInstance(int p, string i, string a, float c, int d)
     {
         priority = p;
         action = a;
-        exit = e; 
         id = i;
         counter = 0;
         cooldown = c;
@@ -227,14 +256,20 @@ public class ActionInstance
     }
 
     public ActionInstance Clone() {
-        return new ActionInstance(priority, id, action, exit, cooldown, duration);
+        return new ActionInstance(priority, id, action, cooldown, duration);
     }
 }
 
-public interface IActionImplementor { 
-    public Dictionary<string, ActionInstance> AvailableActions();
-    public ActionInstance GetAction(string actionName);
-    public bool HasAction(string actionName);
+[Serializable]
+public abstract class ActionImplementor {
+    public Entity entity;
+    public ActionImplementor(Entity e)
+    {
+        entity = e;
+    }
+    public abstract Dictionary<string, ActionInstance> AvailableActions();
+    public abstract ActionInstance GetAction(string actionName);
+    public abstract bool HasAction(string actionName);
 
-    public IActionImplementor GetIdentifier(string actionName);
+    public abstract ActionImplementor GetIdentifier(string actionName);
 }
