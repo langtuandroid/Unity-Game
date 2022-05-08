@@ -99,6 +99,10 @@ public class Entity : MonoBehaviour
         health = amount;
     }
 
+    public int GetHealth() { 
+        return health;
+    }
+
     public void RegisterDamage(AttackInfo a) {
         incomingDamage += a.GetAttackDamage();
         Debug.Log("Damage:" + incomingDamage);

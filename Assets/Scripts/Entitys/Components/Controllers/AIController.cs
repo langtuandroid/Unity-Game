@@ -9,6 +9,6 @@ public class AIController : MonoBehaviour
     {
         transform.Rotate(new Vector3(0, 0, 1), Space.Self);
         GetComponent<Rigidbody2D>().velocity = transform.right * 3;
-        GetComponent<Action>().EnqueueAction("guard");
+        GetComponent<Action>().EnqueueAction(Setting.STD_CIRCLE_ATTACK);
     }
 }
