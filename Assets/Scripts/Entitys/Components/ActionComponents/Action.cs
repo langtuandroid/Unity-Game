@@ -147,9 +147,6 @@ public class Action : MonoBehaviour
     }
 }
 
-public delegate void ActionExecutor(Dictionary<string, object> args);
-public delegate void ActionTerminator(Dictionary<string, object> args);
-
 [Serializable]
 public class ActionInstance
 {

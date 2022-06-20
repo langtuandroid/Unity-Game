@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private VoidEventChannel gameEndChannel;
     private Entity player;
     [SerializeField]private Camera camera;
     Rigidbody2D rb;
@@ -32,6 +33,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.F))
         {
             GetComponent<Action>().EnqueueAction(Setting.STD_CIRCLE_ATTACK);
+        } else if (Input.GetKeyUp(KeyCode.Space)) {
+            gameEndChannel.RaiseEvent();
         }
     }
 

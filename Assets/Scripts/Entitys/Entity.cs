@@ -68,7 +68,6 @@ public class Entity : MonoBehaviour
     }
 
     void Die() {
-        Destroy(gameObject);
         int i = 0;
         HashSet<int> sent = new HashSet<int>();
         foreach (AttackInfo a in damageHistory) {
@@ -86,7 +85,13 @@ public class Entity : MonoBehaviour
             sent.Add(attacker);
             i++;
         }
+        Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
         allEntities.Remove(id);
+        IdDistributor.RecycleId(Setting.ID_ENTITY, id);
     }
 
     public virtual void OnKillEntity(int id, bool killingBlow) {
