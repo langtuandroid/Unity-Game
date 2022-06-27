@@ -25,19 +25,18 @@ public class PauseManager : MonoBehaviour
         pauseMenuChannel.RaiseEvent(false);
     }
 
-    private void Update()
-    {
-        if (!gamePause.value && Input.GetKeyUp(KeyCode.Escape))
+    public void PauseOrResume() {
+        if (!gamePause.value)
         {
             gamePauseChannel.RaiseEvent();
         }
-        else if(gamePause.value && Input.GetKeyUp(KeyCode.Escape))
-        {
+        else {
             gameResumeChannel.RaiseEvent();
         }
     }
 
-    private void PauseGame() {
+    private void PauseGame()
+    {
         Debug.Log("Game Pause!");
         Time.timeScale = 0f;
         gameUIChannel.RaiseEvent(false);
@@ -45,7 +44,8 @@ public class PauseManager : MonoBehaviour
         gamePause.value = true;
     }
 
-    private void ResumeGame() {
+    private void ResumeGame()
+    {
         Debug.Log("Game Resume!");
         Time.timeScale = 1;
         gamePause.value = false;

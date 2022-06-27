@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
+[RequireComponent(typeof(PhysicsUpdate))]
 public class Entity : MonoBehaviour
 {
     private static Dictionary<int, Entity> allEntities = new Dictionary<int, Entity>();
