@@ -11,7 +11,7 @@ public enum ActionComponents {
 
 [RequireComponent(typeof(Entity))]
 [Serializable]
-public class Action : MonoBehaviour
+public class Actionable : MonoBehaviour
 {
     /* Entity Component that provides access to a variety of movesets, it acts as a container and platform for
      * different kinds of actions and moves which are provided and fully implemented by associated sub-components
