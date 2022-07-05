@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(Action))]
+[CustomEditor(typeof(Actionable))]
 public class ActionEditor : Editor
 {
     ActionComponents selected = ActionComponents.Combat;
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-        Action action = (Action)target;
+        Actionable action = (Actionable)target;
         int count = action.components.Count;
 
         EditorGUILayout.BeginHorizontal();
@@ -46,7 +46,7 @@ public class ActionEditor : Editor
     }
 
     private void AddComponent() {
-        Action action = (Action)target;
+        Actionable action = (Actionable)target;
         if (action.components.ContainsKey(selected)) {
             return;
         }

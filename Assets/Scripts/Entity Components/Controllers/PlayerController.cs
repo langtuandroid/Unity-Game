@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Action))]
+[RequireComponent(typeof(Actionable))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private VoidEventChannel gameEndChannel;
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     public void CircleAttack()
     {
         if (!gamePause.value) {
-            GetComponent<Action>().EnqueueAction(Setting.STD_CIRCLE_ATTACK);
+            GetComponent<Actionable>().EnqueueAction(Setting.STD_CIRCLE_ATTACK);
         }
     }
 
@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
         if (!context.canceled)
         {
             physicsUpdate.velocity = speed * context.ReadValue<Vector2>();
-            Debug.Log(physicsUpdate.velocity);
         }
         else
         {
@@ -43,7 +42,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Guard(InputAction.CallbackContext context) {
-        GetComponent<Action>().EnqueueAction(Setting.STD_GUARD);
+        GetComponent<Actionable>().EnqueueAction(Setting.STD_GUARD);
     }
 
     public void LateUpdate()

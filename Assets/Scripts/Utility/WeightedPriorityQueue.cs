@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeightedPriorityQueue<T>
+public class WeightedPriorityQueue<T> : IEnumerable<WeightedPriorityWrapper<T>>
 {
     /*
     Description: A queue of items sorted by their priorities, items with higher
@@ -21,40 +21,46 @@ public class WeightedPriorityQueue<T>
     */
 
     private LinkedList<WeightedPriorityWrapper<T>> container = new LinkedList<WeightedPriorityWrapper<T>>();
-    private Dictionary<int, WeightedPriorityWrapper<T>> contents = new Dictionary<int, WeightedPriorityWrapper<T>>();
-    
+    private Dictionary<int, LinkedListNode<WeightedPriorityWrapper<T>>> contents = new();
+
     private int size = 0;
     private LinkedListNode<WeightedPriorityWrapper<T>> pointer = null;
 
     public override string ToString()
     {
-        if (size == 0) {
+        if (size == 0)
+        {
             return "[]";
         }
         string result = "[";
-        foreach (WeightedPriorityWrapper<T> w in container) { 
+        foreach (WeightedPriorityWrapper<T> w in container)
+        {
             result = result + w.ToString() + ", ";
         }
         result = result.Remove(result.Length - 2) + "]";
         return result;
     }
 
-    public WeightedPriorityWrapper<T> GetWrappedItem(int key) {
-        if (contents.ContainsKey(key)) {
-            return contents[key];
+    public WeightedPriorityWrapper<T> GetWrappedItem(int key)
+    {
+        if (contents.ContainsKey(key))
+        {
+            return contents[key].Value;
         }
         throw new InvalidKeyException(key + "");
     }
-    public int Enqueue(T element, int priority, int weight) {
+    public int Enqueue(T element, int priority, int weight)
+    {
         int key = IdDistributor.GetId(Setting.ID_WEIGHTED_PRIORITY_QUEUE);
         WeightedPriorityWrapper<T> item = new WeightedPriorityWrapper<T>(element, priority, weight);
-        item.key = key;
-        contents[key] = item;
-
+        
         LinkedListNode<WeightedPriorityWrapper<T>> node = container.First;
         LinkedListNode<WeightedPriorityWrapper<T>> new_node = new LinkedListNode<WeightedPriorityWrapper<T>>(item);
-        
+        item.key = key;
+        contents[key] = new_node;
+
         size++;
+        pointer = null;
         while (node != null)
         {
             WeightedPriorityWrapper<T> current = node.Value;
@@ -66,75 +72,101 @@ public class WeightedPriorityQueue<T>
             node = node.Next;
         }
         container.AddLast(new_node);
-        if (pointer == null) { 
-            pointer = container.First;
-        }
         return key;
     }
 
-    public T Dequeue() {
-        if (size <= 0) {
+    public T Dequeue()
+    {
+        if (size <= 0)
+        {
             return default(T);
         }
-        if (pointer == null) {
-            return default(T);
+        if (pointer == null)
+        {
+            pointer = container.First;
         }
         WeightedPriorityWrapper<T> item = pointer.Value;
         item.weight -= 1;
-        if (item.weight <= 0) {
-            size--;
-            LinkedListNode<WeightedPriorityWrapper<T>> node = pointer;
-            pointer = pointer.Next;
-            contents.Remove(item.key);
-            container.Remove(node);
-            IdDistributor.RecycleId(Setting.ID_WEIGHTED_PRIORITY_QUEUE, item.key);
+        if (item.weight <= 0)
+        {
+            Remove(pointer.Value);
 
-            if (item.weight < 0) {
+            if (item.weight < 0)
+            {
                 return Dequeue();
             }
         }
-        else {
+        else
+        {
             pointer = pointer.Next;
         }
-        
         return item.value;
     }
 
-    public int Size() {
+    public int Size()
+    {
         return size;
     }
 
-    public void SetWeight(int key, int weight) {
-        if (contents.ContainsKey(key))
-        {
-            contents[key].weight = weight;
+    public bool Remove(int key) {
+        if (!contents.ContainsKey(key)) {
+            return false;
         }
-        else {
-            throw new InvalidOperationException(key + "");
+        container.Remove(contents[key]);
+        LinkedListNode<WeightedPriorityWrapper<T>> node = contents[key];
+        contents.Remove(key);
+        size--;
+        IdDistributor.RecycleId(Setting.ID_WEIGHTED_PRIORITY_QUEUE, key);
+        if (pointer != null && pointer.Equals(node)) {
+            pointer = pointer.Next;
         }
-       
+        return true;            
     }
 
-    public int GetWeight(int key){
+    public bool Remove(WeightedPriorityWrapper<T> w)
+    {
+        int key = w.key;
+        return Remove(key);
+    }
+
+    public void SetWeight(int key, int weight)
+    {
         if (contents.ContainsKey(key))
         {
-            return contents[key].weight;
+            contents[key].Value.weight = weight;
+        }
+        else
+        {
+            throw new InvalidOperationException(key + "");
+        }
+
+    }
+
+    public int GetWeight(int key)
+    {
+        if (contents.ContainsKey(key))
+        {
+            return contents[key].Value.weight;
         }
         throw new InvalidKeyException(key + "");
     }
 
-    public void SetValue(int key, T value) {
+    public void SetValue(int key, T value)
+    {
         if (contents.ContainsKey(key))
         {
-            contents[key].value = value;
+            contents[key].Value.value = value;
         }
-        else {
+        else
+        {
             throw new InvalidKeyException(key + "");
         }
     }
 
-    public void Reset() {
-        if (size == 0) {
+    public void Reset()
+    {
+        if (size == 0)
+        {
             return;
         }
         pointer = container.First;
@@ -144,9 +176,20 @@ public class WeightedPriorityQueue<T>
     {
         return x.priority - y.priority;
     }
+
+    public IEnumerator<WeightedPriorityWrapper<T>> GetEnumerator()
+    {
+        return container.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return container.GetEnumerator();
+    }
 }
 
-public class WeightedPriorityWrapper<T>{
+public class WeightedPriorityWrapper<T>
+{
     public int weight;
     public T value;
     public int priority;

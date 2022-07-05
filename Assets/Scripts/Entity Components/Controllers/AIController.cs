@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Action))]
+[RequireComponent(typeof(Actionable))]
 public class AIController : MonoBehaviour
 {
     private PhysicsUpdate physicsUpdate;
@@ -15,6 +15,6 @@ public class AIController : MonoBehaviour
     {
         transform.Rotate(new Vector3(0, 0, 1), Space.Self);
         physicsUpdate.velocity = transform.right * 3;
-        GetComponent<Action>().EnqueueAction(Setting.STD_CIRCLE_ATTACK);
+        GetComponent<Actionable>().EnqueueAction(Setting.STD_CIRCLE_ATTACK);
     }
 }

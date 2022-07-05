@@ -19,6 +19,7 @@ public static class Setting
     public const string ID_ENTITY = "entity";
     public const string ID_ACTION = "action";
     public const string ID_WEIGHTED_PRIORITY_QUEUE = "weighted priority queue";
+    public const string ID_QUEST = "quest";
 
     // 
     public const int ENTITY_DNE = -1;

@@ -12,6 +12,13 @@ public class Entity : MonoBehaviour
     private int incomingDamage;
     private AttackInfoSet damageHistory;
 
+    public static Entity GetEntityById(int id) {
+        if (allEntities.ContainsKey(id)) { 
+            return allEntities[id];
+        }
+        return default(Entity);
+    }
+
     // Start is called before the first frame update
 
     protected void Start()

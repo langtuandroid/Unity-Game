@@ -14,7 +14,7 @@ public class Combat : ActionImplementor
     [SerializeField] private float attackRange;
     [SerializeField] private int defense;
     [SerializeField] private CombatComponentDictionary components;
-    [SerializeReference] Action actionComponent;
+    [SerializeReference] Actionable actionComponent;
 
     public Combat(Entity e)  : base(e)
     {
@@ -22,7 +22,7 @@ public class Combat : ActionImplementor
         attackRange = 2f;
         defense = 25;
         components = new CombatComponentDictionary();
-        actionComponent = e.GetComponent<Action>();
+        actionComponent = e.GetComponent<Actionable>();
         actionComponent.AddComponent(ActionComponents.Combat, this);
     }
 
