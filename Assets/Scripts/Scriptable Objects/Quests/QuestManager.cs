@@ -13,6 +13,7 @@ public class QuestManager : DescriptionBaseSO
     }
 
     public void ProcessQuest() {
+        List<int> remove = new List<int>();
         foreach(WeightedPriorityWrapper<Quest> w in Quests)
         {
             Quest q = w.value;
@@ -22,8 +23,11 @@ public class QuestManager : DescriptionBaseSO
             }
             else
             {
-                Quests.Remove(w.key);
+                remove.Add(w.key);
             }
+        }
+        foreach (int i in remove) {
+            Quests.Remove(i);
         }
     }
 }

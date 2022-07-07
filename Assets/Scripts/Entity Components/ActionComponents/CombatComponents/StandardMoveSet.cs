@@ -8,7 +8,6 @@ public class StandardMoveSet : ActionImplementor
     private static readonly Dictionary<string, ActionInstance> actions;
 
     private GameObject guardAnimation;
-    private bool animationDestroyed;
     [SerializeReference] private Combat combatComponent;
     [SerializeField] private ActionInstanceDictionary actionInstances;
 
@@ -33,7 +32,6 @@ public class StandardMoveSet : ActionImplementor
     }
 
     public StandardMoveSet(Entity e, Combat cc  = null) : base(e) {
-        animationDestroyed = true;
         guardAnimation = null;
         if (cc == null) {
             cc = new Combat(e);
@@ -92,15 +90,13 @@ public class StandardMoveSet : ActionImplementor
     internal static void Guard(Dictionary<string, object> args)
     {
         StandardMoveSet defender = (StandardMoveSet)args[Setting.HANDLING_COMPONENT];
-
         if (defender.entity.GetIncomingDamage() > 0)
         {
             Debug.Log("Blocked: " + defender.combatComponent.GetDefense());
         }
         defender.entity.SetIncomingDamage(defender.entity.GetIncomingDamage() - defender.combatComponent.GetDefense());
-        if (defender.animationDestroyed)
+        if (defender.guardAnimation == null)
         {
-            defender.animationDestroyed = false;
             GameObject gameObject = defender.entity.gameObject;
             Transform transform = gameObject.transform;
             Color color = Color.blue;
@@ -114,8 +110,8 @@ public class StandardMoveSet : ActionImplementor
     internal static void ExitGuard(Dictionary<string, object> args)
     {
         StandardMoveSet defender = (StandardMoveSet)args[Setting.HANDLING_COMPONENT];
-        defender.animationDestroyed = true;
         Object.Destroy(defender.guardAnimation);
+        defender.guardAnimation = null;
     }
 
     public override Dictionary<string, ActionInstance> AvailableActions()

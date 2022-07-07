@@ -83,7 +83,8 @@ public class WeightedPriorityQueue<T> : IEnumerable<WeightedPriorityWrapper<T>>
         }
         if (pointer == null)
         {
-            pointer = container.First;
+            Reset();
+            return default(T);
         }
         WeightedPriorityWrapper<T> item = pointer.Value;
         item.weight -= 1;

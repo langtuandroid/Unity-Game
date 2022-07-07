@@ -3,31 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "StateMachine/StateMachine")]
-public class StateMachine : DescriptionBaseSO, IEnumerable<State>
+public class StateMachine : DescriptionBaseSO
 {
-    [SerializeField] private readonly HashSet<State> State = new();
     [SerializeField] private State initialState;
+    [SerializeField] private State currentState;
+    private Dictionary<State, SortedList<int, Transition>> transitions;
 
-    public bool Add(State state) { 
-        return State.Add(state);
+    public State CurrentState{
+        get{ return currentState; }
+        set { currentState = value; }
     }
 
-    public bool Remove(State state)
+    void Awake() {
+        currentState = initialState;
+    }
+
+    public void Run()
     {
-        return State.Remove(state);
+         currentState.Operate();
+        if (transitions.ContainsKey(currentState)) {
+            SortedList<int, Transition> list = transitions[currentState];
+            foreach (Transition t in list.Values) {
+                if (t.Execute(this)) {
+                    return;
+                }
+            }
+        }
     }
 
-    public bool Contains(State state) { 
-        return State.Contains(state);
+    public bool AddTransition(Transition t, int priority) {
+        if (!transitions.ContainsKey(t.FromState))
+        {
+            transitions[t.FromState] = new SortedList<int, Transition>();
+        }
+        else if(transitions[t.FromState].Values.Contains(t)){
+            return false;
+        }
+        transitions[t.FromState].Add(priority, t);
+        return true;
     }
 
-    public IEnumerator<State> GetEnumerator()
-    {
-        return State.GetEnumerator();
-    }
-
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return State.GetEnumerator();
+    public bool RemoveTransition(Transition t, int key) {
+        if (transitions.ContainsKey(t.FromState)) {
+            return transitions[t.FromState].Remove(key);
+        }
+        return false;
     }
 }
