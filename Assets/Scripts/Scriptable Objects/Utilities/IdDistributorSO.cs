@@ -5,15 +5,13 @@ using UnityEngine;
 /* Provides utility to generate new ids
     
  */
-public class IdDistributor
+public class IdDistributorSO : DescriptionBaseSO 
 {
     private List<int> availableIds = new List<int>();
     private int counter = 0;
 
-    public int GetID()
-    {
-        if (availableIds.Count == 0)
-        {
+    public int GetID() {
+        if (availableIds.Count == 0) {
             return NewID();
         }
         int r = availableIds[0];

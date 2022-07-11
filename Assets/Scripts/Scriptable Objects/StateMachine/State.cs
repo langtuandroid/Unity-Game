@@ -4,24 +4,14 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu(menuName = "StateMachine/State")]
-public class State : DescriptionBaseSO
+public abstract class State : DescriptionBaseSO
 {
-    [SerializeField] private UnityEvent OnExit;
-    [SerializeField] private UnityEvent OnEnter;
-    [SerializeField] private UnityEvent StateAction;
-
     [Tooltip("The state machine used to process the state.")]
     [SerializeField] StateMachine stateMachine;
 
-    public void Exit() {
-        OnExit.Invoke();
-    }
+    public abstract void Exit(GameObject obj);
 
-    public void Enter() { 
-        OnEnter.Invoke();
-    }
+    public abstract void Enter(GameObject obj);
 
-    public void Operate() { 
-        StateAction.Invoke();
-    }
+    public abstract void Operate(GameObject obj);
 }

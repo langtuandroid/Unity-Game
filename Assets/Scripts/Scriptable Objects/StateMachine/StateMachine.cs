@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "StateMachine/StateMachine")]
-public class StateMachine : DescriptionBaseSO
+public class StateMachine : MonoBehaviour
 {
     [SerializeField] private State initialState;
     [SerializeField] private State currentState;
-    private Dictionary<State, SortedList<int, Transition>> transitions;
+    [SerializeField] private TransitionTable transitionTable;
 
     public State CurrentState{
         get{ return currentState; }
@@ -15,38 +14,25 @@ public class StateMachine : DescriptionBaseSO
     }
 
     void Awake() {
+        ReferenceCheck();
         currentState = initialState;
     }
 
-    public void Run()
+    private void ReferenceCheck() {
+        if (initialState == null) {
+            Debug.LogWarning("Initial state of the state machine is not set!");
+        }
+    }
+
+    public void Update()
     {
-         currentState.Operate();
-        if (transitions.ContainsKey(currentState)) {
-            SortedList<int, Transition> list = transitions[currentState];
-            foreach (Transition t in list.Values) {
-                if (t.Execute(this)) {
-                    return;
-                }
-            }
-        }
-    }
-
-    public bool AddTransition(Transition t, int priority) {
-        if (!transitions.ContainsKey(t.FromState))
+        currentState.Operate(gameObject);
+        State target = transitionTable.Execute(currentState, gameObject);
+        if (target != null)
         {
-            transitions[t.FromState] = new SortedList<int, Transition>();
+            currentState.Exit(gameObject);
+            currentState = target;
+            currentState.Enter(gameObject);
         }
-        else if(transitions[t.FromState].Values.Contains(t)){
-            return false;
-        }
-        transitions[t.FromState].Add(priority, t);
-        return true;
-    }
-
-    public bool RemoveTransition(Transition t, int key) {
-        if (transitions.ContainsKey(t.FromState)) {
-            return transitions[t.FromState].Remove(key);
-        }
-        return false;
     }
 }

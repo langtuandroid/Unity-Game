@@ -5,19 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(PhysicsUpdate))]
 public class Entity : MonoBehaviour
 {
-    private static Dictionary<int, Entity> allEntities = new Dictionary<int, Entity>();
-    
+    public static BidirectionalMap<int, Entity> AllEntities = new();
+    public static IdDistributor distributor = new();
     private int id;
     private int health;
     private int incomingDamage;
     private AttackInfoSet damageHistory;
-
-    public static Entity GetEntityById(int id) {
-        if (allEntities.ContainsKey(id)) { 
-            return allEntities[id];
-        }
-        return default(Entity);
-    }
 
     // Start is called before the first frame update
 
@@ -26,8 +19,8 @@ public class Entity : MonoBehaviour
         health = 1;
         incomingDamage = 0;
         gameObject.tag = Setting.TAG_ENTITY;
-        id = IdDistributor.GetId(Setting.ID_ENTITY);
-        allEntities[id] = this;
+        id = distributor.GetID();
+        AllEntities[id] = this;
         damageHistory = new AttackInfoSet();
         health = 100;
     }
@@ -56,12 +49,8 @@ public class Entity : MonoBehaviour
             Die();
         }
     }
-    public int GetId() {
-        return id;
-    }
-
-    public int NumOfEntities() { 
-        return allEntities.Count;
+    public int ID {
+        get { return id; }
     }
 
     public int GetIncomingDamage() { 
@@ -85,10 +74,10 @@ public class Entity : MonoBehaviour
             }
             if (i == 0)
             {
-                allEntities[attacker].OnKillEntity(id, true);
+                AllEntities[attacker].OnKillEntity(id, true);
             }
             else { 
-                allEntities[attacker].OnKillEntity(id, false);
+                AllEntities[attacker].OnKillEntity(id, false);
             }
             sent.Add(attacker);
             i++;
@@ -98,8 +87,7 @@ public class Entity : MonoBehaviour
 
     private void OnDestroy()
     {
-        allEntities.Remove(id);
-        IdDistributor.RecycleId(Setting.ID_ENTITY, id);
+        AllEntities.RemoveValue(this);
     }
 
     public virtual void OnKillEntity(int id, bool killingBlow) {

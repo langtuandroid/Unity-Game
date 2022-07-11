@@ -16,9 +16,7 @@ public static class Setting
     public static string TAG_PLAYER = "player";
 
     // Id distribute keys
-    public const string ID_ENTITY = "entity";
     public const string ID_ACTION = "action";
-    public const string ID_WEIGHTED_PRIORITY_QUEUE = "weighted priority queue";
     public const string ID_QUEST = "quest";
 
     // 

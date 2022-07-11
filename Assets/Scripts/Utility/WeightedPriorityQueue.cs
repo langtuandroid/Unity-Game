@@ -20,6 +20,7 @@ public class WeightedPriorityQueue<T> : IEnumerable<WeightedPriorityWrapper<T>>
     contents: A dictionary that contains the same items as container that provides random access functionlity
     */
 
+    private IdDistributor distributor = new();
     private LinkedList<WeightedPriorityWrapper<T>> container = new LinkedList<WeightedPriorityWrapper<T>>();
     private Dictionary<int, LinkedListNode<WeightedPriorityWrapper<T>>> contents = new();
 
@@ -51,7 +52,7 @@ public class WeightedPriorityQueue<T> : IEnumerable<WeightedPriorityWrapper<T>>
     }
     public int Enqueue(T element, int priority, int weight)
     {
-        int key = IdDistributor.GetId(Setting.ID_WEIGHTED_PRIORITY_QUEUE);
+        int key = distributor.GetID();
         WeightedPriorityWrapper<T> item = new WeightedPriorityWrapper<T>(element, priority, weight);
         
         LinkedListNode<WeightedPriorityWrapper<T>> node = container.First;
@@ -117,7 +118,7 @@ public class WeightedPriorityQueue<T> : IEnumerable<WeightedPriorityWrapper<T>>
         LinkedListNode<WeightedPriorityWrapper<T>> node = contents[key];
         contents.Remove(key);
         size--;
-        IdDistributor.RecycleId(Setting.ID_WEIGHTED_PRIORITY_QUEUE, key);
+        distributor.RecycleID(key);
         if (pointer != null && pointer.Equals(node)) {
             pointer = pointer.Next;
         }

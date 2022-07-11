@@ -63,7 +63,7 @@ public class StandardMoveSet : ActionImplementor
         GameObject g = ObjectGenerator.SpriteCircle(transform, transform.position, transform.rotation, new Vector3(range, 
             range, 1), Color.yellow, LayerMask.NameToLayer("Default"), SortingLayer.NameToID("Default"));
         Object.Destroy(g, 0.25f);
-        int id = attacker.entity.GetId();
+        int id = attacker.entity.ID;
         HashSet<int> ignore = null;
         if (args.ContainsKey(Setting.IGNORE_TARGET)) {
             ignore = (HashSet<int>)args[Setting.IGNORE_TARGET];
@@ -74,7 +74,7 @@ public class StandardMoveSet : ActionImplementor
             if (!collider.CompareTag(Setting.TAG_ENTITY) ){
                 continue;
             }
-            int cid = collided.GetId();
+            int cid = collided.ID;
             if (ignore != null && ignore.Contains(cid))
             {
                 continue;
