@@ -118,6 +118,6 @@ public class Quest : DescriptionBaseSO
 
     public int Priority
     {
-        get { return priority.value; }
+        get { return priority.Value; }
     }
 }

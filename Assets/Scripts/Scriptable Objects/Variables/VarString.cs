@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Variables/String")]
-public class VarString : ScriptableObject
+public class VarString : Variable<string>
 {
-    public string value;
 }

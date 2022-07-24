@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Variables/Integer")]
-public class VarInt : ScriptableObject
+public class VarInt : Variable<int>
 {
-    public int value;
 }

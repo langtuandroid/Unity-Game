@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Variables/Float")]
-public class VarFloat : ScriptableObject
+public class VarFloat : Variable<float>
 {
-    public float value;
 }
