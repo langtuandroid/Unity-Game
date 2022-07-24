@@ -42,6 +42,10 @@ public class WeightedPriorityQueue<T> : IEnumerable<WeightedPriorityWrapper<T>>
         return result;
     }
 
+    public bool ContainsKey(int key) {
+        return contents.ContainsKey(key);
+    }
+
     public WeightedPriorityWrapper<T> GetWrappedItem(int key)
     {
         if (contents.ContainsKey(key))
