@@ -12,7 +12,7 @@ public enum Scene {
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private VoidEventChannel exitChannel;
-
+    [SerializeField] private QuestManager questManager;
     void Start()
     {
         Application.targetFrameRate = Setting.TARGET_FRAME_RATE;
@@ -21,9 +21,18 @@ public class GameManager : MonoBehaviour
         exitChannel.OnEventRaised += ExitGame;
     }
 
+    private void LateUpdate()
+    {
+        questManager.ProcessQuest();
+    }
+
     private void ExitGame()
     {
         Application.Quit();
         Debug.Log("Exit!");
+    }
+
+    public bool SwitchGameState() {
+        return true;
     }
 }

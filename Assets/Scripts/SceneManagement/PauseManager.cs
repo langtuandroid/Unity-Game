@@ -26,7 +26,7 @@ public class PauseManager : MonoBehaviour
     }
 
     public void PauseOrResume() {
-        if (!gamePause.value)
+        if (!gamePause.Value)
         {
             gamePauseChannel.RaiseEvent();
         }
@@ -41,14 +41,14 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 0f;
         gameUIChannel.RaiseEvent(false);
         pauseMenuChannel.RaiseEvent(true);
-        gamePause.value = true;
+        gamePause.Value = true;
     }
 
     private void ResumeGame()
     {
         Debug.Log("Game Resume!");
         Time.timeScale = 1;
-        gamePause.value = false;
+        gamePause.Value = false;
         gameUIChannel.RaiseEvent(true);
         pauseMenuChannel.RaiseEvent(false);
     }

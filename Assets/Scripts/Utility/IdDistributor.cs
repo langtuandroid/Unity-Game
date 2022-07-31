@@ -5,52 +5,43 @@ using UnityEngine;
 /* Provides utility to generate new ids
     
  */
-public class IdDistributor {
-    
-    // Class used for generating new ids
-    private static Dictionary<string, IdGenerator> table = new Dictionary<string, IdGenerator>();
-    public static int GetId(string key) {
-        if (!table.ContainsKey(key)) {
-            table.Add(key, new IdGenerator());
+public class IdDistributor
+{
+    private List<int> availableIds = new List<int>();
+    private int counter = 0;
+
+    public int GetID()
+    {
+        if (availableIds.Count == 0)
+        {
+            return NewID();
         }
-        return table[key].NewID();
+        int r = availableIds[0];
+        availableIds.RemoveAt(0);
+        return r;
     }
 
-    public static bool RecycleId(string key, int num) {
-        if (!table.ContainsKey(key)) {
+    private int NewID()
+    {
+        int returnVal = counter;
+        counter += 1;
+
+        return returnVal;
+    }
+    public bool RecycleID(int id)
+    {
+        if (id >= counter || availableIds.Contains(id))
+        {
             return false;
         }
-        return table[key].DeleteID(num);
-    }
-
-
-    private class IdGenerator
-    {
-        private HashSet<int> availableIds = new HashSet<int>();
-        private int counter = 0;
-
-        public int NewID()
+        if (id == counter - 1)
         {
-            int returnVal = counter;
-            counter += 1;
-
-            return returnVal;
+            counter -= 1;
         }
-        public bool DeleteID(int id)
+        else
         {
-            if (id >= counter || availableIds.Contains(id))
-            {
-                return false;
-            }
-            if (id == counter - 1)
-            {
-                counter -= 1;
-            }
-            else
-            {
-                availableIds.Add(id);
-            }
-            return true;
+            availableIds.Add(id);
         }
+        return true;
     }
 }

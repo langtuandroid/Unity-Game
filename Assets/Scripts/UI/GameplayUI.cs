@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameplayUI : MonoBehaviour
 {
     [SerializeField] private BoolEventChannel enableChannel;
+    [SerializeField] private Quest quest;
     private void Start()
     {
         enableChannel.OnEventRaised += gameObject.SetActive;
@@ -13,5 +14,9 @@ public class GameplayUI : MonoBehaviour
     private void OnDestroy()
     {
         enableChannel.OnEventRaised -= gameObject.SetActive;
+    }
+
+    public void EnableQuest() { 
+        quest.Enable();
     }
 }
