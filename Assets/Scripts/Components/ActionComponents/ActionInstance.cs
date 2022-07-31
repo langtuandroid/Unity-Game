@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Reflection;
+using System.Text;
 
 [System.Serializable]
 public abstract class ActionInstance : ScriptableObject
@@ -15,7 +18,7 @@ public abstract class ActionInstance : ScriptableObject
      * isReady: Whether the action is ready to be executed
      * 
      * Static Members:
-     * actionsQueue: The weighed priority queue that stores ActionNames of all of the actions waiting to be executed in order
+     * actionsQueue: The weighed priority queue that manages actions waiting to be executed
      */
     [HideInInspector]
     public ActionQueue queue;
@@ -82,8 +85,83 @@ public abstract class ActionInstance : ScriptableObject
     protected virtual void Terminate() { }
 
     // Override This!
+    protected virtual void AssignFields() { }
+
     public virtual bool ComponentCheck(Actionable actionComponent) {
-        return true;
+        bool result = CheckComponent(actionComponent);
+        if (result) {
+            AssignFields();
+        }
+        return result;
+    }
+
+    private bool CheckComponent(Actionable actionComponent) {
+        Type type = GetType();
+
+        bool result = true;
+        bool f1 = false;
+        bool f2 = false;
+        if (RequireActionComponentAttribute.requirement.ContainsKey(type)) {
+            HashSet<Type> ts = RequireActionComponentAttribute.requirement[type];
+            MethodInfo m = typeof(Actionable).GetMethod("GetActionComponent");
+
+            List<Type> lst1 = new List<Type>();
+            foreach (Type t in ts)
+            {
+                MethodInfo mm = m.MakeGenericMethod(t);
+                if (mm.Invoke(actionComponent, null) == null)
+                {
+                    f1 = true;
+                    lst1.Add(t);
+                }
+            }
+
+            if (f1)
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append("Missing ActionComponent: ");
+                foreach (Type t in lst1)
+                {
+                    sb.Append(t.Name);
+                    sb.Append(", ");
+                }
+                sb.Remove(sb.Length - 2, 2);
+                Debug.LogError(sb.ToString());
+            }
+        }
+
+        // Check of gameobject Components
+        if (RequireCMPAttribute.requirement.ContainsKey(type)) {
+            HashSet<Type> ts2 = RequireCMPAttribute.requirement[type];
+
+            List<Type> lst2 = new List<Type>();
+            foreach (Type t in ts2)
+            {
+                if (actionComponent.GetComponent(t.ToString()) == null)
+                {
+                    f2 = true;
+                    lst2.Add(t);
+                }
+            }
+            if (f2)
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append("Missing Component: ");
+                foreach (Type t in lst2)
+                {
+                    sb.Append(t.Name);
+                    sb.Append(", ");
+                }
+                sb.Remove(sb.Length - 2, 2);
+                Debug.LogError(sb.ToString());
+            }
+        }
+        
+        if (f1 || f2) { 
+            result = false;
+        }
+
+        return result;
     }
 
     public bool HaltActionExecution()

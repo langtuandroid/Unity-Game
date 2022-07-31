@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.ComponentModel;
 
+[RequireActionComponent(typeof(CircleAttack), typeof(CombatComponent))]
 [ActionInstance(typeof(CircleAttack))]
 public class CircleAttack : ActionInstance
 {
-    [Header("Required Action Components")]
-    public readonly List<string> required = new List<string>{"CombatComponent"};
     protected override void ExecuteBody() {
         /* Damages entities in radius of attack range by attack damage, has no effect on the attacker
          * 

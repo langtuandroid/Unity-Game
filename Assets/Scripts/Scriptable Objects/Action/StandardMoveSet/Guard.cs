@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireActionComponent(typeof(Guard), typeof(CombatComponent))]
 [ActionInstance(typeof(Guard))]
 public class Guard : ActionInstance
 {

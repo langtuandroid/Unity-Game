@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text;
 
 [Serializable]
 [AddComponentMenu("Actionable")]
@@ -56,7 +57,27 @@ public class Actionable : MonoBehaviour
     }
 
     public bool RemoveActionComponent<T>() where T : ActionComponent {
-        return components.Remove(typeof(T).ToString());
+        string str = typeof (T).ToString();
+        if (components.ContainsKey(str)) {
+            if (RequireActionComponentAttribute.rev_requirement.ContainsKey(typeof(T))) {
+                StringBuilder sb = new();
+                sb.Append("Cannot remove action component: " + typeof(T).ToString() + ", since the following action instances requires it: ");
+                bool flag = false;
+                foreach (Type t in RequireActionComponentAttribute.rev_requirement[typeof(T)]) {
+                    if (availableActions.ContainsKey(t.ToString())) {
+                        flag = true;
+                        sb.Append(t.Name);
+                        sb.Append(", ");
+                    }
+                }
+                if (flag) {
+                    sb.Remove(sb.Length - 2, 2);
+                    Debug.LogError(sb.ToString());
+                    return false;
+                }
+            }
+        }
+        return components.Remove(str);
     }
 
     public void Countdown()

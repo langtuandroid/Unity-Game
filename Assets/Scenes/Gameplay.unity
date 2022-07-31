@@ -347,21 +347,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &143996071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68944915403110848934eb1b3d63bd14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: 1
-  useSharedValue: 0
-  sharedValue: {fileID: 0}
 --- !u!114 &199234210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,6 +362,66 @@ MonoBehaviour:
   attackDamage: 50
   attackRange: 2
   defense: 25
+--- !u!114 &252763585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eec34eea6c62446b70df6baef69aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  queue: {fileID: 11400000, guid: 44aa743952f37ed4e86fb31ea59baa9f, type: 2}
+  actionComponent: {fileID: 1014439912}
+  actionData: {fileID: 780817024}
+--- !u!114 &307118384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eec34eea6c62446b70df6baef69aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  queue: {fileID: 11400000, guid: 44aa743952f37ed4e86fb31ea59baa9f, type: 2}
+  actionComponent: {fileID: 1789268670814609852}
+  actionData: {fileID: 1573180710}
+--- !u!114 &331383987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68944915403110848934eb1b3d63bd14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 0
+  useSharedValue: 0
+  sharedValue: {fileID: 0}
+--- !u!114 &448249311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88688f41b565d8d4b90a82a359fbf665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 0
+  useSharedValue: 0
+  sharedValue: {fileID: 0}
 --- !u!114 &466644480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,21 +437,6 @@ MonoBehaviour:
   value: 0
   useSharedValue: 1
   sharedValue: {fileID: 11400000, guid: ba8a7dac9859d024d8b1a085d02c7031, type: 2}
---- !u!114 &492800303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68944915403110848934eb1b3d63bd14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: 1
-  useSharedValue: 0
-  sharedValue: {fileID: 0}
 --- !u!1 &755208726
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   queue: {fileID: 11400000, guid: 44aa743952f37ed4e86fb31ea59baa9f, type: 2}
---- !u!114 &820661194
+--- !u!114 &780817024
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -461,12 +491,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79eec34eea6c62446b70df6baef69aa2, type: 3}
+  m_Script: {fileID: 11500000, guid: 39b2bd635359a064aa005d709c3a416e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  queue: {fileID: 11400000, guid: 44aa743952f37ed4e86fb31ea59baa9f, type: 2}
-  actionComponent: {fileID: 1014439912}
-  actionData: {fileID: 1908462966}
+  value: {fileID: 1807768316}
+  useSharedValue: 0
+  sharedValue: {fileID: 0}
 --- !u!1 &837063858
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,7 +957,7 @@ MonoBehaviour:
     keys:
     - CircleAttack
     values:
-    - {fileID: 820661194}
+    - {fileID: 252763585}
   actionQueue: {fileID: 11400000, guid: 44aa743952f37ed4e86fb31ea59baa9f, type: 2}
 --- !u!114 &1014439913
 MonoBehaviour:
@@ -1048,6 +1078,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
+--- !u!114 &1065304864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88688f41b565d8d4b90a82a359fbf665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 2
+  useSharedValue: 0
+  sharedValue: {fileID: 0}
 --- !u!1 &1076711603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,6 +1246,21 @@ MonoBehaviour:
   player: {fileID: 1014439913}
   healthSlider: {fileID: 1095861245}
   maxHealth: 100
+--- !u!114 &1156172812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68944915403110848934eb1b3d63bd14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 1
+  useSharedValue: 0
+  sharedValue: {fileID: 0}
 --- !u!1001 &1205868837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1852,6 +1912,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341713216}
   m_CullTransparentMesh: 1
+--- !u!114 &1353694181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 749da42cbb2db604da7ad2ecb435fd18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priority: {fileID: 1156172812}
+  cooldown: {fileID: 1065304864}
+  duration: {fileID: 1599655482}
 --- !u!1 &1377438052
 GameObject:
   m_ObjectHideFlags: 0
@@ -6520,6 +6595,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512053573}
   m_CullTransparentMesh: 1
+--- !u!114 &1573180710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39b2bd635359a064aa005d709c3a416e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: {fileID: 1353694181}
+  useSharedValue: 0
+  sharedValue: {fileID: 0}
 --- !u!1 &1574370155
 GameObject:
   m_ObjectHideFlags: 0
@@ -6655,7 +6745,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574370155}
   m_CullTransparentMesh: 1
---- !u!114 &1694298454
+--- !u!114 &1599655482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68944915403110848934eb1b3d63bd14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 1
+  useSharedValue: 0
+  sharedValue: {fileID: 0}
+--- !u!114 &1725297243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68944915403110848934eb1b3d63bd14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 0
+  useSharedValue: 0
+  sharedValue: {fileID: 0}
+--- !u!114 &1765029863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bd372fd1dd2cc45ab5bd7aaf742408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 50
+  attackRange: 2
+  defense: 25
+--- !u!114 &1807768316
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6667,9 +6802,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749da42cbb2db604da7ad2ecb435fd18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priority: {fileID: 143996071}
-  cooldown: {fileID: 2131309909}
-  duration: {fileID: 492800303}
+  priority: {fileID: 1725297243}
+  cooldown: {fileID: 448249311}
+  duration: {fileID: 331383987}
 --- !u!1 &1858713350
 GameObject:
   m_ObjectHideFlags: 0
@@ -6704,21 +6839,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1908462966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39b2bd635359a064aa005d709c3a416e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: {fileID: 1694298454}
-  useSharedValue: 0
-  sharedValue: {fileID: 0}
 --- !u!1 &2043173408
 GameObject:
   m_ObjectHideFlags: 0
@@ -6973,21 +7093,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129817903}
   m_CullTransparentMesh: 1
---- !u!114 &2131309909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88688f41b565d8d4b90a82a359fbf665, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: 1
-  useSharedValue: 0
-  sharedValue: {fileID: 0}
 --- !u!1001 &1061135288552121283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7080,11 +7185,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   components:
-    keys: []
-    values: []
+    keys:
+    - CombatComponent
+    values:
+    - {fileID: 1765029863}
   executing:
     values: []
   availableActions:
-    keys: []
-    values: []
-  actionQueue: {fileID: 0}
+    keys:
+    - CircleAttack
+    values:
+    - {fileID: 307118384}
+  actionQueue: {fileID: 11400000, guid: 44aa743952f37ed4e86fb31ea59baa9f, type: 2}
