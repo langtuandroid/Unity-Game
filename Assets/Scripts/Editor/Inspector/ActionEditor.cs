@@ -10,11 +10,6 @@ public class ActionComponentEditor : Editor
 {
     bool acFoldout = false;
     bool aiFoldout = false;
-    static ActionComponentEditor() {
-        foreach (Type type in typeof(Setting).Assembly.GetTypes()) {
-            type.GetCustomAttributes();
-        }       
-    }
 
     public override void OnInspectorGUI()
     {

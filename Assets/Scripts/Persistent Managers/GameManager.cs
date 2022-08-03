@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Reflection;
 
 
 public enum Scene { 
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private VoidEventChannel exitChannel;
     [SerializeField] private QuestManager questManager;
+
     void Start()
     {
         Application.targetFrameRate = Setting.TARGET_FRAME_RATE;

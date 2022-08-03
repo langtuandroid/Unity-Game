@@ -16,6 +16,8 @@ public static class Setting
     public const string TAG_ENTITY = "entity";
     public const string TAG_PROJECTILE = "projectile";
     public static string TAG_PLAYER = "player";
+    public static string TAG_INTERACTABLE = "interactable";
+    public static string TAG_INTERACTOR = "interactor";
 
     // Id distribute keys
     public const string ID_ACTION = "action";
@@ -28,12 +30,6 @@ public static class Setting
     // Action Arguments
     public const string HANDLING_COMPONENT = "_component";
     public const string IGNORE_TARGET = "ignore";
-
-    // Action Ids
-
-        // Std moveset
-        public const string STD_CIRCLE_ATTACK = "circle_attack";
-        public const string STD_GUARD = "guard";
 
     // Action Priorities
     public const int ACTION_ATTACK_PRIORITY = 1;
@@ -49,4 +45,11 @@ public static class Setting
 
     // Action Animation Durations  (Seconds)
     public const float ADURATION_GUARD = 0.5f;
+    public enum CoroutineStatus
+    {
+        COROUTINE_OFF = 0,
+        COROUTINE_ON = 1
+    }
 }
+
+

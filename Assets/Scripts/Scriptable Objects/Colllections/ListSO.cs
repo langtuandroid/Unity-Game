@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Collections/List")]
-public class ListSO<T> : DescriptionBaseSO, IEnumerable<T>, IList<T>
+public class ListSO<T> : ScriptableObject, IEnumerable<T>, IList<T>
 {
     private List<T> container = new();
 
@@ -63,3 +62,4 @@ public class ListSO<T> : DescriptionBaseSO, IEnumerable<T>, IList<T>
         return ((IEnumerable)container).GetEnumerator();
     }
 }
+
