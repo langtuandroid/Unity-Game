@@ -10,12 +10,19 @@ public class DialogueResponse
     [TextArea]
     [SerializeField] private string text;
     [SerializeField] private DialogueObject dialogue;
+    [SerializeField] private Operation operation;
 
-    public void SetButton(Button button, TMP_Text textContainer) {
-        // button.onClick.AddListener(response.Start);
-        textContainer.text = text;
+    public void Respond() {
+        if (operation != null) {
+            operation.Start();
+        }
     }
 
-    public virtual void Respond() { 
+    public DialogueObject Dialogue {
+        get { return dialogue; }
+    }
+
+    public string Text {
+        get { return text; }
     }
 }

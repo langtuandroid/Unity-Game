@@ -12,4 +12,13 @@ public class DialogueObject : ScriptableObject
     public string[] Texts { 
         get { return (string[])texts.Clone(); }
     }
+
+    public DialogueResponse[] Responses {
+        get { return (DialogueResponse[])responses.Clone(); }
+    }
+
+    public bool HasResponses
+    {
+        get { return responses != null && responses.Length > 0; }
+    }
 }
