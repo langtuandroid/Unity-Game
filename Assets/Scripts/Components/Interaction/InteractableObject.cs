@@ -1,22 +1,79 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public abstract class InteractableObject : MonoBehaviour
 {
     [SerializeField] private RefFloat interactRadius;
-    [SerializeField] private InteractorListSO interactorList;
-    private List<Transform> locations = new();
+    private Dictionary<Type, InteractionTracer> interactionTracers = new();
     private Transform m_transform;
-    private List<int> interacting = new();
-    private List<int> no_interaction = new();
+
+    private class InteractionTracer
+    {
+        private Type interactorType;
+        private List<Interactor> interacting = new();
+
+        public InteractionTracer(Type t) {
+            interactorType = t;
+        }
+
+        public void UpdateInteraction(Transform m_transform, float interactRadius, InteractableObject obj)
+        {
+            // Prevent interaction from happening for objects out of range
+            for (int i = interacting.Count - 1; i >= 0; i--)
+            {
+                Interactor interactor = interacting[i];
+
+                if (!InteractionAttribute.ExistInteractor(interactor)) {
+                    interacting.RemoveAt(i);
+                    Debug.Log("Removing disabled interactor");
+                    continue;
+                }
+
+                Transform t = InteractionAttribute.GetInteractorTransform(interactor);
+                if (Vector2.Distance(t.position, m_transform.position) > interactRadius)
+                {
+                    interacting.RemoveAt(i);
+                    interactor.RemoveInteractable(obj);
+                }
+            }
+
+            // Establish connection for objects in range
+            Interactor[] interactors = InteractionAttribute.GetInteractors(interactorType);
+            if (interactors == null)
+            {
+                return;
+            }
+
+            foreach (Interactor interactor in interactors) {
+                if (interacting.Contains(interactor)) {
+                    continue;
+                }
+                Transform t = InteractionAttribute.GetInteractorTransform(interactor);
+                if (Vector2.Distance(t.position, m_transform.position) <= interactRadius)
+                {
+                    interacting.Add(interactor);
+                    interactor.AddInteractable(obj);
+                }
+            }
+        }
+
+        public void StopInteractions(InteractableObject obj) {
+            for (int j = interacting.Count - 1; j >= 0; j--) {
+                Interactor i = interacting[j];
+                i.RemoveInteractable(obj);
+                interacting.Remove(i);
+            }
+        }
+    }
 
     public void Start()
     {
-        for(int i = 0;i < interactorList.Count;i++) {
-            Interactor interactor = interactorList[i];
-            locations.Add(interactor.GetComponent<Transform>());
-            no_interaction.Add(i);
+        Type[] arr = InteractionAttribute.GetInteractorTypes(GetType());
+        foreach (Type t in arr)
+        {
+            interactionTracers[t] = new InteractionTracer(t);
         }
         m_transform = GetComponent<Transform>();
     }
@@ -25,31 +82,16 @@ public abstract class InteractableObject : MonoBehaviour
 
     public void Update()
     {
-        // Hide self from interactors out of range
-        for(int i = interacting.Count - 1; i >=0;i--) {
-            int j = interacting[i];
-            Transform t = locations[j];
-            if (Vector2.Distance(t.position, m_transform.position) > interactRadius.Value) {
-                no_interaction.Add(j);
-                interacting.RemoveAt(i);
-                Interactor interactor = interactorList[j];
-                interactor.RemoveInteractable(this);
-            }
-        }
-
-        // Add to interactors in range
-        for (int i = no_interaction.Count - 1; i >= 0; i--)
+        foreach (InteractionTracer tracer in interactionTracers.Values)
         {
-            int j = no_interaction[i];
-            Transform t = locations[j];
-            if (Vector2.Distance(t.position, m_transform.position) <= interactRadius.Value)
-            {
-                no_interaction.RemoveAt(i);
-                interacting.Add(j);
-                Interactor interactor = interactorList[j];
-                interactor.AddInteractable(this);
-            }
+            tracer.UpdateInteraction(m_transform, interactRadius.Value, this);
         }
     }
 
+    public void OnDisable()
+    {
+        foreach (InteractionTracer tracer in interactionTracers.Values) { 
+            tracer.StopInteractions(this);
+        }
+    }
 }

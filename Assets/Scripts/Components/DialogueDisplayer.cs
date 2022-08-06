@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using TMPro;
 
+[Interaction(interactable :typeof(DialogueDisplayer), interactors: typeof(PlayerController))] 
 public class DialogueDisplayer : InteractableObject
 {
     [SerializeField] private TMP_Text container;
@@ -28,7 +29,6 @@ public class DialogueDisplayer : InteractableObject
         else {
             StopCoroutine(coroutine);
             coroutine = null;
-            Debug.Log("Stopped: " + container.text);
         }
     }
 
@@ -43,5 +43,6 @@ public class DialogueDisplayer : InteractableObject
             container.text = str;
             yield return new WaitForSeconds(secondsDelayBetweenLines.Value);
         }
+        coroutine = null;
     }
 }

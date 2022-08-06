@@ -23,7 +23,7 @@ public class CircleAttack : ActionInstance
         Collider2D[] colliders = Physics2D.OverlapCircleAll(gameObject.transform.position, (float)(range / 2));
         GameObject g = ObjectGenerator.SpriteCircle(transform, transform.position, transform.rotation, new Vector3(range,
             range, 1), Color.yellow, LayerMask.NameToLayer("Default"), SortingLayer.NameToID("Default"));
-        Object.Destroy(g, 0.25f);
+        Object.Destroy(g, 2f);
         foreach (Collider2D collider in colliders)
         {
             Entity collided = collider.gameObject.GetComponent<Entity>();

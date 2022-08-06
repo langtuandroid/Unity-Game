@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// [RequireComponent(typeof(Actionable))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : Interactor
 {
     [SerializeField] private VoidEventChannel gameEndChannel;
     [SerializeField] private Camera camera;
@@ -16,14 +15,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private PhysicsUpdate physicsUpdate;
     private Actionable actionable;
-    private Interactor interactor;
 
     public void Start(){
         player = GetComponent<Entity>();
         rb = player.GetComponent<Rigidbody2D>();
         physicsUpdate = rb.GetComponent<PhysicsUpdate>();
         actionable = GetComponent<Actionable>();
-        interactor = GetComponent<Interactor>();
     }
 
     public void CircleAttack(InputAction.CallbackContext context)
@@ -51,9 +48,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Interact(InputAction.CallbackContext context) {
+    public void TriggerDialogue(InputAction.CallbackContext context) {
         if (context.started) {
-            interactor.Interact();
+            Interact(typeof(DialogueDisplayer));
         }
     }
 
