@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a38848b34381e64ca654f2e0a4046b8, type: 3}
   m_Name: TestResponse 2
   m_EditorClassIdentifier: 
-  texts:
-  - You've chosen option 2
+  dialogueNodes:
+  - {fileID: 11400000, guid: 12bc889c3f10c8541aa0b0ff978d49f7, type: 2}
   responses: []
+  finishers: []

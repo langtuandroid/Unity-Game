@@ -15,7 +15,13 @@ MonoBehaviour:
   dialogueNodes:
   - {fileID: 11400000, guid: a2fed1d67ebb819479c3f9a5b416ecb1, type: 2}
   - {fileID: 11400000, guid: 9784f69441fd6564a95de17ae63369a1, type: 2}
-  responses: []
+  responses:
+  - text: Option 1
+    dialogue: {fileID: 11400000, guid: bf8cb72a7d0039a42884f4d157f74e6f, type: 2}
+    operations: []
+  - text: Option 2
+    dialogue: {fileID: 11400000, guid: 058b3845f9b1bd545837c0e951c41f3f, type: 2}
+    operations: []
   finishers:
   - description: ColorChange
     operation: {fileID: 0}

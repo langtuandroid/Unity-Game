@@ -8,14 +8,23 @@ using TMPro;
 [Interaction(interactable :typeof(DialogueDisplayer), interactors: typeof(PlayerController))] 
 public class DialogueDisplayer : InteractableObject
 {
+    [Header("Settings")]
     [SerializeField] private RefBool resetUponFinish;
-    [SerializeField] private TMP_Text container;
-    [SerializeField] private DialogueObject dialogue;
     [SerializeField] private RefFloat displaySpeed;
     [SerializeField] private RefFloat secondsDelayBetweenLines;
-    [SerializeField] private RectTransform responseBox;
+    [SerializeField] private RefFloat secondsLingering;
+    [SerializeField] private DialogueObject dialogue;
+    [SerializeField] private RectTransform dialogueCanva;
+
+    [Header("Dialogue Area")]
+    [SerializeField] private TMP_Text mainText;
+    
+    [Header("Response Area")]
+    [SerializeField] private RectTransform responseLayoutGroup;
     [SerializeField] private Button responseButton;
-    [SerializeField] private TMP_Text speakerContainer;
+
+    [Header("Speaker Info")]
+    [SerializeField] private TMP_Text speakerName;
     [SerializeField] private Image speakerIcon;
 
     private Coroutine coroutine;
@@ -42,29 +51,32 @@ public class DialogueDisplayer : InteractableObject
     }
 
     public IEnumerator DisplayText() {
+        dialogueCanva.gameObject.SetActive(true);
+
+        // Begin displaying text in each node
         foreach (DialogueNode node in currentDialogue.Nodes) {
-            speakerContainer.text = node.Speaker;
+            speakerName.text = node.Speaker;
             speakerIcon.sprite = node.Icon;
             foreach (string str in node.Texts)
             {
                 float index = 0;
                 while (index < str.Length)
                 {
-                    container.text = str.Substring(0, Mathf.FloorToInt(index));
+                    mainText.text = str.Substring(0, Mathf.FloorToInt(index));
                     index += Time.deltaTime * displaySpeed.Value;
                     yield return null;
                 }
-                container.text = str;
+                mainText.text = str;
                 yield return new WaitForSeconds(secondsDelayBetweenLines.Value);
             }
         }
         
-
+        // Instantiate response buttons
         if (currentDialogue.HasResponses) {
             DialogueResponse[] responses = currentDialogue.Responses;
             foreach (DialogueResponse response in responses)
             {
-                GameObject obj = Instantiate(responseButton.gameObject, responseBox);
+                GameObject obj = Instantiate(responseButton.gameObject, responseLayoutGroup);
                 obj.SetActive(true);
                 Button btn = obj.GetComponent<Button>();
                 btn.onClick.AddListener(() => Respond(response));
@@ -72,6 +84,8 @@ public class DialogueDisplayer : InteractableObject
                 responseButtons.Add(btn);
             }
         }
+
+        // Execute dialogue finishers
         if (currentDialogue.HasFinishers)
         {
             currentDialogue.ExecuteFinisher();
@@ -80,6 +94,13 @@ public class DialogueDisplayer : InteractableObject
             currentDialogue = dialogue;
         }
         coroutine = null;
+
+        yield return new WaitForSeconds(secondsLingering.Value);
+
+        // Keep the canvas running if there's responses to display
+        if (responseButtons.Count == 0) {
+            dialogueCanva.gameObject.SetActive(false);
+        }
     }
 
     public void Respond(DialogueResponse response) { 
