@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a38848b34381e64ca654f2e0a4046b8, type: 3}
-  m_Name: Test Dialogue
+  m_Name: TestDialogue
   m_EditorClassIdentifier: 
   texts:
-  - This is line 1.
-  - Hello, this is line 2.
-  - Mer, this is line 3.
-  responses:
-  - text: Option 1
-    dialogue: {fileID: 11400000, guid: bf8cb72a7d0039a42884f4d157f74e6f, type: 2}
+  - This is line 1
+  - This is line 2
+  - This is line 3
+  responses: []
+  finishers:
+  - description: ColorChange
     operation: {fileID: 0}
-  - text: Option 2
-    dialogue: {fileID: 11400000, guid: 058b3845f9b1bd545837c0e951c41f3f, type: 2}
-    operation: {fileID: 0}
+    coroutine: {fileID: 11400000, guid: 8193c5db3933cbc4cacf94434889731d, type: 2}
+    useCoroutine: 1

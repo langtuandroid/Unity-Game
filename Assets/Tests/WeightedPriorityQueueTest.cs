@@ -13,18 +13,18 @@ public class WeightedPriorityQueueTest
         // Use the Assert class to test conditions
         // Test argument: WeightedPriorityQueue.Enqueue(Value, Priority, Weight)
         WeightedPriorityQueue<int> queue = new WeightedPriorityQueue<int>();
-        queue.Enqueue(10, 0, 1);
+        queue.Enqueue(10, 1, 0);
         queue.Enqueue(12, 1, 1);
-        queue.Enqueue(7, 0, 1);
-        string expected = "[{V: 7, P: 0, W: 1}, {V: 10, P: 0, W: 1}, {V: 12, P: 1, W: 1}]";
+        queue.Enqueue(7, 1, 0);
+        string expected = "[{Value: 7, Priority: 0, Data: 1}, {Value: 10, Priority: 0, Data: 1}, {Value: 12, Priority: 1, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
         int item = queue.Dequeue();
         Assert.AreEqual(7, item);
-        expected = "[{V: 10, P: 0, W: 1}, {V: 12, P: 1, W: 1}]";
+        expected = "[{Value: 10, Priority: 0, Data: 1}, {Value: 12, Priority: 1, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
         item = queue.Dequeue();
         Assert.AreEqual(10, item);
-        expected = "[{V: 12, P: 1, W: 1}]";
+        expected = "[{Value: 12, Priority: 1, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
         item = queue.Dequeue();
         Assert.AreEqual(12, item);
@@ -34,26 +34,26 @@ public class WeightedPriorityQueueTest
     [Test]
     public void TestQueue2() {
         WeightedPriorityQueue<int> queue = new WeightedPriorityQueue<int>();
-        queue.Enqueue(10, 0, 3);
+        queue.Enqueue(10, 3, 0);
         queue.Enqueue(12, 1, 1);
-        queue.Enqueue(7, 0, 1);
-        string expected = "[{V: 7, P: 0, W: 1}, {V: 10, P: 0, W: 3}, {V: 12, P: 1, W: 1}]";
+        queue.Enqueue(7, 1, 0);
+        string expected = "[{Value: 7, Priority: 0, Data: 1}, {Value: 10, Priority: 0, Data: 3}, {Value: 12, Priority: 1, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
         int item = queue.Dequeue();
         Assert.AreEqual(7, item);
-        expected = "[{V: 10, P: 0, W: 3}, {V: 12, P: 1, W: 1}]";
+        expected = "[{Value: 10, Priority: 0, Data: 3}, {Value: 12, Priority: 1, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
         item = queue.Dequeue();
         Assert.AreEqual(10, item);
-        expected = "[{V: 10, P: 0, W: 2}, {V: 12, P: 1, W: 1}]";
+        expected = "[{Value: 10, Priority: 0, Data: 2}, {Value: 12, Priority: 1, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
         item = queue.Dequeue();
         Assert.AreEqual(12, item);
-        expected = "[{V: 10, P: 0, W: 2}]";
+        expected = "[{Value: 10, Priority: 0, Data: 2}]";
         Assert.AreEqual(expected, queue.ToString());
         item = queue.Dequeue();
         Assert.AreEqual(10, item);
-        expected = "[{V: 10, P: 0, W: 1}]";
+        expected = "[{Value: 10, Priority: 0, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
     }
 
@@ -61,45 +61,45 @@ public class WeightedPriorityQueueTest
     public void TestQueue3()
     {
         WeightedPriorityQueue<int> queue = new WeightedPriorityQueue<int>();
-        int key = queue.Enqueue(10, 0, 3);
+        int key = queue.Enqueue(10, 3, 0);
         queue.Enqueue(12, 1, 1);
-        queue.Enqueue(7, 0, 1);
+        queue.Enqueue(7, 1, 0);
 
-        string expected = "[{V: 7, P: 0, W: 1}, {V: 10, P: 0, W: 3}, {V: 12, P: 1, W: 1}]";
+        string expected = "[{Value: 7, Priority: 0, Data: 1}, {Value: 10, Priority: 0, Data: 3}, {Value: 12, Priority: 1, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
 
         int item = queue.Dequeue();
         Assert.AreEqual(7, item);
-        expected = "[{V: 10, P: 0, W: 3}, {V: 12, P: 1, W: 1}]";
+        expected = "[{Value: 10, Priority: 0, Data: 3}, {Value: 12, Priority: 1, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
 
         item = queue.Dequeue();
         Assert.AreEqual(10, item);
-        expected = "[{V: 10, P: 0, W: 2}, {V: 12, P: 1, W: 1}]";
+        expected = "[{Value: 10, Priority: 0, Data: 2}, {Value: 12, Priority: 1, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
 
-        queue.SetWeight(key, 5);
-        expected = "[{V: 10, P: 0, W: 5}, {V: 12, P: 1, W: 1}]";
+        queue.SetElementData(key, 5);
+        expected = "[{Value: 10, Priority: 0, Data: 5}, {Value: 12, Priority: 1, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
 
-        queue.SetValue(key, 3);
-        expected = "[{V: 3, P: 0, W: 5}, {V: 12, P: 1, W: 1}]";
+        queue.SetElementValue(key, 3);
+        expected = "[{Value: 3, Priority: 0, Data: 5}, {Value: 12, Priority: 1, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
 
         item = queue.Dequeue();
         Assert.AreEqual(12, item);
-        expected = "[{V: 3, P: 0, W: 5}]";
+        expected = "[{Value: 3, Priority: 0, Data: 5}]";
         Assert.AreEqual(expected, queue.ToString());
 
         item = queue.Dequeue();
         Assert.AreEqual(3, item);
-        expected = "[{V: 3, P: 0, W: 4}]";
+        expected = "[{Value: 3, Priority: 0, Data: 4}]";
         Assert.AreEqual(expected, queue.ToString());
 
         queue.Dequeue();
         queue.Dequeue();
         queue.Dequeue();
-        expected = "[{V: 3, P: 0, W: 1}]";
+        expected = "[{Value: 3, Priority: 0, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
 
         queue.Dequeue();
@@ -110,28 +110,28 @@ public class WeightedPriorityQueueTest
     public void TestQueue4()
     {
         WeightedPriorityQueue<int> queue = new WeightedPriorityQueue<int>();
-        int key = queue.Enqueue(10, 0, 3);
+        int key = queue.Enqueue(10, 3, 0);
         queue.Enqueue(12, 1, 1);
 
-        string expected = "[{V: 10, P: 0, W: 3}, {V: 12, P: 1, W: 1}]";
+        string expected = "[{Value: 10, Priority: 0, Data: 3}, {Value: 12, Priority: 1, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
 
         int item = queue.Dequeue();
         Assert.AreEqual(10, item);
-        expected = "[{V: 10, P: 0, W: 2}, {V: 12, P: 1, W: 1}]";
+        expected = "[{Value: 10, Priority: 0, Data: 2}, {Value: 12, Priority: 1, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
 
-        queue.SetWeight(key, -1);
-        expected = "[{V: 10, P: 0, W: -1}, {V: 12, P: 1, W: 1}]";
+        queue.SetElementData(key, -1);
+        expected = "[{Value: 10, Priority: 0, Data: -1}, {Value: 12, Priority: 1, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
 
-        queue.SetValue(key, 3);
-        expected = "[{V: 3, P: 0, W: -1}, {V: 12, P: 1, W: 1}]";
+        queue.SetElementValue(key, 3);
+        expected = "[{Value: 3, Priority: 0, Data: -1}, {Value: 12, Priority: 1, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
 
         item = queue.Dequeue();
         Assert.AreEqual(12, item);
-        expected = "[{V: 3, P: 0, W: -1}]";
+        expected = "[{Value: 3, Priority: 0, Data: -1}]";
         Assert.AreEqual(expected, queue.ToString());
     }
 
@@ -139,14 +139,14 @@ public class WeightedPriorityQueueTest
     public void TestQueue5()
     {
         WeightedPriorityQueue<int> queue = new WeightedPriorityQueue<int>();
-        int key = queue.Enqueue(10, 0, 3);
+        int key = queue.Enqueue(10, 3, 0);
         queue.Enqueue(12, 1, 1);
 
-        string expected = "[{V: 10, P: 0, W: 3}, {V: 12, P: 1, W: 1}]";
+        string expected = "[{Value: 10, Priority: 0, Data: 3}, {Value: 12, Priority: 1, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
 
-        queue.SetWeight(key, -1);
-        expected = "[{V: 10, P: 0, W: -1}, {V: 12, P: 1, W: 1}]";
+        queue.SetElementData(key, -1);
+        expected = "[{Value: 10, Priority: 0, Data: -1}, {Value: 12, Priority: 1, Data: 1}]";
         Assert.AreEqual(expected, queue.ToString());
 
         int item = queue.Dequeue();

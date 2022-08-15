@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 [CustomPropertyDrawer(typeof(RefInt))]
-public class RefIntDrawer : RefDrawer<RefInt>
+public class RefIntDrawer : PropertyDrawer
 {
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
@@ -12,53 +12,47 @@ public class RefIntDrawer : RefDrawer<RefInt>
         if (!property.isExpanded) { 
             return height;
         }
-        if (property.objectReferenceValue != null)
+        height *= 2;
+        bool useSharedValue = property.FindPropertyRelative("useSharedValue").boolValue;
+        if (useSharedValue)
         {
-            height *= 2;
-            SerializedObject obj = new SerializedObject(property.objectReferenceValue);
-            bool useSharedValue = obj.FindProperty("useSharedValue").boolValue;
-            if (useSharedValue)
-            {
-                height += EditorGUI.GetPropertyHeight(obj.FindProperty("sharedValue"));
-            }
-            else {
-                height += EditorGUIUtility.singleLineHeight;
-            }
+            height += EditorGUI.GetPropertyHeight(property.FindPropertyRelative("sharedValue"));
+        }
+        else {
+            height += EditorGUIUtility.singleLineHeight;
         }
         return height;
     }
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        RefInt m_obj = GetInstance(property);
+        SerializedProperty p1 = property.FindPropertyRelative("useSharedValue");
+        SerializedProperty var = property.FindPropertyRelative("sharedValue");
+        SerializedProperty con = property.FindPropertyRelative("value");
+
+        int value = new RefInt(con.intValue, p1.boolValue, (VarInt)var.objectReferenceValue).Value;
 
         // Foldout
         Rect foldOutRect = new(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
         property.isExpanded = EditorGUI.Foldout(foldOutRect, property.isExpanded, label);
 
         Rect rect = new(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
-        EditorGUI.LabelField(rect, label.text, m_obj.Value.ToString());
+        EditorGUI.LabelField(rect, label.text, value.ToString());
 
-        if (property.isExpanded && property.objectReferenceValue != null)
+        if (property.isExpanded)
         {
             EditorGUI.indentLevel++;
             float addY = EditorGUIUtility.singleLineHeight;
-            SerializedObject obj = new(m_obj);
-            SerializedProperty p1 = obj.FindProperty("useSharedValue");
             Rect rect1 = new(position.x, position.y + addY, rect.width, EditorGUIUtility.singleLineHeight);
             p1.boolValue = EditorGUI.Toggle(rect1, "Use Shared Value", p1.boolValue);
             Rect rect2 = new(rect1.x, rect1.y + addY, rect1.width, rect1.height);
             if (p1.boolValue)
             {
-                SerializedProperty var = obj.FindProperty("sharedValue");
                 EditorGUI.PropertyField(rect2, var);
             }
             else {
-                SerializedProperty con = obj.FindProperty("value");
                 con.intValue = EditorGUI.IntField(rect2, "Value", con.intValue);
             }
-
-            obj.ApplyModifiedProperties();
             EditorGUI.indentLevel--;
         }
         property.serializedObject.ApplyModifiedProperties();

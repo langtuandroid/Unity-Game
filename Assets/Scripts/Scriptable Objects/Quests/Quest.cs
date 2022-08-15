@@ -6,118 +6,73 @@ using UnityEngine.Events;
 [CreateAssetMenu(menuName = "Quest/Quest")]
 public class Quest : DescriptionBaseSO
 {
-    [Tooltip("Quest manager responsible for handling this quest")]
-    [SerializeField] private QuestManager questManager;
-
-    [Tooltip("Priority of the quest, determines the order of evaluation")]
-    [SerializeField] private VarInt priority;
-
     [HideInInspector]
     [Tooltip("Condition for failing the quest")]
     [SerializeField] private Condition failCondition;
 
     [Tooltip("Operation that will be carried out once the quest is activated")]
-    [SerializeField] private Operation operation;
+    [SerializeField] private OperationReference operation;
 
     [Tooltip("Operation that will be carried out once the quest is fufilled")]
-    [SerializeField] private Operation termination;
+    [SerializeField] private OperationReference termination;
 
     [Tooltip("Condition for completing the quest")]
     [SerializeField] private Condition completeCondition;
 
     [HideInInspector]
     [Tooltip("Operation that will be carried out once the quest has failed")]
-    [SerializeField] private Operation failOperation;
-
-    private bool isEnabled;
-    private bool isOperating;
-    private bool isFailing;
-    private bool isCompleted;
+    [SerializeField] private OperationReference failOperation;
 
     [Header("Settings")]
     [SerializeField] private bool useFailCondition;
 
-    private void OnEnable()
-    {
-        isEnabled = false;
-        isOperating = false;
-        isFailing = false;
-        isCompleted = false;
-        ReferenceCheck();
-    }
+    private bool isEnabled = false;
+    private Coroutine coroutine = null;
 
-    private void ReferenceCheck() {
-        if (useFailCondition) {
-            if (failCondition == null || failOperation == null) {
-                Debug.LogWarning("The quest is using fail condition, but the associated condition/operation reference is not assigned!");
+    public IEnumerator Operate()
+    {
+        operation.Operate();
+        bool isCompleted = false;
+        bool failed = false;
+        yield return new WaitUntil(() => {
+            isCompleted = completeCondition.Eval();
+            if (useFailCondition) {
+                failed = failCondition.Eval();
+                return isCompleted || failed;
             }
-        }
-        if (operation == null) {
-            Debug.LogWarning("The quest is missing the reference to the operation!");
-        }
-        if (completeCondition == null) {
-            Debug.LogWarning("The quest is missing the reference to the complete condition!");
-        }
-    }
-
-    public void Operate()
-    {
-        if (!isEnabled)
+            return isCompleted;
+            
+            
+        });
+        if (isCompleted)
         {
-            return;
+            termination.Operate();
         }
-        if (isOperating && !isFailing) 
-        {
-            isOperating = operation.Start();
-        } else if (isFailing) { // The quest will fail if the fail condition is satisfied
-            isOperating = false;
-            isEnabled = failOperation.Start();
-            return;
-        } else if (isCompleted) { // Complete the quest
-            isEnabled = termination.Start();
-            return;
+        else { 
+            failOperation.Operate();
         }
-        if (useFailCondition)
-        {
-            isFailing = failCondition.Eval();
-        }
-        isCompleted = completeCondition.Eval();
+        Disable();
     }
 
     public bool Enable() {
         if (isEnabled) {
             return false;
         }
-        isOperating = true;
-        isEnabled = true;
-        isFailing = false;
-        isCompleted = false;
-        questManager.Add(this);
+        coroutine = GameManager.BeginCoroutine(Operate());
         return true;
     }
 
     public void Disable()
     {
+        if (!isEnabled) {
+            return;
+        }
         isEnabled = false;
-        isOperating = false;
-        isFailing = false;
-        isCompleted = false;
-    }
-
-    public bool Operating{
-        get { return isOperating; }
-    }
-
-    public bool Failing { 
-        get { return isFailing; }
+        GameManager.EndCoroutine(coroutine);
+        coroutine = null;
     }
 
     public bool Enabled {
         get { return isEnabled; }
-    }
-
-    public int Priority
-    {
-        get { return priority.Value; }
     }
 }

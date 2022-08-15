@@ -5,7 +5,6 @@ using System;
 using System.Reflection;
 using System.Text;
 
-[System.Serializable]
 public abstract class ActionInstance : ScriptableObject
 {
     /*An action instance
@@ -32,7 +31,7 @@ public abstract class ActionInstance : ScriptableObject
 
     public void CountDown()
     {
-        if (isReady || actionData == null)
+        if (isReady)
         {
             return;
         }
@@ -47,7 +46,7 @@ public abstract class ActionInstance : ScriptableObject
     public int Executing {
         get {
             if (accessKey != -1) {
-                return queue.Queue.GetWeight(accessKey);
+                return queue.Queue.GetElementData(accessKey);
             }
             return 0;
         }
@@ -56,7 +55,7 @@ public abstract class ActionInstance : ScriptableObject
     public bool EnqueueAction()
     {
         bool result = isReady;
-        if (isReady && actionData != null)
+        if (isReady)
         {
             if (queue == null) {
                 Debug.LogWarning("Action Queue is not set up for the instance: " + this.GetType().ToString());
@@ -170,7 +169,7 @@ public abstract class ActionInstance : ScriptableObject
         {
             return false;
         }
-        queue.Queue.SetWeight(accessKey, 0);
+        queue.Queue.SetElementData(accessKey, 0);
         accessKey = -1;
         return true;
     }

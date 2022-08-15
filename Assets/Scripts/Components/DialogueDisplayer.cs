@@ -63,7 +63,11 @@ public class DialogueDisplayer : InteractableObject
                 responseButtons.Add(btn);
             }
         }
-        if (resetUponFinish) {
+        if (currentDialogue.HasFinishers)
+        {
+            currentDialogue.ExecuteFinisher();
+        }
+        if (resetUponFinish.Value) {
             currentDialogue = dialogue;
         }
         coroutine = null;

@@ -5,15 +5,18 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Conditions/CompleteQuest")]
 public class CompleteQuest : Condition
 {
-    [SerializeField] string name;
+    [Header("ExposedReference<Entity>")]
+    [SerializeField] string entityReference;
+    [SerializeField] float health;
     private Entity entity;
 
     public override bool Eval()
     {
         if (entity == null) {
-            entity = GameObject.Find(name).GetComponent<Entity>();
+            ExposedReference<Entity> entityRef = new();
+            entityRef.exposedName = entityReference;
+            entity = entityRef.Resolve(ExposedPropertyTable.Instance);
         }
-        
-        return entity.GetHealth() <= 0;  
+        return entity.GetHealth() <= health;  
     }
 }

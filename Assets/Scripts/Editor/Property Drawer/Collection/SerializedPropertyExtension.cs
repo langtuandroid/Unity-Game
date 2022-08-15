@@ -60,9 +60,9 @@ public static class SerializedPropertyExtensions
     /// </summary>
     /// <param name="property">The property that is part of the component</param>
     /// <returns>The root component of the property</returns>
-    public static Component GetSerializedPropertyRootComponent(SerializedProperty property)
+    public static UnityEngine.Object GetSerializedPropertyRootComponent(SerializedProperty property)
     {
-        return (Component)property.serializedObject.targetObject;
+        return property.serializedObject.targetObject;
     }
 
     /// <summary>

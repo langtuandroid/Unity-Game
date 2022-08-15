@@ -11,12 +11,17 @@ public class PlayerController : Interactor
     [SerializeField] private float distance;
     [SerializeField] private VarBool gamePause;
 
+
     private Entity player;
     private Rigidbody2D rb;
     private PhysicsUpdate physicsUpdate;
     private Actionable actionable;
 
-    public void Start(){
+    [SerializeField] private RefFloat testFloat;
+    [SerializeField] private RefInt testInt;
+
+    public void Start()
+    {
         player = GetComponent<Entity>();
         rb = player.GetComponent<Rigidbody2D>();
         physicsUpdate = rb.GetComponent<PhysicsUpdate>();
@@ -25,7 +30,8 @@ public class PlayerController : Interactor
 
     public void CircleAttack(InputAction.CallbackContext context)
     {
-        if (!gamePause.Value && context.started) {
+        if (!gamePause.Value && context.started)
+        {
             actionable.EnqueueAction<CircleAttack>();
         }
     }
@@ -42,14 +48,18 @@ public class PlayerController : Interactor
         }
     }
 
-    public void Guard(InputAction.CallbackContext context) {
-        if (context.started) {
+    public void Guard(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
             actionable.EnqueueAction<Guard>();
         }
     }
 
-    public void TriggerDialogue(InputAction.CallbackContext context) {
-        if (context.started) {
+    public void TriggerDialogue(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
             Interact(typeof(DialogueDisplayer));
         }
     }

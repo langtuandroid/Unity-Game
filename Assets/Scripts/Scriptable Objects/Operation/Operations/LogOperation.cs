@@ -6,7 +6,7 @@ using UnityEngine;
 public class LogOperation : Operation
 {
     [SerializeField] private string content;
-    protected override void Execute()
+    public override void Operate()
     {
         Debug.Log(content);
     }

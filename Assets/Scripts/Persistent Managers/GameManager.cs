@@ -12,8 +12,30 @@ public enum Scene {
 
 public class GameManager : MonoBehaviour
 {
+    private static GameManager instance;
+
     [SerializeField] private VoidEventChannel exitChannel;
-    [SerializeField] private QuestManager questManager;
+
+    public static Coroutine BeginCoroutine(IEnumerator method) {
+        return instance.StartCoroutine(method);
+    }
+
+    public static void EndCoroutine(Coroutine coroutine) {
+        instance.StopCoroutine(coroutine);
+    }
+
+    private void Awake()
+    {
+
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
 
     void Start()
     {
@@ -23,18 +45,17 @@ public class GameManager : MonoBehaviour
         exitChannel.OnEventRaised += ExitGame;
     }
 
+    public void Update()
+    {
+    }
+
     private void LateUpdate()
     {
-        questManager.ProcessQuest();
     }
 
     private void ExitGame()
     {
         Application.Quit();
         Debug.Log("Exit!");
-    }
-
-    public bool SwitchGameState() {
-        return true;
     }
 }
