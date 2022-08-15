@@ -5,13 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Dialogue/DialogueObject")]
 public class DialogueObject : ScriptableObject
 {
-    [TextArea]
-    [SerializeField] private string[] texts;
+    [SerializeField] private DialogueNode[] dialogueNodes;
     [SerializeField] private DialogueResponse[] responses;
     [SerializeField] private OperationReference[] finishers;
 
-    public string[] Texts { 
-        get { return (string[])texts.Clone(); }
+    public DialogueNode[] Nodes { 
+        get { return (DialogueNode[])dialogueNodes.Clone(); }
     }
 
     public DialogueResponse[] Responses {

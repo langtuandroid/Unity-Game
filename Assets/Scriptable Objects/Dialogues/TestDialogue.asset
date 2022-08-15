@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a38848b34381e64ca654f2e0a4046b8, type: 3}
   m_Name: TestDialogue
   m_EditorClassIdentifier: 
-  texts:
-  - This is line 1
-  - This is line 2
-  - This is line 3
+  dialogueNodes:
+  - {fileID: 11400000, guid: a2fed1d67ebb819479c3f9a5b416ecb1, type: 2}
+  - {fileID: 11400000, guid: 9784f69441fd6564a95de17ae63369a1, type: 2}
   responses: []
   finishers:
   - description: ColorChange

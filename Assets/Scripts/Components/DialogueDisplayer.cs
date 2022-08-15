@@ -15,6 +15,8 @@ public class DialogueDisplayer : InteractableObject
     [SerializeField] private RefFloat secondsDelayBetweenLines;
     [SerializeField] private RectTransform responseBox;
     [SerializeField] private Button responseButton;
+    [SerializeField] private TMP_Text speakerContainer;
+    [SerializeField] private Image speakerIcon;
 
     private Coroutine coroutine;
     private DialogueObject currentDialogue;
@@ -40,16 +42,23 @@ public class DialogueDisplayer : InteractableObject
     }
 
     public IEnumerator DisplayText() {
-        foreach (string str in currentDialogue.Texts) {
-            float index = 0;
-            while (index < str.Length) { 
-                container.text = str.Substring(0, Mathf.FloorToInt(index));
-                index += Time.deltaTime * displaySpeed.Value;
-                yield return null;
+        foreach (DialogueNode node in currentDialogue.Nodes) {
+            speakerContainer.text = node.Speaker;
+            speakerIcon.sprite = node.Icon;
+            foreach (string str in node.Texts)
+            {
+                float index = 0;
+                while (index < str.Length)
+                {
+                    container.text = str.Substring(0, Mathf.FloorToInt(index));
+                    index += Time.deltaTime * displaySpeed.Value;
+                    yield return null;
+                }
+                container.text = str;
+                yield return new WaitForSeconds(secondsDelayBetweenLines.Value);
             }
-            container.text = str;
-            yield return new WaitForSeconds(secondsDelayBetweenLines.Value);
         }
+        
 
         if (currentDialogue.HasResponses) {
             DialogueResponse[] responses = currentDialogue.Responses;
