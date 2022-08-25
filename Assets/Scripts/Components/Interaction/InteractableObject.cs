@@ -3,8 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+public enum InteractionType { 
+    Primary,
+    Secondary,
+    Tertiary,
+    Quaternary
+}
+
 public abstract class InteractableObject : MonoBehaviour
 {
+    /* Base Class for interactable objects, inherit from this class to implement custom interaction behaviors.
+     * 
+     * Note: The derived class must call base.Start() to allow the base class to complete all the necessary setups
+     */
+
     [SerializeField] private RefFloat interactRadius;
     private Dictionary<Type, InteractionTracer> interactionTracers = new();
     private Transform m_transform;
@@ -68,9 +80,13 @@ public abstract class InteractableObject : MonoBehaviour
         }
     }
 
+    // Call this method in child classes using "base.Start()" to avoid unexpected behaviors
     public void Start()
     {
         Type[] arr = InteractionAttribute.GetInteractorTypes(GetType());
+        if (arr == null) {
+            return;
+        }
         foreach (Type t in arr)
         {
             interactionTracers[t] = new InteractionTracer(t);
@@ -78,7 +94,9 @@ public abstract class InteractableObject : MonoBehaviour
         m_transform = GetComponent<Transform>();
     }
 
-    public virtual void Interact(Interactor interactor) { }
+    public virtual string Interact(Interactor interactor, InteractionType interactType){ return Setting.INTERACTION_OK; }
+
+    public abstract Dictionary<InteractionType, string> GetInteractionType(Type t);
 
     public void Update()
     {

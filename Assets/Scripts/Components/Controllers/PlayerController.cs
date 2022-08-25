@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerController : Interactor
 {
@@ -17,8 +18,11 @@ public class PlayerController : Interactor
     private PhysicsUpdate physicsUpdate;
     private Actionable actionable;
 
-    [SerializeField] private RefFloat testFloat;
-    [SerializeField] private RefInt testInt;
+    [Header("Interaction UI")]
+    [SerializeField] private TMP_Text interactionPrompt1;
+    [SerializeField] private TMP_Text interactionPrompt2;
+    [SerializeField] private TMP_Text interactionPrompt3;
+    [SerializeField] private TMP_Text interactionPrompt4;
 
     public void Start()
     {
@@ -60,12 +64,92 @@ public class PlayerController : Interactor
     {
         if (context.started)
         {
-            Interact(typeof(DialogueDisplayer));
+            Interact(typeof(DialogueDisplayer), InteractionType.Primary);
+        }
+    }
+
+    public void PrimaryInteraction(InputAction.CallbackContext context) {
+        if (context.started)
+        {
+            Interact(InteractionType.Primary);
+        }
+    }
+
+    public void SecondaryInteraction(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            Interact(InteractionType.Secondary);
+        }
+    }
+
+    public void SwitchInteraction(InputAction.CallbackContext context) {
+        if (context.started)
+        {
+            SwitchInteractable();
         }
     }
 
     public void LateUpdate()
     {
         camera.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - distance);
+        if (interactionPrompt1 == null) {
+            return;
+        }
+        DisplayInteractionPrompt();
+    }
+
+    private void DisplayInteractionPrompt() {
+        Dictionary<InteractionType, string> options = GetInteractionOptions();
+
+        if (options != null)
+        {
+            if (options.ContainsKey(InteractionType.Primary))
+            {
+                interactionPrompt1.text = options[InteractionType.Primary];
+                interactionPrompt1.gameObject.SetActive(true);
+            }
+            else
+            {
+                interactionPrompt1.gameObject.SetActive(false);
+            }
+
+            if (options.ContainsKey(InteractionType.Secondary))
+            {
+                interactionPrompt2.text = options[InteractionType.Secondary];
+                interactionPrompt2.gameObject.SetActive(true);
+            }
+            else
+            {
+                interactionPrompt2.gameObject.SetActive(false);
+            }
+
+            if (options.ContainsKey(InteractionType.Tertiary))
+            {
+                interactionPrompt3.text = options[InteractionType.Tertiary];
+                interactionPrompt3.gameObject.SetActive(true);
+            }
+            else
+            {
+                interactionPrompt3.gameObject.SetActive(false);
+            }
+
+            if (options.ContainsKey(InteractionType.Quaternary))
+            {
+                interactionPrompt4.text = options[InteractionType.Quaternary];
+                interactionPrompt4.gameObject.SetActive(true);
+            }
+            else
+            {
+                interactionPrompt4.gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            interactionPrompt1.gameObject.SetActive(false);
+            interactionPrompt2.gameObject.SetActive(false);
+            interactionPrompt3.gameObject.SetActive(false);
+            interactionPrompt4.gameObject.SetActive(false);
+        }
     }
 }

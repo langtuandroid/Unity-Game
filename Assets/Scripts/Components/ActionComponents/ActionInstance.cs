@@ -61,7 +61,7 @@ public abstract class ActionInstance : ScriptableObject
                 Debug.LogWarning("Action Queue is not set up for the instance: " + this.GetType().ToString());
                 return false;
             }
-            accessKey = queue.Queue.Enqueue(this, Data.Priority, Data.Duration);
+            accessKey = queue.Queue.Enqueue(this, Data.Duration, Data.Priority);
             isReady = false;
         }
         return result;

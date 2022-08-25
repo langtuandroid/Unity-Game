@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
 public abstract class Interactor : MonoBehaviour
+
 {
-    private Dictionary<Type, InteractionManager> interactions = new();
+    /* General Interactor class for InteractableObject to recognize. Inherit from this class to support custom interaction behaviors.
+     */
+    private Dictionary<Type, ManagedSet<InteractableObject>> interactions = new();
+    private ManagedSet<InteractableObject> interactObjs = new();
 
     public void Awake()
     {
@@ -22,12 +25,17 @@ public abstract class Interactor : MonoBehaviour
         InteractionAttribute.RemoveInteractor(this);
     }
 
+    protected virtual void OnInteract(InteractableObject obj) { }
+
     public bool AddInteractable(InteractableObject obj) {
         Type t = obj.GetType();
         if (!interactions.ContainsKey(t)) {
             interactions[t] = new();
         }
-        return interactions[t].AddInteractable(obj);
+        if (interactions[t].Add(obj)) {
+            return interactObjs.Add(obj);
+        }
+        return false;  
     }
 
     public bool RemoveInteractable(InteractableObject obj) {
@@ -36,84 +44,45 @@ public abstract class Interactor : MonoBehaviour
         {
             return false;
         }
-        return interactions[t].RemoveInteractable(obj);
+        if (interactions[t].Remove(obj)) {
+            return interactObjs.Remove(obj);
+        }
+        return false;
     }
 
-    public bool Interact(Type interactableType) {
+    public bool Interact(Type interactableType, InteractionType interactType) {
         if (!interactions.ContainsKey(interactableType)) {
             return false;
         }
-        return interactions[interactableType].Interact(this);
+        InteractableObject obj = interactions[interactableType].CurrentItem;
+        if (obj == null)
+        {
+            return false;
+        }
+        OnInteract(obj);
+        obj.Interact(this, interactType);
+        return false;
     }
 
-    private class InteractionManager
-    {
-        private List<InteractableObject> interactables = new();
-        private int pointer = 0;
-
-        private int Pointer
-        {
-            get
-            {
-                if (interactables.Count == 0)
-                {
-                    return -1;
-                }
-                if (pointer >= interactables.Count || pointer < 0)
-                {
-                    pointer = interactables.Count - 1;
-                }
-
-                return pointer;
-            }
-        }
-        public InteractableObject Interacting
-        {
-            get
-            {
-                if (Pointer == -1)
-                {
-                    return null;
-                }
-                return interactables[pointer];
-            }
-        }
-
-        public bool Interact(Interactor interactor)
-        {
-            if (Pointer == -1)
-            {
-                return false;
-            }
-            interactables[pointer].Interact(interactor);
-            return true;
-        }
-
-        public void SwitchInteractble()
-        {
-            pointer++;
-        }
-
-        public bool AddInteractable(InteractableObject i)
-        {
-            Debug.Log("Adding " + i.gameObject.name);
-            if (!interactables.Contains(i))
-            {
-                interactables.Add(i);
-                return true;
-            }
+    public bool Interact(InteractionType interactType) {
+        InteractableObject obj = interactObjs.CurrentItem;
+        if (obj == null) {
             return false;
         }
+        OnInteract(obj);
+        obj.Interact(this, interactType);
+        return false;
+    }
 
-        public bool RemoveInteractable(InteractableObject i)
-        {
-            Debug.Log("Removing " + i.gameObject.name);
-            if (interactables.Remove(i))
-            {
-                return true;
-            }
-
-            return false;
+    public Dictionary<InteractionType, string> GetInteractionOptions() {
+        InteractableObject obj = interactObjs.CurrentItem;
+        if (obj != null) {
+            return obj.GetInteractionType(GetType());
         }
+        return null;
+    }
+
+    public void SwitchInteractable() { 
+        interactObjs.Advance();
     }
 }

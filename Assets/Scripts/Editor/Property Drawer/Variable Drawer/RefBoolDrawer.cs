@@ -8,7 +8,7 @@ public class RefBoolDrawer : PropertyDrawer
 {
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
-        float height = EditorGUIUtility.singleLineHeight * 1.2f;
+        float height = EditorGUIUtility.singleLineHeight * 1.3f;
         if (!property.isExpanded)
         {
             return height;

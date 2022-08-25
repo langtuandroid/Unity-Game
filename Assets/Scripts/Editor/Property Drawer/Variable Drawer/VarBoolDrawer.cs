@@ -31,7 +31,7 @@ public class VarBoolDrawer : PropertyDrawer
             EditorGUI.indentLevel++;
             SerializedObject obj = new SerializedObject(property.objectReferenceValue);
             SerializedProperty child = obj.FindProperty("value");
-            Rect rect1 = new(position.x, rect.y + EditorGUIUtility.singleLineHeight * 1.2f, position.width, rect.height);
+            Rect rect1 = new(position.x, rect.y + EditorGUIUtility.singleLineHeight, position.width, rect.height);
             child.boolValue = EditorGUI.Toggle(rect1, "Value", child.boolValue);
             obj.ApplyModifiedProperties();
             EditorGUI.indentLevel--;

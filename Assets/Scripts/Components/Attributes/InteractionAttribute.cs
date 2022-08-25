@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Reflection;
 using System;
 
-[AttributeUsage(AttributeTargets.Class)]
+[AttributeUsage(AttributeTargets.Class, Inherited = false)]
 public class InteractionAttribute : Attribute
 {
     private static Dictionary<Type, HashSet<Type>> interactorTypes = new();
@@ -14,7 +14,7 @@ public class InteractionAttribute : Attribute
     public InteractionAttribute(Type interactable, params Type[] interactors)
     {
         if (!interactable.IsSubclassOf(typeof(InteractableObject))) {
-            Debug.LogError(typeof(InteractableObject).ToString() + " is not an Interactable Object!");
+            Debug.LogError(typeof(InteractableObject).ToString() + " is not a subtype of Interactable Object!");
             return;
         }
         interactorTypes[interactable] = new();

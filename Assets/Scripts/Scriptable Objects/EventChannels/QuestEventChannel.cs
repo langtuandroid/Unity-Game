@@ -5,9 +5,9 @@ using UnityEngine.Events;
 
 public class QuestEventChannel : DescriptionBaseSO
 {
-    public UnityAction<Quest> OnEventRaised;
+    public UnityAction<QuestSO> OnEventRaised;
 
-	public void RaiseEvent(Quest arg)
+	public void RaiseEvent(QuestSO arg)
 	{
 		if (OnEventRaised != null)
 			OnEventRaised.Invoke(arg);

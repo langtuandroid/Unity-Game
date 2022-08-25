@@ -25,7 +25,7 @@ public static class Setting
 
     // 
     public const int ENTITY_DNE = -1;
-    public const string NULL_COMPONENT_IDENTIFIER = "";
+    public const string INTERACTION_OK = "";
 
     // Action Arguments
     public const string HANDLING_COMPONENT = "_component";

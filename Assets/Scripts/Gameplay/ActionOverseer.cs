@@ -9,7 +9,7 @@ public class ActionOverseer : MonoBehaviour
     { 
         WeightedPriorityQueue<ActionInstance> actionQueue = queue.Queue;
         ActionInstance a = actionQueue.Dequeue();
-        while (a != default)
+        while (a != null)
         {
             a.Execute();
             a = actionQueue.Dequeue();

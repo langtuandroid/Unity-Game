@@ -26,13 +26,13 @@ public static class ObjectGenerator
     }
 
 
-    public static GameObject SpriteCircle(Transform transform, Vector3 position, Quaternion rotation, Vector3 scale, Color color, int layer, int sortingLayer) {
+    public static GameObject GenerateSprite(Transform transform, Sprite sprite, Vector3 position, Quaternion rotation, Vector3 scale, Color color, int layer, int sortingLayer) {
         GameObject circle = new GameObject();
         circle.AddComponent<SpriteRenderer>();
         SpriteRenderer sr = circle.GetComponent<SpriteRenderer>();
         sr.color = color;
         sr.sortingLayerID = sortingLayer;
-        sr.sprite = ResourceStorage.GetSprite("Circle");
+        sr.sprite = sprite;
 
         Vector3 bounds = sr.sprite.bounds.size;
         circle.transform.position = position;

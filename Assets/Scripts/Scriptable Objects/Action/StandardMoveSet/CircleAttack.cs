@@ -7,6 +7,9 @@ using System.ComponentModel;
 [ActionInstance(typeof(CircleAttack))]
 public class CircleAttack : ActionInstance
 {
+    [SerializeField] private Sprite sprite;
+    [SerializeField] private RefFloat spriteDuration;
+
     protected override void ExecuteBody() {
         /* Damages entities in radius of attack range by attack damage, has no effect on the attacker
          * 
@@ -21,9 +24,9 @@ public class CircleAttack : ActionInstance
         float range = cc.attackRange;
         int damage = cc.attackDamage;
         Collider2D[] colliders = Physics2D.OverlapCircleAll(gameObject.transform.position, (float)(range / 2));
-        GameObject g = ObjectGenerator.SpriteCircle(transform, transform.position, transform.rotation, new Vector3(range,
+        GameObject g = ObjectGenerator.GenerateSprite(transform, sprite, transform.position, transform.rotation, new Vector3(range,
             range, 1), Color.yellow, LayerMask.NameToLayer("Default"), SortingLayer.NameToID("Default"));
-        Object.Destroy(g, 2f);
+        Destroy(g, spriteDuration.Value);
         foreach (Collider2D collider in colliders)
         {
             Entity collided = collider.gameObject.GetComponent<Entity>();

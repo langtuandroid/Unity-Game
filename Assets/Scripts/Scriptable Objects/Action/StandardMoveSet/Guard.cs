@@ -6,6 +6,9 @@ using UnityEngine;
 [ActionInstance(typeof(Guard))]
 public class Guard : ActionInstance
 {
+    [SerializeField] private Sprite sprite;
+    [SerializeField] private RefFloat spriteAlpha;
+
     private GameObject guardAnimation;
     protected override void ExecuteBody()
     {
@@ -29,8 +32,8 @@ public class Guard : ActionInstance
             GameObject gameObject = defender.gameObject;
             Transform transform = gameObject.transform;
             Color color = Color.blue;
-            color.a = 0.5f;
-            guardAnimation = ObjectGenerator.SpriteCircle(transform, transform.position, transform.rotation, new Vector3(2, 2, 1), color, LayerMask.NameToLayer("Default"), SortingLayer.NameToID("Default"));
+            color.a = spriteAlpha.Value;
+            guardAnimation = ObjectGenerator.GenerateSprite(transform, sprite, transform.position, transform.rotation, new Vector3(2, 2, 1), color, LayerMask.NameToLayer("Default"), SortingLayer.NameToID("Default"));
         }
     }
 
