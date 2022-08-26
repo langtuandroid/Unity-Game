@@ -5,7 +5,7 @@ using System;
 using UnityEngine.UI;
 using TMPro;
 
-[Interaction(interactable :typeof(DialogueDisplayer), interactors: typeof(PlayerController))] 
+[Interaction(interactable: typeof(DialogueDisplayer), interactors: typeof(GeneralInteractor))]
 public class DialogueDisplayer : InteractableObject
 {
     [Header("Settings")]
@@ -45,7 +45,7 @@ public class DialogueDisplayer : InteractableObject
         currentDialogue = dialogue;
     }
 
-    public override string Interact(Interactor interactor, InteractionType type) {
+    public override string OnInteract(Interactor interactor, InteractionType type) {
         if (coroutine == null)
         {
             coroutine = StartCoroutine(DisplayText());
@@ -129,7 +129,7 @@ public class DialogueDisplayer : InteractableObject
         responseButtons.Clear();
     }
 
-    public override Dictionary<InteractionType, string> GetInteractionType(Type t)
+    public override Dictionary<InteractionType, string> GetInteractionOptions(Type t)
     {
         if (coroutine != null) {
             return runningOption;

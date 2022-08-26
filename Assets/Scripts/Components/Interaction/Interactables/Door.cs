@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D), typeof(SpriteRenderer))]
-[Interaction(interactable: typeof(Door), interactors: typeof(PlayerController))]
+[Interaction(interactable: typeof(Door), interactors: typeof(GeneralInteractor))]
 public class Door : InteractableObject
 {
     [SerializeField] private RefBool isClosed;
@@ -64,7 +64,7 @@ public class Door : InteractableObject
         IsLocked = isLocked.Value;
     }
 
-    public override string Interact(Interactor interactor, InteractionType interactType)
+    public override string OnInteract(Interactor interactor, InteractionType interactType)
     {
         if (interactType == InteractionType.Primary) {
             if (closed)
@@ -91,7 +91,7 @@ public class Door : InteractableObject
         return Setting.INTERACTION_OK;
     }
 
-    public override Dictionary<InteractionType, string> GetInteractionType(Type t)
+    public override Dictionary<InteractionType, string> GetInteractionOptions(Type t)
     {
         if (locked) {
             return LockedInfo;

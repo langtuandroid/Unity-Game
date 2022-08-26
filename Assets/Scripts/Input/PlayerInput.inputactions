@@ -60,9 +60,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SwitchInteraction",
+                    "name": "NextInteractable",
                     "type": "Button",
                     "id": "fa744c36-197b-4951-a90e-13f496b3bf56",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PreviousInteractable",
+                    "type": "Button",
+                    "id": "f41da5e5-cc4a-411b-a6dc-a3f727a2b14a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -187,7 +196,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SwitchInteraction",
+                    "action": "NextInteractable",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e82ea21f-3052-490a-a890-1ccf5e2ab41b",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PreviousInteractable",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

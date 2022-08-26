@@ -39,18 +39,15 @@ public class InteractionAttribute : Attribute
         return null;
     }
 
-    public static Interactor[] GetInteractors(Type interactorType) {
-        
+    public static void GetInteractors(Type interactorType, List<Interactor> container) {
+        container.Clear();
         if (interactors.ContainsKey(interactorType)) {
             HashSet<Interactor> i = interactors[interactorType];
-            if (i.Count == 0) {
-                return null;
+            foreach (Interactor intc in i) {
+                container.Add(intc);
             }
-            Interactor[] ins = new Interactor[i.Count];
-            interactors[interactorType].CopyTo(ins);
-            return ins;
+            return;
         }
-        return null;
     }
 
     public static Transform GetInteractorTransform(Interactor interactor) {

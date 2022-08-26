@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 
-public class PlayerController : Interactor
+[RequireComponent(typeof(GeneralInteractor))]
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] private VoidEventChannel gameEndChannel;
     [SerializeField] private Camera camera;
@@ -17,6 +18,7 @@ public class PlayerController : Interactor
     private Rigidbody2D rb;
     private PhysicsUpdate physicsUpdate;
     private Actionable actionable;
+    private GeneralInteractor interactor;
 
     [Header("Interaction UI")]
     [SerializeField] private TMP_Text interactionPrompt1;
@@ -24,12 +26,13 @@ public class PlayerController : Interactor
     [SerializeField] private TMP_Text interactionPrompt3;
     [SerializeField] private TMP_Text interactionPrompt4;
 
-    public void Start()
+    public new void Start()
     {
         player = GetComponent<Entity>();
         rb = player.GetComponent<Rigidbody2D>();
         physicsUpdate = rb.GetComponent<PhysicsUpdate>();
         actionable = GetComponent<Actionable>();
+        interactor = GetComponent<GeneralInteractor>();
     }
 
     public void CircleAttack(InputAction.CallbackContext context)
@@ -64,14 +67,14 @@ public class PlayerController : Interactor
     {
         if (context.started)
         {
-            Interact(typeof(DialogueDisplayer), InteractionType.Primary);
+            interactor.Interact(typeof(DialogueDisplayer), InteractionType.Primary);
         }
     }
 
     public void PrimaryInteraction(InputAction.CallbackContext context) {
         if (context.started)
         {
-            Interact(InteractionType.Primary);
+            interactor.Interact(InteractionType.Primary);
         }
     }
 
@@ -79,14 +82,22 @@ public class PlayerController : Interactor
     {
         if (context.started)
         {
-            Interact(InteractionType.Secondary);
+            interactor.Interact(InteractionType.Secondary);
         }
     }
 
-    public void SwitchInteraction(InputAction.CallbackContext context) {
+    public void NextInteractable(InputAction.CallbackContext context) {
         if (context.started)
         {
-            SwitchInteractable();
+            interactor.NextInteractable();
+        }
+    }
+
+    public void PreviousInteractable(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            interactor.PreviousInteractable();
         }
     }
 
@@ -100,7 +111,7 @@ public class PlayerController : Interactor
     }
 
     private void DisplayInteractionPrompt() {
-        Dictionary<InteractionType, string> options = GetInteractionOptions();
+        Dictionary<InteractionType, string> options = interactor.GetInteractionOptions();
 
         if (options != null)
         {

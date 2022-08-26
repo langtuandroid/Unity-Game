@@ -49,6 +49,14 @@ public class ManagedSet<T>
         }
     }
 
+    public void StepBack() {
+        pointer--;
+        if (pointer < 0)
+        {
+            pointer = items.Count - 1;
+        }
+    }
+
     public bool Add(T i)
     {
         return items.Add(i);

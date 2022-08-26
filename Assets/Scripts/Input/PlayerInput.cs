@@ -82,9 +82,18 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SwitchInteraction"",
+                    ""name"": ""NextInteractable"",
                     ""type"": ""Button"",
                     ""id"": ""fa744c36-197b-4951-a90e-13f496b3bf56"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PreviousInteractable"",
+                    ""type"": ""Button"",
+                    ""id"": ""f41da5e5-cc4a-411b-a6dc-a3f727a2b14a"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -209,7 +218,18 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SwitchInteraction"",
+                    ""action"": ""NextInteractable"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e82ea21f-3052-490a-a890-1ccf5e2ab41b"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PreviousInteractable"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -226,7 +246,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Player_PauseResume = m_Player.FindAction("Pause/Resume", throwIfNotFound: true);
         m_Player_PrimaryInteraction = m_Player.FindAction("PrimaryInteraction", throwIfNotFound: true);
         m_Player_SecondaryInteraction = m_Player.FindAction("SecondaryInteraction", throwIfNotFound: true);
-        m_Player_SwitchInteraction = m_Player.FindAction("SwitchInteraction", throwIfNotFound: true);
+        m_Player_NextInteractable = m_Player.FindAction("NextInteractable", throwIfNotFound: true);
+        m_Player_PreviousInteractable = m_Player.FindAction("PreviousInteractable", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -292,7 +313,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_PauseResume;
     private readonly InputAction m_Player_PrimaryInteraction;
     private readonly InputAction m_Player_SecondaryInteraction;
-    private readonly InputAction m_Player_SwitchInteraction;
+    private readonly InputAction m_Player_NextInteractable;
+    private readonly InputAction m_Player_PreviousInteractable;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -303,7 +325,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @PauseResume => m_Wrapper.m_Player_PauseResume;
         public InputAction @PrimaryInteraction => m_Wrapper.m_Player_PrimaryInteraction;
         public InputAction @SecondaryInteraction => m_Wrapper.m_Player_SecondaryInteraction;
-        public InputAction @SwitchInteraction => m_Wrapper.m_Player_SwitchInteraction;
+        public InputAction @NextInteractable => m_Wrapper.m_Player_NextInteractable;
+        public InputAction @PreviousInteractable => m_Wrapper.m_Player_PreviousInteractable;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -331,9 +354,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @SecondaryInteraction.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSecondaryInteraction;
                 @SecondaryInteraction.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSecondaryInteraction;
                 @SecondaryInteraction.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSecondaryInteraction;
-                @SwitchInteraction.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchInteraction;
-                @SwitchInteraction.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchInteraction;
-                @SwitchInteraction.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchInteraction;
+                @NextInteractable.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNextInteractable;
+                @NextInteractable.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNextInteractable;
+                @NextInteractable.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNextInteractable;
+                @PreviousInteractable.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPreviousInteractable;
+                @PreviousInteractable.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPreviousInteractable;
+                @PreviousInteractable.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPreviousInteractable;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -356,9 +382,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @SecondaryInteraction.started += instance.OnSecondaryInteraction;
                 @SecondaryInteraction.performed += instance.OnSecondaryInteraction;
                 @SecondaryInteraction.canceled += instance.OnSecondaryInteraction;
-                @SwitchInteraction.started += instance.OnSwitchInteraction;
-                @SwitchInteraction.performed += instance.OnSwitchInteraction;
-                @SwitchInteraction.canceled += instance.OnSwitchInteraction;
+                @NextInteractable.started += instance.OnNextInteractable;
+                @NextInteractable.performed += instance.OnNextInteractable;
+                @NextInteractable.canceled += instance.OnNextInteractable;
+                @PreviousInteractable.started += instance.OnPreviousInteractable;
+                @PreviousInteractable.performed += instance.OnPreviousInteractable;
+                @PreviousInteractable.canceled += instance.OnPreviousInteractable;
             }
         }
     }
@@ -371,6 +400,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnPauseResume(InputAction.CallbackContext context);
         void OnPrimaryInteraction(InputAction.CallbackContext context);
         void OnSecondaryInteraction(InputAction.CallbackContext context);
-        void OnSwitchInteraction(InputAction.CallbackContext context);
+        void OnNextInteractable(InputAction.CallbackContext context);
+        void OnPreviousInteractable(InputAction.CallbackContext context);
     }
 }
