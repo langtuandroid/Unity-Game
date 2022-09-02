@@ -22,8 +22,20 @@ public class Actionable : MonoBehaviour
     public TypeActionInstanceDictionary availableActions = new();
     [SerializeField] private ActionQueue actionQueue;
 
-    public void Update()
+    private void Awake()
     {
+        foreach (ActionInstance ai in availableActions.Values) {
+            ai.Initialize();
+        }
+
+        foreach (ActionComponent ac in components.Values) {
+            ac.Initialzie();
+        }
+    }
+
+    private void Update()
+    {
+        UpdateComponents();
         Countdown();
         List<ActionInstance> removed = new();
         foreach (ActionInstance ac in executing)
@@ -37,6 +49,14 @@ public class Actionable : MonoBehaviour
         {
             executing.Remove(ac);
         }
+    }
+
+    public bool IsInstanceReady<T>() where T: ActionInstance {
+        string type = typeof(T).ToString();
+        if (availableActions.ContainsKey(type)) {
+            return availableActions[type].IsReady;
+        }
+        return false;
     }
 
     public bool AddActionComponent<T>() where T:ActionComponent {
@@ -80,11 +100,17 @@ public class Actionable : MonoBehaviour
         return components.Remove(str);
     }
 
-    public void Countdown()
+    private void Countdown()
     {
         foreach (ActionInstance ac in availableActions.Values)
         {
             ac.CountDown();
+        }
+    }
+
+    private void UpdateComponents() {
+        foreach (ActionComponent c in components.Values) {
+            c.Update();
         }
     }
 

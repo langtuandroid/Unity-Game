@@ -4,5 +4,7 @@ using UnityEngine;
 
 public abstract class ActionComponent : ScriptableObject
 {
-    
+    public virtual void Initialzie() { }
+
+    public virtual void Update() { }
 }

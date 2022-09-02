@@ -143,7 +143,7 @@ public abstract class Interactor : MonoBehaviour
 
 
     // Method for retrieving interaction info used for UI
-    public Dictionary<InteractionType, string> GetInteractionOptions() {
+    public InteractionPrompt GetInteractionOptions() {
         if (!isBase) {
             return baseInteractor.GetInteractionOptions();
         }
@@ -151,7 +151,7 @@ public abstract class Interactor : MonoBehaviour
         if (obj != null) {
             return obj.GetInteractionOptions(GetType());
         }
-        return null;
+        return default;
     }
 
     // Move to the next interactable on the list

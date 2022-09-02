@@ -7,20 +7,27 @@ using UnityEngine;
 [Interaction(interactable: typeof(Teleportor), interactors: typeof(GeneralInteractor))]
 public class Teleportor : InteractableObject
 {
-    [SerializeField] private Transform Destination;
-    private readonly Dictionary<InteractionType, string> option = new() {
-        { InteractionType.Primary, "Teleport"}
-    };
+    [SerializeField] private Transform destination;
+    [SerializeField] private RefString promptText;
+    private InteractionPrompt prompt;
+
+    private new void Start()
+    {
+        base.Start();
+        prompt = new InteractionPrompt();
+        prompt.Primary = promptText.Value;
+    }
+
     // Teleport the interactor to the destination
     public override string OnInteract(Interactor interactor, InteractionType interactType)
     {
         Transform interactorTransform = interactor.GetComponent<Transform>();
-        interactorTransform.position = Destination.position;
+        interactorTransform.position = destination.position;
         return Setting.INTERACTION_OK;
     }
 
-    public override Dictionary<InteractionType, string> GetInteractionOptions(Type t)
+    public override InteractionPrompt GetInteractionOptions(Type t)
     {
-         return option;
+         return prompt;
     }
 }

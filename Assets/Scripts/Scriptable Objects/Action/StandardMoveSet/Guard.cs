@@ -8,6 +8,7 @@ public class Guard : ActionInstance
 {
     [SerializeField] private Sprite sprite;
     [SerializeField] private RefFloat spriteAlpha;
+    [SerializeField] private RefFloat guardRange;
 
     private GameObject guardAnimation;
     protected override void ExecuteBody()
@@ -22,24 +23,25 @@ public class Guard : ActionInstance
             Debug.Log("The object is missing the required action component to complete the action!");
             return;
         }
-        if (defender.GetIncomingDamage() > 0)
+        if (defender.IncomingDamage > 0)
         {
             Debug.Log("Blocked: " + combat.defense);
         }
-        defender.SetIncomingDamage(defender.GetIncomingDamage() - combat.defense);
+        defender.IncomingDamage -= combat.defense;
         if (guardAnimation == null)
         {
             GameObject gameObject = defender.gameObject;
             Transform transform = gameObject.transform;
-            Color color = Color.blue;
+            Color color = Color.white;
             color.a = spriteAlpha.Value;
-            guardAnimation = ObjectGenerator.GenerateSprite(transform, sprite, transform.position, transform.rotation, new Vector3(2, 2, 1), color, LayerMask.NameToLayer("Default"), SortingLayer.NameToID("Default"));
+            float range = guardRange.Value;
+            guardAnimation = ObjectGenerator.GenerateSprite(transform, sprite, transform.position, transform.rotation, new Vector3(range, range, 1), color, LayerMask.NameToLayer("Default"), SortingLayer.NameToID("Visual Effect"));
         }
     }
 
     protected override void Terminate()
     {
-        Object.Destroy(guardAnimation);
+        Destroy(guardAnimation);
         guardAnimation = null;
     }
 }

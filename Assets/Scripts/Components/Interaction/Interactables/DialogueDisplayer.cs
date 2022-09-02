@@ -18,7 +18,7 @@ public class DialogueDisplayer : InteractableObject
 
     [Header("Dialogue Area")]
     [SerializeField] private TMP_Text mainText;
-    
+
     [Header("Response Area")]
     [SerializeField] private RectTransform responseLayoutGroup;
     [SerializeField] private Button responseButton;
@@ -31,13 +31,9 @@ public class DialogueDisplayer : InteractableObject
     private DialogueObject currentDialogue;
 
     private List<Button> responseButtons = new();
-    private readonly Dictionary<InteractionType, string> idleOption = new Dictionary<InteractionType, string>() {
-        { InteractionType.Primary, "Talk"}
-    };
+    private readonly InteractionPrompt idleOption = new() { Primary = "Talk" };
 
-    private readonly Dictionary<InteractionType, string> runningOption = new Dictionary<InteractionType, string>() {
-        { InteractionType.Primary, "Stop"}
-    };
+    private readonly InteractionPrompt runningOption = new (){Primary = "Stop"};
 
     new void Start()
     {
@@ -57,6 +53,15 @@ public class DialogueDisplayer : InteractableObject
             dialogueCanva.gameObject.SetActive(false);
         }
         return Setting.INTERACTION_OK;
+    }
+
+    private void OnDestroy()
+    {
+        if (dialogueCanva != null)
+        {
+            dialogueCanva.gameObject.SetActive(false);
+        }
+        
     }
 
     public IEnumerator DisplayText() {
@@ -129,7 +134,7 @@ public class DialogueDisplayer : InteractableObject
         responseButtons.Clear();
     }
 
-    public override Dictionary<InteractionType, string> GetInteractionOptions(Type t)
+    public override InteractionPrompt GetInteractionOptions(Type t)
     {
         if (coroutine != null) {
             return runningOption;

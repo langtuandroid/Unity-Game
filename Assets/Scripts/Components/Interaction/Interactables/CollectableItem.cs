@@ -11,9 +11,14 @@ public class CollectableItem : InteractableObject
     [SerializeField] private InventoryItem item;
     private SpriteRenderer spriteRenderer;
 
-    private readonly Dictionary<InteractionType, string> option = new() {
-        { InteractionType.Primary, "Collect"}
-    };
+    private InteractionPrompt prompt = new() { Primary = "Collect"};
+
+    private new void Start() {
+        base.Start();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = item.itemData.Icon;
+        item.CorrectGeneralQuantity();
+    }
 
     public InventoryItem Item { 
         get { return item; }  
@@ -30,15 +35,8 @@ public class CollectableItem : InteractableObject
         } 
     }
 
-    public new void Start() { 
-        base.Start();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = item.itemData.Icon;
-        item.CorrectGeneralQuantity();
-    }
-
-    public override Dictionary<InteractionType, string> GetInteractionOptions(Type t)
+    public override InteractionPrompt GetInteractionOptions(Type t)
     {
-        return option;
+        return prompt;
     }
 }

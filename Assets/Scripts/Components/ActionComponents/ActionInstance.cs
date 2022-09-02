@@ -26,22 +26,11 @@ public abstract class ActionInstance : ScriptableObject
     [SerializeField] protected RefActionData actionData;
 
     private float counter = 0;
-    private bool isReady = false;
     private int accessKey = -1;
 
-    public void CountDown()
-    {
-        if (isReady)
-        {
-            return;
-        }
-        counter += Time.deltaTime;
-        if (counter >= Data.Cooldown)
-        {
-            counter = 0;
-            isReady = true;
-        }
-    }
+    public bool OnCooldown { get; private set; }
+
+    public bool IsReady { get { return !OnCooldown && ConditionSatisfied(); } }
 
     public int Executing {
         get {
@@ -52,23 +41,48 @@ public abstract class ActionInstance : ScriptableObject
         }
     }
 
+    // Override this to imeplement additional Skill Ready Check
+    public virtual bool ConditionSatisfied() { return true; }
+
+    // To be overriden
+    protected virtual void OnEnqueue() { }
+
+    public void CountDown()
+    {
+        if (OnCooldown)
+        {
+            counter += Time.deltaTime;
+            if (counter >= Data.Cooldown)
+            {
+                counter = 0;
+                OnCooldown = false;
+            }
+        }
+    }
+
     public bool EnqueueAction()
     {
-        bool result = isReady;
-        if (isReady)
+        if (IsReady)
         {
             if (queue == null) {
-                Debug.LogWarning("Action Queue is not set up for the instance: " + this.GetType().ToString());
+                Debug.LogWarning("Action Queue is not set up for the instance: " + GetType().ToString());
                 return false;
             }
             accessKey = queue.Queue.Enqueue(this, Data.Duration, Data.Priority);
-            isReady = false;
+            OnEnqueue();
+            OnCooldown = true;
         }
-        return result;
+        return false;
     }
 
     public virtual void Execute() {
-        ExecuteBody();
+        try
+        {
+            ExecuteBody();
+        }
+        catch (Exception ex) {
+            Debug.LogError(ex.ToString());
+        }
         if (!queue.Queue.ContainsKey(accessKey))
         {
             accessKey = -1;
@@ -84,23 +98,16 @@ public abstract class ActionInstance : ScriptableObject
     protected virtual void Terminate() { }
 
     // Override This!
-    protected virtual void AssignFields() { }
+    public virtual void Initialize() { }
 
     public virtual bool ComponentCheck(Actionable actionComponent) {
-        bool result = CheckComponent(actionComponent);
-        if (result) {
-            AssignFields();
-        }
-        return result;
-    }
-
-    private bool CheckComponent(Actionable actionComponent) {
         Type type = GetType();
 
         bool result = true;
         bool f1 = false;
         bool f2 = false;
-        if (RequireActionComponentAttribute.requirement.ContainsKey(type)) {
+        if (RequireActionComponentAttribute.requirement.ContainsKey(type))
+        {
             HashSet<Type> ts = RequireActionComponentAttribute.requirement[type];
             MethodInfo m = typeof(Actionable).GetMethod("GetActionComponent");
 
@@ -130,7 +137,8 @@ public abstract class ActionInstance : ScriptableObject
         }
 
         // Check of gameobject Components
-        if (RequireCMPAttribute.requirement.ContainsKey(type)) {
+        if (RequireCMPAttribute.requirement.ContainsKey(type))
+        {
             HashSet<Type> ts2 = RequireCMPAttribute.requirement[type];
 
             List<Type> lst2 = new List<Type>();
@@ -155,8 +163,9 @@ public abstract class ActionInstance : ScriptableObject
                 Debug.LogError(sb.ToString());
             }
         }
-        
-        if (f1 || f2) { 
+
+        if (f1 || f2)
+        {
             result = false;
         }
 

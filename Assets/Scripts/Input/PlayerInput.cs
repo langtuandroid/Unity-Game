@@ -98,6 +98,24 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Aim"",
+                    ""type"": ""Value"",
+                    ""id"": ""f1a29f0a-57f0-46fb-88bf-235392f12f91"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""6864dc9a-806b-4c14-a571-75cca0ee8a0c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -232,6 +250,28 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""PreviousInteractable"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""936f0667-836c-4736-8f1b-6f5d08f707ee"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""76ab0ddd-2cc2-459a-8dda-f071d93b645e"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -248,6 +288,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Player_SecondaryInteraction = m_Player.FindAction("SecondaryInteraction", throwIfNotFound: true);
         m_Player_NextInteractable = m_Player.FindAction("NextInteractable", throwIfNotFound: true);
         m_Player_PreviousInteractable = m_Player.FindAction("PreviousInteractable", throwIfNotFound: true);
+        m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
+        m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -315,6 +357,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SecondaryInteraction;
     private readonly InputAction m_Player_NextInteractable;
     private readonly InputAction m_Player_PreviousInteractable;
+    private readonly InputAction m_Player_Aim;
+    private readonly InputAction m_Player_Shoot;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -327,6 +371,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @SecondaryInteraction => m_Wrapper.m_Player_SecondaryInteraction;
         public InputAction @NextInteractable => m_Wrapper.m_Player_NextInteractable;
         public InputAction @PreviousInteractable => m_Wrapper.m_Player_PreviousInteractable;
+        public InputAction @Aim => m_Wrapper.m_Player_Aim;
+        public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -360,6 +406,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @PreviousInteractable.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPreviousInteractable;
                 @PreviousInteractable.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPreviousInteractable;
                 @PreviousInteractable.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPreviousInteractable;
+                @Aim.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                @Aim.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                @Aim.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                @Shoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
+                @Shoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
+                @Shoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -388,6 +440,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @PreviousInteractable.started += instance.OnPreviousInteractable;
                 @PreviousInteractable.performed += instance.OnPreviousInteractable;
                 @PreviousInteractable.canceled += instance.OnPreviousInteractable;
+                @Aim.started += instance.OnAim;
+                @Aim.performed += instance.OnAim;
+                @Aim.canceled += instance.OnAim;
+                @Shoot.started += instance.OnShoot;
+                @Shoot.performed += instance.OnShoot;
+                @Shoot.canceled += instance.OnShoot;
             }
         }
     }
@@ -402,5 +460,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnSecondaryInteraction(InputAction.CallbackContext context);
         void OnNextInteractable(InputAction.CallbackContext context);
         void OnPreviousInteractable(InputAction.CallbackContext context);
+        void OnAim(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
     }
 }

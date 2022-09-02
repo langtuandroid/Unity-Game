@@ -18,7 +18,7 @@ public class ActionDataSODrawer : PropertyDrawer
             obj = new(property.objectReferenceValue);
         }
         obj.Update();
-        return EditorGUI.GetPropertyHeight(obj.FindProperty("data"), label);
+        return EditorGUI.GetPropertyHeight(obj.FindProperty("data"), label) + EditorGUIUtility.singleLineHeight;
     }
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)

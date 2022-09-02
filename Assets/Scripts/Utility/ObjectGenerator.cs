@@ -28,8 +28,7 @@ public static class ObjectGenerator
 
     public static GameObject GenerateSprite(Transform transform, Sprite sprite, Vector3 position, Quaternion rotation, Vector3 scale, Color color, int layer, int sortingLayer) {
         GameObject circle = new GameObject();
-        circle.AddComponent<SpriteRenderer>();
-        SpriteRenderer sr = circle.GetComponent<SpriteRenderer>();
+        SpriteRenderer sr = circle.AddComponent<SpriteRenderer>();
         sr.color = color;
         sr.sortingLayerID = sortingLayer;
         sr.sprite = sprite;
@@ -38,7 +37,6 @@ public static class ObjectGenerator
         circle.transform.position = position;
         circle.GetComponent<Renderer>().material.color = color;
         circle.transform.localScale = new Vector3(scale.x / bounds.x, scale.y / bounds.y, scale.z / bounds.z);
-        Vector3 eulers = circle.transform.localEulerAngles;
         circle.transform.rotation = rotation;
         circle.transform.SetParent(transform);
         circle.layer = layer;

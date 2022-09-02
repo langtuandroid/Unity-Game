@@ -9,6 +9,6 @@ public class HealthCheckCondition : Condition
 
     public override bool Eval()
     {
-        return entity.GetHealth() < health;
+        return entity.Health < health;
     }
 }

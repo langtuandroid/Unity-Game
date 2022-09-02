@@ -18,21 +18,11 @@ public class Door : InteractableObject
     private SpriteRenderer spriteRenderer;
 
 
-    private readonly Dictionary<InteractionType, string> LockedInfo = new()
-    {
-        {InteractionType.Secondary, "Unlock" }
-    };
+    private readonly InteractionPrompt LockedInfo = new(){Secondary = "Unlock"};
 
-    private readonly Dictionary<InteractionType, string> UnlockedClosedInfo = new()
-    {
-        { InteractionType.Primary, "Open"},
-        { InteractionType.Secondary, "Lock" }
-    };
+    private readonly InteractionPrompt UnlockedClosedInfo = new() { Primary = "Open", Secondary = "Lock"};
 
-    private readonly Dictionary<InteractionType, string> OpenedInfo = new()
-    {
-        { InteractionType.Primary, "Close" },
-    };
+    private readonly InteractionPrompt OpenedInfo = new() { Primary = "Close"};
 
     public bool IsClosed
     {
@@ -91,7 +81,7 @@ public class Door : InteractableObject
         return Setting.INTERACTION_OK;
     }
 
-    public override Dictionary<InteractionType, string> GetInteractionOptions(Type t)
+    public override InteractionPrompt GetInteractionOptions(Type t)
     {
         if (locked) {
             return LockedInfo;

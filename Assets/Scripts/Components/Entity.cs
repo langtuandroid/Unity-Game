@@ -1,80 +1,97 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
 [RequireComponent(typeof(PhysicsUpdate))]
+[System.Serializable]
 public class Entity : MonoBehaviour
 {
-    public static BidirectionalMap<int, Entity> AllEntities = new();
-    public static IdDistributor distributor = new();
-    private int id;
-    private int health;
+    [SerializeField] private List<EntityGroup> groups;
+    [SerializeField] private RefInt startMaxHealth;
+    [SerializeField] private RefInt startHealth;
+
+    [HideInInspector]
+    [SerializeField] private int maxHealth;
+    [HideInInspector]
+    [SerializeField] private int health;
     private int incomingDamage;
+    
+    public int MaxHealth { 
+        get {
+            return maxHealth;
+        } 
+        private set {
+            if (value <= 0)
+            {
+                maxHealth = 1;
+            }
+            else { 
+                maxHealth = value;
+            }   
+        }
+    }
+  
+    public int Health { 
+        get { 
+            return health;
+        }
+        private set {
+            if (value > maxHealth)
+            {
+                health = maxHealth;
+            }
+            else { 
+                health = value;
+            }
+        }
+    }
 
-    // Start is called before the first frame update
+    public int IncomingDamage { get { return incomingDamage; } 
+        set {
+            if (value < 0)
+            {
+                return;
+            }
+            incomingDamage = value;
+        } 
+    }
 
-    protected void Start()
+    private void Awake()
     {
-        health = 1;
+        foreach (EntityGroup group in groups)
+        {
+            group.Add(this);
+        }
+
         incomingDamage = 0;
+        MaxHealth = startMaxHealth.Value;
+        Health = startHealth.Value;
         gameObject.tag = Setting.TAG_ENTITY;
-        id = distributor.GetID();
-        AllEntities[id] = this;
-        health = 100;
     }
 
-    // Update is called once per frame
-    protected void Update()
+    protected void LateUpdate()
     {
-    }
-
-    protected void LateUpdate() {
-        health -= incomingDamage;
+        Health -= incomingDamage;
         incomingDamage = 0;
-        if (health <= 0)
+        if (Health <= 0)
         {
             Die();
         }
     }
-    public int ID {
-        get { return id; }
-    }
 
-    public int GetIncomingDamage() { 
-        return incomingDamage;
-    }
-
-    public void SetIncomingDamage(int d) {
-        if (d < 0) {
-            return;
-        }
-        incomingDamage = d;
-    }
-
-    void Die() {
+    void Die()
+    {
         Destroy(gameObject);
     }
 
     private void OnDestroy()
     {
-        AllEntities.RemoveValue(this);
-    }
-
-    public virtual void OnKillEntity(int id, bool killingBlow) {
-        if (killingBlow) {
-            Debug.Log("Killed Entity: " + id);
+        foreach (EntityGroup group in groups) {
+            group.Remove(this);
         }
     }
 
-    public void SetHealth(int amount) { 
-        health = amount;
-    }
-
-    public int GetHealth() { 
-        return health;
-    }
-
-    public void RegisterDamage(int damage) {
+    public void RegisterDamage(int damage)
+    {
         incomingDamage += damage;
         Debug.Log("Damage:" + incomingDamage);
     }

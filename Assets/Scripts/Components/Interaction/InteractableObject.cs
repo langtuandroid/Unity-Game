@@ -10,6 +10,13 @@ public enum InteractionType {
     Quaternary
 }
 
+public struct InteractionPrompt { 
+    public string Primary { get; set; }
+    public string Secondary { get; set; }
+    public string Tertiary { get; set; }
+    public string Quaternary { get; set; }
+}
+
 public abstract class InteractableObject : MonoBehaviour
 {
     /* Base Class for interactable objects, inherit from this class to implement custom interaction behaviors.
@@ -37,7 +44,7 @@ public abstract class InteractableObject : MonoBehaviour
 
     public virtual string OnInteract(Interactor interactor, InteractionType interactType){ return Setting.INTERACTION_OK; }
 
-    public abstract Dictionary<InteractionType, string> GetInteractionOptions(Type t);
+    public abstract InteractionPrompt GetInteractionOptions(Type t);
 
     public void Update()
     {

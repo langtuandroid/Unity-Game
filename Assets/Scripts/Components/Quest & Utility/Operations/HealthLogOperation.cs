@@ -8,6 +8,6 @@ public class HealthLogOperation : Operation
 
     public override void Begin()
     {
-        Debug.Log("Selected Entity Health: " + entity.GetHealth());
+        Debug.Log("Selected Entity Health: " + entity.Health);
     }
 }

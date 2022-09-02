@@ -24,7 +24,6 @@ public class Quest : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private bool useFailCondition;
 
-    private bool isEnabled = false;
     private Coroutine coroutine = null;
 
     public void Start()
@@ -59,28 +58,26 @@ public class Quest : MonoBehaviour
 
     public bool Enable()
     {
-        if (isEnabled)
+        if (coroutine != null)
         {
             return false;
         }
         coroutine = GameManager.BeginCoroutine(Operate());
-        isEnabled = true;
         return true;
     }
 
     public void Disable()
     {
-        if (!isEnabled)
+        if (coroutine == null)
         {
             return;
         }
-        isEnabled = false;
         GameManager.EndCoroutine(coroutine);
         coroutine = null;
     }
 
     public bool Enabled
     {
-        get { return isEnabled; }
+        get { return coroutine == null; }
     }
 }

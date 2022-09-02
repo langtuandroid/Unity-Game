@@ -9,5 +9,5 @@ public class InvalidKeyException : Exception
            
     }
 
-    public InvalidKeyException(string message) : base(string.Format("Invalid key used for weighted priority queue: %s\n", message)) { }
+    public InvalidKeyException(string message) : base(string.Format("Invalid key used for weighted priority queue: {0}\n", message)){}
 }
