@@ -17,20 +17,23 @@ public class PlayerController : MonoBehaviour
 
     private Entity player;
     private Rigidbody2D rb;
-    private PhysicsUpdate physicsUpdate;
     private Actionable actionable;
     private GeneralInteractor interactor;
 
     private float angle;
+    private Vector2 velocity;
 
-    
     public void Start()
     {
         player = GetComponent<Entity>();
-        rb = player.GetComponent<Rigidbody2D>();
-        physicsUpdate = rb.GetComponent<PhysicsUpdate>();
         actionable = GetComponent<Actionable>();
         interactor = GetComponent<GeneralInteractor>();
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = velocity;
     }
 
     public void CircleAttack(InputAction.CallbackContext context)
@@ -45,11 +48,10 @@ public class PlayerController : MonoBehaviour
     {
         if (!context.canceled)
         {
-            physicsUpdate.velocity = speed * context.ReadValue<Vector2>();
+            velocity = (speed * context.ReadValue<Vector2>().normalized);
         }
-        else
-        {
-            physicsUpdate.velocity = new Vector2(0, 0);
+        else {
+            velocity = Vector2.zero;
         }
     }
 

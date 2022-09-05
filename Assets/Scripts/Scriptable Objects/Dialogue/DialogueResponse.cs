@@ -10,13 +10,11 @@ public class DialogueResponse
     [TextArea]
     [SerializeField] private string text;
     [SerializeField] private DialogueObject dialogue;
-    [SerializeField] private OperationReference[]  operations;
+    [SerializeField] private  VoidEventChannel operationChannel;
 
     public void Respond() {
-        if (operations != null) {
-            foreach (OperationReference operation in operations) {
-                operation.Operate();
-            }
+        if (operationChannel != null) {
+            operationChannel.RaiseEvent();
         }
     }
 

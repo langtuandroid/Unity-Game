@@ -7,7 +7,7 @@ public class DialogueObject : ScriptableObject
 {
     [SerializeField] private DialogueNode[] dialogueNodes;
     [SerializeField] private DialogueResponse[] responses;
-    [SerializeField] private OperationReference[] finishers;
+    [SerializeField] private VoidEventChannel finisherChannel;
 
     public DialogueNode[] Nodes { 
         get { return (DialogueNode[])dialogueNodes.Clone(); }
@@ -22,15 +22,7 @@ public class DialogueObject : ScriptableObject
         get { return responses != null && responses.Length > 0; }
     }
 
-    public bool HasFinishers { 
-        get { return finishers != null && finishers.Length > 0; }
-    }
-
-    public void ExecuteFinisher() {
-        if (finishers != null) {
-            foreach (OperationReference op in finishers) {
-                op.Operate();
-            }
-        }
+    public VoidEventChannel FinisherChannel { 
+        get { return finisherChannel; }
     }
 }

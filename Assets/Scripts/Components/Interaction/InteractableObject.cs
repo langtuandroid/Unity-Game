@@ -11,6 +11,8 @@ public enum InteractionType {
 }
 
 public struct InteractionPrompt { 
+    public static InteractionPrompt none = new InteractionPrompt() { };
+
     public string Primary { get; set; }
     public string Secondary { get; set; }
     public string Tertiary { get; set; }
@@ -23,8 +25,8 @@ public abstract class InteractableObject : MonoBehaviour
      * 
      * Note: The derived class must call base.Start() to allow the base class to complete all the necessary setups
      */
-
     [SerializeField] private RefFloat interactRadius;
+    [SerializeField] protected StringEventChannel interactionChannel;
     private Dictionary<Type, InteractionTracer> interactionTracers = new();
     private Transform m_transform;
 
@@ -42,7 +44,7 @@ public abstract class InteractableObject : MonoBehaviour
         m_transform = GetComponent<Transform>();
     }
 
-    public virtual string OnInteract(Interactor interactor, InteractionType interactType){ return Setting.INTERACTION_OK; }
+    public virtual void OnInteract(Interactor interactor, InteractionType interactType) { }
 
     public abstract InteractionPrompt GetInteractionOptions(Type t);
 

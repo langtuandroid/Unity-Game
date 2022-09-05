@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class StateMachine : MonoBehaviour
 {
+    [SerializeField] private List<State> allStates;
     [SerializeField] private State initialState;
     [SerializeField] private State currentState;
-    [SerializeField] private TransitionTable transitionTable;
+    private Dictionary<Type, State> states = new();
 
     public State CurrentState{
         get{ return currentState; }
@@ -15,7 +17,15 @@ public class StateMachine : MonoBehaviour
 
     void Awake() {
         ReferenceCheck();
+        if (initialState == null) {
+            initialState = allStates[0];
+        }
         currentState = initialState;
+
+        foreach (State s in allStates) {
+            states[s.GetType()] = s;
+            s.InitializeFields(gameObject);
+        }
     }
 
     private void ReferenceCheck() {
@@ -26,13 +36,12 @@ public class StateMachine : MonoBehaviour
 
     public void Update()
     {
-        currentState.Operate(gameObject);
-        State target = transitionTable.Execute(currentState, gameObject);
+        Type target = currentState.Tick();
         if (target != null)
         {
-            currentState.Exit(gameObject);
-            currentState = target;
-            currentState.Enter(gameObject);
+            currentState.OnExit();
+            currentState = states[target];
+            currentState.OnEnter();
         }
     }
 }

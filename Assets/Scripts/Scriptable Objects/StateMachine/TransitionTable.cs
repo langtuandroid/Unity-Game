@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class TransitionTable : MonoBehaviour
+[CreateAssetMenu(menuName = "StateMachine/Transition Table")]
+public class TransitionTable : ScriptableObject
 {
-    [SerializeField] private Dictionary<State, SortedList<int, Transition>> transitions;
+    private Dictionary<Type, SortedList<int, Transition>> transitions;
 
-    public State Execute(State currentState, GameObject obj) {
-        if (transitions.ContainsKey(currentState)) {
-            foreach (Transition t in transitions[currentState].Values) {
-                if (t.Execute(obj))
-                {
-                    return t.TargetState;
-                }
+    public State Execute(State currentState) {
+        Type type = currentState.GetType();
+        if (transitions.ContainsKey(type)) {
+            foreach (Transition t in transitions[type].Values) {
+                return t.Eval();
             }
         }
         return null;
@@ -20,23 +20,25 @@ public class TransitionTable : MonoBehaviour
 
     public bool AddTransition(State fromState, Transition t, int priority)
     {
-        if (!transitions.ContainsKey(fromState))
+        Type type = fromState.GetType();
+        if (!transitions.ContainsKey(type))
         {
-            transitions[fromState] = new SortedList<int, Transition>();
+            transitions[type] = new SortedList<int, Transition>();
         }
-        else if (transitions[fromState].Values.Contains(t))
+        else if (transitions[type].Values.Contains(t))
         {
             return false;
         }
-        transitions[fromState].Add(priority, t);
+        transitions[type].Add(priority, t);
         return true;
     }
 
-    public bool RemoveTransition(State fromState, Transition t, int key)
+    public bool RemoveTransition(State fromState, int key)
     {
-        if (transitions.ContainsKey(fromState))
+        Type fromType = fromState.GetType();
+        if (transitions.ContainsKey(fromType))
         {
-            return transitions[fromState].Remove(key);
+            return transitions[fromType].Remove(key);
         }
         return false;
     }

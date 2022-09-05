@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PhysicsUpdate))]
 [System.Serializable]
 public class Entity : MonoBehaviour
 {
@@ -55,7 +54,7 @@ public class Entity : MonoBehaviour
         } 
     }
 
-    private void Awake()
+    private void Start()
     {
         foreach (EntityGroup group in groups)
         {

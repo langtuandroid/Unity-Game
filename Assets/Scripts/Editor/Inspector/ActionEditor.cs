@@ -17,10 +17,10 @@ public class ActionEditor : Editor
 
     public override void OnInspectorGUI()
     {
-        EditorGUI.BeginChangeCheck();
         Actionable actionable = (Actionable)target;
         MethodInfo removed = null;
-
+        
+        EditorGUI.BeginChangeCheck();
         // Action Queue
         SerializedProperty property = serializedObject.FindProperty("actionQueue");
         property.objectReferenceValue = (ActionQueue)EditorGUILayout.ObjectField("Action Queue", property.objectReferenceValue, typeof(ActionQueue), true);
@@ -145,6 +145,9 @@ public class ActionEditor : Editor
             {
                 removed.Invoke(actionable, null);
             }
+        }
+        if (EditorGUI.EndChangeCheck()) {
+            serializedObject.ApplyModifiedProperties();
         }
     }
 }

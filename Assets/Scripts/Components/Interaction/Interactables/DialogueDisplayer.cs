@@ -10,6 +10,7 @@ public class DialogueDisplayer : InteractableObject
 {
     [Header("Settings")]
     [SerializeField] private RefBool resetUponFinish;
+    [SerializeField] private RefBool canStop;
     [SerializeField] private RefFloat displaySpeed;
     [SerializeField] private RefFloat secondsDelayBetweenLines;
     [SerializeField] private RefFloat secondsLingering;
@@ -41,18 +42,22 @@ public class DialogueDisplayer : InteractableObject
         currentDialogue = dialogue;
     }
 
-    public override string OnInteract(Interactor interactor, InteractionType type) {
+    public override void OnInteract(Interactor interactor, InteractionType type) {
+        DisplayDialogue();
+    }
+
+    public void DisplayDialogue() {
         if (coroutine == null)
         {
             coroutine = StartCoroutine(DisplayText());
         }
-        else {
+        else if(canStop.Value)
+        {
             StopCoroutine(coroutine);
             coroutine = null;
             currentDialogue = dialogue;
             dialogueCanva.gameObject.SetActive(false);
         }
-        return Setting.INTERACTION_OK;
     }
 
     private void OnDestroy()
@@ -100,10 +105,10 @@ public class DialogueDisplayer : InteractableObject
         }
 
         // Execute dialogue finishers
-        if (currentDialogue.HasFinishers)
-        {
-            currentDialogue.ExecuteFinisher();
+        if (currentDialogue.FinisherChannel != null) {
+            currentDialogue.FinisherChannel.RaiseEvent();
         }
+        
         if (resetUponFinish.Value) {
             currentDialogue = dialogue;
         }
@@ -137,7 +142,10 @@ public class DialogueDisplayer : InteractableObject
     public override InteractionPrompt GetInteractionOptions(Type t)
     {
         if (coroutine != null) {
-            return runningOption;
+            if (canStop.Value) {
+                return runningOption;
+            }
+            return InteractionPrompt.none;
         }
         return idleOption;
     }

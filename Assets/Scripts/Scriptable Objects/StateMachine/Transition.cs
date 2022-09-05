@@ -2,22 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "StateMachine/Transition")]
-public class Transition : DescriptionBaseSO
+[System.Serializable]
+public struct Transition
 {
     [SerializeField] private State targetState;
-    [SerializeField] private HashSet<Condition<GameObject>> transitionConditions;
+    [SerializeField] private List<Condition> transitionConditions;
 
-    public bool Execute(GameObject obj)
+    public State Eval()
     {
-        foreach (Condition<GameObject> condition in transitionConditions)
+        foreach (Condition condition in transitionConditions)
         {
-            if (condition.Eval(obj))
+            if (condition.Eval())
             {
-                return true;
+                return targetState;
             }
         }
-        return false;
+        return null;
     }
 
     public State TargetState {

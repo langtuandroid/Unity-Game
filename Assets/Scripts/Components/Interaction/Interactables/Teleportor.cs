@@ -19,11 +19,10 @@ public class Teleportor : InteractableObject
     }
 
     // Teleport the interactor to the destination
-    public override string OnInteract(Interactor interactor, InteractionType interactType)
+    public override void OnInteract(Interactor interactor, InteractionType interactType)
     {
         Transform interactorTransform = interactor.GetComponent<Transform>();
         interactorTransform.position = destination.position;
-        return Setting.INTERACTION_OK;
     }
 
     public override InteractionPrompt GetInteractionOptions(Type t)
