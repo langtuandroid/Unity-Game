@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-
-public abstract class State : DescriptionBaseSO
+[System.Serializable]
+public abstract class State
 {
     public abstract void InitializeFields(GameObject obj);
     public abstract void OnExit();

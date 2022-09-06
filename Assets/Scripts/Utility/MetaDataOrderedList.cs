@@ -120,7 +120,7 @@ public class MetaDataOrderedList<T, V>
         return Remove(data.key);
     }
 
-    public void SetElementData(int key, V data)
+    public virtual void SetElementData(int key, V data)
     {
         if (contents.ContainsKey(key))
         {
@@ -130,7 +130,6 @@ public class MetaDataOrderedList<T, V>
         {
             throw new InvalidOperationException(key + "");
         }
-
     }
 
     public V GetElementData(int key)

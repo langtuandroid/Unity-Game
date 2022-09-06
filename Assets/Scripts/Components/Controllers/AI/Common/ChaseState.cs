@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[CreateAssetMenu(menuName = "StateMachine/States/AI/ChaseState")]
 public class ChaseState : State
 {
     private AIController aiController;
@@ -60,7 +58,7 @@ public class ChaseState : State
     {
         aiController.ChaseTarget();
         if (aiController.InChaseRange()) {
-            if (aiController.TargetInRange(combatComponent.attackRange))
+            if (aiController.TargetInRange(combatComponent.attackRange.Value))
             {
                 actionComponent.EnqueueAction<CircleAttack>();
             }
@@ -76,6 +74,6 @@ public class ChaseState : State
         if (targetAction == null) {
             return false;
         }
-        return targetAction.IsInstanceReady<CircleAttack>() && aiController.TargetInRange(targetCombatComponent.attackRange);
+        return targetAction.IsInstanceReady<CircleAttack>() && aiController.TargetInRange(targetCombatComponent.attackRange.Value);
     }
 }

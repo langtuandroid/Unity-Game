@@ -38,6 +38,10 @@ public class AIController : MonoBehaviour
         return Vector3.Distance(_transform.position, target.transform.position) <= range;
     }
 
+    public float GetTargetDistance() {
+        return Vector3.Distance(_transform.position, target.transform.position);
+    }
+
     public void ChaseTarget()
     {
         if (target != null) {
@@ -59,18 +63,15 @@ public class AIController : MonoBehaviour
     }
 
     public void Wander() {
-        if (!ai.pathPending && (ai.reachedEndOfPath || !ai.hasPath))
-        {
-            GraphNode startNode = gridGraph.GetNearest(_transform.position, NNConstraint.Default).node;
-            List<GraphNode> nodes = PathUtilities.BFS(startNode, wanderRadius.Value, filter: (GraphNode node) =>{ return node.Walkable; });
-            if (nodes.Count > 0) {
-                Vector3 dest = PathUtilities.GetPointsOnNodes(nodes, 1)[0];
-                ai.destination = dest;
-            }
+        GraphNode startNode = gridGraph.GetNearest(_transform.position, NNConstraint.Default).node;
+        List<GraphNode> nodes = PathUtilities.BFS(startNode, wanderRadius.Value, filter: (GraphNode node) =>{ return node.Walkable; });
+        if (nodes.Count > 0) {
+            Vector3 dest = PathUtilities.GetPointsOnNodes(nodes, 1)[0];
+            ai.destination = dest;
         }
     }
 
-    public void StopWander() {
-        randomNode = null;
+    public bool ReachedDestination() {
+        return ai.reachedDestination;
     }
 }

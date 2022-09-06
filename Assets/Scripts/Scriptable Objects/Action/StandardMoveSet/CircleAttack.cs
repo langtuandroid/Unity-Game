@@ -16,6 +16,7 @@ public class CircleAttack : ActionInstance
 
     private HashSet<Entity> targets = new();
     private HashSet<Entity> ignoreTargets = new();
+    private CombatComponent combatComponent;
 
     public override void Initialize()
     {
@@ -27,31 +28,33 @@ public class CircleAttack : ActionInstance
         {
             group.OnEntityAdded.AddListener((Entity entity) => { ignoreTargets.Add(entity); });
         }
+        combatComponent =  actionComponent.GetActionComponent<CombatComponent>();
     }
 
     protected override void ExecuteBody() {
         /* Damages entities in radius of attack range by attack damage, has no effect on the attacker
          *  Entities without colliders are ignored
          */
-        CombatComponent cc = actionComponent.GetActionComponent<CombatComponent>();
+        CombatComponent cc = combatComponent;
         GameObject gameObject = actionComponent.gameObject;
         Transform transform = gameObject.transform;
-        float range = cc.attackRange;
-        int damage = cc.attackDamage;
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(gameObject.transform.position, (float)(range / 2));
+        float range = cc.attackRange.Value;
+        int damage = cc.attackDamage.Value;
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(gameObject.transform.position, range);
 
         // Set up attack sprite
         GameObject g = ObjectPool.Instance.GetObject(spritePoolTag.Value, Vector3.zero, Quaternion.identity);
         Transform gTransform = g.transform;
         gTransform.SetParent(transform);
         gTransform.localPosition = Vector3.zero;
-        gTransform.localScale = new Vector3(range, range, 1);
+        gTransform.localScale = Vector3.one;
+        Vector3 scale = gTransform.lossyScale;
+        gTransform.localScale = new Vector3(range / scale.x, range / scale.y, 1);
         TemporalObject tmp = g.GetComponent<TemporalObject>();
         tmp.ResetCounter();
         tmp.duration = spriteDuration.Value;
         SpriteRenderer spriteRenderer = g.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = sprite;
-        
 
         foreach (Collider2D collider in colliders)
         {

@@ -51,6 +51,13 @@ public class Actionable : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        foreach (ActionInstance ac in availableActions.Values) {
+            ac.HaltActionExecution();
+        }
+    }
+
     public bool IsInstanceReady<T>() where T: ActionInstance {
         string type = typeof(T).ToString();
         if (availableActions.ContainsKey(type)) {

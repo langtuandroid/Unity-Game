@@ -6,7 +6,7 @@ using UnityEngine;
 [ActionComponent(typeof(CombatComponent))]
 public class CombatComponent : ActionComponent
 {
-    public int attackDamage;
-    public float attackRange;
-    public int defense;
+    public RefInt attackDamage;
+    public RefFloat attackRange;
+    public RefInt defense;
 }

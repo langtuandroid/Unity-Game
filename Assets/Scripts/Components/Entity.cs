@@ -48,6 +48,7 @@ public class Entity : MonoBehaviour
         set {
             if (value < 0)
             {
+                incomingDamage = 0;
                 return;
             }
             incomingDamage = value;

@@ -5,8 +5,8 @@ using System;
 
 public class StateMachine : MonoBehaviour
 {
-    [SerializeField] private List<State> allStates;
-    [SerializeField] private State initialState;
+    [SerializeField] private List<StateSO> allStates;
+    [SerializeField] private StateSO initialState;
     [SerializeField] private State currentState;
     private Dictionary<Type, State> states = new();
 
@@ -17,15 +17,17 @@ public class StateMachine : MonoBehaviour
 
     void Awake() {
         ReferenceCheck();
-        if (initialState == null) {
+
+        foreach (StateSO s in allStates) {
+            State state = s.ResolveState();
+            states[state.GetType()] = state;
+            state.InitializeFields(gameObject);
+        }
+        if (initialState == null)
+        {
             initialState = allStates[0];
         }
-        currentState = initialState;
-
-        foreach (State s in allStates) {
-            states[s.GetType()] = s;
-            s.InitializeFields(gameObject);
-        }
+        currentState = states[initialState.GetStateType()];
     }
 
     private void ReferenceCheck() {

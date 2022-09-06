@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(State))]
+[CustomEditor(typeof(StateSO))]
 public class StateEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-        State gameState = (State)target;
+        StateSO gameState = (StateSO)target;
         
     }
 }

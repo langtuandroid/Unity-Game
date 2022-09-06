@@ -8,7 +8,8 @@ public class ActionOverseer : MonoBehaviour
     void LateUpdate()
     { 
         WeightedPriorityQueue<ActionInstance> actionQueue = queue.Queue;
-        for(int i = 0;i < actionQueue.Size;i++)
+        int size = actionQueue.Size;
+        for(int i = 0;i < size;i++)
         {
             ActionInstance instance = actionQueue.Dequeue();
             instance.Execute();

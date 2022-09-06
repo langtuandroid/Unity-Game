@@ -48,10 +48,10 @@ public class Shoot : ActionInstance
     protected override void ExecuteBody()
     {
         CombatComponent combatComponent = actionComponent.GetActionComponent<CombatComponent>();
-        int firePower = combatComponent.attackDamage;
+        int firePower = combatComponent.attackDamage.Value;
 
         Transform transform = actionComponent.transform;
-        GameObject obj = ObjectPool.Instance.GetObject(bulletPoolTag.Value, transform.position, transform.rotation);
+        GameObject obj = ObjectPool.Instance.GetObject(bulletPoolTag.Value, transform.position + Vector3.Scale(transform.lossyScale, transform.up), transform.rotation);
         Bullet bullet = obj.GetComponent<Bullet>();
         if (bullet == null)
         {

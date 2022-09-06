@@ -47,6 +47,14 @@ public class WeightedPriorityQueue<T> : MetaDataOrderedList<T, int>, IEnumerable
         return item.value;
     }
 
+    public override void SetElementData(int key, int data)
+    {
+        base.SetElementData(key, data);
+        if (data <= 0) { 
+            Remove(key);
+        }
+    }
+
     public IEnumerator<DataWrapper<T, int>> GetEnumerator()
     {
         return container.GetEnumerator();
