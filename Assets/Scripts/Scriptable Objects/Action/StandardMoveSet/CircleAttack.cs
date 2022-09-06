@@ -5,7 +5,6 @@ using System.ComponentModel;
 
 [RequireActionComponent(typeof(CircleAttack), typeof(CombatComponent))]
 [ActionInstance(typeof(CircleAttack))]
-[CreateAssetMenu(menuName = "ActionInstance/CircleAttack")]
 public class CircleAttack : ActionInstance
 {
     [SerializeField] private EntityGroup[] targetGroups;
@@ -20,13 +19,22 @@ public class CircleAttack : ActionInstance
 
     public override void Initialize()
     {
-        foreach (EntityGroup group in targetGroups) {
+        foreach (EntityGroup group in targetGroups)
+        {
             group.OnEntityAdded.AddListener((Entity entity) => { targets.Add(entity); });
+            foreach (Entity entity in group)
+            {
+                targets.Add(entity);
+            }
         }
 
         foreach (EntityGroup group in ignoreGroups)
         {
             group.OnEntityAdded.AddListener((Entity entity) => { ignoreTargets.Add(entity); });
+            foreach (Entity entity in group)
+            {
+                ignoreTargets.Add(entity);
+            }
         }
         combatComponent =  actionComponent.GetActionComponent<CombatComponent>();
     }

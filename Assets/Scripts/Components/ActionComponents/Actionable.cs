@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
+using System.Linq;
 
-[Serializable]
 [AddComponentMenu("Actionable")]
 public class Actionable : MonoBehaviour
 {
@@ -25,11 +25,51 @@ public class Actionable : MonoBehaviour
     private void Awake()
     {
         foreach (ActionInstance ai in availableActions.Values) {
-            ai.Initialize();
+            ai.identifier = GetInstanceID();
         }
 
         foreach (ActionComponent ac in components.Values) {
-            ac.Initialzie();
+            ac.identifier = GetInstanceID();
+        }
+    }
+
+    private void Start()
+    {
+        int id = GetInstanceID();
+        var ais = availableActions.Where((f)=>f.Value.identifier != id).ToArray();
+        if (ais.Length > 0)
+        {
+            foreach (var kwp in ais)
+            {
+                ActionInstance ai = Instantiate(kwp.Value);
+                availableActions[kwp.Key] = ai;
+                ai.identifier = id;
+                ai.actionComponent = this;
+                ai.Initialize();
+            }
+        }
+        else {
+            foreach (ActionInstance ai in availableActions.Values) {
+                ai.actionComponent = this;
+                ai.Initialize();
+            }
+        }
+
+        var acs = components.Where((f) => f.Value.identifier != id).ToArray();
+        if (acs.Length > 0)
+        {
+            foreach (var kwp in acs) {
+                ActionComponent ac = Instantiate(kwp.Value);
+                components[kwp.Key] = ac;
+                ac.identifier = id;
+                ac.Initialzie();
+            }
+        }
+        else {
+            foreach (ActionComponent ac in components.Values)
+            {
+                ac.Initialzie();
+            }
         }
     }
 
