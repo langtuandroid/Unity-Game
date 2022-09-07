@@ -78,15 +78,30 @@ public class Entity : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Reset()
     {
-        Destroy(gameObject);
+        incomingDamage = 0;
+        MaxHealth = startMaxHealth.Value;
+        Health = startHealth.Value;
     }
 
-    private void OnDestroy()
+    public void Die()
+    {
+        gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
     {
         foreach (EntityGroup group in groups) {
             group.Remove(this);
+        }
+    }
+
+    private void OnEnable()
+    {
+        foreach (EntityGroup group in groups)
+        {
+            group.Add(this);
         }
     }
 

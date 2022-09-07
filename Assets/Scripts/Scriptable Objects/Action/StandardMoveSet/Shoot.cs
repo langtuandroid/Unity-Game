@@ -25,11 +25,18 @@ public class Shoot : ActionInstance
         foreach (EntityGroup group in targetGroups)
         {
             group.OnEntityAdded.AddListener((Entity entity) => { targets.Add(entity); });
+            foreach (Entity entity in group) {
+                targets.Add(entity);
+            }
         }
 
         foreach (EntityGroup group in ignoreGroups)
         {
             group.OnEntityAdded.AddListener((Entity entity) => { ignoreTargets.Add(entity); });
+            foreach (Entity entity in group)
+            {
+                ignoreTargets.Add(entity);
+            }
         }
 
         manaComponent = actionComponent.GetActionComponent<Mana>();

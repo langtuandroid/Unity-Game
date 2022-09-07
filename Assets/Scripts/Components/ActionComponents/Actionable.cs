@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using System.Text;
 using System.Linq;
 
@@ -13,65 +14,52 @@ public class Actionable : MonoBehaviour
      
     Properties:
     executing: The current actions being executed
-    availableActions: The set of actions being executed
+    availableActions: The set of actions available for execution
     components: The set of sub-components that provides additional data for action instances
 
      */
-    public TypeActionComponentDictionary components = new();
+    [HideInInspector]
     public ActionInstanceSet executing = new();
-    public TypeActionInstanceDictionary availableActions = new();
+    [HideInInspector]
+    [SerializeField] private ActionableData actionableData;
+    [SerializeField] private ActionableData data;
+    [SerializeField] private string assetName;
     [SerializeField] private ActionQueue actionQueue;
+
+    private TypeActionInstanceDictionary availableActions;
+    private TypeActionComponentDictionary components;
 
     private void Awake()
     {
-        foreach (ActionInstance ai in availableActions.Values) {
-            ai.identifier = GetInstanceID();
+        if (actionableData == null) {
+            if (data == null) {
+                Debug.LogWarning("Actionable Data is not set!");
+                return;
+            }
+            actionableData = Instantiate(data);
+            actionableData.CopyActionAsset();
         }
-
-        foreach (ActionComponent ac in components.Values) {
-            ac.identifier = GetInstanceID();
-        }
+        actionableData.identifier = GetInstanceID();
     }
 
     private void Start()
     {
+        if (actionableData == null) {
+            Debug.LogWarning("Actionable Data is not set!");
+            return;
+        }
         int id = GetInstanceID();
-        var ais = availableActions.Where((f)=>f.Value.identifier != id).ToArray();
-        if (ais.Length > 0)
+        if (actionableData.identifier != id)
         {
-            foreach (var kwp in ais)
-            {
-                ActionInstance ai = Instantiate(kwp.Value);
-                availableActions[kwp.Key] = ai;
-                ai.identifier = id;
-                ai.actionComponent = this;
-                ai.Initialize();
-            }
+            actionableData = Instantiate(actionableData);
+            actionableData.identifier = id;
+            actionableData.CopyActionAsset();
         }
-        else {
-            foreach (ActionInstance ai in availableActions.Values) {
-                ai.actionComponent = this;
-                ai.Initialize();
-            }
-        }
-
-        var acs = components.Where((f) => f.Value.identifier != id).ToArray();
-        if (acs.Length > 0)
-        {
-            foreach (var kwp in acs) {
-                ActionComponent ac = Instantiate(kwp.Value);
-                components[kwp.Key] = ac;
-                ac.identifier = id;
-                ac.Initialzie();
-            }
-        }
-        else {
-            foreach (ActionComponent ac in components.Values)
-            {
-                ac.Initialzie();
-            }
-        }
+        availableActions = actionableData.availableActions;
+        components = actionableData.components;
+        actionableData.Initialize(this, actionQueue);
     }
+
 
     private void Update()
     {
@@ -93,7 +81,7 @@ public class Actionable : MonoBehaviour
 
     private void OnDestroy()
     {
-        foreach (ActionInstance ac in availableActions.Values) {
+        foreach (ActionInstance ac in actionableData.availableActions.Values) {
             ac.HaltActionExecution();
         }
     }
@@ -106,13 +94,24 @@ public class Actionable : MonoBehaviour
         return false;
     }
 
-    public bool AddActionComponent<T>() where T:ActionComponent {
-        string str = typeof(T).ToString();
-        if (components.ContainsKey(str)) {
-            return false;
+    public void SetActionableData() {
+        if (data != null) {
+            if (actionableData != null && !AssetDatabase.Contains(actionableData)) {
+                DestroyImmediate(actionableData, true);
+            }
+            actionableData = Instantiate(data);
+            actionableData.CopyActionAsset();
         }
-        components[str] = ScriptableObject.CreateInstance<T>();
-        return true;
+    }
+
+    public void SaveActionableData() {
+        if (actionableData != null) {
+            AssetDatabase.CreateAsset(actionableData, "Assets/Scriptable Objects/Action/ActionableData/" + assetName + ".asset");
+            actionableData.SaveContentsAsAsset();
+            data = actionableData;
+            actionableData = Instantiate(actionableData);
+            actionableData.CopyActionAsset();
+        }
     }
 
     public T GetActionComponent<T>() where T : ActionComponent{
@@ -121,30 +120,6 @@ public class Actionable : MonoBehaviour
             return (T)components[type];
         }
         return default(T);
-    }
-
-    public bool RemoveActionComponent<T>() where T : ActionComponent {
-        string str = typeof (T).ToString();
-        if (components.ContainsKey(str)) {
-            if (RequireActionComponentAttribute.rev_requirement.ContainsKey(typeof(T))) {
-                StringBuilder sb = new();
-                sb.Append("Cannot remove action component: " + typeof(T).ToString() + ", since the following action instances requires it: ");
-                bool flag = false;
-                foreach (Type t in RequireActionComponentAttribute.rev_requirement[typeof(T)]) {
-                    if (availableActions.ContainsKey(t.ToString())) {
-                        flag = true;
-                        sb.Append(t.Name);
-                        sb.Append(", ");
-                    }
-                }
-                if (flag) {
-                    sb.Remove(sb.Length - 2, 2);
-                    Debug.LogError(sb.ToString());
-                    return false;
-                }
-            }
-        }
-        return components.Remove(str);
     }
 
     private void Countdown()
@@ -196,29 +171,5 @@ public class Actionable : MonoBehaviour
             return true;
         }
         return false;
-    }
-
-    public bool AddActionInstance<T>() where T:ActionInstance{
-        if (GetActionInstance<T>() != default) {
-            return false;
-        }
-        if (actionQueue == null) {
-            Debug.LogError("Action Queue is not set up for the component!");
-            return false;
-        }
-
-        T ai = ScriptableObject.CreateInstance<T>();
-        if (ai.ComponentCheck(this)) {
-            availableActions.Add(typeof(T).ToString(), ai);
-            ai.queue = actionQueue;
-            ai.actionComponent = this;
-            return true;
-        }
-        return false;
-    }
-
-    public bool RemoveActionInstance<T>() where T:ActionInstance
-    {
-        return availableActions.Remove(typeof(T).ToString());
     }
 }

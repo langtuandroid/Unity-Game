@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-[RequireComponent(typeof(Actionable))]
 public class AIController : MonoBehaviour
 {
     [SerializeField] private RefFloat sightRange;

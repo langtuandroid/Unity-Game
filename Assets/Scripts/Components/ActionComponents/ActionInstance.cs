@@ -23,7 +23,6 @@ public abstract class ActionInstance : ScriptableObject
     public ActionQueue queue;
     [HideInInspector]
     public Actionable actionComponent;
-    [HideInInspector] public int identifier = -1;
     [SerializeField] protected RefActionData actionData;
 
     private float counter = 0;

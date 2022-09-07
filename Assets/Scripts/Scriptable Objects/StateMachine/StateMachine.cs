@@ -15,7 +15,7 @@ public class StateMachine : MonoBehaviour
         set { currentState = value; }
     }
 
-    void Awake() {
+    void Start() {
         ReferenceCheck();
 
         foreach (StateSO s in allStates) {

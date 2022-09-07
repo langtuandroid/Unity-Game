@@ -34,7 +34,7 @@ public class Guard : ActionInstance
     {
         if (defender.IncomingDamage > 0)
         {
-            Debug.Log("Blocked: " + combat.defense);
+            Debug.Log("Blocked: " + combat.defense.Value);
         }
         defender.IncomingDamage -= combat.defense.Value;
         if (guardAnimation == null)
