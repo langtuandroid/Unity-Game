@@ -9,32 +9,32 @@ public class RequireCMPAttribute : Attribute
     public static Dictionary<Type, HashSet<Type>> requirement = new();
     public static Dictionary<Type, HashSet<Type>> rev_requirement = new();
 
-    public RequireCMPAttribute(Type e, params Type[] ts)
+    public RequireCMPAttribute(Type actionInstance, params Type[] requiredComponents)
     {
-        if (!e.IsSubclassOf(typeof(ActionInstance)))
+        if (!actionInstance.IsSubclassOf(typeof(ActionInstance)))
         {
-            Debug.LogError("Type:" + e.ToString() + " is not an ActionInstance!");
+            Debug.LogError("Type:" + actionInstance.ToString() + " is not an ActionInstance!");
             return;
         }
-        if (requirement.ContainsKey(e))
+        if (requirement.ContainsKey(actionInstance))
         {
-            Debug.LogWarning("ActionInstance:" + e.ToString() + " is requiring components from multiple sources!");
+            Debug.LogWarning("ActionInstance:" + actionInstance.ToString() + " is requiring components from multiple sources!");
             return;
         }
-        requirement[e] = new HashSet<Type>();
-        foreach (Type t in ts)
+        requirement[actionInstance] = new HashSet<Type>();
+        foreach (Type t in requiredComponents)
         {
             if (!t.IsSubclassOf(typeof(Component)))
             {
-                Debug.LogError("Cannot apply require Component of type:" + t.ToString() + " to " + e.ToString());
+                Debug.LogError("Cannot apply require Component of type:" + t.ToString() + " to " + actionInstance.ToString());
                 return;
             }
-            requirement[e].Add(t);
+            requirement[actionInstance].Add(t);
 
             if (!rev_requirement.ContainsKey(t)) {
                 rev_requirement[t] = new HashSet<Type>();
             }
-            rev_requirement[t].Add(e);
+            rev_requirement[t].Add(actionInstance);
         }
     }
 }

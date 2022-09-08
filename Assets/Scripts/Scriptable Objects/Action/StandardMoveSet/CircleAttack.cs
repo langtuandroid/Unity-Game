@@ -4,6 +4,7 @@ using UnityEngine;
 using System.ComponentModel;
 
 [RequireActionComponent(typeof(CircleAttack), typeof(CombatComponent))]
+[RequireCMP(typeof(CircleAttack), typeof(AudioBehaviour))]
 [ActionInstance(typeof(CircleAttack))]
 public class CircleAttack : ActionInstance
 {

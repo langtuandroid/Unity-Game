@@ -26,7 +26,7 @@ public class Actionable : MonoBehaviour
     [SerializeField] private string assetName;
     [SerializeField] private ActionQueue actionQueue;
 
-    private TypeActionInstanceDictionary availableActions;
+    private Dictionary<string, ActionInstance> availableActions;
     private TypeActionComponentDictionary components;
 
     private void Awake()
@@ -55,9 +55,9 @@ public class Actionable : MonoBehaviour
             actionableData.identifier = id;
             actionableData.CopyActionAsset();
         }
-        availableActions = actionableData.availableActions;
         components = actionableData.components;
         actionableData.Initialize(this, actionQueue);
+        availableActions = actionableData.availableActions;
     }
 
 
@@ -81,7 +81,7 @@ public class Actionable : MonoBehaviour
 
     private void OnDestroy()
     {
-        foreach (ActionInstance ac in actionableData.availableActions.Values) {
+        foreach (ActionInstance ac in actionableData.allActions.Values) {
             ac.HaltActionExecution();
         }
     }

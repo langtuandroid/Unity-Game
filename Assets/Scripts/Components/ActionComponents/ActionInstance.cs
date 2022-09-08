@@ -100,42 +100,9 @@ public abstract class ActionInstance : ScriptableObject
     // Override This!
     public virtual void Initialize() { }
 
-    public virtual bool ComponentCheck(Actionable actionComponent) {
+    public bool ComponentCheck(Actionable actionComponent) {
         Type type = GetType();
-
-        bool result = true;
-        bool f1 = false;
-        bool f2 = false;
-        if (RequireActionComponentAttribute.requirement.ContainsKey(type))
-        {
-            HashSet<Type> ts = RequireActionComponentAttribute.requirement[type];
-            MethodInfo m = typeof(Actionable).GetMethod("GetActionComponent");
-
-            List<Type> lst1 = new List<Type>();
-            foreach (Type t in ts)
-            {
-                MethodInfo mm = m.MakeGenericMethod(t);
-                if (mm.Invoke(actionComponent, null) == null)
-                {
-                    f1 = true;
-                    lst1.Add(t);
-                }
-            }
-
-            if (f1)
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.Append("Missing ActionComponent: ");
-                foreach (Type t in lst1)
-                {
-                    sb.Append(t.Name);
-                    sb.Append(", ");
-                }
-                sb.Remove(sb.Length - 2, 2);
-                Debug.LogError(sb.ToString());
-            }
-        }
-
+        bool f2 = true;
         // Check of gameobject Components
         if (RequireCMPAttribute.requirement.ContainsKey(type))
         {
@@ -146,11 +113,11 @@ public abstract class ActionInstance : ScriptableObject
             {
                 if (actionComponent.GetComponent(t.ToString()) == null)
                 {
-                    f2 = true;
+                    f2 = false;
                     lst2.Add(t);
                 }
             }
-            if (f2)
+            if (!f2)
             {
                 StringBuilder sb = new StringBuilder();
                 sb.Append("Missing Component: ");
@@ -163,13 +130,7 @@ public abstract class ActionInstance : ScriptableObject
                 Debug.LogError(sb.ToString());
             }
         }
-
-        if (f1 || f2)
-        {
-            result = false;
-        }
-
-        return result;
+        return f2;
     }
 
     public bool HaltActionExecution()

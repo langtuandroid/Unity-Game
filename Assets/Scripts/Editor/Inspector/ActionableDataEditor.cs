@@ -17,7 +17,7 @@ public class ActionableDataEditor : Editor
         EditorGUI.BeginChangeCheck();
 
         SerializedProperty actComp = serializedObject.FindProperty("components");
-        SerializedProperty avAct = serializedObject.FindProperty("availableActions");
+        SerializedProperty avAct = serializedObject.FindProperty("allActions");
 
         // Draw Action Component Section
         EditorGUILayout.BeginHorizontal();
@@ -80,7 +80,7 @@ public class ActionableDataEditor : Editor
 
         // Draw Action Instance Section
         EditorGUILayout.BeginHorizontal();
-        avAct.isExpanded = EditorGUILayout.Foldout(avAct.isExpanded, "Action Instances: " + actionableData.availableActions.Count);
+        avAct.isExpanded = EditorGUILayout.Foldout(avAct.isExpanded, "Action Instances: " + actionableData.allActions.Count);
         bool aiButton = GUILayout.Button("Add Action Instance");
         EditorGUILayout.EndHorizontal();
 
@@ -107,7 +107,7 @@ public class ActionableDataEditor : Editor
             removed = null;
             EditorGUI.indentLevel++;
             int i = 0;
-            foreach (ActionInstance action in actionableData.availableActions.Values)
+            foreach (ActionInstance action in actionableData.allActions.Values)
             {
                 i += 1;
                 Editor editor = CreateEditor(action);
@@ -125,7 +125,7 @@ public class ActionableDataEditor : Editor
                     removed = m.MakeGenericMethod(action.GetType());
                 }
                 GUILayout.FlexibleSpace();
-                if (i != actionableData.availableActions.Count)
+                if (i != actionableData.allActions.Count)
                 {
                     EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
                 }
