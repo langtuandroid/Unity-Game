@@ -39,23 +39,11 @@ public class ChaseState : State
         aiController.target = null;
     }
 
-    public void Shoot()
-    {
-        actionComponent.EnqueueAction<Shoot>();
-    }
-
-    public void Melee()
-    {
-        actionComponent.EnqueueAction<CircleAttack>();
-    }
-
-    public void Guard()
-    {
-        actionComponent.EnqueueAction<Guard>();
-    }
-
     public override Type Tick()
     {
+        if (!aiController.target.gameObject.activeInHierarchy) {
+            return typeof(WanderState);
+        }
         aiController.ChaseTarget();
         if (aiController.InChaseRange()) {
             if (aiController.TargetInRange(combatComponent.attackRange.Value))

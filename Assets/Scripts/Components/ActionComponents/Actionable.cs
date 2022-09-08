@@ -60,6 +60,17 @@ public class Actionable : MonoBehaviour
         availableActions = actionableData.availableActions;
     }
 
+    public void Reset()
+    {
+        foreach(ActionComponent component in components.Values) {
+            component.Reset();
+        }
+        foreach (ActionInstance ac in availableActions.Values)
+        {
+            ac.Reset();
+        }
+    }
+
 
     private void Update()
     {
@@ -81,8 +92,13 @@ public class Actionable : MonoBehaviour
 
     private void OnDestroy()
     {
-        foreach (ActionInstance ac in actionableData.allActions.Values) {
+        foreach (ActionInstance ac in actionableData.availableActions.Values) {
             ac.HaltActionExecution();
+            ac.CleanUp();
+        }
+        foreach (ActionComponent ac in actionableData.components.Values)
+        {
+            ac.CleanUp();
         }
     }
 

@@ -42,6 +42,21 @@ public class Shoot : ActionInstance
         manaComponent = actionComponent.GetActionComponent<Mana>();
     }
 
+    public override void CleanUp()
+    {
+        foreach (EntityGroup group in targetGroups)
+        {
+            group.OnEntityAdded.RemoveListener((Entity entity) => { targets.Add(entity); });
+        }
+
+        foreach (EntityGroup group in ignoreGroups)
+        {
+            group.OnEntityAdded.RemoveListener((Entity entity) => { ignoreTargets.Add(entity); });
+        }
+        targets.Clear();
+        ignoreTargets.Clear();
+    }
+
     public override bool ConditionSatisfied()
     {
         return manaComponent.AvailableMana >= manaCost.Value;

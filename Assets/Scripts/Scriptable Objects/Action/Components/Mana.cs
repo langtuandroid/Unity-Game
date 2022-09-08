@@ -28,7 +28,7 @@ public class Mana : ActionComponent
     public float MaxMana { get { return maxMana.Value; } }
     public float ManaRegen { get { return manaRegen.Value; } }
 
-    public override void Initialzie()
+    public override void Initialize()
     {
         mana = maxMana.Value;
         reservedAmount = 0;

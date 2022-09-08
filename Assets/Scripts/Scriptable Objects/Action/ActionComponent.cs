@@ -4,7 +4,14 @@ using UnityEngine;
 
 public abstract class ActionComponent : ScriptableObject
 {
-    public virtual void Initialzie() { }
+    public void Reset() { 
+        CleanUp();
+        Initialize();
+    }
+
+    public virtual void Initialize() { }
+
+    public virtual void CleanUp()  { }
 
     public virtual void Update() { }
 }

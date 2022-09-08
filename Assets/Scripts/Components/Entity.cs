@@ -55,6 +55,11 @@ public class Entity : MonoBehaviour
         } 
     }
 
+    public bool IsDead {
+        get;
+        private set;
+    }
+
     private void Start()
     {
         foreach (EntityGroup group in groups)
@@ -66,6 +71,7 @@ public class Entity : MonoBehaviour
         MaxHealth = startMaxHealth.Value;
         Health = startHealth.Value;
         gameObject.tag = Setting.TAG_ENTITY;
+        IsDead = false;
     }
 
     protected void LateUpdate()
@@ -83,10 +89,13 @@ public class Entity : MonoBehaviour
         incomingDamage = 0;
         MaxHealth = startMaxHealth.Value;
         Health = startHealth.Value;
+        IsDead = false;
+        gameObject.SetActive(true);
     }
 
     public void Die()
     {
+        IsDead = true;
         gameObject.SetActive(false);
     }
 

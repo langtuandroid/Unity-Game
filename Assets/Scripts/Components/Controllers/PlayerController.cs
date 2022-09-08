@@ -7,13 +7,16 @@ using TMPro;
 [RequireComponent(typeof(GeneralInteractor))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private VoidEventChannel gameEndChannel;
     [SerializeField] private Camera camera;
     [SerializeField] private float speed;
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float distance;
     [SerializeField] private VarBool gamePause;
 
+    [Header("Event Channels")]
+    [SerializeField] private VoidEventChannel gameEndChannel;
+    [SerializeField] private VoidEventChannel playerDeathChannel;
+    [SerializeField] private VoidEventChannel playerRespawnChennel;
 
     private Entity player;
     private Rigidbody2D rb;
@@ -29,11 +32,31 @@ public class PlayerController : MonoBehaviour
         actionable = GetComponent<Actionable>();
         interactor = GetComponent<GeneralInteractor>();
         rb = GetComponent<Rigidbody2D>();
+
+        playerRespawnChennel.OnEventRaised += RespawnPlayer;
     }
 
     private void FixedUpdate()
     {
         rb.velocity = velocity;
+    }
+
+    private void OnDisable()
+    {
+        if (player.IsDead)
+        {
+            playerDeathChannel.RaiseEvent();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        playerRespawnChennel.OnEventRaised -= RespawnPlayer;
+    }
+
+    private void RespawnPlayer() {
+        player.Reset();
+        actionable.Reset();
     }
 
     public void CircleAttack(InputAction.CallbackContext context)
@@ -46,18 +69,22 @@ public class PlayerController : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
+        if (gamePause.Value) {
+            return;
+        }
         if (!context.canceled)
         {
             velocity = (speed * context.ReadValue<Vector2>().normalized);
         }
-        else {
+        else
+        {
             velocity = Vector2.zero;
         }
     }
 
     public void Guard(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (!gamePause.Value && context.started)
         {
             actionable.EnqueueAction<Guard>();
         }
@@ -65,7 +92,7 @@ public class PlayerController : MonoBehaviour
 
     public void Shoot(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (!gamePause.Value && context.started)
         {
             actionable.EnqueueAction<Shoot>();
         }
@@ -73,14 +100,14 @@ public class PlayerController : MonoBehaviour
 
     public void TriggerDialogue(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (!gamePause.Value && context.started)
         {
             interactor.Interact(typeof(DialogueDisplayer), InteractionType.Primary);
         }
     }
 
     public void PrimaryInteraction(InputAction.CallbackContext context) {
-        if (context.started)
+        if (!gamePause.Value && context.started)
         {
             interactor.Interact(InteractionType.Primary);
         }
@@ -88,14 +115,14 @@ public class PlayerController : MonoBehaviour
 
     public void SecondaryInteraction(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (!gamePause.Value && context.started)
         {
             interactor.Interact(InteractionType.Secondary);
         }
     }
 
     public void NextInteractable(InputAction.CallbackContext context) {
-        if (context.started)
+        if (!gamePause.Value && context.started)
         {
             interactor.NextInteractable();
         }
@@ -103,13 +130,16 @@ public class PlayerController : MonoBehaviour
 
     public void PreviousInteractable(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (!gamePause.Value && context.started)
         {
             interactor.PreviousInteractable();
         }
     }
 
     public void LookAtMouse(InputAction.CallbackContext context) {
+        if (gamePause.Value || Camera.main == null) {
+            return;
+        }
         // If the mouse hasn't moved, do not update the destination angle
         Vector2 mouse_pos = context.ReadValue<Vector2>();
         Vector2 object_pos = Camera.main.WorldToScreenPoint(transform.position);

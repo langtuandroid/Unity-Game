@@ -100,6 +100,15 @@ public abstract class ActionInstance : ScriptableObject
     // Override This!
     public virtual void Initialize() { }
 
+    // Override This!
+
+    public virtual void CleanUp() { }
+
+    public void Reset() {
+        CleanUp();
+        Initialize();
+    }
+
     public bool ComponentCheck(Actionable actionComponent) {
         Type type = GetType();
         bool f2 = true;

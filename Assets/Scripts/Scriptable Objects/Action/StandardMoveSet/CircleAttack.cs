@@ -4,7 +4,6 @@ using UnityEngine;
 using System.ComponentModel;
 
 [RequireActionComponent(typeof(CircleAttack), typeof(CombatComponent))]
-[RequireCMP(typeof(CircleAttack), typeof(AudioBehaviour))]
 [ActionInstance(typeof(CircleAttack))]
 public class CircleAttack : ActionInstance
 {
@@ -38,6 +37,21 @@ public class CircleAttack : ActionInstance
             }
         }
         combatComponent =  actionComponent.GetActionComponent<CombatComponent>();
+    }
+
+    public override void CleanUp()
+    {
+        foreach (EntityGroup group in targetGroups)
+        {
+            group.OnEntityAdded.RemoveListener((Entity entity) => { targets.Add(entity); });
+        }
+
+        foreach (EntityGroup group in ignoreGroups)
+        {
+            group.OnEntityAdded.RemoveListener((Entity entity) => { ignoreTargets.Add(entity); });
+        }
+        targets.Clear();
+        ignoreTargets.Clear();
     }
 
     protected override void ExecuteBody() {

@@ -54,7 +54,7 @@ public class AIController : MonoBehaviour
             Entity t = hit.collider.GetComponent<Entity>();
             if (t != null && targetGroup.Contains(t)) {
                 target = t;
-                Debug.Log(hit.distance);
+                Debug.Log("AI: Target in range " + hit.distance);
                 return true;
             }
         }
