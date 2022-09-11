@@ -8,6 +8,7 @@ public class AIController : MonoBehaviour
 {
     [SerializeField] private List<ControllerData> controllerDatas;
     [SerializeField] private EntityGroup targetGroup;
+    [SerializeField] private RefInt rotateSpeed;
 
     public Entity target;
     private Transform _transform;
@@ -18,6 +19,8 @@ public class AIController : MonoBehaviour
 
     private Dictionary<Type, ControllerData> controllerData;
     private Entity entityComponent;
+    private bool isRotating;
+    private Quaternion endGoal;
 
     private void Awake()
     {
@@ -44,6 +47,7 @@ public class AIController : MonoBehaviour
         }
         return null;
     }
+
     public bool TargetInRange(float range) {
         return Vector3.Distance(_transform.position, target.transform.position) <= range;
     }
@@ -100,8 +104,9 @@ public class AIController : MonoBehaviour
         }
     }
 
-    public void LookAtTarget() {
-        _transform.up = target.transform.position - _transform.position;
+    public void LookTowards() {
+        Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, target.transform.position - _transform.position);
+        _transform.rotation = Quaternion.RotateTowards(_transform.rotation, targetRotation, rotateSpeed.Value * Time.deltaTime);
     }
 
     public void BackStep()

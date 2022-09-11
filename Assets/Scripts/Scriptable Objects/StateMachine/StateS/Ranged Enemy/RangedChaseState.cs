@@ -50,7 +50,7 @@ public class RangedChaseState : State
         Debug.DrawLine(transform.position, (aiController.target.transform.position - transform.position).normalized * trackData.engageDistance.Value + transform.position, Color.red);
         if (aiController.TargetVisible(aiController.transform.position, trackData.engageDistance.Value)) {
             aiController.AutoRotation = false;
-            aiController.LookAtTarget();
+            aiController.LookTowards();
             if (aiController.TargetInRange(trackData.keepDistance.Value))
             {
                 aiController.MoveInDirection(transform.position - targetTransform.position, trackData.keepDistance.Value - Vector3.Distance(transform.position, targetTransform.position));
