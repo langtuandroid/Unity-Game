@@ -5,10 +5,10 @@ using UnityEngine;
 [System.Serializable]
 public struct Transition
 {
-    [SerializeField] private StateSO targetState;
+    [SerializeField] private State targetState;
     [SerializeField] private List<Condition> transitionConditions;
 
-    public StateSO Eval()
+    public State Eval()
     {
         foreach (Condition condition in transitionConditions)
         {
@@ -20,7 +20,7 @@ public struct Transition
         return null;
     }
 
-    public StateSO TargetState {
+    public State TargetState {
         get { return targetState; }
     } 
 }

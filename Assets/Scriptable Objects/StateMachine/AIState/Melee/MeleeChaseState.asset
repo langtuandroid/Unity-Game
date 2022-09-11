@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca6437997321d02418fb5df98b553472, type: 3}
-  m_Name: NPCAttackRange
+  m_Script: {fileID: 11500000, guid: 067936cab4fb1184485b5c8c7c029d4a, type: 3}
+  m_Name: MeleeChaseState
   m_EditorClassIdentifier: 
-  value: 1.4
+  chaseRadius:
+    value: 7
+    useSharedValue: 0
+    sharedValue: {fileID: 0}

@@ -8,7 +8,7 @@ public class TransitionTable : ScriptableObject
 {
     private Dictionary<Type, SortedList<int, Transition>> transitions;
 
-    public StateSO Execute(StateSO currentState) {
+    public State Execute(State currentState) {
         Type type = currentState.GetType();
         if (transitions.ContainsKey(type)) {
             foreach (Transition t in transitions[type].Values) {
@@ -18,7 +18,7 @@ public class TransitionTable : ScriptableObject
         return null;
     }
 
-    public bool AddTransition(StateSO fromState, Transition t, int priority)
+    public bool AddTransition(State fromState, Transition t, int priority)
     {
         Type type = fromState.GetType();
         if (!transitions.ContainsKey(type))
@@ -33,7 +33,7 @@ public class TransitionTable : ScriptableObject
         return true;
     }
 
-    public bool RemoveTransition(StateSO fromState, int key)
+    public bool RemoveTransition(State fromState, int key)
     {
         Type fromType = fromState.GetType();
         if (transitions.ContainsKey(fromType))

@@ -5,8 +5,8 @@ using System;
 
 public class StateMachine : MonoBehaviour
 {
-    [SerializeField] private List<StateSO> allStates;
-    [SerializeField] private StateSO initialState;
+    [SerializeField] private List<State> allStates;
+    [SerializeField] private State initialState;
     [SerializeField] private State currentState;
     private Dictionary<Type, State> states = new();
 
@@ -18,8 +18,8 @@ public class StateMachine : MonoBehaviour
     void Start() {
         ReferenceCheck();
 
-        foreach (StateSO s in allStates) {
-            State state = s.ResolveState();
+        foreach (State s in allStates) {
+            State state = Instantiate(s);
             states[state.GetType()] = state;
             state.InitializeFields(gameObject);
         }
@@ -27,7 +27,7 @@ public class StateMachine : MonoBehaviour
         {
             initialState = allStates[0];
         }
-        currentState = states[initialState.GetStateType()];
+        currentState = states[initialState.GetType()];
     }
 
     private void ReferenceCheck() {
@@ -44,6 +44,13 @@ public class StateMachine : MonoBehaviour
             currentState.OnExit();
             currentState = states[target];
             currentState.OnEnter();
+        }
+    }
+
+    public void OnDestroy()
+    {
+        foreach (State s in states.Values) {
+            Destroy(s);
         }
     }
 }
