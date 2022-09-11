@@ -10,7 +10,7 @@ public static class Setting
     public const int TARGET_FRAME_RATE = 120;
 
     // Attack info duration (seconds)
-    public const float EXPIRE_ATTACK_TIME = 10f;
+    public const float EXPIRE_ATTACK_TIME = 3;
 
     // Tags
     public const string TAG_ENTITY = "entity";
@@ -19,32 +19,9 @@ public static class Setting
     public static string TAG_INTERACTABLE = "interactable";
     public static string TAG_INTERACTOR = "interactor";
 
-    // Id distribute keys
-    public const string ID_ACTION = "action";
-    public const string ID_QUEST = "quest";
-
     // 
     public const int ENTITY_DNE = -1;
-    public const string INTERACTION_OK = "";
 
-    // Action Arguments
-    public const string HANDLING_COMPONENT = "_component";
-    public const string IGNORE_TARGET = "ignore";
-
-    // Action Priorities
-    public const int ACTION_ATTACK_PRIORITY = 1;
-    public const int ACTION_DEFEND_PRIORITY = 2;
-
-    // Action Cooldowns (seconds)
-    public const float CD_CIRCLE_ATTACK = 1f;
-    public const float CD_CIRCLE_GUARD = 1f;
-
-    // Action Durations  (Frames)
-    public const int DURATION_CIRCLE_ATTACK = 1;
-    public const int DURATION_GUARD = TARGET_FRAME_RATE / 2;
-
-    // Action Animation Durations  (Seconds)
-    public const float ADURATION_GUARD = 0.5f;
     public enum CoroutineStatus
     {
         COROUTINE_OFF = 0,

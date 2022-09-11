@@ -11,26 +11,30 @@ public class AIController : MonoBehaviour
 
     public Entity target;
     private Transform _transform;
+    private Collider2D _collider;
 
     private AIPath ai;
     private GridGraph gridGraph;
 
     private Dictionary<Type, ControllerData> controllerData;
+    private Entity entityComponent;
 
     private void Awake()
     {
         _transform = transform;
+        _collider = GetComponent<Collider2D>();
         ai = GetComponent<AIPath>();
         gridGraph = AstarPath.active.data.gridGraph;
         controllerData = new();
         foreach (ControllerData data in controllerDatas) {
             controllerData[data.GetType()] = data;  
         }
+        entityComponent = GetComponent<Entity>();
     }
 
     private void Update()
     {
-
+        Debug.DrawLine(_transform.position, ai.destination, Color.green);
     }
 
     public T GetControllerData<T>() where T : ControllerData{
@@ -56,6 +60,12 @@ public class AIController : MonoBehaviour
     }
 
     public bool SearchTarget(float sightRange) {
+        DamageInfo info = entityComponent.LatestDamageInfo;
+        if (info.attacker != null) {
+            target = info.attacker;
+            Debug.Log("Received attack from target");
+            return true;
+        }
         RaycastHit2D hit = Physics2D.Raycast(_transform.position, _transform.up, sightRange);
         if (hit.collider != null) {
             Entity t = hit.collider.GetComponent<Entity>();
@@ -96,7 +106,20 @@ public class AIController : MonoBehaviour
 
     public void BackStep()
     {
-        ai.Move(( - _transform.up).normalized * ai.maxSpeed * Time.deltaTime);
+        ai.Move(( - _transform.up).normalized * ai.maxSpeed / 2 * Time.deltaTime);
+    }
+
+    public void MoveInDirection(Vector3 direction, float distance) {
+        float offset = _collider.bounds.size.x / 2;
+        RaycastHit2D hit = Physics2D.Raycast(_transform.position, direction, distance + offset);
+        if (hit.collider == null)
+        {
+            ai.destination = _transform.position + direction.normalized * distance;
+        }
+        else {
+            Vector2 dir = (Vector2)direction;
+            ai.destination = hit.point - dir.normalized * offset;
+        }
     }
 
     public void ClearPath() {

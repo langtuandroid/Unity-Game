@@ -17,7 +17,7 @@ public class Shoot : ActionInstance
     private HashSet<Entity> targets = new();
     private HashSet<Entity> ignoreTargets = new();
     private Mana manaComponent;
-
+    private Entity attacker;
     
 
     public override void Initialize()
@@ -40,6 +40,7 @@ public class Shoot : ActionInstance
         }
 
         manaComponent = actionComponent.GetActionComponent<Mana>();
+        attacker = actionComponent.GetComponent<Entity>();
     }
 
     public override void CleanUp()
@@ -83,7 +84,7 @@ public class Shoot : ActionInstance
         }
 
         Transform bulletTransform = obj.transform;
-        bullet.Initialize(targets, ignoreTargets, travelDuration.Value, firePower, piercePower.Value);
+        bullet.Initialize(targets, ignoreTargets, travelDuration.Value, attacker, firePower, piercePower.Value);
         Rigidbody2D body = bullet.GetComponent<Rigidbody2D>();
         body.velocity = bulletTransform.up.normalized * bulletSpeed.Value;
     }

@@ -13,6 +13,7 @@ public class RangedChaseState : State
     private Actionable actionComponent;
 
     private Entity chaseTarget;
+    private Transform targetTransform;
 
     public override void InitializeFields(GameObject obj)
     {
@@ -26,12 +27,12 @@ public class RangedChaseState : State
     public override void OnEnter()
     {
         chaseTarget = aiController.target;
+        targetTransform = aiController.target.transform;
     }
 
     public override void OnExit()
     {
         aiController.AutoRotation = true;
-        aiController.StopPathing = false;
     }
 
     public bool InChaseRange()
@@ -49,19 +50,14 @@ public class RangedChaseState : State
         Debug.DrawLine(transform.position, (aiController.target.transform.position - transform.position).normalized * trackData.engageDistance.Value + transform.position, Color.red);
         if (aiController.TargetVisible(aiController.transform.position, trackData.engageDistance.Value)) {
             aiController.AutoRotation = false;
-            aiController.StopPathing = true;
             aiController.LookAtTarget();
             if (aiController.TargetInRange(trackData.keepDistance.Value))
             {
-                aiController.BackStep();
+                aiController.MoveInDirection(transform.position - targetTransform.position, trackData.keepDistance.Value - Vector3.Distance(transform.position, targetTransform.position));
             }
             actionComponent.EnqueueAction<Shoot>();
             return null;
         }
-        if (aiController.TargetVisible(aiController.NextWayPoint(), trackData.keepDistance.Value)) {
-            return typeof(RangedOnHoldState);
-        }
-        aiController.StopPathing = false;
         aiController.AutoRotation = true;
         aiController.ChaseTarget();
         return null;

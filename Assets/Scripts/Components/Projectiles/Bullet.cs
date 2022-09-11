@@ -19,8 +19,9 @@ public class Bullet : MonoBehaviour
     
     private HashSet<Entity> targetEntity;
     private HashSet<Entity> ignoreEntity;
+    private Entity attacker;
 
-    public void Initialize(HashSet<Entity> target, HashSet<Entity> ignore, float duration, int attackPower = -1, int piercePower = -1)
+    public void Initialize(HashSet<Entity> target, HashSet<Entity> ignore, float duration, Entity attacker = null, int attackPower = -1, int piercePower = -1)
     {
         if (attackPower == -1) {
             attackPower = innatePower.Value;
@@ -38,6 +39,7 @@ public class Bullet : MonoBehaviour
 
         timeActive = duration;
         timeCounter = 0;
+        this.attacker = attacker;
     }
 
     private void Update()
@@ -64,7 +66,7 @@ public class Bullet : MonoBehaviour
         {
             if (targetEntity.Contains(entity) && !ignoreEntity.Contains(entity))
             {
-                entity.RegisterDamage(power);
+                entity.RegisterDamage(power, attacker);
                 pierceCount -= 1;
             }
         }

@@ -8,11 +8,14 @@ public class Entity : MonoBehaviour
     [SerializeField] private RefInt startMaxHealth;
     [SerializeField] private RefInt startHealth;
 
+    [SerializeField] private List<DamageInfoKeeper> damageHistory;
+
     [HideInInspector]
     [SerializeField] private int maxHealth;
     [HideInInspector]
     [SerializeField] private int health;
     private int incomingDamage;
+    
     
     public int MaxHealth { 
         get {
@@ -60,6 +63,15 @@ public class Entity : MonoBehaviour
         private set;
     }
 
+    public DamageInfo LatestDamageInfo
+    {
+        get
+        {
+            if (damageHistory.Count > 0) { return damageHistory[damageHistory.Count - 1].info; }
+            return DamageInfo.none;
+        }
+    }
+
     private void Start()
     {
         foreach (EntityGroup group in groups)
@@ -72,9 +84,19 @@ public class Entity : MonoBehaviour
         Health = startHealth.Value;
         gameObject.tag = Setting.TAG_ENTITY;
         IsDead = false;
+        damageHistory = new();
     }
 
-    protected void LateUpdate()
+    private void Update()
+    {
+        for (int i = damageHistory.Count - 1;i >= 0; i--) {
+            if (damageHistory[i].CountDown()) {
+                damageHistory.RemoveAt(i);
+            }
+        }
+    }
+
+    private void LateUpdate()
     {
         Health -= incomingDamage;
         incomingDamage = 0;
@@ -104,6 +126,7 @@ public class Entity : MonoBehaviour
         foreach (EntityGroup group in groups) {
             group.Remove(this);
         }
+        damageHistory.Clear();
     }
 
     private void OnEnable()
@@ -114,9 +137,38 @@ public class Entity : MonoBehaviour
         }
     }
 
-    public void RegisterDamage(int damage)
+    public void RegisterDamage(int damage, Entity attacker = null)
     {
         incomingDamage += damage;
         Debug.Log("Damage:" + incomingDamage);
+
+        if (attacker != null) {
+            DamageInfo info = new DamageInfo() { damage = damage, attacker = attacker };
+            damageHistory.Add(new DamageInfoKeeper(info));
+        }
+    }
+
+    [System.Serializable]
+    private class DamageInfoKeeper {
+        public DamageInfo info;
+        private float counter;
+
+        public DamageInfoKeeper(DamageInfo info) {
+            this.info = info;
+            counter = 0;
+        }
+
+        public bool CountDown() { 
+            counter += Time.deltaTime;
+            return counter >= Setting.EXPIRE_ATTACK_TIME;
+        }
     }
 }
+
+[System.Serializable]
+
+public struct DamageInfo {
+    public int damage;
+    public Entity attacker;
+    public static DamageInfo none = new() { damage = 0, attacker = null };
+};

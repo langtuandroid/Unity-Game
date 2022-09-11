@@ -16,6 +16,7 @@ public class CircleAttack : ActionInstance
     private HashSet<Entity> targets = new();
     private HashSet<Entity> ignoreTargets = new();
     private CombatComponent combatComponent;
+    private Entity attacker;
 
     public override void Initialize()
     {
@@ -37,6 +38,7 @@ public class CircleAttack : ActionInstance
             }
         }
         combatComponent =  actionComponent.GetActionComponent<CombatComponent>();
+        attacker = actionComponent.GetComponent<Entity>();
     }
 
     public override void CleanUp()
@@ -93,7 +95,7 @@ public class CircleAttack : ActionInstance
 
             if (targets.Contains(collided) && !ignoreTargets.Contains(collided))
             {
-                collided.RegisterDamage(damage);
+                collided.RegisterDamage(damage, attacker);
             }
         }
     }
