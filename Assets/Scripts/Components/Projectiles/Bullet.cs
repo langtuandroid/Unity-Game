@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
@@ -20,6 +21,7 @@ public class Bullet : MonoBehaviour
     private HashSet<Entity> targetEntity;
     private HashSet<Entity> ignoreEntity;
     private Entity attacker;
+    private Transform _transform;
 
     public void Initialize(HashSet<Entity> target, HashSet<Entity> ignore, float duration, Entity attacker = null, int attackPower = -1, int piercePower = -1)
     {
@@ -40,6 +42,12 @@ public class Bullet : MonoBehaviour
         timeActive = duration;
         timeCounter = 0;
         this.attacker = attacker;
+        
+    }
+
+    private void Start()
+    {
+        _transform = GetComponent<Transform>();
     }
 
     private void Update()
@@ -67,6 +75,14 @@ public class Bullet : MonoBehaviour
             if (targetEntity.Contains(entity) && !ignoreEntity.Contains(entity))
             {
                 entity.RegisterDamage(power, attacker);
+                AIPath ai = entity.GetComponent<AIPath>();
+                Rigidbody2D rb = entity.GetComponent<Rigidbody2D>();
+                if (ai != null)
+                {
+                    ai.canMove = false;
+                    GameManager.ExecuteDelegate(() => { ai.canMove = true; }, 1);
+                }
+                rb.AddForce(power * (entity.transform.position - _transform.position).normalized);
                 pierceCount -= 1;
             }
         }

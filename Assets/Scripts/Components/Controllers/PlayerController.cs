@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Camera camera;
     [SerializeField] private float speed;
+    [SerializeField] private float acceleration;
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float distance;
     [SerializeField] private VarBool gamePause;
@@ -24,7 +25,7 @@ public class PlayerController : MonoBehaviour
     private GeneralInteractor interactor;
 
     private float angle;
-    private Vector2 velocity;
+    private Vector2 steering;
 
     public void Start()
     {
@@ -38,7 +39,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = velocity;
+        if (steering != Vector2.zero) {
+            rb.AddForce(steering);
+        }
+       
+        rb.velocity = Vector2.ClampMagnitude(rb.velocity, speed);
     }
 
     private void OnDisable()
@@ -74,11 +79,11 @@ public class PlayerController : MonoBehaviour
         }
         if (!context.canceled)
         {
-            velocity = (speed * context.ReadValue<Vector2>().normalized);
+            steering = (acceleration * context.ReadValue<Vector2>().normalized);
         }
         else
         {
-            velocity = Vector2.zero;
+            steering = Vector2.zero;
         }
     }
 

@@ -9,6 +9,7 @@ public class CollectableItem : InteractableObject
 {
     [SerializeField] private RefBool destroyWhenDeplete;
     [SerializeField] private InventoryItem item;
+
     private SpriteRenderer spriteRenderer;
 
     private InteractionPrompt prompt = new() { Primary = "Collect"};
@@ -17,7 +18,8 @@ public class CollectableItem : InteractableObject
         base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = item.itemData.Icon;
-        item.CorrectGeneralQuantity();
+        item.itemData = Instantiate(item.itemData);
+        item.CorrectInventoryQuantity(false);
     }
 
     public InventoryItem Item { 

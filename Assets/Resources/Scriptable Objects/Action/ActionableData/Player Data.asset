@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3501879976856840286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23cafed77cafc444eb80658fa3b67136, type: 3}
+  m_Name: (Clone)(Clone)
+  m_EditorClassIdentifier: 
+  maxMana:
+    value: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: fc7eaa15bb27b4a4d8622d4e81cd4921, type: 2}
+  manaRegen:
+    value: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: 4e0bd4a0150b0d746ad939b2bb729fef, type: 2}
+  mana: 100
+--- !u!114 &-1564375607992526607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eec34eea6c62446b70df6baef69aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  queue: {fileID: 0}
+  actionComponent: {fileID: 0}
+  actionData:
+    value:
+      priority:
+        value: 0
+        useSharedValue: 0
+        sharedValue: {fileID: 0}
+      cooldown:
+        value: 0
+        useSharedValue: 0
+        sharedValue: {fileID: 0}
+      duration:
+        value: 0
+        useSharedValue: 0
+        sharedValue: {fileID: 0}
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: 0d8971b6fbe6a5b47b8cc193fbcdc872, type: 2}
+  targetGroups:
+  - {fileID: 11400000, guid: bedff8bc66ebeab45996c2806021c2ae, type: 2}
+  - {fileID: 11400000, guid: 88417c86a09bbd4438fce976a5cb5306, type: 2}
+  ignoreGroups:
+  - {fileID: 11400000, guid: 4f8f16cf72b4f07469b075ddf31d9ebe, type: 2}
+  sprite: {fileID: 21300000, guid: 6115fe2b715595446a3a98180bbf4a14, type: 3}
+  spritePoolTag: {fileID: 11400000, guid: 3b82cb7d859145e4480133a3375eab4d, type: 2}
+  spriteDuration:
+    value: 0.5
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5cd7a81edede6f4c9921cd097a98b3c, type: 3}
+  m_Name: Player Data
+  m_EditorClassIdentifier: 
+  identifier: 0
+  components:
+    keys:
+    - CombatComponent
+    - Mana
+    values:
+    - {fileID: 1006549545147766659}
+    - {fileID: -3501879976856840286}
+  allActions:
+    keys:
+    - CircleAttack
+    - Guard
+    - Shoot
+    values:
+    - {fileID: -1564375607992526607}
+    - {fileID: 2095713133147246651}
+    - {fileID: 4975117291749645873}
+--- !u!114 &1006549545147766659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bd372fd1dd2cc45ab5bd7aaf742408, type: 3}
+  m_Name: (Clone)(Clone)
+  m_EditorClassIdentifier: 
+  attackDamage:
+    value: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: 404f1ca56cb622c408adec943f91ca10, type: 2}
+  attackRange:
+    value: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: c363db7b1a08bdc4687dbfef5b3b7ce0, type: 2}
+  defense:
+    value: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: d88c5ed475ddd6341b02b248ad26c7fd, type: 2}
+--- !u!114 &2095713133147246651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee0f315229b442b459f33b50ab403f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  queue: {fileID: 0}
+  actionComponent: {fileID: 0}
+  actionData:
+    value:
+      priority:
+        value: 0
+        useSharedValue: 0
+        sharedValue: {fileID: 0}
+      cooldown:
+        value: 0
+        useSharedValue: 0
+        sharedValue: {fileID: 0}
+      duration:
+        value: 0
+        useSharedValue: 0
+        sharedValue: {fileID: 0}
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: 5e8fe84f0d6fdcb4abdf8ec9d15cf1df, type: 2}
+  sprite: {fileID: 21300000, guid: 9c0cc4be0be33c54cb685ff01b7c8ffc, type: 3}
+  spriteAlpha:
+    value: 1
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  spritePoolTag: {fileID: 11400000, guid: 3b82cb7d859145e4480133a3375eab4d, type: 2}
+--- !u!114 &4975117291749645873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f70b9a967a96d4abc6cf3b83a774bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  queue: {fileID: 0}
+  actionComponent: {fileID: 0}
+  actionData:
+    value:
+      priority:
+        value: 0
+        useSharedValue: 0
+        sharedValue: {fileID: 0}
+      cooldown:
+        value: 0
+        useSharedValue: 0
+        sharedValue: {fileID: 0}
+      duration:
+        value: 0
+        useSharedValue: 0
+        sharedValue: {fileID: 0}
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: 3bbde0f778dd40c45a76c4af70678949, type: 2}
+  targetGroups:
+  - {fileID: 11400000, guid: bedff8bc66ebeab45996c2806021c2ae, type: 2}
+  - {fileID: 11400000, guid: 88417c86a09bbd4438fce976a5cb5306, type: 2}
+  ignoreGroups:
+  - {fileID: 11400000, guid: 4f8f16cf72b4f07469b075ddf31d9ebe, type: 2}
+  bulletPoolTag: {fileID: 11400000, guid: ea9bbdaa32301cd4e85df6669405a790, type: 2}
+  manaCost:
+    value: 15
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  bulletSpeed:
+    value: 12
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: a93fd6e8b9de78c4da1c109ee8ec504d, type: 2}
+  piercePower:
+    value: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  travelDuration:
+    value: 1.5
+    useSharedValue: 0
+    sharedValue: {fileID: 0}

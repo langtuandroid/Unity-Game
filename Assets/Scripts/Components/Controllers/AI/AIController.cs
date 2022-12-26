@@ -15,6 +15,7 @@ public class AIController : MonoBehaviour
     private Collider2D _collider;
 
     private AIPath ai;
+    private Seeker seeker;
     private GridGraph gridGraph;
 
     private Dictionary<Type, ControllerData> controllerData;
@@ -27,6 +28,7 @@ public class AIController : MonoBehaviour
         _transform = transform;
         _collider = GetComponent<Collider2D>();
         ai = GetComponent<AIPath>();
+        seeker = GetComponent<Seeker>();
         gridGraph = AstarPath.active.data.gridGraph;
         controllerData = new();
         foreach (ControllerData data in controllerDatas) {
@@ -97,7 +99,7 @@ public class AIController : MonoBehaviour
 
     public void Wander(int wanderRadius) {
         GraphNode startNode = gridGraph.GetNearest(_transform.position, NNConstraint.Default).node;
-        List<GraphNode> nodes = PathUtilities.BFS(startNode, wanderRadius, filter: (GraphNode node) => { return node.Walkable; });
+        List<GraphNode> nodes = PathUtilities.BFS(startNode, wanderRadius, filter: (GraphNode node) => { return PathUtilities.IsPathPossible(startNode, node); });
         if (nodes.Count > 0) {
             Vector3 dest = PathUtilities.GetPointsOnNodes(nodes, 1)[0];
             ai.destination = dest;

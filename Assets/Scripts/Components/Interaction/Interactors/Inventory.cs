@@ -39,7 +39,7 @@ public class Inventory : Interactor
 [System.Serializable]
 public struct InventoryItem {
     [SerializeField] private int quantity;
-    public ItemData itemData;
+    public SimpleItem itemData;
 
     public int Quantity { 
         get { return quantity; }
@@ -69,21 +69,13 @@ public struct InventoryItem {
         } 
     }
 
-    public void CorrectInventoryQuantity() {
+    public void CorrectInventoryQuantity(bool enforceLimit = true) {
         if (quantity < 0) {
             quantity = 0;
             return;
         }
-        if (quantity > itemData.ItemLimit) {
+        if (enforceLimit && quantity > itemData.ItemLimit) {
             quantity = itemData.ItemLimit;
-        }
-    }
-
-    public void CorrectGeneralQuantity() {
-        if (quantity < 0)
-        {
-            quantity = 0;
-            return;
         }
     }
 }

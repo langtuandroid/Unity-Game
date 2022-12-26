@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a38848b34381e64ca654f2e0a4046b8, type: 3}
+  m_Name: TestDialogue
+  m_EditorClassIdentifier: 
+  dialogueNodes:
+  - {fileID: 11400000, guid: a2fed1d67ebb819479c3f9a5b416ecb1, type: 2}
+  - {fileID: 11400000, guid: 9784f69441fd6564a95de17ae63369a1, type: 2}
+  responses:
+  - text: Option 1
+    dialogue: {fileID: 11400000, guid: bf8cb72a7d0039a42884f4d157f74e6f, type: 2}
+    operations: []
+  - text: Option 2
+    dialogue: {fileID: 11400000, guid: 058b3845f9b1bd545837c0e951c41f3f, type: 2}
+    operations: []
+  finishers:
+  - description: ColorChange
+    operation: {fileID: 0}
+    coroutine: {fileID: 11400000, guid: 8193c5db3933cbc4cacf94434889731d, type: 2}
+    useCoroutine: 1

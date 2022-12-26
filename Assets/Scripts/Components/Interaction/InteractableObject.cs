@@ -26,9 +26,11 @@ public abstract class InteractableObject : MonoBehaviour
      * Note: The derived class must call base.Start() to allow the base class to complete all the necessary setups
      */
     [SerializeField] private RefFloat interactRadius;
+    [SerializeField] private bool interactEnabled;
     [SerializeField] protected StringEventChannel interactionChannel;
     private Dictionary<Type, InteractionTracer> interactionTracers = new();
     private Transform m_transform;
+    private bool ie;
 
     // Call this method in child classes using "base.Start()" to avoid unexpected behaviors
     public void Start()
@@ -44,12 +46,28 @@ public abstract class InteractableObject : MonoBehaviour
         m_transform = GetComponent<Transform>();
     }
 
+    public bool InteractEnabled { 
+        get { return interactEnabled; }
+        set { 
+            interactEnabled = value;
+            if (!interactEnabled) {
+                foreach (InteractionTracer tracer in interactionTracers.Values)
+                {
+                    tracer.StopInteractions(this);
+                }
+            }
+        }
+    }
+
     public virtual void OnInteract(Interactor interactor, InteractionType interactType) { }
 
     public abstract InteractionPrompt GetInteractionOptions(Type t);
 
     public void Update()
     {
+        if (!interactEnabled) {
+            return;
+        }
         foreach (InteractionTracer tracer in interactionTracers.Values)
         {
             tracer.UpdateInteraction(m_transform, interactRadius.Value, this);
