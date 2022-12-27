@@ -24,7 +24,6 @@ public class Actionable : MonoBehaviour
     [SerializeField] private ActionableData actionableData;
     [SerializeField] private ActionableData data;
     [SerializeField] private string assetName;
-    [SerializeField] private ActionQueue actionQueue;
 
     private Dictionary<string, ActionInstance> availableActions;
     private TypeActionComponentDictionary components;
@@ -56,7 +55,7 @@ public class Actionable : MonoBehaviour
             actionableData.CopyActionAsset();
         }
         components = actionableData.components;
-        actionableData.Initialize(this, actionQueue);
+        actionableData.Initialize(this);
         availableActions = actionableData.availableActions;
     }
 
@@ -67,7 +66,7 @@ public class Actionable : MonoBehaviour
         }
         foreach (ActionInstance ac in availableActions.Values)
         {
-            ac.Reset();
+            ac.ResetStatus();
         }
     }
 
@@ -79,7 +78,7 @@ public class Actionable : MonoBehaviour
         List<ActionInstance> removed = new();
         foreach (ActionInstance ac in executing)
         {
-            if (ac.Executing == 0)
+            if (!ac.IsExecuting)
             {
                 removed.Add(ac);
             }
@@ -162,10 +161,6 @@ public class Actionable : MonoBehaviour
 
     public bool EnqueueAction<T>()  where T : ActionInstance
     {
-        /* Place the action with the provided keyword arguments into the action
-         * execution queue if the action with 'name' is present in the availableActions
-         * and is not on cooldown
-         */
         T action = GetActionInstance<T>();
         if (action == default) {
             return false;

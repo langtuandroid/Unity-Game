@@ -5,7 +5,7 @@ using System;
 using System.Reflection;
 using System.Text;
 
-public abstract class ActionInstance : ScriptableObject
+public abstract class ActionInstance : ScriptableObject, IComparable<ActionInstance>
 {
     /*An action instance
      * 
@@ -20,41 +20,33 @@ public abstract class ActionInstance : ScriptableObject
      * actionsQueue: The weighed priority queue that manages actions waiting to be executed
      */
     [HideInInspector]
-    public ActionQueue queue;
-    [HideInInspector]
     public Actionable actionComponent;
     [SerializeField] protected RefActionData actionData;
 
-    private float counter = 0;
+    private float cdCounter = 0;
     private int accessKey = -1;
 
     public bool OnCooldown { get; private set; }
 
-    public bool IsReady { get { return !OnCooldown && ConditionSatisfied(); } }
+    public bool IsExecuting { get { return accessKey != -1; } }
 
-    public int Executing {
-        get {
-            if (accessKey != -1) {
-                return queue.Queue.GetElementData(accessKey);
-            }
-            return 0;
-        }
-    }
+    public bool IsReady { get { return !IsExecuting && !OnCooldown && ConditionSatisfied(); } }
 
     // Override this to imeplement additional Skill Ready Check
     public virtual bool ConditionSatisfied() { return true; }
 
-    // To be overriden
+    // Callback when the action is queued
     protected virtual void OnEnqueue() { }
 
+    // Update cooldown
     public void CountDown()
     {
         if (OnCooldown)
         {
-            counter += Time.deltaTime;
-            if (counter >= Data.Cooldown)
+            cdCounter += Time.deltaTime;
+            if (cdCounter >= Data.Cooldown)
             {
-                counter = 0;
+                cdCounter = 0;
                 OnCooldown = false;
             }
         }
@@ -64,47 +56,43 @@ public abstract class ActionInstance : ScriptableObject
     {
         if (IsReady)
         {
-            if (queue == null) {
-                Debug.LogWarning("Action Queue is not set up for the instance: " + GetType().ToString());
-                return false;
-            }
-            accessKey = queue.Queue.Enqueue(this, Data.Duration, Data.Priority);
+            accessKey = ActionOverseer.EnqueueAction(this);
             OnEnqueue();
             OnCooldown = true;
         }
         return false;
     }
 
-    public virtual void Execute() {
+    public virtual bool Execute() {
         try
         {
-            ExecuteBody();
+            bool result = ExecuteBody();
+            if (!result) {
+                accessKey = -1;
+                Terminate();
+            }
+            return result;
         }
         catch (Exception ex) {
-            Debug.LogError(ex.ToString());
+            Debug.LogError("Action failed to execute: " + ex.ToString());
         }
-        if (!queue.Queue.ContainsKey(accessKey))
-        {
-            accessKey = -1;
-            Terminate();
-        }
+        return false;
     }
 
-   // Override This!
-    protected abstract void ExecuteBody();
+   // Main body of the action execution. Override This!
+    protected abstract bool ExecuteBody();
 
-    // Override This!
-
+    // Callback when the action is finished. Override This!
     protected virtual void Terminate() { }
 
-    // Override This!
+    // Callback when the gameobject is being initialized during Start(). Override This!
     public virtual void Initialize() { }
 
     // Override This!
 
     public virtual void CleanUp() { }
 
-    public void Reset() {
+    public void ResetStatus() {
         CleanUp();
         Initialize();
     }
@@ -148,9 +136,14 @@ public abstract class ActionInstance : ScriptableObject
         {
             return false;
         }
-        queue.Queue.Remove(accessKey);
+        ActionOverseer.RemoveAction(accessKey);
         accessKey = -1;
         return true;
+    }
+
+    public int CompareTo(ActionInstance other)
+    {
+        return actionData.Value.Priority - other.actionData.Value.Priority;
     }
 
     public ActionData Data {

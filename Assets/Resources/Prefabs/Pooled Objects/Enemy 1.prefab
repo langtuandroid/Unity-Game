@@ -101,6 +101,7 @@ MonoBehaviour:
     value: 100
     useSharedValue: 0
     sharedValue: {fileID: 0}
+  damageHistory: []
   maxHealth: 0
   health: 0
 --- !u!114 &5600618183844064371
@@ -118,6 +119,10 @@ MonoBehaviour:
   controllerDatas:
   - {fileID: 11400000, guid: 21ef06723ef12e04c8b1f119943fb396, type: 2}
   targetGroup: {fileID: 11400000, guid: 4f8f16cf72b4f07469b075ddf31d9ebe, type: 2}
+  rotateSpeed:
+    value: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
   target: {fileID: 0}
 --- !u!114 &8392425254824279373
 MonoBehaviour:
@@ -134,9 +139,8 @@ MonoBehaviour:
   executing:
     values: []
   actionableData: {fileID: 0}
-  data: {fileID: 11400000, guid: 5c1670b64b565c148bfc1fe68fe0ca61, type: 2}
+  data: {fileID: 11400000, guid: 887916ef14748604281510adb2787172, type: 2}
   assetName: Enemy 1 Data
-  actionQueue: {fileID: 11400000, guid: 44aa743952f37ed4e86fb31ea59baa9f, type: 2}
 --- !u!114 &5600618183844064381
 MonoBehaviour:
   m_ObjectHideFlags: 0

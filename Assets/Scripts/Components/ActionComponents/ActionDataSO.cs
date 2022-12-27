@@ -21,11 +21,6 @@ public class ActionDataSO : ScriptableObject {
     {
         get { return data.Cooldown; }
     }
-
-    public int Duration
-    {
-        get { return data.Duration; }
-    }
 }
 
 [System.Serializable]
@@ -33,7 +28,6 @@ public struct ActionData
 {
     [SerializeField] private RefInt priority;
     [SerializeField] private RefFloat cooldown;
-    [SerializeField] private RefInt duration;
 
     public int Priority { 
         get { return priority.Value; }
@@ -41,9 +35,5 @@ public struct ActionData
 
     public float Cooldown { 
         get { return cooldown.Value; }
-    }
-
-    public int Duration { 
-        get { return duration.Value; }
     }
 }

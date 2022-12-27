@@ -6,10 +6,13 @@ using UnityEngine;
 [ActionInstance(typeof(Guard))]
 public class Guard : ActionInstance
 {
+    [SerializeField] private RefFloat duration;
     [SerializeField] private Sprite sprite;
     [SerializeField] private RefFloat spriteAlpha;
     [SerializeField] private VarString spritePoolTag;
 
+    private float durationCounter;
+    private bool actionStart;
     private TemporalObject guardAnimation;
     private CombatComponent combat;
     private Entity defender;
@@ -20,25 +23,39 @@ public class Guard : ActionInstance
         defender = actionComponent.GetComponent<Entity>();
         if (defender == null)
         {
-            Debug.Log("The object is missing entity component to complete the action!");
-            return;
+            Debug.LogError("The object is missing entity component to complete the action!");
         }
         if (combat == null)
         {
-            Debug.Log("The object is missing the required action component to complete the action!");
-            return;
+            Debug.LogError("The object is missing the required action component to complete the action!");
         }
+        durationCounter = 0;
+        actionStart = false;
     }
 
-    protected override void ExecuteBody()
+    protected override void OnEnqueue(){
+        durationCounter = 0;
+        actionStart = true;
+    }
+
+    protected override bool ExecuteBody()
     {
+        if (!actionStart){
+            durationCounter += Time.deltaTime;
+            if (durationCounter > duration.Value) {
+                return false;
+            }
+        }
+        else { 
+            actionStart = false;
+        }
+
         if (defender.IncomingDamage > 0)
         {
             Debug.Log("Blocked: " + combat.defense.Value);
         }
         defender.IncomingDamage -= combat.defense.Value;
-        if (guardAnimation == null)
-        {
+        if (guardAnimation == null){
             // Set up guard sprite
             GameObject g = ObjectPool.Instance.GetObject(spritePoolTag.Value, Vector3.zero, Quaternion.identity);
             Transform gTransform = g.transform;
@@ -58,6 +75,7 @@ public class Guard : ActionInstance
             spriteRenderer.sprite = sprite;
             guardAnimation = tmp;
         }
+        return true;
     }
 
     protected override void Terminate()

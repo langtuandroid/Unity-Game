@@ -10,18 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 749da42cbb2db604da7ad2ecb435fd18, type: 3}
-  m_Name: CircleAttackData
+  m_Name: Guard Data
   m_EditorClassIdentifier: 
   data:
     priority:
       value: 0
-      useSharedValue: 0
-      sharedValue: {fileID: 0}
+      useSharedValue: 1
+      sharedValue: {fileID: 11400000, guid: 0c75a6f058fe5004080d1ec254099730, type: 2}
     cooldown:
-      value: 1
-      useSharedValue: 0
-      sharedValue: {fileID: 0}
-    duration:
-      value: 1
+      value: 1.2
       useSharedValue: 0
       sharedValue: {fileID: 0}

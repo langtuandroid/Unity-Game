@@ -68,7 +68,7 @@ public class Shoot : ActionInstance
         manaComponent.ReserveMana(manaCost.Value);
     }
 
-    protected override void ExecuteBody()
+    protected override bool ExecuteBody()
     {
         CombatComponent combatComponent = actionComponent.GetActionComponent<CombatComponent>();
         int firePower = combatComponent.attackDamage.Value;
@@ -80,12 +80,13 @@ public class Shoot : ActionInstance
         {
             Debug.LogError("The prefab used under the tag: " + bulletPoolTag.Value + " is not a valid bullet prefab.");
             obj.SetActive(false);
-            return;
+            return false;
         }
 
         Transform bulletTransform = obj.transform;
         bullet.Initialize(targets, ignoreTargets, travelDuration.Value, attacker, firePower, piercePower.Value);
         Rigidbody2D body = bullet.GetComponent<Rigidbody2D>();
         body.velocity = bulletTransform.up.normalized * bulletSpeed.Value;
+        return false;
     }
 }

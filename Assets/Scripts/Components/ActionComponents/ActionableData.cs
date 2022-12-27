@@ -13,13 +13,12 @@ public class ActionableData : ScriptableObject
     public TypeActionInstanceDictionary allActions = new();
     public Dictionary<string, ActionInstance> availableActions = new();
 
-    public void Initialize(Actionable actionable, ActionQueue queue) {
+    public void Initialize(Actionable actionable) {
         availableActions.Clear();
         foreach (ActionInstance ai in allActions.Values) {
             if (ai.ComponentCheck(actionable))
             {
                 ai.actionComponent = actionable;
-                ai.queue = queue;
                 ai.Initialize();
                 availableActions[ai.GetType().ToString()] = ai;
             }

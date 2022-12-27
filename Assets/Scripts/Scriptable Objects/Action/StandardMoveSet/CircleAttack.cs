@@ -56,7 +56,7 @@ public class CircleAttack : ActionInstance
         ignoreTargets.Clear();
     }
 
-    protected override void ExecuteBody() {
+    protected override bool ExecuteBody() {
         /* Damages entities in radius of attack range by attack damage, has no effect on the attacker
          *  Entities without colliders are ignored
          */
@@ -98,5 +98,7 @@ public class CircleAttack : ActionInstance
                 collided.RegisterDamage(damage, attacker);
             }
         }
+
+        return false;
     }
 }

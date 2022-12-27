@@ -112,7 +112,10 @@ public class ActionableDataEditor : Editor
                 i += 1;
                 Editor editor = CreateEditor(action);
                 EditorGUILayout.BeginHorizontal();
-                EditorGUILayout.LabelField(action.GetType().ToString(), EditorStyles.boldLabel);
+                GUIStyle style = new();
+                style.normal.textColor = Color.yellow;
+                style.fontStyle = FontStyle.Bold;
+                EditorGUILayout.LabelField(action.GetType().ToString(), style);
                 bool clicked = GUILayout.Button("Remove Action");
                 EditorGUILayout.EndHorizontal();
                 if (!clicked)

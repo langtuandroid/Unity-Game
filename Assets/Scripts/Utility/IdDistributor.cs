@@ -7,7 +7,7 @@ using UnityEngine;
  */
 public class IdDistributor
 {
-    private List<int> availableIds = new List<int>();
+    private LinkedList<int> availableIds = new();
     private int counter = 0;
 
     public int GetID()
@@ -16,8 +16,8 @@ public class IdDistributor
         {
             return NewID();
         }
-        int r = availableIds[0];
-        availableIds.RemoveAt(0);
+        int r = availableIds.First.Value;
+        availableIds.RemoveFirst();
         return r;
     }
 
@@ -40,7 +40,7 @@ public class IdDistributor
         }
         else
         {
-            availableIds.Add(id);
+            availableIds.AddLast(id);
         }
         return true;
     }
