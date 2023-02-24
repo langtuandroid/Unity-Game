@@ -14,9 +14,11 @@ public class AIController : MonoBehaviour
     private Transform _transform;
     private Collider2D _collider;
 
-    private AIPath ai;
+    private AIPath aiPath;
     private Seeker seeker;
     private GridGraph gridGraph;
+
+    private StateMachine stateMachine;
 
     private Dictionary<Type, ControllerData> controllerData;
     private Entity entityComponent;
@@ -27,8 +29,10 @@ public class AIController : MonoBehaviour
     {
         _transform = transform;
         _collider = GetComponent<Collider2D>();
-        ai = GetComponent<AIPath>();
+        aiPath = GetComponent<AIPath>();
         seeker = GetComponent<Seeker>();
+        stateMachine = GetComponent<StateMachine>();
+
         gridGraph = AstarPath.active.data.gridGraph;
         controllerData = new();
         foreach (ControllerData data in controllerDatas) {
@@ -37,9 +41,23 @@ public class AIController : MonoBehaviour
         entityComponent = GetComponent<Entity>();
     }
 
+    private void Start()
+    {
+        entityComponent.onMovementBlocked += BlockMovement;
+    }
+
     private void Update()
     {
-        Debug.DrawLine(_transform.position, ai.destination, Color.green);
+        Debug.DrawLine(_transform.position, aiPath.destination, Color.green);
+    }
+
+    private void BlockMovement(bool value) {
+        if (stateMachine) {
+            stateMachine.enabled = !value;
+        }
+        if (aiPath) {
+            aiPath.enabled = !value;
+        }
     }
 
     public T GetControllerData<T>() where T : ControllerData{
@@ -61,7 +79,7 @@ public class AIController : MonoBehaviour
     public void ChaseTarget()
     {
         if (target != null) {
-            ai.destination = target.transform.position;
+            aiPath.destination = target.transform.position;
         }
     }
 
@@ -102,53 +120,64 @@ public class AIController : MonoBehaviour
         List<GraphNode> nodes = PathUtilities.BFS(startNode, wanderRadius, filter: (GraphNode node) => { return PathUtilities.IsPathPossible(startNode, node); });
         if (nodes.Count > 0) {
             Vector3 dest = PathUtilities.GetPointsOnNodes(nodes, 1)[0];
-            ai.destination = dest;
+            aiPath.destination = dest;
         }
     }
 
     public void LookTowards() {
+        if (entityComponent.MovementBlocked) {
+            return;
+        }
         Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, target.transform.position - _transform.position);
         _transform.rotation = Quaternion.RotateTowards(_transform.rotation, targetRotation, rotateSpeed.Value * Time.deltaTime);
     }
 
     public void BackStep()
     {
-        ai.Move(( - _transform.up).normalized * ai.maxSpeed / 2 * Time.deltaTime);
+        if (entityComponent.MovementBlocked)
+        {
+            return;
+        }
+        aiPath.Move(( - _transform.up).normalized * aiPath.maxSpeed / 2 * Time.deltaTime);
     }
 
     public void MoveInDirection(Vector3 direction, float distance) {
+        if (entityComponent.MovementBlocked)
+        {
+            return;
+        }
         float offset = _collider.bounds.size.x / 2;
         RaycastHit2D hit = Physics2D.Raycast(_transform.position, direction, distance + offset);
         if (hit.collider == null)
         {
-            ai.destination = _transform.position + direction.normalized * distance;
+            aiPath.destination = _transform.position + direction.normalized * distance;
         }
         else {
             Vector2 dir = (Vector2)direction;
-            ai.destination = hit.point - dir.normalized * offset;
+            aiPath.destination = hit.point - dir.normalized * offset;
         }
     }
 
     public void ClearPath() {
-        ai.SetPath(null);
-        ai.destination = _transform.position;
+        aiPath.SetPath(null);
+        aiPath.destination = _transform.position;
     }
 
     public Vector3 NextWayPoint() {
-        return ai.steeringTarget;
+        return aiPath.steeringTarget;
     }
 
-    public bool StopPathing {
-        get { return ai.isStopped; }
-        set { ai.isStopped = value; }
+    public bool Stopped {
+        get { return aiPath.isStopped; }
+        set { aiPath.isStopped = value; }
     }
 
     public bool AutoRotation {
-        get { return ai.enableRotation; }
-        set { ai.enableRotation = value; }
+        get { return aiPath.enableRotation; }
+        set { aiPath.enableRotation = value; }
     }
 
     public bool ReachedDestination() {
-        return ai.reachedDestination;
+        return aiPath.reachedDestination;
     }
 }

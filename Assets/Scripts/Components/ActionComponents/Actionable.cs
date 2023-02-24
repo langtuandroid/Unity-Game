@@ -7,6 +7,7 @@ using System.Text;
 using System.Linq;
 
 [AddComponentMenu("Actionable")]
+[RequireComponent(typeof(Entity))]
 public class Actionable : MonoBehaviour
 {
     /* Component that provides access to a variety of movesets, it acts as a container and platform for
@@ -27,6 +28,7 @@ public class Actionable : MonoBehaviour
 
     private Dictionary<string, ActionInstance> availableActions;
     private TypeActionComponentDictionary components;
+    private Entity entity;
 
     private void Awake()
     {
@@ -57,6 +59,7 @@ public class Actionable : MonoBehaviour
         components = actionableData.components;
         actionableData.Initialize(this);
         availableActions = actionableData.availableActions;
+        entity = GetComponent<Entity>();
     }
 
     public void Reset()
@@ -78,6 +81,9 @@ public class Actionable : MonoBehaviour
         List<ActionInstance> removed = new();
         foreach (ActionInstance ac in executing)
         {
+            if (entity.ActionBlocked) {
+                ac.HaltActionExecution(); 
+            }
             if (!ac.IsExecuting)
             {
                 removed.Add(ac);
@@ -161,6 +167,9 @@ public class Actionable : MonoBehaviour
 
     public bool EnqueueAction<T>()  where T : ActionInstance
     {
+        if (entity.ActionBlocked) {
+            return false;
+        }
         T action = GetActionInstance<T>();
         if (action == default) {
             return false;

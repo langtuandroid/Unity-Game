@@ -12,6 +12,7 @@ public class CircleAttack : ActionInstance
     [SerializeField] private Sprite sprite;
     [SerializeField] private VarString spritePoolTag;
     [SerializeField] private RefFloat spriteDuration;
+    [SerializeField] private List<Effect> effects;
 
     private HashSet<Entity> targets = new();
     private HashSet<Entity> ignoreTargets = new();
@@ -96,6 +97,9 @@ public class CircleAttack : ActionInstance
             if (targets.Contains(collided) && !ignoreTargets.Contains(collided))
             {
                 collided.RegisterDamage(damage, attacker);
+                foreach(Effect effect in effects) {
+                    collided.RegisterEffect(effect);
+                }
             }
         }
 

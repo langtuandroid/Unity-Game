@@ -88,8 +88,7 @@ public abstract class ActionInstance : ScriptableObject, IComparable<ActionInsta
     // Callback when the gameobject is being initialized during Start(). Override This!
     public virtual void Initialize() { }
 
-    // Override This!
-
+    // Callback when the gameobject is about to be disabled or destroyed
     public virtual void CleanUp() { }
 
     public void ResetStatus() {
