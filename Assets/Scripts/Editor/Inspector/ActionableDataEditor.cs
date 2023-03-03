@@ -8,10 +8,12 @@ using System.Reflection;
 [CustomEditor(typeof(ActionableData))]
 public class ActionableDataEditor : Editor
 {
+    private Dictionary<Type, Editor> aiEditors = new();
+    private Dictionary<Type, Editor> acEditors = new();
 
     public override void OnInspectorGUI()
     {
-        ActionableData actionableData = (ActionableData)target;
+        ActionableData actionableData = (ActionableData)target; 
         MethodInfo removed = null;
 
         EditorGUI.BeginChangeCheck();
@@ -48,8 +50,17 @@ public class ActionableDataEditor : Editor
             foreach (ActionComponent component in actionableData.components.Values)
             {
                 i += 1;
-                Editor editor = CreateEditor(component);
+                Editor editor;
                 Type type = component.GetType();
+                if (acEditors.ContainsKey(type))
+                {
+                    editor = acEditors[type];
+                }
+                else {
+                    editor = CreateEditor(component);
+                    acEditors.Add(type, editor);
+                }
+                
                 EditorGUILayout.BeginHorizontal();
                 EditorGUILayout.LabelField(component.GetType().ToString(), EditorStyles.boldLabel);
                 bool clicked = GUILayout.Button("Remove Component");
@@ -62,6 +73,7 @@ public class ActionableDataEditor : Editor
                 {
                     var m = typeof(ActionableData).GetMethod("RemoveActionComponent");
                     removed = m.MakeGenericMethod(component.GetType());
+                    acEditors.Remove(type);
                 }
                 GUILayout.FlexibleSpace();
                 if (i != actionableData.components.Count)
@@ -110,7 +122,16 @@ public class ActionableDataEditor : Editor
             foreach (ActionInstance action in actionableData.allActions.Values)
             {
                 i += 1;
-                Editor editor = CreateEditor(action);
+                Editor editor;
+                Type actionType = action.GetType();
+                if (!aiEditors.ContainsKey(actionType)) {
+                    editor = CreateEditor(action);
+                    aiEditors.Add(actionType, editor);
+                }
+                else {
+                    editor = aiEditors[actionType];
+                }
+                
                 EditorGUILayout.BeginHorizontal();
                 GUIStyle style = new();
                 style.normal.textColor = Color.yellow;
@@ -125,7 +146,8 @@ public class ActionableDataEditor : Editor
                 else
                 {
                     var m = typeof(ActionableData).GetMethod("RemoveActionInstance");
-                    removed = m.MakeGenericMethod(action.GetType());
+                    removed = m.MakeGenericMethod(actionType);
+                    aiEditors.Remove(actionType);
                 }
                 GUILayout.FlexibleSpace();
                 if (i != actionableData.allActions.Count)

@@ -9,12 +9,12 @@ public class ActionOverseer : MonoBehaviour
      * Actions with low priorities will be executed first to allow further execution of higher priority actions to override/modify their 
      * effects.
      */
-    private static Dictionary<int, ActionInstance> actionQueue = new();
+    private static Dictionary<int, ActionConfigPair> actionQueue = new();
     private static readonly IdDistributor distributor = new();
 
-    public static int EnqueueAction(ActionInstance instance) {
+    public static int EnqueueAction(ActionConfigPair pair) {
         int id = distributor.GetID();
-        actionQueue.Add(id, instance);
+        actionQueue.Add(id, pair);
         return id;
     }
 
@@ -30,8 +30,8 @@ public class ActionOverseer : MonoBehaviour
             return actionQueue[k1].CompareTo(actionQueue[k2]);
         });
         foreach (int key in keys) { 
-            ActionInstance instance = actionQueue[key];
-            if (!instance.Execute()) {
+            ActionConfigPair ap = actionQueue[key];
+            if (!ap.instance.Execute(ap.config)) {
                 removed.Add(key);
             }
         }

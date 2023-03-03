@@ -8,6 +8,7 @@ using System.Reflection;
 [CustomEditor(typeof(Actionable))]
 public class ActionEditor : Editor
 {
+    private Editor editor;
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
@@ -16,6 +17,7 @@ public class ActionEditor : Editor
         SerializedProperty actionData = serializedObject.FindProperty("actionableData");
         if (GUILayout.Button("Set Actionable Data")) {
             actionable.SetActionableData();
+            editor = null;
         }
 
         if (actionData != null) {
@@ -24,7 +26,9 @@ public class ActionEditor : Editor
             if (actionData.isExpanded && actionData.objectReferenceValue != null)
             {
                 EditorGUI.indentLevel++;
-                Editor editor = Editor.CreateEditor(actionData.objectReferenceValue);
+                if (editor == null) {
+                    editor = CreateEditor(actionData.objectReferenceValue);
+                }             
                 editor.OnInspectorGUI();
                 EditorGUI.indentLevel--;
             }

@@ -7,57 +7,61 @@ using System.ComponentModel;
 [ActionInstance(typeof(CircleAttack))]
 public class CircleAttack : ActionInstance
 {
-    [SerializeField] private EntityGroup[] targetGroups;
-    [SerializeField] private EntityGroup[] ignoreGroups;
-    [SerializeField] private Sprite sprite;
-    [SerializeField] private VarString spritePoolTag;
-    [SerializeField] private RefFloat spriteDuration;
-    [SerializeField] private List<Effect> effects;
+    public class CircleAttackConfig : ActionConfig {
+        public EntityGroup[] targetGroups;
+        public EntityGroup[] ignoreGroups;
+        public Sprite sprite;
+        public VarString spritePoolTag;
+        public RefFloat spriteDuration;
+        public List<Effect> effects;
+        public HashSet<Entity> targets = new();
+        public HashSet<Entity> ignoreTargets = new();
 
-    private HashSet<Entity> targets = new();
-    private HashSet<Entity> ignoreTargets = new();
+        public override void Initialize() {
+            foreach (EntityGroup group in targetGroups)
+            {
+                group.OnEntityAdded.AddListener((Entity entity) => { targets.Add(entity); });
+                foreach (Entity entity in group)
+                {
+                    targets.Add(entity);
+                }
+            }
+
+            foreach (EntityGroup group in ignoreGroups)
+            {
+                group.OnEntityAdded.AddListener((Entity entity) => { ignoreTargets.Add(entity); });
+                foreach (Entity entity in group)
+                {
+                    ignoreTargets.Add(entity);
+                }
+            }
+        }
+
+        public override void Close() {
+            foreach (EntityGroup group in targetGroups)
+            {
+                group.OnEntityAdded.RemoveListener((Entity entity) => { targets.Add(entity); });
+            }
+
+            foreach (EntityGroup group in ignoreGroups)
+            {
+                group.OnEntityAdded.RemoveListener((Entity entity) => { ignoreTargets.Add(entity); });
+            }
+            targets.Clear();
+            ignoreTargets.Clear();
+        }
+    }
+    
     private CombatComponent combatComponent;
     private Entity attacker;
 
-    public override void Initialize()
-    {
-        foreach (EntityGroup group in targetGroups)
-        {
-            group.OnEntityAdded.AddListener((Entity entity) => { targets.Add(entity); });
-            foreach (Entity entity in group)
-            {
-                targets.Add(entity);
-            }
-        }
-
-        foreach (EntityGroup group in ignoreGroups)
-        {
-            group.OnEntityAdded.AddListener((Entity entity) => { ignoreTargets.Add(entity); });
-            foreach (Entity entity in group)
-            {
-                ignoreTargets.Add(entity);
-            }
-        }
+    protected override void Initialize()
+    {   
         combatComponent =  actionComponent.GetActionComponent<CombatComponent>();
         attacker = actionComponent.GetComponent<Entity>();
     }
 
-    public override void CleanUp()
-    {
-        foreach (EntityGroup group in targetGroups)
-        {
-            group.OnEntityAdded.RemoveListener((Entity entity) => { targets.Add(entity); });
-        }
-
-        foreach (EntityGroup group in ignoreGroups)
-        {
-            group.OnEntityAdded.RemoveListener((Entity entity) => { ignoreTargets.Add(entity); });
-        }
-        targets.Clear();
-        ignoreTargets.Clear();
-    }
-
-    protected override bool ExecuteBody() {
+    protected override bool ExecuteBody(ActionConfig config) {
         /* Damages entities in radius of attack range by attack damage, has no effect on the attacker
          *  Entities without colliders are ignored
          */
@@ -69,7 +73,8 @@ public class CircleAttack : ActionInstance
         Collider2D[] colliders = Physics2D.OverlapCircleAll(gameObject.transform.position, range);
 
         // Set up attack sprite
-        GameObject g = ObjectPool.Instance.GetObject(spritePoolTag.Value, Vector3.zero, Quaternion.identity);
+        CircleAttackConfig c_config = (CircleAttackConfig)config;
+        GameObject g = ObjectPool.Instance.GetObject(c_config.spritePoolTag.Value, Vector3.zero, Quaternion.identity);
         Transform gTransform = g.transform;
         gTransform.SetParent(transform);
         gTransform.localPosition = Vector3.zero;
@@ -78,9 +83,9 @@ public class CircleAttack : ActionInstance
         gTransform.localScale = new Vector3(range / scale.x, range / scale.y, 1);
         TemporalObject tmp = g.GetComponent<TemporalObject>();
         tmp.ResetCounter();
-        tmp.duration = spriteDuration.Value;
+        tmp.duration = c_config.spriteDuration.Value;
         SpriteRenderer spriteRenderer = g.GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = sprite;
+        spriteRenderer.sprite =  c_config.sprite;
 
         foreach (Collider2D collider in colliders)
         {
@@ -94,10 +99,10 @@ public class CircleAttack : ActionInstance
                 continue;
             }
 
-            if (targets.Contains(collided) && !ignoreTargets.Contains(collided))
+            if (c_config.targets.Contains(collided) && !c_config.ignoreTargets.Contains(collided))
             {
                 collided.RegisterDamage(damage, attacker);
-                foreach(Effect effect in effects) {
+                foreach(Effect effect in c_config.effects) {
                     collided.RegisterEffect(effect);
                 }
             }

@@ -19,7 +19,7 @@ public class ActionableData : ScriptableObject
             if (ai.ComponentCheck(actionable))
             {
                 ai.actionComponent = actionable;
-                ai.Initialize();
+                ai.OnStartUp();
                 availableActions[ai.GetType().ToString()] = ai;
             }
         }
@@ -32,6 +32,7 @@ public class ActionableData : ScriptableObject
             }
             foreach (ActionInstance ai in allActions.Values) {
                 AssetDatabase.AddObjectToAsset(ai, this);
+                ai.SaveConfigsAsAsset();
             }
         }
     }
@@ -45,6 +46,14 @@ public class ActionableData : ScriptableObject
         }
         foreach (var ai in ais) {
             allActions[ai.GetType().ToString()] = ai;
+            List<(string, ActionInstance.ActionConfig)> cfs = new();
+            foreach (var kwp in ai.configs) {
+
+                cfs.Add((kwp.Key, Instantiate(kwp.Value)));
+            }
+            foreach ((string name, ActionInstance.ActionConfig config) in cfs) {
+                ai.configs[name] = config;
+            }
         }
 
         List<ActionComponent> acs = new();
@@ -127,6 +136,7 @@ public class ActionableData : ScriptableObject
         components[str] = instance;
         if (AssetDatabase.Contains(this)) {
             AssetDatabase.AddObjectToAsset(instance, this);
+            AssetDatabase.SaveAssets();
         }
         return true;
     }
@@ -141,9 +151,11 @@ public class ActionableData : ScriptableObject
         if (ActionComponentCheck<T>()) {
             T ai = CreateInstance<T>();
             allActions.Add(typeof(T).ToString(), ai);
+            ai.configs = new();
             if (AssetDatabase.Contains(this))
             {
                 AssetDatabase.AddObjectToAsset(ai, this);
+                AssetDatabase.SaveAssets(); 
             }
             return true;
         }
@@ -155,7 +167,9 @@ public class ActionableData : ScriptableObject
         ActionInstance ai = GetActionInstance<T>();
         if (ai != null) {
             allActions.Remove(typeof(T).ToString());
+            AssetDatabase.RemoveObjectFromAsset(ai);
             DestroyImmediate(ai, true);
+            AssetDatabase.SaveAssets();
             return true;
         }
         return false;
@@ -191,7 +205,9 @@ public class ActionableData : ScriptableObject
         T cmp = GetActionComponent<T>();
         if (cmp != null) {
             components.Remove(str);
+            AssetDatabase.RemoveObjectFromAsset(cmp);
             DestroyImmediate(cmp, true);
+            AssetDatabase.SaveAssets();
             return true;
         }
         return false;

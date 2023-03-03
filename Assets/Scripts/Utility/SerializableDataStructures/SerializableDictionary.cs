@@ -64,6 +64,7 @@ public abstract class SerializableDictionary<TKey, TValue> :
         }
         keys.Clear();
         values.Clear();
+
     }
 
     public void OnBeforeSerialize()
@@ -102,3 +103,6 @@ public abstract class SerializableDictionary<TKey, TValue> :
 public class TypeActionComponentDictionary : SerializableDictionary<string, ActionComponent> { }
 [Serializable]
 public class TypeActionInstanceDictionary : SerializableDictionary<string, ActionInstance> { }
+
+[Serializable]
+public class StringActionConfigDictionary : SerializableDictionary<string, ActionInstance.ActionConfig> { }

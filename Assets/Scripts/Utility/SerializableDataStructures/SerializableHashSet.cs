@@ -132,4 +132,4 @@ public class SerializableHashSet<TValue> : ISet<TValue>, ISerializationCallbackR
 }
 
 [Serializable]
-public class ActionInstanceSet : SerializableHashSet<ActionInstance> { }
+public class ActionSet : SerializableHashSet<ActionInstance> { }

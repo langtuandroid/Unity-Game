@@ -6,19 +6,31 @@ using UnityEngine;
 [ActionInstance(typeof(Guard))]
 public class Guard : ActionInstance
 {
-    [SerializeField] private RefFloat duration;
-    [SerializeField] private Sprite sprite;
-    [SerializeField] private RefFloat spriteAlpha;
-    [SerializeField] private VarString spritePoolTag;
+    public class GuardConfig : ActionConfig {
+        public RefFloat duration;
+        public Sprite sprite;
+        public RefFloat spriteAlpha;
+        public VarString spritePoolTag;
 
-    private float durationCounter;
-    private bool actionStart;
-    private TemporalObject guardAnimation;
+        [HideInInspector]
+        public float durationCounter;
+        [HideInInspector]
+        public bool actionStart;
+        [HideInInspector]
+        public TemporalObject guardAnimation;
+
+        public override void Initialize()
+        {
+            durationCounter = 0;
+            actionStart = false;
+        }
+    }
     private CombatComponent combat;
     private Entity defender;
 
-    public override void Initialize()
+    protected override void Initialize()
     {
+        base.Initialize();
         combat = actionComponent.GetActionComponent<CombatComponent>();
         defender = actionComponent.GetComponent<Entity>();
         if (defender == null)
@@ -29,25 +41,25 @@ public class Guard : ActionInstance
         {
             Debug.LogError("The object is missing the required action component to complete the action!");
         }
-        durationCounter = 0;
-        actionStart = false;
     }
 
-    protected override void OnEnqueue(){
-        durationCounter = 0;
-        actionStart = true;
+    protected override void OnEnqueue(ActionConfig actionConfig){
+        GuardConfig config = (GuardConfig)actionConfig;
+        config.durationCounter = 0;
+        config.actionStart = true;
     }
 
-    protected override bool ExecuteBody()
+    protected override bool ExecuteBody(ActionConfig actionConfig)
     {
-        if (!actionStart){
-            durationCounter += Time.deltaTime;
-            if (durationCounter > duration.Value) {
+        GuardConfig config = (GuardConfig)actionConfig;
+        if (!config.actionStart){
+            config.durationCounter += Time.deltaTime;
+            if (config.durationCounter > config.duration.Value) {
                 return false;
             }
         }
         else { 
-            actionStart = false;
+            config.actionStart = false;
         }
 
         if (defender.IncomingDamage > 0)
@@ -55,9 +67,9 @@ public class Guard : ActionInstance
             Debug.Log("Blocked: " + combat.defense.Value);
         }
         defender.IncomingDamage -= combat.defense.Value;
-        if (guardAnimation == null){
+        if (config.guardAnimation == null){
             // Set up guard sprite
-            GameObject g = ObjectPool.Instance.GetObject(spritePoolTag.Value, Vector3.zero, Quaternion.identity);
+            GameObject g = ObjectPool.Instance.GetObject(config.spritePoolTag.Value, Vector3.zero, Quaternion.identity);
             Transform gTransform = g.transform;
             gTransform.SetParent(defender.transform);
             gTransform.localPosition = Vector3.zero;
@@ -72,15 +84,16 @@ public class Guard : ActionInstance
             tmp.ResetCounter();
             tmp.duration = -1;
             SpriteRenderer spriteRenderer = g.GetComponent<SpriteRenderer>();
-            spriteRenderer.sprite = sprite;
-            guardAnimation = tmp;
+            spriteRenderer.sprite = config.sprite;
+            config.guardAnimation = tmp;
         }
         return true;
     }
 
-    protected override void Terminate()
+    protected override void OnActionFinish(ActionConfig actionConfig)
     {
-        guardAnimation.DisableObject();
-        guardAnimation = null;
+        GuardConfig config = (GuardConfig)actionConfig; 
+        config.guardAnimation.DisableObject();
+        config.guardAnimation = null;
     }
 }
