@@ -1,0 +1,53 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.DialogueSystem
+  commentId: N:LobsterFramework.DialogueSystem
+  id: LobsterFramework.DialogueSystem
+  children:
+  - LobsterFramework.DialogueSystem.DialogueNode
+  - LobsterFramework.DialogueSystem.DialogueObject
+  - LobsterFramework.DialogueSystem.DialogueResponse
+  langs:
+  - csharp
+  - vb
+  name: LobsterFramework.DialogueSystem
+  nameWithType: LobsterFramework.DialogueSystem
+  fullName: LobsterFramework.DialogueSystem
+  type: Namespace
+  assemblies:
+  - MyScripts
+references:
+- uid: LobsterFramework.DialogueSystem.DialogueObject
+  commentId: T:LobsterFramework.DialogueSystem.DialogueObject
+  parent: LobsterFramework.DialogueSystem
+  name: DialogueObject
+  nameWithType: DialogueObject
+  fullName: LobsterFramework.DialogueSystem.DialogueObject
+- uid: LobsterFramework.DialogueSystem.DialogueNode
+  commentId: T:LobsterFramework.DialogueSystem.DialogueNode
+  name: DialogueNode
+  nameWithType: DialogueNode
+  fullName: LobsterFramework.DialogueSystem.DialogueNode
+- uid: LobsterFramework.DialogueSystem.DialogueResponse
+  commentId: T:LobsterFramework.DialogueSystem.DialogueResponse
+  parent: LobsterFramework.DialogueSystem
+  name: DialogueResponse
+  nameWithType: DialogueResponse
+  fullName: LobsterFramework.DialogueSystem.DialogueResponse
+- uid: LobsterFramework.DialogueSystem
+  commentId: N:LobsterFramework.DialogueSystem
+  name: LobsterFramework.DialogueSystem
+  nameWithType: LobsterFramework.DialogueSystem
+  fullName: LobsterFramework.DialogueSystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.DialogueSystem
+    name: DialogueSystem
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.DialogueSystem
+    name: DialogueSystem

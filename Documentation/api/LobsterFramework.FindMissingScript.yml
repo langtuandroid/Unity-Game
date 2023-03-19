@@ -1,0 +1,134 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.FindMissingScript
+  commentId: T:LobsterFramework.FindMissingScript
+  id: FindMissingScript
+  parent: LobsterFramework
+  children:
+  - LobsterFramework.FindMissingScript.FindMissingScriptInPrefab
+  - LobsterFramework.FindMissingScript.FindMissingScriptInScene
+  langs:
+  - csharp
+  - vb
+  name: FindMissingScript
+  nameWithType: FindMissingScript
+  fullName: LobsterFramework.FindMissingScript
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/FindMissingScript.cs
+    id: FindMissingScript
+    path: ../Assets/Scripts/Utility/FindMissingScript.cs
+    startLine: 8
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework
+  syntax:
+    content: public static class FindMissingScript
+    content.vb: Public Module FindMissingScript
+  inheritance:
+  - System.Object
+- uid: LobsterFramework.FindMissingScript.FindMissingScriptInPrefab
+  commentId: M:LobsterFramework.FindMissingScript.FindMissingScriptInPrefab
+  id: FindMissingScriptInPrefab
+  parent: LobsterFramework.FindMissingScript
+  langs:
+  - csharp
+  - vb
+  name: FindMissingScriptInPrefab()
+  nameWithType: FindMissingScript.FindMissingScriptInPrefab()
+  fullName: LobsterFramework.FindMissingScript.FindMissingScriptInPrefab()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/FindMissingScript.cs
+    id: FindMissingScriptInPrefab
+    path: ../Assets/Scripts/Utility/FindMissingScript.cs
+    startLine: 10
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework
+  syntax:
+    content: >-
+      [MenuItem("Script/Find Missing Script In Prefab")]
+
+      public static void FindMissingScriptInPrefab()
+    content.vb: >-
+      <MenuItem("Script/Find Missing Script In Prefab")>
+
+      Public Shared Sub FindMissingScriptInPrefab()
+  overload: LobsterFramework.FindMissingScript.FindMissingScriptInPrefab*
+  attributes:
+  - type: UnityEditor.MenuItem
+    ctor: UnityEditor.MenuItem.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Script/Find Missing Script In Prefab
+- uid: LobsterFramework.FindMissingScript.FindMissingScriptInScene
+  commentId: M:LobsterFramework.FindMissingScript.FindMissingScriptInScene
+  id: FindMissingScriptInScene
+  parent: LobsterFramework.FindMissingScript
+  langs:
+  - csharp
+  - vb
+  name: FindMissingScriptInScene()
+  nameWithType: FindMissingScript.FindMissingScriptInScene()
+  fullName: LobsterFramework.FindMissingScript.FindMissingScriptInScene()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/FindMissingScript.cs
+    id: FindMissingScriptInScene
+    path: ../Assets/Scripts/Utility/FindMissingScript.cs
+    startLine: 25
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework
+  syntax:
+    content: >-
+      [MenuItem("Script/Find Missing Script In Scene")]
+
+      public static void FindMissingScriptInScene()
+    content.vb: >-
+      <MenuItem("Script/Find Missing Script In Scene")>
+
+      Public Shared Sub FindMissingScriptInScene()
+  overload: LobsterFramework.FindMissingScript.FindMissingScriptInScene*
+  attributes:
+  - type: UnityEditor.MenuItem
+    ctor: UnityEditor.MenuItem.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Script/Find Missing Script In Scene
+references:
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.FindMissingScript.FindMissingScriptInPrefab*
+  commentId: Overload:LobsterFramework.FindMissingScript.FindMissingScriptInPrefab
+  name: FindMissingScriptInPrefab
+  nameWithType: FindMissingScript.FindMissingScriptInPrefab
+  fullName: LobsterFramework.FindMissingScript.FindMissingScriptInPrefab
+- uid: LobsterFramework.FindMissingScript.FindMissingScriptInScene*
+  commentId: Overload:LobsterFramework.FindMissingScript.FindMissingScriptInScene
+  name: FindMissingScriptInScene
+  nameWithType: FindMissingScript.FindMissingScriptInScene
+  fullName: LobsterFramework.FindMissingScript.FindMissingScriptInScene

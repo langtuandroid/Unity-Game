@@ -1,0 +1,13 @@
+apiRules:
+- include:
+    uidRegex: ^UnityEngine
+    type: Namespace
+- include:
+    uidRegex: ^LobsterFramework
+    type: Namespace
+- include:
+    uidRegex: ^Global
+    type: Namespace
+- exclude:
+    uidRegex: .*
+    type: Namespace

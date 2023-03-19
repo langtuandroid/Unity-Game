@@ -1,0 +1,155 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using LobsterFramework.Utility.Groups;
+using LobsterFramework.EntitySystem;
+using LobsterFramework.Pool;
+
+namespace LobsterFramework.Action
+{
+    [ActionInstance(typeof(RightSwipe))]
+    [RequireActionComponent(typeof(RightSwipe), typeof(CombatComponent))]
+    [RequireCMP(typeof(RightSwipe), typeof(Animator))]
+    public class RightSwipe : ActionInstance
+    {
+        private CombatComponent combatCmp;
+        private Transform transform;
+        private Animation animation;
+
+        public enum State
+        {
+            WindUp,
+            Attack,
+            End
+        }
+
+        public class RightSwipeConfig : ActionConfig
+        {
+            public VarString colliderPoolTag;
+            public RefFloat startAngle;
+            public RefFloat rotateSpeed;
+            public VarString animation;
+            public TargetSetting targetSetting;
+            public List<Effect> effects;
+
+            [HideInInspector]
+            public Entity attacker;
+            [HideInInspector]
+            public float range;
+            [HideInInspector]
+            public int damage;
+            [HideInInspector]
+            public bool begin;
+            [HideInInspector]
+            public State state;
+
+            private ActionCapsuleCollider collider;
+            private HashSet<Entity> hits;
+            private List<Entity> hitQueue;
+
+
+            public override void Initialize()
+            {
+                hits = new();
+                hitQueue = new();
+                begin = false;
+            }
+
+            public void Begin(ActionCapsuleCollider collider, Transform transform)
+            {
+                this.collider = collider;
+                collider.transform.RotateAround(transform.position, Vector3.forward, -startAngle.Value);
+                collider.SetColliderSize(new Vector2(0.5f, range));
+                collider.entityEvent.AddListener((Entity entity) => { hitQueue.Add(entity); });
+                collider.gameObject.SetActive(true);
+                begin = true;
+            }
+
+            public void Process(Transform transform)
+            {
+                int id = transform.gameObject.GetInstanceID();
+                foreach (Entity entity in hitQueue)
+                {
+                    if (entity.gameObject.GetInstanceID() != id && !hits.Contains(entity) && targetSetting.IsTarget(entity))
+                    {
+                        hits.Add(entity);
+                        entity.RegisterDamage(damage, attacker);
+                    }
+                }
+                hitQueue.Clear();
+                collider.transform.RotateAround(transform.position, Vector3.forward, Time.deltaTime * rotateSpeed.Value);
+            }
+
+            public void Finish()
+            {
+                collider.gameObject.SetActive(false);
+                hitQueue.Clear();
+                hits.Clear();
+            }
+        }
+
+        protected override void Initialize()
+        {
+            combatCmp = actionComponent.GetActionComponent<CombatComponent>();
+            transform = actionComponent.GetComponent<Transform>();
+            Entity entity = actionComponent.GetComponent<Entity>();
+            animation = actionComponent.GetComponent<Animation>();
+
+            foreach (RightSwipeConfig con in configs.Values)
+            {
+                con.range = combatCmp.attackRange.Value;
+                con.attacker = entity;
+                con.damage = combatCmp.attackDamage.Value;
+            }
+        }
+
+        protected override void OnEnqueue(ActionConfig config)
+        {
+            RightSwipeConfig con = (RightSwipeConfig)config;
+            con.state = State.WindUp;
+            actionComponent.RegisterAnimation(GetType().ToString(), config, con.animation.Value);
+        }
+
+        public override void AnimationSignal(ActionConfig configRaw)
+        {
+            RightSwipeConfig config = (RightSwipeConfig)configRaw;
+            switch (config.state)
+            {
+                case State.WindUp:
+                    config.state = State.Attack;
+                    config.Begin(ObjectPool.Instance.GetObject(
+                        config.colliderPoolTag.Value, transform.position + transform.up * combatCmp.attackRange.Value * 0.5f,
+                        transform.rotation, transform).GetComponent<ActionCapsuleCollider>(), transform);
+                    break;
+                case State.Attack:
+                    config.state = State.End;
+                    break;
+                default:
+                    return;
+            }
+        }
+
+
+        protected override bool ExecuteBody(ActionConfig config)
+        {
+            RightSwipeConfig con = (RightSwipeConfig)config;
+            switch (con.state)
+            {
+                case State.WindUp:
+                    return true;
+                case State.Attack:
+                    con.Process(transform);
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        protected override void OnActionFinish(ActionConfig config)
+        {
+            RightSwipeConfig con = (RightSwipeConfig)config;
+            con.Finish();
+            actionComponent.UnregisterAnimation();
+        }
+    }
+}

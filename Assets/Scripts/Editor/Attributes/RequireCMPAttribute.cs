@@ -3,38 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[AttributeUsage(AttributeTargets.Class)]
-public class RequireCMPAttribute : Attribute
+namespace LobsterFramework.Action
 {
-    public static Dictionary<Type, HashSet<Type>> requirement = new();
-    public static Dictionary<Type, HashSet<Type>> rev_requirement = new();
-
-    public RequireCMPAttribute(Type actionInstance, params Type[] requiredComponents)
+    [AttributeUsage(AttributeTargets.Class)]
+    public class RequireCMPAttribute : Attribute
     {
-        if (!actionInstance.IsSubclassOf(typeof(ActionInstance)))
+        public static Dictionary<Type, HashSet<Type>> requirement = new();
+        public static Dictionary<Type, HashSet<Type>> rev_requirement = new();
+
+        public RequireCMPAttribute(Type actionInstance, params Type[] requiredComponents)
         {
-            Debug.LogError("Type:" + actionInstance.ToString() + " is not an ActionInstance!");
-            return;
-        }
-        if (requirement.ContainsKey(actionInstance))
-        {
-            Debug.LogWarning("ActionInstance:" + actionInstance.ToString() + " is requiring components from multiple sources!");
-            return;
-        }
-        requirement[actionInstance] = new HashSet<Type>();
-        foreach (Type t in requiredComponents)
-        {
-            if (!t.IsSubclassOf(typeof(Component)))
+            if (!actionInstance.IsSubclassOf(typeof(ActionInstance)))
             {
-                Debug.LogError("Cannot apply require Component of type:" + t.ToString() + " to " + actionInstance.ToString());
+                Debug.LogError("Type:" + actionInstance.ToString() + " is not an ActionInstance!");
                 return;
             }
-            requirement[actionInstance].Add(t);
-
-            if (!rev_requirement.ContainsKey(t)) {
-                rev_requirement[t] = new HashSet<Type>();
+            if (requirement.ContainsKey(actionInstance))
+            {
+                Debug.LogWarning("ActionInstance:" + actionInstance.ToString() + " is requiring components from multiple sources!");
+                return;
             }
-            rev_requirement[t].Add(actionInstance);
+            requirement[actionInstance] = new HashSet<Type>();
+            foreach (Type t in requiredComponents)
+            {
+                if (!t.IsSubclassOf(typeof(Component)))
+                {
+                    Debug.LogError("Cannot apply require Component of type:" + t.ToString() + " to " + actionInstance.ToString());
+                    return;
+                }
+                requirement[actionInstance].Add(t);
+
+                if (!rev_requirement.ContainsKey(t))
+                {
+                    rev_requirement[t] = new HashSet<Type>();
+                }
+                rev_requirement[t].Add(actionInstance);
+            }
         }
     }
 }

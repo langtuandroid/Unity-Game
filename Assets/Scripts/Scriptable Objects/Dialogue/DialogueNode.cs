@@ -2,25 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Dialogue/DialogueNode")]
-public class DialogueNode : ScriptableObject
+namespace LobsterFramework.DialogueSystem
 {
-    [SerializeField] private Sprite speakerIcon;
-    [SerializeField] private string speaker;
-    [TextArea]
-    [SerializeField] private string[] texts;
-
-    public string[] Texts
+    [CreateAssetMenu(menuName = "Dialogue/DialogueNode")]
+    public class DialogueNode : ScriptableObject
     {
-        get { return (string[])texts.Clone(); }
-    }
+        [SerializeField] private Sprite speakerIcon;
+        [SerializeField] private string speaker;
+        [TextArea]
+        [SerializeField] private string[] texts;
 
-    public Sprite Icon
-    {
-        get { return speakerIcon; }
-    }
+        public string[] Texts
+        {
+            get { return (string[])texts.Clone(); }
+        }
 
-    public string Speaker { 
-        get { return speaker; }
+        public Sprite Icon
+        {
+            get { return speakerIcon; }
+        }
+
+        public string Speaker
+        {
+            get { return speaker; }
+        }
     }
 }

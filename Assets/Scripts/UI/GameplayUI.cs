@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LobsterFramework.QuestSystem;
 
-public class GameplayUI : MonoBehaviour
+namespace LobsterFramework.UI
 {
-    [SerializeField] private Quest quest;
+    public class GameplayUI : MonoBehaviour
+    {
+        [SerializeField] private Quest quest;
 
-    public void EnableQuest() { 
-        quest.Enable();
+        public void EnableQuest()
+        {
+            quest.Enable();
+        }
     }
 }

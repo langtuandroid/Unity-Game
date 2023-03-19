@@ -1,0 +1,543 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.SerializedPropertyExtensions
+  commentId: T:Global.SerializedPropertyExtensions
+  id: SerializedPropertyExtensions
+  parent: Global
+  children:
+  - Global.SerializedPropertyExtensions.GetBaseClassesAndInterfaces(System.Type,System.Boolean)
+  - Global.SerializedPropertyExtensions.GetFieldOrPropertyValue``1(System.String,System.Object,System.Boolean,System.Reflection.BindingFlags)
+  - Global.SerializedPropertyExtensions.GetNestedObject``1(System.String,System.Object,System.Boolean)
+  - Global.SerializedPropertyExtensions.GetSerializedPropertyRootComponent(UnityEditor.SerializedProperty)
+  - Global.SerializedPropertyExtensions.GetValue``1(UnityEditor.SerializedProperty)
+  - Global.SerializedPropertyExtensions.SetFieldOrPropertyValue(System.String,System.Object,System.Object,System.Boolean,System.Reflection.BindingFlags)
+  - Global.SerializedPropertyExtensions.SetValue``1(UnityEditor.SerializedProperty,``0)
+  langs:
+  - csharp
+  - vb
+  name: SerializedPropertyExtensions
+  nameWithType: SerializedPropertyExtensions
+  fullName: SerializedPropertyExtensions
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: SerializedPropertyExtensions
+    path: ../Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 21
+  assemblies:
+  - MyScripts
+  namespace: Global
+  summary: "\nExtension class for SerializedProperties\nSee also: http://answers.unity3d.com/questions/627090/convert-serializedproperty-to-custom-class.html\n"
+  example: []
+  syntax:
+    content: public static class SerializedPropertyExtensions
+    content.vb: Public Module SerializedPropertyExtensions
+  inheritance:
+  - System.Object
+- uid: Global.SerializedPropertyExtensions.GetValue``1(UnityEditor.SerializedProperty)
+  commentId: M:Global.SerializedPropertyExtensions.GetValue``1(UnityEditor.SerializedProperty)
+  id: GetValue``1(UnityEditor.SerializedProperty)
+  isExtensionMethod: true
+  parent: Global.SerializedPropertyExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetValue<T>(SerializedProperty)
+  nameWithType: SerializedPropertyExtensions.GetValue<T>(SerializedProperty)
+  fullName: SerializedPropertyExtensions.GetValue<T>(UnityEditor.SerializedProperty)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: GetValue
+    path: ../Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 29
+  assemblies:
+  - MyScripts
+  namespace: Global
+  summary: "\nGet the object the serialized property holds by using reflection\n"
+  example: []
+  syntax:
+    content: public static T GetValue<T>(this SerializedProperty property)
+    parameters:
+    - id: property
+      type: UnityEditor.SerializedProperty
+      description: ''
+    typeParameters:
+    - id: T
+      description: The object type that the property contains
+    return:
+      type: '{T}'
+      description: Returns the object type T if it is the type the property actually contains
+    content.vb: Public Shared Function GetValue(Of T)([property] As SerializedProperty) As T
+  overload: Global.SerializedPropertyExtensions.GetValue*
+  nameWithType.vb: SerializedPropertyExtensions.GetValue(Of T)(SerializedProperty)
+  fullName.vb: SerializedPropertyExtensions.GetValue(Of T)(UnityEditor.SerializedProperty)
+  name.vb: GetValue(Of T)(SerializedProperty)
+- uid: Global.SerializedPropertyExtensions.SetValue``1(UnityEditor.SerializedProperty,``0)
+  commentId: M:Global.SerializedPropertyExtensions.SetValue``1(UnityEditor.SerializedProperty,``0)
+  id: SetValue``1(UnityEditor.SerializedProperty,``0)
+  isExtensionMethod: true
+  parent: Global.SerializedPropertyExtensions
+  langs:
+  - csharp
+  - vb
+  name: SetValue<T>(SerializedProperty, T)
+  nameWithType: SerializedPropertyExtensions.SetValue<T>(SerializedProperty, T)
+  fullName: SerializedPropertyExtensions.SetValue<T>(UnityEditor.SerializedProperty, T)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: SetValue
+    path: ../Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 41
+  assemblies:
+  - MyScripts
+  namespace: Global
+  summary: "\nSet the value of a field of the property with the type T\n"
+  example: []
+  syntax:
+    content: public static bool SetValue<T>(this SerializedProperty property, T value)
+    parameters:
+    - id: property
+      type: UnityEditor.SerializedProperty
+      description: The serialized property that should be set
+    - id: value
+      type: '{T}'
+      description: The new value for the specified property
+    typeParameters:
+    - id: T
+      description: The type of the field that is set
+    return:
+      type: System.Boolean
+      description: Returns if the operation was successful or failed
+    content.vb: Public Shared Function SetValue(Of T)([property] As SerializedProperty, value As T) As Boolean
+  overload: Global.SerializedPropertyExtensions.SetValue*
+  nameWithType.vb: SerializedPropertyExtensions.SetValue(Of T)(SerializedProperty, T)
+  fullName.vb: SerializedPropertyExtensions.SetValue(Of T)(UnityEditor.SerializedProperty, T)
+  name.vb: SetValue(Of T)(SerializedProperty, T)
+- uid: Global.SerializedPropertyExtensions.GetSerializedPropertyRootComponent(UnityEditor.SerializedProperty)
+  commentId: M:Global.SerializedPropertyExtensions.GetSerializedPropertyRootComponent(UnityEditor.SerializedProperty)
+  id: GetSerializedPropertyRootComponent(UnityEditor.SerializedProperty)
+  parent: Global.SerializedPropertyExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetSerializedPropertyRootComponent(SerializedProperty)
+  nameWithType: SerializedPropertyExtensions.GetSerializedPropertyRootComponent(SerializedProperty)
+  fullName: SerializedPropertyExtensions.GetSerializedPropertyRootComponent(UnityEditor.SerializedProperty)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: GetSerializedPropertyRootComponent
+    path: ../Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 62
+  assemblies:
+  - MyScripts
+  namespace: Global
+  summary: "\nGet the component of a serialized property\n"
+  example: []
+  syntax:
+    content: public static Object GetSerializedPropertyRootComponent(SerializedProperty property)
+    parameters:
+    - id: property
+      type: UnityEditor.SerializedProperty
+      description: The property that is part of the component
+    return:
+      type: UnityEngine.Object
+      description: The root component of the property
+    content.vb: Public Shared Function GetSerializedPropertyRootComponent([property] As SerializedProperty) As [Object]
+  overload: Global.SerializedPropertyExtensions.GetSerializedPropertyRootComponent*
+- uid: Global.SerializedPropertyExtensions.GetNestedObject``1(System.String,System.Object,System.Boolean)
+  commentId: M:Global.SerializedPropertyExtensions.GetNestedObject``1(System.String,System.Object,System.Boolean)
+  id: GetNestedObject``1(System.String,System.Object,System.Boolean)
+  parent: Global.SerializedPropertyExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetNestedObject<T>(string, object, bool)
+  nameWithType: SerializedPropertyExtensions.GetNestedObject<T>(string, object, bool)
+  fullName: SerializedPropertyExtensions.GetNestedObject<T>(string, object, bool)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: GetNestedObject
+    path: ../Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 75
+  assemblies:
+  - MyScripts
+  namespace: Global
+  summary: "\nIterates through objects to handle objects that are nested in the root object\n"
+  example: []
+  syntax:
+    content: public static T GetNestedObject<T>(string path, object obj, bool includeAllBases = false)
+    parameters:
+    - id: path
+      type: System.String
+      description: Path to the object through other properties e.g. PlayerInformation.Health
+    - id: obj
+      type: System.Object
+      description: The root object from which this path leads to the property
+    - id: includeAllBases
+      type: System.Boolean
+      description: Include base classes and interfaces as well
+    typeParameters:
+    - id: T
+      description: The type of the nested object
+    return:
+      type: '{T}'
+      description: Returns the nested object casted to the type T
+    content.vb: Public Shared Function GetNestedObject(Of T)(path As String, obj As Object, includeAllBases As Boolean = False) As T
+  overload: Global.SerializedPropertyExtensions.GetNestedObject*
+  nameWithType.vb: SerializedPropertyExtensions.GetNestedObject(Of T)(String, Object, Boolean)
+  fullName.vb: SerializedPropertyExtensions.GetNestedObject(Of T)(String, Object, Boolean)
+  name.vb: GetNestedObject(Of T)(String, Object, Boolean)
+- uid: Global.SerializedPropertyExtensions.GetFieldOrPropertyValue``1(System.String,System.Object,System.Boolean,System.Reflection.BindingFlags)
+  commentId: M:Global.SerializedPropertyExtensions.GetFieldOrPropertyValue``1(System.String,System.Object,System.Boolean,System.Reflection.BindingFlags)
+  id: GetFieldOrPropertyValue``1(System.String,System.Object,System.Boolean,System.Reflection.BindingFlags)
+  parent: Global.SerializedPropertyExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetFieldOrPropertyValue<T>(string, object, bool, BindingFlags)
+  nameWithType: SerializedPropertyExtensions.GetFieldOrPropertyValue<T>(string, object, bool, BindingFlags)
+  fullName: SerializedPropertyExtensions.GetFieldOrPropertyValue<T>(string, object, bool, System.Reflection.BindingFlags)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: GetFieldOrPropertyValue
+    path: ../Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 84
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public static T GetFieldOrPropertyValue<T>(string fieldName, object obj, bool includeAllBases = false, BindingFlags bindings = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+    parameters:
+    - id: fieldName
+      type: System.String
+    - id: obj
+      type: System.Object
+    - id: includeAllBases
+      type: System.Boolean
+    - id: bindings
+      type: System.Reflection.BindingFlags
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+    content.vb: Public Shared Function GetFieldOrPropertyValue(Of T)(fieldName As String, obj As Object, includeAllBases As Boolean = False, bindings As BindingFlags = BindingFlags.Instance Or BindingFlags.Static Or BindingFlags.Public Or BindingFlags.NonPublic) As T
+  overload: Global.SerializedPropertyExtensions.GetFieldOrPropertyValue*
+  nameWithType.vb: SerializedPropertyExtensions.GetFieldOrPropertyValue(Of T)(String, Object, Boolean, BindingFlags)
+  fullName.vb: SerializedPropertyExtensions.GetFieldOrPropertyValue(Of T)(String, Object, Boolean, System.Reflection.BindingFlags)
+  name.vb: GetFieldOrPropertyValue(Of T)(String, Object, Boolean, BindingFlags)
+- uid: Global.SerializedPropertyExtensions.SetFieldOrPropertyValue(System.String,System.Object,System.Object,System.Boolean,System.Reflection.BindingFlags)
+  commentId: M:Global.SerializedPropertyExtensions.SetFieldOrPropertyValue(System.String,System.Object,System.Object,System.Boolean,System.Reflection.BindingFlags)
+  id: SetFieldOrPropertyValue(System.String,System.Object,System.Object,System.Boolean,System.Reflection.BindingFlags)
+  parent: Global.SerializedPropertyExtensions
+  langs:
+  - csharp
+  - vb
+  name: SetFieldOrPropertyValue(string, object, object, bool, BindingFlags)
+  nameWithType: SerializedPropertyExtensions.SetFieldOrPropertyValue(string, object, object, bool, BindingFlags)
+  fullName: SerializedPropertyExtensions.SetFieldOrPropertyValue(string, object, object, bool, System.Reflection.BindingFlags)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: SetFieldOrPropertyValue
+    path: ../Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 108
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public static bool SetFieldOrPropertyValue(string fieldName, object obj, object value, bool includeAllBases = false, BindingFlags bindings = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+    parameters:
+    - id: fieldName
+      type: System.String
+    - id: obj
+      type: System.Object
+    - id: value
+      type: System.Object
+    - id: includeAllBases
+      type: System.Boolean
+    - id: bindings
+      type: System.Reflection.BindingFlags
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function SetFieldOrPropertyValue(fieldName As String, obj As Object, value As Object, includeAllBases As Boolean = False, bindings As BindingFlags = BindingFlags.Instance Or BindingFlags.Static Or BindingFlags.Public Or BindingFlags.NonPublic) As Boolean
+  overload: Global.SerializedPropertyExtensions.SetFieldOrPropertyValue*
+  nameWithType.vb: SerializedPropertyExtensions.SetFieldOrPropertyValue(String, Object, Object, Boolean, BindingFlags)
+  fullName.vb: SerializedPropertyExtensions.SetFieldOrPropertyValue(String, Object, Object, Boolean, System.Reflection.BindingFlags)
+  name.vb: SetFieldOrPropertyValue(String, Object, Object, Boolean, BindingFlags)
+- uid: Global.SerializedPropertyExtensions.GetBaseClassesAndInterfaces(System.Type,System.Boolean)
+  commentId: M:Global.SerializedPropertyExtensions.GetBaseClassesAndInterfaces(System.Type,System.Boolean)
+  id: GetBaseClassesAndInterfaces(System.Type,System.Boolean)
+  isExtensionMethod: true
+  parent: Global.SerializedPropertyExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetBaseClassesAndInterfaces(Type, bool)
+  nameWithType: SerializedPropertyExtensions.GetBaseClassesAndInterfaces(Type, bool)
+  fullName: SerializedPropertyExtensions.GetBaseClassesAndInterfaces(System.Type, bool)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: GetBaseClassesAndInterfaces
+    path: ../Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 146
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public static IEnumerable<Type> GetBaseClassesAndInterfaces(this Type type, bool includeSelf = false)
+    parameters:
+    - id: type
+      type: System.Type
+    - id: includeSelf
+      type: System.Boolean
+    return:
+      type: System.Collections.Generic.IEnumerable{System.Type}
+    content.vb: Public Shared Function GetBaseClassesAndInterfaces(type As Type, includeSelf As Boolean = False) As IEnumerable(Of Type)
+  overload: Global.SerializedPropertyExtensions.GetBaseClassesAndInterfaces*
+  nameWithType.vb: SerializedPropertyExtensions.GetBaseClassesAndInterfaces(Type, Boolean)
+  fullName.vb: SerializedPropertyExtensions.GetBaseClassesAndInterfaces(System.Type, Boolean)
+  name.vb: GetBaseClassesAndInterfaces(Type, Boolean)
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.SerializedPropertyExtensions.GetValue*
+  commentId: Overload:Global.SerializedPropertyExtensions.GetValue
+  name: GetValue
+  nameWithType: SerializedPropertyExtensions.GetValue
+  fullName: SerializedPropertyExtensions.GetValue
+- uid: UnityEditor.SerializedProperty
+  commentId: T:UnityEditor.SerializedProperty
+  parent: UnityEditor
+  isExternal: true
+  name: SerializedProperty
+  nameWithType: SerializedProperty
+  fullName: UnityEditor.SerializedProperty
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: UnityEditor
+  commentId: N:UnityEditor
+  isExternal: true
+  name: UnityEditor
+  nameWithType: UnityEditor
+  fullName: UnityEditor
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Global.SerializedPropertyExtensions.SetValue*
+  commentId: Overload:Global.SerializedPropertyExtensions.SetValue
+  name: SetValue
+  nameWithType: SerializedPropertyExtensions.SetValue
+  fullName: SerializedPropertyExtensions.SetValue
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Global.SerializedPropertyExtensions.GetSerializedPropertyRootComponent*
+  commentId: Overload:Global.SerializedPropertyExtensions.GetSerializedPropertyRootComponent
+  name: GetSerializedPropertyRootComponent
+  nameWithType: SerializedPropertyExtensions.GetSerializedPropertyRootComponent
+  fullName: SerializedPropertyExtensions.GetSerializedPropertyRootComponent
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: Global.SerializedPropertyExtensions.GetNestedObject*
+  commentId: Overload:Global.SerializedPropertyExtensions.GetNestedObject
+  name: GetNestedObject
+  nameWithType: SerializedPropertyExtensions.GetNestedObject
+  fullName: SerializedPropertyExtensions.GetNestedObject
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Global.SerializedPropertyExtensions.GetFieldOrPropertyValue*
+  commentId: Overload:Global.SerializedPropertyExtensions.GetFieldOrPropertyValue
+  name: GetFieldOrPropertyValue
+  nameWithType: SerializedPropertyExtensions.GetFieldOrPropertyValue
+  fullName: SerializedPropertyExtensions.GetFieldOrPropertyValue
+- uid: System.Reflection.BindingFlags
+  commentId: T:System.Reflection.BindingFlags
+  parent: System.Reflection
+  isExternal: true
+  name: BindingFlags
+  nameWithType: BindingFlags
+  fullName: System.Reflection.BindingFlags
+- uid: System.Reflection
+  commentId: N:System.Reflection
+  isExternal: true
+  name: System.Reflection
+  nameWithType: System.Reflection
+  fullName: System.Reflection
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+- uid: Global.SerializedPropertyExtensions.SetFieldOrPropertyValue*
+  commentId: Overload:Global.SerializedPropertyExtensions.SetFieldOrPropertyValue
+  name: SetFieldOrPropertyValue
+  nameWithType: SerializedPropertyExtensions.SetFieldOrPropertyValue
+  fullName: SerializedPropertyExtensions.SetFieldOrPropertyValue
+- uid: Global.SerializedPropertyExtensions.GetBaseClassesAndInterfaces*
+  commentId: Overload:Global.SerializedPropertyExtensions.GetBaseClassesAndInterfaces
+  name: GetBaseClassesAndInterfaces
+  nameWithType: SerializedPropertyExtensions.GetBaseClassesAndInterfaces
+  fullName: SerializedPropertyExtensions.GetBaseClassesAndInterfaces
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.Collections.Generic.IEnumerable{System.Type}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Type}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<Type>
+  nameWithType: IEnumerable<Type>
+  fullName: System.Collections.Generic.IEnumerable<System.Type>
+  nameWithType.vb: IEnumerable(Of Type)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Type)
+  name.vb: IEnumerable(Of Type)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - uid: System.Type
+    name: Type
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true

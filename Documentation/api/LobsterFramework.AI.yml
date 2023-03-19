@@ -1,0 +1,95 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AI
+  commentId: N:LobsterFramework.AI
+  id: LobsterFramework.AI
+  children:
+  - LobsterFramework.AI.AIController
+  - LobsterFramework.AI.MeleeChaseState
+  - LobsterFramework.AI.MeleeChaseState2
+  - LobsterFramework.AI.RangedChaseState
+  - LobsterFramework.AI.State
+  - LobsterFramework.AI.StateMachine
+  - LobsterFramework.AI.Transition
+  - LobsterFramework.AI.TransitionTable
+  - LobsterFramework.AI.Wander2
+  - LobsterFramework.AI.WanderState
+  langs:
+  - csharp
+  - vb
+  name: LobsterFramework.AI
+  nameWithType: LobsterFramework.AI
+  fullName: LobsterFramework.AI
+  type: Namespace
+  assemblies:
+  - MyScripts
+references:
+- uid: LobsterFramework.AI.TransitionTable
+  commentId: T:LobsterFramework.AI.TransitionTable
+  name: TransitionTable
+  nameWithType: TransitionTable
+  fullName: LobsterFramework.AI.TransitionTable
+- uid: LobsterFramework.AI.WanderState
+  commentId: T:LobsterFramework.AI.WanderState
+  name: WanderState
+  nameWithType: WanderState
+  fullName: LobsterFramework.AI.WanderState
+- uid: LobsterFramework.AI.Transition
+  commentId: T:LobsterFramework.AI.Transition
+  parent: LobsterFramework.AI
+  name: Transition
+  nameWithType: Transition
+  fullName: LobsterFramework.AI.Transition
+- uid: LobsterFramework.AI.AIController
+  commentId: T:LobsterFramework.AI.AIController
+  name: AIController
+  nameWithType: AIController
+  fullName: LobsterFramework.AI.AIController
+- uid: LobsterFramework.AI.MeleeChaseState2
+  commentId: T:LobsterFramework.AI.MeleeChaseState2
+  name: MeleeChaseState2
+  nameWithType: MeleeChaseState2
+  fullName: LobsterFramework.AI.MeleeChaseState2
+- uid: LobsterFramework.AI.State
+  commentId: T:LobsterFramework.AI.State
+  parent: LobsterFramework.AI
+  name: State
+  nameWithType: State
+  fullName: LobsterFramework.AI.State
+- uid: LobsterFramework.AI.MeleeChaseState
+  commentId: T:LobsterFramework.AI.MeleeChaseState
+  name: MeleeChaseState
+  nameWithType: MeleeChaseState
+  fullName: LobsterFramework.AI.MeleeChaseState
+- uid: LobsterFramework.AI.StateMachine
+  commentId: T:LobsterFramework.AI.StateMachine
+  name: StateMachine
+  nameWithType: StateMachine
+  fullName: LobsterFramework.AI.StateMachine
+- uid: LobsterFramework.AI.Wander2
+  commentId: T:LobsterFramework.AI.Wander2
+  name: Wander2
+  nameWithType: Wander2
+  fullName: LobsterFramework.AI.Wander2
+- uid: LobsterFramework.AI.RangedChaseState
+  commentId: T:LobsterFramework.AI.RangedChaseState
+  name: RangedChaseState
+  nameWithType: RangedChaseState
+  fullName: LobsterFramework.AI.RangedChaseState
+- uid: LobsterFramework.AI
+  commentId: N:LobsterFramework.AI
+  name: LobsterFramework.AI
+  nameWithType: LobsterFramework.AI
+  fullName: LobsterFramework.AI
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.AI
+    name: AI
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.AI
+    name: AI

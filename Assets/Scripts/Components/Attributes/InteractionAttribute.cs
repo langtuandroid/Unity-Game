@@ -4,91 +4,110 @@ using UnityEngine;
 using System.Reflection;
 using System;
 
-[AttributeUsage(AttributeTargets.Class, Inherited = false)]
-public class InteractionAttribute : Attribute
+namespace LobsterFramework.Interaction
 {
-    private static Dictionary<Type, HashSet<Type>> interactorTypes = new();
-    private static Dictionary<Type, HashSet<Interactor>> interactors = new();
-    private static Dictionary<Interactor, Transform> transformBuffer = new();
-
-    public InteractionAttribute(Type interactable, params Type[] interactors)
+    [AttributeUsage(AttributeTargets.Class, Inherited = false)]
+    public class InteractionAttribute : Attribute
     {
-        if (!interactable.IsSubclassOf(typeof(InteractableObject))) {
-            Debug.LogError(typeof(InteractableObject).ToString() + " is not a subtype of Interactable Object!");
-            return;
-        }
-        interactorTypes[interactable] = new();
-        if (interactors.Length == 0) {
-            Debug.Log("Missing arguments for interactor types!");
-        }
-        foreach (Type t in interactors) {
-            if (!t.IsSubclassOf(typeof(Interactor))) {
-                Debug.LogError("Cannot add type: " + t.ToString() + " as the interactor for " + interactable.ToString());
-                continue;
+        private static Dictionary<Type, HashSet<Type>> interactorTypes = new();
+        private static Dictionary<Type, HashSet<Interactor>> interactors = new();
+        private static Dictionary<Interactor, Transform> transformBuffer = new();
+
+        public InteractionAttribute(Type interactable, params Type[] interactors)
+        {
+            if (!interactable.IsSubclassOf(typeof(InteractableObject)))
+            {
+                Debug.LogError(typeof(InteractableObject).ToString() + " is not a subtype of Interactable Object!");
+                return;
             }
-            interactorTypes[interactable].Add(t);
-        }
-    }
-
-    public static Type[] GetInteractorTypes(Type interactable) {
-        if (interactorTypes.ContainsKey(interactable)) {
-            Type[] arr = new Type[interactorTypes[interactable].Count];
-            interactorTypes[interactable].CopyTo(arr);
-            return arr;
-        }
-        return null;
-    }
-
-    public static void GetInteractors(Type interactorType, List<Interactor> container) {
-        container.Clear();
-        if (interactors.ContainsKey(interactorType)) {
-            HashSet<Interactor> i = interactors[interactorType];
-            foreach (Interactor intc in i) {
-                container.Add(intc);
+            interactorTypes[interactable] = new();
+            if (interactors.Length == 0)
+            {
+                Debug.Log("Missing arguments for interactor types!");
             }
-            return;
+            foreach (Type t in interactors)
+            {
+                if (!t.IsSubclassOf(typeof(Interactor)))
+                {
+                    Debug.LogError("Cannot add type: " + t.ToString() + " as the interactor for " + interactable.ToString());
+                    continue;
+                }
+                interactorTypes[interactable].Add(t);
+            }
         }
-    }
 
-    public static Transform GetInteractorTransform(Interactor interactor) {
-        if (transformBuffer.ContainsKey(interactor)) {
-            return transformBuffer[interactor];
+        public static Type[] GetInteractorTypes(Type interactable)
+        {
+            if (interactorTypes.ContainsKey(interactable))
+            {
+                Type[] arr = new Type[interactorTypes[interactable].Count];
+                interactorTypes[interactable].CopyTo(arr);
+                return arr;
+            }
+            return null;
         }
-        return null;
-    }
 
-    public static bool IsInteractable(Type interactable, Type interactor)
-    {
-        if (!interactorTypes.ContainsKey(interactable)) {
+        public static void GetInteractors(Type interactorType, List<Interactor> container)
+        {
+            container.Clear();
+            if (interactors.ContainsKey(interactorType))
+            {
+                HashSet<Interactor> i = interactors[interactorType];
+                foreach (Interactor intc in i)
+                {
+                    container.Add(intc);
+                }
+                return;
+            }
+        }
+
+        public static Transform GetInteractorTransform(Interactor interactor)
+        {
+            if (transformBuffer.ContainsKey(interactor))
+            {
+                return transformBuffer[interactor];
+            }
+            return null;
+        }
+
+        public static bool IsInteractable(Type interactable, Type interactor)
+        {
+            if (!interactorTypes.ContainsKey(interactable))
+            {
+                return false;
+            }
+            return interactorTypes[interactable].Contains(interactor);
+        }
+
+        public static void AddInteractor(Interactor interactor)
+        {
+            Type t = interactor.GetType();
+            if (!interactors.ContainsKey(t))
+            {
+                interactors[t] = new();
+            }
+            interactors[t].Add(interactor);
+            transformBuffer[interactor] = interactor.GetComponent<Transform>();
+        }
+
+        public static void RemoveInteractor(Interactor interactor)
+        {
+            Type t = interactor.GetType();
+            if (interactors.ContainsKey(t))
+            {
+                interactors[t].Remove(interactor);
+                transformBuffer.Remove(interactor);
+            }
+        }
+
+        public static bool ExistInteractor(Interactor interactor)
+        {
+            Type t = interactor.GetType();
+            if (interactors.ContainsKey(t))
+            {
+                return interactors[t].Contains(interactor);
+            }
             return false;
         }
-        return interactorTypes[interactable].Contains(interactor);
-    }
-
-    public static void AddInteractor(Interactor interactor) {
-        Type t = interactor.GetType();
-        if (!interactors.ContainsKey(t)) {
-            interactors[t] = new();
-        }
-        interactors[t].Add(interactor);
-        transformBuffer[interactor] = interactor.GetComponent<Transform>();
-    }
-
-    public static void RemoveInteractor(Interactor interactor)
-    {
-        Type t = interactor.GetType();
-        if (interactors.ContainsKey(t))
-        {
-            interactors[t].Remove(interactor);
-            transformBuffer.Remove(interactor);
-        }
-    }
-
-    public static bool ExistInteractor(Interactor interactor) {
-        Type t = interactor.GetType();
-        if (interactors.ContainsKey(t)) {
-            return interactors[t].Contains(interactor);
-        }
-        return false;  
     }
 }

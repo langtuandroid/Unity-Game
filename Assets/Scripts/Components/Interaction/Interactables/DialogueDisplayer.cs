@@ -4,149 +4,167 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using TMPro;
+using LobsterFramework.Interaction;
+using LobsterFramework.DialogueSystem;
 
-[Interaction(interactable: typeof(DialogueDisplayer), interactors: typeof(GeneralInteractor))]
-public class DialogueDisplayer : InteractableObject
+namespace LobsterFramework.UI
 {
-    [Header("Settings")]
-    [SerializeField] private RefBool resetUponFinish;
-    [SerializeField] private RefBool canStop;
-    [SerializeField] private RefFloat displaySpeed;
-    [SerializeField] private RefFloat secondsDelayBetweenLines;
-    [SerializeField] private RefFloat secondsLingering;
-    [SerializeField] private DialogueObject dialogue;
-    [SerializeField] private RectTransform dialogueCanva;
-
-    [Header("Dialogue Area")]
-    [SerializeField] private TMP_Text mainText;
-
-    [Header("Response Area")]
-    [SerializeField] private RectTransform responseLayoutGroup;
-    [SerializeField] private Button responseButton;
-
-    [Header("Speaker Info")]
-    [SerializeField] private TMP_Text speakerName;
-    [SerializeField] private Image speakerIcon;
-
-    private Coroutine coroutine;
-    private DialogueObject currentDialogue;
-
-    private List<Button> responseButtons = new();
-    private readonly InteractionPrompt idleOption = new() { Primary = "Talk" };
-
-    private readonly InteractionPrompt runningOption = new (){Primary = "Stop"};
-
-    new void Start()
+    [Interaction(interactable: typeof(DialogueDisplayer), interactors: typeof(GeneralInteractor))]
+    public class DialogueDisplayer : InteractableObject
     {
-        base.Start();
-        currentDialogue = dialogue;
-    }
+        [Header("Settings")]
+        [SerializeField] private RefBool resetUponFinish;
+        [SerializeField] private RefBool canStop;
+        [SerializeField] private RefFloat displaySpeed;
+        [SerializeField] private RefFloat secondsDelayBetweenLines;
+        [SerializeField] private RefFloat secondsLingering;
+        [SerializeField] private DialogueObject dialogue;
+        [SerializeField] private RectTransform dialogueCanva;
 
-    public override void OnInteract(Interactor interactor, InteractionType type) {
-        DisplayDialogue();
-    }
+        [Header("Dialogue Area")]
+        [SerializeField] private TMP_Text mainText;
 
-    public void DisplayDialogue() {
-        if (coroutine == null)
+        [Header("Response Area")]
+        [SerializeField] private RectTransform responseLayoutGroup;
+        [SerializeField] private Button responseButton;
+
+        [Header("Speaker Info")]
+        [SerializeField] private TMP_Text speakerName;
+        [SerializeField] private Image speakerIcon;
+
+        private Coroutine coroutine;
+        private DialogueObject currentDialogue;
+
+        private List<Button> responseButtons = new();
+        private readonly InteractionPrompt idleOption = new() { Primary = "Talk" };
+
+        private readonly InteractionPrompt runningOption = new() { Primary = "Stop" };
+
+        new void Start()
         {
-            coroutine = StartCoroutine(DisplayText());
-        }
-        else if(canStop.Value)
-        {
-            StopCoroutine(coroutine);
-            coroutine = null;
+            base.Start();
             currentDialogue = dialogue;
-            dialogueCanva.gameObject.SetActive(false);
         }
-    }
 
-    private void OnDestroy()
-    {
-        if (dialogueCanva != null)
+        public override void OnInteract(Interactor interactor, InteractionType type)
         {
-            dialogueCanva.gameObject.SetActive(false);
+            DisplayDialogue();
         }
-        
-    }
 
-    public IEnumerator DisplayText() {
-        dialogueCanva.gameObject.SetActive(true);
-
-        // Begin displaying text in each node
-        foreach (DialogueNode node in currentDialogue.Nodes) {
-            speakerName.text = node.Speaker;
-            speakerIcon.sprite = node.Icon;
-            foreach (string str in node.Texts)
+        public void DisplayDialogue()
+        {
+            if (coroutine == null)
             {
-                float index = 0;
-                while (index < str.Length)
+                coroutine = StartCoroutine(DisplayText());
+            }
+            else if (canStop.Value)
+            {
+                StopCoroutine(coroutine);
+                coroutine = null;
+                currentDialogue = dialogue;
+                dialogueCanva.gameObject.SetActive(false);
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (dialogueCanva != null)
+            {
+                dialogueCanva.gameObject.SetActive(false);
+            }
+
+        }
+
+        public IEnumerator DisplayText()
+        {
+            dialogueCanva.gameObject.SetActive(true);
+
+            // Begin displaying text in each node
+            foreach (DialogueNode node in currentDialogue.Nodes)
+            {
+                speakerName.text = node.Speaker;
+                speakerIcon.sprite = node.Icon;
+                foreach (string str in node.Texts)
                 {
-                    mainText.text = str.Substring(0, Mathf.FloorToInt(index));
-                    index += Time.deltaTime * displaySpeed.Value;
-                    yield return null;
+                    float index = 0;
+                    while (index < str.Length)
+                    {
+                        mainText.text = str.Substring(0, Mathf.FloorToInt(index));
+                        index += Time.deltaTime * displaySpeed.Value;
+                        yield return null;
+                    }
+                    mainText.text = str;
+                    yield return new WaitForSeconds(secondsDelayBetweenLines.Value);
                 }
-                mainText.text = str;
-                yield return new WaitForSeconds(secondsDelayBetweenLines.Value);
             }
-        }
-        
-        // Instantiate response buttons
-        if (currentDialogue.HasResponses) {
-            DialogueResponse[] responses = currentDialogue.Responses;
-            foreach (DialogueResponse response in responses)
+
+            // Instantiate response buttons
+            if (currentDialogue.HasResponses)
             {
-                GameObject obj = Instantiate(responseButton.gameObject, responseLayoutGroup);
-                obj.SetActive(true);
-                Button btn = obj.GetComponent<Button>();
-                btn.onClick.AddListener(() => Respond(response));
-                btn.GetComponentInChildren<TMP_Text>().text = response.Text; 
-                responseButtons.Add(btn);
+                DialogueResponse[] responses = currentDialogue.Responses;
+                foreach (DialogueResponse response in responses)
+                {
+                    GameObject obj = Instantiate(responseButton.gameObject, responseLayoutGroup);
+                    obj.SetActive(true);
+                    Button btn = obj.GetComponent<Button>();
+                    btn.onClick.AddListener(() => Respond(response));
+                    btn.GetComponentInChildren<TMP_Text>().text = response.Text;
+                    responseButtons.Add(btn);
+                }
+            }
+
+            // Execute dialogue finishers
+            if (currentDialogue.FinisherChannel != null)
+            {
+                currentDialogue.FinisherChannel.RaiseEvent();
+            }
+
+            if (resetUponFinish.Value)
+            {
+                currentDialogue = dialogue;
+            }
+            coroutine = null;
+
+            yield return new WaitForSeconds(secondsLingering.Value);
+
+            // Keep the canvas running if there's responses to display
+            if (responseButtons.Count == 0)
+            {
+                dialogueCanva.gameObject.SetActive(false);
             }
         }
 
-        // Execute dialogue finishers
-        if (currentDialogue.FinisherChannel != null) {
-            currentDialogue.FinisherChannel.RaiseEvent();
-        }
-        
-        if (resetUponFinish.Value) {
-            currentDialogue = dialogue;
-        }
-        coroutine = null;
-
-        yield return new WaitForSeconds(secondsLingering.Value);
-
-        // Keep the canvas running if there's responses to display
-        if (responseButtons.Count == 0) {
-            dialogueCanva.gameObject.SetActive(false);
-        }
-    }
-
-    public void Respond(DialogueResponse response) { 
-        response.Respond();
-        if (response.Dialogue != null)
+        public void Respond(DialogueResponse response)
         {
-            currentDialogue = response.Dialogue;
-            coroutine = StartCoroutine(DisplayText());
-        }
-        else {
-            currentDialogue = dialogue;
-        }
-        
-        foreach (Button b in responseButtons) {
-            Destroy(b.gameObject);
-        }
-        responseButtons.Clear();
-    }
-
-    public override InteractionPrompt GetInteractionOptions(Type t)
-    {
-        if (coroutine != null) {
-            if (canStop.Value) {
-                return runningOption;
+            response.Respond();
+            if (response.Dialogue != null)
+            {
+                currentDialogue = response.Dialogue;
+                coroutine = StartCoroutine(DisplayText());
             }
-            return InteractionPrompt.none;
+            else
+            {
+                currentDialogue = dialogue;
+            }
+
+            foreach (Button b in responseButtons)
+            {
+                Destroy(b.gameObject);
+            }
+            responseButtons.Clear();
         }
-        return idleOption;
+
+        public override InteractionPrompt GetInteractionOptions(Type t)
+        {
+            if (coroutine != null)
+            {
+                if (canStop.Value)
+                {
+                    return runningOption;
+                }
+                return InteractionPrompt.none;
+            }
+            return idleOption;
+        }
     }
 }

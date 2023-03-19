@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LobsterFramework.EntitySystem;
 
-public class HealthCheckCondition : Condition
+namespace LobsterFramework.QuestSystem
 {
-    [SerializeField] private Entity entity;
-    [SerializeField] private int health;
-
-    public override bool Eval()
+    public class HealthCheckCondition : Condition
     {
-        return entity.Health < health;
+        [SerializeField] private Entity entity;
+        [SerializeField] private int health;
+
+        public override bool Eval()
+        {
+            return entity.Health < health;
+        }
     }
 }

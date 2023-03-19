@@ -3,54 +3,63 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class StateMachine : MonoBehaviour
+namespace LobsterFramework.AI
 {
-    [SerializeField] private List<State> allStates;
-    [SerializeField] private State initialState;
-    [SerializeField] private State currentState;
-    private Dictionary<Type, State> states = new();
-
-    public State CurrentState{
-        get{ return currentState; }
-        set { currentState = value; }
-    }
-
-    void Start() {
-        ReferenceCheck();
-
-        foreach (State s in allStates) {
-            State state = Instantiate(s);
-            states[state.GetType()] = state;
-            state.InitializeFields(gameObject);
-        }
-        if (initialState == null)
-        {
-            initialState = allStates[0];
-        }
-        currentState = states[initialState.GetType()];
-    }
-
-    private void ReferenceCheck() {
-        if (initialState == null) {
-            Debug.LogWarning("Initial state of the state machine is not set!");
-        }
-    }
-
-    public void Update()
+    public class StateMachine : MonoBehaviour
     {
-        Type target = currentState.Tick();
-        if (target != null)
-        {
-            currentState.OnExit();
-            currentState = states[target];
-            currentState.OnEnter();
-        }
-    }
+        [SerializeField] private List<State> allStates;
+        [SerializeField] private State initialState;
+        [SerializeField] private State currentState;
+        private Dictionary<Type, State> states = new();
 
-    public void OnDestroy()
-    {
-        foreach (State s in states.Values) {
-            Destroy(s);
+        public State CurrentState
+        {
+            get { return currentState; }
+            set { currentState = value; }
+        }
+
+        void Start()
+        {
+            ReferenceCheck();
+
+            foreach (State s in allStates)
+            {
+                State state = Instantiate(s);
+                states[state.GetType()] = state;
+                state.InitializeFields(gameObject);
+            }
+            if (initialState == null)
+            {
+                initialState = allStates[0];
+            }
+            currentState = states[initialState.GetType()];
+        }
+
+        private void ReferenceCheck()
+        {
+            if (initialState == null)
+            {
+                Debug.LogWarning("Initial state of the state machine is not set!");
+            }
+        }
+
+        public void Update()
+        {
+            Type target = currentState.Tick();
+            if (target != null)
+            {
+                currentState.OnExit();
+                currentState = states[target];
+                currentState.OnEnter();
+            }
+        }
+
+        public void OnDestroy()
+        {
+            foreach (State s in states.Values)
+            {
+                Destroy(s);
+            }
         }
     }
 }

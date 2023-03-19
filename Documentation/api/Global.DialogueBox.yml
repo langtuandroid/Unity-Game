@@ -1,0 +1,273 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.DialogueBox
+  commentId: T:Global.DialogueBox
+  id: DialogueBox
+  parent: Global
+  children:
+  - Global.DialogueBox.MainText
+  - Global.DialogueBox.ResponseButtonTemplate
+  - Global.DialogueBox.ResponseLayoutGroup
+  - Global.DialogueBox.SpeakerIcon
+  - Global.DialogueBox.SpeakerName
+  langs:
+  - csharp
+  - vb
+  name: DialogueBox
+  nameWithType: DialogueBox
+  fullName: DialogueBox
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/UI/UIComponents/DialogueBox.cs
+    id: DialogueBox
+    path: ../Assets/Scripts/UI/UIComponents/DialogueBox.cs
+    startLine: 6
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public class DialogueBox
+    content.vb: Public Class DialogueBox
+  inheritance:
+  - System.Object
+- uid: Global.DialogueBox.MainText
+  commentId: P:Global.DialogueBox.MainText
+  id: MainText
+  parent: Global.DialogueBox
+  langs:
+  - csharp
+  - vb
+  name: MainText
+  nameWithType: DialogueBox.MainText
+  fullName: DialogueBox.MainText
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/UI/UIComponents/DialogueBox.cs
+    id: MainText
+    path: ../Assets/Scripts/UI/UIComponents/DialogueBox.cs
+    startLine: 22
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public TMP_Text MainText { get; }
+    parameters: []
+    return:
+      type: TMPro.TMP_Text
+    content.vb: Public ReadOnly Property MainText As TMP_Text
+  overload: Global.DialogueBox.MainText*
+- uid: Global.DialogueBox.ResponseLayoutGroup
+  commentId: P:Global.DialogueBox.ResponseLayoutGroup
+  id: ResponseLayoutGroup
+  parent: Global.DialogueBox
+  langs:
+  - csharp
+  - vb
+  name: ResponseLayoutGroup
+  nameWithType: DialogueBox.ResponseLayoutGroup
+  fullName: DialogueBox.ResponseLayoutGroup
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/UI/UIComponents/DialogueBox.cs
+    id: ResponseLayoutGroup
+    path: ../Assets/Scripts/UI/UIComponents/DialogueBox.cs
+    startLine: 26
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public RectTransform ResponseLayoutGroup { get; }
+    parameters: []
+    return:
+      type: UnityEngine.RectTransform
+    content.vb: Public ReadOnly Property ResponseLayoutGroup As RectTransform
+  overload: Global.DialogueBox.ResponseLayoutGroup*
+- uid: Global.DialogueBox.ResponseButtonTemplate
+  commentId: P:Global.DialogueBox.ResponseButtonTemplate
+  id: ResponseButtonTemplate
+  parent: Global.DialogueBox
+  langs:
+  - csharp
+  - vb
+  name: ResponseButtonTemplate
+  nameWithType: DialogueBox.ResponseButtonTemplate
+  fullName: DialogueBox.ResponseButtonTemplate
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/UI/UIComponents/DialogueBox.cs
+    id: ResponseButtonTemplate
+    path: ../Assets/Scripts/UI/UIComponents/DialogueBox.cs
+    startLine: 30
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public Button ResponseButtonTemplate { get; }
+    parameters: []
+    return:
+      type: UnityEngine.UI.Button
+    content.vb: Public ReadOnly Property ResponseButtonTemplate As Button
+  overload: Global.DialogueBox.ResponseButtonTemplate*
+- uid: Global.DialogueBox.SpeakerName
+  commentId: P:Global.DialogueBox.SpeakerName
+  id: SpeakerName
+  parent: Global.DialogueBox
+  langs:
+  - csharp
+  - vb
+  name: SpeakerName
+  nameWithType: DialogueBox.SpeakerName
+  fullName: DialogueBox.SpeakerName
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/UI/UIComponents/DialogueBox.cs
+    id: SpeakerName
+    path: ../Assets/Scripts/UI/UIComponents/DialogueBox.cs
+    startLine: 34
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public TMP_Text SpeakerName { get; }
+    parameters: []
+    return:
+      type: TMPro.TMP_Text
+    content.vb: Public ReadOnly Property SpeakerName As TMP_Text
+  overload: Global.DialogueBox.SpeakerName*
+- uid: Global.DialogueBox.SpeakerIcon
+  commentId: P:Global.DialogueBox.SpeakerIcon
+  id: SpeakerIcon
+  parent: Global.DialogueBox
+  langs:
+  - csharp
+  - vb
+  name: SpeakerIcon
+  nameWithType: DialogueBox.SpeakerIcon
+  fullName: DialogueBox.SpeakerIcon
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/UI/UIComponents/DialogueBox.cs
+    id: SpeakerIcon
+    path: ../Assets/Scripts/UI/UIComponents/DialogueBox.cs
+    startLine: 38
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public Image SpeakerIcon { get; }
+    parameters: []
+    return:
+      type: UnityEngine.UI.Image
+    content.vb: Public ReadOnly Property SpeakerIcon As Image
+  overload: Global.DialogueBox.SpeakerIcon*
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.DialogueBox.MainText*
+  commentId: Overload:Global.DialogueBox.MainText
+  name: MainText
+  nameWithType: DialogueBox.MainText
+  fullName: DialogueBox.MainText
+- uid: TMPro.TMP_Text
+  commentId: T:TMPro.TMP_Text
+  parent: TMPro
+  isExternal: true
+  name: TMP_Text
+  nameWithType: TMP_Text
+  fullName: TMPro.TMP_Text
+- uid: TMPro
+  commentId: N:TMPro
+  isExternal: true
+  name: TMPro
+  nameWithType: TMPro
+  fullName: TMPro
+- uid: Global.DialogueBox.ResponseLayoutGroup*
+  commentId: Overload:Global.DialogueBox.ResponseLayoutGroup
+  name: ResponseLayoutGroup
+  nameWithType: DialogueBox.ResponseLayoutGroup
+  fullName: DialogueBox.ResponseLayoutGroup
+- uid: UnityEngine.RectTransform
+  commentId: T:UnityEngine.RectTransform
+  parent: UnityEngine
+  isExternal: true
+  name: RectTransform
+  nameWithType: RectTransform
+  fullName: UnityEngine.RectTransform
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: Global.DialogueBox.ResponseButtonTemplate*
+  commentId: Overload:Global.DialogueBox.ResponseButtonTemplate
+  name: ResponseButtonTemplate
+  nameWithType: DialogueBox.ResponseButtonTemplate
+  fullName: DialogueBox.ResponseButtonTemplate
+- uid: UnityEngine.UI.Button
+  commentId: T:UnityEngine.UI.Button
+  parent: UnityEngine.UI
+  isExternal: true
+  name: Button
+  nameWithType: Button
+  fullName: UnityEngine.UI.Button
+- uid: UnityEngine.UI
+  commentId: N:UnityEngine.UI
+  isExternal: true
+  name: UnityEngine.UI
+  nameWithType: UnityEngine.UI
+  fullName: UnityEngine.UI
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UI
+    name: UI
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.UI
+    name: UI
+    isExternal: true
+- uid: Global.DialogueBox.SpeakerName*
+  commentId: Overload:Global.DialogueBox.SpeakerName
+  name: SpeakerName
+  nameWithType: DialogueBox.SpeakerName
+  fullName: DialogueBox.SpeakerName
+- uid: Global.DialogueBox.SpeakerIcon*
+  commentId: Overload:Global.DialogueBox.SpeakerIcon
+  name: SpeakerIcon
+  nameWithType: DialogueBox.SpeakerIcon
+  fullName: DialogueBox.SpeakerIcon
+- uid: UnityEngine.UI.Image
+  commentId: T:UnityEngine.UI.Image
+  parent: UnityEngine.UI
+  isExternal: true
+  name: Image
+  nameWithType: Image
+  fullName: UnityEngine.UI.Image

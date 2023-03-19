@@ -1,0 +1,184 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.DialogueSystem.DialogueResponse
+  commentId: T:LobsterFramework.DialogueSystem.DialogueResponse
+  id: DialogueResponse
+  parent: LobsterFramework.DialogueSystem
+  children:
+  - LobsterFramework.DialogueSystem.DialogueResponse.Dialogue
+  - LobsterFramework.DialogueSystem.DialogueResponse.Respond
+  - LobsterFramework.DialogueSystem.DialogueResponse.Text
+  langs:
+  - csharp
+  - vb
+  name: DialogueResponse
+  nameWithType: DialogueResponse
+  fullName: LobsterFramework.DialogueSystem.DialogueResponse
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Dialogue/DialogueResponse.cs
+    id: DialogueResponse
+    path: ../Assets/Scripts/Scriptable Objects/Dialogue/DialogueResponse.cs
+    startLine: 8
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.DialogueSystem
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class DialogueResponse
+    content.vb: >-
+      <Serializable>
+
+      Public Class DialogueResponse
+  inheritance:
+  - System.Object
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: LobsterFramework.DialogueSystem.DialogueResponse.Respond
+  commentId: M:LobsterFramework.DialogueSystem.DialogueResponse.Respond
+  id: Respond
+  parent: LobsterFramework.DialogueSystem.DialogueResponse
+  langs:
+  - csharp
+  - vb
+  name: Respond()
+  nameWithType: DialogueResponse.Respond()
+  fullName: LobsterFramework.DialogueSystem.DialogueResponse.Respond()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Dialogue/DialogueResponse.cs
+    id: Respond
+    path: ../Assets/Scripts/Scriptable Objects/Dialogue/DialogueResponse.cs
+    startLine: 16
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.DialogueSystem
+  syntax:
+    content: public void Respond()
+    content.vb: Public Sub Respond()
+  overload: LobsterFramework.DialogueSystem.DialogueResponse.Respond*
+- uid: LobsterFramework.DialogueSystem.DialogueResponse.Dialogue
+  commentId: P:LobsterFramework.DialogueSystem.DialogueResponse.Dialogue
+  id: Dialogue
+  parent: LobsterFramework.DialogueSystem.DialogueResponse
+  langs:
+  - csharp
+  - vb
+  name: Dialogue
+  nameWithType: DialogueResponse.Dialogue
+  fullName: LobsterFramework.DialogueSystem.DialogueResponse.Dialogue
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Dialogue/DialogueResponse.cs
+    id: Dialogue
+    path: ../Assets/Scripts/Scriptable Objects/Dialogue/DialogueResponse.cs
+    startLine: 24
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.DialogueSystem
+  syntax:
+    content: public DialogueObject Dialogue { get; }
+    parameters: []
+    return:
+      type: LobsterFramework.DialogueSystem.DialogueObject
+    content.vb: Public ReadOnly Property Dialogue As DialogueObject
+  overload: LobsterFramework.DialogueSystem.DialogueResponse.Dialogue*
+- uid: LobsterFramework.DialogueSystem.DialogueResponse.Text
+  commentId: P:LobsterFramework.DialogueSystem.DialogueResponse.Text
+  id: Text
+  parent: LobsterFramework.DialogueSystem.DialogueResponse
+  langs:
+  - csharp
+  - vb
+  name: Text
+  nameWithType: DialogueResponse.Text
+  fullName: LobsterFramework.DialogueSystem.DialogueResponse.Text
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Dialogue/DialogueResponse.cs
+    id: Text
+    path: ../Assets/Scripts/Scriptable Objects/Dialogue/DialogueResponse.cs
+    startLine: 29
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.DialogueSystem
+  syntax:
+    content: public string Text { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Text As String
+  overload: LobsterFramework.DialogueSystem.DialogueResponse.Text*
+references:
+- uid: LobsterFramework.DialogueSystem
+  commentId: N:LobsterFramework.DialogueSystem
+  name: LobsterFramework.DialogueSystem
+  nameWithType: LobsterFramework.DialogueSystem
+  fullName: LobsterFramework.DialogueSystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.DialogueSystem
+    name: DialogueSystem
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.DialogueSystem
+    name: DialogueSystem
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.DialogueSystem.DialogueResponse.Respond*
+  commentId: Overload:LobsterFramework.DialogueSystem.DialogueResponse.Respond
+  name: Respond
+  nameWithType: DialogueResponse.Respond
+  fullName: LobsterFramework.DialogueSystem.DialogueResponse.Respond
+- uid: LobsterFramework.DialogueSystem.DialogueResponse.Dialogue*
+  commentId: Overload:LobsterFramework.DialogueSystem.DialogueResponse.Dialogue
+  name: Dialogue
+  nameWithType: DialogueResponse.Dialogue
+  fullName: LobsterFramework.DialogueSystem.DialogueResponse.Dialogue
+- uid: LobsterFramework.DialogueSystem.DialogueObject
+  commentId: T:LobsterFramework.DialogueSystem.DialogueObject
+  parent: LobsterFramework.DialogueSystem
+  name: DialogueObject
+  nameWithType: DialogueObject
+  fullName: LobsterFramework.DialogueSystem.DialogueObject
+- uid: LobsterFramework.DialogueSystem.DialogueResponse.Text*
+  commentId: Overload:LobsterFramework.DialogueSystem.DialogueResponse.Text
+  name: Text
+  nameWithType: DialogueResponse.Text
+  fullName: LobsterFramework.DialogueSystem.DialogueResponse.Text
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

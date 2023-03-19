@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8879286239019879957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bd372fd1dd2cc45ab5bd7aaf742408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage:
+    value: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: be797fcff28712d4089b7132559e1e35, type: 2}
+  attackRange:
+    value: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: dd7120c53031b414c90b277b6567f3a8, type: 2}
+  defense:
+    value: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: 16c8e05ac8064dd46a440f6f637658ce, type: 2}
+--- !u!114 &-1782058594214450739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: MyScripts:LobsterFramework.Action:RightSwipe/RightSwipeConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 1
+  cooldown: 1
+  isSuspended: 0
+  colliderPoolTag: {fileID: 11400000, guid: bc68d5b4b8dd3d14d806bcf21e2cf90d, type: 2}
+  startAngle:
+    value: 40
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  rotateSpeed:
+    value: 150
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  animation: {fileID: 11400000, guid: e174fcd5fbc11db40a0ced383d5ebc75, type: 2}
+  targetSetting: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
+  effects: []
+  attacker: {fileID: 0}
+  range: 0
+  damage: 0
+  begin: 0
+  state: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5cd7a81edede6f4c9921cd097a98b3c, type: 3}
+  m_Name: NPC Action
+  m_EditorClassIdentifier: 
+  identifier: 0
+  components:
+    keys:
+    - LobsterFramework.Action.CombatComponent
+    values:
+    - {fileID: -8879286239019879957}
+  allActions:
+    keys:
+    - LobsterFramework.Action.RightSwipe
+    values:
+    - {fileID: 3121324517898650310}
+--- !u!114 &3121324517898650310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6cde347cb1859545a0dfc3741e9af06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionComponent: {fileID: 0}
+  actionPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: b193983ee42c6494da4e9b812145dab9, type: 2}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: -1782058594214450739}

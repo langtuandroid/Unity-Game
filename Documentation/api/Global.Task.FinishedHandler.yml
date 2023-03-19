@@ -1,0 +1,48 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.Task.FinishedHandler
+  commentId: T:Global.Task.FinishedHandler
+  id: Task.FinishedHandler
+  parent: Global
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Task.FinishedHandler
+  nameWithType: Task.FinishedHandler
+  fullName: Task.FinishedHandler
+  type: Delegate
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/TaskManager.cs
+    id: FinishedHandler
+    path: ../Assets/Scripts/Utility/TaskManager.cs
+    startLine: 63
+  assemblies:
+  - MyScripts
+  namespace: Global
+  example: []
+  syntax:
+    content: public delegate void Task.FinishedHandler(bool manual)
+    parameters:
+    - id: manual
+      type: System.Boolean
+    content.vb: Public Delegate Sub Task.FinishedHandler(manual As Boolean)
+references:
+- uid: Global
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

@@ -1,0 +1,106 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.ActionPriority
+  commentId: T:Global.ActionPriority
+  id: ActionPriority
+  parent: Global
+  children:
+  - Global.ActionPriority.enqueuePriority
+  - Global.ActionPriority.executionPriority
+  langs:
+  - csharp
+  - vb
+  name: ActionPriority
+  nameWithType: ActionPriority
+  fullName: ActionPriority
+  type: Struct
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/ActionPrioritySO.cs
+    id: ActionPriority
+    path: ../Assets/Scripts/Components/ActionComponents/ActionPrioritySO.cs
+    startLine: 31
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: >-
+      [Serializable]
+
+      public struct ActionPriority
+    content.vb: >-
+      <Serializable>
+
+      Public Structure ActionPriority
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: Global.ActionPriority.executionPriority
+  commentId: F:Global.ActionPriority.executionPriority
+  id: executionPriority
+  parent: Global.ActionPriority
+  langs:
+  - csharp
+  - vb
+  name: executionPriority
+  nameWithType: ActionPriority.executionPriority
+  fullName: ActionPriority.executionPriority
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/ActionPrioritySO.cs
+    id: executionPriority
+    path: ../Assets/Scripts/Components/ActionComponents/ActionPrioritySO.cs
+    startLine: 34
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public int executionPriority
+    return:
+      type: System.Int32
+    content.vb: Public executionPriority As Integer
+- uid: Global.ActionPriority.enqueuePriority
+  commentId: F:Global.ActionPriority.enqueuePriority
+  id: enqueuePriority
+  parent: Global.ActionPriority
+  langs:
+  - csharp
+  - vb
+  name: enqueuePriority
+  nameWithType: ActionPriority.enqueuePriority
+  fullName: ActionPriority.enqueuePriority
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/ActionPrioritySO.cs
+    id: enqueuePriority
+    path: ../Assets/Scripts/Components/ActionComponents/ActionPrioritySO.cs
+    startLine: 35
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public int enqueuePriority
+    return:
+      type: System.Int32
+    content.vb: Public enqueuePriority As Integer
+references:
+- uid: Global
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

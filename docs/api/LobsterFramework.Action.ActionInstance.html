@@ -1,0 +1,887 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class ActionInstance
+ | LobsterFramework documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class ActionInstance
+ | LobsterFramework documentation ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="LobsterFramework.Action.ActionInstance">
+
+
+  <h1 id="LobsterFramework_Action_ActionInstance" data-uid="LobsterFramework.Action.ActionInstance" class="text-break">Class ActionInstance
+</h1>
+  <div class="markdown level0 summary"><p>An instance of Action that defines the kind of action the parent object can take. <br>
+Each subclass of ActionInstance defines its own ActionConfig and can be runned on multiple instances of its ActionConfigs.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.html">Object</a></div>
+    <div class="level2"><a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.html">ScriptableObject</a></div>
+    <div class="level3"><span class="xref">ActionInstance</span></div>
+      <div class="level4"><a class="xref" href="LobsterFramework.Action.CircleAttack.html">CircleAttack</a></div>
+      <div class="level4"><a class="xref" href="LobsterFramework.Action.Guard.html">Guard</a></div>
+      <div class="level4"><a class="xref" href="LobsterFramework.Action.RightSwipe.html">RightSwipe</a></div>
+      <div class="level4"><a class="xref" href="LobsterFramework.Action.Shoot.html">Shoot</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.SetDirty.html">ScriptableObject.SetDirty()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.CreateInstance.html">ScriptableObject.CreateInstance(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.CreateInstance.html">ScriptableObject.CreateInstance(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.CreateInstance.html">ScriptableObject.CreateInstance&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.GetInstanceID.html">Object.GetInstanceID()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.GetHashCode.html">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Equals.html">Object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate(Object, Vector3, Quaternion)</a>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.Instantiate(UnityEngine.Object)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Transform)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate(Object, Transform, bool)</a>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.Instantiate&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion)</a>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.Instantiate&lt;T&gt;(T, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.Instantiate&lt;T&gt;(T, UnityEngine.Transform)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.Instantiate&lt;T&gt;(T, UnityEngine.Transform, bool)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Destroy.html">Object.Destroy(Object, float)</a>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.Destroy(UnityEngine.Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.DestroyImmediate.html">Object.DestroyImmediate(Object, bool)</a>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.DestroyImmediate(UnityEngine.Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectsOfType.html">Object.FindObjectsOfType(Type)</a>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.FindObjectsOfType(System.Type, bool)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsSortMode)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsInactive, UnityEngine.FindObjectsSortMode)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.DontDestroyOnLoad.html">Object.DontDestroyOnLoad(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.DestroyObject.html">Object.DestroyObject(Object, float)</a>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.DestroyObject(UnityEngine.Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindSceneObjectsOfType.html">Object.FindSceneObjectsOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectsOfTypeIncludingAssets.html">Object.FindObjectsOfTypeIncludingAssets(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectsOfType.html">Object.FindObjectsOfType&lt;T&gt;()</a>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.FindObjectsByType&lt;T&gt;(UnityEngine.FindObjectsSortMode)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.FindObjectsOfType&lt;T&gt;(bool)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.FindObjectsByType&lt;T&gt;(UnityEngine.FindObjectsInactive, UnityEngine.FindObjectsSortMode)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectOfType.html">Object.FindObjectOfType&lt;T&gt;()</a>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.FindObjectOfType&lt;T&gt;(bool)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.FindFirstObjectByType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.FindAnyObjectByType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.FindFirstObjectByType&lt;T&gt;(UnityEngine.FindObjectsInactive)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.FindAnyObjectByType&lt;T&gt;(UnityEngine.FindObjectsInactive)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectsOfTypeAll.html">Object.FindObjectsOfTypeAll(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectOfType.html">Object.FindObjectOfType(Type)</a>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.FindFirstObjectByType(System.Type)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.FindAnyObjectByType(System.Type)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.FindObjectOfType(System.Type, bool)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.FindFirstObjectByType(System.Type, UnityEngine.FindObjectsInactive)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.Object.FindAnyObjectByType(System.Type, UnityEngine.FindObjectsInactive)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.ToString.html">Object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object-name.html">Object.name</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object-hideFlags.html">Object.hideFlags</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LobsterFramework.html">LobsterFramework</a>.<a class="xref" href="LobsterFramework.Action.html">Action</a></h6>
+  <h6><strong>Assembly</strong>: MyScripts.dll</h6>
+  <h5 id="LobsterFramework_Action_ActionInstance_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class ActionInstance : ScriptableObject</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="LobsterFramework_Action_ActionInstance_actionComponent" data-uid="LobsterFramework.Action.ActionInstance.actionComponent">actionComponent</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Actionable actionComponent</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.Action.Actionable.html">Actionable</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="LobsterFramework_Action_ActionInstance_actionPriority" data-uid="LobsterFramework.Action.ActionInstance.actionPriority">actionPriority</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RefActionPriority actionPriority</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.RefActionPriority.html">RefActionPriority</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_AddConfig_" data-uid="LobsterFramework.Action.ActionInstance.AddConfig*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_AddConfig_System_String_" data-uid="LobsterFramework.Action.ActionInstance.AddConfig(System.String)">AddConfig(string)</h4>
+  <div class="markdown level1 summary"><p>Add the config with specified name to this ActionInstance, this should only be called by editor scripts</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AddConfig(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the config to be added</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_AnimationSignal_" data-uid="LobsterFramework.Action.ActionInstance.AnimationSignal*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_AnimationSignal_LobsterFramework_Action_ActionInstance_ActionConfig_" data-uid="LobsterFramework.Action.ActionInstance.AnimationSignal(LobsterFramework.Action.ActionInstance.ActionConfig)">AnimationSignal(ActionConfig)</h4>
+  <div class="markdown level1 summary"><p>Override this to implement animation event handler</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void AnimationSignal(ActionInstance.ActionConfig config)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.Action.ActionInstance.html">ActionInstance</a>.<a class="xref" href="LobsterFramework.Action.ActionInstance.ActionConfig.html">ActionConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>Config to be signaled</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_CleanUp_" data-uid="LobsterFramework.Action.ActionInstance.CleanUp*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_CleanUp" data-uid="LobsterFramework.Action.ActionInstance.CleanUp">CleanUp()</h4>
+  <div class="markdown level1 summary"><p>Callback when the gameobject is about to be disabled or destroyed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CleanUp()</code></pre>
+  </div>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_CompareTo_" data-uid="LobsterFramework.Action.ActionInstance.CompareTo*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_CompareTo_LobsterFramework_Action_ActionInstance_" data-uid="LobsterFramework.Action.ActionInstance.CompareTo(LobsterFramework.Action.ActionInstance)">CompareTo(ActionInstance)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CompareTo(ActionInstance other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.Action.ActionInstance.html">ActionInstance</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_ConditionSatisfied_" data-uid="LobsterFramework.Action.ActionInstance.ConditionSatisfied*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_ConditionSatisfied_LobsterFramework_Action_ActionInstance_ActionConfig_" data-uid="LobsterFramework.Action.ActionInstance.ConditionSatisfied(LobsterFramework.Action.ActionInstance.ActionConfig)">ConditionSatisfied(ActionConfig)</h4>
+  <div class="markdown level1 summary"><p>Additionaly utility method for skill check that can be imeplemented if the action have additional requirements, this may varies beween different configs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool ConditionSatisfied(ActionInstance.ActionConfig config)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.Action.ActionInstance.html">ActionInstance</a>.<a class="xref" href="LobsterFramework.Action.ActionInstance.ActionConfig.html">ActionConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The config being queried</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_ExecuteBody_" data-uid="LobsterFramework.Action.ActionInstance.ExecuteBody*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_ExecuteBody_LobsterFramework_Action_ActionInstance_ActionConfig_" data-uid="LobsterFramework.Action.ActionInstance.ExecuteBody(LobsterFramework.Action.ActionInstance.ActionConfig)">ExecuteBody(ActionConfig)</h4>
+  <div class="markdown level1 summary"><p>Main body of the action execution, implement this to create different actions!</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract bool ExecuteBody(ActionInstance.ActionConfig config)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.Action.ActionInstance.html">ActionInstance</a>.<a class="xref" href="LobsterFramework.Action.ActionInstance.ActionConfig.html">ActionConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The config being executed with</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>Whether the action has finished</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_HaltActionExecution_" data-uid="LobsterFramework.Action.ActionInstance.HaltActionExecution*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_HaltActionExecution_System_String_" data-uid="LobsterFramework.Action.ActionInstance.HaltActionExecution(System.String)">HaltActionExecution(string)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HaltActionExecution(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_HaltActions_" data-uid="LobsterFramework.Action.ActionInstance.HaltActions*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_HaltActions" data-uid="LobsterFramework.Action.ActionInstance.HaltActions">HaltActions()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void HaltActions()</code></pre>
+  </div>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_Initialize_" data-uid="LobsterFramework.Action.ActionInstance.Initialize*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_Initialize" data-uid="LobsterFramework.Action.ActionInstance.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Initialize()</code></pre>
+  </div>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_IsExecuting_" data-uid="LobsterFramework.Action.ActionInstance.IsExecuting*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_IsExecuting_System_String_" data-uid="LobsterFramework.Action.ActionInstance.IsExecuting(System.String)">IsExecuting(string)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsExecuting(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_IsReady_" data-uid="LobsterFramework.Action.ActionInstance.IsReady*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_IsReady_System_String_" data-uid="LobsterFramework.Action.ActionInstance.IsReady(System.String)">IsReady(string)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsReady(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_OnActionFinish_" data-uid="LobsterFramework.Action.ActionInstance.OnActionFinish*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_OnActionFinish_LobsterFramework_Action_ActionInstance_ActionConfig_" data-uid="LobsterFramework.Action.ActionInstance.OnActionFinish(LobsterFramework.Action.ActionInstance.ActionConfig)">OnActionFinish(ActionConfig)</h4>
+  <div class="markdown level1 summary"><p>Callback when the action is finished or halted, override this to clean up temporary data generated during the action.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnActionFinish(ActionInstance.ActionConfig config)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.Action.ActionInstance.html">ActionInstance</a>.<a class="xref" href="LobsterFramework.Action.ActionInstance.ActionConfig.html">ActionConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The config being processed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_OnDestroy_" data-uid="LobsterFramework.Action.ActionInstance.OnDestroy*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_OnDestroy" data-uid="LobsterFramework.Action.ActionInstance.OnDestroy">OnDestroy()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnDestroy()</code></pre>
+  </div>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_OnEnqueue_" data-uid="LobsterFramework.Action.ActionInstance.OnEnqueue*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_OnEnqueue_LobsterFramework_Action_ActionInstance_ActionConfig_" data-uid="LobsterFramework.Action.ActionInstance.OnEnqueue(LobsterFramework.Action.ActionInstance.ActionConfig)">OnEnqueue(ActionConfig)</h4>
+  <div class="markdown level1 summary"><p>Callback when the action is queued, override this to perform initializations of action execution</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnEnqueue(ActionInstance.ActionConfig config)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.Action.ActionInstance.html">ActionInstance</a>.<a class="xref" href="LobsterFramework.Action.ActionInstance.ActionConfig.html">ActionConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The config being processed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_OnStartUp_" data-uid="LobsterFramework.Action.ActionInstance.OnStartUp*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_OnStartUp" data-uid="LobsterFramework.Action.ActionInstance.OnStartUp">OnStartUp()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnStartUp()</code></pre>
+  </div>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_OnTermination_" data-uid="LobsterFramework.Action.ActionInstance.OnTermination*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_OnTermination" data-uid="LobsterFramework.Action.ActionInstance.OnTermination">OnTermination()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnTermination()</code></pre>
+  </div>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_RemoveConfig_" data-uid="LobsterFramework.Action.ActionInstance.RemoveConfig*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_RemoveConfig_System_String_" data-uid="LobsterFramework.Action.ActionInstance.RemoveConfig(System.String)">RemoveConfig(string)</h4>
+  <div class="markdown level1 summary"><p>Remove the config with specified name if present, this should only be called by editor scripts</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RemoveConfig(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name of the config to be removed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The status of this operation</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_ResetStatus_" data-uid="LobsterFramework.Action.ActionInstance.ResetStatus*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_ResetStatus" data-uid="LobsterFramework.Action.ActionInstance.ResetStatus">ResetStatus()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ResetStatus()</code></pre>
+  </div>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_RunningCount_" data-uid="LobsterFramework.Action.ActionInstance.RunningCount*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_RunningCount" data-uid="LobsterFramework.Action.ActionInstance.RunningCount">RunningCount()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RunningCount()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_Action_ActionInstance_SaveConfigsAsAsset_" data-uid="LobsterFramework.Action.ActionInstance.SaveConfigsAsAsset*"></a>
+  <h4 id="LobsterFramework_Action_ActionInstance_SaveConfigsAsAsset" data-uid="LobsterFramework.Action.ActionInstance.SaveConfigsAsAsset">SaveConfigsAsAsset()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SaveConfigsAsAsset()</code></pre>
+  </div>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      LobsterFramework documentation
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

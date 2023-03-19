@@ -1,0 +1,167 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.ResourceStorage
+  commentId: T:Global.ResourceStorage
+  id: ResourceStorage
+  parent: Global
+  children:
+  - Global.ResourceStorage.GetSprite(System.String)
+  - Global.ResourceStorage.LoadResource
+  - Global.ResourceStorage.SaveResource
+  langs:
+  - csharp
+  - vb
+  name: ResourceStorage
+  nameWithType: ResourceStorage
+  fullName: ResourceStorage
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/ResourceStorage.cs
+    id: ResourceStorage
+    path: ../Assets/Scripts/Persistent Managers/ResourceStorage.cs
+    startLine: 4
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public static class ResourceStorage
+    content.vb: Public Module ResourceStorage
+  inheritance:
+  - System.Object
+- uid: Global.ResourceStorage.LoadResource
+  commentId: M:Global.ResourceStorage.LoadResource
+  id: LoadResource
+  parent: Global.ResourceStorage
+  langs:
+  - csharp
+  - vb
+  name: LoadResource()
+  nameWithType: ResourceStorage.LoadResource()
+  fullName: ResourceStorage.LoadResource()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/ResourceStorage.cs
+    id: LoadResource
+    path: ../Assets/Scripts/Persistent Managers/ResourceStorage.cs
+    startLine: 7
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public static void LoadResource()
+    content.vb: Public Shared Sub LoadResource()
+  overload: Global.ResourceStorage.LoadResource*
+- uid: Global.ResourceStorage.SaveResource
+  commentId: M:Global.ResourceStorage.SaveResource
+  id: SaveResource
+  parent: Global.ResourceStorage
+  langs:
+  - csharp
+  - vb
+  name: SaveResource()
+  nameWithType: ResourceStorage.SaveResource()
+  fullName: ResourceStorage.SaveResource()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/ResourceStorage.cs
+    id: SaveResource
+    path: ../Assets/Scripts/Persistent Managers/ResourceStorage.cs
+    startLine: 11
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public static void SaveResource()
+    content.vb: Public Shared Sub SaveResource()
+  overload: Global.ResourceStorage.SaveResource*
+- uid: Global.ResourceStorage.GetSprite(System.String)
+  commentId: M:Global.ResourceStorage.GetSprite(System.String)
+  id: GetSprite(System.String)
+  parent: Global.ResourceStorage
+  langs:
+  - csharp
+  - vb
+  name: GetSprite(string)
+  nameWithType: ResourceStorage.GetSprite(string)
+  fullName: ResourceStorage.GetSprite(string)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/ResourceStorage.cs
+    id: GetSprite
+    path: ../Assets/Scripts/Persistent Managers/ResourceStorage.cs
+    startLine: 13
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public static Sprite GetSprite(string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: UnityEngine.Sprite
+    content.vb: Public Shared Function GetSprite(name As String) As Sprite
+  overload: Global.ResourceStorage.GetSprite*
+  nameWithType.vb: ResourceStorage.GetSprite(String)
+  fullName.vb: ResourceStorage.GetSprite(String)
+  name.vb: GetSprite(String)
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.ResourceStorage.LoadResource*
+  commentId: Overload:Global.ResourceStorage.LoadResource
+  name: LoadResource
+  nameWithType: ResourceStorage.LoadResource
+  fullName: ResourceStorage.LoadResource
+- uid: Global.ResourceStorage.SaveResource*
+  commentId: Overload:Global.ResourceStorage.SaveResource
+  name: SaveResource
+  nameWithType: ResourceStorage.SaveResource
+  fullName: ResourceStorage.SaveResource
+- uid: Global.ResourceStorage.GetSprite*
+  commentId: Overload:Global.ResourceStorage.GetSprite
+  name: GetSprite
+  nameWithType: ResourceStorage.GetSprite
+  fullName: ResourceStorage.GetSprite
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: UnityEngine.Sprite
+  commentId: T:UnityEngine.Sprite
+  parent: UnityEngine
+  isExternal: true
+  name: Sprite
+  nameWithType: Sprite
+  fullName: UnityEngine.Sprite
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine

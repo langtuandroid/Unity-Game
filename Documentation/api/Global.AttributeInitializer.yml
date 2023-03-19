@@ -1,0 +1,86 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.AttributeInitializer
+  commentId: T:Global.AttributeInitializer
+  id: AttributeInitializer
+  parent: Global
+  children:
+  - Global.AttributeInitializer.Initialize
+  langs:
+  - csharp
+  - vb
+  name: AttributeInitializer
+  nameWithType: AttributeInitializer
+  fullName: AttributeInitializer
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/AttributeInitializer.cs
+    id: AttributeInitializer
+    path: ../Assets/Scripts/Editor/Attributes/AttributeInitializer.cs
+    startLine: 8
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public class AttributeInitializer
+    content.vb: Public Class AttributeInitializer
+  inheritance:
+  - System.Object
+- uid: Global.AttributeInitializer.Initialize
+  commentId: M:Global.AttributeInitializer.Initialize
+  id: Initialize
+  parent: Global.AttributeInitializer
+  langs:
+  - csharp
+  - vb
+  name: Initialize()
+  nameWithType: AttributeInitializer.Initialize()
+  fullName: AttributeInitializer.Initialize()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/AttributeInitializer.cs
+    id: Initialize
+    path: ../Assets/Scripts/Editor/Attributes/AttributeInitializer.cs
+    startLine: 10
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: >-
+      [DidReloadScripts]
+
+      public static void Initialize()
+    content.vb: >-
+      <DidReloadScripts>
+
+      Public Shared Sub Initialize()
+  overload: Global.AttributeInitializer.Initialize*
+  attributes:
+  - type: UnityEditor.Callbacks.DidReloadScripts
+    ctor: UnityEditor.Callbacks.DidReloadScripts.#ctor
+    arguments: []
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.AttributeInitializer.Initialize*
+  commentId: Overload:Global.AttributeInitializer.Initialize
+  name: Initialize
+  nameWithType: AttributeInitializer.Initialize
+  fullName: AttributeInitializer.Initialize

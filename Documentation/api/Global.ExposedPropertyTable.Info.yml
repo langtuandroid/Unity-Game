@@ -1,0 +1,172 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.ExposedPropertyTable.Info
+  commentId: T:Global.ExposedPropertyTable.Info
+  id: ExposedPropertyTable.Info
+  parent: Global
+  children:
+  - Global.ExposedPropertyTable.Info.#ctor(System.String,UnityEngine.Object)
+  - Global.ExposedPropertyTable.Info.identifier
+  - Global.ExposedPropertyTable.Info.objValue
+  langs:
+  - csharp
+  - vb
+  name: ExposedPropertyTable.Info
+  nameWithType: ExposedPropertyTable.Info
+  fullName: ExposedPropertyTable.Info
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/ExposedPropertyTable.cs
+    id: Info
+    path: ../Assets/Scripts/Utility/ExposedPropertyTable.cs
+    startLine: 11
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class ExposedPropertyTable.Info
+    content.vb: >-
+      <Serializable>
+
+      Public Class ExposedPropertyTable.Info
+  inheritance:
+  - System.Object
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: Global.ExposedPropertyTable.Info.objValue
+  commentId: F:Global.ExposedPropertyTable.Info.objValue
+  id: objValue
+  parent: Global.ExposedPropertyTable.Info
+  langs:
+  - csharp
+  - vb
+  name: objValue
+  nameWithType: ExposedPropertyTable.Info.objValue
+  fullName: ExposedPropertyTable.Info.objValue
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/ExposedPropertyTable.cs
+    id: objValue
+    path: ../Assets/Scripts/Utility/ExposedPropertyTable.cs
+    startLine: 13
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public Object objValue
+    return:
+      type: UnityEngine.Object
+    content.vb: Public objValue As [Object]
+- uid: Global.ExposedPropertyTable.Info.identifier
+  commentId: F:Global.ExposedPropertyTable.Info.identifier
+  id: identifier
+  parent: Global.ExposedPropertyTable.Info
+  langs:
+  - csharp
+  - vb
+  name: identifier
+  nameWithType: ExposedPropertyTable.Info.identifier
+  fullName: ExposedPropertyTable.Info.identifier
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/ExposedPropertyTable.cs
+    id: identifier
+    path: ../Assets/Scripts/Utility/ExposedPropertyTable.cs
+    startLine: 14
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public string identifier
+    return:
+      type: System.String
+    content.vb: Public identifier As String
+- uid: Global.ExposedPropertyTable.Info.#ctor(System.String,UnityEngine.Object)
+  commentId: M:Global.ExposedPropertyTable.Info.#ctor(System.String,UnityEngine.Object)
+  id: '#ctor(System.String,UnityEngine.Object)'
+  parent: Global.ExposedPropertyTable.Info
+  langs:
+  - csharp
+  - vb
+  name: Info(string, Object)
+  nameWithType: ExposedPropertyTable.Info.Info(string, Object)
+  fullName: ExposedPropertyTable.Info.Info(string, UnityEngine.Object)
+  type: Constructor
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/ExposedPropertyTable.cs
+    id: .ctor
+    path: ../Assets/Scripts/Utility/ExposedPropertyTable.cs
+    startLine: 16
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public Info(string i, Object obj)
+    parameters:
+    - id: i
+      type: System.String
+    - id: obj
+      type: UnityEngine.Object
+    content.vb: Public Sub New(i As String, obj As [Object])
+  overload: Global.ExposedPropertyTable.Info.#ctor*
+  nameWithType.vb: ExposedPropertyTable.Info.New(String, Object)
+  fullName.vb: ExposedPropertyTable.Info.New(String, UnityEngine.Object)
+  name.vb: New(String, Object)
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Global.ExposedPropertyTable.Info.#ctor*
+  commentId: Overload:Global.ExposedPropertyTable.Info.#ctor
+  name: Info
+  nameWithType: ExposedPropertyTable.Info.Info
+  fullName: ExposedPropertyTable.Info.Info
+  nameWithType.vb: ExposedPropertyTable.Info.New
+  fullName.vb: ExposedPropertyTable.Info.New
+  name.vb: New

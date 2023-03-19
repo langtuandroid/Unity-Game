@@ -1,0 +1,145 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.RefFloat
+  commentId: T:Global.RefFloat
+  id: RefFloat
+  parent: Global
+  children:
+  - Global.RefFloat.#ctor(System.Single,System.Boolean,VarFloat)
+  - Global.RefFloat.Value
+  langs:
+  - csharp
+  - vb
+  name: RefFloat
+  nameWithType: RefFloat
+  fullName: RefFloat
+  type: Struct
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+    id: RefFloat
+    path: ../Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+    startLine: 4
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: >-
+      [Serializable]
+
+      public struct RefFloat
+    content.vb: >-
+      <Serializable>
+
+      Public Structure RefFloat
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: Global.RefFloat.#ctor(System.Single,System.Boolean,VarFloat)
+  commentId: M:Global.RefFloat.#ctor(System.Single,System.Boolean,VarFloat)
+  id: '#ctor(System.Single,System.Boolean,VarFloat)'
+  parent: Global.RefFloat
+  langs:
+  - csharp
+  - vb
+  name: RefFloat(float, bool, VarFloat)
+  nameWithType: RefFloat.RefFloat(float, bool, VarFloat)
+  fullName: RefFloat.RefFloat(float, bool, VarFloat)
+  type: Constructor
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+    id: .ctor
+    path: ../Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+    startLine: 11
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public RefFloat(float value = 0, bool useSharedValue = false, VarFloat sharedValue = null)
+    parameters:
+    - id: value
+      type: System.Single
+    - id: useSharedValue
+      type: System.Boolean
+    - id: sharedValue
+      type: Global.VarFloat
+    content.vb: Public Sub New(value As Single = 0, useSharedValue As Boolean = False, sharedValue As VarFloat = Nothing)
+  overload: Global.RefFloat.#ctor*
+  nameWithType.vb: RefFloat.New(Single, Boolean, VarFloat)
+  fullName.vb: RefFloat.New(Single, Boolean, VarFloat)
+  name.vb: New(Single, Boolean, VarFloat)
+- uid: Global.RefFloat.Value
+  commentId: P:Global.RefFloat.Value
+  id: Value
+  parent: Global.RefFloat
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: RefFloat.Value
+  fullName: RefFloat.Value
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+    id: Value
+    path: ../Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+    startLine: 17
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public float Value { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Value As Single
+  overload: Global.RefFloat.Value*
+references:
+- uid: Global
+- uid: Global.RefFloat.#ctor*
+  commentId: Overload:Global.RefFloat.#ctor
+  name: RefFloat
+  nameWithType: RefFloat.RefFloat
+  fullName: RefFloat.RefFloat
+  nameWithType.vb: RefFloat.New
+  fullName.vb: RefFloat.New
+  name.vb: New
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Global.VarFloat
+  commentId: T:Global.VarFloat
+  name: VarFloat
+  nameWithType: VarFloat
+  fullName: VarFloat
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.RefFloat.Value*
+  commentId: Overload:Global.RefFloat.Value
+  name: Value
+  nameWithType: RefFloat.Value
+  fullName: RefFloat.Value

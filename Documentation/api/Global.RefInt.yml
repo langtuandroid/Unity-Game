@@ -1,0 +1,145 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.RefInt
+  commentId: T:Global.RefInt
+  id: RefInt
+  parent: Global
+  children:
+  - Global.RefInt.#ctor(System.Int32,System.Boolean,VarInt)
+  - Global.RefInt.Value
+  langs:
+  - csharp
+  - vb
+  name: RefInt
+  nameWithType: RefInt
+  fullName: RefInt
+  type: Struct
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefInt.cs
+    id: RefInt
+    path: ../Assets/Scripts/Scriptable Objects/Variables/RefInt.cs
+    startLine: 4
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: >-
+      [Serializable]
+
+      public struct RefInt
+    content.vb: >-
+      <Serializable>
+
+      Public Structure RefInt
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: Global.RefInt.#ctor(System.Int32,System.Boolean,VarInt)
+  commentId: M:Global.RefInt.#ctor(System.Int32,System.Boolean,VarInt)
+  id: '#ctor(System.Int32,System.Boolean,VarInt)'
+  parent: Global.RefInt
+  langs:
+  - csharp
+  - vb
+  name: RefInt(int, bool, VarInt)
+  nameWithType: RefInt.RefInt(int, bool, VarInt)
+  fullName: RefInt.RefInt(int, bool, VarInt)
+  type: Constructor
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefInt.cs
+    id: .ctor
+    path: ../Assets/Scripts/Scriptable Objects/Variables/RefInt.cs
+    startLine: 11
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public RefInt(int value = 0, bool useSharedValue = false, VarInt sharedValue = null)
+    parameters:
+    - id: value
+      type: System.Int32
+    - id: useSharedValue
+      type: System.Boolean
+    - id: sharedValue
+      type: Global.VarInt
+    content.vb: Public Sub New(value As Integer = 0, useSharedValue As Boolean = False, sharedValue As VarInt = Nothing)
+  overload: Global.RefInt.#ctor*
+  nameWithType.vb: RefInt.New(Integer, Boolean, VarInt)
+  fullName.vb: RefInt.New(Integer, Boolean, VarInt)
+  name.vb: New(Integer, Boolean, VarInt)
+- uid: Global.RefInt.Value
+  commentId: P:Global.RefInt.Value
+  id: Value
+  parent: Global.RefInt
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: RefInt.Value
+  fullName: RefInt.Value
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefInt.cs
+    id: Value
+    path: ../Assets/Scripts/Scriptable Objects/Variables/RefInt.cs
+    startLine: 18
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public int Value { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Value As Integer
+  overload: Global.RefInt.Value*
+references:
+- uid: Global
+- uid: Global.RefInt.#ctor*
+  commentId: Overload:Global.RefInt.#ctor
+  name: RefInt
+  nameWithType: RefInt.RefInt
+  fullName: RefInt.RefInt
+  nameWithType.vb: RefInt.New
+  fullName.vb: RefInt.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Global.VarInt
+  commentId: T:Global.VarInt
+  name: VarInt
+  nameWithType: VarInt
+  fullName: VarInt
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.RefInt.Value*
+  commentId: Overload:Global.RefInt.Value
+  name: Value
+  nameWithType: RefInt.Value
+  fullName: RefInt.Value

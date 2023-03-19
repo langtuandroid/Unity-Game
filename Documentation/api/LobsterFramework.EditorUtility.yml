@@ -1,0 +1,52 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.EditorUtility
+  commentId: N:LobsterFramework.EditorUtility
+  id: LobsterFramework.EditorUtility
+  children:
+  - LobsterFramework.EditorUtility.ActionableDataEditor
+  - LobsterFramework.EditorUtility.ActionConfigEditor
+  - LobsterFramework.EditorUtility.ActionEditor
+  - LobsterFramework.EditorUtility.ActionInstanceDrawer
+  - LobsterFramework.EditorUtility.ActionInstanceEditor
+  - LobsterFramework.EditorUtility.EntityComponentEditor
+  langs:
+  - csharp
+  - vb
+  name: LobsterFramework.EditorUtility
+  nameWithType: LobsterFramework.EditorUtility
+  fullName: LobsterFramework.EditorUtility
+  type: Namespace
+  assemblies:
+  - MyScripts
+references:
+- uid: LobsterFramework.EditorUtility.EntityComponentEditor
+  commentId: T:LobsterFramework.EditorUtility.EntityComponentEditor
+  name: EntityComponentEditor
+  nameWithType: EntityComponentEditor
+  fullName: LobsterFramework.EditorUtility.EntityComponentEditor
+- uid: LobsterFramework.EditorUtility.ActionInstanceDrawer
+  commentId: T:LobsterFramework.EditorUtility.ActionInstanceDrawer
+  name: ActionInstanceDrawer
+  nameWithType: ActionInstanceDrawer
+  fullName: LobsterFramework.EditorUtility.ActionInstanceDrawer
+- uid: LobsterFramework.EditorUtility.ActionInstanceEditor
+  commentId: T:LobsterFramework.EditorUtility.ActionInstanceEditor
+  name: ActionInstanceEditor
+  nameWithType: ActionInstanceEditor
+  fullName: LobsterFramework.EditorUtility.ActionInstanceEditor
+- uid: LobsterFramework.EditorUtility.ActionEditor
+  commentId: T:LobsterFramework.EditorUtility.ActionEditor
+  name: ActionEditor
+  nameWithType: ActionEditor
+  fullName: LobsterFramework.EditorUtility.ActionEditor
+- uid: LobsterFramework.EditorUtility.ActionableDataEditor
+  commentId: T:LobsterFramework.EditorUtility.ActionableDataEditor
+  name: ActionableDataEditor
+  nameWithType: ActionableDataEditor
+  fullName: LobsterFramework.EditorUtility.ActionableDataEditor
+- uid: LobsterFramework.EditorUtility.ActionConfigEditor
+  commentId: T:LobsterFramework.EditorUtility.ActionConfigEditor
+  name: ActionConfigEditor
+  nameWithType: ActionConfigEditor
+  fullName: LobsterFramework.EditorUtility.ActionConfigEditor

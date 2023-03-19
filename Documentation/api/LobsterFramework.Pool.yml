@@ -1,0 +1,60 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Pool
+  commentId: N:LobsterFramework.Pool
+  id: LobsterFramework.Pool
+  children:
+  - LobsterFramework.Pool.ActionCapsuleCollider
+  - LobsterFramework.Pool.Bullet
+  - LobsterFramework.Pool.ObjectPool
+  - LobsterFramework.Pool.TemporalObject
+  langs:
+  - csharp
+  - vb
+  name: LobsterFramework.Pool
+  nameWithType: LobsterFramework.Pool
+  fullName: LobsterFramework.Pool
+  type: Namespace
+  assemblies:
+  - MyScripts
+references:
+- uid: LobsterFramework.Pool.ActionCapsuleCollider
+  commentId: T:LobsterFramework.Pool.ActionCapsuleCollider
+  parent: LobsterFramework.Pool
+  name: ActionCapsuleCollider
+  nameWithType: ActionCapsuleCollider
+  fullName: LobsterFramework.Pool.ActionCapsuleCollider
+- uid: LobsterFramework.Pool.ObjectPool
+  commentId: T:LobsterFramework.Pool.ObjectPool
+  parent: LobsterFramework.Pool
+  name: ObjectPool
+  nameWithType: ObjectPool
+  fullName: LobsterFramework.Pool.ObjectPool
+- uid: LobsterFramework.Pool.TemporalObject
+  commentId: T:LobsterFramework.Pool.TemporalObject
+  parent: LobsterFramework.Pool
+  name: TemporalObject
+  nameWithType: TemporalObject
+  fullName: LobsterFramework.Pool.TemporalObject
+- uid: LobsterFramework.Pool.Bullet
+  commentId: T:LobsterFramework.Pool.Bullet
+  name: Bullet
+  nameWithType: Bullet
+  fullName: LobsterFramework.Pool.Bullet
+- uid: LobsterFramework.Pool
+  commentId: N:LobsterFramework.Pool
+  name: LobsterFramework.Pool
+  nameWithType: LobsterFramework.Pool
+  fullName: LobsterFramework.Pool
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Pool
+    name: Pool
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Pool
+    name: Pool

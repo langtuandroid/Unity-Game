@@ -1,99 +1,110 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LobsterFramework.Pool;
+using LobsterFramework.EntitySystem;
 
-[RequireActionComponent(typeof(Guard), typeof(CombatComponent))]
-[ActionInstance(typeof(Guard))]
-public class Guard : ActionInstance
+namespace LobsterFramework.Action
 {
-    public class GuardConfig : ActionConfig {
-        public RefFloat duration;
-        public Sprite sprite;
-        public RefFloat spriteAlpha;
-        public VarString spritePoolTag;
-
-        [HideInInspector]
-        public float durationCounter;
-        [HideInInspector]
-        public bool actionStart;
-        [HideInInspector]
-        public TemporalObject guardAnimation;
-
-        public override void Initialize()
-        {
-            durationCounter = 0;
-            actionStart = false;
-        }
-    }
-    private CombatComponent combat;
-    private Entity defender;
-
-    protected override void Initialize()
+    [RequireActionComponent(typeof(Guard), typeof(CombatComponent))]
+    [ActionInstance(typeof(Guard))]
+    public class Guard : ActionInstance
     {
-        base.Initialize();
-        combat = actionComponent.GetActionComponent<CombatComponent>();
-        defender = actionComponent.GetComponent<Entity>();
-        if (defender == null)
+        public class GuardConfig : ActionConfig
         {
-            Debug.LogError("The object is missing entity component to complete the action!");
-        }
-        if (combat == null)
-        {
-            Debug.LogError("The object is missing the required action component to complete the action!");
-        }
-    }
+            public RefFloat duration;
+            public Sprite sprite;
+            public RefFloat spriteAlpha;
+            public VarString spritePoolTag;
 
-    protected override void OnEnqueue(ActionConfig actionConfig){
-        GuardConfig config = (GuardConfig)actionConfig;
-        config.durationCounter = 0;
-        config.actionStart = true;
-    }
+            [HideInInspector]
+            public float durationCounter;
+            [HideInInspector]
+            public bool actionStart;
+            [HideInInspector]
+            public TemporalObject guardAnimation;
 
-    protected override bool ExecuteBody(ActionConfig actionConfig)
-    {
-        GuardConfig config = (GuardConfig)actionConfig;
-        if (!config.actionStart){
-            config.durationCounter += Time.deltaTime;
-            if (config.durationCounter > config.duration.Value) {
-                return false;
+            public override void Initialize()
+            {
+                durationCounter = 0;
+                actionStart = false;
             }
         }
-        else { 
-            config.actionStart = false;
-        }
+        private CombatComponent combat;
+        private Entity defender;
 
-        if (defender.IncomingDamage > 0)
+        protected override void Initialize()
         {
-            Debug.Log("Blocked: " + combat.defense.Value);
+            base.Initialize();
+            combat = actionComponent.GetActionComponent<CombatComponent>();
+            defender = actionComponent.GetComponent<Entity>();
+            if (defender == null)
+            {
+                Debug.LogError("The object is missing entity component to complete the action!");
+            }
+            if (combat == null)
+            {
+                Debug.LogError("The object is missing the required action component to complete the action!");
+            }
         }
-        defender.IncomingDamage -= combat.defense.Value;
-        if (config.guardAnimation == null){
-            // Set up guard sprite
-            GameObject g = ObjectPool.Instance.GetObject(config.spritePoolTag.Value, Vector3.zero, Quaternion.identity);
-            Transform gTransform = g.transform;
-            gTransform.SetParent(defender.transform);
-            gTransform.localPosition = Vector3.zero;
 
-            // Set Scale
-            float range = combat.attackRange.Value;
-            gTransform.localScale = Vector3.one;
-            Vector3 scale = gTransform.lossyScale;
-            gTransform.localScale = new Vector3(range / scale.x, range / scale.y, 1);
-
-            TemporalObject tmp = g.GetComponent<TemporalObject>();
-            tmp.ResetCounter();
-            tmp.duration = -1;
-            SpriteRenderer spriteRenderer = g.GetComponent<SpriteRenderer>();
-            spriteRenderer.sprite = config.sprite;
-            config.guardAnimation = tmp;
+        protected override void OnEnqueue(ActionConfig actionConfig)
+        {
+            GuardConfig config = (GuardConfig)actionConfig;
+            config.durationCounter = 0;
+            config.actionStart = true;
         }
-        return true;
-    }
 
-    protected override void OnActionFinish(ActionConfig actionConfig)
-    {
-        GuardConfig config = (GuardConfig)actionConfig; 
-        config.guardAnimation.DisableObject();
-        config.guardAnimation = null;
+        protected override bool ExecuteBody(ActionConfig actionConfig)
+        {
+            GuardConfig config = (GuardConfig)actionConfig;
+            if (!config.actionStart)
+            {
+                config.durationCounter += Time.deltaTime;
+                if (config.durationCounter > config.duration.Value)
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                config.actionStart = false;
+            }
+
+            if (defender.IncomingDamage > 0)
+            {
+                Debug.Log("Blocked: " + combat.defense.Value);
+            }
+            defender.IncomingDamage -= combat.defense.Value;
+            if (config.guardAnimation == null)
+            {
+                // Set up guard sprite
+                GameObject g = ObjectPool.Instance.GetObject(config.spritePoolTag.Value, Vector3.zero, Quaternion.identity);
+                Transform gTransform = g.transform;
+                gTransform.SetParent(defender.transform);
+                gTransform.localPosition = Vector3.zero;
+
+                // Set Scale
+                float range = combat.attackRange.Value;
+                gTransform.localScale = Vector3.one;
+                Vector3 scale = gTransform.lossyScale;
+                gTransform.localScale = new Vector3(range / scale.x, range / scale.y, 1);
+
+                TemporalObject tmp = g.GetComponent<TemporalObject>();
+                tmp.ResetCounter();
+                tmp.duration = -1;
+                SpriteRenderer spriteRenderer = g.GetComponent<SpriteRenderer>();
+                spriteRenderer.sprite = config.sprite;
+                config.guardAnimation = tmp;
+            }
+            return true;
+        }
+
+        protected override void OnActionFinish(ActionConfig actionConfig)
+        {
+            GuardConfig config = (GuardConfig)actionConfig;
+            config.guardAnimation.DisableObject();
+            config.guardAnimation = null;
+        }
     }
 }

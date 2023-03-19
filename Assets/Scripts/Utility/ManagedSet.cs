@@ -3,67 +3,72 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class ManagedSet<T>
+namespace LobsterFramework.Utility
 {
-    private OrderedSet<T> items = new();
-    private int pointer = 0;
-
-    private int Count
+    public class ManagedSet<T>
     {
-        get { return items.Count; }
-    }
+        private OrderedSet<T> items = new();
+        private int pointer = 0;
 
-    private int Pointer
-    {
-        get
+        private int Count
         {
-            if (items.Count == 0)
+            get { return items.Count; }
+        }
+
+        private int Pointer
+        {
+            get
             {
-                return -1;
+                if (items.Count == 0)
+                {
+                    return -1;
+                }
+                if (pointer >= items.Count || pointer < 0)
+                {
+                    pointer = items.Count - 1;
+                }
+
+                return pointer;
             }
-            if (pointer >= items.Count || pointer < 0)
+        }
+        public T CurrentItem
+        {
+            get
+            {
+                if (Pointer == -1)
+                {
+                    return default;
+                }
+                return items.ElementAt(pointer);
+            }
+        }
+
+        public void Advance()
+        {
+            pointer++;
+            if (pointer >= items.Count)
+            {
+                pointer = 0;
+            }
+        }
+
+        public void StepBack()
+        {
+            pointer--;
+            if (pointer < 0)
             {
                 pointer = items.Count - 1;
             }
-
-            return pointer;
         }
-    }
-    public T CurrentItem
-    {
-        get
+
+        public bool Add(T i)
         {
-            if (Pointer == -1)
-            {
-                return default;
-            }
-            return items.ElementAt(pointer);
+            return items.Add(i);
         }
-    }
 
-    public void Advance()
-    {
-        pointer++;
-        if (pointer >= items.Count) { 
-            pointer = 0;
-        }
-    }
-
-    public void StepBack() {
-        pointer--;
-        if (pointer < 0)
+        public bool Remove(T i)
         {
-            pointer = items.Count - 1;
+            return items.Remove(i);
         }
-    }
-
-    public bool Add(T i)
-    {
-        return items.Add(i);
-    }
-
-    public bool Remove(T i)
-    {
-        return items.Remove(i);
     }
 }

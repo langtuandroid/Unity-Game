@@ -5,43 +5,46 @@ using UnityEngine;
 /* Provides utility to generate new ids
     
  */
-public class IdDistributor
-{
-    private LinkedList<int> availableIds = new();
-    private int counter = 0;
-
-    public int GetID()
+namespace LobsterFramework.Utility {
+    public class IdDistributor
     {
-        if (availableIds.Count == 0)
-        {
-            return NewID();
-        }
-        int r = availableIds.First.Value;
-        availableIds.RemoveFirst();
-        return r;
-    }
+        private LinkedList<int> availableIds = new();
+        private int counter = 0;
 
-    private int NewID()
-    {
-        int returnVal = counter;
-        counter += 1;
+        public int GetID()
+        {
+            if (availableIds.Count == 0)
+            {
+                return NewID();
+            }
+            int r = availableIds.First.Value;
+            availableIds.RemoveFirst();
+            return r;
+        }
 
-        return returnVal;
-    }
-    public bool RecycleID(int id)
-    {
-        if (id >= counter || availableIds.Contains(id))
+        private int NewID()
         {
-            return false;
+            int returnVal = counter;
+            counter += 1;
+
+            return returnVal;
         }
-        if (id == counter - 1)
+        public bool RecycleID(int id)
         {
-            counter -= 1;
+            if (id >= counter || availableIds.Contains(id))
+            {
+                return false;
+            }
+            if (id == counter - 1)
+            {
+                counter -= 1;
+            }
+            else
+            {
+                availableIds.AddLast(id);
+            }
+            return true;
         }
-        else
-        {
-            availableIds.AddLast(id);
-        }
-        return true;
     }
 }
+

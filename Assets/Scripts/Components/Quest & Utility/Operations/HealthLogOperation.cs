@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LobsterFramework.EntitySystem;
 
-public class HealthLogOperation : Operation
+namespace LobsterFramework.QuestSystem
 {
-    [SerializeField] private Entity entity;
-
-    public override void Begin()
+    public class HealthLogOperation : Operation
     {
-        Debug.Log("Selected Entity Health: " + entity.Health);
+        [SerializeField] private Entity entity;
+
+        public override void Begin()
+        {
+            Debug.Log("Selected Entity Health: " + entity.Health);
+        }
     }
 }

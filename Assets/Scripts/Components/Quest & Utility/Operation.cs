@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Operation : MonoBehaviour
+namespace LobsterFramework.QuestSystem
 {
-    // Override this to implement custom behavior
-    public abstract void Begin();
-
-    public void Start()
+    public abstract class Operation : MonoBehaviour
     {
-        gameObject.SetActive(false);
+        // Override this to implement custom behavior
+        public abstract void Begin();
+
+        public void Start()
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

@@ -1,0 +1,206 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility.SortableItem`1
+  commentId: T:LobsterFramework.Utility.SortableItem`1
+  id: SortableItem`1
+  parent: LobsterFramework.Utility
+  children:
+  - LobsterFramework.Utility.SortableItem`1.CompareTo(LobsterFramework.Utility.SortableItem{`0})
+  - LobsterFramework.Utility.SortableItem`1.item
+  - LobsterFramework.Utility.SortableItem`1.priority
+  langs:
+  - csharp
+  - vb
+  name: SortableItem<T>
+  nameWithType: SortableItem<T>
+  fullName: LobsterFramework.Utility.SortableItem<T>
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/SortableItem.cs
+    id: SortableItem
+    path: ../Assets/Scripts/Utility/SortableItem.cs
+    startLine: 7
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public class SortableItem<T>
+    typeParameters:
+    - id: T
+    content.vb: Public Class SortableItem(Of T)
+  inheritance:
+  - System.Object
+  nameWithType.vb: SortableItem(Of T)
+  fullName.vb: LobsterFramework.Utility.SortableItem(Of T)
+  name.vb: SortableItem(Of T)
+- uid: LobsterFramework.Utility.SortableItem`1.priority
+  commentId: F:LobsterFramework.Utility.SortableItem`1.priority
+  id: priority
+  parent: LobsterFramework.Utility.SortableItem`1
+  langs:
+  - csharp
+  - vb
+  name: priority
+  nameWithType: SortableItem<T>.priority
+  fullName: LobsterFramework.Utility.SortableItem<T>.priority
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/SortableItem.cs
+    id: priority
+    path: ../Assets/Scripts/Utility/SortableItem.cs
+    startLine: 9
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public int priority
+    return:
+      type: System.Int32
+    content.vb: Public priority As Integer
+  nameWithType.vb: SortableItem(Of T).priority
+  fullName.vb: LobsterFramework.Utility.SortableItem(Of T).priority
+- uid: LobsterFramework.Utility.SortableItem`1.item
+  commentId: F:LobsterFramework.Utility.SortableItem`1.item
+  id: item
+  parent: LobsterFramework.Utility.SortableItem`1
+  langs:
+  - csharp
+  - vb
+  name: item
+  nameWithType: SortableItem<T>.item
+  fullName: LobsterFramework.Utility.SortableItem<T>.item
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/SortableItem.cs
+    id: item
+    path: ../Assets/Scripts/Utility/SortableItem.cs
+    startLine: 10
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public T item
+    return:
+      type: '{T}'
+    content.vb: Public item As T
+  nameWithType.vb: SortableItem(Of T).item
+  fullName.vb: LobsterFramework.Utility.SortableItem(Of T).item
+- uid: LobsterFramework.Utility.SortableItem`1.CompareTo(LobsterFramework.Utility.SortableItem{`0})
+  commentId: M:LobsterFramework.Utility.SortableItem`1.CompareTo(LobsterFramework.Utility.SortableItem{`0})
+  id: CompareTo(LobsterFramework.Utility.SortableItem{`0})
+  parent: LobsterFramework.Utility.SortableItem`1
+  langs:
+  - csharp
+  - vb
+  name: CompareTo(SortableItem<T>)
+  nameWithType: SortableItem<T>.CompareTo(SortableItem<T>)
+  fullName: LobsterFramework.Utility.SortableItem<T>.CompareTo(LobsterFramework.Utility.SortableItem<T>)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/SortableItem.cs
+    id: CompareTo
+    path: ../Assets/Scripts/Utility/SortableItem.cs
+    startLine: 12
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public int CompareTo(SortableItem<T> other)
+    parameters:
+    - id: other
+      type: LobsterFramework.Utility.SortableItem`1
+    return:
+      type: System.Int32
+    content.vb: Public Function CompareTo(other As SortableItem(Of T)) As Integer
+  overload: LobsterFramework.Utility.SortableItem`1.CompareTo*
+  nameWithType.vb: SortableItem(Of T).CompareTo(SortableItem(Of T))
+  fullName.vb: LobsterFramework.Utility.SortableItem(Of T).CompareTo(LobsterFramework.Utility.SortableItem(Of T))
+  name.vb: CompareTo(SortableItem(Of T))
+references:
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: LobsterFramework.Utility.SortableItem`1.CompareTo*
+  commentId: Overload:LobsterFramework.Utility.SortableItem`1.CompareTo
+  name: CompareTo
+  nameWithType: SortableItem<T>.CompareTo
+  fullName: LobsterFramework.Utility.SortableItem<T>.CompareTo
+  nameWithType.vb: SortableItem(Of T).CompareTo
+  fullName.vb: LobsterFramework.Utility.SortableItem(Of T).CompareTo
+- uid: LobsterFramework.Utility.SortableItem`1
+  commentId: T:LobsterFramework.Utility.SortableItem`1
+  parent: LobsterFramework.Utility
+  name: SortableItem<T>
+  nameWithType: SortableItem<T>
+  fullName: LobsterFramework.Utility.SortableItem<T>
+  nameWithType.vb: SortableItem(Of T)
+  fullName.vb: LobsterFramework.Utility.SortableItem(Of T)
+  name.vb: SortableItem(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SortableItem`1
+    name: SortableItem
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SortableItem`1
+    name: SortableItem
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

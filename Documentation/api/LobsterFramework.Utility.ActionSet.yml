@@ -1,0 +1,1293 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility.ActionSet
+  commentId: T:LobsterFramework.Utility.ActionSet
+  id: ActionSet
+  parent: LobsterFramework.Utility
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: ActionSet
+  nameWithType: ActionSet
+  fullName: LobsterFramework.Utility.ActionSet
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    id: ActionSet
+    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    startLine: 137
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class ActionSet : SerializableHashSet<ActionInstance>, ISerializationCallbackReceiver
+    content.vb: >-
+      <Serializable>
+
+      Public Class ActionSet Inherits SerializableHashSet(Of ActionInstance) Implements ISerializationCallbackReceiver
+  inheritance:
+  - System.Object
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  implements:
+  - UnityEngine.ISerializationCallbackReceiver
+  inheritedMembers:
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.m_HashSet
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.values
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Count
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsReadOnly
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Add(LobsterFramework.Action.ActionInstance)
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Clear
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Contains(LobsterFramework.Action.ActionInstance)
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.CopyTo(LobsterFramework.Action.ActionInstance[],System.Int32)
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.GetEnumerator
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IntersectWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.OnAfterDeserialize
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.OnBeforeSerialize
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Overlaps(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Remove(LobsterFramework.Action.ActionInstance)
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.SetEquals(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.UnionWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  - LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.GetValueInList
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+references:
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  commentId: T:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  parent: LobsterFramework.Utility
+  definition: LobsterFramework.Utility.SerializableHashSet`1
+  name: SerializableHashSet<ActionInstance>
+  nameWithType: SerializableHashSet<ActionInstance>
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>
+  nameWithType.vb: SerializableHashSet(Of ActionInstance)
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance)
+  name.vb: SerializableHashSet(Of ActionInstance)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1
+    name: SerializableHashSet
+  - name: <
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1
+    name: SerializableHashSet
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: )
+- uid: UnityEngine.ISerializationCallbackReceiver
+  commentId: T:UnityEngine.ISerializationCallbackReceiver
+  parent: UnityEngine
+  isExternal: true
+  name: ISerializationCallbackReceiver
+  nameWithType: ISerializationCallbackReceiver
+  fullName: UnityEngine.ISerializationCallbackReceiver
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.m_HashSet
+  commentId: F:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.m_HashSet
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.m_HashSet
+  name: m_HashSet
+  nameWithType: SerializableHashSet<ActionInstance>.m_HashSet
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.m_HashSet
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).m_HashSet
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).m_HashSet
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.values
+  commentId: F:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.values
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.values
+  name: values
+  nameWithType: SerializableHashSet<ActionInstance>.values
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.values
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).values
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).values
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Count
+  commentId: P:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Count
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.Count
+  name: Count
+  nameWithType: SerializableHashSet<ActionInstance>.Count
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.Count
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).Count
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).Count
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsReadOnly
+  commentId: P:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsReadOnly
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.IsReadOnly
+  name: IsReadOnly
+  nameWithType: SerializableHashSet<ActionInstance>.IsReadOnly
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.IsReadOnly
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).IsReadOnly
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).IsReadOnly
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Add(LobsterFramework.Action.ActionInstance)
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Add(LobsterFramework.Action.ActionInstance)
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.Add(`0)
+  name: Add(ActionInstance)
+  nameWithType: SerializableHashSet<ActionInstance>.Add(ActionInstance)
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.Add(LobsterFramework.Action.ActionInstance)
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).Add(ActionInstance)
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).Add(LobsterFramework.Action.ActionInstance)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Add(LobsterFramework.Action.ActionInstance)
+    name: Add
+  - name: (
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Add(LobsterFramework.Action.ActionInstance)
+    name: Add
+  - name: (
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Clear
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Clear
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.Clear
+  name: Clear()
+  nameWithType: SerializableHashSet<ActionInstance>.Clear()
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.Clear()
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).Clear()
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).Clear()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Clear
+    name: Clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Clear
+    name: Clear
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Contains(LobsterFramework.Action.ActionInstance)
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Contains(LobsterFramework.Action.ActionInstance)
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.Contains(`0)
+  name: Contains(ActionInstance)
+  nameWithType: SerializableHashSet<ActionInstance>.Contains(ActionInstance)
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.Contains(LobsterFramework.Action.ActionInstance)
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).Contains(ActionInstance)
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).Contains(LobsterFramework.Action.ActionInstance)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Contains(LobsterFramework.Action.ActionInstance)
+    name: Contains
+  - name: (
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Contains(LobsterFramework.Action.ActionInstance)
+    name: Contains
+  - name: (
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.CopyTo(LobsterFramework.Action.ActionInstance[],System.Int32)
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.CopyTo(LobsterFramework.Action.ActionInstance[],System.Int32)
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.CopyTo(`0[],System.Int32)
+  name: CopyTo(ActionInstance[], int)
+  nameWithType: SerializableHashSet<ActionInstance>.CopyTo(ActionInstance[], int)
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.CopyTo(LobsterFramework.Action.ActionInstance[], int)
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).CopyTo(ActionInstance(), Integer)
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).CopyTo(LobsterFramework.Action.ActionInstance(), Integer)
+  name.vb: CopyTo(ActionInstance(), Integer)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.CopyTo(LobsterFramework.Action.ActionInstance[],System.Int32)
+    name: CopyTo
+  - name: (
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.CopyTo(LobsterFramework.Action.ActionInstance[],System.Int32)
+    name: CopyTo
+  - name: (
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
+  name: ExceptWith(IEnumerable<ActionInstance>)
+  nameWithType: SerializableHashSet<ActionInstance>.ExceptWith(IEnumerable<ActionInstance>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.ExceptWith(System.Collections.Generic.IEnumerable<LobsterFramework.Action.ActionInstance>)
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).ExceptWith(IEnumerable(Of ActionInstance))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).ExceptWith(System.Collections.Generic.IEnumerable(Of LobsterFramework.Action.ActionInstance))
+  name.vb: ExceptWith(IEnumerable(Of ActionInstance))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: ExceptWith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: ExceptWith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.GetEnumerator
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.GetEnumerator
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: SerializableHashSet<ActionInstance>.GetEnumerator()
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.GetEnumerator()
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).GetEnumerator()
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).GetEnumerator()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.GetEnumerator
+    name: GetEnumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.GetEnumerator
+    name: GetEnumerator
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IntersectWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IntersectWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
+  name: IntersectWith(IEnumerable<ActionInstance>)
+  nameWithType: SerializableHashSet<ActionInstance>.IntersectWith(IEnumerable<ActionInstance>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.IntersectWith(System.Collections.Generic.IEnumerable<LobsterFramework.Action.ActionInstance>)
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).IntersectWith(IEnumerable(Of ActionInstance))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).IntersectWith(System.Collections.Generic.IEnumerable(Of LobsterFramework.Action.ActionInstance))
+  name.vb: IntersectWith(IEnumerable(Of ActionInstance))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IntersectWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: IntersectWith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IntersectWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: IntersectWith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
+  name: IsProperSubsetOf(IEnumerable<ActionInstance>)
+  nameWithType: SerializableHashSet<ActionInstance>.IsProperSubsetOf(IEnumerable<ActionInstance>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.IsProperSubsetOf(System.Collections.Generic.IEnumerable<LobsterFramework.Action.ActionInstance>)
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).IsProperSubsetOf(IEnumerable(Of ActionInstance))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).IsProperSubsetOf(System.Collections.Generic.IEnumerable(Of LobsterFramework.Action.ActionInstance))
+  name.vb: IsProperSubsetOf(IEnumerable(Of ActionInstance))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: IsProperSubsetOf
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: IsProperSubsetOf
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
+  name: IsProperSupersetOf(IEnumerable<ActionInstance>)
+  nameWithType: SerializableHashSet<ActionInstance>.IsProperSupersetOf(IEnumerable<ActionInstance>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.IsProperSupersetOf(System.Collections.Generic.IEnumerable<LobsterFramework.Action.ActionInstance>)
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).IsProperSupersetOf(IEnumerable(Of ActionInstance))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).IsProperSupersetOf(System.Collections.Generic.IEnumerable(Of LobsterFramework.Action.ActionInstance))
+  name.vb: IsProperSupersetOf(IEnumerable(Of ActionInstance))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: IsProperSupersetOf
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: IsProperSupersetOf
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
+  name: IsSubsetOf(IEnumerable<ActionInstance>)
+  nameWithType: SerializableHashSet<ActionInstance>.IsSubsetOf(IEnumerable<ActionInstance>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.IsSubsetOf(System.Collections.Generic.IEnumerable<LobsterFramework.Action.ActionInstance>)
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).IsSubsetOf(IEnumerable(Of ActionInstance))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).IsSubsetOf(System.Collections.Generic.IEnumerable(Of LobsterFramework.Action.ActionInstance))
+  name.vb: IsSubsetOf(IEnumerable(Of ActionInstance))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: IsSubsetOf
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: IsSubsetOf
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
+  name: IsSupersetOf(IEnumerable<ActionInstance>)
+  nameWithType: SerializableHashSet<ActionInstance>.IsSupersetOf(IEnumerable<ActionInstance>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.IsSupersetOf(System.Collections.Generic.IEnumerable<LobsterFramework.Action.ActionInstance>)
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).IsSupersetOf(IEnumerable(Of ActionInstance))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).IsSupersetOf(System.Collections.Generic.IEnumerable(Of LobsterFramework.Action.ActionInstance))
+  name.vb: IsSupersetOf(IEnumerable(Of ActionInstance))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: IsSupersetOf
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.IsSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: IsSupersetOf
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.OnAfterDeserialize
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.OnAfterDeserialize
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize
+  name: OnAfterDeserialize()
+  nameWithType: SerializableHashSet<ActionInstance>.OnAfterDeserialize()
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.OnAfterDeserialize()
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).OnAfterDeserialize()
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).OnAfterDeserialize()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.OnAfterDeserialize
+    name: OnAfterDeserialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.OnAfterDeserialize
+    name: OnAfterDeserialize
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.OnBeforeSerialize
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.OnBeforeSerialize
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize
+  name: OnBeforeSerialize()
+  nameWithType: SerializableHashSet<ActionInstance>.OnBeforeSerialize()
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.OnBeforeSerialize()
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).OnBeforeSerialize()
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).OnBeforeSerialize()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.OnBeforeSerialize
+    name: OnBeforeSerialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.OnBeforeSerialize
+    name: OnBeforeSerialize
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Overlaps(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Overlaps(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
+  name: Overlaps(IEnumerable<ActionInstance>)
+  nameWithType: SerializableHashSet<ActionInstance>.Overlaps(IEnumerable<ActionInstance>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.Overlaps(System.Collections.Generic.IEnumerable<LobsterFramework.Action.ActionInstance>)
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).Overlaps(IEnumerable(Of ActionInstance))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).Overlaps(System.Collections.Generic.IEnumerable(Of LobsterFramework.Action.ActionInstance))
+  name.vb: Overlaps(IEnumerable(Of ActionInstance))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Overlaps(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: Overlaps
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Overlaps(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: Overlaps
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Remove(LobsterFramework.Action.ActionInstance)
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Remove(LobsterFramework.Action.ActionInstance)
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.Remove(`0)
+  name: Remove(ActionInstance)
+  nameWithType: SerializableHashSet<ActionInstance>.Remove(ActionInstance)
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.Remove(LobsterFramework.Action.ActionInstance)
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).Remove(ActionInstance)
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).Remove(LobsterFramework.Action.ActionInstance)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Remove(LobsterFramework.Action.ActionInstance)
+    name: Remove
+  - name: (
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.Remove(LobsterFramework.Action.ActionInstance)
+    name: Remove
+  - name: (
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.SetEquals(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.SetEquals(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
+  name: SetEquals(IEnumerable<ActionInstance>)
+  nameWithType: SerializableHashSet<ActionInstance>.SetEquals(IEnumerable<ActionInstance>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.SetEquals(System.Collections.Generic.IEnumerable<LobsterFramework.Action.ActionInstance>)
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).SetEquals(IEnumerable(Of ActionInstance))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).SetEquals(System.Collections.Generic.IEnumerable(Of LobsterFramework.Action.ActionInstance))
+  name.vb: SetEquals(IEnumerable(Of ActionInstance))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.SetEquals(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: SetEquals
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.SetEquals(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: SetEquals
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
+  name: SymmetricExceptWith(IEnumerable<ActionInstance>)
+  nameWithType: SerializableHashSet<ActionInstance>.SymmetricExceptWith(IEnumerable<ActionInstance>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.SymmetricExceptWith(System.Collections.Generic.IEnumerable<LobsterFramework.Action.ActionInstance>)
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).SymmetricExceptWith(IEnumerable(Of ActionInstance))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).SymmetricExceptWith(System.Collections.Generic.IEnumerable(Of LobsterFramework.Action.ActionInstance))
+  name.vb: SymmetricExceptWith(IEnumerable(Of ActionInstance))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: SymmetricExceptWith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: SymmetricExceptWith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.UnionWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.UnionWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
+  name: UnionWith(IEnumerable<ActionInstance>)
+  nameWithType: SerializableHashSet<ActionInstance>.UnionWith(IEnumerable<ActionInstance>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.UnionWith(System.Collections.Generic.IEnumerable<LobsterFramework.Action.ActionInstance>)
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).UnionWith(IEnumerable(Of ActionInstance))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).UnionWith(System.Collections.Generic.IEnumerable(Of LobsterFramework.Action.ActionInstance))
+  name.vb: UnionWith(IEnumerable(Of ActionInstance))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.UnionWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: UnionWith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.UnionWith(System.Collections.Generic.IEnumerable{LobsterFramework.Action.ActionInstance})
+    name: UnionWith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.GetValueInList
+  commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.GetValueInList
+  parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}
+  definition: LobsterFramework.Utility.SerializableHashSet`1.GetValueInList
+  name: GetValueInList()
+  nameWithType: SerializableHashSet<ActionInstance>.GetValueInList()
+  fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.Action.ActionInstance>.GetValueInList()
+  nameWithType.vb: SerializableHashSet(Of ActionInstance).GetValueInList()
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of LobsterFramework.Action.ActionInstance).GetValueInList()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.GetValueInList
+    name: GetValueInList
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.Action.ActionInstance}.GetValueInList
+    name: GetValueInList
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Utility.SerializableHashSet`1
+  commentId: T:LobsterFramework.Utility.SerializableHashSet`1
+  name: SerializableHashSet<TValue>
+  nameWithType: SerializableHashSet<TValue>
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>
+  nameWithType.vb: SerializableHashSet(Of TValue)
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue)
+  name.vb: SerializableHashSet(Of TValue)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1
+    name: SerializableHashSet
+  - name: <
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1
+    name: SerializableHashSet
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: LobsterFramework.Utility.SerializableHashSet`1.m_HashSet
+  commentId: F:LobsterFramework.Utility.SerializableHashSet`1.m_HashSet
+  name: m_HashSet
+  nameWithType: SerializableHashSet<TValue>.m_HashSet
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.m_HashSet
+  nameWithType.vb: SerializableHashSet(Of TValue).m_HashSet
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).m_HashSet
+- uid: LobsterFramework.Utility.SerializableHashSet`1.values
+  commentId: F:LobsterFramework.Utility.SerializableHashSet`1.values
+  name: values
+  nameWithType: SerializableHashSet<TValue>.values
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.values
+  nameWithType.vb: SerializableHashSet(Of TValue).values
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).values
+- uid: LobsterFramework.Utility.SerializableHashSet`1.Count
+  commentId: P:LobsterFramework.Utility.SerializableHashSet`1.Count
+  name: Count
+  nameWithType: SerializableHashSet<TValue>.Count
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.Count
+  nameWithType.vb: SerializableHashSet(Of TValue).Count
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).Count
+- uid: LobsterFramework.Utility.SerializableHashSet`1.IsReadOnly
+  commentId: P:LobsterFramework.Utility.SerializableHashSet`1.IsReadOnly
+  name: IsReadOnly
+  nameWithType: SerializableHashSet<TValue>.IsReadOnly
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.IsReadOnly
+  nameWithType.vb: SerializableHashSet(Of TValue).IsReadOnly
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).IsReadOnly
+- uid: LobsterFramework.Utility.SerializableHashSet`1.Add(`0)
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.Add(`0)
+  name: Add(TValue)
+  nameWithType: SerializableHashSet<TValue>.Add(TValue)
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.Add(TValue)
+  nameWithType.vb: SerializableHashSet(Of TValue).Add(TValue)
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).Add(TValue)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.Add(`0)
+    name: Add
+  - name: (
+  - name: TValue
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.Add(`0)
+    name: Add
+  - name: (
+  - name: TValue
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet`1.Clear
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.Clear
+  name: Clear()
+  nameWithType: SerializableHashSet<TValue>.Clear()
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.Clear()
+  nameWithType.vb: SerializableHashSet(Of TValue).Clear()
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).Clear()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.Clear
+    name: Clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.Clear
+    name: Clear
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet`1.Contains(`0)
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.Contains(`0)
+  name: Contains(TValue)
+  nameWithType: SerializableHashSet<TValue>.Contains(TValue)
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.Contains(TValue)
+  nameWithType.vb: SerializableHashSet(Of TValue).Contains(TValue)
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).Contains(TValue)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.Contains(`0)
+    name: Contains
+  - name: (
+  - name: TValue
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.Contains(`0)
+    name: Contains
+  - name: (
+  - name: TValue
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet`1.CopyTo(`0[],System.Int32)
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.CopyTo(`0[],System.Int32)
+  isExternal: true
+  name: CopyTo(TValue[], int)
+  nameWithType: SerializableHashSet<TValue>.CopyTo(TValue[], int)
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.CopyTo(TValue[], int)
+  nameWithType.vb: SerializableHashSet(Of TValue).CopyTo(TValue(), Integer)
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).CopyTo(TValue(), Integer)
+  name.vb: CopyTo(TValue(), Integer)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+  - name: (
+  - name: TValue
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+  - name: (
+  - name: TValue
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  name: ExceptWith(IEnumerable<TValue>)
+  nameWithType: SerializableHashSet<TValue>.ExceptWith(IEnumerable<TValue>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.ExceptWith(System.Collections.Generic.IEnumerable<TValue>)
+  nameWithType.vb: SerializableHashSet(Of TValue).ExceptWith(IEnumerable(Of TValue))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).ExceptWith(System.Collections.Generic.IEnumerable(Of TValue))
+  name.vb: ExceptWith(IEnumerable(Of TValue))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
+    name: ExceptWith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - name: TValue
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
+    name: ExceptWith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TValue
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet`1.GetEnumerator
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: SerializableHashSet<TValue>.GetEnumerator()
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.GetEnumerator()
+  nameWithType.vb: SerializableHashSet(Of TValue).GetEnumerator()
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).GetEnumerator()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.GetEnumerator
+    name: GetEnumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.GetEnumerator
+    name: GetEnumerator
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  name: IntersectWith(IEnumerable<TValue>)
+  nameWithType: SerializableHashSet<TValue>.IntersectWith(IEnumerable<TValue>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.IntersectWith(System.Collections.Generic.IEnumerable<TValue>)
+  nameWithType.vb: SerializableHashSet(Of TValue).IntersectWith(IEnumerable(Of TValue))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).IntersectWith(System.Collections.Generic.IEnumerable(Of TValue))
+  name.vb: IntersectWith(IEnumerable(Of TValue))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
+    name: IntersectWith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - name: TValue
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
+    name: IntersectWith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TValue
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  name: IsProperSubsetOf(IEnumerable<TValue>)
+  nameWithType: SerializableHashSet<TValue>.IsProperSubsetOf(IEnumerable<TValue>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.IsProperSubsetOf(System.Collections.Generic.IEnumerable<TValue>)
+  nameWithType.vb: SerializableHashSet(Of TValue).IsProperSubsetOf(IEnumerable(Of TValue))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).IsProperSubsetOf(System.Collections.Generic.IEnumerable(Of TValue))
+  name.vb: IsProperSubsetOf(IEnumerable(Of TValue))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
+    name: IsProperSubsetOf
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - name: TValue
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
+    name: IsProperSubsetOf
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TValue
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  name: IsProperSupersetOf(IEnumerable<TValue>)
+  nameWithType: SerializableHashSet<TValue>.IsProperSupersetOf(IEnumerable<TValue>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.IsProperSupersetOf(System.Collections.Generic.IEnumerable<TValue>)
+  nameWithType.vb: SerializableHashSet(Of TValue).IsProperSupersetOf(IEnumerable(Of TValue))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).IsProperSupersetOf(System.Collections.Generic.IEnumerable(Of TValue))
+  name.vb: IsProperSupersetOf(IEnumerable(Of TValue))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
+    name: IsProperSupersetOf
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - name: TValue
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
+    name: IsProperSupersetOf
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TValue
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  name: IsSubsetOf(IEnumerable<TValue>)
+  nameWithType: SerializableHashSet<TValue>.IsSubsetOf(IEnumerable<TValue>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.IsSubsetOf(System.Collections.Generic.IEnumerable<TValue>)
+  nameWithType.vb: SerializableHashSet(Of TValue).IsSubsetOf(IEnumerable(Of TValue))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).IsSubsetOf(System.Collections.Generic.IEnumerable(Of TValue))
+  name.vb: IsSubsetOf(IEnumerable(Of TValue))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
+    name: IsSubsetOf
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - name: TValue
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
+    name: IsSubsetOf
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TValue
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  name: IsSupersetOf(IEnumerable<TValue>)
+  nameWithType: SerializableHashSet<TValue>.IsSupersetOf(IEnumerable<TValue>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.IsSupersetOf(System.Collections.Generic.IEnumerable<TValue>)
+  nameWithType.vb: SerializableHashSet(Of TValue).IsSupersetOf(IEnumerable(Of TValue))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).IsSupersetOf(System.Collections.Generic.IEnumerable(Of TValue))
+  name.vb: IsSupersetOf(IEnumerable(Of TValue))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
+    name: IsSupersetOf
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - name: TValue
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
+    name: IsSupersetOf
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TValue
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize
+  name: OnAfterDeserialize()
+  nameWithType: SerializableHashSet<TValue>.OnAfterDeserialize()
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.OnAfterDeserialize()
+  nameWithType.vb: SerializableHashSet(Of TValue).OnAfterDeserialize()
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).OnAfterDeserialize()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize
+    name: OnAfterDeserialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize
+    name: OnAfterDeserialize
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize
+  name: OnBeforeSerialize()
+  nameWithType: SerializableHashSet<TValue>.OnBeforeSerialize()
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.OnBeforeSerialize()
+  nameWithType.vb: SerializableHashSet(Of TValue).OnBeforeSerialize()
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).OnBeforeSerialize()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize
+    name: OnBeforeSerialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize
+    name: OnBeforeSerialize
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  name: Overlaps(IEnumerable<TValue>)
+  nameWithType: SerializableHashSet<TValue>.Overlaps(IEnumerable<TValue>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.Overlaps(System.Collections.Generic.IEnumerable<TValue>)
+  nameWithType.vb: SerializableHashSet(Of TValue).Overlaps(IEnumerable(Of TValue))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).Overlaps(System.Collections.Generic.IEnumerable(Of TValue))
+  name.vb: Overlaps(IEnumerable(Of TValue))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
+    name: Overlaps
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - name: TValue
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
+    name: Overlaps
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TValue
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet`1.Remove(`0)
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.Remove(`0)
+  name: Remove(TValue)
+  nameWithType: SerializableHashSet<TValue>.Remove(TValue)
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.Remove(TValue)
+  nameWithType.vb: SerializableHashSet(Of TValue).Remove(TValue)
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).Remove(TValue)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.Remove(`0)
+    name: Remove
+  - name: (
+  - name: TValue
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.Remove(`0)
+    name: Remove
+  - name: (
+  - name: TValue
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  name: SetEquals(IEnumerable<TValue>)
+  nameWithType: SerializableHashSet<TValue>.SetEquals(IEnumerable<TValue>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.SetEquals(System.Collections.Generic.IEnumerable<TValue>)
+  nameWithType.vb: SerializableHashSet(Of TValue).SetEquals(IEnumerable(Of TValue))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).SetEquals(System.Collections.Generic.IEnumerable(Of TValue))
+  name.vb: SetEquals(IEnumerable(Of TValue))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
+    name: SetEquals
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - name: TValue
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
+    name: SetEquals
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TValue
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  name: SymmetricExceptWith(IEnumerable<TValue>)
+  nameWithType: SerializableHashSet<TValue>.SymmetricExceptWith(IEnumerable<TValue>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.SymmetricExceptWith(System.Collections.Generic.IEnumerable<TValue>)
+  nameWithType.vb: SerializableHashSet(Of TValue).SymmetricExceptWith(IEnumerable(Of TValue))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).SymmetricExceptWith(System.Collections.Generic.IEnumerable(Of TValue))
+  name.vb: SymmetricExceptWith(IEnumerable(Of TValue))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
+    name: SymmetricExceptWith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - name: TValue
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
+    name: SymmetricExceptWith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TValue
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  name: UnionWith(IEnumerable<TValue>)
+  nameWithType: SerializableHashSet<TValue>.UnionWith(IEnumerable<TValue>)
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.UnionWith(System.Collections.Generic.IEnumerable<TValue>)
+  nameWithType.vb: SerializableHashSet(Of TValue).UnionWith(IEnumerable(Of TValue))
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).UnionWith(System.Collections.Generic.IEnumerable(Of TValue))
+  name.vb: UnionWith(IEnumerable(Of TValue))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
+    name: UnionWith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - name: TValue
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
+    name: UnionWith
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TValue
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableHashSet`1.GetValueInList
+  commentId: M:LobsterFramework.Utility.SerializableHashSet`1.GetValueInList
+  name: GetValueInList()
+  nameWithType: SerializableHashSet<TValue>.GetValueInList()
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.GetValueInList()
+  nameWithType.vb: SerializableHashSet(Of TValue).GetValueInList()
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).GetValueInList()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.GetValueInList
+    name: GetValueInList
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableHashSet`1.GetValueInList
+    name: GetValueInList
+  - name: (
+  - name: )

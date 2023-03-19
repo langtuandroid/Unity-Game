@@ -1,0 +1,122 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.AstarPath.AstarDistribution
+  commentId: T:Global.AstarPath.AstarDistribution
+  id: AstarPath.AstarDistribution
+  parent: Global
+  children:
+  - Global.AstarPath.AstarDistribution.AssetStore
+  - Global.AstarPath.AstarDistribution.PackageManager
+  - Global.AstarPath.AstarDistribution.WebsiteDownload
+  langs:
+  - csharp
+  - vb
+  name: AstarPath.AstarDistribution
+  nameWithType: AstarPath.AstarDistribution
+  fullName: AstarPath.AstarDistribution
+  type: Enum
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Imported Assets/AstarPathfindingProject/Core/AstarPath.cs
+    id: AstarDistribution
+    path: ../Assets/Imported Assets/AstarPathfindingProject/Core/AstarPath.cs
+    startLine: 31
+  assemblies:
+  - AstarPathfindingProject
+  namespace: Global
+  summary: Information about where the package was downloaded
+  example: []
+  syntax:
+    content: public enum AstarPath.AstarDistribution
+    content.vb: Public Enum AstarPath.AstarDistribution
+- uid: Global.AstarPath.AstarDistribution.WebsiteDownload
+  commentId: F:Global.AstarPath.AstarDistribution.WebsiteDownload
+  id: WebsiteDownload
+  parent: Global.AstarPath.AstarDistribution
+  langs:
+  - csharp
+  - vb
+  name: WebsiteDownload
+  nameWithType: AstarPath.AstarDistribution.WebsiteDownload
+  fullName: AstarPath.AstarDistribution.WebsiteDownload
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Imported Assets/AstarPathfindingProject/Core/AstarPath.cs
+    id: WebsiteDownload
+    path: ../Assets/Imported Assets/AstarPathfindingProject/Core/AstarPath.cs
+    startLine: 31
+  assemblies:
+  - AstarPathfindingProject
+  namespace: Global
+  syntax:
+    content: WebsiteDownload = 0
+    return:
+      type: Global.AstarPath.AstarDistribution
+- uid: Global.AstarPath.AstarDistribution.AssetStore
+  commentId: F:Global.AstarPath.AstarDistribution.AssetStore
+  id: AssetStore
+  parent: Global.AstarPath.AstarDistribution
+  langs:
+  - csharp
+  - vb
+  name: AssetStore
+  nameWithType: AstarPath.AstarDistribution.AssetStore
+  fullName: AstarPath.AstarDistribution.AssetStore
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Imported Assets/AstarPathfindingProject/Core/AstarPath.cs
+    id: AssetStore
+    path: ../Assets/Imported Assets/AstarPathfindingProject/Core/AstarPath.cs
+    startLine: 31
+  assemblies:
+  - AstarPathfindingProject
+  namespace: Global
+  syntax:
+    content: AssetStore = 1
+    return:
+      type: Global.AstarPath.AstarDistribution
+- uid: Global.AstarPath.AstarDistribution.PackageManager
+  commentId: F:Global.AstarPath.AstarDistribution.PackageManager
+  id: PackageManager
+  parent: Global.AstarPath.AstarDistribution
+  langs:
+  - csharp
+  - vb
+  name: PackageManager
+  nameWithType: AstarPath.AstarDistribution.PackageManager
+  fullName: AstarPath.AstarDistribution.PackageManager
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Imported Assets/AstarPathfindingProject/Core/AstarPath.cs
+    id: PackageManager
+    path: ../Assets/Imported Assets/AstarPathfindingProject/Core/AstarPath.cs
+    startLine: 31
+  assemblies:
+  - AstarPathfindingProject
+  namespace: Global
+  syntax:
+    content: PackageManager = 2
+    return:
+      type: Global.AstarPath.AstarDistribution
+references:
+- uid: Global
+- uid: Global.AstarPath.AstarDistribution
+  commentId: T:Global.AstarPath.AstarDistribution
+  name: AstarPath.AstarDistribution
+  nameWithType: AstarPath.AstarDistribution
+  fullName: AstarPath.AstarDistribution
+  spec.csharp:
+  - uid: Global.AstarPath
+    name: AstarPath
+  - name: .
+  - uid: Global.AstarPath.AstarDistribution
+    name: AstarDistribution
+  spec.vb:
+  - uid: Global.AstarPath
+    name: AstarPath
+  - name: .
+  - uid: Global.AstarPath.AstarDistribution
+    name: AstarDistribution

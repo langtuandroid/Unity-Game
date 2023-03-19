@@ -1,0 +1,512 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Interaction.InteractionAttribute
+  commentId: T:LobsterFramework.Interaction.InteractionAttribute
+  id: InteractionAttribute
+  parent: LobsterFramework.Interaction
+  children:
+  - LobsterFramework.Interaction.InteractionAttribute.#ctor(System.Type,System.Type[])
+  - LobsterFramework.Interaction.InteractionAttribute.AddInteractor(LobsterFramework.Interaction.Interactor)
+  - LobsterFramework.Interaction.InteractionAttribute.ExistInteractor(LobsterFramework.Interaction.Interactor)
+  - LobsterFramework.Interaction.InteractionAttribute.GetInteractors(System.Type,System.Collections.Generic.List{LobsterFramework.Interaction.Interactor})
+  - LobsterFramework.Interaction.InteractionAttribute.GetInteractorTransform(LobsterFramework.Interaction.Interactor)
+  - LobsterFramework.Interaction.InteractionAttribute.GetInteractorTypes(System.Type)
+  - LobsterFramework.Interaction.InteractionAttribute.IsInteractable(System.Type,System.Type)
+  - LobsterFramework.Interaction.InteractionAttribute.RemoveInteractor(LobsterFramework.Interaction.Interactor)
+  langs:
+  - csharp
+  - vb
+  name: InteractionAttribute
+  nameWithType: InteractionAttribute
+  fullName: LobsterFramework.Interaction.InteractionAttribute
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+    id: InteractionAttribute
+    path: ../Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+    startLine: 8
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: >-
+      [AttributeUsage(AttributeTargets.Class, Inherited = false)]
+
+      public class InteractionAttribute : Attribute
+    content.vb: >-
+      <AttributeUsage(AttributeTargets.Class, Inherited:=False)>
+
+      Public Class InteractionAttribute Inherits Attribute
+  inheritance:
+  - System.Object
+  - System.Attribute
+  attributes:
+  - type: System.AttributeUsageAttribute
+    ctor: System.AttributeUsageAttribute.#ctor(System.AttributeTargets)
+    arguments:
+    - type: System.AttributeTargets
+      value: 4
+    namedArguments:
+    - name: Inherited
+      type: System.Boolean
+      value: false
+- uid: LobsterFramework.Interaction.InteractionAttribute.#ctor(System.Type,System.Type[])
+  commentId: M:LobsterFramework.Interaction.InteractionAttribute.#ctor(System.Type,System.Type[])
+  id: '#ctor(System.Type,System.Type[])'
+  parent: LobsterFramework.Interaction.InteractionAttribute
+  langs:
+  - csharp
+  - vb
+  name: InteractionAttribute(Type, params Type[])
+  nameWithType: InteractionAttribute.InteractionAttribute(Type, params Type[])
+  fullName: LobsterFramework.Interaction.InteractionAttribute.InteractionAttribute(System.Type, params System.Type[])
+  type: Constructor
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+    id: .ctor
+    path: ../Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+    startLine: 15
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public InteractionAttribute(Type interactable, params Type[] interactors)
+    parameters:
+    - id: interactable
+      type: System.Type
+    - id: interactors
+      type: System.Type[]
+    content.vb: Public Sub New(interactable As Type, ParamArray interactors As Type())
+  overload: LobsterFramework.Interaction.InteractionAttribute.#ctor*
+  nameWithType.vb: InteractionAttribute.New(Type, ParamArray Type())
+  fullName.vb: LobsterFramework.Interaction.InteractionAttribute.New(System.Type, ParamArray System.Type())
+  name.vb: New(Type, ParamArray Type())
+- uid: LobsterFramework.Interaction.InteractionAttribute.GetInteractorTypes(System.Type)
+  commentId: M:LobsterFramework.Interaction.InteractionAttribute.GetInteractorTypes(System.Type)
+  id: GetInteractorTypes(System.Type)
+  parent: LobsterFramework.Interaction.InteractionAttribute
+  langs:
+  - csharp
+  - vb
+  name: GetInteractorTypes(Type)
+  nameWithType: InteractionAttribute.GetInteractorTypes(Type)
+  fullName: LobsterFramework.Interaction.InteractionAttribute.GetInteractorTypes(System.Type)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+    id: GetInteractorTypes
+    path: ../Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+    startLine: 38
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public static Type[] GetInteractorTypes(Type interactable)
+    parameters:
+    - id: interactable
+      type: System.Type
+    return:
+      type: System.Type[]
+    content.vb: Public Shared Function GetInteractorTypes(interactable As Type) As Type()
+  overload: LobsterFramework.Interaction.InteractionAttribute.GetInteractorTypes*
+- uid: LobsterFramework.Interaction.InteractionAttribute.GetInteractors(System.Type,System.Collections.Generic.List{LobsterFramework.Interaction.Interactor})
+  commentId: M:LobsterFramework.Interaction.InteractionAttribute.GetInteractors(System.Type,System.Collections.Generic.List{LobsterFramework.Interaction.Interactor})
+  id: GetInteractors(System.Type,System.Collections.Generic.List{LobsterFramework.Interaction.Interactor})
+  parent: LobsterFramework.Interaction.InteractionAttribute
+  langs:
+  - csharp
+  - vb
+  name: GetInteractors(Type, List<Interactor>)
+  nameWithType: InteractionAttribute.GetInteractors(Type, List<Interactor>)
+  fullName: LobsterFramework.Interaction.InteractionAttribute.GetInteractors(System.Type, System.Collections.Generic.List<LobsterFramework.Interaction.Interactor>)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+    id: GetInteractors
+    path: ../Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+    startLine: 49
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public static void GetInteractors(Type interactorType, List<Interactor> container)
+    parameters:
+    - id: interactorType
+      type: System.Type
+    - id: container
+      type: System.Collections.Generic.List{LobsterFramework.Interaction.Interactor}
+    content.vb: Public Shared Sub GetInteractors(interactorType As Type, container As List(Of Interactor))
+  overload: LobsterFramework.Interaction.InteractionAttribute.GetInteractors*
+  nameWithType.vb: InteractionAttribute.GetInteractors(Type, List(Of Interactor))
+  fullName.vb: LobsterFramework.Interaction.InteractionAttribute.GetInteractors(System.Type, System.Collections.Generic.List(Of LobsterFramework.Interaction.Interactor))
+  name.vb: GetInteractors(Type, List(Of Interactor))
+- uid: LobsterFramework.Interaction.InteractionAttribute.GetInteractorTransform(LobsterFramework.Interaction.Interactor)
+  commentId: M:LobsterFramework.Interaction.InteractionAttribute.GetInteractorTransform(LobsterFramework.Interaction.Interactor)
+  id: GetInteractorTransform(LobsterFramework.Interaction.Interactor)
+  parent: LobsterFramework.Interaction.InteractionAttribute
+  langs:
+  - csharp
+  - vb
+  name: GetInteractorTransform(Interactor)
+  nameWithType: InteractionAttribute.GetInteractorTransform(Interactor)
+  fullName: LobsterFramework.Interaction.InteractionAttribute.GetInteractorTransform(LobsterFramework.Interaction.Interactor)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+    id: GetInteractorTransform
+    path: ../Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+    startLine: 63
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public static Transform GetInteractorTransform(Interactor interactor)
+    parameters:
+    - id: interactor
+      type: LobsterFramework.Interaction.Interactor
+    return:
+      type: UnityEngine.Transform
+    content.vb: Public Shared Function GetInteractorTransform(interactor As Interactor) As Transform
+  overload: LobsterFramework.Interaction.InteractionAttribute.GetInteractorTransform*
+- uid: LobsterFramework.Interaction.InteractionAttribute.IsInteractable(System.Type,System.Type)
+  commentId: M:LobsterFramework.Interaction.InteractionAttribute.IsInteractable(System.Type,System.Type)
+  id: IsInteractable(System.Type,System.Type)
+  parent: LobsterFramework.Interaction.InteractionAttribute
+  langs:
+  - csharp
+  - vb
+  name: IsInteractable(Type, Type)
+  nameWithType: InteractionAttribute.IsInteractable(Type, Type)
+  fullName: LobsterFramework.Interaction.InteractionAttribute.IsInteractable(System.Type, System.Type)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+    id: IsInteractable
+    path: ../Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+    startLine: 72
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public static bool IsInteractable(Type interactable, Type interactor)
+    parameters:
+    - id: interactable
+      type: System.Type
+    - id: interactor
+      type: System.Type
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsInteractable(interactable As Type, interactor As Type) As Boolean
+  overload: LobsterFramework.Interaction.InteractionAttribute.IsInteractable*
+- uid: LobsterFramework.Interaction.InteractionAttribute.AddInteractor(LobsterFramework.Interaction.Interactor)
+  commentId: M:LobsterFramework.Interaction.InteractionAttribute.AddInteractor(LobsterFramework.Interaction.Interactor)
+  id: AddInteractor(LobsterFramework.Interaction.Interactor)
+  parent: LobsterFramework.Interaction.InteractionAttribute
+  langs:
+  - csharp
+  - vb
+  name: AddInteractor(Interactor)
+  nameWithType: InteractionAttribute.AddInteractor(Interactor)
+  fullName: LobsterFramework.Interaction.InteractionAttribute.AddInteractor(LobsterFramework.Interaction.Interactor)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+    id: AddInteractor
+    path: ../Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+    startLine: 81
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public static void AddInteractor(Interactor interactor)
+    parameters:
+    - id: interactor
+      type: LobsterFramework.Interaction.Interactor
+    content.vb: Public Shared Sub AddInteractor(interactor As Interactor)
+  overload: LobsterFramework.Interaction.InteractionAttribute.AddInteractor*
+- uid: LobsterFramework.Interaction.InteractionAttribute.RemoveInteractor(LobsterFramework.Interaction.Interactor)
+  commentId: M:LobsterFramework.Interaction.InteractionAttribute.RemoveInteractor(LobsterFramework.Interaction.Interactor)
+  id: RemoveInteractor(LobsterFramework.Interaction.Interactor)
+  parent: LobsterFramework.Interaction.InteractionAttribute
+  langs:
+  - csharp
+  - vb
+  name: RemoveInteractor(Interactor)
+  nameWithType: InteractionAttribute.RemoveInteractor(Interactor)
+  fullName: LobsterFramework.Interaction.InteractionAttribute.RemoveInteractor(LobsterFramework.Interaction.Interactor)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+    id: RemoveInteractor
+    path: ../Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+    startLine: 92
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public static void RemoveInteractor(Interactor interactor)
+    parameters:
+    - id: interactor
+      type: LobsterFramework.Interaction.Interactor
+    content.vb: Public Shared Sub RemoveInteractor(interactor As Interactor)
+  overload: LobsterFramework.Interaction.InteractionAttribute.RemoveInteractor*
+- uid: LobsterFramework.Interaction.InteractionAttribute.ExistInteractor(LobsterFramework.Interaction.Interactor)
+  commentId: M:LobsterFramework.Interaction.InteractionAttribute.ExistInteractor(LobsterFramework.Interaction.Interactor)
+  id: ExistInteractor(LobsterFramework.Interaction.Interactor)
+  parent: LobsterFramework.Interaction.InteractionAttribute
+  langs:
+  - csharp
+  - vb
+  name: ExistInteractor(Interactor)
+  nameWithType: InteractionAttribute.ExistInteractor(Interactor)
+  fullName: LobsterFramework.Interaction.InteractionAttribute.ExistInteractor(LobsterFramework.Interaction.Interactor)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+    id: ExistInteractor
+    path: ../Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+    startLine: 102
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public static bool ExistInteractor(Interactor interactor)
+    parameters:
+    - id: interactor
+      type: LobsterFramework.Interaction.Interactor
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function ExistInteractor(interactor As Interactor) As Boolean
+  overload: LobsterFramework.Interaction.InteractionAttribute.ExistInteractor*
+references:
+- uid: LobsterFramework.Interaction
+  commentId: N:LobsterFramework.Interaction
+  name: LobsterFramework.Interaction
+  nameWithType: LobsterFramework.Interaction
+  fullName: LobsterFramework.Interaction
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Interaction
+    name: Interaction
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Interaction
+    name: Interaction
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Attribute
+  commentId: T:System.Attribute
+  parent: System
+  isExternal: true
+  name: Attribute
+  nameWithType: Attribute
+  fullName: System.Attribute
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Interaction.InteractionAttribute.#ctor*
+  commentId: Overload:LobsterFramework.Interaction.InteractionAttribute.#ctor
+  name: InteractionAttribute
+  nameWithType: InteractionAttribute.InteractionAttribute
+  fullName: LobsterFramework.Interaction.InteractionAttribute.InteractionAttribute
+  nameWithType.vb: InteractionAttribute.New
+  fullName.vb: LobsterFramework.Interaction.InteractionAttribute.New
+  name.vb: New
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.Type[]
+  isExternal: true
+  name: Type[]
+  nameWithType: Type[]
+  fullName: System.Type[]
+  nameWithType.vb: Type()
+  fullName.vb: System.Type()
+  name.vb: Type()
+  spec.csharp:
+  - uid: System.Type
+    name: Type
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Type
+    name: Type
+    isExternal: true
+  - name: (
+  - name: )
+- uid: LobsterFramework.Interaction.InteractionAttribute.GetInteractorTypes*
+  commentId: Overload:LobsterFramework.Interaction.InteractionAttribute.GetInteractorTypes
+  name: GetInteractorTypes
+  nameWithType: InteractionAttribute.GetInteractorTypes
+  fullName: LobsterFramework.Interaction.InteractionAttribute.GetInteractorTypes
+- uid: LobsterFramework.Interaction.InteractionAttribute.GetInteractors*
+  commentId: Overload:LobsterFramework.Interaction.InteractionAttribute.GetInteractors
+  name: GetInteractors
+  nameWithType: InteractionAttribute.GetInteractors
+  fullName: LobsterFramework.Interaction.InteractionAttribute.GetInteractors
+- uid: System.Collections.Generic.List{LobsterFramework.Interaction.Interactor}
+  commentId: T:System.Collections.Generic.List{LobsterFramework.Interaction.Interactor}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Interactor>
+  nameWithType: List<Interactor>
+  fullName: System.Collections.Generic.List<LobsterFramework.Interaction.Interactor>
+  nameWithType.vb: List(Of Interactor)
+  fullName.vb: System.Collections.Generic.List(Of LobsterFramework.Interaction.Interactor)
+  name.vb: List(Of Interactor)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+  - name: <
+  - uid: LobsterFramework.Interaction.Interactor
+    name: Interactor
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.Interaction.Interactor
+    name: Interactor
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+- uid: LobsterFramework.Interaction.InteractionAttribute.GetInteractorTransform*
+  commentId: Overload:LobsterFramework.Interaction.InteractionAttribute.GetInteractorTransform
+  name: GetInteractorTransform
+  nameWithType: InteractionAttribute.GetInteractorTransform
+  fullName: LobsterFramework.Interaction.InteractionAttribute.GetInteractorTransform
+- uid: LobsterFramework.Interaction.Interactor
+  commentId: T:LobsterFramework.Interaction.Interactor
+  parent: LobsterFramework.Interaction
+  name: Interactor
+  nameWithType: Interactor
+  fullName: LobsterFramework.Interaction.Interactor
+- uid: UnityEngine.Transform
+  commentId: T:UnityEngine.Transform
+  parent: UnityEngine
+  isExternal: true
+  name: Transform
+  nameWithType: Transform
+  fullName: UnityEngine.Transform
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: LobsterFramework.Interaction.InteractionAttribute.IsInteractable*
+  commentId: Overload:LobsterFramework.Interaction.InteractionAttribute.IsInteractable
+  name: IsInteractable
+  nameWithType: InteractionAttribute.IsInteractable
+  fullName: LobsterFramework.Interaction.InteractionAttribute.IsInteractable
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: LobsterFramework.Interaction.InteractionAttribute.AddInteractor*
+  commentId: Overload:LobsterFramework.Interaction.InteractionAttribute.AddInteractor
+  name: AddInteractor
+  nameWithType: InteractionAttribute.AddInteractor
+  fullName: LobsterFramework.Interaction.InteractionAttribute.AddInteractor
+- uid: LobsterFramework.Interaction.InteractionAttribute.RemoveInteractor*
+  commentId: Overload:LobsterFramework.Interaction.InteractionAttribute.RemoveInteractor
+  name: RemoveInteractor
+  nameWithType: InteractionAttribute.RemoveInteractor
+  fullName: LobsterFramework.Interaction.InteractionAttribute.RemoveInteractor
+- uid: LobsterFramework.Interaction.InteractionAttribute.ExistInteractor*
+  commentId: Overload:LobsterFramework.Interaction.InteractionAttribute.ExistInteractor
+  name: ExistInteractor
+  nameWithType: InteractionAttribute.ExistInteractor
+  fullName: LobsterFramework.Interaction.InteractionAttribute.ExistInteractor

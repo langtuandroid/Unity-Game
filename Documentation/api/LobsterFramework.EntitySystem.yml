@@ -1,0 +1,60 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.EntitySystem
+  commentId: N:LobsterFramework.EntitySystem
+  id: LobsterFramework.EntitySystem
+  children:
+  - LobsterFramework.EntitySystem.DamageInfo
+  - LobsterFramework.EntitySystem.Effect
+  - LobsterFramework.EntitySystem.Entity
+  - LobsterFramework.EntitySystem.StunEffect
+  langs:
+  - csharp
+  - vb
+  name: LobsterFramework.EntitySystem
+  nameWithType: LobsterFramework.EntitySystem
+  fullName: LobsterFramework.EntitySystem
+  type: Namespace
+  assemblies:
+  - MyScripts
+references:
+- uid: LobsterFramework.EntitySystem.StunEffect
+  commentId: T:LobsterFramework.EntitySystem.StunEffect
+  name: StunEffect
+  nameWithType: StunEffect
+  fullName: LobsterFramework.EntitySystem.StunEffect
+- uid: LobsterFramework.EntitySystem.Entity
+  commentId: T:LobsterFramework.EntitySystem.Entity
+  parent: LobsterFramework.EntitySystem
+  name: Entity
+  nameWithType: Entity
+  fullName: LobsterFramework.EntitySystem.Entity
+- uid: LobsterFramework.EntitySystem.DamageInfo
+  commentId: T:LobsterFramework.EntitySystem.DamageInfo
+  parent: LobsterFramework.EntitySystem
+  name: DamageInfo
+  nameWithType: DamageInfo
+  fullName: LobsterFramework.EntitySystem.DamageInfo
+- uid: LobsterFramework.EntitySystem.Effect
+  commentId: T:LobsterFramework.EntitySystem.Effect
+  parent: LobsterFramework.EntitySystem
+  name: Effect
+  nameWithType: Effect
+  fullName: LobsterFramework.EntitySystem.Effect
+- uid: LobsterFramework.EntitySystem
+  commentId: N:LobsterFramework.EntitySystem
+  name: LobsterFramework.EntitySystem
+  nameWithType: LobsterFramework.EntitySystem
+  fullName: LobsterFramework.EntitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.EntitySystem
+    name: EntitySystem
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.EntitySystem
+    name: EntitySystem

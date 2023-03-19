@@ -1,0 +1,160 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.EntitySystem.DamageInfo
+  commentId: T:LobsterFramework.EntitySystem.DamageInfo
+  id: DamageInfo
+  parent: LobsterFramework.EntitySystem
+  children:
+  - LobsterFramework.EntitySystem.DamageInfo.attacker
+  - LobsterFramework.EntitySystem.DamageInfo.damage
+  - LobsterFramework.EntitySystem.DamageInfo.none
+  langs:
+  - csharp
+  - vb
+  name: DamageInfo
+  nameWithType: DamageInfo
+  fullName: LobsterFramework.EntitySystem.DamageInfo
+  type: Struct
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
+    id: DamageInfo
+    path: ../Assets/Scripts/Components/Entity/Entity.cs
+    startLine: 250
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: >-
+      [Serializable]
+
+      public struct DamageInfo
+    content.vb: >-
+      <Serializable>
+
+      Public Structure DamageInfo
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: LobsterFramework.EntitySystem.DamageInfo.damage
+  commentId: F:LobsterFramework.EntitySystem.DamageInfo.damage
+  id: damage
+  parent: LobsterFramework.EntitySystem.DamageInfo
+  langs:
+  - csharp
+  - vb
+  name: damage
+  nameWithType: DamageInfo.damage
+  fullName: LobsterFramework.EntitySystem.DamageInfo.damage
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
+    id: damage
+    path: ../Assets/Scripts/Components/Entity/Entity.cs
+    startLine: 254
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public int damage
+    return:
+      type: System.Int32
+    content.vb: Public damage As Integer
+- uid: LobsterFramework.EntitySystem.DamageInfo.attacker
+  commentId: F:LobsterFramework.EntitySystem.DamageInfo.attacker
+  id: attacker
+  parent: LobsterFramework.EntitySystem.DamageInfo
+  langs:
+  - csharp
+  - vb
+  name: attacker
+  nameWithType: DamageInfo.attacker
+  fullName: LobsterFramework.EntitySystem.DamageInfo.attacker
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
+    id: attacker
+    path: ../Assets/Scripts/Components/Entity/Entity.cs
+    startLine: 255
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public Entity attacker
+    return:
+      type: LobsterFramework.EntitySystem.Entity
+    content.vb: Public attacker As Entity
+- uid: LobsterFramework.EntitySystem.DamageInfo.none
+  commentId: F:LobsterFramework.EntitySystem.DamageInfo.none
+  id: none
+  parent: LobsterFramework.EntitySystem.DamageInfo
+  langs:
+  - csharp
+  - vb
+  name: none
+  nameWithType: DamageInfo.none
+  fullName: LobsterFramework.EntitySystem.DamageInfo.none
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
+    id: none
+    path: ../Assets/Scripts/Components/Entity/Entity.cs
+    startLine: 256
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public static DamageInfo none
+    return:
+      type: LobsterFramework.EntitySystem.DamageInfo
+    content.vb: Public Shared none As DamageInfo
+references:
+- uid: LobsterFramework.EntitySystem
+  commentId: N:LobsterFramework.EntitySystem
+  name: LobsterFramework.EntitySystem
+  nameWithType: LobsterFramework.EntitySystem
+  fullName: LobsterFramework.EntitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.EntitySystem
+    name: EntitySystem
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.EntitySystem
+    name: EntitySystem
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.EntitySystem.Entity
+  commentId: T:LobsterFramework.EntitySystem.Entity
+  parent: LobsterFramework.EntitySystem
+  name: Entity
+  nameWithType: Entity
+  fullName: LobsterFramework.EntitySystem.Entity
+- uid: LobsterFramework.EntitySystem.DamageInfo
+  commentId: T:LobsterFramework.EntitySystem.DamageInfo
+  parent: LobsterFramework.EntitySystem
+  name: DamageInfo
+  nameWithType: DamageInfo
+  fullName: LobsterFramework.EntitySystem.DamageInfo

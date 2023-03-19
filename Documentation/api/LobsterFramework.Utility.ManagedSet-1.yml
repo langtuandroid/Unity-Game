@@ -1,0 +1,270 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility.ManagedSet`1
+  commentId: T:LobsterFramework.Utility.ManagedSet`1
+  id: ManagedSet`1
+  parent: LobsterFramework.Utility
+  children:
+  - LobsterFramework.Utility.ManagedSet`1.Add(`0)
+  - LobsterFramework.Utility.ManagedSet`1.Advance
+  - LobsterFramework.Utility.ManagedSet`1.CurrentItem
+  - LobsterFramework.Utility.ManagedSet`1.Remove(`0)
+  - LobsterFramework.Utility.ManagedSet`1.StepBack
+  langs:
+  - csharp
+  - vb
+  name: ManagedSet<T>
+  nameWithType: ManagedSet<T>
+  fullName: LobsterFramework.Utility.ManagedSet<T>
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/ManagedSet.cs
+    id: ManagedSet
+    path: ../Assets/Scripts/Utility/ManagedSet.cs
+    startLine: 7
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public class ManagedSet<T>
+    typeParameters:
+    - id: T
+    content.vb: Public Class ManagedSet(Of T)
+  inheritance:
+  - System.Object
+  nameWithType.vb: ManagedSet(Of T)
+  fullName.vb: LobsterFramework.Utility.ManagedSet(Of T)
+  name.vb: ManagedSet(Of T)
+- uid: LobsterFramework.Utility.ManagedSet`1.CurrentItem
+  commentId: P:LobsterFramework.Utility.ManagedSet`1.CurrentItem
+  id: CurrentItem
+  parent: LobsterFramework.Utility.ManagedSet`1
+  langs:
+  - csharp
+  - vb
+  name: CurrentItem
+  nameWithType: ManagedSet<T>.CurrentItem
+  fullName: LobsterFramework.Utility.ManagedSet<T>.CurrentItem
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/ManagedSet.cs
+    id: CurrentItem
+    path: ../Assets/Scripts/Utility/ManagedSet.cs
+    startLine: 33
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public T CurrentItem { get; }
+    parameters: []
+    return:
+      type: '{T}'
+    content.vb: Public ReadOnly Property CurrentItem As T
+  overload: LobsterFramework.Utility.ManagedSet`1.CurrentItem*
+  nameWithType.vb: ManagedSet(Of T).CurrentItem
+  fullName.vb: LobsterFramework.Utility.ManagedSet(Of T).CurrentItem
+- uid: LobsterFramework.Utility.ManagedSet`1.Advance
+  commentId: M:LobsterFramework.Utility.ManagedSet`1.Advance
+  id: Advance
+  parent: LobsterFramework.Utility.ManagedSet`1
+  langs:
+  - csharp
+  - vb
+  name: Advance()
+  nameWithType: ManagedSet<T>.Advance()
+  fullName: LobsterFramework.Utility.ManagedSet<T>.Advance()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/ManagedSet.cs
+    id: Advance
+    path: ../Assets/Scripts/Utility/ManagedSet.cs
+    startLine: 45
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public void Advance()
+    content.vb: Public Sub Advance()
+  overload: LobsterFramework.Utility.ManagedSet`1.Advance*
+  nameWithType.vb: ManagedSet(Of T).Advance()
+  fullName.vb: LobsterFramework.Utility.ManagedSet(Of T).Advance()
+- uid: LobsterFramework.Utility.ManagedSet`1.StepBack
+  commentId: M:LobsterFramework.Utility.ManagedSet`1.StepBack
+  id: StepBack
+  parent: LobsterFramework.Utility.ManagedSet`1
+  langs:
+  - csharp
+  - vb
+  name: StepBack()
+  nameWithType: ManagedSet<T>.StepBack()
+  fullName: LobsterFramework.Utility.ManagedSet<T>.StepBack()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/ManagedSet.cs
+    id: StepBack
+    path: ../Assets/Scripts/Utility/ManagedSet.cs
+    startLine: 54
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public void StepBack()
+    content.vb: Public Sub StepBack()
+  overload: LobsterFramework.Utility.ManagedSet`1.StepBack*
+  nameWithType.vb: ManagedSet(Of T).StepBack()
+  fullName.vb: LobsterFramework.Utility.ManagedSet(Of T).StepBack()
+- uid: LobsterFramework.Utility.ManagedSet`1.Add(`0)
+  commentId: M:LobsterFramework.Utility.ManagedSet`1.Add(`0)
+  id: Add(`0)
+  parent: LobsterFramework.Utility.ManagedSet`1
+  langs:
+  - csharp
+  - vb
+  name: Add(T)
+  nameWithType: ManagedSet<T>.Add(T)
+  fullName: LobsterFramework.Utility.ManagedSet<T>.Add(T)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/ManagedSet.cs
+    id: Add
+    path: ../Assets/Scripts/Utility/ManagedSet.cs
+    startLine: 63
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public bool Add(T i)
+    parameters:
+    - id: i
+      type: '{T}'
+    return:
+      type: System.Boolean
+    content.vb: Public Function Add(i As T) As Boolean
+  overload: LobsterFramework.Utility.ManagedSet`1.Add*
+  nameWithType.vb: ManagedSet(Of T).Add(T)
+  fullName.vb: LobsterFramework.Utility.ManagedSet(Of T).Add(T)
+- uid: LobsterFramework.Utility.ManagedSet`1.Remove(`0)
+  commentId: M:LobsterFramework.Utility.ManagedSet`1.Remove(`0)
+  id: Remove(`0)
+  parent: LobsterFramework.Utility.ManagedSet`1
+  langs:
+  - csharp
+  - vb
+  name: Remove(T)
+  nameWithType: ManagedSet<T>.Remove(T)
+  fullName: LobsterFramework.Utility.ManagedSet<T>.Remove(T)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/ManagedSet.cs
+    id: Remove
+    path: ../Assets/Scripts/Utility/ManagedSet.cs
+    startLine: 68
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public bool Remove(T i)
+    parameters:
+    - id: i
+      type: '{T}'
+    return:
+      type: System.Boolean
+    content.vb: Public Function Remove(i As T) As Boolean
+  overload: LobsterFramework.Utility.ManagedSet`1.Remove*
+  nameWithType.vb: ManagedSet(Of T).Remove(T)
+  fullName.vb: LobsterFramework.Utility.ManagedSet(Of T).Remove(T)
+references:
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Utility.ManagedSet`1.CurrentItem*
+  commentId: Overload:LobsterFramework.Utility.ManagedSet`1.CurrentItem
+  name: CurrentItem
+  nameWithType: ManagedSet<T>.CurrentItem
+  fullName: LobsterFramework.Utility.ManagedSet<T>.CurrentItem
+  nameWithType.vb: ManagedSet(Of T).CurrentItem
+  fullName.vb: LobsterFramework.Utility.ManagedSet(Of T).CurrentItem
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: LobsterFramework.Utility.ManagedSet`1.Advance*
+  commentId: Overload:LobsterFramework.Utility.ManagedSet`1.Advance
+  name: Advance
+  nameWithType: ManagedSet<T>.Advance
+  fullName: LobsterFramework.Utility.ManagedSet<T>.Advance
+  nameWithType.vb: ManagedSet(Of T).Advance
+  fullName.vb: LobsterFramework.Utility.ManagedSet(Of T).Advance
+- uid: LobsterFramework.Utility.ManagedSet`1.StepBack*
+  commentId: Overload:LobsterFramework.Utility.ManagedSet`1.StepBack
+  name: StepBack
+  nameWithType: ManagedSet<T>.StepBack
+  fullName: LobsterFramework.Utility.ManagedSet<T>.StepBack
+  nameWithType.vb: ManagedSet(Of T).StepBack
+  fullName.vb: LobsterFramework.Utility.ManagedSet(Of T).StepBack
+- uid: LobsterFramework.Utility.ManagedSet`1.Add*
+  commentId: Overload:LobsterFramework.Utility.ManagedSet`1.Add
+  name: Add
+  nameWithType: ManagedSet<T>.Add
+  fullName: LobsterFramework.Utility.ManagedSet<T>.Add
+  nameWithType.vb: ManagedSet(Of T).Add
+  fullName.vb: LobsterFramework.Utility.ManagedSet(Of T).Add
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: LobsterFramework.Utility.ManagedSet`1.Remove*
+  commentId: Overload:LobsterFramework.Utility.ManagedSet`1.Remove
+  name: Remove
+  nameWithType: ManagedSet<T>.Remove
+  fullName: LobsterFramework.Utility.ManagedSet<T>.Remove
+  nameWithType.vb: ManagedSet(Of T).Remove
+  fullName.vb: LobsterFramework.Utility.ManagedSet(Of T).Remove

@@ -1,0 +1,58 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.IConsumable
+  commentId: T:Global.IConsumable
+  id: IConsumable
+  parent: Global
+  children:
+  - Global.IConsumable.Consume
+  langs:
+  - csharp
+  - vb
+  name: IConsumable
+  nameWithType: IConsumable
+  fullName: IConsumable
+  type: Interface
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Items/IConsumable.cs
+    id: IConsumable
+    path: ../Assets/Scripts/Scriptable Objects/Items/IConsumable.cs
+    startLine: 4
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public interface IConsumable
+    content.vb: Public Interface IConsumable
+- uid: Global.IConsumable.Consume
+  commentId: M:Global.IConsumable.Consume
+  id: Consume
+  parent: Global.IConsumable
+  langs:
+  - csharp
+  - vb
+  name: Consume()
+  nameWithType: IConsumable.Consume()
+  fullName: IConsumable.Consume()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Items/IConsumable.cs
+    id: Consume
+    path: ../Assets/Scripts/Scriptable Objects/Items/IConsumable.cs
+    startLine: 6
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: void Consume()
+    content.vb: Sub Consume()
+  overload: Global.IConsumable.Consume*
+references:
+- uid: Global
+- uid: Global.IConsumable.Consume*
+  commentId: Overload:Global.IConsumable.Consume
+  name: Consume
+  nameWithType: IConsumable.Consume
+  fullName: IConsumable.Consume

@@ -3,33 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using LobsterFramework.EntitySystem;
+using LobsterFramework.Action;
 
-public class PlayerUIDisplayer : MonoBehaviour
+namespace LobsterFramework.UI
 {
-    public Entity player;
-    public Slider healthSlider;
-    public Slider manaSlider;
-    public Actionable actionComponent;
-    private Mana manaComponent;
-
-    
-
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerUIDisplayer : MonoBehaviour
     {
-        manaComponent = actionComponent.GetActionComponent<Mana>();
+        public Entity player;
+        public Slider healthSlider;
+        public Slider manaSlider;
+        public Actionable actionComponent;
+        private Mana manaComponent;
+
+
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            manaComponent = actionComponent.GetActionComponent<Mana>();
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            healthSlider.minValue = 0;
+            healthSlider.maxValue = player.MaxHealth;
+            healthSlider.value = player.Health;
+
+            manaSlider.maxValue = manaComponent.MaxMana;
+            manaSlider.value = manaComponent.AvailableMana;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        healthSlider.minValue = 0;
-        healthSlider.maxValue = player.MaxHealth;
-        healthSlider.value = player.Health;
-
-        manaSlider.maxValue = manaComponent.MaxMana;
-        manaSlider.value = manaComponent.AvailableMana;
-    }
-
-    
 }

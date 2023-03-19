@@ -1,45 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7185803128180698531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: (Clone)
-  m_EditorClassIdentifier: MyScripts::CircleAttack/CircleAttackConfig
-  accessKey: -1
-  actionData:
-    value:
-      priority:
-        value: 0
-        useSharedValue: 0
-        sharedValue: {fileID: 0}
-      cooldown:
-        value: 0
-        useSharedValue: 0
-        sharedValue: {fileID: 0}
-    useSharedValue: 1
-    sharedValue: {fileID: 11400000, guid: ec376e71d41aeb44f826579f9252a68d, type: 2}
-  isSuspended: 0
-  targetGroups:
-  - {fileID: 11400000, guid: bedff8bc66ebeab45996c2806021c2ae, type: 2}
-  - {fileID: 11400000, guid: 88417c86a09bbd4438fce976a5cb5306, type: 2}
-  ignoreGroups:
-  - {fileID: 11400000, guid: 4f8f16cf72b4f07469b075ddf31d9ebe, type: 2}
-  sprite: {fileID: 21300000, guid: c83c81f28d484764c8b68c7040328cf6, type: 3}
-  spritePoolTag: {fileID: 11400000, guid: 3b82cb7d859145e4480133a3375eab4d, type: 2}
-  spriteDuration:
-    value: 1
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  effects:
-  - {fileID: 11400000, guid: e1fbe381944d16247a5c0d10d1dfc417, type: 2}
---- !u!114 &-5408239075102621832
+--- !u!114 &-3800885443729046400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -49,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23cafed77cafc444eb80658fa3b67136, type: 3}
-  m_Name: (Clone)
+  m_Name: 
   m_EditorClassIdentifier: 
   maxMana:
     value: 0
@@ -75,17 +36,41 @@ MonoBehaviour:
   identifier: 0
   components:
     keys:
-    - CombatComponent
-    - Mana
+    - LobsterFramework.Action.Mana
+    - LobsterFramework.Action.CombatComponent
     values:
-    - {fileID: 5831836961876617276}
-    - {fileID: -5408239075102621832}
+    - {fileID: -3800885443729046400}
+    - {fileID: 3608172330517130861}
   allActions:
     keys:
-    - CircleAttack
+    - LobsterFramework.Action.CircleAttack
     values:
-    - {fileID: 8599369762552625432}
---- !u!114 &5831836961876617276
+    - {fileID: 1035139906108170067}
+--- !u!114 &1035139906108170067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eec34eea6c62446b70df6baef69aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionComponent: {fileID: 0}
+  actionPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: b193983ee42c6494da4e9b812145dab9, type: 2}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: 4374385129037578492}
+--- !u!114 &3608172330517130861
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,7 +80,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3bd372fd1dd2cc45ab5bd7aaf742408, type: 3}
-  m_Name: (Clone)
+  m_Name: 
   m_EditorClassIdentifier: 
   attackDamage:
     value: 0
@@ -109,7 +94,7 @@ MonoBehaviour:
     value: 0
     useSharedValue: 1
     sharedValue: {fileID: 11400000, guid: d88c5ed475ddd6341b02b248ad26c7fd, type: 2}
---- !u!114 &8599369762552625432
+--- !u!114 &4374385129037578492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,12 +103,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79eec34eea6c62446b70df6baef69aa2, type: 3}
-  m_Name: (Clone)
-  m_EditorClassIdentifier: 
-  actionComponent: {fileID: 0}
-  configs:
-    keys:
-    - default
-    values:
-    - {fileID: -7185803128180698531}
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: MyScripts:LobsterFramework.Action:CircleAttack/CircleAttackConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 1
+  cooldown: 0.5
+  isSuspended: 0
+  sprite: {fileID: 21300000, guid: c83c81f28d484764c8b68c7040328cf6, type: 3}
+  spritePoolTag: {fileID: 11400000, guid: 3b82cb7d859145e4480133a3375eab4d, type: 2}
+  spriteDuration:
+    value: 0.4
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  targetSetting: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
+  effects: []

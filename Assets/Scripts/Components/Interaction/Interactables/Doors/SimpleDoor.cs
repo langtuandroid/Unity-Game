@@ -3,79 +3,84 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D), typeof(SpriteRenderer))]
-[Interaction(interactable: typeof(SimpleDoor), interactors: typeof(GeneralInteractor))]
-public class SimpleDoor : InteractableObject
+namespace LobsterFramework.Interaction
 {
-    [SerializeField] private RefBool isClosed;
-    [SerializeField] private Sprite closeSprite;
-    [SerializeField] private Sprite openSprite;
 
-    private bool closed;
-    private Collider2D cld;
-    private SpriteRenderer spriteRenderer;
-
-    private readonly InteractionPrompt ClosedInfo = new() { Primary = "Open" };
-
-    private readonly InteractionPrompt OpenedInfo = new() { Primary = "Close" };
-
-    private readonly string responseOpen = "Door Opened";
-    private readonly string responseClose = "Door Closed";
-
-    public bool IsClosed
+    [RequireComponent(typeof(Collider2D), typeof(SpriteRenderer))]
+    [Interaction(interactable: typeof(SimpleDoor), interactors: typeof(GeneralInteractor))]
+    public class SimpleDoor : InteractableObject
     {
-        get { return closed; }
-        private set
+        [SerializeField] private RefBool isClosed;
+        [SerializeField] private Sprite closeSprite;
+        [SerializeField] private Sprite openSprite;
+
+        private bool closed;
+        private Collider2D cld;
+        private SpriteRenderer spriteRenderer;
+
+        private readonly InteractionPrompt ClosedInfo = new() { Primary = "Open" };
+
+        private readonly InteractionPrompt OpenedInfo = new() { Primary = "Close" };
+
+        private readonly string responseOpen = "Door Opened";
+        private readonly string responseClose = "Door Closed";
+
+        public bool IsClosed
         {
-            closed = value;
-            cld.enabled = value;
-            if (closed)
+            get { return closed; }
+            private set
             {
-                spriteRenderer.sprite = closeSprite;
-            }
-            else
-            {
-                spriteRenderer.sprite = openSprite;
-            }
-        }
-    }
-
-    new void Start()
-    {
-        base.Start(); // Do not delete this line
-        cld = GetComponent<Collider2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        IsClosed = isClosed.Value;
-    }
-
-    public override void OnInteract(Interactor interactor, InteractionType interactType)
-    {
-        if (interactType == InteractionType.Primary)
-        {
-            if (closed)
-            {
-                IsClosed = false;
-                if (interactionChannel != null) {
-                    interactionChannel.RaiseEvent(responseOpen);
-                }
-            }
-            else
-            {
-                IsClosed = true;
-                if (interactionChannel != null)
+                closed = value;
+                cld.enabled = value;
+                if (closed)
                 {
-                    interactionChannel.RaiseEvent(responseClose);
+                    spriteRenderer.sprite = closeSprite;
+                }
+                else
+                {
+                    spriteRenderer.sprite = openSprite;
                 }
             }
         }
-    }
 
-    public override InteractionPrompt GetInteractionOptions(Type t)
-    {
-        if (closed)
+        new void Start()
         {
-            return ClosedInfo;
+            base.Start(); // Do not delete this line
+            cld = GetComponent<Collider2D>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            IsClosed = isClosed.Value;
         }
-        return OpenedInfo;
+
+        public override void OnInteract(Interactor interactor, InteractionType interactType)
+        {
+            if (interactType == InteractionType.Primary)
+            {
+                if (closed)
+                {
+                    IsClosed = false;
+                    if (interactionChannel != null)
+                    {
+                        interactionChannel.RaiseEvent(responseOpen);
+                    }
+                }
+                else
+                {
+                    IsClosed = true;
+                    if (interactionChannel != null)
+                    {
+                        interactionChannel.RaiseEvent(responseClose);
+                    }
+                }
+            }
+        }
+
+        public override InteractionPrompt GetInteractionOptions(Type t)
+        {
+            if (closed)
+            {
+                return ClosedInfo;
+            }
+            return OpenedInfo;
+        }
     }
 }

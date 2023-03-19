@@ -1,0 +1,224 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Interaction.InteractionPrompt
+  commentId: T:LobsterFramework.Interaction.InteractionPrompt
+  id: InteractionPrompt
+  parent: LobsterFramework.Interaction
+  children:
+  - LobsterFramework.Interaction.InteractionPrompt.none
+  - LobsterFramework.Interaction.InteractionPrompt.Primary
+  - LobsterFramework.Interaction.InteractionPrompt.Quaternary
+  - LobsterFramework.Interaction.InteractionPrompt.Secondary
+  - LobsterFramework.Interaction.InteractionPrompt.Tertiary
+  langs:
+  - csharp
+  - vb
+  name: InteractionPrompt
+  nameWithType: InteractionPrompt
+  fullName: LobsterFramework.Interaction.InteractionPrompt
+  type: Struct
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractableObject.cs
+    id: InteractionPrompt
+    path: ../Assets/Scripts/Components/Interaction/InteractableObject.cs
+    startLine: 15
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public struct InteractionPrompt
+    content.vb: Public Structure InteractionPrompt
+- uid: LobsterFramework.Interaction.InteractionPrompt.none
+  commentId: F:LobsterFramework.Interaction.InteractionPrompt.none
+  id: none
+  parent: LobsterFramework.Interaction.InteractionPrompt
+  langs:
+  - csharp
+  - vb
+  name: none
+  nameWithType: InteractionPrompt.none
+  fullName: LobsterFramework.Interaction.InteractionPrompt.none
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractableObject.cs
+    id: none
+    path: ../Assets/Scripts/Components/Interaction/InteractableObject.cs
+    startLine: 17
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public static InteractionPrompt none
+    return:
+      type: LobsterFramework.Interaction.InteractionPrompt
+    content.vb: Public Shared none As InteractionPrompt
+- uid: LobsterFramework.Interaction.InteractionPrompt.Primary
+  commentId: P:LobsterFramework.Interaction.InteractionPrompt.Primary
+  id: Primary
+  parent: LobsterFramework.Interaction.InteractionPrompt
+  langs:
+  - csharp
+  - vb
+  name: Primary
+  nameWithType: InteractionPrompt.Primary
+  fullName: LobsterFramework.Interaction.InteractionPrompt.Primary
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractableObject.cs
+    id: Primary
+    path: ../Assets/Scripts/Components/Interaction/InteractableObject.cs
+    startLine: 19
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public string Primary { readonly get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Primary As String
+  overload: LobsterFramework.Interaction.InteractionPrompt.Primary*
+- uid: LobsterFramework.Interaction.InteractionPrompt.Secondary
+  commentId: P:LobsterFramework.Interaction.InteractionPrompt.Secondary
+  id: Secondary
+  parent: LobsterFramework.Interaction.InteractionPrompt
+  langs:
+  - csharp
+  - vb
+  name: Secondary
+  nameWithType: InteractionPrompt.Secondary
+  fullName: LobsterFramework.Interaction.InteractionPrompt.Secondary
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractableObject.cs
+    id: Secondary
+    path: ../Assets/Scripts/Components/Interaction/InteractableObject.cs
+    startLine: 20
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public string Secondary { readonly get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Secondary As String
+  overload: LobsterFramework.Interaction.InteractionPrompt.Secondary*
+- uid: LobsterFramework.Interaction.InteractionPrompt.Tertiary
+  commentId: P:LobsterFramework.Interaction.InteractionPrompt.Tertiary
+  id: Tertiary
+  parent: LobsterFramework.Interaction.InteractionPrompt
+  langs:
+  - csharp
+  - vb
+  name: Tertiary
+  nameWithType: InteractionPrompt.Tertiary
+  fullName: LobsterFramework.Interaction.InteractionPrompt.Tertiary
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractableObject.cs
+    id: Tertiary
+    path: ../Assets/Scripts/Components/Interaction/InteractableObject.cs
+    startLine: 21
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public string Tertiary { readonly get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Tertiary As String
+  overload: LobsterFramework.Interaction.InteractionPrompt.Tertiary*
+- uid: LobsterFramework.Interaction.InteractionPrompt.Quaternary
+  commentId: P:LobsterFramework.Interaction.InteractionPrompt.Quaternary
+  id: Quaternary
+  parent: LobsterFramework.Interaction.InteractionPrompt
+  langs:
+  - csharp
+  - vb
+  name: Quaternary
+  nameWithType: InteractionPrompt.Quaternary
+  fullName: LobsterFramework.Interaction.InteractionPrompt.Quaternary
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractableObject.cs
+    id: Quaternary
+    path: ../Assets/Scripts/Components/Interaction/InteractableObject.cs
+    startLine: 22
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public string Quaternary { readonly get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Quaternary As String
+  overload: LobsterFramework.Interaction.InteractionPrompt.Quaternary*
+references:
+- uid: LobsterFramework.Interaction
+  commentId: N:LobsterFramework.Interaction
+  name: LobsterFramework.Interaction
+  nameWithType: LobsterFramework.Interaction
+  fullName: LobsterFramework.Interaction
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Interaction
+    name: Interaction
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Interaction
+    name: Interaction
+- uid: LobsterFramework.Interaction.InteractionPrompt
+  commentId: T:LobsterFramework.Interaction.InteractionPrompt
+  parent: LobsterFramework.Interaction
+  name: InteractionPrompt
+  nameWithType: InteractionPrompt
+  fullName: LobsterFramework.Interaction.InteractionPrompt
+- uid: LobsterFramework.Interaction.InteractionPrompt.Primary*
+  commentId: Overload:LobsterFramework.Interaction.InteractionPrompt.Primary
+  name: Primary
+  nameWithType: InteractionPrompt.Primary
+  fullName: LobsterFramework.Interaction.InteractionPrompt.Primary
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Interaction.InteractionPrompt.Secondary*
+  commentId: Overload:LobsterFramework.Interaction.InteractionPrompt.Secondary
+  name: Secondary
+  nameWithType: InteractionPrompt.Secondary
+  fullName: LobsterFramework.Interaction.InteractionPrompt.Secondary
+- uid: LobsterFramework.Interaction.InteractionPrompt.Tertiary*
+  commentId: Overload:LobsterFramework.Interaction.InteractionPrompt.Tertiary
+  name: Tertiary
+  nameWithType: InteractionPrompt.Tertiary
+  fullName: LobsterFramework.Interaction.InteractionPrompt.Tertiary
+- uid: LobsterFramework.Interaction.InteractionPrompt.Quaternary*
+  commentId: Overload:LobsterFramework.Interaction.InteractionPrompt.Quaternary
+  name: Quaternary
+  nameWithType: InteractionPrompt.Quaternary
+  fullName: LobsterFramework.Interaction.InteractionPrompt.Quaternary

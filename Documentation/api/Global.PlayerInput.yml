@@ -1,0 +1,1110 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.PlayerInput
+  commentId: T:Global.PlayerInput
+  id: PlayerInput
+  parent: Global
+  children:
+  - Global.PlayerInput.#ctor
+  - Global.PlayerInput.asset
+  - Global.PlayerInput.bindingMask
+  - Global.PlayerInput.bindings
+  - Global.PlayerInput.Contains(UnityEngine.InputSystem.InputAction)
+  - Global.PlayerInput.controlSchemes
+  - Global.PlayerInput.devices
+  - Global.PlayerInput.Disable
+  - Global.PlayerInput.Dispose
+  - Global.PlayerInput.Enable
+  - Global.PlayerInput.FindAction(System.String,System.Boolean)
+  - Global.PlayerInput.FindBinding(UnityEngine.InputSystem.InputBinding,UnityEngine.InputSystem.InputAction@)
+  - Global.PlayerInput.GetEnumerator
+  - Global.PlayerInput.Player
+  langs:
+  - csharp
+  - vb
+  name: PlayerInput
+  nameWithType: PlayerInput
+  fullName: PlayerInput
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: PlayerInput
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 17
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: 'public class PlayerInput : IInputActionCollection2, IInputActionCollection'
+    content.vb: Public Class PlayerInput Implements IInputActionCollection2, IInputActionCollection
+  inheritance:
+  - System.Object
+  implements:
+  - UnityEngine.InputSystem.IInputActionCollection2
+  - UnityEngine.InputSystem.IInputActionCollection
+- uid: Global.PlayerInput.asset
+  commentId: P:Global.PlayerInput.asset
+  id: asset
+  parent: Global.PlayerInput
+  langs:
+  - csharp
+  - vb
+  name: asset
+  nameWithType: PlayerInput.asset
+  fullName: PlayerInput.asset
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: asset
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 19
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public InputActionAsset asset { get; }
+    parameters: []
+    return:
+      type: UnityEngine.InputSystem.InputActionAsset
+    content.vb: Public ReadOnly Property asset As InputActionAsset
+  overload: Global.PlayerInput.asset*
+- uid: Global.PlayerInput.#ctor
+  commentId: M:Global.PlayerInput.#ctor
+  id: '#ctor'
+  parent: Global.PlayerInput
+  langs:
+  - csharp
+  - vb
+  name: PlayerInput()
+  nameWithType: PlayerInput.PlayerInput()
+  fullName: PlayerInput.PlayerInput()
+  type: Constructor
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: .ctor
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 20
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public PlayerInput()
+    content.vb: Public Sub New()
+  overload: Global.PlayerInput.#ctor*
+  nameWithType.vb: PlayerInput.New()
+  fullName.vb: PlayerInput.New()
+  name.vb: New()
+- uid: Global.PlayerInput.Dispose
+  commentId: M:Global.PlayerInput.Dispose
+  id: Dispose
+  parent: Global.PlayerInput
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: PlayerInput.Dispose()
+  fullName: PlayerInput.Dispose()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: Dispose
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 315
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: Global.PlayerInput.Dispose*
+- uid: Global.PlayerInput.bindingMask
+  commentId: P:Global.PlayerInput.bindingMask
+  id: bindingMask
+  parent: Global.PlayerInput
+  langs:
+  - csharp
+  - vb
+  name: bindingMask
+  nameWithType: PlayerInput.bindingMask
+  fullName: PlayerInput.bindingMask
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: bindingMask
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 320
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public InputBinding? bindingMask { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{UnityEngine.InputSystem.InputBinding}
+    content.vb: Public Property bindingMask As InputBinding?
+  overload: Global.PlayerInput.bindingMask*
+  implements:
+  - UnityEngine.InputSystem.IInputActionCollection.bindingMask
+- uid: Global.PlayerInput.devices
+  commentId: P:Global.PlayerInput.devices
+  id: devices
+  parent: Global.PlayerInput
+  langs:
+  - csharp
+  - vb
+  name: devices
+  nameWithType: PlayerInput.devices
+  fullName: PlayerInput.devices
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: devices
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 326
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public ReadOnlyArray<InputDevice>? devices { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{UnityEngine.InputSystem.Utilities.ReadOnlyArray{UnityEngine.InputSystem.InputDevice}}
+    content.vb: Public Property devices As ReadOnlyArray(Of InputDevice)?
+  overload: Global.PlayerInput.devices*
+  implements:
+  - UnityEngine.InputSystem.IInputActionCollection.devices
+- uid: Global.PlayerInput.controlSchemes
+  commentId: P:Global.PlayerInput.controlSchemes
+  id: controlSchemes
+  parent: Global.PlayerInput
+  langs:
+  - csharp
+  - vb
+  name: controlSchemes
+  nameWithType: PlayerInput.controlSchemes
+  fullName: PlayerInput.controlSchemes
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: controlSchemes
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 332
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public ReadOnlyArray<InputControlScheme> controlSchemes { get; }
+    parameters: []
+    return:
+      type: UnityEngine.InputSystem.Utilities.ReadOnlyArray{UnityEngine.InputSystem.InputControlScheme}
+    content.vb: Public ReadOnly Property controlSchemes As ReadOnlyArray(Of InputControlScheme)
+  overload: Global.PlayerInput.controlSchemes*
+  implements:
+  - UnityEngine.InputSystem.IInputActionCollection.controlSchemes
+- uid: Global.PlayerInput.Contains(UnityEngine.InputSystem.InputAction)
+  commentId: M:Global.PlayerInput.Contains(UnityEngine.InputSystem.InputAction)
+  id: Contains(UnityEngine.InputSystem.InputAction)
+  parent: Global.PlayerInput
+  langs:
+  - csharp
+  - vb
+  name: Contains(InputAction)
+  nameWithType: PlayerInput.Contains(InputAction)
+  fullName: PlayerInput.Contains(UnityEngine.InputSystem.InputAction)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: Contains
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 334
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public bool Contains(InputAction action)
+    parameters:
+    - id: action
+      type: UnityEngine.InputSystem.InputAction
+    return:
+      type: System.Boolean
+    content.vb: Public Function Contains(action As InputAction) As Boolean
+  overload: Global.PlayerInput.Contains*
+  implements:
+  - UnityEngine.InputSystem.IInputActionCollection.Contains(UnityEngine.InputSystem.InputAction)
+- uid: Global.PlayerInput.GetEnumerator
+  commentId: M:Global.PlayerInput.GetEnumerator
+  id: GetEnumerator
+  parent: Global.PlayerInput
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: PlayerInput.GetEnumerator()
+  fullName: PlayerInput.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: GetEnumerator
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 339
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public IEnumerator<InputAction> GetEnumerator()
+    return:
+      type: System.Collections.Generic.IEnumerator{UnityEngine.InputSystem.InputAction}
+    content.vb: Public Function GetEnumerator() As IEnumerator(Of InputAction)
+  overload: Global.PlayerInput.GetEnumerator*
+- uid: Global.PlayerInput.Enable
+  commentId: M:Global.PlayerInput.Enable
+  id: Enable
+  parent: Global.PlayerInput
+  langs:
+  - csharp
+  - vb
+  name: Enable()
+  nameWithType: PlayerInput.Enable()
+  fullName: PlayerInput.Enable()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: Enable
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 349
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public void Enable()
+    content.vb: Public Sub Enable()
+  overload: Global.PlayerInput.Enable*
+  implements:
+  - UnityEngine.InputSystem.IInputActionCollection.Enable
+- uid: Global.PlayerInput.Disable
+  commentId: M:Global.PlayerInput.Disable
+  id: Disable
+  parent: Global.PlayerInput
+  langs:
+  - csharp
+  - vb
+  name: Disable()
+  nameWithType: PlayerInput.Disable()
+  fullName: PlayerInput.Disable()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: Disable
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 354
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public void Disable()
+    content.vb: Public Sub Disable()
+  overload: Global.PlayerInput.Disable*
+  implements:
+  - UnityEngine.InputSystem.IInputActionCollection.Disable
+- uid: Global.PlayerInput.bindings
+  commentId: P:Global.PlayerInput.bindings
+  id: bindings
+  parent: Global.PlayerInput
+  langs:
+  - csharp
+  - vb
+  name: bindings
+  nameWithType: PlayerInput.bindings
+  fullName: PlayerInput.bindings
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: bindings
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 359
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public IEnumerable<InputBinding> bindings { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{UnityEngine.InputSystem.InputBinding}
+    content.vb: Public ReadOnly Property bindings As IEnumerable(Of InputBinding)
+  overload: Global.PlayerInput.bindings*
+  implements:
+  - UnityEngine.InputSystem.IInputActionCollection2.bindings
+- uid: Global.PlayerInput.FindAction(System.String,System.Boolean)
+  commentId: M:Global.PlayerInput.FindAction(System.String,System.Boolean)
+  id: FindAction(System.String,System.Boolean)
+  parent: Global.PlayerInput
+  langs:
+  - csharp
+  - vb
+  name: FindAction(string, bool)
+  nameWithType: PlayerInput.FindAction(string, bool)
+  fullName: PlayerInput.FindAction(string, bool)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: FindAction
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 361
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public InputAction FindAction(string actionNameOrId, bool throwIfNotFound = false)
+    parameters:
+    - id: actionNameOrId
+      type: System.String
+    - id: throwIfNotFound
+      type: System.Boolean
+    return:
+      type: UnityEngine.InputSystem.InputAction
+    content.vb: Public Function FindAction(actionNameOrId As String, throwIfNotFound As Boolean = False) As InputAction
+  overload: Global.PlayerInput.FindAction*
+  implements:
+  - UnityEngine.InputSystem.IInputActionCollection2.FindAction(System.String,System.Boolean)
+  nameWithType.vb: PlayerInput.FindAction(String, Boolean)
+  fullName.vb: PlayerInput.FindAction(String, Boolean)
+  name.vb: FindAction(String, Boolean)
+- uid: Global.PlayerInput.FindBinding(UnityEngine.InputSystem.InputBinding,UnityEngine.InputSystem.InputAction@)
+  commentId: M:Global.PlayerInput.FindBinding(UnityEngine.InputSystem.InputBinding,UnityEngine.InputSystem.InputAction@)
+  id: FindBinding(UnityEngine.InputSystem.InputBinding,UnityEngine.InputSystem.InputAction@)
+  parent: Global.PlayerInput
+  langs:
+  - csharp
+  - vb
+  name: FindBinding(InputBinding, out InputAction)
+  nameWithType: PlayerInput.FindBinding(InputBinding, out InputAction)
+  fullName: PlayerInput.FindBinding(UnityEngine.InputSystem.InputBinding, out UnityEngine.InputSystem.InputAction)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: FindBinding
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 366
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public int FindBinding(InputBinding bindingMask, out InputAction action)
+    parameters:
+    - id: bindingMask
+      type: UnityEngine.InputSystem.InputBinding
+    - id: action
+      type: UnityEngine.InputSystem.InputAction
+    return:
+      type: System.Int32
+    content.vb: Public Function FindBinding(bindingMask As InputBinding, action As InputAction) As Integer
+  overload: Global.PlayerInput.FindBinding*
+  implements:
+  - UnityEngine.InputSystem.IInputActionCollection2.FindBinding(UnityEngine.InputSystem.InputBinding,UnityEngine.InputSystem.InputAction@)
+  nameWithType.vb: PlayerInput.FindBinding(InputBinding, InputAction)
+  fullName.vb: PlayerInput.FindBinding(UnityEngine.InputSystem.InputBinding, UnityEngine.InputSystem.InputAction)
+  name.vb: FindBinding(InputBinding, InputAction)
+- uid: Global.PlayerInput.Player
+  commentId: P:Global.PlayerInput.Player
+  id: Player
+  parent: Global.PlayerInput
+  langs:
+  - csharp
+  - vb
+  name: Player
+  nameWithType: PlayerInput.Player
+  fullName: PlayerInput.Player
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: Player
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 495
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public PlayerInput.PlayerActions Player { get; }
+    parameters: []
+    return:
+      type: Global.PlayerInput.PlayerActions
+    content.vb: Public ReadOnly Property Player As PlayerInput.PlayerActions
+  overload: Global.PlayerInput.Player*
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEngine.InputSystem.IInputActionCollection2
+  commentId: T:UnityEngine.InputSystem.IInputActionCollection2
+  parent: UnityEngine.InputSystem
+  isExternal: true
+  name: IInputActionCollection2
+  nameWithType: IInputActionCollection2
+  fullName: UnityEngine.InputSystem.IInputActionCollection2
+- uid: UnityEngine.InputSystem.IInputActionCollection
+  commentId: T:UnityEngine.InputSystem.IInputActionCollection
+  parent: UnityEngine.InputSystem
+  isExternal: true
+  name: IInputActionCollection
+  nameWithType: IInputActionCollection
+  fullName: UnityEngine.InputSystem.IInputActionCollection
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine.InputSystem
+  commentId: N:UnityEngine.InputSystem
+  isExternal: true
+  name: UnityEngine.InputSystem
+  nameWithType: UnityEngine.InputSystem
+  fullName: UnityEngine.InputSystem
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.InputSystem
+    name: InputSystem
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.InputSystem
+    name: InputSystem
+    isExternal: true
+- uid: Global.PlayerInput.asset*
+  commentId: Overload:Global.PlayerInput.asset
+  name: asset
+  nameWithType: PlayerInput.asset
+  fullName: PlayerInput.asset
+- uid: UnityEngine.InputSystem.InputActionAsset
+  commentId: T:UnityEngine.InputSystem.InputActionAsset
+  parent: UnityEngine.InputSystem
+  isExternal: true
+  name: InputActionAsset
+  nameWithType: InputActionAsset
+  fullName: UnityEngine.InputSystem.InputActionAsset
+- uid: Global.PlayerInput.#ctor*
+  commentId: Overload:Global.PlayerInput.#ctor
+  name: PlayerInput
+  nameWithType: PlayerInput.PlayerInput
+  fullName: PlayerInput.PlayerInput
+  nameWithType.vb: PlayerInput.New
+  fullName.vb: PlayerInput.New
+  name.vb: New
+- uid: Global.PlayerInput.Dispose*
+  commentId: Overload:Global.PlayerInput.Dispose
+  name: Dispose
+  nameWithType: PlayerInput.Dispose
+  fullName: PlayerInput.Dispose
+- uid: Global.PlayerInput.bindingMask*
+  commentId: Overload:Global.PlayerInput.bindingMask
+  name: bindingMask
+  nameWithType: PlayerInput.bindingMask
+  fullName: PlayerInput.bindingMask
+- uid: UnityEngine.InputSystem.IInputActionCollection.bindingMask
+  commentId: P:UnityEngine.InputSystem.IInputActionCollection.bindingMask
+  parent: UnityEngine.InputSystem.IInputActionCollection
+  isExternal: true
+  name: bindingMask
+  nameWithType: IInputActionCollection.bindingMask
+  fullName: UnityEngine.InputSystem.IInputActionCollection.bindingMask
+- uid: System.Nullable{UnityEngine.InputSystem.InputBinding}
+  commentId: T:System.Nullable{UnityEngine.InputSystem.InputBinding}
+  parent: System
+  definition: System.Nullable`1
+  name: InputBinding?
+  nameWithType: InputBinding?
+  fullName: UnityEngine.InputSystem.InputBinding?
+  spec.csharp:
+  - uid: UnityEngine.InputSystem.InputBinding
+    name: InputBinding
+    isExternal: true
+  - name: '?'
+  spec.vb:
+  - uid: UnityEngine.InputSystem.InputBinding
+    name: InputBinding
+    isExternal: true
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Global.PlayerInput.devices*
+  commentId: Overload:Global.PlayerInput.devices
+  name: devices
+  nameWithType: PlayerInput.devices
+  fullName: PlayerInput.devices
+- uid: UnityEngine.InputSystem.IInputActionCollection.devices
+  commentId: P:UnityEngine.InputSystem.IInputActionCollection.devices
+  parent: UnityEngine.InputSystem.IInputActionCollection
+  isExternal: true
+  name: devices
+  nameWithType: IInputActionCollection.devices
+  fullName: UnityEngine.InputSystem.IInputActionCollection.devices
+- uid: System.Nullable{UnityEngine.InputSystem.Utilities.ReadOnlyArray{UnityEngine.InputSystem.InputDevice}}
+  commentId: T:System.Nullable{UnityEngine.InputSystem.Utilities.ReadOnlyArray{UnityEngine.InputSystem.InputDevice}}
+  parent: System
+  definition: System.Nullable`1
+  name: ReadOnlyArray<InputDevice>?
+  nameWithType: ReadOnlyArray<InputDevice>?
+  fullName: UnityEngine.InputSystem.Utilities.ReadOnlyArray<UnityEngine.InputSystem.InputDevice>?
+  nameWithType.vb: ReadOnlyArray(Of InputDevice)?
+  fullName.vb: UnityEngine.InputSystem.Utilities.ReadOnlyArray(Of UnityEngine.InputSystem.InputDevice)?
+  name.vb: ReadOnlyArray(Of InputDevice)?
+  spec.csharp:
+  - uid: UnityEngine.InputSystem.Utilities.ReadOnlyArray`1
+    name: ReadOnlyArray
+    isExternal: true
+  - name: <
+  - uid: UnityEngine.InputSystem.InputDevice
+    name: InputDevice
+    isExternal: true
+  - name: '>'
+  - name: '?'
+  spec.vb:
+  - uid: UnityEngine.InputSystem.Utilities.ReadOnlyArray`1
+    name: ReadOnlyArray
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UnityEngine.InputSystem.InputDevice
+    name: InputDevice
+    isExternal: true
+  - name: )
+  - name: '?'
+- uid: Global.PlayerInput.controlSchemes*
+  commentId: Overload:Global.PlayerInput.controlSchemes
+  name: controlSchemes
+  nameWithType: PlayerInput.controlSchemes
+  fullName: PlayerInput.controlSchemes
+- uid: UnityEngine.InputSystem.IInputActionCollection.controlSchemes
+  commentId: P:UnityEngine.InputSystem.IInputActionCollection.controlSchemes
+  parent: UnityEngine.InputSystem.IInputActionCollection
+  isExternal: true
+  name: controlSchemes
+  nameWithType: IInputActionCollection.controlSchemes
+  fullName: UnityEngine.InputSystem.IInputActionCollection.controlSchemes
+- uid: UnityEngine.InputSystem.Utilities.ReadOnlyArray{UnityEngine.InputSystem.InputControlScheme}
+  commentId: T:UnityEngine.InputSystem.Utilities.ReadOnlyArray{UnityEngine.InputSystem.InputControlScheme}
+  parent: UnityEngine.InputSystem.Utilities
+  definition: UnityEngine.InputSystem.Utilities.ReadOnlyArray`1
+  name: ReadOnlyArray<InputControlScheme>
+  nameWithType: ReadOnlyArray<InputControlScheme>
+  fullName: UnityEngine.InputSystem.Utilities.ReadOnlyArray<UnityEngine.InputSystem.InputControlScheme>
+  nameWithType.vb: ReadOnlyArray(Of InputControlScheme)
+  fullName.vb: UnityEngine.InputSystem.Utilities.ReadOnlyArray(Of UnityEngine.InputSystem.InputControlScheme)
+  name.vb: ReadOnlyArray(Of InputControlScheme)
+  spec.csharp:
+  - uid: UnityEngine.InputSystem.Utilities.ReadOnlyArray`1
+    name: ReadOnlyArray
+    isExternal: true
+  - name: <
+  - uid: UnityEngine.InputSystem.InputControlScheme
+    name: InputControlScheme
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: UnityEngine.InputSystem.Utilities.ReadOnlyArray`1
+    name: ReadOnlyArray
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UnityEngine.InputSystem.InputControlScheme
+    name: InputControlScheme
+    isExternal: true
+  - name: )
+- uid: UnityEngine.InputSystem.Utilities.ReadOnlyArray`1
+  commentId: T:UnityEngine.InputSystem.Utilities.ReadOnlyArray`1
+  isExternal: true
+  name: ReadOnlyArray<TValue>
+  nameWithType: ReadOnlyArray<TValue>
+  fullName: UnityEngine.InputSystem.Utilities.ReadOnlyArray<TValue>
+  nameWithType.vb: ReadOnlyArray(Of TValue)
+  fullName.vb: UnityEngine.InputSystem.Utilities.ReadOnlyArray(Of TValue)
+  name.vb: ReadOnlyArray(Of TValue)
+  spec.csharp:
+  - uid: UnityEngine.InputSystem.Utilities.ReadOnlyArray`1
+    name: ReadOnlyArray
+    isExternal: true
+  - name: <
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: UnityEngine.InputSystem.Utilities.ReadOnlyArray`1
+    name: ReadOnlyArray
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: UnityEngine.InputSystem.Utilities
+  commentId: N:UnityEngine.InputSystem.Utilities
+  isExternal: true
+  name: UnityEngine.InputSystem.Utilities
+  nameWithType: UnityEngine.InputSystem.Utilities
+  fullName: UnityEngine.InputSystem.Utilities
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.InputSystem
+    name: InputSystem
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.InputSystem.Utilities
+    name: Utilities
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.InputSystem
+    name: InputSystem
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.InputSystem.Utilities
+    name: Utilities
+    isExternal: true
+- uid: Global.PlayerInput.Contains*
+  commentId: Overload:Global.PlayerInput.Contains
+  name: Contains
+  nameWithType: PlayerInput.Contains
+  fullName: PlayerInput.Contains
+- uid: UnityEngine.InputSystem.IInputActionCollection.Contains(UnityEngine.InputSystem.InputAction)
+  commentId: M:UnityEngine.InputSystem.IInputActionCollection.Contains(UnityEngine.InputSystem.InputAction)
+  parent: UnityEngine.InputSystem.IInputActionCollection
+  isExternal: true
+  name: Contains(InputAction)
+  nameWithType: IInputActionCollection.Contains(InputAction)
+  fullName: UnityEngine.InputSystem.IInputActionCollection.Contains(UnityEngine.InputSystem.InputAction)
+  spec.csharp:
+  - uid: UnityEngine.InputSystem.IInputActionCollection.Contains(UnityEngine.InputSystem.InputAction)
+    name: Contains
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.InputSystem.InputAction
+    name: InputAction
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.InputSystem.IInputActionCollection.Contains(UnityEngine.InputSystem.InputAction)
+    name: Contains
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.InputSystem.InputAction
+    name: InputAction
+    isExternal: true
+  - name: )
+- uid: UnityEngine.InputSystem.InputAction
+  commentId: T:UnityEngine.InputSystem.InputAction
+  parent: UnityEngine.InputSystem
+  isExternal: true
+  name: InputAction
+  nameWithType: InputAction
+  fullName: UnityEngine.InputSystem.InputAction
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Global.PlayerInput.GetEnumerator*
+  commentId: Overload:Global.PlayerInput.GetEnumerator
+  name: GetEnumerator
+  nameWithType: PlayerInput.GetEnumerator
+  fullName: PlayerInput.GetEnumerator
+- uid: System.Collections.Generic.IEnumerator{UnityEngine.InputSystem.InputAction}
+  commentId: T:System.Collections.Generic.IEnumerator{UnityEngine.InputSystem.InputAction}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  name: IEnumerator<InputAction>
+  nameWithType: IEnumerator<InputAction>
+  fullName: System.Collections.Generic.IEnumerator<UnityEngine.InputSystem.InputAction>
+  nameWithType.vb: IEnumerator(Of InputAction)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of UnityEngine.InputSystem.InputAction)
+  name.vb: IEnumerator(Of InputAction)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+  - name: <
+  - uid: UnityEngine.InputSystem.InputAction
+    name: InputAction
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UnityEngine.InputSystem.InputAction
+    name: InputAction
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+- uid: Global.PlayerInput.Enable*
+  commentId: Overload:Global.PlayerInput.Enable
+  name: Enable
+  nameWithType: PlayerInput.Enable
+  fullName: PlayerInput.Enable
+- uid: UnityEngine.InputSystem.IInputActionCollection.Enable
+  commentId: M:UnityEngine.InputSystem.IInputActionCollection.Enable
+  parent: UnityEngine.InputSystem.IInputActionCollection
+  isExternal: true
+  name: Enable()
+  nameWithType: IInputActionCollection.Enable()
+  fullName: UnityEngine.InputSystem.IInputActionCollection.Enable()
+  spec.csharp:
+  - uid: UnityEngine.InputSystem.IInputActionCollection.Enable
+    name: Enable
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.InputSystem.IInputActionCollection.Enable
+    name: Enable
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Global.PlayerInput.Disable*
+  commentId: Overload:Global.PlayerInput.Disable
+  name: Disable
+  nameWithType: PlayerInput.Disable
+  fullName: PlayerInput.Disable
+- uid: UnityEngine.InputSystem.IInputActionCollection.Disable
+  commentId: M:UnityEngine.InputSystem.IInputActionCollection.Disable
+  parent: UnityEngine.InputSystem.IInputActionCollection
+  isExternal: true
+  name: Disable()
+  nameWithType: IInputActionCollection.Disable()
+  fullName: UnityEngine.InputSystem.IInputActionCollection.Disable()
+  spec.csharp:
+  - uid: UnityEngine.InputSystem.IInputActionCollection.Disable
+    name: Disable
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.InputSystem.IInputActionCollection.Disable
+    name: Disable
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Global.PlayerInput.bindings*
+  commentId: Overload:Global.PlayerInput.bindings
+  name: bindings
+  nameWithType: PlayerInput.bindings
+  fullName: PlayerInput.bindings
+- uid: UnityEngine.InputSystem.IInputActionCollection2.bindings
+  commentId: P:UnityEngine.InputSystem.IInputActionCollection2.bindings
+  parent: UnityEngine.InputSystem.IInputActionCollection2
+  isExternal: true
+  name: bindings
+  nameWithType: IInputActionCollection2.bindings
+  fullName: UnityEngine.InputSystem.IInputActionCollection2.bindings
+- uid: System.Collections.Generic.IEnumerable{UnityEngine.InputSystem.InputBinding}
+  commentId: T:System.Collections.Generic.IEnumerable{UnityEngine.InputSystem.InputBinding}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<InputBinding>
+  nameWithType: IEnumerable<InputBinding>
+  fullName: System.Collections.Generic.IEnumerable<UnityEngine.InputSystem.InputBinding>
+  nameWithType.vb: IEnumerable(Of InputBinding)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of UnityEngine.InputSystem.InputBinding)
+  name.vb: IEnumerable(Of InputBinding)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - uid: UnityEngine.InputSystem.InputBinding
+    name: InputBinding
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UnityEngine.InputSystem.InputBinding
+    name: InputBinding
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Global.PlayerInput.FindAction*
+  commentId: Overload:Global.PlayerInput.FindAction
+  name: FindAction
+  nameWithType: PlayerInput.FindAction
+  fullName: PlayerInput.FindAction
+- uid: UnityEngine.InputSystem.IInputActionCollection2.FindAction(System.String,System.Boolean)
+  commentId: M:UnityEngine.InputSystem.IInputActionCollection2.FindAction(System.String,System.Boolean)
+  parent: UnityEngine.InputSystem.IInputActionCollection2
+  isExternal: true
+  name: FindAction(string, bool)
+  nameWithType: IInputActionCollection2.FindAction(string, bool)
+  fullName: UnityEngine.InputSystem.IInputActionCollection2.FindAction(string, bool)
+  nameWithType.vb: IInputActionCollection2.FindAction(String, Boolean)
+  fullName.vb: UnityEngine.InputSystem.IInputActionCollection2.FindAction(String, Boolean)
+  name.vb: FindAction(String, Boolean)
+  spec.csharp:
+  - uid: UnityEngine.InputSystem.IInputActionCollection2.FindAction(System.String,System.Boolean)
+    name: FindAction
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.InputSystem.IInputActionCollection2.FindAction(System.String,System.Boolean)
+    name: FindAction
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Global.PlayerInput.FindBinding*
+  commentId: Overload:Global.PlayerInput.FindBinding
+  name: FindBinding
+  nameWithType: PlayerInput.FindBinding
+  fullName: PlayerInput.FindBinding
+- uid: UnityEngine.InputSystem.IInputActionCollection2.FindBinding(UnityEngine.InputSystem.InputBinding,UnityEngine.InputSystem.InputAction@)
+  commentId: M:UnityEngine.InputSystem.IInputActionCollection2.FindBinding(UnityEngine.InputSystem.InputBinding,UnityEngine.InputSystem.InputAction@)
+  parent: UnityEngine.InputSystem.IInputActionCollection2
+  isExternal: true
+  name: FindBinding(InputBinding, out InputAction)
+  nameWithType: IInputActionCollection2.FindBinding(InputBinding, out InputAction)
+  fullName: UnityEngine.InputSystem.IInputActionCollection2.FindBinding(UnityEngine.InputSystem.InputBinding, out UnityEngine.InputSystem.InputAction)
+  nameWithType.vb: IInputActionCollection2.FindBinding(InputBinding, InputAction)
+  fullName.vb: UnityEngine.InputSystem.IInputActionCollection2.FindBinding(UnityEngine.InputSystem.InputBinding, UnityEngine.InputSystem.InputAction)
+  name.vb: FindBinding(InputBinding, InputAction)
+  spec.csharp:
+  - uid: UnityEngine.InputSystem.IInputActionCollection2.FindBinding(UnityEngine.InputSystem.InputBinding,UnityEngine.InputSystem.InputAction@)
+    name: FindBinding
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.InputSystem.InputBinding
+    name: InputBinding
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: UnityEngine.InputSystem.InputAction
+    name: InputAction
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.InputSystem.IInputActionCollection2.FindBinding(UnityEngine.InputSystem.InputBinding,UnityEngine.InputSystem.InputAction@)
+    name: FindBinding
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.InputSystem.InputBinding
+    name: InputBinding
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.InputSystem.InputAction
+    name: InputAction
+    isExternal: true
+  - name: )
+- uid: UnityEngine.InputSystem.InputBinding
+  commentId: T:UnityEngine.InputSystem.InputBinding
+  parent: UnityEngine.InputSystem
+  isExternal: true
+  name: InputBinding
+  nameWithType: InputBinding
+  fullName: UnityEngine.InputSystem.InputBinding
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Global.PlayerInput.Player*
+  commentId: Overload:Global.PlayerInput.Player
+  name: Player
+  nameWithType: PlayerInput.Player
+  fullName: PlayerInput.Player
+- uid: Global.PlayerInput.PlayerActions
+  commentId: T:Global.PlayerInput.PlayerActions
+  name: PlayerInput.PlayerActions
+  nameWithType: PlayerInput.PlayerActions
+  fullName: PlayerInput.PlayerActions
+  spec.csharp:
+  - uid: Global.PlayerInput
+    name: PlayerInput
+  - name: .
+  - uid: Global.PlayerInput.PlayerActions
+    name: PlayerActions
+  spec.vb:
+  - uid: Global.PlayerInput
+    name: PlayerInput
+  - name: .
+  - uid: Global.PlayerInput.PlayerActions
+    name: PlayerActions

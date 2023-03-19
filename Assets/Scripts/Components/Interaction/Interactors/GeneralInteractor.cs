@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GeneralInteractor : Interactor
+namespace LobsterFramework.Interaction
 {
-    
+    public class GeneralInteractor : Interactor
+    {
+
+    }
 }

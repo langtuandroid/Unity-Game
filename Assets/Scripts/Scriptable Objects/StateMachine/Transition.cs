@@ -2,25 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public struct Transition
+namespace LobsterFramework.AI
 {
-    [SerializeField] private State targetState;
-    [SerializeField] private List<Condition> transitionConditions;
-
-    public State Eval()
+    [System.Serializable]
+    public struct Transition
     {
-        foreach (Condition condition in transitionConditions)
-        {
-            if (condition.Eval())
-            {
-                return targetState;
-            }
-        }
-        return null;
-    }
+        [SerializeField] private State targetState;
+        [SerializeField] private List<Condition> transitionConditions;
 
-    public State TargetState {
-        get { return targetState; }
-    } 
+        public State Eval()
+        {
+            foreach (Condition condition in transitionConditions)
+            {
+                if (condition.Eval())
+                {
+                    return targetState;
+                }
+            }
+            return null;
+        }
+
+        public State TargetState
+        {
+            get { return targetState; }
+        }
+    }
 }

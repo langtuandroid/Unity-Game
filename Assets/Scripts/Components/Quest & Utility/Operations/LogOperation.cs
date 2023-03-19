@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LogOperation : Operation
+namespace LobsterFramework.QuestSystem
 {
-    [SerializeField] private string str;
-    public override void Begin()
+    public class LogOperation : Operation
     {
-        Debug.Log(str);
+        [SerializeField] private string str;
+        public override void Begin()
+        {
+            Debug.Log(str);
+        }
     }
 }

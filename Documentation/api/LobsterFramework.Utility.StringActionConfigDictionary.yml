@@ -1,0 +1,1060 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility.StringActionConfigDictionary
+  commentId: T:LobsterFramework.Utility.StringActionConfigDictionary
+  id: StringActionConfigDictionary
+  parent: LobsterFramework.Utility
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: StringActionConfigDictionary
+  nameWithType: StringActionConfigDictionary
+  fullName: LobsterFramework.Utility.StringActionConfigDictionary
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    id: StringActionConfigDictionary
+    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    startLine: 109
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class StringActionConfigDictionary : SerializableDictionary<string, ActionInstance.ActionConfig>, ISerializationCallbackReceiver
+    content.vb: >-
+      <Serializable>
+
+      Public Class StringActionConfigDictionary Inherits SerializableDictionary(Of String, ActionInstance.ActionConfig) Implements ISerializationCallbackReceiver
+  inheritance:
+  - System.Object
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  implements:
+  - UnityEngine.ISerializationCallbackReceiver
+  inheritedMembers:
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.keys
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.values
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.dictionary
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Item(System.String)
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Keys
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Values
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Count
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.IsReadOnly
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Add(System.String,LobsterFramework.Action.ActionInstance.ActionConfig)
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig})
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Clear
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig})
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.ContainsKey(System.String)
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}[],System.Int32)
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.GetEnumerator
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.OnAfterDeserialize
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.OnBeforeSerialize
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Remove(System.String)
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig})
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.TryGetValue(System.String,LobsterFramework.Action.ActionInstance.ActionConfig@)
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+references:
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  commentId: T:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  parent: LobsterFramework.Utility
+  definition: LobsterFramework.Utility.SerializableDictionary`2
+  name: SerializableDictionary<string, ActionInstance.ActionConfig>
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig)
+  name.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2
+    name: SerializableDictionary
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: .
+  - uid: LobsterFramework.Action.ActionInstance.ActionConfig
+    name: ActionConfig
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2
+    name: SerializableDictionary
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance
+    name: ActionInstance
+  - name: .
+  - uid: LobsterFramework.Action.ActionInstance.ActionConfig
+    name: ActionConfig
+  - name: )
+- uid: UnityEngine.ISerializationCallbackReceiver
+  commentId: T:UnityEngine.ISerializationCallbackReceiver
+  parent: UnityEngine
+  isExternal: true
+  name: ISerializationCallbackReceiver
+  nameWithType: ISerializationCallbackReceiver
+  fullName: UnityEngine.ISerializationCallbackReceiver
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.keys
+  commentId: F:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.keys
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.keys
+  name: keys
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.keys
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.keys
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).keys
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).keys
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.values
+  commentId: F:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.values
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.values
+  name: values
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.values
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.values
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).values
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).values
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.dictionary
+  commentId: F:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.dictionary
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.dictionary
+  name: dictionary
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.dictionary
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.dictionary
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).dictionary
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).dictionary
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Item(System.String)
+  commentId: P:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Item(System.String)
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Item(`0)
+  name: this[string]
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.this[string]
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.this[string]
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).this[](String)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).this[](String)
+  name.vb: this[](String)
+  spec.csharp:
+  - name: this
+  - name: '['
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ']'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Item(System.String)
+    name: this[]
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Keys
+  commentId: P:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Keys
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Keys
+  name: Keys
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.Keys
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.Keys
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).Keys
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).Keys
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Values
+  commentId: P:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Values
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Values
+  name: Values
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.Values
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.Values
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).Values
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).Values
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Count
+  commentId: P:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Count
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Count
+  name: Count
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.Count
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.Count
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).Count
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).Count
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.IsReadOnly
+  commentId: P:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.IsReadOnly
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.IsReadOnly
+  name: IsReadOnly
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.IsReadOnly
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.IsReadOnly
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).IsReadOnly
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).IsReadOnly
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Add(System.String,LobsterFramework.Action.ActionInstance.ActionConfig)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Add(System.String,LobsterFramework.Action.ActionInstance.ActionConfig)
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
+  name: Add(string, ActionConfig)
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.Add(string, ActionInstance.ActionConfig)
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.Add(string, LobsterFramework.Action.ActionInstance.ActionConfig)
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).Add(String, ActionInstance.ActionConfig)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).Add(String, LobsterFramework.Action.ActionInstance.ActionConfig)
+  name.vb: Add(String, ActionConfig)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Add(System.String,LobsterFramework.Action.ActionInstance.ActionConfig)
+    name: Add
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance.ActionConfig
+    name: ActionConfig
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Add(System.String,LobsterFramework.Action.ActionInstance.ActionConfig)
+    name: Add
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance.ActionConfig
+    name: ActionConfig
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig})
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig})
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
+  name: Add(KeyValuePair<string, ActionConfig>)
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.Add(KeyValuePair<string, ActionInstance.ActionConfig>)
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.Add(System.Collections.Generic.KeyValuePair<string, LobsterFramework.Action.ActionInstance.ActionConfig>)
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).Add(KeyValuePair(Of String, ActionInstance.ActionConfig))
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).Add(System.Collections.Generic.KeyValuePair(Of String, LobsterFramework.Action.ActionInstance.ActionConfig))
+  name.vb: Add(KeyValuePair(Of String, ActionConfig))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig})
+    name: Add
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance.ActionConfig
+    name: ActionConfig
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig})
+    name: Add
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance.ActionConfig
+    name: ActionConfig
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Clear
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Clear
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Clear
+  name: Clear()
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.Clear()
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.Clear()
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).Clear()
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).Clear()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Clear
+    name: Clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Clear
+    name: Clear
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig})
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig})
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+  name: Contains(KeyValuePair<string, ActionConfig>)
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.Contains(KeyValuePair<string, ActionInstance.ActionConfig>)
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.Contains(System.Collections.Generic.KeyValuePair<string, LobsterFramework.Action.ActionInstance.ActionConfig>)
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).Contains(KeyValuePair(Of String, ActionInstance.ActionConfig))
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).Contains(System.Collections.Generic.KeyValuePair(Of String, LobsterFramework.Action.ActionInstance.ActionConfig))
+  name.vb: Contains(KeyValuePair(Of String, ActionConfig))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig})
+    name: Contains
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance.ActionConfig
+    name: ActionConfig
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig})
+    name: Contains
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance.ActionConfig
+    name: ActionConfig
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.ContainsKey(System.String)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.ContainsKey(System.String)
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
+  name: ContainsKey(string)
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.ContainsKey(string)
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.ContainsKey(string)
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).ContainsKey(String)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).ContainsKey(String)
+  name.vb: ContainsKey(String)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.ContainsKey(System.String)
+    name: ContainsKey
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.ContainsKey(System.String)
+    name: ContainsKey
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}[],System.Int32)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}[],System.Int32)
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+  name: CopyTo(KeyValuePair<string, ActionConfig>[], int)
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.CopyTo(KeyValuePair<string, ActionInstance.ActionConfig>[], int)
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.CopyTo(System.Collections.Generic.KeyValuePair<string, LobsterFramework.Action.ActionInstance.ActionConfig>[], int)
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).CopyTo(KeyValuePair(Of String, ActionInstance.ActionConfig)(), Integer)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).CopyTo(System.Collections.Generic.KeyValuePair(Of String, LobsterFramework.Action.ActionInstance.ActionConfig)(), Integer)
+  name.vb: CopyTo(KeyValuePair(Of String, ActionConfig)(), Integer)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}[],System.Int32)
+    name: CopyTo
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance.ActionConfig
+    name: ActionConfig
+  - name: '>'
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}[],System.Int32)
+    name: CopyTo
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance.ActionConfig
+    name: ActionConfig
+  - name: )
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.GetEnumerator
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.GetEnumerator
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.GetEnumerator()
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.GetEnumerator()
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).GetEnumerator()
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).GetEnumerator()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.GetEnumerator
+    name: GetEnumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.GetEnumerator
+    name: GetEnumerator
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.OnAfterDeserialize
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.OnAfterDeserialize
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
+  name: OnAfterDeserialize()
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.OnAfterDeserialize()
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.OnAfterDeserialize()
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).OnAfterDeserialize()
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).OnAfterDeserialize()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.OnAfterDeserialize
+    name: OnAfterDeserialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.OnAfterDeserialize
+    name: OnAfterDeserialize
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.OnBeforeSerialize
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.OnBeforeSerialize
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
+  name: OnBeforeSerialize()
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.OnBeforeSerialize()
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.OnBeforeSerialize()
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).OnBeforeSerialize()
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).OnBeforeSerialize()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.OnBeforeSerialize
+    name: OnBeforeSerialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.OnBeforeSerialize
+    name: OnBeforeSerialize
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Remove(System.String)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Remove(System.String)
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
+  name: Remove(string)
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.Remove(string)
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.Remove(string)
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).Remove(String)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).Remove(String)
+  name.vb: Remove(String)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Remove(System.String)
+    name: Remove
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Remove(System.String)
+    name: Remove
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig})
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig})
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+  name: Remove(KeyValuePair<string, ActionConfig>)
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.Remove(KeyValuePair<string, ActionInstance.ActionConfig>)
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.Remove(System.Collections.Generic.KeyValuePair<string, LobsterFramework.Action.ActionInstance.ActionConfig>)
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).Remove(KeyValuePair(Of String, ActionInstance.ActionConfig))
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).Remove(System.Collections.Generic.KeyValuePair(Of String, LobsterFramework.Action.ActionInstance.ActionConfig))
+  name.vb: Remove(KeyValuePair(Of String, ActionConfig))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig})
+    name: Remove
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance.ActionConfig
+    name: ActionConfig
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.Action.ActionInstance.ActionConfig})
+    name: Remove
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance.ActionConfig
+    name: ActionConfig
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.TryGetValue(System.String,LobsterFramework.Action.ActionInstance.ActionConfig@)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.TryGetValue(System.String,LobsterFramework.Action.ActionInstance.ActionConfig@)
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
+  name: TryGetValue(string, out ActionConfig)
+  nameWithType: SerializableDictionary<string, ActionInstance.ActionConfig>.TryGetValue(string, out ActionInstance.ActionConfig)
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.Action.ActionInstance.ActionConfig>.TryGetValue(string, out LobsterFramework.Action.ActionInstance.ActionConfig)
+  nameWithType.vb: SerializableDictionary(Of String, ActionInstance.ActionConfig).TryGetValue(String, ActionInstance.ActionConfig)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.Action.ActionInstance.ActionConfig).TryGetValue(String, LobsterFramework.Action.ActionInstance.ActionConfig)
+  name.vb: TryGetValue(String, ActionConfig)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.TryGetValue(System.String,LobsterFramework.Action.ActionInstance.ActionConfig@)
+    name: TryGetValue
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance.ActionConfig
+    name: ActionConfig
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.Action.ActionInstance.ActionConfig}.TryGetValue(System.String,LobsterFramework.Action.ActionInstance.ActionConfig@)
+    name: TryGetValue
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.Action.ActionInstance.ActionConfig
+    name: ActionConfig
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Utility.SerializableDictionary`2
+  commentId: T:LobsterFramework.Utility.SerializableDictionary`2
+  name: SerializableDictionary<TKey, TValue>
+  nameWithType: SerializableDictionary<TKey, TValue>
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue)
+  name.vb: SerializableDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2
+    name: SerializableDictionary
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2
+    name: SerializableDictionary
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: LobsterFramework.Utility.SerializableDictionary`2.keys
+  commentId: F:LobsterFramework.Utility.SerializableDictionary`2.keys
+  name: keys
+  nameWithType: SerializableDictionary<TKey, TValue>.keys
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.keys
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).keys
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).keys
+- uid: LobsterFramework.Utility.SerializableDictionary`2.values
+  commentId: F:LobsterFramework.Utility.SerializableDictionary`2.values
+  name: values
+  nameWithType: SerializableDictionary<TKey, TValue>.values
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.values
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).values
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).values
+- uid: LobsterFramework.Utility.SerializableDictionary`2.dictionary
+  commentId: F:LobsterFramework.Utility.SerializableDictionary`2.dictionary
+  name: dictionary
+  nameWithType: SerializableDictionary<TKey, TValue>.dictionary
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.dictionary
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).dictionary
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).dictionary
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Item(`0)
+  commentId: P:LobsterFramework.Utility.SerializableDictionary`2.Item(`0)
+  name: this[TKey]
+  nameWithType: SerializableDictionary<TKey, TValue>.this[TKey]
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.this[TKey]
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).this[](TKey)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).this[](TKey)
+  name.vb: this[](TKey)
+  spec.csharp:
+  - name: this
+  - name: '['
+  - name: TKey
+  - name: ']'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Item(`0)
+    name: this[]
+  - name: (
+  - name: TKey
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Keys
+  commentId: P:LobsterFramework.Utility.SerializableDictionary`2.Keys
+  name: Keys
+  nameWithType: SerializableDictionary<TKey, TValue>.Keys
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Keys
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).Keys
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Keys
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Values
+  commentId: P:LobsterFramework.Utility.SerializableDictionary`2.Values
+  name: Values
+  nameWithType: SerializableDictionary<TKey, TValue>.Values
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Values
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).Values
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Values
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Count
+  commentId: P:LobsterFramework.Utility.SerializableDictionary`2.Count
+  name: Count
+  nameWithType: SerializableDictionary<TKey, TValue>.Count
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Count
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).Count
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Count
+- uid: LobsterFramework.Utility.SerializableDictionary`2.IsReadOnly
+  commentId: P:LobsterFramework.Utility.SerializableDictionary`2.IsReadOnly
+  name: IsReadOnly
+  nameWithType: SerializableDictionary<TKey, TValue>.IsReadOnly
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.IsReadOnly
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).IsReadOnly
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).IsReadOnly
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
+  name: Add(TKey, TValue)
+  nameWithType: SerializableDictionary<TKey, TValue>.Add(TKey, TValue)
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Add(TKey, TValue)
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).Add(TKey, TValue)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Add(TKey, TValue)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
+    name: Add
+  - name: (
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
+    name: Add
+  - name: (
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
+  isExternal: true
+  name: Add(KeyValuePair<TKey, TValue>)
+  nameWithType: SerializableDictionary<TKey, TValue>.Add(KeyValuePair<TKey, TValue>)
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Add(System.Collections.Generic.KeyValuePair<TKey, TValue>)
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).Add(KeyValuePair(Of TKey, TValue))
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Add(System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: Add(KeyValuePair(Of TKey, TValue))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
+    name: Add
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
+    name: Add
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Clear
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.Clear
+  name: Clear()
+  nameWithType: SerializableDictionary<TKey, TValue>.Clear()
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Clear()
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).Clear()
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Clear()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Clear
+    name: Clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Clear
+    name: Clear
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+  isExternal: true
+  name: Contains(KeyValuePair<TKey, TValue>)
+  nameWithType: SerializableDictionary<TKey, TValue>.Contains(KeyValuePair<TKey, TValue>)
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Contains(System.Collections.Generic.KeyValuePair<TKey, TValue>)
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).Contains(KeyValuePair(Of TKey, TValue))
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Contains(System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: Contains(KeyValuePair(Of TKey, TValue))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+    name: Contains
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+    name: Contains
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
+  name: ContainsKey(TKey)
+  nameWithType: SerializableDictionary<TKey, TValue>.ContainsKey(TKey)
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.ContainsKey(TKey)
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).ContainsKey(TKey)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).ContainsKey(TKey)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
+    name: ContainsKey
+  - name: (
+  - name: TKey
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
+    name: ContainsKey
+  - name: (
+  - name: TKey
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+  isExternal: true
+  name: CopyTo(KeyValuePair<TKey, TValue>[], int)
+  nameWithType: SerializableDictionary<TKey, TValue>.CopyTo(KeyValuePair<TKey, TValue>[], int)
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.CopyTo(System.Collections.Generic.KeyValuePair<TKey, TValue>[], int)
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).CopyTo(KeyValuePair(Of TKey, TValue)(), Integer)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).CopyTo(System.Collections.Generic.KeyValuePair(Of TKey, TValue)(), Integer)
+  name.vb: CopyTo(KeyValuePair(Of TKey, TValue)(), Integer)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+    name: CopyTo
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+    name: CopyTo
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: SerializableDictionary<TKey, TValue>.GetEnumerator()
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.GetEnumerator()
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).GetEnumerator()
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).GetEnumerator()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
+    name: GetEnumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
+    name: GetEnumerator
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
+  name: OnAfterDeserialize()
+  nameWithType: SerializableDictionary<TKey, TValue>.OnAfterDeserialize()
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.OnAfterDeserialize()
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).OnAfterDeserialize()
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).OnAfterDeserialize()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
+    name: OnAfterDeserialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
+    name: OnAfterDeserialize
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
+  name: OnBeforeSerialize()
+  nameWithType: SerializableDictionary<TKey, TValue>.OnBeforeSerialize()
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.OnBeforeSerialize()
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).OnBeforeSerialize()
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).OnBeforeSerialize()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
+    name: OnBeforeSerialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
+    name: OnBeforeSerialize
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
+  name: Remove(TKey)
+  nameWithType: SerializableDictionary<TKey, TValue>.Remove(TKey)
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Remove(TKey)
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).Remove(TKey)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Remove(TKey)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
+    name: Remove
+  - name: (
+  - name: TKey
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
+    name: Remove
+  - name: (
+  - name: TKey
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+  isExternal: true
+  name: Remove(KeyValuePair<TKey, TValue>)
+  nameWithType: SerializableDictionary<TKey, TValue>.Remove(KeyValuePair<TKey, TValue>)
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Remove(System.Collections.Generic.KeyValuePair<TKey, TValue>)
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).Remove(KeyValuePair(Of TKey, TValue))
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Remove(System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: Remove(KeyValuePair(Of TKey, TValue))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+    name: Remove
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+    name: Remove
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
+  name: TryGetValue(TKey, out TValue)
+  nameWithType: SerializableDictionary<TKey, TValue>.TryGetValue(TKey, out TValue)
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.TryGetValue(TKey, out TValue)
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).TryGetValue(TKey, TValue)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).TryGetValue(TKey, TValue)
+  name.vb: TryGetValue(TKey, TValue)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
+    name: TryGetValue
+  - name: (
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - name: TValue
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
+    name: TryGetValue
+  - name: (
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )

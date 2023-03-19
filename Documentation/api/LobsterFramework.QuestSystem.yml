@@ -1,0 +1,76 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.QuestSystem
+  commentId: N:LobsterFramework.QuestSystem
+  id: LobsterFramework.QuestSystem
+  children:
+  - LobsterFramework.QuestSystem.CollisionTrigger
+  - LobsterFramework.QuestSystem.CoroutineOperation
+  - LobsterFramework.QuestSystem.HealthCheckCondition
+  - LobsterFramework.QuestSystem.HealthLogOperation
+  - LobsterFramework.QuestSystem.LogOperation
+  - LobsterFramework.QuestSystem.Operation
+  - LobsterFramework.QuestSystem.Quest
+  langs:
+  - csharp
+  - vb
+  name: LobsterFramework.QuestSystem
+  nameWithType: LobsterFramework.QuestSystem
+  fullName: LobsterFramework.QuestSystem
+  type: Namespace
+  assemblies:
+  - MyScripts
+references:
+- uid: LobsterFramework.QuestSystem.HealthCheckCondition
+  commentId: T:LobsterFramework.QuestSystem.HealthCheckCondition
+  name: HealthCheckCondition
+  nameWithType: HealthCheckCondition
+  fullName: LobsterFramework.QuestSystem.HealthCheckCondition
+- uid: LobsterFramework.QuestSystem.Quest
+  commentId: T:LobsterFramework.QuestSystem.Quest
+  name: Quest
+  nameWithType: Quest
+  fullName: LobsterFramework.QuestSystem.Quest
+- uid: LobsterFramework.QuestSystem.LogOperation
+  commentId: T:LobsterFramework.QuestSystem.LogOperation
+  name: LogOperation
+  nameWithType: LogOperation
+  fullName: LobsterFramework.QuestSystem.LogOperation
+- uid: LobsterFramework.QuestSystem.CollisionTrigger
+  commentId: T:LobsterFramework.QuestSystem.CollisionTrigger
+  name: CollisionTrigger
+  nameWithType: CollisionTrigger
+  fullName: LobsterFramework.QuestSystem.CollisionTrigger
+- uid: LobsterFramework.QuestSystem.CoroutineOperation
+  commentId: T:LobsterFramework.QuestSystem.CoroutineOperation
+  name: CoroutineOperation
+  nameWithType: CoroutineOperation
+  fullName: LobsterFramework.QuestSystem.CoroutineOperation
+- uid: LobsterFramework.QuestSystem.HealthLogOperation
+  commentId: T:LobsterFramework.QuestSystem.HealthLogOperation
+  name: HealthLogOperation
+  nameWithType: HealthLogOperation
+  fullName: LobsterFramework.QuestSystem.HealthLogOperation
+- uid: LobsterFramework.QuestSystem.Operation
+  commentId: T:LobsterFramework.QuestSystem.Operation
+  parent: LobsterFramework.QuestSystem
+  name: Operation
+  nameWithType: Operation
+  fullName: LobsterFramework.QuestSystem.Operation
+- uid: LobsterFramework.QuestSystem
+  commentId: N:LobsterFramework.QuestSystem
+  name: LobsterFramework.QuestSystem
+  nameWithType: LobsterFramework.QuestSystem
+  fullName: LobsterFramework.QuestSystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.QuestSystem
+    name: QuestSystem
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.QuestSystem
+    name: QuestSystem

@@ -1,0 +1,135 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.RefBool
+  commentId: T:Global.RefBool
+  id: RefBool
+  parent: Global
+  children:
+  - Global.RefBool.#ctor(System.Boolean,System.Boolean,VarBool)
+  - Global.RefBool.Value
+  langs:
+  - csharp
+  - vb
+  name: RefBool
+  nameWithType: RefBool
+  fullName: RefBool
+  type: Struct
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefBool.cs
+    id: RefBool
+    path: ../Assets/Scripts/Scriptable Objects/Variables/RefBool.cs
+    startLine: 4
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: >-
+      [Serializable]
+
+      public struct RefBool
+    content.vb: >-
+      <Serializable>
+
+      Public Structure RefBool
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: Global.RefBool.#ctor(System.Boolean,System.Boolean,VarBool)
+  commentId: M:Global.RefBool.#ctor(System.Boolean,System.Boolean,VarBool)
+  id: '#ctor(System.Boolean,System.Boolean,VarBool)'
+  parent: Global.RefBool
+  langs:
+  - csharp
+  - vb
+  name: RefBool(bool, bool, VarBool)
+  nameWithType: RefBool.RefBool(bool, bool, VarBool)
+  fullName: RefBool.RefBool(bool, bool, VarBool)
+  type: Constructor
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefBool.cs
+    id: .ctor
+    path: ../Assets/Scripts/Scriptable Objects/Variables/RefBool.cs
+    startLine: 10
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public RefBool(bool value = false, bool useSharedValue = false, VarBool sharedValue = null)
+    parameters:
+    - id: value
+      type: System.Boolean
+    - id: useSharedValue
+      type: System.Boolean
+    - id: sharedValue
+      type: Global.VarBool
+    content.vb: Public Sub New(value As Boolean = False, useSharedValue As Boolean = False, sharedValue As VarBool = Nothing)
+  overload: Global.RefBool.#ctor*
+  nameWithType.vb: RefBool.New(Boolean, Boolean, VarBool)
+  fullName.vb: RefBool.New(Boolean, Boolean, VarBool)
+  name.vb: New(Boolean, Boolean, VarBool)
+- uid: Global.RefBool.Value
+  commentId: P:Global.RefBool.Value
+  id: Value
+  parent: Global.RefBool
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: RefBool.Value
+  fullName: RefBool.Value
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefBool.cs
+    id: Value
+    path: ../Assets/Scripts/Scriptable Objects/Variables/RefBool.cs
+    startLine: 17
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public bool Value { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Value As Boolean
+  overload: Global.RefBool.Value*
+references:
+- uid: Global
+- uid: Global.RefBool.#ctor*
+  commentId: Overload:Global.RefBool.#ctor
+  name: RefBool
+  nameWithType: RefBool.RefBool
+  fullName: RefBool.RefBool
+  nameWithType.vb: RefBool.New
+  fullName.vb: RefBool.New
+  name.vb: New
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Global.VarBool
+  commentId: T:Global.VarBool
+  name: VarBool
+  nameWithType: VarBool
+  fullName: VarBool
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.RefBool.Value*
+  commentId: Overload:Global.RefBool.Value
+  name: Value
+  nameWithType: RefBool.Value
+  fullName: RefBool.Value

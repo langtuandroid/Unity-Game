@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomPropertyDrawer(typeof(ActionDataSO))]
 public class ActionDataSODrawer : PropertyDrawer
 {
     private SerializedObject obj = null;
@@ -23,7 +22,7 @@ public class ActionDataSODrawer : PropertyDrawer
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        property.objectReferenceValue = EditorGUI.ObjectField(new Rect(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight), label, property.objectReferenceValue, typeof(ActionDataSO), true);
+        property.objectReferenceValue = EditorGUI.ObjectField(new Rect(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight), label, property.objectReferenceValue, typeof(ActionPrioritySO), true);
         if (property.objectReferenceValue == null)
         {
             return;

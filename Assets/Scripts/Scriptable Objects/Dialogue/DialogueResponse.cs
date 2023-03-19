@@ -4,25 +4,32 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-[System.Serializable]
-public class DialogueResponse
+namespace LobsterFramework.DialogueSystem
 {
-    [TextArea]
-    [SerializeField] private string text;
-    [SerializeField] private DialogueObject dialogue;
-    [SerializeField] private  VoidEventChannel operationChannel;
+    [System.Serializable]
+    public class DialogueResponse
+    {
+        [TextArea]
+        [SerializeField] private string text;
+        [SerializeField] private DialogueObject dialogue;
+        [SerializeField] private VoidEventChannel operationChannel;
 
-    public void Respond() {
-        if (operationChannel != null) {
-            operationChannel.RaiseEvent();
+        public void Respond()
+        {
+            if (operationChannel != null)
+            {
+                operationChannel.RaiseEvent();
+            }
         }
-    }
 
-    public DialogueObject Dialogue {
-        get { return dialogue; }
-    }
+        public DialogueObject Dialogue
+        {
+            get { return dialogue; }
+        }
 
-    public string Text {
-        get { return text; }
+        public string Text
+        {
+            get { return text; }
+        }
     }
 }

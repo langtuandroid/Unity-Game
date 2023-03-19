@@ -1,0 +1,68 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.OperationReference
+  commentId: T:Global.OperationReference
+  id: OperationReference
+  parent: Global
+  children:
+  - Global.OperationReference.Operate
+  langs:
+  - csharp
+  - vb
+  name: OperationReference
+  nameWithType: OperationReference
+  fullName: OperationReference
+  type: Struct
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/ExposedReferenceSO/Operation/OperationReference.cs
+    id: OperationReference
+    path: ../Assets/Scripts/Scriptable Objects/ExposedReferenceSO/Operation/OperationReference.cs
+    startLine: 4
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: >-
+      [Serializable]
+
+      public struct OperationReference
+    content.vb: >-
+      <Serializable>
+
+      Public Structure OperationReference
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: Global.OperationReference.Operate
+  commentId: M:Global.OperationReference.Operate
+  id: Operate
+  parent: Global.OperationReference
+  langs:
+  - csharp
+  - vb
+  name: Operate()
+  nameWithType: OperationReference.Operate()
+  fullName: OperationReference.Operate()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/ExposedReferenceSO/Operation/OperationReference.cs
+    id: Operate
+    path: ../Assets/Scripts/Scriptable Objects/ExposedReferenceSO/Operation/OperationReference.cs
+    startLine: 12
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public void Operate()
+    content.vb: Public Sub Operate()
+  overload: Global.OperationReference.Operate*
+references:
+- uid: Global
+- uid: Global.OperationReference.Operate*
+  commentId: Overload:Global.OperationReference.Operate
+  name: Operate
+  nameWithType: OperationReference.Operate
+  fullName: OperationReference.Operate

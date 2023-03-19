@@ -3,43 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[CreateAssetMenu(menuName = "StateMachine/Transition Table")]
-public class TransitionTable : ScriptableObject
+namespace LobsterFramework.AI
 {
-    private Dictionary<Type, SortedList<int, Transition>> transitions;
 
-    public State Execute(State currentState) {
-        Type type = currentState.GetType();
-        if (transitions.ContainsKey(type)) {
-            foreach (Transition t in transitions[type].Values) {
-                return t.Eval();
-            }
-        }
-        return null;
-    }
-
-    public bool AddTransition(State fromState, Transition t, int priority)
+    [CreateAssetMenu(menuName = "StateMachine/Transition Table")]
+    public class TransitionTable : ScriptableObject
     {
-        Type type = fromState.GetType();
-        if (!transitions.ContainsKey(type))
+        private Dictionary<Type, SortedList<int, Transition>> transitions;
+
+        public State Execute(State currentState)
         {
-            transitions[type] = new SortedList<int, Transition>();
+            Type type = currentState.GetType();
+            if (transitions.ContainsKey(type))
+            {
+                foreach (Transition t in transitions[type].Values)
+                {
+                    return t.Eval();
+                }
+            }
+            return null;
         }
-        else if (transitions[type].Values.Contains(t))
+
+        public bool AddTransition(State fromState, Transition t, int priority)
         {
+            Type type = fromState.GetType();
+            if (!transitions.ContainsKey(type))
+            {
+                transitions[type] = new SortedList<int, Transition>();
+            }
+            else if (transitions[type].Values.Contains(t))
+            {
+                return false;
+            }
+            transitions[type].Add(priority, t);
+            return true;
+        }
+
+        public bool RemoveTransition(State fromState, int key)
+        {
+            Type fromType = fromState.GetType();
+            if (transitions.ContainsKey(fromType))
+            {
+                return transitions[fromType].Remove(key);
+            }
             return false;
         }
-        transitions[type].Add(priority, t);
-        return true;
-    }
-
-    public bool RemoveTransition(State fromState, int key)
-    {
-        Type fromType = fromState.GetType();
-        if (transitions.ContainsKey(fromType))
-        {
-            return transitions[fromType].Remove(key);
-        }
-        return false;
     }
 }

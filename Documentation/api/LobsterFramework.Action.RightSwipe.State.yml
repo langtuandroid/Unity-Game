@@ -1,0 +1,137 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Action.RightSwipe.State
+  commentId: T:LobsterFramework.Action.RightSwipe.State
+  id: RightSwipe.State
+  parent: LobsterFramework.Action
+  children:
+  - LobsterFramework.Action.RightSwipe.State.Attack
+  - LobsterFramework.Action.RightSwipe.State.End
+  - LobsterFramework.Action.RightSwipe.State.WindUp
+  langs:
+  - csharp
+  - vb
+  name: RightSwipe.State
+  nameWithType: RightSwipe.State
+  fullName: LobsterFramework.Action.RightSwipe.State
+  type: Enum
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Action/StandardMoveSet/RightSwipe.cs
+    id: State
+    path: ../Assets/Scripts/Scriptable Objects/Action/StandardMoveSet/RightSwipe.cs
+    startLine: 18
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Action
+  syntax:
+    content: public enum RightSwipe.State
+    content.vb: Public Enum RightSwipe.State
+- uid: LobsterFramework.Action.RightSwipe.State.WindUp
+  commentId: F:LobsterFramework.Action.RightSwipe.State.WindUp
+  id: WindUp
+  parent: LobsterFramework.Action.RightSwipe.State
+  langs:
+  - csharp
+  - vb
+  name: WindUp
+  nameWithType: RightSwipe.State.WindUp
+  fullName: LobsterFramework.Action.RightSwipe.State.WindUp
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Action/StandardMoveSet/RightSwipe.cs
+    id: WindUp
+    path: ../Assets/Scripts/Scriptable Objects/Action/StandardMoveSet/RightSwipe.cs
+    startLine: 20
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Action
+  syntax:
+    content: WindUp = 0
+    return:
+      type: LobsterFramework.Action.RightSwipe.State
+- uid: LobsterFramework.Action.RightSwipe.State.Attack
+  commentId: F:LobsterFramework.Action.RightSwipe.State.Attack
+  id: Attack
+  parent: LobsterFramework.Action.RightSwipe.State
+  langs:
+  - csharp
+  - vb
+  name: Attack
+  nameWithType: RightSwipe.State.Attack
+  fullName: LobsterFramework.Action.RightSwipe.State.Attack
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Action/StandardMoveSet/RightSwipe.cs
+    id: Attack
+    path: ../Assets/Scripts/Scriptable Objects/Action/StandardMoveSet/RightSwipe.cs
+    startLine: 21
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Action
+  syntax:
+    content: Attack = 1
+    return:
+      type: LobsterFramework.Action.RightSwipe.State
+- uid: LobsterFramework.Action.RightSwipe.State.End
+  commentId: F:LobsterFramework.Action.RightSwipe.State.End
+  id: End
+  parent: LobsterFramework.Action.RightSwipe.State
+  langs:
+  - csharp
+  - vb
+  name: End
+  nameWithType: RightSwipe.State.End
+  fullName: LobsterFramework.Action.RightSwipe.State.End
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Action/StandardMoveSet/RightSwipe.cs
+    id: End
+    path: ../Assets/Scripts/Scriptable Objects/Action/StandardMoveSet/RightSwipe.cs
+    startLine: 22
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Action
+  syntax:
+    content: End = 2
+    return:
+      type: LobsterFramework.Action.RightSwipe.State
+references:
+- uid: LobsterFramework.Action
+  commentId: N:LobsterFramework.Action
+  name: LobsterFramework.Action
+  nameWithType: LobsterFramework.Action
+  fullName: LobsterFramework.Action
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Action
+    name: Action
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Action
+    name: Action
+- uid: LobsterFramework.Action.RightSwipe.State
+  commentId: T:LobsterFramework.Action.RightSwipe.State
+  parent: LobsterFramework.Action
+  name: RightSwipe.State
+  nameWithType: RightSwipe.State
+  fullName: LobsterFramework.Action.RightSwipe.State
+  spec.csharp:
+  - uid: LobsterFramework.Action.RightSwipe
+    name: RightSwipe
+  - name: .
+  - uid: LobsterFramework.Action.RightSwipe.State
+    name: State
+  spec.vb:
+  - uid: LobsterFramework.Action.RightSwipe
+    name: RightSwipe
+  - name: .
+  - uid: LobsterFramework.Action.RightSwipe.State
+    name: State

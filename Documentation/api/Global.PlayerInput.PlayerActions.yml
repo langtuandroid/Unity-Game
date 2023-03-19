@@ -1,0 +1,790 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.PlayerInput.PlayerActions
+  commentId: T:Global.PlayerInput.PlayerActions
+  id: PlayerInput.PlayerActions
+  parent: Global
+  children:
+  - Global.PlayerInput.PlayerActions.#ctor(PlayerInput)
+  - Global.PlayerInput.PlayerActions.AddCallbacks(PlayerInput.IPlayerActions)
+  - Global.PlayerInput.PlayerActions.Aim
+  - Global.PlayerInput.PlayerActions.Attack
+  - Global.PlayerInput.PlayerActions.Attack2
+  - Global.PlayerInput.PlayerActions.Disable
+  - Global.PlayerInput.PlayerActions.Enable
+  - Global.PlayerInput.PlayerActions.enabled
+  - Global.PlayerInput.PlayerActions.Get
+  - Global.PlayerInput.PlayerActions.Guard
+  - Global.PlayerInput.PlayerActions.Move
+  - Global.PlayerInput.PlayerActions.NextInteractable
+  - Global.PlayerInput.PlayerActions.op_Implicit(PlayerInput.PlayerActions)~UnityEngine.InputSystem.InputActionMap
+  - Global.PlayerInput.PlayerActions.PauseResume
+  - Global.PlayerInput.PlayerActions.PreviousInteractable
+  - Global.PlayerInput.PlayerActions.PrimaryInteraction
+  - Global.PlayerInput.PlayerActions.RemoveCallbacks(PlayerInput.IPlayerActions)
+  - Global.PlayerInput.PlayerActions.SecondaryInteraction
+  - Global.PlayerInput.PlayerActions.SetCallbacks(PlayerInput.IPlayerActions)
+  - Global.PlayerInput.PlayerActions.Shoot
+  langs:
+  - csharp
+  - vb
+  name: PlayerInput.PlayerActions
+  nameWithType: PlayerInput.PlayerActions
+  fullName: PlayerInput.PlayerActions
+  type: Struct
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: PlayerActions
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 385
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public struct PlayerInput.PlayerActions
+    content.vb: Public Structure PlayerInput.PlayerActions
+- uid: Global.PlayerInput.PlayerActions.#ctor(PlayerInput)
+  commentId: M:Global.PlayerInput.PlayerActions.#ctor(PlayerInput)
+  id: '#ctor(PlayerInput)'
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: PlayerActions(PlayerInput)
+  nameWithType: PlayerInput.PlayerActions.PlayerActions(PlayerInput)
+  fullName: PlayerInput.PlayerActions.PlayerActions(PlayerInput)
+  type: Constructor
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: .ctor
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 388
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public PlayerActions(PlayerInput wrapper)
+    parameters:
+    - id: wrapper
+      type: Global.PlayerInput
+    content.vb: Public Sub New(wrapper As PlayerInput)
+  overload: Global.PlayerInput.PlayerActions.#ctor*
+  nameWithType.vb: PlayerInput.PlayerActions.New(PlayerInput)
+  fullName.vb: PlayerInput.PlayerActions.New(PlayerInput)
+  name.vb: New(PlayerInput)
+- uid: Global.PlayerInput.PlayerActions.Move
+  commentId: P:Global.PlayerInput.PlayerActions.Move
+  id: Move
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: Move
+  nameWithType: PlayerInput.PlayerActions.Move
+  fullName: PlayerInput.PlayerActions.Move
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: Move
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 389
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public InputAction Move { get; }
+    parameters: []
+    return:
+      type: UnityEngine.InputSystem.InputAction
+    content.vb: Public ReadOnly Property Move As InputAction
+  overload: Global.PlayerInput.PlayerActions.Move*
+- uid: Global.PlayerInput.PlayerActions.Attack
+  commentId: P:Global.PlayerInput.PlayerActions.Attack
+  id: Attack
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: Attack
+  nameWithType: PlayerInput.PlayerActions.Attack
+  fullName: PlayerInput.PlayerActions.Attack
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: Attack
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 390
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public InputAction Attack { get; }
+    parameters: []
+    return:
+      type: UnityEngine.InputSystem.InputAction
+    content.vb: Public ReadOnly Property Attack As InputAction
+  overload: Global.PlayerInput.PlayerActions.Attack*
+- uid: Global.PlayerInput.PlayerActions.Guard
+  commentId: P:Global.PlayerInput.PlayerActions.Guard
+  id: Guard
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: Guard
+  nameWithType: PlayerInput.PlayerActions.Guard
+  fullName: PlayerInput.PlayerActions.Guard
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: Guard
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 391
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public InputAction Guard { get; }
+    parameters: []
+    return:
+      type: UnityEngine.InputSystem.InputAction
+    content.vb: Public ReadOnly Property Guard As InputAction
+  overload: Global.PlayerInput.PlayerActions.Guard*
+- uid: Global.PlayerInput.PlayerActions.PauseResume
+  commentId: P:Global.PlayerInput.PlayerActions.PauseResume
+  id: PauseResume
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: PauseResume
+  nameWithType: PlayerInput.PlayerActions.PauseResume
+  fullName: PlayerInput.PlayerActions.PauseResume
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: PauseResume
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 392
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public InputAction PauseResume { get; }
+    parameters: []
+    return:
+      type: UnityEngine.InputSystem.InputAction
+    content.vb: Public ReadOnly Property PauseResume As InputAction
+  overload: Global.PlayerInput.PlayerActions.PauseResume*
+- uid: Global.PlayerInput.PlayerActions.PrimaryInteraction
+  commentId: P:Global.PlayerInput.PlayerActions.PrimaryInteraction
+  id: PrimaryInteraction
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: PrimaryInteraction
+  nameWithType: PlayerInput.PlayerActions.PrimaryInteraction
+  fullName: PlayerInput.PlayerActions.PrimaryInteraction
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: PrimaryInteraction
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 393
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public InputAction PrimaryInteraction { get; }
+    parameters: []
+    return:
+      type: UnityEngine.InputSystem.InputAction
+    content.vb: Public ReadOnly Property PrimaryInteraction As InputAction
+  overload: Global.PlayerInput.PlayerActions.PrimaryInteraction*
+- uid: Global.PlayerInput.PlayerActions.SecondaryInteraction
+  commentId: P:Global.PlayerInput.PlayerActions.SecondaryInteraction
+  id: SecondaryInteraction
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: SecondaryInteraction
+  nameWithType: PlayerInput.PlayerActions.SecondaryInteraction
+  fullName: PlayerInput.PlayerActions.SecondaryInteraction
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: SecondaryInteraction
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 394
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public InputAction SecondaryInteraction { get; }
+    parameters: []
+    return:
+      type: UnityEngine.InputSystem.InputAction
+    content.vb: Public ReadOnly Property SecondaryInteraction As InputAction
+  overload: Global.PlayerInput.PlayerActions.SecondaryInteraction*
+- uid: Global.PlayerInput.PlayerActions.NextInteractable
+  commentId: P:Global.PlayerInput.PlayerActions.NextInteractable
+  id: NextInteractable
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: NextInteractable
+  nameWithType: PlayerInput.PlayerActions.NextInteractable
+  fullName: PlayerInput.PlayerActions.NextInteractable
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: NextInteractable
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 395
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public InputAction NextInteractable { get; }
+    parameters: []
+    return:
+      type: UnityEngine.InputSystem.InputAction
+    content.vb: Public ReadOnly Property NextInteractable As InputAction
+  overload: Global.PlayerInput.PlayerActions.NextInteractable*
+- uid: Global.PlayerInput.PlayerActions.PreviousInteractable
+  commentId: P:Global.PlayerInput.PlayerActions.PreviousInteractable
+  id: PreviousInteractable
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: PreviousInteractable
+  nameWithType: PlayerInput.PlayerActions.PreviousInteractable
+  fullName: PlayerInput.PlayerActions.PreviousInteractable
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: PreviousInteractable
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 396
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public InputAction PreviousInteractable { get; }
+    parameters: []
+    return:
+      type: UnityEngine.InputSystem.InputAction
+    content.vb: Public ReadOnly Property PreviousInteractable As InputAction
+  overload: Global.PlayerInput.PlayerActions.PreviousInteractable*
+- uid: Global.PlayerInput.PlayerActions.Aim
+  commentId: P:Global.PlayerInput.PlayerActions.Aim
+  id: Aim
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: Aim
+  nameWithType: PlayerInput.PlayerActions.Aim
+  fullName: PlayerInput.PlayerActions.Aim
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: Aim
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 397
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public InputAction Aim { get; }
+    parameters: []
+    return:
+      type: UnityEngine.InputSystem.InputAction
+    content.vb: Public ReadOnly Property Aim As InputAction
+  overload: Global.PlayerInput.PlayerActions.Aim*
+- uid: Global.PlayerInput.PlayerActions.Shoot
+  commentId: P:Global.PlayerInput.PlayerActions.Shoot
+  id: Shoot
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: Shoot
+  nameWithType: PlayerInput.PlayerActions.Shoot
+  fullName: PlayerInput.PlayerActions.Shoot
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: Shoot
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 398
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public InputAction Shoot { get; }
+    parameters: []
+    return:
+      type: UnityEngine.InputSystem.InputAction
+    content.vb: Public ReadOnly Property Shoot As InputAction
+  overload: Global.PlayerInput.PlayerActions.Shoot*
+- uid: Global.PlayerInput.PlayerActions.Attack2
+  commentId: P:Global.PlayerInput.PlayerActions.Attack2
+  id: Attack2
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: Attack2
+  nameWithType: PlayerInput.PlayerActions.Attack2
+  fullName: PlayerInput.PlayerActions.Attack2
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: Attack2
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 399
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public InputAction Attack2 { get; }
+    parameters: []
+    return:
+      type: UnityEngine.InputSystem.InputAction
+    content.vb: Public ReadOnly Property Attack2 As InputAction
+  overload: Global.PlayerInput.PlayerActions.Attack2*
+- uid: Global.PlayerInput.PlayerActions.Get
+  commentId: M:Global.PlayerInput.PlayerActions.Get
+  id: Get
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: Get()
+  nameWithType: PlayerInput.PlayerActions.Get()
+  fullName: PlayerInput.PlayerActions.Get()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: Get
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 400
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public InputActionMap Get()
+    return:
+      type: UnityEngine.InputSystem.InputActionMap
+    content.vb: Public Function [Get]() As InputActionMap
+  overload: Global.PlayerInput.PlayerActions.Get*
+- uid: Global.PlayerInput.PlayerActions.Enable
+  commentId: M:Global.PlayerInput.PlayerActions.Enable
+  id: Enable
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: Enable()
+  nameWithType: PlayerInput.PlayerActions.Enable()
+  fullName: PlayerInput.PlayerActions.Enable()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: Enable
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 401
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public void Enable()
+    content.vb: Public Sub Enable()
+  overload: Global.PlayerInput.PlayerActions.Enable*
+- uid: Global.PlayerInput.PlayerActions.Disable
+  commentId: M:Global.PlayerInput.PlayerActions.Disable
+  id: Disable
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: Disable()
+  nameWithType: PlayerInput.PlayerActions.Disable()
+  fullName: PlayerInput.PlayerActions.Disable()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: Disable
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 402
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public void Disable()
+    content.vb: Public Sub Disable()
+  overload: Global.PlayerInput.PlayerActions.Disable*
+- uid: Global.PlayerInput.PlayerActions.enabled
+  commentId: P:Global.PlayerInput.PlayerActions.enabled
+  id: enabled
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: enabled
+  nameWithType: PlayerInput.PlayerActions.enabled
+  fullName: PlayerInput.PlayerActions.enabled
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: enabled
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 403
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public bool enabled { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property enabled As Boolean
+  overload: Global.PlayerInput.PlayerActions.enabled*
+- uid: Global.PlayerInput.PlayerActions.op_Implicit(PlayerInput.PlayerActions)~UnityEngine.InputSystem.InputActionMap
+  commentId: M:Global.PlayerInput.PlayerActions.op_Implicit(PlayerInput.PlayerActions)~UnityEngine.InputSystem.InputActionMap
+  id: op_Implicit(PlayerInput.PlayerActions)~UnityEngine.InputSystem.InputActionMap
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: implicit operator InputActionMap(PlayerActions)
+  nameWithType: PlayerInput.PlayerActions.implicit operator InputActionMap(PlayerInput.PlayerActions)
+  fullName: PlayerInput.PlayerActions.implicit operator UnityEngine.InputSystem.InputActionMap(PlayerInput.PlayerActions)
+  type: Operator
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: op_Implicit
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 404
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public static implicit operator InputActionMap(PlayerInput.PlayerActions set)
+    parameters:
+    - id: set
+      type: Global.PlayerInput.PlayerActions
+    return:
+      type: UnityEngine.InputSystem.InputActionMap
+    content.vb: Public Shared Widening Operator CType([set] As PlayerInput.PlayerActions) As InputActionMap
+  overload: Global.PlayerInput.PlayerActions.op_Implicit*
+  nameWithType.vb: PlayerInput.PlayerActions.CType(PlayerInput.PlayerActions)
+  fullName.vb: PlayerInput.PlayerActions.CType(PlayerInput.PlayerActions)
+  name.vb: CType(PlayerActions)
+- uid: Global.PlayerInput.PlayerActions.AddCallbacks(PlayerInput.IPlayerActions)
+  commentId: M:Global.PlayerInput.PlayerActions.AddCallbacks(PlayerInput.IPlayerActions)
+  id: AddCallbacks(PlayerInput.IPlayerActions)
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: AddCallbacks(IPlayerActions)
+  nameWithType: PlayerInput.PlayerActions.AddCallbacks(PlayerInput.IPlayerActions)
+  fullName: PlayerInput.PlayerActions.AddCallbacks(PlayerInput.IPlayerActions)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: AddCallbacks
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 405
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public void AddCallbacks(PlayerInput.IPlayerActions instance)
+    parameters:
+    - id: instance
+      type: Global.PlayerInput.IPlayerActions
+    content.vb: Public Sub AddCallbacks(instance As PlayerInput.IPlayerActions)
+  overload: Global.PlayerInput.PlayerActions.AddCallbacks*
+- uid: Global.PlayerInput.PlayerActions.RemoveCallbacks(PlayerInput.IPlayerActions)
+  commentId: M:Global.PlayerInput.PlayerActions.RemoveCallbacks(PlayerInput.IPlayerActions)
+  id: RemoveCallbacks(PlayerInput.IPlayerActions)
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: RemoveCallbacks(IPlayerActions)
+  nameWithType: PlayerInput.PlayerActions.RemoveCallbacks(PlayerInput.IPlayerActions)
+  fullName: PlayerInput.PlayerActions.RemoveCallbacks(PlayerInput.IPlayerActions)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: RemoveCallbacks
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 481
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public void RemoveCallbacks(PlayerInput.IPlayerActions instance)
+    parameters:
+    - id: instance
+      type: Global.PlayerInput.IPlayerActions
+    content.vb: Public Sub RemoveCallbacks(instance As PlayerInput.IPlayerActions)
+  overload: Global.PlayerInput.PlayerActions.RemoveCallbacks*
+- uid: Global.PlayerInput.PlayerActions.SetCallbacks(PlayerInput.IPlayerActions)
+  commentId: M:Global.PlayerInput.PlayerActions.SetCallbacks(PlayerInput.IPlayerActions)
+  id: SetCallbacks(PlayerInput.IPlayerActions)
+  parent: Global.PlayerInput.PlayerActions
+  langs:
+  - csharp
+  - vb
+  name: SetCallbacks(IPlayerActions)
+  nameWithType: PlayerInput.PlayerActions.SetCallbacks(PlayerInput.IPlayerActions)
+  fullName: PlayerInput.PlayerActions.SetCallbacks(PlayerInput.IPlayerActions)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+    id: SetCallbacks
+    path: ../Assets/Scripts/Input/PlayerInput.cs
+    startLine: 487
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public void SetCallbacks(PlayerInput.IPlayerActions instance)
+    parameters:
+    - id: instance
+      type: Global.PlayerInput.IPlayerActions
+    content.vb: Public Sub SetCallbacks(instance As PlayerInput.IPlayerActions)
+  overload: Global.PlayerInput.PlayerActions.SetCallbacks*
+references:
+- uid: Global
+- uid: Global.PlayerInput.PlayerActions.#ctor*
+  commentId: Overload:Global.PlayerInput.PlayerActions.#ctor
+  name: PlayerActions
+  nameWithType: PlayerInput.PlayerActions.PlayerActions
+  fullName: PlayerInput.PlayerActions.PlayerActions
+  nameWithType.vb: PlayerInput.PlayerActions.New
+  fullName.vb: PlayerInput.PlayerActions.New
+  name.vb: New
+- uid: Global.PlayerInput
+  commentId: T:Global.PlayerInput
+  name: PlayerInput
+  nameWithType: PlayerInput
+  fullName: PlayerInput
+- uid: Global.PlayerInput.PlayerActions.Move*
+  commentId: Overload:Global.PlayerInput.PlayerActions.Move
+  name: Move
+  nameWithType: PlayerInput.PlayerActions.Move
+  fullName: PlayerInput.PlayerActions.Move
+- uid: UnityEngine.InputSystem.InputAction
+  commentId: T:UnityEngine.InputSystem.InputAction
+  parent: UnityEngine.InputSystem
+  isExternal: true
+  name: InputAction
+  nameWithType: InputAction
+  fullName: UnityEngine.InputSystem.InputAction
+- uid: UnityEngine.InputSystem
+  commentId: N:UnityEngine.InputSystem
+  isExternal: true
+  name: UnityEngine.InputSystem
+  nameWithType: UnityEngine.InputSystem
+  fullName: UnityEngine.InputSystem
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.InputSystem
+    name: InputSystem
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.InputSystem
+    name: InputSystem
+    isExternal: true
+- uid: Global.PlayerInput.PlayerActions.Attack*
+  commentId: Overload:Global.PlayerInput.PlayerActions.Attack
+  name: Attack
+  nameWithType: PlayerInput.PlayerActions.Attack
+  fullName: PlayerInput.PlayerActions.Attack
+- uid: Global.PlayerInput.PlayerActions.Guard*
+  commentId: Overload:Global.PlayerInput.PlayerActions.Guard
+  name: Guard
+  nameWithType: PlayerInput.PlayerActions.Guard
+  fullName: PlayerInput.PlayerActions.Guard
+- uid: Global.PlayerInput.PlayerActions.PauseResume*
+  commentId: Overload:Global.PlayerInput.PlayerActions.PauseResume
+  name: PauseResume
+  nameWithType: PlayerInput.PlayerActions.PauseResume
+  fullName: PlayerInput.PlayerActions.PauseResume
+- uid: Global.PlayerInput.PlayerActions.PrimaryInteraction*
+  commentId: Overload:Global.PlayerInput.PlayerActions.PrimaryInteraction
+  name: PrimaryInteraction
+  nameWithType: PlayerInput.PlayerActions.PrimaryInteraction
+  fullName: PlayerInput.PlayerActions.PrimaryInteraction
+- uid: Global.PlayerInput.PlayerActions.SecondaryInteraction*
+  commentId: Overload:Global.PlayerInput.PlayerActions.SecondaryInteraction
+  name: SecondaryInteraction
+  nameWithType: PlayerInput.PlayerActions.SecondaryInteraction
+  fullName: PlayerInput.PlayerActions.SecondaryInteraction
+- uid: Global.PlayerInput.PlayerActions.NextInteractable*
+  commentId: Overload:Global.PlayerInput.PlayerActions.NextInteractable
+  name: NextInteractable
+  nameWithType: PlayerInput.PlayerActions.NextInteractable
+  fullName: PlayerInput.PlayerActions.NextInteractable
+- uid: Global.PlayerInput.PlayerActions.PreviousInteractable*
+  commentId: Overload:Global.PlayerInput.PlayerActions.PreviousInteractable
+  name: PreviousInteractable
+  nameWithType: PlayerInput.PlayerActions.PreviousInteractable
+  fullName: PlayerInput.PlayerActions.PreviousInteractable
+- uid: Global.PlayerInput.PlayerActions.Aim*
+  commentId: Overload:Global.PlayerInput.PlayerActions.Aim
+  name: Aim
+  nameWithType: PlayerInput.PlayerActions.Aim
+  fullName: PlayerInput.PlayerActions.Aim
+- uid: Global.PlayerInput.PlayerActions.Shoot*
+  commentId: Overload:Global.PlayerInput.PlayerActions.Shoot
+  name: Shoot
+  nameWithType: PlayerInput.PlayerActions.Shoot
+  fullName: PlayerInput.PlayerActions.Shoot
+- uid: Global.PlayerInput.PlayerActions.Attack2*
+  commentId: Overload:Global.PlayerInput.PlayerActions.Attack2
+  name: Attack2
+  nameWithType: PlayerInput.PlayerActions.Attack2
+  fullName: PlayerInput.PlayerActions.Attack2
+- uid: Global.PlayerInput.PlayerActions.Get*
+  commentId: Overload:Global.PlayerInput.PlayerActions.Get
+  name: Get
+  nameWithType: PlayerInput.PlayerActions.Get
+  fullName: PlayerInput.PlayerActions.Get
+- uid: UnityEngine.InputSystem.InputActionMap
+  commentId: T:UnityEngine.InputSystem.InputActionMap
+  parent: UnityEngine.InputSystem
+  isExternal: true
+  name: InputActionMap
+  nameWithType: InputActionMap
+  fullName: UnityEngine.InputSystem.InputActionMap
+- uid: Global.PlayerInput.PlayerActions.Enable*
+  commentId: Overload:Global.PlayerInput.PlayerActions.Enable
+  name: Enable
+  nameWithType: PlayerInput.PlayerActions.Enable
+  fullName: PlayerInput.PlayerActions.Enable
+- uid: Global.PlayerInput.PlayerActions.Disable*
+  commentId: Overload:Global.PlayerInput.PlayerActions.Disable
+  name: Disable
+  nameWithType: PlayerInput.PlayerActions.Disable
+  fullName: PlayerInput.PlayerActions.Disable
+- uid: Global.PlayerInput.PlayerActions.enabled*
+  commentId: Overload:Global.PlayerInput.PlayerActions.enabled
+  name: enabled
+  nameWithType: PlayerInput.PlayerActions.enabled
+  fullName: PlayerInput.PlayerActions.enabled
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.PlayerInput.PlayerActions.op_Implicit*
+  commentId: Overload:Global.PlayerInput.PlayerActions.op_Implicit
+  name: implicit operator
+  nameWithType: PlayerInput.PlayerActions.implicit operator
+  fullName: PlayerInput.PlayerActions.implicit operator
+  nameWithType.vb: PlayerInput.PlayerActions.CType
+  fullName.vb: PlayerInput.PlayerActions.CType
+  name.vb: CType
+  spec.csharp:
+  - name: implicit
+  - name: " "
+  - name: operator
+- uid: Global.PlayerInput.PlayerActions
+  commentId: T:Global.PlayerInput.PlayerActions
+  name: PlayerInput.PlayerActions
+  nameWithType: PlayerInput.PlayerActions
+  fullName: PlayerInput.PlayerActions
+  spec.csharp:
+  - uid: Global.PlayerInput
+    name: PlayerInput
+  - name: .
+  - uid: Global.PlayerInput.PlayerActions
+    name: PlayerActions
+  spec.vb:
+  - uid: Global.PlayerInput
+    name: PlayerInput
+  - name: .
+  - uid: Global.PlayerInput.PlayerActions
+    name: PlayerActions
+- uid: Global.PlayerInput.PlayerActions.AddCallbacks*
+  commentId: Overload:Global.PlayerInput.PlayerActions.AddCallbacks
+  name: AddCallbacks
+  nameWithType: PlayerInput.PlayerActions.AddCallbacks
+  fullName: PlayerInput.PlayerActions.AddCallbacks
+- uid: Global.PlayerInput.IPlayerActions
+  commentId: T:Global.PlayerInput.IPlayerActions
+  name: PlayerInput.IPlayerActions
+  nameWithType: PlayerInput.IPlayerActions
+  fullName: PlayerInput.IPlayerActions
+  spec.csharp:
+  - uid: Global.PlayerInput
+    name: PlayerInput
+  - name: .
+  - uid: Global.PlayerInput.IPlayerActions
+    name: IPlayerActions
+  spec.vb:
+  - uid: Global.PlayerInput
+    name: PlayerInput
+  - name: .
+  - uid: Global.PlayerInput.IPlayerActions
+    name: IPlayerActions
+- uid: Global.PlayerInput.PlayerActions.RemoveCallbacks*
+  commentId: Overload:Global.PlayerInput.PlayerActions.RemoveCallbacks
+  name: RemoveCallbacks
+  nameWithType: PlayerInput.PlayerActions.RemoveCallbacks
+  fullName: PlayerInput.PlayerActions.RemoveCallbacks
+- uid: Global.PlayerInput.PlayerActions.SetCallbacks*
+  commentId: Overload:Global.PlayerInput.PlayerActions.SetCallbacks
+  name: SetCallbacks
+  nameWithType: PlayerInput.PlayerActions.SetCallbacks
+  fullName: PlayerInput.PlayerActions.SetCallbacks

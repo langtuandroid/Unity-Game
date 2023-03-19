@@ -18,12 +18,8 @@ MonoBehaviour:
   responses:
   - text: Option 1
     dialogue: {fileID: 11400000, guid: bf8cb72a7d0039a42884f4d157f74e6f, type: 2}
-    operations: []
+    operationChannel: {fileID: 0}
   - text: Option 2
     dialogue: {fileID: 11400000, guid: 058b3845f9b1bd545837c0e951c41f3f, type: 2}
-    operations: []
-  finishers:
-  - description: ColorChange
-    operation: {fileID: 0}
-    coroutine: {fileID: 11400000, guid: 8193c5db3933cbc4cacf94434889731d, type: 2}
-    useCoroutine: 1
+    operationChannel: {fileID: 0}
+  finisherChannel: {fileID: 0}
