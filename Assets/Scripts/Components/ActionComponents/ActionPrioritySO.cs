@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Action/ActionPrioritySO")]
+[CreateAssetMenu(menuName = "Ability/ActionPrioritySO")]
 
 public class ActionPrioritySO : ScriptableObject {
     [SerializeField] private RefInt executionPriority;

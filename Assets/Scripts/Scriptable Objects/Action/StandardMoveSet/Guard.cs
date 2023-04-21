@@ -4,13 +4,13 @@ using UnityEngine;
 using LobsterFramework.Pool;
 using LobsterFramework.EntitySystem;
 
-namespace LobsterFramework.Action
+namespace LobsterFramework.AbilitySystem
 {
-    [RequireActionComponent(typeof(Guard), typeof(CombatComponent))]
-    [ActionInstance(typeof(Guard))]
-    public class Guard : ActionInstance
+    [RequireAbilityStats(typeof(Guard), typeof(CombatStat))]
+    [Ability(typeof(Guard))]
+    public class Guard : Ability
     {
-        public class GuardConfig : ActionConfig
+        public class GuardConfig : AbilityConfig
         {
             public RefFloat duration;
             public Sprite sprite;
@@ -30,14 +30,14 @@ namespace LobsterFramework.Action
                 actionStart = false;
             }
         }
-        private CombatComponent combat;
+        private CombatStat combat;
         private Entity defender;
 
         protected override void Initialize()
         {
             base.Initialize();
-            combat = actionComponent.GetActionComponent<CombatComponent>();
-            defender = actionComponent.GetComponent<Entity>();
+            combat = abilityRunner.GetActionComponent<CombatStat>();
+            defender = abilityRunner.GetComponent<Entity>();
             if (defender == null)
             {
                 Debug.LogError("The object is missing entity component to complete the action!");
@@ -48,14 +48,14 @@ namespace LobsterFramework.Action
             }
         }
 
-        protected override void OnEnqueue(ActionConfig actionConfig)
+        protected override void OnEnqueue(AbilityConfig actionConfig)
         {
             GuardConfig config = (GuardConfig)actionConfig;
             config.durationCounter = 0;
             config.actionStart = true;
         }
 
-        protected override bool ExecuteBody(ActionConfig actionConfig)
+        protected override bool ExecuteBody(AbilityConfig actionConfig)
         {
             GuardConfig config = (GuardConfig)actionConfig;
             if (!config.actionStart)
@@ -100,7 +100,7 @@ namespace LobsterFramework.Action
             return true;
         }
 
-        protected override void OnActionFinish(ActionConfig actionConfig)
+        protected override void OnActionFinish(AbilityConfig actionConfig)
         {
             GuardConfig config = (GuardConfig)actionConfig;
             config.guardAnimation.DisableObject();

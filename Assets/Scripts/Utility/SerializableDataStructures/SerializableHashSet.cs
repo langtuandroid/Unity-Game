@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using LobsterFramework.Action;
+using LobsterFramework.AbilitySystem;
 
 namespace LobsterFramework.Utility {
     [Serializable]
@@ -136,6 +136,6 @@ namespace LobsterFramework.Utility {
     }
 
     [Serializable]
-    public class ActionSet : SerializableHashSet<ActionInstance> { }
+    public class AbilitySet : SerializableHashSet<Ability> { }
 }
 

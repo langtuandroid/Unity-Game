@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using LobsterFramework.Action;
+using LobsterFramework.AbilitySystem;
 
 namespace LobsterFramework.EditorUtility
 {
-    [CustomPropertyDrawer(typeof(ActionInstance))]
+    [CustomPropertyDrawer(typeof(Ability))]
     public class ActionInstanceDrawer : PropertyDrawer
     {
         private static Dictionary<System.Type, PropertyDrawer> drawers;

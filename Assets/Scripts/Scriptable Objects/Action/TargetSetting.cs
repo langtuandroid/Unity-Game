@@ -4,9 +4,9 @@ using UnityEngine;
 using LobsterFramework.Utility.Groups;
 using LobsterFramework.EntitySystem;
 
-namespace LobsterFramework.Action
+namespace LobsterFramework.AbilitySystem
 {
-    [CreateAssetMenu(menuName = "Action/TargetSetting")]
+    [CreateAssetMenu(menuName = "Ability/TargetSetting")]
     public class TargetSetting : ScriptableObject
     {
         public EntityGroup[] targetGroups;

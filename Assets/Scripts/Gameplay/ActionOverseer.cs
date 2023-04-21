@@ -4,39 +4,39 @@ using System.Linq;
 using UnityEngine;
 using LobsterFramework.Utility;
 
-namespace LobsterFramework.Action{
+namespace LobsterFramework.AbilitySystem{
     public class ActionOverseer : MonoBehaviour
     {
-        /* Contains main queue for executing actions, actions are queueed by their actions in ascending order of their priorities.
+        /* Contains main queue for executing actions, actions are queueed in ascending order of their priorities.
          * Actions with low priorities will be executed first to allow further execution of higher priority actions to override/modify their 
          * effects.
          */
-        private static Dictionary<int, ActionConfigPair> actionQueue = new();
+        private static Dictionary<int, AbilityConfigPair> abilityQueue = new();
         private static readonly IdDistributor distributor = new();
 
-        internal static int EnqueueAction(ActionConfigPair pair)
+        internal static int EnqueueAction(AbilityConfigPair pair)
         {
             int id = distributor.GetID();
-            actionQueue.Add(id, pair);
+            abilityQueue.Add(id, pair);
             return id;
         }
 
         internal static bool RemoveAction(int key)
         {
-            return actionQueue.Remove(key);
+            return abilityQueue.Remove(key);
         }
 
         void LateUpdate()
         {
             List<int> removed = new();
-            List<int> keys = actionQueue.Keys.ToList();
+            List<int> keys = abilityQueue.Keys.ToList();
             keys.Sort((int k1, int k2) => {
-                return actionQueue[k1].instance.CompareTo(actionQueue[k2].instance);
+                return abilityQueue[k1].ability.CompareByExecutionPriority(abilityQueue[k2].ability);
             });
             foreach (int key in keys)
             {
-                ActionConfigPair ap = actionQueue[key];
-                if (!ap.instance.Execute(ap.config))
+                AbilityConfigPair ap = abilityQueue[key];
+                if (!ap.ability.Execute(ap.config))
                 {
                     removed.Add(key);
                 }
@@ -44,7 +44,7 @@ namespace LobsterFramework.Action{
 
             foreach (int key in removed)
             {
-                actionQueue.Remove(key);
+                abilityQueue.Remove(key);
             }
         }
     }

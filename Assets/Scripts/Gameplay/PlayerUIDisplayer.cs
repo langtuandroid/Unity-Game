@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using LobsterFramework.EntitySystem;
-using LobsterFramework.Action;
+using LobsterFramework.AbilitySystem;
 
 namespace LobsterFramework.UI
 {
@@ -13,7 +13,7 @@ namespace LobsterFramework.UI
         public Entity player;
         public Slider healthSlider;
         public Slider manaSlider;
-        public Actionable actionComponent;
+        public AbilityRunner actionComponent;
         private Mana manaComponent;
 
 

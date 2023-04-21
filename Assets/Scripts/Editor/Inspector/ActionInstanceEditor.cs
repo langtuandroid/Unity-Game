@@ -1,11 +1,11 @@
 using System.Linq;
 using UnityEngine;
 using UnityEditor;
-using LobsterFramework.Action;
+using LobsterFramework.AbilitySystem;
 
 namespace LobsterFramework.EditorUtility
 {
-    [CustomEditor(typeof(ActionInstance), true)]
+    [CustomEditor(typeof(Ability), true)]
     public class ActionInstanceEditor : Editor
     {
         private string selectedConfig;
@@ -16,7 +16,7 @@ namespace LobsterFramework.EditorUtility
         {
             base.OnInspectorGUI();
             EditorGUI.BeginChangeCheck();
-            ActionInstance actionInstance = (ActionInstance)target;
+            Ability actionInstance = (Ability)target;
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("Config Name");
             addConfigName = EditorGUILayout.TextField(addConfigName);

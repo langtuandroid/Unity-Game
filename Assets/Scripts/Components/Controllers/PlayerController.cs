@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using LobsterFramework.Action;
+using LobsterFramework.AbilitySystem;
 using LobsterFramework.Interaction;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.UI;
@@ -24,7 +24,7 @@ namespace LobsterFramework.InputControl
 
         private Entity player;
         private Rigidbody2D rb;
-        private Actionable actionable;
+        private AbilityRunner actionable;
         private GeneralInteractor interactor;
 
         private float angle;
@@ -33,7 +33,7 @@ namespace LobsterFramework.InputControl
         public void Start()
         {
             player = GetComponent<Entity>();
-            actionable = GetComponent<Actionable>();
+            actionable = GetComponent<AbilityRunner>();
             interactor = GetComponent<GeneralInteractor>();
             rb = GetComponent<Rigidbody2D>();
 
@@ -73,7 +73,7 @@ namespace LobsterFramework.InputControl
         {
             if (!gamePause.Value && context.started)
             {
-                actionable.EnqueueAction<CircleAttack>();
+                actionable.EnqueueAbility<CircleAttack>();
             }
         }
 
@@ -81,7 +81,7 @@ namespace LobsterFramework.InputControl
         {
             if (!gamePause.Value && context.started)
             {
-                actionable.EnqueueAction<CircleAttack>("custom");
+                actionable.EnqueueAbility<CircleAttack>("custom");
             }
         }
 
@@ -105,7 +105,7 @@ namespace LobsterFramework.InputControl
         {
             if (!gamePause.Value && context.started)
             {
-                actionable.EnqueueAction<Guard>();
+                actionable.EnqueueAbility<Guard>();
             }
         }
 
@@ -113,7 +113,7 @@ namespace LobsterFramework.InputControl
         {
             if (!gamePause.Value && context.started)
             {
-                actionable.EnqueueAction<Shoot>();
+                actionable.EnqueueAbility<Shoot>();
             }
         }
 

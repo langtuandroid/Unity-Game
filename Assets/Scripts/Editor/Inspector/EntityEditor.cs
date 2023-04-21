@@ -18,9 +18,12 @@ namespace LobsterFramework.EditorUtility
         {
             base.OnInspectorGUI();
             Entity entity = (Entity)target;
-            EditorGUILayout.LabelField("Health: " + entity.Health + "/" + entity.MaxHealth);
-            EditorGUILayout.LabelField("Action Blocked: " + entity.ActionBlocked);
-            EditorGUILayout.LabelField("Movement Blocked: " + entity.MovementBlocked);
+            Rect r = EditorGUILayout.BeginVertical();
+            if (entity.MaxHealth > 0) {
+                EditorGUI.ProgressBar(r, (float)entity.Health / entity.MaxHealth, "Health " + entity.Health + "/" + entity.MaxHealth);
+            }
+            GUILayout.Space(18);
+            EditorGUILayout.EndVertical();
             if (entity.activeEffects != null && entity.activeEffects.Count > 0)
             {
                 EditorGUILayout.LabelField("Effects:");

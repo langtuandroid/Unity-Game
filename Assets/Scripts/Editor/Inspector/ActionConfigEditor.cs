@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using LobsterFramework.Action;
+using LobsterFramework.AbilitySystem;
 
 namespace LobsterFramework.EditorUtility
 {
-    [CustomEditor(typeof(ActionInstance.ActionConfig), true)]
+    [CustomEditor(typeof(Ability.AbilityConfig), true)]
     public class ActionConfigEditor : Editor
     {
         public override void OnInspectorGUI()

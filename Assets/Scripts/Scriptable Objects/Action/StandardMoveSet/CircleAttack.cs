@@ -2,15 +2,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using LobsterFramework.Pool;
 using LobsterFramework.EntitySystem;
-using LobsterFramework.Utility.Groups;
+using LobsterFramework.Utility;
 
-namespace LobsterFramework.Action
+namespace LobsterFramework.AbilitySystem
 {
-    [RequireActionComponent(typeof(CircleAttack), typeof(CombatComponent))]
-    [ActionInstance(typeof(CircleAttack))]
-    public class CircleAttack : ActionInstance
+    [RequireAbilityStats(typeof(CircleAttack), typeof(CombatStat))]
+    [Ability(typeof(CircleAttack))]
+    public class CircleAttack : Ability
     {
-        public class CircleAttackConfig : ActionConfig
+        public class CircleAttackConfig : AbilityConfig
         {
             public Sprite sprite;
             public VarString spritePoolTag;
@@ -19,22 +19,22 @@ namespace LobsterFramework.Action
             public List<Effect> effects;
         }
 
-        private CombatComponent combatComponent;
+        private CombatStat combatStat;
         private Entity attacker;
 
         protected override void Initialize()
         {
-            combatComponent = actionComponent.GetActionComponent<CombatComponent>();
-            attacker = actionComponent.GetComponent<Entity>();
+            combatStat = abilityRunner.GetActionComponent<CombatStat>();
+            attacker = abilityRunner.GetComponent<Entity>();
         }
 
-        protected override bool ExecuteBody(ActionConfig config)
+        protected override bool ExecuteBody(AbilityConfig config)
         {
             /* Damages entities in radius of attack range by attack damage, has no effect on the attacker
              *  Entities without colliders are ignored
              */
-            CombatComponent cc = combatComponent;
-            GameObject gameObject = actionComponent.gameObject;
+            CombatStat cc = combatStat;
+            GameObject gameObject = abilityRunner.gameObject;
             Transform transform = gameObject.transform;
             float range = cc.attackRange.Value;
             int damage = cc.attackDamage.Value;

@@ -9,41 +9,24 @@ namespace LobsterFramework.EntitySystem
     public class Entity : MonoBehaviour
     {
         [SerializeField] private List<EntityGroup> groups;
-        [SerializeField] private RefInt startMaxHealth;
+        [SerializeField] private RefInt maxHealth;
         [SerializeField] private RefInt startHealth;
 
-        public UnityAction<bool> onActionBlocked;
         public UnityAction<bool> onMovementBlocked;
 
         [SerializeField] private List<DamageInfoKeeper> damageHistory;
         [SerializeField] public Dictionary<Type, Effect> activeEffects;
-        public bool ActionBlocked { get; private set; }
         public bool MovementBlocked { get; private set; }
-
-        [HideInInspector]
-        [SerializeField] private int maxHealth;
         [HideInInspector]
         [SerializeField] private int health;
 
         private int incomingDamage;
 
-
         public int MaxHealth
         {
             get
             {
-                return maxHealth;
-            }
-            private set
-            {
-                if (value <= 0)
-                {
-                    maxHealth = 1;
-                }
-                else
-                {
-                    maxHealth = value;
-                }
+                return maxHealth.Value;
             }
         }
 
@@ -55,9 +38,9 @@ namespace LobsterFramework.EntitySystem
             }
             private set
             {
-                if (value > maxHealth)
+                if (value > MaxHealth)
                 {
-                    health = maxHealth;
+                    health = MaxHealth;
                 }
                 else
                 {
@@ -103,13 +86,11 @@ namespace LobsterFramework.EntitySystem
             }
 
             incomingDamage = 0;
-            MaxHealth = startMaxHealth.Value;
             Health = startHealth.Value;
             gameObject.tag = Setting.TAG_ENTITY;
             IsDead = false;
             damageHistory = new();
             activeEffects = new();
-            ActionBlocked = false;
             MovementBlocked = false;
         }
 
@@ -150,7 +131,6 @@ namespace LobsterFramework.EntitySystem
         public void Reset()
         {
             incomingDamage = 0;
-            MaxHealth = startMaxHealth.Value;
             Health = startHealth.Value;
             IsDead = false;
             gameObject.SetActive(true);
@@ -218,15 +198,7 @@ namespace LobsterFramework.EntitySystem
             }
         }
 
-        public void BlockAction(bool value)
-        {
-            bool before = ActionBlocked;
-            ActionBlocked = value;
-            if (onActionBlocked != null && before != value)
-            {
-                onActionBlocked.Invoke(value);
-            }
-        }
+        
 
         [System.Serializable]
         private class DamageInfoKeeper

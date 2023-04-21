@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using LobsterFramework.Action;
+using LobsterFramework.AbilitySystem;
 using LobsterFramework.EntitySystem;
 
 namespace LobsterFramework.AI
@@ -14,29 +14,29 @@ namespace LobsterFramework.AI
         private AITrackData trackData;
         private Transform transform;
         private AIController aiController;
-        private CombatComponent combatComponent;
-        private Actionable actionComponent;
+        private CombatStat combatComponent;
+        private AbilityRunner actionComponent;
 
-        private Actionable targetAction;
-        private CombatComponent targetCombatComponent;
+        private AbilityRunner targetAction;
+        private CombatStat targetCombatComponent;
 
         private Entity chaseTarget;
 
         public override void InitializeFields(GameObject obj)
         {
             aiController = obj.GetComponent<AIController>();
-            actionComponent = obj.GetComponent<Actionable>();
-            combatComponent = actionComponent.GetActionComponent<CombatComponent>();
+            actionComponent = obj.GetComponent<AbilityRunner>();
+            combatComponent = actionComponent.GetActionComponent<CombatStat>();
             trackData = aiController.GetControllerData<AITrackData>();
         }
 
         public override void OnEnter()
         {
             chaseTarget = aiController.target;
-            targetAction = chaseTarget.GetComponent<Actionable>();
+            targetAction = chaseTarget.GetComponent<AbilityRunner>();
             if (targetAction != null)
             {
-                targetCombatComponent = targetAction.GetActionComponent<CombatComponent>();
+                targetCombatComponent = targetAction.GetActionComponent<CombatStat>();
             }
         }
 
@@ -62,11 +62,11 @@ namespace LobsterFramework.AI
             {
                 if (aiController.TargetInRange(combatComponent.attackRange.Value))
                 {
-                    actionComponent.EnqueueAction<CircleAttack>();
+                    actionComponent.EnqueueAbility<CircleAttack>();
                 }
                 if (IsVulnerableToMelee())
                 {
-                    actionComponent.EnqueueAction<Guard>();
+                    actionComponent.EnqueueAbility<Guard>();
                 }
                 return null;
             }
@@ -79,7 +79,7 @@ namespace LobsterFramework.AI
             {
                 return false;
             }
-            return targetAction.IsInstanceReady<CircleAttack>() && aiController.TargetInRange(targetCombatComponent.attackRange.Value);
+            return targetAction.IsAbilityReady<CircleAttack>() && aiController.TargetInRange(targetCombatComponent.attackRange.Value);
         }
     }
 }   

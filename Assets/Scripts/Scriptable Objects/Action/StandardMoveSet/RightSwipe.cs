@@ -5,14 +5,14 @@ using LobsterFramework.Utility.Groups;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.Pool;
 
-namespace LobsterFramework.Action
+namespace LobsterFramework.AbilitySystem
 {
-    [ActionInstance(typeof(RightSwipe))]
-    [RequireActionComponent(typeof(RightSwipe), typeof(CombatComponent))]
+    [Ability(typeof(RightSwipe))]
+    [RequireAbilityStats(typeof(RightSwipe), typeof(CombatStat))]
     [RequireCMP(typeof(RightSwipe), typeof(Animator))]
-    public class RightSwipe : ActionInstance
+    public class RightSwipe : Ability
     {
-        private CombatComponent combatCmp;
+        private CombatStat combatCmp;
         private Transform transform;
         private Animation animation;
 
@@ -23,7 +23,7 @@ namespace LobsterFramework.Action
             End
         }
 
-        public class RightSwipeConfig : ActionConfig
+        public class RightSwipeConfig : AbilityConfig
         {
             public VarString colliderPoolTag;
             public RefFloat startAngle;
@@ -90,10 +90,10 @@ namespace LobsterFramework.Action
 
         protected override void Initialize()
         {
-            combatCmp = actionComponent.GetActionComponent<CombatComponent>();
-            transform = actionComponent.GetComponent<Transform>();
-            Entity entity = actionComponent.GetComponent<Entity>();
-            animation = actionComponent.GetComponent<Animation>();
+            combatCmp = abilityRunner.GetActionComponent<CombatStat>();
+            transform = abilityRunner.GetComponent<Transform>();
+            Entity entity = abilityRunner.GetComponent<Entity>();
+            animation = abilityRunner.GetComponent<Animation>();
 
             foreach (RightSwipeConfig con in configs.Values)
             {
@@ -103,14 +103,14 @@ namespace LobsterFramework.Action
             }
         }
 
-        protected override void OnEnqueue(ActionConfig config)
+        protected override void OnEnqueue(AbilityConfig config)
         {
             RightSwipeConfig con = (RightSwipeConfig)config;
             con.state = State.WindUp;
-            actionComponent.RegisterAnimation(GetType().ToString(), config, con.animation.Value);
+            abilityRunner.RegisterAnimation(GetType().ToString(), config, con.animation.Value);
         }
 
-        public override void AnimationSignal(ActionConfig configRaw)
+        public override void AnimationSignal(AbilityConfig configRaw)
         {
             RightSwipeConfig config = (RightSwipeConfig)configRaw;
             switch (config.state)
@@ -130,7 +130,7 @@ namespace LobsterFramework.Action
         }
 
 
-        protected override bool ExecuteBody(ActionConfig config)
+        protected override bool ExecuteBody(AbilityConfig config)
         {
             RightSwipeConfig con = (RightSwipeConfig)config;
             switch (con.state)
@@ -145,11 +145,11 @@ namespace LobsterFramework.Action
             }
         }
 
-        protected override void OnActionFinish(ActionConfig config)
+        protected override void OnActionFinish(AbilityConfig config)
         {
             RightSwipeConfig con = (RightSwipeConfig)config;
             con.Finish();
-            actionComponent.UnregisterAnimation();
+            abilityRunner.UnregisterAnimation();
         }
     }
 }

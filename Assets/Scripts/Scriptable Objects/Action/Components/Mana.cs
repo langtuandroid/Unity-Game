@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LobsterFramework.Action
+namespace LobsterFramework.AbilitySystem
 {
-    [ActionComponent(typeof(Mana))]
-    public class Mana : ActionComponent
+    [AbilityStat(typeof(Mana))]
+    public class Mana : AbilityStat
     {
         [SerializeField] private RefFloat maxMana;
         [Tooltip("Amount of mana regenerated per second.")]

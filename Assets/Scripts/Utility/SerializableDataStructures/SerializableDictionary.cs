@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using LobsterFramework.Action;
+using LobsterFramework.AbilitySystem;
 
 namespace LobsterFramework.Utility {
     [Serializable]
@@ -103,10 +103,10 @@ namespace LobsterFramework.Utility {
     }
 
     [Serializable]
-    public class TypeActionComponentDictionary : SerializableDictionary<string, ActionComponent> { }
+    public class TypeAbilityStatDictionary : SerializableDictionary<string, AbilityStat> { }
     [Serializable]
-    public class TypeActionInstanceDictionary : SerializableDictionary<string, ActionInstance> { }
+    public class TypeAbilityDictionary : SerializableDictionary<string, Ability> { }
 
     [Serializable]
-    public class StringActionConfigDictionary : SerializableDictionary<string, ActionInstance.ActionConfig> { }
+    public class StringAbilityConfigDictionary : SerializableDictionary<string, Ability.AbilityConfig> { }
 }

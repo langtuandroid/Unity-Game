@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using LobsterFramework.Action;
+using LobsterFramework.AbilitySystem;
 using LobsterFramework.EntitySystem;
 
 namespace LobsterFramework.AI
@@ -14,7 +14,7 @@ namespace LobsterFramework.AI
         private Transform transform;
         private AIController aiController;
         private Mana manaComponent;
-        private Actionable actionComponent;
+        private AbilityRunner actionComponent;
 
         private Entity chaseTarget;
         private Transform targetTransform;
@@ -22,7 +22,7 @@ namespace LobsterFramework.AI
         public override void InitializeFields(GameObject obj)
         {
             aiController = obj.GetComponent<AIController>();
-            actionComponent = obj.GetComponent<Actionable>();
+            actionComponent = obj.GetComponent<AbilityRunner>();
             manaComponent = actionComponent.GetActionComponent<Mana>();
             trackData = aiController.GetControllerData<AITrackData>();
             transform = obj.transform;
@@ -60,7 +60,7 @@ namespace LobsterFramework.AI
                 {
                     aiController.MoveInDirection(transform.position - targetTransform.position, trackData.keepDistance.Value - Vector3.Distance(transform.position, targetTransform.position));
                 }
-                actionComponent.EnqueueAction<Shoot>();
+                actionComponent.EnqueueAbility<Shoot>();
                 return null;
             }
             aiController.AutoRotation = true;

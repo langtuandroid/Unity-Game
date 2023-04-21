@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomPropertyDrawer(typeof(RefActionPriority))]
+[CustomPropertyDrawer(typeof(RefAbilityPriority))]
 public class RefActionPriorityDrawer : PropertyDrawer
 {
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
