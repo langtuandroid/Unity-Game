@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEditor;
 using System;
 using System.Reflection;
-using LobsterFramework.Action;
+using LobsterFramework.AbilitySystem;
 
 namespace LobsterFramework.EditorUtility
 {
-    [CustomEditor(typeof(Actionable))]
-    public class ActionEditor : Editor
+    [CustomEditor(typeof(AbilityRunner))]
+    public class AbilityRunnerEditor : Editor
     {
         private Editor editor;
         private bool editData = false;
@@ -17,17 +17,17 @@ namespace LobsterFramework.EditorUtility
 
         public override void OnInspectorGUI()
         {
-            EditorGUILayout.HelpBox("Note: The action data may not work properly before the first run of the game. " +
+            EditorGUILayout.HelpBox("Note: The ability data may not work properly before the first run of the game. " +
                 "Enter play mode for the first time to verify its integrity!", MessageType.Info);
             base.OnInspectorGUI();
-            Actionable actionable = (Actionable)target;
+            AbilityRunner actionable = (AbilityRunner)target;
             EditorGUI.BeginChangeCheck();
-            SerializedProperty actionData = serializedObject.FindProperty("actionableData");
+            SerializedProperty actionData = serializedObject.FindProperty("abilityData");
             if (!editData)
             {
                 EditorGUILayout.BeginHorizontal();
                 GUILayout.FlexibleSpace();
-                if (Application.isPlaying && GUILayout.Button("Edit Actionable Data", GUILayout.Width(150)))
+                if (Application.isPlaying && GUILayout.Button("Edit Ability Data", GUILayout.Width(150)))
                 {
                     editData = true;
                     editor = null;
@@ -39,7 +39,7 @@ namespace LobsterFramework.EditorUtility
             if (editData)
             {
                 EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
-                actionData.isExpanded = EditorGUILayout.Foldout(actionData.isExpanded, "Actionable Data");
+                actionData.isExpanded = EditorGUILayout.Foldout(actionData.isExpanded, "Ability Data");
                 if (actionData.isExpanded && actionData.objectReferenceValue != null)
                 {
                     EditorGUI.indentLevel++;
@@ -58,7 +58,7 @@ namespace LobsterFramework.EditorUtility
 
                 EditorGUILayout.BeginHorizontal();
                 GUILayout.FlexibleSpace();
-                if (GUILayout.Button("Save Actionable Data", GUILayout.Width(150)))
+                if (GUILayout.Button("Save Ability Data", GUILayout.Width(150)))
                 {
                     actionable.SaveActionableData(assetName);
                 }

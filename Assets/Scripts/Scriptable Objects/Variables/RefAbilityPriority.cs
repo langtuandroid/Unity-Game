@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public struct RefActionPriority
+public struct RefAbilityPriority
 {
     [SerializeField] private ActionPriority value;
     [SerializeField] private bool useSharedValue;
     [SerializeField] private ActionPrioritySO sharedValue;
 
-    public RefActionPriority(ActionPriority value = default, bool useSharedValue = false, ActionPrioritySO sharedValue = null)
+    public RefAbilityPriority(ActionPriority value = default, bool useSharedValue = false, ActionPrioritySO sharedValue = null)
     {
         this.value = value;
         this.useSharedValue = useSharedValue;
