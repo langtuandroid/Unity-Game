@@ -18,7 +18,7 @@ namespace LobsterFramework.AbilitySystem
         public virtual void Initialize() { }
 
         /// <summary>
-        /// Callback to clean up dangling strings before the parent operator is destoyed
+        /// Callback before the parent operator is disabled
         /// </summary>
         public virtual void CleanUp() { }
 

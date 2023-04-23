@@ -219,7 +219,11 @@ namespace LobsterFramework.AbilitySystem {
         // Get the number of configs currently running
         public int RunningCount() { return executing.Count; }
 
-        // Suspend the execution of provided action and force it to finish at the current frame
+        /// <summary>
+        /// // Suspend the execution of provided action and force it to finish at the current frame
+        /// </summary>
+        /// <param name="name"> Name of the configuration to terminate </param>
+        /// <returns> The status of this operation </returns>
         public bool HaltAbilityExecution(string name)
         {
             if (!configs.ContainsKey(name))
@@ -231,7 +235,12 @@ namespace LobsterFramework.AbilitySystem {
             {
                 return false;
             }
-            config.isSuspended = true;
+            ActionOverseer.RemoveAction(config.accessKey);
+            config.accessKey = -1;
+            config.isSuspended = false;
+            executing.Remove(name);
+            config.endTime = Time.time;
+            OnActionFinish(config);
             return true;
         }
 

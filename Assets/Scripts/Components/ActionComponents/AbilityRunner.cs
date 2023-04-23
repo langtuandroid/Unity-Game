@@ -288,20 +288,15 @@ namespace LobsterFramework.AbilitySystem {
             return default;
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
-            foreach (Ability ac in abilityData.availableAbilities.Values)
-            {
-                ac.HaltActions();
-                ac.OnTermination();
+            foreach (AbilityConfigPair pair in executing) {
+                pair.HaltAbility();
             }
-            foreach (AbilityStat ac in abilityData.stats.Values)
-            {
-                ac.CleanUp();
-            }
+            abilityData.Terminate();
         }
 
-        private void Start()
+        private void OnEnable()
         {
             if (abilityData == null)
             {

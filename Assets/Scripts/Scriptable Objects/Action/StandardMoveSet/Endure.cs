@@ -21,6 +21,7 @@ namespace LobsterFramework.AbilitySystem
 
         protected override void OnEnqueue(AbilityConfig config)
         {
+            Debug.Log("HyperArmored");
             EndureConfig endureConfig = (EndureConfig)config;
             if (endureConfig.useTimer)
             {
@@ -44,7 +45,7 @@ namespace LobsterFramework.AbilitySystem
         {
             EndureConfig endureConfig = (EndureConfig)config;
             abilityRunner.DisArmor(endureConfig.effector_id);
-            Debug.Log("DisArmor");
+            Debug.Log("Disarmoed");
         }
     }
 }

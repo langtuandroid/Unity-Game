@@ -38,6 +38,18 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
+        public void Terminate() {
+            foreach (Ability ai in availableAbilities.Values)
+            {
+                ai.OnTermination();
+            }
+
+            foreach (AbilityStat cmp in stats.Values)
+            {
+                cmp.CleanUp();
+            }
+        }
+
         /// <summary>
         /// Save data as assets by adding them to the AssetDataBase
         /// </summary>
