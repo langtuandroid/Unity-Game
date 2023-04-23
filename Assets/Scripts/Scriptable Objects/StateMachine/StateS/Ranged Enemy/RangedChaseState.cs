@@ -23,7 +23,7 @@ namespace LobsterFramework.AI
         {
             aiController = obj.GetComponent<AIController>();
             actionComponent = obj.GetComponent<AbilityRunner>();
-            manaComponent = actionComponent.GetActionComponent<Mana>();
+            manaComponent = actionComponent.GetAbilityStat<Mana>();
             trackData = aiController.GetControllerData<AITrackData>();
             transform = obj.transform;
         }

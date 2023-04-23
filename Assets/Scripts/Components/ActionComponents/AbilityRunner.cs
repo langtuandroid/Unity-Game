@@ -1,5 +1,4 @@
-using System;
-using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,21 +14,36 @@ namespace LobsterFramework.AbilitySystem {
     [AddComponentMenu("AbilityRunner")]
     public class AbilityRunner : MonoBehaviour
     {
-        
+        // Callbacks
         public UnityAction<bool> onActionBlocked;
+        public UnityAction<bool> onHyperArmored;
 
-        private AbilitySet executing = new();
+        // Execution Info
+        private HashSet<AbilityConfigPair> executing = new();
+        private Dictionary<AbilityConfigPair, AbilityConfigPair> jointlyRunning = new();
+
+        // Data
         [HideInInspector] 
         [SerializeField] private AbilityData abilityData;
-        private Dictionary<string, Ability> availableAbilities;
-        private TypeAbilityStatDictionary components;
         [SerializeField] private AbilityData data;
+        private Dictionary<string, Ability> availableAbilities;
+        private TypeAbilityStatDictionary stats;
+
+        // Animation
         private (string, Ability.AbilityConfig) animatingConfig;
         private Animator animator;
-        private StackedBool actionBlocked = new();
+
+        // Status
+        private StackedBool actionBlocked = new(false);
+        private StackedBool hyperArmored = new(false);
+
         
         public bool ActionBlocked {
-            get { return actionBlocked.Stat(); }
+            get { return actionBlocked.Stat && !HyperArmored; }
+        }
+
+        public bool HyperArmored { 
+            get { return hyperArmored.Stat; }
         }
 
         /// <summary>
@@ -59,7 +73,7 @@ namespace LobsterFramework.AbilitySystem {
             }
             if (action.EnqueueAbility(name))
             { 
-                executing.Add(action);
+                executing.Add(new AbilityConfigPair(action, name));
                 return true;
             }
             return false;
@@ -77,16 +91,61 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         /// <summary>
-        /// Get the action component of type T attached to this Component if it is present.
+        /// Enqueue two abilities of different types together with the second one being guaranteed to <br/>
+        /// terminate no later than the first one.
         /// </summary>
-        /// <typeparam name="T">Type of the ActionComponent being requested</typeparam>
-        /// <returns>Return the action component if it is present, otherwise null</returns>
-        public T GetActionComponent<T>() where T : AbilityStat
+        /// <typeparam name="T"> The type of the first ability </typeparam>
+        /// <typeparam name="V"> The type of the second ability </typeparam>
+        /// <param name="config1"> Configuration for the first ability </param>
+        /// <param name="config2"> Configuration for the second ability </param>
+        /// <returns></returns>
+        public bool EnqueueAbilitiesInJoint<T, V>(string config1, string config2) 
+            where T : Ability 
+            where V : Ability
+        {
+            T a1 = GetAbility<T>();
+            V a2 = GetAbility<V>();
+
+            // The two abilities must both be present and not the same
+            if (a1 == default || a2 == default || a1 == a2) {
+                return false; 
+            }
+
+            if (a1.IsReady(config1) && a2.IsReady(config2)) {
+                EnqueueAbility<T>(config1);
+                EnqueueAbility<V>(config2);
+                AbilityConfigPair p1 = new AbilityConfigPair(a1, config1);
+                AbilityConfigPair p2 = new AbilityConfigPair(a2, config2);
+                jointlyRunning[p1] = p2;
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Shorthand for EnqueueAbilitiesInJoint&lt;T, V&gt;("default", "default")
+        /// </summary>
+        /// <typeparam name="T"> The type of the first ability </typeparam>
+        /// <typeparam name="V"> The type of the second ability </typeparam>
+        /// <returns></returns>
+        public bool EnqueueAbilitiesInJoint<T, V>()
+           where T : Ability
+           where V : Ability
+        {
+            return EnqueueAbilitiesInJoint<T, V>("default", "default");
+        }
+
+            /// <summary>
+            /// Get the ability stat of type T attached to this Component if it is present.
+            /// </summary>
+            /// <typeparam name="T">Type of the AbilityStat being requested</typeparam>
+            /// <returns>Return the ability stat if it is present, otherwise null</returns>
+            public T GetAbilityStat<T>() where T : AbilityStat
         {
             string type = typeof(T).ToString();
-            if (components.ContainsKey(type))
+            if (stats.ContainsKey(type))
             {
-                return (T)components[type];
+                return (T)stats[type];
             }
             return default(T);
         }
@@ -100,7 +159,8 @@ namespace LobsterFramework.AbilitySystem {
         public bool HaltAbility<T>(string name) where T : Ability
         {
             Ability ac = GetAbility<T>();
-            if (ac != default && executing.Contains(ac))
+            AbilityConfigPair pair = new(ac, name);
+            if (executing.Contains(pair))
             {
                 ac.HaltAbilityExecution(name);
                 return true;
@@ -137,9 +197,9 @@ namespace LobsterFramework.AbilitySystem {
 
         public int BlockAction()
         {
-            bool before = actionBlocked.Stat();
+            bool before = ActionBlocked;
             int id = actionBlocked.AddEffector(true);
-            if (onActionBlocked != null && before != actionBlocked.Stat())
+            if (onActionBlocked != null && before != ActionBlocked)
             {
                 onActionBlocked.Invoke(true);
             }
@@ -147,9 +207,32 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         public bool UnblockAction(int id) {
+            bool before = ActionBlocked;
             if (actionBlocked.RemoveEffector(id)) {
-                if (actionBlocked.Stat() && onActionBlocked != null) {
+                if (ActionBlocked != before && onActionBlocked != null) {
                     onActionBlocked.Invoke(false);
+                }
+                return true;
+            }
+            return false;
+        }
+
+        public int HyperArmor() {
+            bool before = hyperArmored.Stat;
+            int id = hyperArmored.AddEffector(true);
+            if (onHyperArmored != null && before != hyperArmored.Stat)
+            {
+                onHyperArmored.Invoke(true);
+            }
+            return id;
+        }
+
+        public bool DisArmor(int id) {
+            if (hyperArmored.RemoveEffector(id))
+            {
+                if (!hyperArmored.Stat && onHyperArmored != null)
+                {
+                    onHyperArmored.Invoke(false);
                 }
                 return true;
             }
@@ -158,7 +241,7 @@ namespace LobsterFramework.AbilitySystem {
 
         public void Reset()
         {
-            foreach (AbilityStat component in components.Values)
+            foreach (AbilityStat component in stats.Values)
             {
                 component.Reset();
             }
@@ -169,10 +252,10 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         /// <summary>
-        /// Only to be called inside play mode! Save the current actionable data as an asset with specified assetName to the default path.
+        /// Only to be called inside play mode! Save the current ability data as an asset with specified assetName to the default path.
         /// </summary>
         /// <param name="assetName">Name of the asset to be saved</param>
-        public void SaveActionableData(string assetName)
+        public void SaveAbilityData(string assetName)
         {
             if (assetName == "") {
                 Debug.LogError("Asset name cannot be empty!", this);
@@ -184,22 +267,6 @@ namespace LobsterFramework.AbilitySystem {
                 abilityData.SaveContentsAsAsset();
                 data = abilityData;
                 abilityData = Instantiate(abilityData);
-                abilityData.CopyActionAsset();
-            }
-        }
-
-        /// <summary>
-        /// Method to be called by the editor, duplicate the actionable data to allow play mode modification without affecting the asset.
-        /// </summary>
-        public void SetActionableData()
-        {
-            if (data != null)
-            {
-                if (abilityData != null && !AssetDatabase.Contains(abilityData))
-                {
-                    DestroyImmediate(abilityData, true);
-                }
-                abilityData = Instantiate(data);
                 abilityData.CopyActionAsset();
             }
         }
@@ -238,7 +305,7 @@ namespace LobsterFramework.AbilitySystem {
         {
             if (abilityData == null)
             {
-                Debug.LogWarning("Actionable Data is not set!");
+                Debug.LogWarning("Ability Data is not set!", gameObject);
                 return;
             }
             int id = GetInstanceID();
@@ -248,36 +315,34 @@ namespace LobsterFramework.AbilitySystem {
                 abilityData.identifier = id;
                 abilityData.CopyActionAsset();
             }
-            components = abilityData.stats;
+            stats = abilityData.stats;
             abilityData.Initialize(this);
             availableAbilities = abilityData.availableAbilities;
             TryGetComponent<Animator>(out animator);
         }
         private void Update()
         {
-            UpdateComponents();
-            List<Ability> removed = new();
-            foreach (Ability ac in executing)
+            stats.Values.ToList().ForEach(value => value.Update());
+            List<AbilityConfigPair> removed = new();
+            foreach (AbilityConfigPair ap in executing)
             {
+                Ability ac = ap.ability;
                 if (ActionBlocked)
                 {
                     ac.HaltActions();
                 }
-                if (ac.RunningCount() == 0)
+                if (!ac.IsExecuting(ap.config))
                 {
-                    removed.Add(ac);
+                    removed.Add(ap);
+                    if (jointlyRunning.ContainsKey(ap)) { 
+                        jointlyRunning[ap].HaltAbility();
+                        jointlyRunning.Remove(ap);
+                    }
                 }
             }
-            foreach (Ability ac in removed)
+            foreach (AbilityConfigPair ap in removed)
             {
-                executing.Remove(ac);
-            }
-        }
-        private void UpdateComponents()
-        {
-            foreach (AbilityStat c in components.Values)
-            {
-                c.Update();
+                executing.Remove(ap);
             }
         }
 

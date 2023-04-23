@@ -22,7 +22,7 @@ namespace LobsterFramework.AI
         {
             aiController = obj.GetComponent<AIController>();
             actionComponent = obj.GetComponent<AbilityRunner>();
-            combatComponent = actionComponent.GetActionComponent<CombatStat>();
+            combatComponent = actionComponent.GetAbilityStat<CombatStat>();
             trackData = aiController.GetControllerData<AITrackData>();
         }
 
@@ -52,7 +52,9 @@ namespace LobsterFramework.AI
             {
                 if (aiController.TargetInRange(combatComponent.attackRange.Value))
                 {
-                    actionComponent.EnqueueAbility<RightSwipe>();
+                    if (!actionComponent.EnqueueAbilitiesInJoint<RightSwipe, Endure>()) {
+                        actionComponent.EnqueueAbility<RightSwipe>();
+                    }
                 }
                 return null;
             }

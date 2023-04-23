@@ -24,7 +24,7 @@ namespace LobsterFramework.AbilitySystem
 
         protected override void Initialize()
         {
-            combatStat = abilityRunner.GetActionComponent<CombatStat>();
+            combatStat = abilityRunner.GetAbilityStat<CombatStat>();
             attacker = abilityRunner.GetComponent<Entity>();
         }
 

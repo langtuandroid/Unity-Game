@@ -21,7 +21,7 @@ namespace LobsterFramework.UI
         // Start is called before the first frame update
         void Start()
         {
-            manaComponent = actionComponent.GetActionComponent<Mana>();
+            manaComponent = actionComponent.GetAbilityStat<Mana>();
         }
 
         // Update is called once per frame

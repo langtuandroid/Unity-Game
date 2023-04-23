@@ -17,6 +17,13 @@ namespace LobsterFramework.AbilitySystem
     {
         private IdDistributor distributor = new();
         protected Dictionary<int, T> stats = new();
+        protected T baseValue;
+
+        public BufferedStat(T value) { baseValue = value; }
+
+        public T Stat { 
+            get { return stats.Count == 0 ? baseValue : Value(); }
+        }
 
         public int AddEffector(T obj) {
             int id = distributor.GetID();
@@ -30,21 +37,29 @@ namespace LobsterFramework.AbilitySystem
             stats.Clear();
         }
 
-        public abstract T Stat();
+        protected abstract T Value();
     }
 
     public class StackedInt : BufferedStat<int>
     {
-        public override int Stat()
+        public StackedInt(int value) : base(value)
         {
-            return stats.Count == 0 ? 0 : stats.Sum(pair => pair.Value) ;
+        }
+
+        protected override int Value()
+        {
+            return stats.Sum(pair => pair.Value) ;
         }
     }
 
     public class StackedBool : BufferedStat<bool> {
-        public override bool Stat()
+        public StackedBool(bool value) : base(value)
         {
-            return (stats.Count > 0) && stats.Sum(pair => pair.Value ? 1 : 0) > 0;
+        }
+
+        protected override bool Value()
+        {
+            return stats.Sum(pair => pair.Value ? 1 : 0) > 0;
         }
     }
 }

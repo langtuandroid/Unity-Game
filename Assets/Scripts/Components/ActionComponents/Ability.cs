@@ -21,6 +21,10 @@ namespace LobsterFramework.AbilitySystem {
             this.ability = ability;
             this.config = config;
         }
+
+        public bool HaltAbility() { 
+            return ability.HaltAbilityExecution(config);
+        }
     }
 
     /// <summary>
@@ -150,7 +154,7 @@ namespace LobsterFramework.AbilitySystem {
                         sb.Append(", ");
                     }
                     sb.Remove(sb.Length - 2, 2);
-                    Debug.LogError(sb.ToString());
+                    Debug.LogError(sb.ToString(), abilityRunner);
                 }
             }
             return f2;
@@ -178,6 +182,7 @@ namespace LobsterFramework.AbilitySystem {
                 executing.Add(config);
                 AbilityConfig c = configs[config];
                 OnEnqueue(c);
+                return true;
             }
             return false;
         }
@@ -200,6 +205,7 @@ namespace LobsterFramework.AbilitySystem {
                     executing.Remove(name);
                     config.endTime = Time.time;
                     OnActionFinish(config);
+                    return false;
                 }
                 return result;
             }
@@ -240,7 +246,11 @@ namespace LobsterFramework.AbilitySystem {
         // Callback when the gameobject is being initialized during Start(). Do not initialize action configs in this method! Override This!
         protected virtual void Initialize() { }
 
-        // Check if the provided config is executing, this method will return false if the config is not present
+        /// <summary>
+        /// Check if the provided config is executing, this method will return false if the config is not present
+        /// </summary>
+        /// <param name="name"> The name of the config to be examined </param>
+        /// <returns> True if the specified config is executing, otherwise false </returns>
         public bool IsExecuting(string name)
         {
             return executing.Contains(name);
@@ -306,10 +316,10 @@ namespace LobsterFramework.AbilitySystem {
             }
         }
         /// <summary>
-        /// Main body of the action execution, implement this to create different actions!
+        /// Main body of the ability execution, implement this to create different abilities!
         /// </summary>
         /// <param name="config">The config being executed with</param>
-        /// <returns>Whether the action has finished</returns>
+        /// <returns>False if the ability has finished, otherwise true</returns>
         protected abstract bool ExecuteBody(AbilityConfig config);
 
         /// <summary>

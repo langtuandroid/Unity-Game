@@ -14,7 +14,6 @@ namespace LobsterFramework.AbilitySystem
     {
         private CombatStat combatCmp;
         private Transform transform;
-        private Animation animation;
 
         public enum State
         {
@@ -90,10 +89,9 @@ namespace LobsterFramework.AbilitySystem
 
         protected override void Initialize()
         {
-            combatCmp = abilityRunner.GetActionComponent<CombatStat>();
+            combatCmp = abilityRunner.GetAbilityStat<CombatStat>();
             transform = abilityRunner.GetComponent<Transform>();
             Entity entity = abilityRunner.GetComponent<Entity>();
-            animation = abilityRunner.GetComponent<Animation>();
 
             foreach (RightSwipeConfig con in configs.Values)
             {

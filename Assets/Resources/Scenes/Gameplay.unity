@@ -29012,7 +29012,7 @@ PrefabInstance:
     - target: {fileID: 900687837731030965, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: data
       value: 
-      objectReference: {fileID: 11400000, guid: f3937c10a6eeab742beee0b1a8eb9bd8, type: 2}
+      objectReference: {fileID: 11400000, guid: 0fc645c4e4251d94d9513a7e6dfb2cfb, type: 2}
     - target: {fileID: 900687837731030965, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: actionableData
       value: 
@@ -29061,13 +29061,21 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3868983564069901962, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
+      propertyPath: maxHealth.sharedValue
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b60680fec75fd24c9810a1170842023, type: 2}
+    - target: {fileID: 3868983564069901962, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
+      propertyPath: maxHealth.useSharedValue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3868983564069902052, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: m_Name
       value: Enemy 1 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3868983564069902052, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3868983564069902079, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: m_RootOrder
@@ -32246,7 +32254,7 @@ PrefabInstance:
     - target: {fileID: 900687837731030965, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: data
       value: 
-      objectReference: {fileID: 11400000, guid: feba942da02ab7e4fb23653ddf3c1fe4, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 900687837731030965, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: actionableData
       value: 
@@ -32294,6 +32302,14 @@ PrefabInstance:
     - target: {fileID: 3868983564069901959, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3868983564069901962, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
+      propertyPath: maxHealth.sharedValue
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b60680fec75fd24c9810a1170842023, type: 2}
+    - target: {fileID: 3868983564069901962, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
+      propertyPath: maxHealth.useSharedValue
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3868983564069902052, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: m_Name

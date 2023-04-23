@@ -36,7 +36,7 @@ namespace LobsterFramework.AbilitySystem
         protected override void Initialize()
         {
             base.Initialize();
-            combat = abilityRunner.GetActionComponent<CombatStat>();
+            combat = abilityRunner.GetAbilityStat<CombatStat>();
             defender = abilityRunner.GetComponent<Entity>();
             if (defender == null)
             {

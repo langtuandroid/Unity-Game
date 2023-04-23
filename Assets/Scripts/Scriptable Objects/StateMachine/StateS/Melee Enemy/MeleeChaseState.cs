@@ -26,7 +26,7 @@ namespace LobsterFramework.AI
         {
             aiController = obj.GetComponent<AIController>();
             actionComponent = obj.GetComponent<AbilityRunner>();
-            combatComponent = actionComponent.GetActionComponent<CombatStat>();
+            combatComponent = actionComponent.GetAbilityStat<CombatStat>();
             trackData = aiController.GetControllerData<AITrackData>();
         }
 
@@ -36,7 +36,7 @@ namespace LobsterFramework.AI
             targetAction = chaseTarget.GetComponent<AbilityRunner>();
             if (targetAction != null)
             {
-                targetCombatComponent = targetAction.GetActionComponent<CombatStat>();
+                targetCombatComponent = targetAction.GetAbilityStat<CombatStat>();
             }
         }
 

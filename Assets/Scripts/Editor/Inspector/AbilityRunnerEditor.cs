@@ -60,7 +60,7 @@ namespace LobsterFramework.EditorUtility
                 GUILayout.FlexibleSpace();
                 if (GUILayout.Button("Save Ability Data", GUILayout.Width(150)))
                 {
-                    actionable.SaveActionableData(assetName);
+                    actionable.SaveAbilityData(assetName);
                 }
                 GUILayout.FlexibleSpace();
                 EditorGUILayout.EndHorizontal();

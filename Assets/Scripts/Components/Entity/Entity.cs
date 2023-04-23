@@ -6,6 +6,7 @@ using LobsterFramework.Utility.Groups;
 
 namespace LobsterFramework.EntitySystem
 {
+    [AddComponentMenu("Entity")]
     public class Entity : MonoBehaviour
     {
         [SerializeField] private List<EntityGroup> groups;

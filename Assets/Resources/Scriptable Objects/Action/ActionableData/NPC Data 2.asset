@@ -1,0 +1,230 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8527512141875018584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: MyScripts:LobsterFramework.AbilitySystem:Endure/EndureConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 1
+  cooldown: 4
+  isSuspended: 0
+  useTimer: 0
+  duration: 0
+  startTime: 0
+  effector_id: 0
+--- !u!114 &-4131929357230663965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: MyScripts:LobsterFramework.AbilitySystem:RightSwipe/RightSwipeConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 1
+  cooldown: 2
+  isSuspended: 0
+  colliderPoolTag: {fileID: 11400000, guid: bc68d5b4b8dd3d14d806bcf21e2cf90d, type: 2}
+  startAngle:
+    value: 30
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  rotateSpeed:
+    value: 90
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  animation: {fileID: 11400000, guid: e174fcd5fbc11db40a0ced383d5ebc75, type: 2}
+  targetSetting: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
+  effects: []
+  attacker: {fileID: 0}
+  range: 0
+  damage: 0
+  begin: 0
+  state: 0
+--- !u!114 &-4119854689792821848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6cde347cb1859545a0dfc3741e9af06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: b193983ee42c6494da4e9b812145dab9, type: 2}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: -4131929357230663965}
+--- !u!114 &-2540234168032229540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: MyScripts:LobsterFramework.AbilitySystem:CircleAttack/CircleAttackConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 1
+  cooldown: 1.4
+  isSuspended: 0
+  sprite: {fileID: 21300000, guid: c83c81f28d484764c8b68c7040328cf6, type: 3}
+  spritePoolTag: {fileID: 11400000, guid: 3b82cb7d859145e4480133a3375eab4d, type: 2}
+  spriteDuration:
+    value: 0.4
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  targetSetting: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
+  effects: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5cd7a81edede6f4c9921cd097a98b3c, type: 3}
+  m_Name: NPC Data 2
+  m_EditorClassIdentifier: 
+  identifier: 0
+  stats:
+    keys:
+    - LobsterFramework.AbilitySystem.CombatStat
+    values:
+    - {fileID: 581086236176536559}
+  allAbilities:
+    keys:
+    - LobsterFramework.AbilitySystem.CircleAttack
+    - LobsterFramework.AbilitySystem.RightSwipe
+    - LobsterFramework.AbilitySystem.Endure
+    values:
+    - {fileID: 7987545595356351397}
+    - {fileID: -4119854689792821848}
+    - {fileID: 3493486503253333083}
+--- !u!114 &581086236176536559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bddb4d3b04c96644598c218b6d67a82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage:
+    value: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: be797fcff28712d4089b7132559e1e35, type: 2}
+  attackRange:
+    value: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: dd7120c53031b414c90b277b6567f3a8, type: 2}
+  defense:
+    value: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: 16c8e05ac8064dd46a440f6f637658ce, type: 2}
+--- !u!114 &3493486503253333083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6fa1d59ea1fb847b02f30b421b1445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: -8527512141875018584}
+--- !u!114 &5529587922357719923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: MyScripts:LobsterFramework.AbilitySystem:CircleAttack/CircleAttackConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 1
+  cooldown: 1.5
+  isSuspended: 0
+  sprite: {fileID: 21300000, guid: c83c81f28d484764c8b68c7040328cf6, type: 3}
+  spritePoolTag: {fileID: 11400000, guid: 3b82cb7d859145e4480133a3375eab4d, type: 2}
+  spriteDuration:
+    value: 0.4
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  targetSetting: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
+  effects: []
+--- !u!114 &7987545595356351397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eec34eea6c62446b70df6baef69aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: b193983ee42c6494da4e9b812145dab9, type: 2}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: 5529587922357719923}

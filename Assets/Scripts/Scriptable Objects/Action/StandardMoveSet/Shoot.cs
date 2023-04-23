@@ -29,7 +29,7 @@ namespace LobsterFramework.AbilitySystem
 
         protected override void Initialize()
         {
-            manaComponent = abilityRunner.GetActionComponent<Mana>();
+            manaComponent = abilityRunner.GetAbilityStat<Mana>();
             attacker = abilityRunner.GetComponent<Entity>();
         }
 
@@ -48,7 +48,7 @@ namespace LobsterFramework.AbilitySystem
         protected override bool ExecuteBody(AbilityConfig a_config)
         {
             ShootConfig config = (ShootConfig)a_config;
-            CombatStat combatComponent = abilityRunner.GetActionComponent<CombatStat>();
+            CombatStat combatComponent = abilityRunner.GetAbilityStat<CombatStat>();
             int firePower = combatComponent.attackDamage.Value;
 
             Transform transform = abilityRunner.transform;
