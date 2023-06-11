@@ -31,8 +31,8 @@ namespace LobsterFramework.UI
             healthSlider.maxValue = player.MaxHealth;
             healthSlider.value = player.Health;
 
-            manaSlider.maxValue = manaComponent.MaxMana;
-            manaSlider.value = manaComponent.AvailableMana;
+            manaSlider.maxValue = player.MaxPosture;
+            manaSlider.value = player.Posture;
         }
     }
 }

@@ -30,6 +30,7 @@ public class GameStateManager : MonoBehaviour
     {
         gamePauseChannel.OnEventRaised += PauseGame;
         playerDeathChannel.OnEventRaised += OnPlayerDeath;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void PauseOrResume() {
@@ -45,7 +46,8 @@ public class GameStateManager : MonoBehaviour
     public void OnPlayerDeath() {
         Debug.Log("Waiting for Respawn!");
         gameplayMenu.gameObject.SetActive(false);
-        respawnMenu.gameObject.SetActive(true); ;
+        respawnMenu.gameObject.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void RespawnPlayer() {
@@ -53,6 +55,7 @@ public class GameStateManager : MonoBehaviour
         playerRespawnChannel.RaiseEvent();
         gameplayMenu.gameObject.SetActive(true);
         respawnMenu.gameObject.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void Pause(InputAction.CallbackContext context)
@@ -69,6 +72,7 @@ public class GameStateManager : MonoBehaviour
         pauseMenu.gameObject.SetActive(true);
         gameplayMenu.gameObject.SetActive(false);
         gamePause.Value = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void ResumeGame()
@@ -79,6 +83,7 @@ public class GameStateManager : MonoBehaviour
         gameplayMenu.gameObject.SetActive(true);
         pauseMenu.gameObject.SetActive(false);
         gameResumeChannel.RaiseEvent();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void ExitToMenu() {
@@ -86,5 +91,6 @@ public class GameStateManager : MonoBehaviour
         gamePause.Value = false;
         unloadSceneChannel.RaiseEvent(Scene.Gameplay);
         loadSceneChannel.RaiseEvent(Scene.IntroMenu);
+        Cursor.lockState = CursorLockMode.None;
     }
 }

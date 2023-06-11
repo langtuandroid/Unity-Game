@@ -9,10 +9,11 @@ namespace LobsterFramework.EntitySystem
     public class StunEffect : Effect
     {
         private int effector_id = -1;
+        private int move_id = -1;
         private AbilityRunner ar;
         protected override void OnApply()
         {
-            entity.BlockMovement(true);
+            move_id = entity.BlockMovement();
             ar = entity.GetComponent<AbilityRunner>();
             if (ar != null) {
                 effector_id = ar.BlockAction();
@@ -25,7 +26,8 @@ namespace LobsterFramework.EntitySystem
                 ar.UnblockAction(effector_id);
                 effector_id = -1;
             }
-            entity.BlockMovement(false);
+            entity.UnblockMovement(move_id);
+            move_id = -1;
         }
     }
 }

@@ -1,5 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5312173341687072873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee0f315229b442b459f33b50ab403f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 11400000, guid: b193983ee42c6494da4e9b812145dab9, type: 2}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: 2133908042462590693}
 --- !u!114 &-2540234168032229540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24,8 +48,7 @@ MonoBehaviour:
     useSharedValue: 0
     sharedValue: {fileID: 0}
   targetSetting: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
-  effects:
-  - {fileID: 11400000, guid: e1fbe381944d16247a5c0d10d1dfc417, type: 2}
+  effects: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49,8 +72,10 @@ MonoBehaviour:
   allAbilities:
     keys:
     - LobsterFramework.AbilitySystem.CircleAttack
+    - LobsterFramework.AbilitySystem.Guard
     values:
     - {fileID: 7987545595356351397}
+    - {fileID: -5312173341687072873}
 --- !u!114 &581086236176536559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,6 +100,36 @@ MonoBehaviour:
     value: 0
     useSharedValue: 1
     sharedValue: {fileID: 11400000, guid: d88c5ed475ddd6341b02b248ad26c7fd, type: 2}
+--- !u!114 &2133908042462590693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: MyScripts:LobsterFramework.AbilitySystem:Guard/GuardConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 1
+  cooldown: 0
+  isSuspended: 0
+  duration:
+    value: 0.4
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 9c0cc4be0be33c54cb685ff01b7c8ffc, type: 3}
+  spriteAlpha:
+    value: 1
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  spritePoolTag: {fileID: 11400000, guid: 3b82cb7d859145e4480133a3375eab4d, type: 2}
+  durationCounter: 0
+  actionStart: 0
+  guardAnimation: {fileID: 0}
 --- !u!114 &7987545595356351397
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -70,12 +70,7 @@ namespace LobsterFramework.AbilitySystem
             {
                 config.actionStart = false;
             }
-
-            if (defender.IncomingDamage > 0)
-            {
-                Debug.Log("Blocked: " + combat.defense.Value);
-            }
-            defender.IncomingDamage -= combat.defense.Value;
+            defender.Defense(combat.defense.Value, 0);
             if (config.guardAnimation == null)
             {
                 // Set up guard sprite

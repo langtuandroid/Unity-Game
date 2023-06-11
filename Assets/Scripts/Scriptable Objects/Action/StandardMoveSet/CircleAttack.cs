@@ -70,10 +70,10 @@ namespace LobsterFramework.AbilitySystem
 
                 if (c_config.targetSetting.IsTarget(collided))
                 {
-                    collided.RegisterDamage(damage, attacker);
+                    collided.Damage(damage, damage,  attacker, DamageType.Hit);
                     foreach (Effect effect in c_config.effects)
                     {
-                        collided.RegisterEffect(effect);
+                        collided.AddEffect(effect);
                     }
                 }
             }

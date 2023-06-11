@@ -3,79 +3,90 @@ using UnityEngine;
 using System;
 using UnityEngine.Events;
 using LobsterFramework.Utility.Groups;
+using LobsterFramework.Utility.BufferedStats;
 
 namespace LobsterFramework.EntitySystem
 {
     [AddComponentMenu("Entity")]
     public class Entity : MonoBehaviour
-    {
+    {   
+        [Header("Group Setting")]
         [SerializeField] private List<EntityGroup> groups;
-        [SerializeField] private RefInt maxHealth;
-        [SerializeField] private RefInt startHealth;
 
-        public UnityAction<bool> onMovementBlocked;
+        [Header("Character Stats")]
+        [SerializeField] private RefFloat maxHealth;
+        [SerializeField] private RefFloat baseHealthRegen;
+        [SerializeField] private RefFloat lowHealthRegen;
+        [SerializeField] private RefFloat lowHealthThreshold;
+        [SerializeField] private RefFloat startHealth;
 
-        [SerializeField] private List<DamageInfoKeeper> damageHistory;
+        [SerializeField] private RefFloat maxPosture;
+        [SerializeField] private RefFloat basePostureRegen;
+
+        private float health;
+        private float posture;
+
+        public float MaxHealth { get { return maxHealth.Value; } }
+        public float MaxPosture { get { return maxPosture.Value; } }
+
+        [Header("Movement")]
+        [SerializeField] private RefFloat moveSpeed;
+        [SerializeField] private RefFloat rotateSpeed;
+        [SerializeField] private RefFloat acceleration;
+        private Vector2 steering;
+        private BaseOr movementBlock;
+        public float MoveSpeed { get { return moveSpeed.Value; } }
+        public float RotateSpeed { get { return rotateSpeed.Value; } }
+        public bool MovementBlocked { get { return movementBlock.Stat; } }
+
+        [Header("Status")]
+        [SerializeField] private List<DamageTracker> damageHistory;
         [SerializeField] public Dictionary<Type, Effect> activeEffects;
-        public bool MovementBlocked { get; private set; }
-        [HideInInspector]
-        [SerializeField] private int health;
+        
 
-        private int incomingDamage;
+        // Buffers
+        private RegenBuffer regenBuffer;
+        private DamageBuffer damageBuffer;
 
-        public int MaxHealth
+        // Listeners
+        public UnityAction<bool> onMovementBlocked;
+        public UnityAction<Damage> onDamaged;
+
+        // time markers
+        private float damagedSince;
+
+        // Caches
+        private Transform _transform;
+        private Rigidbody2D rb;
+
+        public bool RegenSuppressed { get { return (Time.time - damagedSince) < Setting.SUPPRESS_REGEN_DURATION; } }
+
+        public float Health
         {
-            get
-            {
-                return maxHealth.Value;
-            }
+            get { return health; }
+            private set { if (value > MaxHealth) { health = MaxHealth; }else{health = value;  } }
         }
 
-        public int Health
+        public float Posture
         {
-            get
-            {
-                return health;
-            }
-            private set
-            {
-                if (value > MaxHealth)
-                {
-                    health = MaxHealth;
-                }
-                else
-                {
-                    health = value;
-                }
-            }
+            get { return posture; }
+            private set { if (value > MaxPosture) { posture = MaxPosture; } else { posture = value; } }
         }
 
-        public int IncomingDamage
-        {
-            get { return incomingDamage; }
-            set
-            {
-                if (value < 0)
-                {
-                    incomingDamage = 0;
-                    return;
-                }
-                incomingDamage = value;
-            }
-        }
+        private int posture_b_moveKey;
+        private int posture_b_damageKey;
 
-        public bool IsDead
-        {
-            get;
-            private set;
-        }
+        public bool IsDead { get; private set; }
+        public bool PostureBroken { get; private set; }
 
-        public DamageInfo LatestDamageInfo
+        private float postureBroken_counter;
+
+        public Damage LatestDamageInfo
         {
             get
             {
                 if (damageHistory.Count > 0) { return damageHistory[damageHistory.Count - 1].info; }
-                return DamageInfo.none;
+                return EntitySystem.Damage.none;
             }
         }
 
@@ -86,17 +97,41 @@ namespace LobsterFramework.EntitySystem
                 group.Add(this);
             }
 
-            incomingDamage = 0;
             Health = startHealth.Value;
             gameObject.tag = Setting.TAG_ENTITY;
             IsDead = false;
+            PostureBroken = false;
+            Posture = MaxPosture;
             damageHistory = new();
             activeEffects = new();
-            MovementBlocked = false;
+            movementBlock = new(false);
+            damageBuffer = new(true);
+            regenBuffer = new(true);
+            damagedSince = Time.time;
+
+            regenBuffer.AddHealth(baseHealthRegen.Value);
+            regenBuffer.AddPosture(basePostureRegen.Value);
+
+            _transform = GetComponent<Transform>();
+            rb = GetComponent<Rigidbody2D>();
         }
 
         private void Update()
         {
+            Health -= damageBuffer.HealthDamage;
+            posture -= damageBuffer.PostureDamage;
+            damageBuffer.ResetDamage();
+            damageBuffer.ResetDefense();
+            if (Health <= 0) { Die(); }
+            if (!PostureBroken && Posture <= 0) { PostureBreak(); }
+
+            if (PostureBroken) {
+                postureBroken_counter += Time.deltaTime;
+                if (postureBroken_counter >= Setting.POSTURE_BROKEN_DURATION) { 
+                    PostureRecover();
+                }
+            }
+
             for (int i = damageHistory.Count - 1; i >= 0; i--)
             {
                 if (damageHistory[i].CountDown())
@@ -117,30 +152,62 @@ namespace LobsterFramework.EntitySystem
                 activeEffects.Remove(effect.GetType());
                 Destroy(effect);
             }
+            Regen();
         }
 
-        private void LateUpdate()
+        private void FixedUpdate()
         {
-            Health -= incomingDamage;
-            incomingDamage = 0;
-            if (Health <= 0)
+            if (steering != Vector2.zero)
             {
-                Die();
+                rb.AddForce((acceleration.Value * (_transform.rotation * steering)));
+            }
+
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity, moveSpeed.Value);
+        }
+
+        private void Regen() {
+            if (!RegenSuppressed)
+            {
+                if (Health < lowHealthThreshold)
+                {
+                    Health += lowHealthRegen * regenBuffer.HealthModifier * Time.deltaTime;
+                    if (Health > lowHealthThreshold)
+                    {
+                        Health = lowHealthThreshold.Value;
+                    }
+                }
+                Health += regenBuffer.HealthRegen * Time.deltaTime;
+                Posture += regenBuffer.PostureRegen * Time.deltaTime;
             }
         }
 
         public void Reset()
         {
-            incomingDamage = 0;
+            damageBuffer.Reset();
             Health = startHealth.Value;
+            
             IsDead = false;
             gameObject.SetActive(true);
         }
 
-        public void Die()
+        private void Die()
         {
             IsDead = true;
             gameObject.SetActive(false);
+        }
+
+        private void PostureBreak() {
+            posture_b_moveKey = BlockMovement();
+            posture_b_damageKey = damageBuffer.AddHealthModifier(Setting.POSTURE_BROKEN_DAMAGE_MODIFIER);
+            postureBroken_counter = 0;
+            PostureBroken = true;
+        }
+
+        private void PostureRecover() {
+            UnblockMovement(posture_b_moveKey);
+            damageBuffer.RemoveHealthModifier(posture_b_damageKey);
+            Posture = 0.7f * MaxPosture;
+            PostureBroken = false;
         }
 
         private void OnDisable()
@@ -165,7 +232,7 @@ namespace LobsterFramework.EntitySystem
             }
         }
 
-        public void RegisterEffect(Effect effect)
+        public void AddEffect(Effect effect)
         {
             Type t = effect.GetType();
             if (activeEffects.ContainsKey(t))
@@ -177,37 +244,105 @@ namespace LobsterFramework.EntitySystem
             eft.ActivateEffect(this);
         }
 
-        public void RegisterDamage(int damage, Entity attacker = null)
+        public void Damage(int health, int posture, Entity source = null, DamageType type = DamageType.General)
         {
-            incomingDamage += damage;
-            Debug.Log("Damage:" + incomingDamage);
-
-            if (attacker != null)
-            {
-                DamageInfo info = new DamageInfo() { damage = damage, attacker = attacker };
-                damageHistory.Add(new DamageInfoKeeper(info));
+            Damage damage = new Damage() { health = health, posture = posture, source = source };
+            damageBuffer.AddDamage(damage);
+            damageHistory.Add(new DamageTracker(damage));
+            if (onDamaged != null) {
+                onDamaged.Invoke(damage);
             }
+            damagedSince = Time.time;
         }
 
-        public void BlockMovement(bool value)
+        public void Defense(int healthDefense, int postureDefense) { 
+            damageBuffer.AddDefense(healthDefense, postureDefense);
+        }
+
+        public int BlockMovement()
         {
             bool before = MovementBlocked;
-            MovementBlocked = value;
-            if (onMovementBlocked != null && before != value)
+            int key = movementBlock.AddEffector(true);
+            if (onMovementBlocked != null && !before)
             {
-                onMovementBlocked.Invoke(value);
+                onMovementBlocked.Invoke(true);
+            }
+            return key;
+        }
+
+        public bool UnblockMovement(int key) {
+            if (movementBlock.RemoveEffector(key)) {
+                if (!MovementBlocked && onMovementBlocked != null) {
+                    onMovementBlocked.Invoke(false);
+                }
+                return true;
+            }
+            return false;
+        }
+
+        public void RotateTowards(Vector2 direction) {
+            if (MovementBlocked) {
+                return;
+            }
+            float angle = Vector2.SignedAngle(transform.up, direction);
+
+            float currentAngle = _transform.rotation.eulerAngles.z;
+            float angleDif = Mathf.DeltaAngle(angle, currentAngle);
+            if (Mathf.Abs(angleDif) > 0)
+            {
+                float rotateMax = rotateSpeed * Time.deltaTime;
+                if (Mathf.Abs(angleDif) > rotateMax && rotateSpeed > 0)
+                {
+                    if (angleDif > 0)
+                    {
+                        _transform.rotation = Quaternion.Euler(new Vector3(0, 0, currentAngle - rotateMax));
+                    }
+                    else
+                    {
+                        _transform.rotation = Quaternion.Euler(new Vector3(0, 0, currentAngle + rotateMax));
+                    }
+                }
+                else
+                {
+                    _transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+                }
             }
         }
 
-        
+        public void RotateByDegrees(float degree) {
+            if (MovementBlocked) {
+                return;
+            }
+            float maxDegree = rotateSpeed * Time.deltaTime;
+            if (Math.Abs(degree) > maxDegree) {
+                if (degree < 0) {
+                    degree = -maxDegree;
+                }
+                else
+                {
+                    degree = maxDegree;
+                }
+            }
+            _transform.rotation = Quaternion.AngleAxis(degree, _transform.forward) * _transform.rotation;
+        }
+
+        public void Move(Vector2 direction)
+        {
+            if (MovementBlocked)
+            {
+                steering = Vector2.zero;
+                return;
+            }
+            steering = direction;
+        }
 
         [System.Serializable]
-        private class DamageInfoKeeper
+        private class DamageTracker
         {
-            public DamageInfo info;
+            public Damage info;
             private float counter;
 
-            public DamageInfoKeeper(DamageInfo info)
+            public DamageTracker(Damage info)
             {
                 this.info = info;
                 counter = 0;
@@ -221,12 +356,225 @@ namespace LobsterFramework.EntitySystem
         }
     }
 
+    public enum DamageType { 
+        Hit,
+        StatusEffect,
+        General
+    }
+
     [System.Serializable]
 
-    public struct DamageInfo
+    public struct Damage
     {
-        public int damage;
-        public Entity attacker;
-        public static DamageInfo none = new() { damage = 0, attacker = null };
+        public float health;
+        public float posture;
+        public Entity source;
+        public DamageType type;
+
+        public static Damage none = new() { health = 0, posture = 0, source = null, type = DamageType.General };
     };
+
+    [System.Serializable]
+    public struct DamageBuffer {
+        private FloatSum healthDamage;
+        private FloatSum postureDamage;
+
+        private FloatSum healthDefense;
+        private FloatSum postureDefense;
+
+        private FloatProduct hdModifier;
+        private FloatProduct pdModifier;
+
+        public DamageBuffer(bool defaultSetting=true) { 
+            healthDamage = new(0, true);
+            postureDamage = new(0, true);
+
+            healthDefense = new(0, true);
+            postureDefense = new(0, true);
+
+            hdModifier = new(1, true);
+            pdModifier = new(1, true);
+            HealthDamage = 0;
+            PostureDamage = 0;
+        }
+
+        public float HealthDamage {get; private set; }
+
+        public float PostureDamage {get;private set; }
+
+        private void ComputeDamage() {
+            HealthDamage = Math.Max(healthDamage.Stat - healthDefense.Stat, 0) * hdModifier.Stat;
+            PostureDamage = Math.Max(postureDamage.Stat - postureDefense.Stat, 0) * pdModifier.Stat;
+        }
+
+        public void AddDamage(Damage damage) { 
+            healthDamage.AddEffector(damage.health);
+            postureDamage.AddEffector(damage.posture);
+            ComputeDamage();
+        }
+
+        public void AddDefense(int healthDefense, int postureDefense) {
+            if (healthDefense > 0) {this.healthDefense.AddEffector(healthDefense);}
+            if (postureDefense > 0) {this.postureDefense.AddEffector(postureDefense);}
+            ComputeDamage();
+        }
+
+        public int AddHealthModifier(float factor) {
+           int key = hdModifier.AddEffector(factor);
+           ComputeDamage();
+           return key;
+        }
+
+        public bool RemoveHealthModifier(int key)
+        {
+            bool result = hdModifier.RemoveEffector(key);
+            ComputeDamage();
+            return result;
+        }
+
+        public int AddPostureModifier(float factor)
+        {
+            int key = pdModifier.AddEffector(factor);
+            ComputeDamage();
+            return key;
+        }
+
+        public bool RemovePostureModifier(int key)
+        {
+            bool result = pdModifier.RemoveEffector(key);
+            ComputeDamage();
+            return result;
+        }
+
+        public void ResetDamage() {
+            healthDamage.ClearEffectors();
+            postureDamage.ClearEffectors();
+            ComputeDamage();
+        }
+
+        public void ResetDefense() {
+            healthDefense.ClearEffectors();
+            postureDefense.ClearEffectors();
+            ComputeDamage();
+        }
+
+        public void ResetModifiers() {
+            hdModifier.ClearEffectors();
+            pdModifier.ClearEffectors();
+            ComputeDamage();
+        }
+
+        public void Reset() { 
+            healthDamage.ClearEffectors();
+            postureDamage.ClearEffectors();
+
+            healthDefense.ClearEffectors();
+            postureDefense.ClearEffectors();
+
+            hdModifier.ClearEffectors();
+            pdModifier.ClearEffectors();
+            ComputeDamage();
+        }
+    }
+
+    [System.Serializable]
+    public struct RegenBuffer
+    {
+        private FloatSum healthRegen;
+        private FloatSum postureRegen;
+
+        private FloatProduct hrModifier;
+        private FloatProduct prModifier;
+
+        public RegenBuffer(bool defaultSetting = true)
+        {
+            healthRegen = new(0, true);
+            postureRegen = new(0, true);
+
+            hrModifier = new(1, true);
+            prModifier = new(1, true);
+            HealthRegen = 0;
+            PostureRegen = 0;
+            HealthModifier = 1;
+            PostureModifier = 1;
+        }
+
+        public float HealthRegen { get; private set; }
+
+        public float PostureRegen { get; private set; }
+        public float PostureModifier { get; private set; }
+        public float HealthModifier { get; private set; }
+
+        private void ComputeRegen()
+        {
+            HealthRegen = healthRegen.Stat * hrModifier.Stat;
+            PostureRegen = postureRegen.Stat * prModifier.Stat;
+            PostureModifier = prModifier.Stat;
+            HealthModifier = hrModifier.Stat;
+        }
+
+        public void AddHealth(float health)
+        {
+            healthRegen.AddEffector(health);
+            ComputeRegen();
+        }
+
+        public void AddPosture(float posture) { 
+            postureRegen.AddEffector(posture);
+            ComputeRegen();
+        }
+
+        public int AddHealthModifier(float factor)
+        {
+            int key = hrModifier.AddEffector(factor);
+            ComputeRegen();
+            return key;
+        }
+
+        public bool RemoveHealthModifier(int key)
+        {
+            bool result = hrModifier.RemoveEffector(key);
+            ComputeRegen();
+            return result;
+        }
+
+        public int AddPostureModifier(float factor)
+        {
+            int key = prModifier.AddEffector(factor);
+            ComputeRegen();
+            return key;
+        }
+
+        public bool RemovePostureModifier(int key)
+        {
+            bool result = prModifier.RemoveEffector(key);
+            ComputeRegen();
+            return result;
+        }
+
+        public void ResetRegen()
+        {
+            healthRegen.ClearEffectors();
+            postureRegen.ClearEffectors();
+            ComputeRegen();
+        }
+
+        public void ResetModifiers()
+        {
+            hrModifier.ClearEffectors();
+            prModifier.ClearEffectors();
+            ComputeRegen();
+        }
+
+        public void Reset()
+        {
+            healthRegen.ClearEffectors();
+            postureRegen.ClearEffectors();
+
+            hrModifier.ClearEffectors();
+            prModifier.ClearEffectors();
+            ComputeRegen();
+        }
+
+    }
 }

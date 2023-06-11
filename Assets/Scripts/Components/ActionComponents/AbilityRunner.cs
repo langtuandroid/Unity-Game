@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEditor;
 using LobsterFramework.Utility;
+using LobsterFramework.Utility.BufferedStats;
 
 namespace LobsterFramework.AbilitySystem {
     /// <summary>
@@ -34,8 +35,8 @@ namespace LobsterFramework.AbilitySystem {
         private Animator animator;
 
         // Status
-        private StackedBool actionBlocked = new(false);
-        private StackedBool hyperArmored = new(false);
+        private BaseOr actionBlocked = new(false);
+        private BaseOr hyperArmored = new(false);
 
         
         public bool ActionBlocked {

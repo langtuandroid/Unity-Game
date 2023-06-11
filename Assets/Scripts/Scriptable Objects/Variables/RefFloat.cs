@@ -15,6 +15,15 @@ public struct RefFloat
         this.sharedValue = sharedValue;
     }
 
+    public static implicit operator RefFloat(float value)
+    {
+        return new RefFloat(value);
+    }
+
+    public static implicit operator float(RefFloat value) { 
+        return value.Value;
+    }
+
     public float Value
     {
         get

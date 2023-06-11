@@ -78,11 +78,11 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Aim",
+                    "name": "Rotate",
                     "type": "Value",
                     "id": "f1a29f0a-57f0-46fb-88bf-235392f12f91",
                     "expectedControlType": "Vector2",
-                    "processors": "",
+                    "processors": "ScaleVector2(x=0.2,y=0.2)",
                     "interactions": "",
                     "initialStateCheck": true
                 },
@@ -90,15 +90,6 @@
                     "name": "Shoot",
                     "type": "Button",
                     "id": "6864dc9a-806b-4c14-a571-75cca0ee8a0c",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Attack2",
-                    "type": "Button",
-                    "id": "ba6813cc-9f37-47db-8871-f7bacae34734",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -241,11 +232,11 @@
                 {
                     "name": "",
                     "id": "936f0667-836c-4736-8f1b-6f5d08f707ee",
-                    "path": "<Mouse>/position",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Aim",
+                    "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -257,17 +248,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d10eeb74-cd67-4284-899e-1f1bd5c9c0e5",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attack2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

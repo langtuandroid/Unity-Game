@@ -4,6 +4,7 @@ using LobsterFramework.AbilitySystem;
 using LobsterFramework.Interaction;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.UI;
+using LobsterFramework.Utility;
 
 namespace LobsterFramework.InputControl
 {
@@ -11,10 +12,7 @@ namespace LobsterFramework.InputControl
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private Camera camera;
-        [SerializeField] private float speed;
-        [SerializeField] private float acceleration;
-        [SerializeField] private float rotateSpeed;
-        [SerializeField] private float distance;
+        [SerializeField] private float cameraDistance;
         [SerializeField] private VarBool gamePause;
 
         [Header("Event Channels")]
@@ -23,31 +21,49 @@ namespace LobsterFramework.InputControl
         [SerializeField] private VoidEventChannel playerRespawnChennel;
 
         private Entity player;
-        private Rigidbody2D rb;
         private AbilityRunner actionable;
         private GeneralInteractor interactor;
+        private Transform _transform;
 
-        private float angle;
-        private Vector2 steering;
+
+        [Header("Inputs")]
+        [SerializeField] private InputActionReference rotate;
+        [SerializeField] private InputActionReference move;
+        [SerializeField] private float rotateAcceleration;
+        [SerializeField] private float mouseSensitivity;
+        private float rotateVelocity;
 
         public void Start()
         {
             player = GetComponent<Entity>();
             actionable = GetComponent<AbilityRunner>();
             interactor = GetComponent<GeneralInteractor>();
-            rb = GetComponent<Rigidbody2D>();
 
             playerRespawnChennel.OnEventRaised += RespawnPlayer;
+            _transform = GetComponent<Transform>();
         }
 
         private void FixedUpdate()
         {
-            if (steering != Vector2.zero)
+            if (!gamePause.Value)
             {
-                rb.AddForce(steering);
+                Vector2 input = rotate.action.ReadValue<Vector2>();
+                if (input.x != 0)
+                {
+                    float delta = input.x * Time.deltaTime * mouseSensitivity; 
+                    rotateVelocity = Mathf.MoveTowards(rotateVelocity, -delta, rotateAcceleration * Time.deltaTime);
+                    rotateVelocity = Mathf.Clamp(rotateVelocity, -player.RotateSpeed, player.RotateSpeed);
+                }
+                else { 
+                    rotateVelocity = Mathf.MoveTowards(rotateVelocity, 0, rotateAcceleration * Time.deltaTime);
+                }
+                player.RotateByDegrees(rotateVelocity);
             }
+        }
 
-            rb.velocity = Vector2.ClampMagnitude(rb.velocity, speed);
+        private void Update()
+        {
+            player.Move(move.action.ReadValue<Vector2>());
         }
 
         private void OnDisable()
@@ -85,22 +101,6 @@ namespace LobsterFramework.InputControl
             }
         }
 
-        public void Move(InputAction.CallbackContext context)
-        {
-            if (gamePause.Value)
-            {
-                return;
-            }
-            if (!context.canceled)
-            {
-                steering = (acceleration * context.ReadValue<Vector2>().normalized);
-            }
-            else
-            {
-                steering = Vector2.zero;
-            }
-        }
-
         public void Guard(InputAction.CallbackContext context)
         {
             if (!gamePause.Value && context.started)
@@ -114,14 +114,6 @@ namespace LobsterFramework.InputControl
             if (!gamePause.Value && context.started)
             {
                 actionable.EnqueueAbility<Shoot>();
-            }
-        }
-
-        public void TriggerDialogue(InputAction.CallbackContext context)
-        {
-            if (!gamePause.Value && context.started)
-            {
-                interactor.Interact(typeof(DialogueDisplayer), InteractionType.Primary);
             }
         }
 
@@ -157,45 +149,10 @@ namespace LobsterFramework.InputControl
             }
         }
 
-        public void LookAtMouse(InputAction.CallbackContext context)
-        {
-            if (gamePause.Value || Camera.main == null)
-            {
-                return;
-            }
-            // If the mouse hasn't moved, do not update the destination angle
-            Vector2 mouse_pos = context.ReadValue<Vector2>();
-            Vector2 object_pos = Camera.main.WorldToScreenPoint(transform.position);
-            Vector2 current = new Vector2(camera.transform.up.x, camera.transform.up.y);
-            Vector2 dir = new Vector2(mouse_pos.x - object_pos.x, mouse_pos.y - object_pos.y);
-            angle = Vector2.SignedAngle(current, dir);
-
-            float currentAngle = transform.rotation.eulerAngles.z;
-            float angleDif = Mathf.DeltaAngle(angle, currentAngle);
-            if (Mathf.Abs(angleDif) > 0)
-            {
-                float rotateMax = rotateSpeed * Time.deltaTime;
-                if (Mathf.Abs(angleDif) > rotateMax && rotateSpeed > 0)
-                {
-                    if (angleDif > 0)
-                    {
-                        transform.rotation = Quaternion.Euler(new Vector3(0, 0, currentAngle - rotateMax));
-                    }
-                    else
-                    {
-                        transform.rotation = Quaternion.Euler(new Vector3(0, 0, currentAngle + rotateMax));
-                    }
-                }
-                else
-                {
-                    transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-                }
-            }
-        }
-
         public void LateUpdate()
         {
-            camera.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - distance);
+            camera.transform.position = new Vector3(_transform.position.x, _transform.position.y, _transform.position.z - cameraDistance);
+            camera.transform.rotation = _transform.rotation;
         }
     }
 }

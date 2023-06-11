@@ -98,10 +98,10 @@ namespace LobsterFramework.AI
 
         public bool SearchTarget(float sightRange)
         {
-            DamageInfo info = entityComponent.LatestDamageInfo;
-            if (info.attacker != null)
+            Damage info = entityComponent.LatestDamageInfo;
+            if (info.source != null)
             {
-                target = info.attacker;
+                target = info.source;
                 Debug.Log("Received attack from target");
                 return true;
             }

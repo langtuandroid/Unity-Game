@@ -19,14 +19,10 @@ public static class Setting
     public static string TAG_INTERACTABLE = "interactable";
     public static string TAG_INTERACTOR = "interactor";
 
-    // 
-    public const int ENTITY_DNE = -1;
-
-    public enum CoroutineStatus
-    {
-        COROUTINE_OFF = 0,
-        COROUTINE_ON = 1
-    }
+    //
+    public const float POSTURE_BROKEN_DAMAGE_MODIFIER = 2;
+    public const float POSTURE_BROKEN_DURATION = 2;
+    public const float SUPPRESS_REGEN_DURATION = 2;
 }
 
 

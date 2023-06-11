@@ -72,7 +72,7 @@ namespace LobsterFramework.AbilitySystem
                     if (entity.gameObject.GetInstanceID() != id && !hits.Contains(entity) && targetSetting.IsTarget(entity))
                     {
                         hits.Add(entity);
-                        entity.RegisterDamage(damage, attacker);
+                        entity.Damage(damage, 0, attacker);
                     }
                 }
                 hitQueue.Clear();
