@@ -31,6 +31,7 @@ public class GameStateManager : MonoBehaviour
         gamePauseChannel.OnEventRaised += PauseGame;
         playerDeathChannel.OnEventRaised += OnPlayerDeath;
         Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1;
     }
 
     public void PauseOrResume() {
