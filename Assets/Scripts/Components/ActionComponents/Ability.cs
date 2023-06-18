@@ -181,7 +181,7 @@ namespace LobsterFramework.AbilitySystem {
                 configs[config].accessKey = ActionOverseer.EnqueueAction(new AbilityConfigPair(this, config));
                 executing.Add(config);
                 AbilityConfig c = configs[config];
-                OnEnqueue(c);
+                OnEnqueue(c, config);
                 return true;
             }
             return false;
@@ -204,7 +204,6 @@ namespace LobsterFramework.AbilitySystem {
                     config.isSuspended = false;
                     executing.Remove(name);
                     config.endTime = Time.time;
-                    abilityRunner.FinishAnimation();
                     OnActionFinish(config);
                     return false;
                 }
@@ -339,10 +338,22 @@ namespace LobsterFramework.AbilitySystem {
         protected virtual void OnActionFinish(AbilityConfig config) { }
 
         /// <summary>
-        /// Callback when the action is queued, override this to perform initializations of action execution
+        /// Callback when the animation of the ability is interrupted by other abilities. Useful when abilities relies on animation events.
         /// </summary>
-        /// <param name="config">The config being processed</param>
-        protected virtual void OnEnqueue(AbilityConfig config) { }
+        /// <param name="config"></param>
+        protected virtual void OnAnimationInterrupt(AbilityConfig config) { }
+
+        public void InterruptAnimation(string configName) {
+            if (!configs.ContainsKey(configName)) { return; }
+            AbilityConfig config = configs[configName];
+            OnAnimationInterrupt(config);
+        }
+        /// <summary>
+        /// Callback when the ability is added to the action executing queue
+        /// </summary>
+        /// <param name="config"></param>
+        /// <param name="configName"></param>
+        protected virtual void OnEnqueue(AbilityConfig config, string configName) { }
 
         private bool HasConfigDefined()
         {

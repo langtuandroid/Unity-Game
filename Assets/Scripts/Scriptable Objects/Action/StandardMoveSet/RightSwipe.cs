@@ -41,11 +41,13 @@ namespace LobsterFramework.AbilitySystem
             public bool begin;
             [HideInInspector]
             public State state;
+            [HideInInspector]
+            public bool animationInterrupted;
 
             private ActionCapsuleCollider collider;
             private HashSet<Entity> hits;
             private List<Entity> hitQueue;
-
+            
 
             public override void Initialize()
             {
@@ -101,11 +103,11 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
-        protected override void OnEnqueue(AbilityConfig config)
+        protected override void OnEnqueue(AbilityConfig config, string configName)
         {
             RightSwipeConfig con = (RightSwipeConfig)config;
             con.state = State.WindUp;
-            abilityRunner.StartAnimation(con.animation.Value);
+            abilityRunner.StartAnimation<RightSwipe>(configName, con.animation.Value);
         }
 
         protected override void SignalBody(AbilityConfig configRaw)
@@ -131,6 +133,10 @@ namespace LobsterFramework.AbilitySystem
         protected override bool Action(AbilityConfig config)
         {
             RightSwipeConfig con = (RightSwipeConfig)config;
+            if (con.animationInterrupted) {
+                con.animationInterrupted = false;
+                return false;
+            }
             switch (con.state)
             {
                 case State.WindUp:

@@ -48,7 +48,7 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
-        protected override void OnEnqueue(AbilityConfig actionConfig)
+        protected override void OnEnqueue(AbilityConfig actionConfig, string configName)
         {
             GuardConfig config = (GuardConfig)actionConfig;
             config.durationCounter = 0;

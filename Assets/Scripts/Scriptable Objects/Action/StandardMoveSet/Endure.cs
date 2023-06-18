@@ -19,7 +19,7 @@ namespace LobsterFramework.AbilitySystem
             public int effector_id;
         }
 
-        protected override void OnEnqueue(AbilityConfig config)
+        protected override void OnEnqueue(AbilityConfig config, string configName)
         {
             Debug.Log("HyperArmored");
             EndureConfig endureConfig = (EndureConfig)config;

@@ -39,7 +39,7 @@ namespace LobsterFramework.AbilitySystem
             return manaComponent.AvailableMana >= s_config.manaCost.Value;
         }
 
-        protected override void OnEnqueue(AbilityConfig config)
+        protected override void OnEnqueue(AbilityConfig config, string configName)
         {
             ShootConfig s_config = (ShootConfig)config;
             manaComponent.ReserveMana(s_config.manaCost.Value);

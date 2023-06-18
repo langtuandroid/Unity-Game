@@ -26176,8 +26176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460ff2d0db5e64e42868d5c34fc5a5cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infos: []
-  addElement: {objValue: {fileID: 0}, identifier: entity1entity}
 --- !u!1 &1001045626
 GameObject:
   m_ObjectHideFlags: 0
@@ -26255,8 +26253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52c5c07d93a3c3946aad3a9b6700a735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ir:
-    value: 0
+  interactRadius:
+    value: 1
     useSharedValue: 0
     sharedValue: {fileID: 0}
   interactEnabled: 1
@@ -29915,7 +29913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5600618183844064284, guid: 48ff28f7a4ac45f47a6f196d679eb9b0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5600618183844064366, guid: 48ff28f7a4ac45f47a6f196d679eb9b0, type: 3}
       propertyPath: graphMask.value
@@ -30443,7 +30441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3506e596ed18c447ad110d28303fcde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ir:
+  interactRadius:
     value: 0
     useSharedValue: 0
     sharedValue: {fileID: 0}
@@ -30553,7 +30551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3506e596ed18c447ad110d28303fcde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ir:
+  interactRadius:
     value: 0
     useSharedValue: 0
     sharedValue: {fileID: 0}
