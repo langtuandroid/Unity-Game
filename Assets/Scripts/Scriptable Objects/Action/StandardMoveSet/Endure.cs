@@ -30,7 +30,7 @@ namespace LobsterFramework.AbilitySystem
             endureConfig.effector_id = abilityRunner.HyperArmor();
         }
 
-        protected override bool ExecuteBody(AbilityConfig config)
+        protected override bool Action(AbilityConfig config)
         {
             EndureConfig endureConfig = (EndureConfig)config;
             if (endureConfig.useTimer) {

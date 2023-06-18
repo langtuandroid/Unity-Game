@@ -10,7 +10,7 @@ public class AttributeInitializer
 {
     [UnityEditor.Callbacks.DidReloadScripts]
     public static void Initialize() {
-        foreach (Type type in typeof(Setting).Assembly.GetTypes())
+        foreach (Type type in typeof(GameManager).Assembly.GetTypes())
         {
             type.GetCustomAttributes();
         }

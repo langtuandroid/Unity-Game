@@ -10,7 +10,7 @@ namespace LobsterFramework.EntitySystem
     [AddComponentMenu("Entity")]
     public class Entity : MonoBehaviour
     {   
-        [Header("Group Setting")]
+        [Header("Group GameManager.Instance")]
         [SerializeField] private List<EntityGroup> groups;
 
         [Header("Character Stats")]
@@ -59,7 +59,7 @@ namespace LobsterFramework.EntitySystem
         private Transform _transform;
         private Rigidbody2D rb;
 
-        public bool RegenSuppressed { get { return (Time.time - damagedSince) < Setting.SUPPRESS_REGEN_DURATION; } }
+        public bool RegenSuppressed { get { return (Time.time - damagedSince) < GameManager.Instance.SUPPRESS_REGEN_DURATION; } }
 
         public float Health
         {
@@ -98,7 +98,7 @@ namespace LobsterFramework.EntitySystem
             }
 
             Health = startHealth.Value;
-            gameObject.tag = Setting.TAG_ENTITY;
+            gameObject.tag = GameManager.Instance.TAG_ENTITY;
             IsDead = false;
             PostureBroken = false;
             Posture = MaxPosture;
@@ -127,7 +127,7 @@ namespace LobsterFramework.EntitySystem
 
             if (PostureBroken) {
                 postureBroken_counter += Time.deltaTime;
-                if (postureBroken_counter >= Setting.POSTURE_BROKEN_DURATION) { 
+                if (postureBroken_counter >= GameManager.Instance.POSTURE_BROKEN_DURATION) { 
                     PostureRecover();
                 }
             }
@@ -198,7 +198,7 @@ namespace LobsterFramework.EntitySystem
 
         private void PostureBreak() {
             posture_b_moveKey = BlockMovement();
-            posture_b_damageKey = damageBuffer.AddHealthModifier(Setting.POSTURE_BROKEN_DAMAGE_MODIFIER);
+            posture_b_damageKey = damageBuffer.AddHealthModifier(GameManager.Instance.POSTURE_BROKEN_DAMAGE_MODIFIER);
             postureBroken_counter = 0;
             PostureBroken = true;
         }
@@ -351,7 +351,7 @@ namespace LobsterFramework.EntitySystem
             public bool CountDown()
             {
                 counter += Time.deltaTime;
-                return counter >= Setting.EXPIRE_ATTACK_TIME;
+                return counter >= GameManager.Instance.EXPIRE_ATTACK_TIME;
             }
         }
     }

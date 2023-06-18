@@ -50,7 +50,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <param name="name">The name of the config to be added</param>
         public bool AddConfig(string name)
         {
-            if (HasConfig())
+            if (HasConfigDefined())
             {
                 if (configs.ContainsKey(name))
                 {
@@ -197,13 +197,14 @@ namespace LobsterFramework.AbilitySystem {
             try
             {
                 AbilityConfig config = configs[name];
-                bool result = ExecuteBody(config);
+                bool result = Action(config);
                 if (!result || config.isSuspended)
                 {
                     config.accessKey = -1;
                     config.isSuspended = false;
                     executing.Remove(name);
                     config.endTime = Time.time;
+                    abilityRunner.FinishAnimation();
                     OnActionFinish(config);
                     return false;
                 }
@@ -280,7 +281,7 @@ namespace LobsterFramework.AbilitySystem {
         // Called when the parent component is being initialized
         public void OnStartUp()
         {
-            if (!HasConfig())
+            if (!HasConfigDefined())
             {
                 Debug.LogError("The action config for '" + GetType().ToString() + "' is not declared!");
             }
@@ -329,7 +330,7 @@ namespace LobsterFramework.AbilitySystem {
         /// </summary>
         /// <param name="config">The config being executed with</param>
         /// <returns>False if the ability has finished, otherwise true</returns>
-        protected abstract bool ExecuteBody(AbilityConfig config);
+        protected abstract bool Action(AbilityConfig config);
 
         /// <summary>
         /// Callback when the action is finished or halted, override this to clean up temporary data generated during the action.
@@ -343,7 +344,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <param name="config">The config being processed</param>
         protected virtual void OnEnqueue(AbilityConfig config) { }
 
-        private bool HasConfig()
+        private bool HasConfigDefined()
         {
             Type type = GetType();
             string typeName = type.Name + "Config";
@@ -358,11 +359,21 @@ namespace LobsterFramework.AbilitySystem {
             return false;
         }
 
+        public bool HasConfig(string configName) {
+            return configs.ContainsKey(configName);
+        }
+
+        public void Signal(string configName) {
+            if (configs.ContainsKey(configName)) {
+                SignalBody(configs[configName]);
+            }
+        }
+
         /// <summary>
-        /// Override this to implement animation event handler
+        /// Override this to implement signal event handler
         /// </summary>
         /// <param name="config">Config to be signaled</param>
-        public virtual void AnimationSignal(AbilityConfig config) { }
+        protected virtual void SignalBody(AbilityConfig config) { }
 
         /// <summary>
         ///  A configuration of the Ability, each configuration has its own settings that affects the execution of the Ability.

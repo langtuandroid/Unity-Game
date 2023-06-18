@@ -5,16 +5,14 @@ using UnityEngine.Events;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.Utility.Groups;
 
-namespace LobsterFramework.QuestSystem
+namespace LobsterFramework.Utility
 {
-
     [RequireComponent(typeof(Collider2D))]
     public class CollisionTrigger : MonoBehaviour
     {
         [SerializeField] private List<EntityGroup> entityGroups = new();
-        [SerializeField] private List<Operation> operations = new();
         [SerializeField] private RefBool disableOnTrigger;
-        [SerializeField] private RefBool repeatEvent;
+        [SerializeField] private RefBool repeatTrigger;
 
         public UnityEvent<Entity> OnTriggerCallBack = new();
         public UnityEvent<Entity> OnTriggerExitCallBack = new();
@@ -26,20 +24,13 @@ namespace LobsterFramework.QuestSystem
         {
             foreach (EntityGroup group in entityGroups)
             {
-                //group.OnEntityAdded.AddListener(AddEntity);
-                //group.OnEntityRemoved.AddListener(RemoveEntity);
+                group.OnEntityAdded.AddListener(AddEntity);
+                group.OnEntityRemoved.AddListener(RemoveEntity);
             }
         }
 
-        private void AddEntity(Entity entity)
-        {
-            trackingEntities.Add(entity);
-        }
-
-        private void RemoveEntity(Entity entity)
-        {
-            trackingEntities.Remove(entity);
-        }
+        private void AddEntity(Entity entity) { trackingEntities.Add(entity); }
+        private void RemoveEntity(Entity entity) { trackingEntities.Remove(entity); }
 
         private void Update()
         {
@@ -54,10 +45,6 @@ namespace LobsterFramework.QuestSystem
             Entity entity = collision.GetComponent<Entity>();
             if (entity != null && trackingEntities.Contains(entity))
             {
-                foreach (Operation operation in operations)
-                {
-                    operation.Begin();
-                }
                 if (disableOnTrigger.Value)
                 {
                     OnTriggerCallBack.Invoke(entity);
@@ -65,7 +52,7 @@ namespace LobsterFramework.QuestSystem
                 }
                 else
                 {
-                    if (repeatEvent.Value)
+                    if (repeatTrigger.Value)
                     {
                         triggeredEntities.Add(entity);
                     }

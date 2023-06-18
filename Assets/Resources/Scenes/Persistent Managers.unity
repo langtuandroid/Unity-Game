@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -246,6 +246,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exitChannel: {fileID: 11400000, guid: 84fd18b4375a0ce44852aeaa561d65d9, type: 2}
+  <TARGET_FRAME_RATE>k__BackingField: 120
+  <EXPIRE_ATTACK_TIME>k__BackingField: 3
+  <POSTURE_BROKEN_DAMAGE_MODIFIER>k__BackingField: 2
+  <POSTURE_BROKEN_DURATION>k__BackingField: 2
+  <SUPPRESS_REGEN_DURATION>k__BackingField: 2
+  <TAG_ENTITY>k__BackingField: entity
+  <TAG_PROJECTILE>k__BackingField: projectile
+  <TAG_PLAYER>k__BackingField: player
+  <TAG_INTERACTABLE>k__BackingField: interactable
+  <TAG_INTERACTOR>k__BackingField: interactor
 --- !u!1 &1206175217
 GameObject:
   m_ObjectHideFlags: 0

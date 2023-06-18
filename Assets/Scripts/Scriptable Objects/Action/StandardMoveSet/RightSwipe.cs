@@ -105,10 +105,10 @@ namespace LobsterFramework.AbilitySystem
         {
             RightSwipeConfig con = (RightSwipeConfig)config;
             con.state = State.WindUp;
-            abilityRunner.RegisterAnimation(GetType().ToString(), config, con.animation.Value);
+            abilityRunner.StartAnimation(con.animation.Value);
         }
 
-        public override void AnimationSignal(AbilityConfig configRaw)
+        protected override void SignalBody(AbilityConfig configRaw)
         {
             RightSwipeConfig config = (RightSwipeConfig)configRaw;
             switch (config.state)
@@ -128,7 +128,7 @@ namespace LobsterFramework.AbilitySystem
         }
 
 
-        protected override bool ExecuteBody(AbilityConfig config)
+        protected override bool Action(AbilityConfig config)
         {
             RightSwipeConfig con = (RightSwipeConfig)config;
             switch (con.state)
@@ -147,7 +147,6 @@ namespace LobsterFramework.AbilitySystem
         {
             RightSwipeConfig con = (RightSwipeConfig)config;
             con.Finish();
-            abilityRunner.UnregisterAnimation();
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LobsterFramework.Utility;
 
 namespace LobsterFramework.AI
 {

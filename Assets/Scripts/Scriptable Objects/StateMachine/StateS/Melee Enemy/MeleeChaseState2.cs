@@ -14,15 +14,15 @@ namespace LobsterFramework.AI
         private Transform transform;
         private AIController aiController;
         private CombatStat combatComponent;
-        private AbilityRunner actionComponent;
+        private AbilityRunner abilityRunner;
 
         private Entity chaseTarget;
 
         public override void InitializeFields(GameObject obj)
         {
             aiController = obj.GetComponent<AIController>();
-            actionComponent = obj.GetComponent<AbilityRunner>();
-            combatComponent = actionComponent.GetAbilityStat<CombatStat>();
+            abilityRunner = obj.GetComponent<AbilityRunner>();
+            combatComponent = abilityRunner.GetAbilityStat<CombatStat>();
             trackData = aiController.GetControllerData<AITrackData>();
         }
 
@@ -52,8 +52,8 @@ namespace LobsterFramework.AI
             {
                 if (aiController.TargetInRange(combatComponent.attackRange.Value))
                 {
-                    if (!actionComponent.EnqueueAbilitiesInJoint<RightSwipe, Endure>()) {
-                        actionComponent.EnqueueAbility<RightSwipe>();
+                    if (!abilityRunner.EnqueueAbilitiesInJoint<RightSwipe, Endure>()) {
+                        abilityRunner.EnqueueAbility<RightSwipe>();
                     }
                 }
                 return null;

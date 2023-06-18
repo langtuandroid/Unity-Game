@@ -28,7 +28,7 @@ namespace LobsterFramework.AbilitySystem
             attacker = abilityRunner.GetComponent<Entity>();
         }
 
-        protected override bool ExecuteBody(AbilityConfig config)
+        protected override bool Action(AbilityConfig config)
         {
             /* Damages entities in radius of attack range by attack damage, has no effect on the attacker
              *  Entities without colliders are ignored

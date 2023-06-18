@@ -10,7 +10,7 @@ namespace LobsterFramework
     {
         
 
-        protected override bool ExecuteBody(AbilityConfig config)
+        protected override bool Action(AbilityConfig config)
         {
             throw new System.NotImplementedException();
         }

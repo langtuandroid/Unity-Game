@@ -31,13 +31,12 @@ namespace LobsterFramework.AbilitySystem {
         private TypeAbilityStatDictionary stats;
 
         // Animation
-        private (string, Ability.AbilityConfig) animatingConfig;
         private Animator animator;
 
         // Status
         private BaseOr actionBlocked = new(false);
         private BaseOr hyperArmored = new(false);
-
+        private bool initialized = false;
         
         public bool ActionBlocked {
             get { return actionBlocked.Stat && !HyperArmored; }
@@ -299,6 +298,12 @@ namespace LobsterFramework.AbilitySystem {
 
         private void OnEnable()
         {
+            if (!initialized) { return; }
+            abilityData.Initialize(this);
+        }
+
+        private void Start()
+        {
             if (abilityData == null)
             {
                 Debug.LogWarning("Ability Data is not set!", gameObject);
@@ -314,7 +319,7 @@ namespace LobsterFramework.AbilitySystem {
             stats = abilityData.stats;
             abilityData.Initialize(this);
             availableAbilities = abilityData.availableAbilities;
-            TryGetComponent<Animator>(out animator);
+            animator = GetComponent<Animator>();
         }
         private void Update()
         {
@@ -343,35 +348,43 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         /// <summary>
-        /// Used by action instances to play animation
+        /// Used by action instances to play animation, will override any other animation that is currently playing
         /// </summary>
         /// <param name="actionInstance"></param>
         /// <param name="config"></param>
         /// <param name="animation"></param>
-        public void RegisterAnimation(string actionInstance, Ability.AbilityConfig config, string animation)
+        public void StartAnimation(string animation)
         {
-            animatingConfig = (actionInstance, config);
             animator.SetBool("isActing", true);
-            animator.Play(animation);
+            animator.Play(animation, -1, 0);
         }
 
         /// <summary>
         /// Used by ActionInstances to signal that the action/animation has finished. 
         /// </summary>
 
-        public void UnregisterAnimation()
+        public void FinishAnimation()
         {
-            animatingConfig = ("", null);
+            if(animator == null) { return; }
             animator.SetBool("isActing", false);
         }
 
         /// <summary>
-        /// Handler for the animation event, this method should not be called by anything other than editing animation event inside editor. 
+        /// Send a signal to the specified ability. 
         /// </summary>
-        public void AnimationSignal()
+        public void Signal(string abilityAndConfig)
         {
-            (string ac, Ability.AbilityConfig config) = animatingConfig;
-            availableAbilities[ac].AnimationSignal(config);
+            string[] info = abilityAndConfig.Split(' ');
+            if (info.Length == 0) {
+                return;
+            }
+            Ability ability;
+            availableAbilities.TryGetValue(typeof(Ability).Namespace + "." + info[0], out ability);
+            if (ability == null) {
+                return;
+            }
+            string config = info.Length == 1 ? "default" : info[1];
+            ability.Signal(config);
         }
     }
 

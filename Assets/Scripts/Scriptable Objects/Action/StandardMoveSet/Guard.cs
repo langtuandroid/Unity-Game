@@ -55,7 +55,7 @@ namespace LobsterFramework.AbilitySystem
             config.actionStart = true;
         }
 
-        protected override bool ExecuteBody(AbilityConfig actionConfig)
+        protected override bool Action(AbilityConfig actionConfig)
         {
             GuardConfig config = (GuardConfig)actionConfig;
             if (!config.actionStart)

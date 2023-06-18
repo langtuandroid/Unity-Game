@@ -45,7 +45,7 @@ namespace LobsterFramework.AbilitySystem
             manaComponent.ReserveMana(s_config.manaCost.Value);
         }
 
-        protected override bool ExecuteBody(AbilityConfig a_config)
+        protected override bool Action(AbilityConfig a_config)
         {
             ShootConfig config = (ShootConfig)a_config;
             CombatStat combatComponent = abilityRunner.GetAbilityStat<CombatStat>();
