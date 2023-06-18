@@ -40,7 +40,7 @@ public class RefStringDrawer : PropertyDrawer
         property.isExpanded = EditorGUI.Foldout(foldOutRect, property.isExpanded, label);
 
         Rect rect = new(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
-        EditorGUI.LabelField(rect, label.text, value);
+        EditorGUI.LabelField(rect, " ", value);
 
         if (property.isExpanded)
         {

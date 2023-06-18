@@ -29,7 +29,7 @@ namespace LobsterFramework.Interaction
          * 
          * Note: The derived class must call base.Start() to allow the base class to complete all the necessary setups
          */
-        [SerializeField] private RefFloat interactRadius;
+        [SerializeField] private RefFloat ir;
         [SerializeField] private bool interactEnabled;
         [SerializeField] protected StringEventChannel interactionChannel;
         private Dictionary<Type, InteractionTracer> interactionTracers = new();
@@ -79,7 +79,7 @@ namespace LobsterFramework.Interaction
             }
             foreach (InteractionTracer tracer in interactionTracers.Values)
             {
-                tracer.UpdateInteraction(m_transform, interactRadius.Value, this);
+                tracer.UpdateInteraction(m_transform, ir.Value, this);
             }
         }
 

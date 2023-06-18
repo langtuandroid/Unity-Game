@@ -26255,8 +26255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52c5c07d93a3c3946aad3a9b6700a735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactRadius:
-    value: 2
+  ir:
+    value: 0
     useSharedValue: 0
     sharedValue: {fileID: 0}
   interactEnabled: 1
@@ -28874,6 +28874,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3868983564069901953, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
+      propertyPath: ir.value
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3868983564069901953, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: mainText
       value: 
       objectReference: {fileID: 511507841}
@@ -28894,9 +28898,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1572803479}
     - target: {fileID: 3868983564069901953, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
+      propertyPath: interactEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3868983564069901953, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: responseLayoutGroup
       value: 
       objectReference: {fileID: 94747429}
+    - target: {fileID: 3868983564069901953, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
+      propertyPath: resetUponFinish.useSharedValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3868983564069901957, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: initialState
       value: 
@@ -30431,8 +30443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3506e596ed18c447ad110d28303fcde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactRadius:
-    value: 1
+  ir:
+    value: 0
     useSharedValue: 0
     sharedValue: {fileID: 0}
   interactEnabled: 1
@@ -30541,8 +30553,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3506e596ed18c447ad110d28303fcde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactRadius:
-    value: 1
+  ir:
+    value: 0
     useSharedValue: 0
     sharedValue: {fileID: 0}
   interactEnabled: 1

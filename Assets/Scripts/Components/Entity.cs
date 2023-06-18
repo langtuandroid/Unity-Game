@@ -10,7 +10,7 @@ namespace LobsterFramework.EntitySystem
     [AddComponentMenu("Entity")]
     public class Entity : MonoBehaviour
     {   
-        [Header("Group GameManager.Instance")]
+        [Header("Group Setting")]
         [SerializeField] private List<EntityGroup> groups;
 
         [Header("Character Stats")]
@@ -19,7 +19,6 @@ namespace LobsterFramework.EntitySystem
         [SerializeField] private RefFloat lowHealthRegen;
         [SerializeField] private RefFloat lowHealthThreshold;
         [SerializeField] private RefFloat startHealth;
-
         [SerializeField] private RefFloat maxPosture;
         [SerializeField] private RefFloat basePostureRegen;
 
