@@ -4,52 +4,33 @@ items:
   id: Global
   children:
   - Global.ActionDataSODrawer
-  - Global.ActionInstanceAttribute
   - Global.ActionPriority
   - Global.ActionPrioritySO
   - Global.AIAnimationConfigurator
   - Global.AITrackData
   - Global.AstarPath
   - Global.AstarPath.AstarDistribution
-  - Global.AttributeInitializer
   - Global.BoolEventChannel
   - Global.ChatController
-  - Global.ColorChangeCoroutine
-  - Global.Condition
-  - Global.Condition`1
-  - Global.ConditionSO
   - Global.ControllerData
-  - Global.CoroutineOperationSO
   - Global.DescriptionBaseSO
   - Global.DialogueBox
   - Global.DropdownSample
   - Global.EnvMapAnimator
   - Global.ExposedFieldAttribute
-  - Global.ExposedPropertyTable
-  - Global.ExposedPropertyTable.Info
-  - Global.ExposedPropertyTableEditor
   - Global.FloatEventChannel
   - Global.GameManager
   - Global.GameStateManager
-  - Global.GameUtility
   - Global.IConsumable
   - Global.IEquipable
   - Global.IntEventChannel
   - Global.IntroMenu
-  - Global.InvalidKeyException
-  - Global.LogOperationSO
-  - Global.OperactionReferenceDrawer
-  - Global.OperationReference
-  - Global.OperationSO
   - Global.OrderedSet`1
   - Global.PlayerInput
   - Global.PlayerInput.IPlayerActions
   - Global.PlayerInput.PlayerActions
   - Global.Projectile
-  - Global.QuestEditor
-  - Global.QuestEventChannel
-  - Global.QuestSO
-  - Global.RefActionPriority
+  - Global.RefAbilityPriority
   - Global.RefActionPriorityDrawer
   - Global.RefBool
   - Global.RefBoolDrawer
@@ -63,11 +44,8 @@ items:
   - Global.Scene
   - Global.SceneEventChannel
   - Global.SceneLoader
-  - Global.SceneReferenceSO
   - Global.SerializableLinkedList`1
   - Global.SerializedPropertyExtensions
-  - Global.Setting
-  - Global.Setting.CoroutineStatus
   - Global.SimpleItem
   - Global.SnapToNode
   - Global.StringEventChannel
@@ -95,21 +73,26 @@ items:
   assemblies:
   - Assembly-CSharp
 references:
-- uid: Global.ChatController
-  commentId: T:Global.ChatController
-  name: ChatController
-  nameWithType: ChatController
-  fullName: ChatController
 - uid: Global.EnvMapAnimator
   commentId: T:Global.EnvMapAnimator
   name: EnvMapAnimator
   nameWithType: EnvMapAnimator
   fullName: EnvMapAnimator
+- uid: Global.ChatController
+  commentId: T:Global.ChatController
+  name: ChatController
+  nameWithType: ChatController
+  fullName: ChatController
 - uid: Global.DropdownSample
   commentId: T:Global.DropdownSample
   name: DropdownSample
   nameWithType: DropdownSample
   fullName: DropdownSample
+- uid: Global.SnapToNode
+  commentId: T:Global.SnapToNode
+  name: SnapToNode
+  nameWithType: SnapToNode
+  fullName: SnapToNode
 - uid: Global.AstarPath
   commentId: T:Global.AstarPath
   name: AstarPath
@@ -132,160 +115,56 @@ references:
   - name: .
   - uid: Global.AstarPath.AstarDistribution
     name: AstarDistribution
-- uid: Global.SnapToNode
-  commentId: T:Global.SnapToNode
-  name: SnapToNode
-  nameWithType: SnapToNode
-  fullName: SnapToNode
-- uid: Global.RefBool
-  commentId: T:Global.RefBool
-  name: RefBool
-  nameWithType: RefBool
-  fullName: RefBool
-- uid: Global.Scene
-  commentId: T:Global.Scene
-  name: Scene
-  nameWithType: Scene
-  fullName: Scene
-- uid: Global.GameManager
-  commentId: T:Global.GameManager
-  name: GameManager
-  nameWithType: GameManager
-  fullName: GameManager
-- uid: Global.RefString
-  commentId: T:Global.RefString
-  name: RefString
-  nameWithType: RefString
-  fullName: RefString
-- uid: Global.VarFloatDrawer
-  commentId: T:Global.VarFloatDrawer
-  name: VarFloatDrawer
-  nameWithType: VarFloatDrawer
-  fullName: VarFloatDrawer
-- uid: Global.ConditionSO
-  commentId: T:Global.ConditionSO
-  name: ConditionSO
-  nameWithType: ConditionSO
-  fullName: ConditionSO
-- uid: Global.SerializedPropertyExtensions
-  commentId: T:Global.SerializedPropertyExtensions
-  name: SerializedPropertyExtensions
-  nameWithType: SerializedPropertyExtensions
-  fullName: SerializedPropertyExtensions
-- uid: Global.Projectile
-  commentId: T:Global.Projectile
-  name: Projectile
-  nameWithType: Projectile
-  fullName: Projectile
-- uid: Global.AIAnimationConfigurator
-  commentId: T:Global.AIAnimationConfigurator
-  name: AIAnimationConfigurator
-  nameWithType: AIAnimationConfigurator
-  fullName: AIAnimationConfigurator
-- uid: Global.RefStringDrawer
-  commentId: T:Global.RefStringDrawer
-  name: RefStringDrawer
-  nameWithType: RefStringDrawer
-  fullName: RefStringDrawer
-- uid: Global.VarFloat
-  commentId: T:Global.VarFloat
-  name: VarFloat
-  nameWithType: VarFloat
-  fullName: VarFloat
-- uid: Global.SerializableLinkedList`1
-  commentId: T:Global.SerializableLinkedList`1
-  name: SerializableLinkedList<T>
-  nameWithType: SerializableLinkedList<T>
-  fullName: SerializableLinkedList<T>
-  nameWithType.vb: SerializableLinkedList(Of T)
-  fullName.vb: SerializableLinkedList(Of T)
-  name.vb: SerializableLinkedList(Of T)
-  spec.csharp:
-  - uid: Global.SerializableLinkedList`1
-    name: SerializableLinkedList
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: Global.SerializableLinkedList`1
-    name: SerializableLinkedList
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: Global.VarStringDrawer
-  commentId: T:Global.VarStringDrawer
-  name: VarStringDrawer
-  nameWithType: VarStringDrawer
-  fullName: VarStringDrawer
-- uid: Global.ControllerData
-  commentId: T:Global.ControllerData
-  name: ControllerData
-  nameWithType: ControllerData
-  fullName: ControllerData
-- uid: Global.VoidEventChannel
-  commentId: T:Global.VoidEventChannel
-  name: VoidEventChannel
-  nameWithType: VoidEventChannel
-  fullName: VoidEventChannel
-- uid: Global.InvalidKeyException
-  commentId: T:Global.InvalidKeyException
-  name: InvalidKeyException
-  nameWithType: InvalidKeyException
-  fullName: InvalidKeyException
-- uid: Global.ExposedFieldAttribute
-  commentId: T:Global.ExposedFieldAttribute
-  name: ExposedFieldAttribute
-  nameWithType: ExposedFieldAttribute
-  fullName: ExposedFieldAttribute
-- uid: Global.GameUtility
-  commentId: T:Global.GameUtility
-  name: GameUtility
-  nameWithType: GameUtility
-  fullName: GameUtility
-- uid: Global.BoolEventChannel
-  commentId: T:Global.BoolEventChannel
-  name: BoolEventChannel
-  nameWithType: BoolEventChannel
-  fullName: BoolEventChannel
-- uid: Global.Condition`1
-  commentId: T:Global.Condition`1
-  name: Condition<T>
-  nameWithType: Condition<T>
-  fullName: Condition<T>
-  nameWithType.vb: Condition(Of T)
-  fullName.vb: Condition(Of T)
-  name.vb: Condition(Of T)
-  spec.csharp:
-  - uid: Global.Condition`1
-    name: Condition
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: Global.Condition`1
-    name: Condition
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
+- uid: Global.RefActionPriorityDrawer
+  commentId: T:Global.RefActionPriorityDrawer
+  name: RefActionPriorityDrawer
+  nameWithType: RefActionPriorityDrawer
+  fullName: RefActionPriorityDrawer
+- uid: Global.VarString
+  commentId: T:Global.VarString
+  name: VarString
+  nameWithType: VarString
+  fullName: VarString
+- uid: Global.RefBoolDrawer
+  commentId: T:Global.RefBoolDrawer
+  name: RefBoolDrawer
+  nameWithType: RefBoolDrawer
+  fullName: RefBoolDrawer
+- uid: Global.SceneLoader
+  commentId: T:Global.SceneLoader
+  name: SceneLoader
+  nameWithType: SceneLoader
+  fullName: SceneLoader
 - uid: Global.VarBool
   commentId: T:Global.VarBool
   name: VarBool
   nameWithType: VarBool
   fullName: VarBool
-- uid: Global.VarIntDrawer
-  commentId: T:Global.VarIntDrawer
-  name: VarIntDrawer
-  nameWithType: VarIntDrawer
-  fullName: VarIntDrawer
-- uid: Global.SceneReferenceSO
-  commentId: T:Global.SceneReferenceSO
-  name: SceneReferenceSO
-  nameWithType: SceneReferenceSO
-  fullName: SceneReferenceSO
+- uid: Global.RefInt
+  commentId: T:Global.RefInt
+  name: RefInt
+  nameWithType: RefInt
+  fullName: RefInt
+- uid: Global.RefFloat
+  commentId: T:Global.RefFloat
+  name: RefFloat
+  nameWithType: RefFloat
+  fullName: RefFloat
+- uid: Global.VarStringDrawer
+  commentId: T:Global.VarStringDrawer
+  name: VarStringDrawer
+  nameWithType: VarStringDrawer
+  fullName: VarStringDrawer
+- uid: Global.VarBoolDrawer
+  commentId: T:Global.VarBoolDrawer
+  name: VarBoolDrawer
+  nameWithType: VarBoolDrawer
+  fullName: VarBoolDrawer
+- uid: Global.IConsumable
+  commentId: T:Global.IConsumable
+  name: IConsumable
+  nameWithType: IConsumable
+  fullName: IConsumable
 - uid: Global.Task
   commentId: T:Global.Task
   name: Task
@@ -308,41 +187,105 @@ references:
   - name: .
   - uid: Global.Task.FinishedHandler
     name: FinishedHandler
+- uid: Global.RefStringDrawer
+  commentId: T:Global.RefStringDrawer
+  name: RefStringDrawer
+  nameWithType: RefStringDrawer
+  fullName: RefStringDrawer
+- uid: Global.SceneEventChannel
+  commentId: T:Global.SceneEventChannel
+  name: SceneEventChannel
+  nameWithType: SceneEventChannel
+  fullName: SceneEventChannel
+- uid: Global.BoolEventChannel
+  commentId: T:Global.BoolEventChannel
+  name: BoolEventChannel
+  nameWithType: BoolEventChannel
+  fullName: BoolEventChannel
+- uid: Global.VoidEventChannel
+  commentId: T:Global.VoidEventChannel
+  name: VoidEventChannel
+  nameWithType: VoidEventChannel
+  fullName: VoidEventChannel
+- uid: Global.SerializedPropertyExtensions
+  commentId: T:Global.SerializedPropertyExtensions
+  name: SerializedPropertyExtensions
+  nameWithType: SerializedPropertyExtensions
+  fullName: SerializedPropertyExtensions
+- uid: Global.IntroMenu
+  commentId: T:Global.IntroMenu
+  name: IntroMenu
+  nameWithType: IntroMenu
+  fullName: IntroMenu
+- uid: Global.OrderedSet`1
+  commentId: T:Global.OrderedSet`1
+  name: OrderedSet<T>
+  nameWithType: OrderedSet<T>
+  fullName: OrderedSet<T>
+  nameWithType.vb: OrderedSet(Of T)
+  fullName.vb: OrderedSet(Of T)
+  name.vb: OrderedSet(Of T)
+  spec.csharp:
+  - uid: Global.OrderedSet`1
+    name: OrderedSet
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Global.OrderedSet`1
+    name: OrderedSet
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Global.SimpleItem
+  commentId: T:Global.SimpleItem
+  name: SimpleItem
+  nameWithType: SimpleItem
+  fullName: SimpleItem
+- uid: Global.Variable`1
+  commentId: T:Global.Variable`1
+  name: Variable<T>
+  nameWithType: Variable<T>
+  fullName: Variable<T>
+  nameWithType.vb: Variable(Of T)
+  fullName.vb: Variable(Of T)
+  name.vb: Variable(Of T)
+  spec.csharp:
+  - uid: Global.Variable`1
+    name: Variable
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Global.Variable`1
+    name: Variable
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Global.Scene
+  commentId: T:Global.Scene
+  name: Scene
+  nameWithType: Scene
+  fullName: Scene
+- uid: Global.GameManager
+  commentId: T:Global.GameManager
+  name: GameManager
+  nameWithType: GameManager
+  fullName: GameManager
 - uid: Global.TestBehavior
   commentId: T:Global.TestBehavior
   name: TestBehavior
   nameWithType: TestBehavior
   fullName: TestBehavior
-- uid: Global.RefFloatDrawer
-  commentId: T:Global.RefFloatDrawer
-  name: RefFloatDrawer
-  nameWithType: RefFloatDrawer
-  fullName: RefFloatDrawer
-- uid: Global.ActionDataSODrawer
-  commentId: T:Global.ActionDataSODrawer
-  name: ActionDataSODrawer
-  nameWithType: ActionDataSODrawer
-  fullName: ActionDataSODrawer
-- uid: Global.Condition
-  commentId: T:Global.Condition
-  name: Condition
-  nameWithType: Condition
-  fullName: Condition
-- uid: Global.ResourceStorage
-  commentId: T:Global.ResourceStorage
-  name: ResourceStorage
-  nameWithType: ResourceStorage
-  fullName: ResourceStorage
-- uid: Global.OperactionReferenceDrawer
-  commentId: T:Global.OperactionReferenceDrawer
-  name: OperactionReferenceDrawer
-  nameWithType: OperactionReferenceDrawer
-  fullName: OperactionReferenceDrawer
-- uid: Global.ColorChangeCoroutine
-  commentId: T:Global.ColorChangeCoroutine
-  name: ColorChangeCoroutine
-  nameWithType: ColorChangeCoroutine
-  fullName: ColorChangeCoroutine
+- uid: Global.RefBool
+  commentId: T:Global.RefBool
+  name: RefBool
+  nameWithType: RefBool
+  fullName: RefBool
 - uid: Global.PlayerInput
   commentId: T:Global.PlayerInput
   name: PlayerInput
@@ -382,63 +325,123 @@ references:
   - name: .
   - uid: Global.PlayerInput.IPlayerActions
     name: IPlayerActions
-- uid: Global.QuestEditor
-  commentId: T:Global.QuestEditor
-  name: QuestEditor
-  nameWithType: QuestEditor
-  fullName: QuestEditor
-- uid: Global.VarString
-  commentId: T:Global.VarString
-  name: VarString
-  nameWithType: VarString
-  fullName: VarString
-- uid: Global.CoroutineOperationSO
-  commentId: T:Global.CoroutineOperationSO
-  name: CoroutineOperationSO
-  nameWithType: CoroutineOperationSO
-  fullName: CoroutineOperationSO
-- uid: Global.IConsumable
-  commentId: T:Global.IConsumable
-  name: IConsumable
-  nameWithType: IConsumable
-  fullName: IConsumable
-- uid: Global.Setting
-  commentId: T:Global.Setting
-  name: Setting
-  nameWithType: Setting
-  fullName: Setting
-- uid: Global.Setting.CoroutineStatus
-  commentId: T:Global.Setting.CoroutineStatus
-  name: Setting.CoroutineStatus
-  nameWithType: Setting.CoroutineStatus
-  fullName: Setting.CoroutineStatus
-  spec.csharp:
-  - uid: Global.Setting
-    name: Setting
-  - name: .
-  - uid: Global.Setting.CoroutineStatus
-    name: CoroutineStatus
-  spec.vb:
-  - uid: Global.Setting
-    name: Setting
-  - name: .
-  - uid: Global.Setting.CoroutineStatus
-    name: CoroutineStatus
-- uid: Global.ActionInstanceAttribute
-  commentId: T:Global.ActionInstanceAttribute
-  name: ActionInstanceAttribute
-  nameWithType: ActionInstanceAttribute
-  fullName: ActionInstanceAttribute
 - uid: Global.FloatEventChannel
   commentId: T:Global.FloatEventChannel
   name: FloatEventChannel
   nameWithType: FloatEventChannel
   fullName: FloatEventChannel
+- uid: Global.VarIntDrawer
+  commentId: T:Global.VarIntDrawer
+  name: VarIntDrawer
+  nameWithType: VarIntDrawer
+  fullName: VarIntDrawer
+- uid: Global.IEquipable
+  commentId: T:Global.IEquipable
+  name: IEquipable
+  nameWithType: IEquipable
+  fullName: IEquipable
+- uid: Global.VarFloatDrawer
+  commentId: T:Global.VarFloatDrawer
+  name: VarFloatDrawer
+  nameWithType: VarFloatDrawer
+  fullName: VarFloatDrawer
+- uid: Global.DescriptionBaseSO
+  commentId: T:Global.DescriptionBaseSO
+  name: DescriptionBaseSO
+  nameWithType: DescriptionBaseSO
+  fullName: DescriptionBaseSO
+- uid: Global.RefAbilityPriority
+  commentId: T:Global.RefAbilityPriority
+  name: RefAbilityPriority
+  nameWithType: RefAbilityPriority
+  fullName: RefAbilityPriority
+- uid: Global.RefIntDrawer
+  commentId: T:Global.RefIntDrawer
+  name: RefIntDrawer
+  nameWithType: RefIntDrawer
+  fullName: RefIntDrawer
+- uid: Global.VarInt
+  commentId: T:Global.VarInt
+  name: VarInt
+  nameWithType: VarInt
+  fullName: VarInt
+- uid: Global.DialogueBox
+  commentId: T:Global.DialogueBox
+  name: DialogueBox
+  nameWithType: DialogueBox
+  fullName: DialogueBox
+- uid: Global.SerializableLinkedList`1
+  commentId: T:Global.SerializableLinkedList`1
+  name: SerializableLinkedList<T>
+  nameWithType: SerializableLinkedList<T>
+  fullName: SerializableLinkedList<T>
+  nameWithType.vb: SerializableLinkedList(Of T)
+  fullName.vb: SerializableLinkedList(Of T)
+  name.vb: SerializableLinkedList(Of T)
+  spec.csharp:
+  - uid: Global.SerializableLinkedList`1
+    name: SerializableLinkedList
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Global.SerializableLinkedList`1
+    name: SerializableLinkedList
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Global.ExposedFieldAttribute
+  commentId: T:Global.ExposedFieldAttribute
+  name: ExposedFieldAttribute
+  nameWithType: ExposedFieldAttribute
+  fullName: ExposedFieldAttribute
+- uid: Global.Projectile
+  commentId: T:Global.Projectile
+  name: Projectile
+  nameWithType: Projectile
+  fullName: Projectile
+- uid: Global.AIAnimationConfigurator
+  commentId: T:Global.AIAnimationConfigurator
+  name: AIAnimationConfigurator
+  nameWithType: AIAnimationConfigurator
+  fullName: AIAnimationConfigurator
 - uid: Global.GameStateManager
   commentId: T:Global.GameStateManager
   name: GameStateManager
   nameWithType: GameStateManager
   fullName: GameStateManager
+- uid: Global.ControllerData
+  commentId: T:Global.ControllerData
+  name: ControllerData
+  nameWithType: ControllerData
+  fullName: ControllerData
+- uid: Global.RefFloatDrawer
+  commentId: T:Global.RefFloatDrawer
+  name: RefFloatDrawer
+  nameWithType: RefFloatDrawer
+  fullName: RefFloatDrawer
+- uid: Global.ActionDataSODrawer
+  commentId: T:Global.ActionDataSODrawer
+  name: ActionDataSODrawer
+  nameWithType: ActionDataSODrawer
+  fullName: ActionDataSODrawer
+- uid: Global.StringEventChannel
+  commentId: T:Global.StringEventChannel
+  name: StringEventChannel
+  nameWithType: StringEventChannel
+  fullName: StringEventChannel
+- uid: Global.ResourceStorage
+  commentId: T:Global.ResourceStorage
+  name: ResourceStorage
+  nameWithType: ResourceStorage
+  fullName: ResourceStorage
+- uid: Global.TargetConfig
+  commentId: T:Global.TargetConfig
+  name: TargetConfig
+  nameWithType: TargetConfig
+  fullName: TargetConfig
 - uid: Global.ActionPrioritySO
   commentId: T:Global.ActionPrioritySO
   name: ActionPrioritySO
@@ -449,199 +452,23 @@ references:
   name: ActionPriority
   nameWithType: ActionPriority
   fullName: ActionPriority
-- uid: Global.RefBoolDrawer
-  commentId: T:Global.RefBoolDrawer
-  name: RefBoolDrawer
-  nameWithType: RefBoolDrawer
-  fullName: RefBoolDrawer
-- uid: Global.Variable`1
-  commentId: T:Global.Variable`1
-  name: Variable<T>
-  nameWithType: Variable<T>
-  fullName: Variable<T>
-  nameWithType.vb: Variable(Of T)
-  fullName.vb: Variable(Of T)
-  name.vb: Variable(Of T)
-  spec.csharp:
-  - uid: Global.Variable`1
-    name: Variable
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: Global.Variable`1
-    name: Variable
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: Global.OperationSO
-  commentId: T:Global.OperationSO
-  name: OperationSO
-  nameWithType: OperationSO
-  fullName: OperationSO
-- uid: Global.RefIntDrawer
-  commentId: T:Global.RefIntDrawer
-  name: RefIntDrawer
-  nameWithType: RefIntDrawer
-  fullName: RefIntDrawer
-- uid: Global.VarBoolDrawer
-  commentId: T:Global.VarBoolDrawer
-  name: VarBoolDrawer
-  nameWithType: VarBoolDrawer
-  fullName: VarBoolDrawer
-- uid: Global.DescriptionBaseSO
-  commentId: T:Global.DescriptionBaseSO
-  name: DescriptionBaseSO
-  nameWithType: DescriptionBaseSO
-  fullName: DescriptionBaseSO
-- uid: Global.RefActionPriority
-  commentId: T:Global.RefActionPriority
-  name: RefActionPriority
-  nameWithType: RefActionPriority
-  fullName: RefActionPriority
-- uid: Global.ExposedPropertyTableEditor
-  commentId: T:Global.ExposedPropertyTableEditor
-  name: ExposedPropertyTableEditor
-  nameWithType: ExposedPropertyTableEditor
-  fullName: ExposedPropertyTableEditor
-- uid: Global.TargetConfig
-  commentId: T:Global.TargetConfig
-  name: TargetConfig
-  nameWithType: TargetConfig
-  fullName: TargetConfig
-- uid: Global.AttributeInitializer
-  commentId: T:Global.AttributeInitializer
-  name: AttributeInitializer
-  nameWithType: AttributeInitializer
-  fullName: AttributeInitializer
-- uid: Global.QuestEventChannel
-  commentId: T:Global.QuestEventChannel
-  name: QuestEventChannel
-  nameWithType: QuestEventChannel
-  fullName: QuestEventChannel
-- uid: Global.IntroMenu
-  commentId: T:Global.IntroMenu
-  name: IntroMenu
-  nameWithType: IntroMenu
-  fullName: IntroMenu
-- uid: Global.VarInt
-  commentId: T:Global.VarInt
-  name: VarInt
-  nameWithType: VarInt
-  fullName: VarInt
-- uid: Global.RefInt
-  commentId: T:Global.RefInt
-  name: RefInt
-  nameWithType: RefInt
-  fullName: RefInt
-- uid: Global.RefActionPriorityDrawer
-  commentId: T:Global.RefActionPriorityDrawer
-  name: RefActionPriorityDrawer
-  nameWithType: RefActionPriorityDrawer
-  fullName: RefActionPriorityDrawer
-- uid: Global.QuestSO
-  commentId: T:Global.QuestSO
-  name: QuestSO
-  nameWithType: QuestSO
-  fullName: QuestSO
-- uid: Global.LogOperationSO
-  commentId: T:Global.LogOperationSO
-  name: LogOperationSO
-  nameWithType: LogOperationSO
-  fullName: LogOperationSO
-- uid: Global.ExposedPropertyTable
-  commentId: T:Global.ExposedPropertyTable
-  name: ExposedPropertyTable
-  nameWithType: ExposedPropertyTable
-  fullName: ExposedPropertyTable
-- uid: Global.ExposedPropertyTable.Info
-  commentId: T:Global.ExposedPropertyTable.Info
-  name: ExposedPropertyTable.Info
-  nameWithType: ExposedPropertyTable.Info
-  fullName: ExposedPropertyTable.Info
-  spec.csharp:
-  - uid: Global.ExposedPropertyTable
-    name: ExposedPropertyTable
-  - name: .
-  - uid: Global.ExposedPropertyTable.Info
-    name: Info
-  spec.vb:
-  - uid: Global.ExposedPropertyTable
-    name: ExposedPropertyTable
-  - name: .
-  - uid: Global.ExposedPropertyTable.Info
-    name: Info
-- uid: Global.DialogueBox
-  commentId: T:Global.DialogueBox
-  name: DialogueBox
-  nameWithType: DialogueBox
-  fullName: DialogueBox
-- uid: Global.StringEventChannel
-  commentId: T:Global.StringEventChannel
-  name: StringEventChannel
-  nameWithType: StringEventChannel
-  fullName: StringEventChannel
-- uid: Global.OperationReference
-  commentId: T:Global.OperationReference
-  name: OperationReference
-  nameWithType: OperationReference
-  fullName: OperationReference
-- uid: Global.IntEventChannel
-  commentId: T:Global.IntEventChannel
-  name: IntEventChannel
-  nameWithType: IntEventChannel
-  fullName: IntEventChannel
 - uid: Global.AITrackData
   commentId: T:Global.AITrackData
   name: AITrackData
   nameWithType: AITrackData
   fullName: AITrackData
-- uid: Global.SceneLoader
-  commentId: T:Global.SceneLoader
-  name: SceneLoader
-  nameWithType: SceneLoader
-  fullName: SceneLoader
-- uid: Global.RefFloat
-  commentId: T:Global.RefFloat
-  name: RefFloat
-  nameWithType: RefFloat
-  fullName: RefFloat
-- uid: Global.SceneEventChannel
-  commentId: T:Global.SceneEventChannel
-  name: SceneEventChannel
-  nameWithType: SceneEventChannel
-  fullName: SceneEventChannel
-- uid: Global.IEquipable
-  commentId: T:Global.IEquipable
-  name: IEquipable
-  nameWithType: IEquipable
-  fullName: IEquipable
-- uid: Global.SimpleItem
-  commentId: T:Global.SimpleItem
-  name: SimpleItem
-  nameWithType: SimpleItem
-  fullName: SimpleItem
-- uid: Global.OrderedSet`1
-  commentId: T:Global.OrderedSet`1
-  name: OrderedSet<T>
-  nameWithType: OrderedSet<T>
-  fullName: OrderedSet<T>
-  nameWithType.vb: OrderedSet(Of T)
-  fullName.vb: OrderedSet(Of T)
-  name.vb: OrderedSet(Of T)
-  spec.csharp:
-  - uid: Global.OrderedSet`1
-    name: OrderedSet
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: Global.OrderedSet`1
-    name: OrderedSet
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
+- uid: Global.IntEventChannel
+  commentId: T:Global.IntEventChannel
+  name: IntEventChannel
+  nameWithType: IntEventChannel
+  fullName: IntEventChannel
+- uid: Global.RefString
+  commentId: T:Global.RefString
+  name: RefString
+  nameWithType: RefString
+  fullName: RefString
+- uid: Global.VarFloat
+  commentId: T:Global.VarFloat
+  name: VarFloat
+  nameWithType: VarFloat
+  fullName: VarFloat

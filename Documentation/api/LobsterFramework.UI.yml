@@ -5,7 +5,6 @@ items:
   id: LobsterFramework.UI
   children:
   - LobsterFramework.UI.DialogueDisplayer
-  - LobsterFramework.UI.GameplayUI
   - LobsterFramework.UI.InteractionUI
   - LobsterFramework.UI.PlayerUIDisplayer
   langs:
@@ -18,41 +17,18 @@ items:
   assemblies:
   - MyScripts
 references:
-- uid: LobsterFramework.UI.PlayerUIDisplayer
-  commentId: T:LobsterFramework.UI.PlayerUIDisplayer
-  name: PlayerUIDisplayer
-  nameWithType: PlayerUIDisplayer
-  fullName: LobsterFramework.UI.PlayerUIDisplayer
 - uid: LobsterFramework.UI.InteractionUI
   commentId: T:LobsterFramework.UI.InteractionUI
   name: InteractionUI
   nameWithType: InteractionUI
   fullName: LobsterFramework.UI.InteractionUI
-- uid: LobsterFramework.UI.GameplayUI
-  commentId: T:LobsterFramework.UI.GameplayUI
-  name: GameplayUI
-  nameWithType: GameplayUI
-  fullName: LobsterFramework.UI.GameplayUI
 - uid: LobsterFramework.UI.DialogueDisplayer
   commentId: T:LobsterFramework.UI.DialogueDisplayer
-  parent: LobsterFramework.UI
   name: DialogueDisplayer
   nameWithType: DialogueDisplayer
   fullName: LobsterFramework.UI.DialogueDisplayer
-- uid: LobsterFramework.UI
-  commentId: N:LobsterFramework.UI
-  name: LobsterFramework.UI
-  nameWithType: LobsterFramework.UI
-  fullName: LobsterFramework.UI
-  spec.csharp:
-  - uid: LobsterFramework
-    name: LobsterFramework
-  - name: .
-  - uid: LobsterFramework.UI
-    name: UI
-  spec.vb:
-  - uid: LobsterFramework
-    name: LobsterFramework
-  - name: .
-  - uid: LobsterFramework.UI
-    name: UI
+- uid: LobsterFramework.UI.PlayerUIDisplayer
+  commentId: T:LobsterFramework.UI.PlayerUIDisplayer
+  name: PlayerUIDisplayer
+  nameWithType: PlayerUIDisplayer
+  fullName: LobsterFramework.UI.PlayerUIDisplayer

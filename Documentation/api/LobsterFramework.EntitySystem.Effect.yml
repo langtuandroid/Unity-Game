@@ -13,6 +13,7 @@ items:
   - LobsterFramework.EntitySystem.Effect.OnApply
   - LobsterFramework.EntitySystem.Effect.OnEffectOver
   - LobsterFramework.EntitySystem.Effect.OnUpdate
+  - LobsterFramework.EntitySystem.Effect.TerminateEffect
   - LobsterFramework.EntitySystem.Effect.Update
   langs:
   - csharp
@@ -38,6 +39,7 @@ items:
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
   derivedClasses:
+  - LobsterFramework.EntitySystem.SilentEffect
   - LobsterFramework.EntitySystem.StunEffect
   inheritedMembers:
   - UnityEngine.ScriptableObject.SetDirty
@@ -239,7 +241,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Effect/Effect.cs
     id: Update
     path: ../Assets/Scripts/Scriptable Objects/Effect/Effect.cs
-    startLine: 40
+    startLine: 41
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
@@ -265,7 +267,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Effect/Effect.cs
     id: OnApply
     path: ../Assets/Scripts/Scriptable Objects/Effect/Effect.cs
-    startLine: 52
+    startLine: 53
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
@@ -289,7 +291,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Effect/Effect.cs
     id: OnUpdate
     path: ../Assets/Scripts/Scriptable Objects/Effect/Effect.cs
-    startLine: 54
+    startLine: 55
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
@@ -313,7 +315,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Effect/Effect.cs
     id: OnEffectOver
     path: ../Assets/Scripts/Scriptable Objects/Effect/Effect.cs
-    startLine: 56
+    startLine: 57
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
@@ -321,6 +323,30 @@ items:
     content: protected virtual void OnEffectOver()
     content.vb: Protected Overridable Sub OnEffectOver()
   overload: LobsterFramework.EntitySystem.Effect.OnEffectOver*
+- uid: LobsterFramework.EntitySystem.Effect.TerminateEffect
+  commentId: M:LobsterFramework.EntitySystem.Effect.TerminateEffect
+  id: TerminateEffect
+  parent: LobsterFramework.EntitySystem.Effect
+  langs:
+  - csharp
+  - vb
+  name: TerminateEffect()
+  nameWithType: Effect.TerminateEffect()
+  fullName: LobsterFramework.EntitySystem.Effect.TerminateEffect()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Effect/Effect.cs
+    id: TerminateEffect
+    path: ../Assets/Scripts/Scriptable Objects/Effect/Effect.cs
+    startLine: 59
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public void TerminateEffect()
+    content.vb: Public Sub TerminateEffect()
+  overload: LobsterFramework.EntitySystem.Effect.TerminateEffect*
 references:
 - uid: LobsterFramework.EntitySystem
   commentId: N:LobsterFramework.EntitySystem
@@ -2293,3 +2319,8 @@ references:
   name: OnEffectOver
   nameWithType: Effect.OnEffectOver
   fullName: LobsterFramework.EntitySystem.Effect.OnEffectOver
+- uid: LobsterFramework.EntitySystem.Effect.TerminateEffect*
+  commentId: Overload:LobsterFramework.EntitySystem.Effect.TerminateEffect
+  name: TerminateEffect
+  nameWithType: Effect.TerminateEffect
+  fullName: LobsterFramework.EntitySystem.Effect.TerminateEffect

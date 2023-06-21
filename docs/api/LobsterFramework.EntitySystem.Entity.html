@@ -82,7 +82,9 @@
 
   <h1 id="LobsterFramework_EntitySystem_Entity" data-uid="LobsterFramework.EntitySystem.Entity" class="text-break">Class Entity
 </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Character class of the game. Provides an interface for character movement and health/damage system. Entities will be disabled
+when their health goes down to or below 0.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -139,6 +141,9 @@
     </div>
     <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/MonoBehaviour-print.html">MonoBehaviour.print(object)</a>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.MonoBehaviour.destroyCancellationToken</span>
     </div>
     <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/MonoBehaviour-useGUILayout.html">MonoBehaviour.useGUILayout</a>
@@ -427,7 +432,8 @@
   <h6><strong>Assembly</strong>: MyScripts.dll</h6>
   <h5 id="LobsterFramework_EntitySystem_Entity_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Entity : MonoBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">[AddComponentMenu(&quot;Entity&quot;)]
+public class Entity : MonoBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
 </h3>
@@ -458,12 +464,12 @@ public Dictionary&lt;Type, Effect&gt; activeEffects</code></pre>
   </table>
 
 
-  <h4 id="LobsterFramework_EntitySystem_Entity_onActionBlocked" data-uid="LobsterFramework.EntitySystem.Entity.onActionBlocked">onActionBlocked</h4>
+  <h4 id="LobsterFramework_EntitySystem_Entity_onDamaged" data-uid="LobsterFramework.EntitySystem.Entity.onDamaged">onDamaged</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public UnityAction&lt;bool&gt; onActionBlocked</code></pre>
+    <pre><code class="lang-csharp hljs">public UnityAction&lt;Damage&gt; onDamaged</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -475,7 +481,7 @@ public Dictionary&lt;Type, Effect&gt; activeEffects</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/Events.UnityAction_1.html">UnityAction</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</td>
+        <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/Events.UnityAction_1.html">UnityAction</a>&lt;<a class="xref" href="LobsterFramework.EntitySystem.Damage.html">Damage</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -508,38 +514,13 @@ public Dictionary&lt;Type, Effect&gt; activeEffects</code></pre>
 </h3>
 
 
-  <a id="LobsterFramework_EntitySystem_Entity_ActionBlocked_" data-uid="LobsterFramework.EntitySystem.Entity.ActionBlocked*"></a>
-  <h4 id="LobsterFramework_EntitySystem_Entity_ActionBlocked" data-uid="LobsterFramework.EntitySystem.Entity.ActionBlocked">ActionBlocked</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool ActionBlocked { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
   <a id="LobsterFramework_EntitySystem_Entity_Health_" data-uid="LobsterFramework.EntitySystem.Entity.Health*"></a>
   <h4 id="LobsterFramework_EntitySystem_Entity_Health" data-uid="LobsterFramework.EntitySystem.Entity.Health">Health</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Health { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public float Health { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -551,32 +532,7 @@ public Dictionary&lt;Type, Effect&gt; activeEffects</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <a id="LobsterFramework_EntitySystem_Entity_IncomingDamage_" data-uid="LobsterFramework.EntitySystem.Entity.IncomingDamage*"></a>
-  <h4 id="LobsterFramework_EntitySystem_Entity_IncomingDamage" data-uid="LobsterFramework.EntitySystem.Entity.IncomingDamage">IncomingDamage</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int IncomingDamage { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -614,7 +570,7 @@ public Dictionary&lt;Type, Effect&gt; activeEffects</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DamageInfo LatestDamageInfo { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Damage LatestDamageInfo { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -626,7 +582,7 @@ public Dictionary&lt;Type, Effect&gt; activeEffects</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="LobsterFramework.EntitySystem.DamageInfo.html">DamageInfo</a></td>
+        <td><a class="xref" href="LobsterFramework.EntitySystem.Damage.html">Damage</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -639,7 +595,7 @@ public Dictionary&lt;Type, Effect&gt; activeEffects</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int MaxHealth { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public float MaxHealth { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -651,7 +607,32 @@ public Dictionary&lt;Type, Effect&gt; activeEffects</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_EntitySystem_Entity_MaxPosture_" data-uid="LobsterFramework.EntitySystem.Entity.MaxPosture*"></a>
+  <h4 id="LobsterFramework_EntitySystem_Entity_MaxPosture" data-uid="LobsterFramework.EntitySystem.Entity.MaxPosture">MaxPosture</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MaxPosture { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -681,113 +662,143 @@ public Dictionary&lt;Type, Effect&gt; activeEffects</code></pre>
       </tr>
     </tbody>
   </table>
+
+
+  <a id="LobsterFramework_EntitySystem_Entity_MoveSpeed_" data-uid="LobsterFramework.EntitySystem.Entity.MoveSpeed*"></a>
+  <h4 id="LobsterFramework_EntitySystem_Entity_MoveSpeed" data-uid="LobsterFramework.EntitySystem.Entity.MoveSpeed">MoveSpeed</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MoveSpeed { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_EntitySystem_Entity_Posture_" data-uid="LobsterFramework.EntitySystem.Entity.Posture*"></a>
+  <h4 id="LobsterFramework_EntitySystem_Entity_Posture" data-uid="LobsterFramework.EntitySystem.Entity.Posture">Posture</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Posture { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_EntitySystem_Entity_PostureBroken_" data-uid="LobsterFramework.EntitySystem.Entity.PostureBroken*"></a>
+  <h4 id="LobsterFramework_EntitySystem_Entity_PostureBroken" data-uid="LobsterFramework.EntitySystem.Entity.PostureBroken">PostureBroken</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PostureBroken { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_EntitySystem_Entity_RegenSuppressed_" data-uid="LobsterFramework.EntitySystem.Entity.RegenSuppressed*"></a>
+  <h4 id="LobsterFramework_EntitySystem_Entity_RegenSuppressed" data-uid="LobsterFramework.EntitySystem.Entity.RegenSuppressed">RegenSuppressed</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RegenSuppressed { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_EntitySystem_Entity_RotateSpeed_" data-uid="LobsterFramework.EntitySystem.Entity.RotateSpeed*"></a>
+  <h4 id="LobsterFramework_EntitySystem_Entity_RotateSpeed" data-uid="LobsterFramework.EntitySystem.Entity.RotateSpeed">RotateSpeed</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float RotateSpeed { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
 </h3>
 
 
-  <a id="LobsterFramework_EntitySystem_Entity_BlockAction_" data-uid="LobsterFramework.EntitySystem.Entity.BlockAction*"></a>
-  <h4 id="LobsterFramework_EntitySystem_Entity_BlockAction_System_Boolean_" data-uid="LobsterFramework.EntitySystem.Entity.BlockAction(System.Boolean)">BlockAction(bool)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="LobsterFramework_EntitySystem_Entity_AddEffect_" data-uid="LobsterFramework.EntitySystem.Entity.AddEffect*"></a>
+  <h4 id="LobsterFramework_EntitySystem_Entity_AddEffect_LobsterFramework_EntitySystem_Effect_" data-uid="LobsterFramework.EntitySystem.Entity.AddEffect(LobsterFramework.EntitySystem.Effect)">AddEffect(Effect)</h4>
+  <div class="markdown level1 summary"><p>Apply an effect to the entity</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void BlockAction(bool value)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">value</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <a id="LobsterFramework_EntitySystem_Entity_BlockMovement_" data-uid="LobsterFramework.EntitySystem.Entity.BlockMovement*"></a>
-  <h4 id="LobsterFramework_EntitySystem_Entity_BlockMovement_System_Boolean_" data-uid="LobsterFramework.EntitySystem.Entity.BlockMovement(System.Boolean)">BlockMovement(bool)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void BlockMovement(bool value)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">value</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <a id="LobsterFramework_EntitySystem_Entity_Die_" data-uid="LobsterFramework.EntitySystem.Entity.Die*"></a>
-  <h4 id="LobsterFramework_EntitySystem_Entity_Die" data-uid="LobsterFramework.EntitySystem.Entity.Die">Die()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Die()</code></pre>
-  </div>
-
-
-  <a id="LobsterFramework_EntitySystem_Entity_RegisterDamage_" data-uid="LobsterFramework.EntitySystem.Entity.RegisterDamage*"></a>
-  <h4 id="LobsterFramework_EntitySystem_Entity_RegisterDamage_System_Int32_LobsterFramework_EntitySystem_Entity_" data-uid="LobsterFramework.EntitySystem.Entity.RegisterDamage(System.Int32,LobsterFramework.EntitySystem.Entity)">RegisterDamage(int, Entity)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void RegisterDamage(int damage, Entity attacker = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">damage</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="LobsterFramework.EntitySystem.Entity.html">Entity</a></td>
-        <td><span class="parametername">attacker</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <a id="LobsterFramework_EntitySystem_Entity_RegisterEffect_" data-uid="LobsterFramework.EntitySystem.Entity.RegisterEffect*"></a>
-  <h4 id="LobsterFramework_EntitySystem_Entity_RegisterEffect_LobsterFramework_EntitySystem_Effect_" data-uid="LobsterFramework.EntitySystem.Entity.RegisterEffect(LobsterFramework.EntitySystem.Effect)">RegisterEffect(Effect)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void RegisterEffect(Effect effect)</code></pre>
+    <pre><code class="lang-csharp hljs">public void AddEffect(Effect effect)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -808,14 +819,254 @@ public Dictionary&lt;Type, Effect&gt; activeEffects</code></pre>
   </table>
 
 
+  <a id="LobsterFramework_EntitySystem_Entity_BlockMovement_" data-uid="LobsterFramework.EntitySystem.Entity.BlockMovement*"></a>
+  <h4 id="LobsterFramework_EntitySystem_Entity_BlockMovement" data-uid="LobsterFramework.EntitySystem.Entity.BlockMovement">BlockMovement()</h4>
+  <div class="markdown level1 summary"><p>Add an effector to block movement of this entity. The movement of the entity will be blocked if there's at least 1 effector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int BlockMovement()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>The id of the newly added effector</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_EntitySystem_Entity_Damage_" data-uid="LobsterFramework.EntitySystem.Entity.Damage*"></a>
+  <h4 id="LobsterFramework_EntitySystem_Entity_Damage_System_Int32_System_Int32_LobsterFramework_EntitySystem_Entity_LobsterFramework_EntitySystem_DamageType_" data-uid="LobsterFramework.EntitySystem.Entity.Damage(System.Int32,System.Int32,LobsterFramework.EntitySystem.Entity,LobsterFramework.EntitySystem.DamageType)">Damage(int, int, Entity, DamageType)</h4>
+  <div class="markdown level1 summary"><p>Add damage to the entity, the damage will be dealt on update of next frame</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Damage(int health, int posture, Entity source = null, DamageType type = DamageType.General)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">health</span></td>
+        <td><p>The amount of health damage</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">posture</span></td>
+        <td><p>The amount of posture damage</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.EntitySystem.Entity.html">Entity</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source of this attack</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.EntitySystem.DamageType.html">DamageType</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>The type of the damage</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_EntitySystem_Entity_Defense_" data-uid="LobsterFramework.EntitySystem.Entity.Defense*"></a>
+  <h4 id="LobsterFramework_EntitySystem_Entity_Defense_System_Int32_System_Int32_" data-uid="LobsterFramework.EntitySystem.Entity.Defense(System.Int32,System.Int32)">Defense(int, int)</h4>
+  <div class="markdown level1 summary"><p>Add a flat damage reduction to the entity, the damage taken will be reduced by the specified amount on update of next frame</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Defense(int healthDefense, int postureDefense)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">healthDefense</span></td>
+        <td><p>The amount of health defense</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">postureDefense</span></td>
+        <td><p>The amount of posture defense</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_EntitySystem_Entity_Move_" data-uid="LobsterFramework.EntitySystem.Entity.Move*"></a>
+  <h4 id="LobsterFramework_EntitySystem_Entity_Move_UnityEngine_Vector2_" data-uid="LobsterFramework.EntitySystem.Entity.Move(UnityEngine.Vector2)">Move(Vector2)</h4>
+  <div class="markdown level1 summary"><p>Start moving the entity towards the specified direction, will fail is Movement is blocked on this entity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Move(Vector2 direction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</a></td>
+        <td><span class="parametername">direction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
   <a id="LobsterFramework_EntitySystem_Entity_Reset_" data-uid="LobsterFramework.EntitySystem.Entity.Reset*"></a>
   <h4 id="LobsterFramework_EntitySystem_Entity_Reset" data-uid="LobsterFramework.EntitySystem.Entity.Reset">Reset()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Reset the entity to its full health and posture and clear all of the damage and effects</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Reset()</code></pre>
   </div>
+
+
+  <a id="LobsterFramework_EntitySystem_Entity_RotateByDegrees_" data-uid="LobsterFramework.EntitySystem.Entity.RotateByDegrees*"></a>
+  <h4 id="LobsterFramework_EntitySystem_Entity_RotateByDegrees_System_Single_" data-uid="LobsterFramework.EntitySystem.Entity.RotateByDegrees(System.Single)">RotateByDegrees(float)</h4>
+  <div class="markdown level1 summary"><p>Attempt to rotate the entity by the specified degree. If the specified angle is larger than the max rotation speed,
+the entity will rotate towards target angle will max speed. Will fail if Movement blocked.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RotateByDegrees(float degree)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">degree</span></td>
+        <td><p>The degree to rotate the entity by</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_EntitySystem_Entity_RotateTowards_" data-uid="LobsterFramework.EntitySystem.Entity.RotateTowards*"></a>
+  <h4 id="LobsterFramework_EntitySystem_Entity_RotateTowards_UnityEngine_Vector2_" data-uid="LobsterFramework.EntitySystem.Entity.RotateTowards(UnityEngine.Vector2)">RotateTowards(Vector2)</h4>
+  <div class="markdown level1 summary"><p>Attempt to rotate the entity towards the specified direction. If the specified angle is larger than the max rotation speed,
+the entity will rotate towards target angle will max speed. Will fail if Movement blocked.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RotateTowards(Vector2 direction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</a></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The target direction to rotate towards</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_EntitySystem_Entity_UnblockMovement_" data-uid="LobsterFramework.EntitySystem.Entity.UnblockMovement*"></a>
+  <h4 id="LobsterFramework_EntitySystem_Entity_UnblockMovement_System_Int32_" data-uid="LobsterFramework.EntitySystem.Entity.UnblockMovement(System.Int32)">UnblockMovement(int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UnblockMovement(int key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
 

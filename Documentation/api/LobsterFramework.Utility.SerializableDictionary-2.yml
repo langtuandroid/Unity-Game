@@ -56,9 +56,9 @@ items:
   inheritance:
   - System.Object
   derivedClasses:
-  - LobsterFramework.Utility.StringActionConfigDictionary
-  - LobsterFramework.Utility.TypeActionComponentDictionary
-  - LobsterFramework.Utility.TypeActionInstanceDictionary
+  - LobsterFramework.Utility.StringAbilityConfigDictionary
+  - LobsterFramework.Utility.TypeAbilityDictionary
+  - LobsterFramework.Utility.TypeAbilityStatDictionary
   implements:
   - UnityEngine.ISerializationCallbackReceiver
   attributes:
@@ -809,7 +809,7 @@ references:
     name: Generic
     isExternal: true
 - uid: System.Collections.Generic.List{{TValue}}
-  commentId: T:System.Collections.Generic.List{`0}
+  commentId: T:System.Collections.Generic.List{`1}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
   name: List<TValue>

@@ -5,22 +5,29 @@ items:
   id: Entity
   parent: LobsterFramework.EntitySystem
   children:
-  - LobsterFramework.EntitySystem.Entity.ActionBlocked
   - LobsterFramework.EntitySystem.Entity.activeEffects
-  - LobsterFramework.EntitySystem.Entity.BlockAction(System.Boolean)
-  - LobsterFramework.EntitySystem.Entity.BlockMovement(System.Boolean)
-  - LobsterFramework.EntitySystem.Entity.Die
+  - LobsterFramework.EntitySystem.Entity.AddEffect(LobsterFramework.EntitySystem.Effect)
+  - LobsterFramework.EntitySystem.Entity.BlockMovement
+  - LobsterFramework.EntitySystem.Entity.Damage(System.Int32,System.Int32,LobsterFramework.EntitySystem.Entity,LobsterFramework.EntitySystem.DamageType)
+  - LobsterFramework.EntitySystem.Entity.Defense(System.Int32,System.Int32)
   - LobsterFramework.EntitySystem.Entity.Health
-  - LobsterFramework.EntitySystem.Entity.IncomingDamage
   - LobsterFramework.EntitySystem.Entity.IsDead
   - LobsterFramework.EntitySystem.Entity.LatestDamageInfo
   - LobsterFramework.EntitySystem.Entity.MaxHealth
+  - LobsterFramework.EntitySystem.Entity.MaxPosture
+  - LobsterFramework.EntitySystem.Entity.Move(UnityEngine.Vector2)
   - LobsterFramework.EntitySystem.Entity.MovementBlocked
-  - LobsterFramework.EntitySystem.Entity.onActionBlocked
+  - LobsterFramework.EntitySystem.Entity.MoveSpeed
+  - LobsterFramework.EntitySystem.Entity.onDamaged
   - LobsterFramework.EntitySystem.Entity.onMovementBlocked
-  - LobsterFramework.EntitySystem.Entity.RegisterDamage(System.Int32,LobsterFramework.EntitySystem.Entity)
-  - LobsterFramework.EntitySystem.Entity.RegisterEffect(LobsterFramework.EntitySystem.Effect)
+  - LobsterFramework.EntitySystem.Entity.Posture
+  - LobsterFramework.EntitySystem.Entity.PostureBroken
+  - LobsterFramework.EntitySystem.Entity.RegenSuppressed
   - LobsterFramework.EntitySystem.Entity.Reset
+  - LobsterFramework.EntitySystem.Entity.RotateByDegrees(System.Single)
+  - LobsterFramework.EntitySystem.Entity.RotateSpeed
+  - LobsterFramework.EntitySystem.Entity.RotateTowards(UnityEngine.Vector2)
+  - LobsterFramework.EntitySystem.Entity.UnblockMovement(System.Int32)
   langs:
   - csharp
   - vb
@@ -30,16 +37,24 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
     id: Entity
-    path: ../Assets/Scripts/Components/Entity/Entity.cs
-    startLine: 8
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 13
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
+  summary: "\nCharacter class of the game. Provides an interface for character movement and health/damage system. Entities will be disabled\nwhen their health goes down to or below 0.\n"
+  example: []
   syntax:
-    content: 'public class Entity : MonoBehaviour'
-    content.vb: Public Class Entity Inherits MonoBehaviour
+    content: >-
+      [AddComponentMenu("Entity")]
+
+      public class Entity : MonoBehaviour
+    content.vb: >-
+      <AddComponentMenu("Entity")>
+
+      Public Class Entity Inherits MonoBehaviour
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -62,6 +77,7 @@ items:
   - UnityEngine.MonoBehaviour.StopCoroutine(System.String)
   - UnityEngine.MonoBehaviour.StopAllCoroutines
   - UnityEngine.MonoBehaviour.print(System.Object)
+  - UnityEngine.MonoBehaviour.destroyCancellationToken
   - UnityEngine.MonoBehaviour.useGUILayout
   - UnityEngine.MonoBehaviour.runInEditMode
   - UnityEngine.Behaviour.enabled
@@ -156,56 +172,147 @@ items:
   - UnityEngine.Object.ToString
   - UnityEngine.Object.name
   - UnityEngine.Object.hideFlags
-- uid: LobsterFramework.EntitySystem.Entity.onActionBlocked
-  commentId: F:LobsterFramework.EntitySystem.Entity.onActionBlocked
-  id: onActionBlocked
+  attributes:
+  - type: UnityEngine.AddComponentMenu
+    ctor: UnityEngine.AddComponentMenu.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Entity
+- uid: LobsterFramework.EntitySystem.Entity.MaxHealth
+  commentId: P:LobsterFramework.EntitySystem.Entity.MaxHealth
+  id: MaxHealth
   parent: LobsterFramework.EntitySystem.Entity
   langs:
   - csharp
   - vb
-  name: onActionBlocked
-  nameWithType: Entity.onActionBlocked
-  fullName: LobsterFramework.EntitySystem.Entity.onActionBlocked
-  type: Field
+  name: MaxHealth
+  nameWithType: Entity.MaxHealth
+  fullName: LobsterFramework.EntitySystem.Entity.MaxHealth
+  type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
-    id: onActionBlocked
-    path: ../Assets/Scripts/Components/Entity/Entity.cs
-    startLine: 14
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: MaxHealth
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 31
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
   syntax:
-    content: public UnityAction<bool> onActionBlocked
+    content: public float MaxHealth { get; }
+    parameters: []
     return:
-      type: UnityEngine.Events.UnityAction{System.Boolean}
-    content.vb: Public onActionBlocked As UnityAction(Of Boolean)
-- uid: LobsterFramework.EntitySystem.Entity.onMovementBlocked
-  commentId: F:LobsterFramework.EntitySystem.Entity.onMovementBlocked
-  id: onMovementBlocked
+      type: System.Single
+    content.vb: Public ReadOnly Property MaxHealth As Single
+  overload: LobsterFramework.EntitySystem.Entity.MaxHealth*
+- uid: LobsterFramework.EntitySystem.Entity.MaxPosture
+  commentId: P:LobsterFramework.EntitySystem.Entity.MaxPosture
+  id: MaxPosture
   parent: LobsterFramework.EntitySystem.Entity
   langs:
   - csharp
   - vb
-  name: onMovementBlocked
-  nameWithType: Entity.onMovementBlocked
-  fullName: LobsterFramework.EntitySystem.Entity.onMovementBlocked
-  type: Field
+  name: MaxPosture
+  nameWithType: Entity.MaxPosture
+  fullName: LobsterFramework.EntitySystem.Entity.MaxPosture
+  type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
-    id: onMovementBlocked
-    path: ../Assets/Scripts/Components/Entity/Entity.cs
-    startLine: 15
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: MaxPosture
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 32
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
   syntax:
-    content: public UnityAction<bool> onMovementBlocked
+    content: public float MaxPosture { get; }
+    parameters: []
     return:
-      type: UnityEngine.Events.UnityAction{System.Boolean}
-    content.vb: Public onMovementBlocked As UnityAction(Of Boolean)
+      type: System.Single
+    content.vb: Public ReadOnly Property MaxPosture As Single
+  overload: LobsterFramework.EntitySystem.Entity.MaxPosture*
+- uid: LobsterFramework.EntitySystem.Entity.MoveSpeed
+  commentId: P:LobsterFramework.EntitySystem.Entity.MoveSpeed
+  id: MoveSpeed
+  parent: LobsterFramework.EntitySystem.Entity
+  langs:
+  - csharp
+  - vb
+  name: MoveSpeed
+  nameWithType: Entity.MoveSpeed
+  fullName: LobsterFramework.EntitySystem.Entity.MoveSpeed
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: MoveSpeed
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 40
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public float MoveSpeed { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property MoveSpeed As Single
+  overload: LobsterFramework.EntitySystem.Entity.MoveSpeed*
+- uid: LobsterFramework.EntitySystem.Entity.RotateSpeed
+  commentId: P:LobsterFramework.EntitySystem.Entity.RotateSpeed
+  id: RotateSpeed
+  parent: LobsterFramework.EntitySystem.Entity
+  langs:
+  - csharp
+  - vb
+  name: RotateSpeed
+  nameWithType: Entity.RotateSpeed
+  fullName: LobsterFramework.EntitySystem.Entity.RotateSpeed
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: RotateSpeed
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 41
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public float RotateSpeed { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property RotateSpeed As Single
+  overload: LobsterFramework.EntitySystem.Entity.RotateSpeed*
+- uid: LobsterFramework.EntitySystem.Entity.MovementBlocked
+  commentId: P:LobsterFramework.EntitySystem.Entity.MovementBlocked
+  id: MovementBlocked
+  parent: LobsterFramework.EntitySystem.Entity
+  langs:
+  - csharp
+  - vb
+  name: MovementBlocked
+  nameWithType: Entity.MovementBlocked
+  fullName: LobsterFramework.EntitySystem.Entity.MovementBlocked
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: MovementBlocked
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 42
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public bool MovementBlocked { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property MovementBlocked As Boolean
+  overload: LobsterFramework.EntitySystem.Entity.MovementBlocked*
 - uid: LobsterFramework.EntitySystem.Entity.activeEffects
   commentId: F:LobsterFramework.EntitySystem.Entity.activeEffects
   id: activeEffects
@@ -219,10 +326,10 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
     id: activeEffects
-    path: ../Assets/Scripts/Components/Entity/Entity.cs
-    startLine: 18
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 46
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
@@ -241,87 +348,83 @@ items:
   - type: UnityEngine.SerializeField
     ctor: UnityEngine.SerializeField.#ctor
     arguments: []
-- uid: LobsterFramework.EntitySystem.Entity.ActionBlocked
-  commentId: P:LobsterFramework.EntitySystem.Entity.ActionBlocked
-  id: ActionBlocked
+- uid: LobsterFramework.EntitySystem.Entity.onMovementBlocked
+  commentId: F:LobsterFramework.EntitySystem.Entity.onMovementBlocked
+  id: onMovementBlocked
   parent: LobsterFramework.EntitySystem.Entity
   langs:
   - csharp
   - vb
-  name: ActionBlocked
-  nameWithType: Entity.ActionBlocked
-  fullName: LobsterFramework.EntitySystem.Entity.ActionBlocked
-  type: Property
+  name: onMovementBlocked
+  nameWithType: Entity.onMovementBlocked
+  fullName: LobsterFramework.EntitySystem.Entity.onMovementBlocked
+  type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
-    id: ActionBlocked
-    path: ../Assets/Scripts/Components/Entity/Entity.cs
-    startLine: 19
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: onMovementBlocked
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 54
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
   syntax:
-    content: public bool ActionBlocked { get; }
+    content: public UnityAction<bool> onMovementBlocked
+    return:
+      type: UnityEngine.Events.UnityAction{System.Boolean}
+    content.vb: Public onMovementBlocked As UnityAction(Of Boolean)
+- uid: LobsterFramework.EntitySystem.Entity.onDamaged
+  commentId: F:LobsterFramework.EntitySystem.Entity.onDamaged
+  id: onDamaged
+  parent: LobsterFramework.EntitySystem.Entity
+  langs:
+  - csharp
+  - vb
+  name: onDamaged
+  nameWithType: Entity.onDamaged
+  fullName: LobsterFramework.EntitySystem.Entity.onDamaged
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: onDamaged
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 55
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public UnityAction<Damage> onDamaged
+    return:
+      type: UnityEngine.Events.UnityAction{LobsterFramework.EntitySystem.Damage}
+    content.vb: Public onDamaged As UnityAction(Of Damage)
+- uid: LobsterFramework.EntitySystem.Entity.RegenSuppressed
+  commentId: P:LobsterFramework.EntitySystem.Entity.RegenSuppressed
+  id: RegenSuppressed
+  parent: LobsterFramework.EntitySystem.Entity
+  langs:
+  - csharp
+  - vb
+  name: RegenSuppressed
+  nameWithType: Entity.RegenSuppressed
+  fullName: LobsterFramework.EntitySystem.Entity.RegenSuppressed
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: RegenSuppressed
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 64
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public bool RegenSuppressed { get; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property ActionBlocked As Boolean
-  overload: LobsterFramework.EntitySystem.Entity.ActionBlocked*
-- uid: LobsterFramework.EntitySystem.Entity.MovementBlocked
-  commentId: P:LobsterFramework.EntitySystem.Entity.MovementBlocked
-  id: MovementBlocked
-  parent: LobsterFramework.EntitySystem.Entity
-  langs:
-  - csharp
-  - vb
-  name: MovementBlocked
-  nameWithType: Entity.MovementBlocked
-  fullName: LobsterFramework.EntitySystem.Entity.MovementBlocked
-  type: Property
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
-    id: MovementBlocked
-    path: ../Assets/Scripts/Components/Entity/Entity.cs
-    startLine: 20
-  assemblies:
-  - MyScripts
-  namespace: LobsterFramework.EntitySystem
-  syntax:
-    content: public bool MovementBlocked { get; }
-    parameters: []
-    return:
-      type: System.Boolean
-    content.vb: Public Property MovementBlocked As Boolean
-  overload: LobsterFramework.EntitySystem.Entity.MovementBlocked*
-- uid: LobsterFramework.EntitySystem.Entity.MaxHealth
-  commentId: P:LobsterFramework.EntitySystem.Entity.MaxHealth
-  id: MaxHealth
-  parent: LobsterFramework.EntitySystem.Entity
-  langs:
-  - csharp
-  - vb
-  name: MaxHealth
-  nameWithType: Entity.MaxHealth
-  fullName: LobsterFramework.EntitySystem.Entity.MaxHealth
-  type: Property
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
-    id: MaxHealth
-    path: ../Assets/Scripts/Components/Entity/Entity.cs
-    startLine: 30
-  assemblies:
-  - MyScripts
-  namespace: LobsterFramework.EntitySystem
-  syntax:
-    content: public int MaxHealth { get; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public Property MaxHealth As Integer
-  overload: LobsterFramework.EntitySystem.Entity.MaxHealth*
+    content.vb: Public ReadOnly Property RegenSuppressed As Boolean
+  overload: LobsterFramework.EntitySystem.Entity.RegenSuppressed*
 - uid: LobsterFramework.EntitySystem.Entity.Health
   commentId: P:LobsterFramework.EntitySystem.Entity.Health
   id: Health
@@ -335,47 +438,47 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
     id: Health
-    path: ../Assets/Scripts/Components/Entity/Entity.cs
-    startLine: 49
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 66
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
   syntax:
-    content: public int Health { get; }
+    content: public float Health { get; }
     parameters: []
     return:
-      type: System.Int32
-    content.vb: Public Property Health As Integer
+      type: System.Single
+    content.vb: Public Property Health As Single
   overload: LobsterFramework.EntitySystem.Entity.Health*
-- uid: LobsterFramework.EntitySystem.Entity.IncomingDamage
-  commentId: P:LobsterFramework.EntitySystem.Entity.IncomingDamage
-  id: IncomingDamage
+- uid: LobsterFramework.EntitySystem.Entity.Posture
+  commentId: P:LobsterFramework.EntitySystem.Entity.Posture
+  id: Posture
   parent: LobsterFramework.EntitySystem.Entity
   langs:
   - csharp
   - vb
-  name: IncomingDamage
-  nameWithType: Entity.IncomingDamage
-  fullName: LobsterFramework.EntitySystem.Entity.IncomingDamage
+  name: Posture
+  nameWithType: Entity.Posture
+  fullName: LobsterFramework.EntitySystem.Entity.Posture
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
-    id: IncomingDamage
-    path: ../Assets/Scripts/Components/Entity/Entity.cs
-    startLine: 68
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: Posture
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 72
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
   syntax:
-    content: public int IncomingDamage { get; set; }
+    content: public float Posture { get; }
     parameters: []
     return:
-      type: System.Int32
-    content.vb: Public Property IncomingDamage As Integer
-  overload: LobsterFramework.EntitySystem.Entity.IncomingDamage*
+      type: System.Single
+    content.vb: Public Property Posture As Single
+  overload: LobsterFramework.EntitySystem.Entity.Posture*
 - uid: LobsterFramework.EntitySystem.Entity.IsDead
   commentId: P:LobsterFramework.EntitySystem.Entity.IsDead
   id: IsDead
@@ -389,10 +492,10 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
     id: IsDead
-    path: ../Assets/Scripts/Components/Entity/Entity.cs
-    startLine: 82
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 81
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
@@ -403,6 +506,33 @@ items:
       type: System.Boolean
     content.vb: Public Property IsDead As Boolean
   overload: LobsterFramework.EntitySystem.Entity.IsDead*
+- uid: LobsterFramework.EntitySystem.Entity.PostureBroken
+  commentId: P:LobsterFramework.EntitySystem.Entity.PostureBroken
+  id: PostureBroken
+  parent: LobsterFramework.EntitySystem.Entity
+  langs:
+  - csharp
+  - vb
+  name: PostureBroken
+  nameWithType: Entity.PostureBroken
+  fullName: LobsterFramework.EntitySystem.Entity.PostureBroken
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: PostureBroken
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 82
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public bool PostureBroken { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property PostureBroken As Boolean
+  overload: LobsterFramework.EntitySystem.Entity.PostureBroken*
 - uid: LobsterFramework.EntitySystem.Entity.LatestDamageInfo
   commentId: P:LobsterFramework.EntitySystem.Entity.LatestDamageInfo
   id: LatestDamageInfo
@@ -416,19 +546,19 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
     id: LatestDamageInfo
-    path: ../Assets/Scripts/Components/Entity/Entity.cs
-    startLine: 88
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 86
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
   syntax:
-    content: public DamageInfo LatestDamageInfo { get; }
+    content: public Damage LatestDamageInfo { get; }
     parameters: []
     return:
-      type: LobsterFramework.EntitySystem.DamageInfo
-    content.vb: Public ReadOnly Property LatestDamageInfo As DamageInfo
+      type: LobsterFramework.EntitySystem.Damage
+    content.vb: Public ReadOnly Property LatestDamageInfo As Damage
   overload: LobsterFramework.EntitySystem.Entity.LatestDamageInfo*
 - uid: LobsterFramework.EntitySystem.Entity.Reset
   commentId: M:LobsterFramework.EntitySystem.Entity.Reset
@@ -443,160 +573,281 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
     id: Reset
-    path: ../Assets/Scripts/Components/Entity/Entity.cs
-    startLine: 149
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 192
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
+  summary: "\nReset the entity to its full health and posture and clear all of the damage and effects\n"
+  example: []
   syntax:
     content: public void Reset()
     content.vb: Public Sub Reset()
   overload: LobsterFramework.EntitySystem.Entity.Reset*
-- uid: LobsterFramework.EntitySystem.Entity.Die
-  commentId: M:LobsterFramework.EntitySystem.Entity.Die
-  id: Die
+- uid: LobsterFramework.EntitySystem.Entity.AddEffect(LobsterFramework.EntitySystem.Effect)
+  commentId: M:LobsterFramework.EntitySystem.Entity.AddEffect(LobsterFramework.EntitySystem.Effect)
+  id: AddEffect(LobsterFramework.EntitySystem.Effect)
   parent: LobsterFramework.EntitySystem.Entity
   langs:
   - csharp
   - vb
-  name: Die()
-  nameWithType: Entity.Die()
-  fullName: LobsterFramework.EntitySystem.Entity.Die()
+  name: AddEffect(Effect)
+  nameWithType: Entity.AddEffect(Effect)
+  fullName: LobsterFramework.EntitySystem.Entity.AddEffect(LobsterFramework.EntitySystem.Effect)
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
-    id: Die
-    path: ../Assets/Scripts/Components/Entity/Entity.cs
-    startLine: 158
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: AddEffect
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 254
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
+  summary: "\nApply an effect to the entity\n"
+  example: []
   syntax:
-    content: public void Die()
-    content.vb: Public Sub Die()
-  overload: LobsterFramework.EntitySystem.Entity.Die*
-- uid: LobsterFramework.EntitySystem.Entity.RegisterEffect(LobsterFramework.EntitySystem.Effect)
-  commentId: M:LobsterFramework.EntitySystem.Entity.RegisterEffect(LobsterFramework.EntitySystem.Effect)
-  id: RegisterEffect(LobsterFramework.EntitySystem.Effect)
-  parent: LobsterFramework.EntitySystem.Entity
-  langs:
-  - csharp
-  - vb
-  name: RegisterEffect(Effect)
-  nameWithType: Entity.RegisterEffect(Effect)
-  fullName: LobsterFramework.EntitySystem.Entity.RegisterEffect(LobsterFramework.EntitySystem.Effect)
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
-    id: RegisterEffect
-    path: ../Assets/Scripts/Components/Entity/Entity.cs
-    startLine: 186
-  assemblies:
-  - MyScripts
-  namespace: LobsterFramework.EntitySystem
-  syntax:
-    content: public void RegisterEffect(Effect effect)
+    content: public void AddEffect(Effect effect)
     parameters:
     - id: effect
       type: LobsterFramework.EntitySystem.Effect
-    content.vb: Public Sub RegisterEffect(effect As Effect)
-  overload: LobsterFramework.EntitySystem.Entity.RegisterEffect*
-- uid: LobsterFramework.EntitySystem.Entity.RegisterDamage(System.Int32,LobsterFramework.EntitySystem.Entity)
-  commentId: M:LobsterFramework.EntitySystem.Entity.RegisterDamage(System.Int32,LobsterFramework.EntitySystem.Entity)
-  id: RegisterDamage(System.Int32,LobsterFramework.EntitySystem.Entity)
+      description: ''
+    content.vb: Public Sub AddEffect(effect As Effect)
+  overload: LobsterFramework.EntitySystem.Entity.AddEffect*
+- uid: LobsterFramework.EntitySystem.Entity.Damage(System.Int32,System.Int32,LobsterFramework.EntitySystem.Entity,LobsterFramework.EntitySystem.DamageType)
+  commentId: M:LobsterFramework.EntitySystem.Entity.Damage(System.Int32,System.Int32,LobsterFramework.EntitySystem.Entity,LobsterFramework.EntitySystem.DamageType)
+  id: Damage(System.Int32,System.Int32,LobsterFramework.EntitySystem.Entity,LobsterFramework.EntitySystem.DamageType)
   parent: LobsterFramework.EntitySystem.Entity
   langs:
   - csharp
   - vb
-  name: RegisterDamage(int, Entity)
-  nameWithType: Entity.RegisterDamage(int, Entity)
-  fullName: LobsterFramework.EntitySystem.Entity.RegisterDamage(int, LobsterFramework.EntitySystem.Entity)
+  name: Damage(int, int, Entity, DamageType)
+  nameWithType: Entity.Damage(int, int, Entity, DamageType)
+  fullName: LobsterFramework.EntitySystem.Entity.Damage(int, int, LobsterFramework.EntitySystem.Entity, LobsterFramework.EntitySystem.DamageType)
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
-    id: RegisterDamage
-    path: ../Assets/Scripts/Components/Entity/Entity.cs
-    startLine: 198
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: Damage
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 274
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
+  summary: "\nAdd damage to the entity, the damage will be dealt on update of next frame\n"
+  example: []
   syntax:
-    content: public void RegisterDamage(int damage, Entity attacker = null)
+    content: public void Damage(int health, int posture, Entity source = null, DamageType type = DamageType.General)
     parameters:
-    - id: damage
+    - id: health
       type: System.Int32
-    - id: attacker
+      description: The amount of health damage
+    - id: posture
+      type: System.Int32
+      description: The amount of posture damage
+    - id: source
       type: LobsterFramework.EntitySystem.Entity
-    content.vb: Public Sub RegisterDamage(damage As Integer, attacker As Entity = Nothing)
-  overload: LobsterFramework.EntitySystem.Entity.RegisterDamage*
-  nameWithType.vb: Entity.RegisterDamage(Integer, Entity)
-  fullName.vb: LobsterFramework.EntitySystem.Entity.RegisterDamage(Integer, LobsterFramework.EntitySystem.Entity)
-  name.vb: RegisterDamage(Integer, Entity)
-- uid: LobsterFramework.EntitySystem.Entity.BlockMovement(System.Boolean)
-  commentId: M:LobsterFramework.EntitySystem.Entity.BlockMovement(System.Boolean)
-  id: BlockMovement(System.Boolean)
+      description: The source of this attack
+    - id: type
+      type: LobsterFramework.EntitySystem.DamageType
+      description: The type of the damage
+    content.vb: Public Sub Damage(health As Integer, posture As Integer, source As Entity = Nothing, type As DamageType = DamageType.General)
+  overload: LobsterFramework.EntitySystem.Entity.Damage*
+  nameWithType.vb: Entity.Damage(Integer, Integer, Entity, DamageType)
+  fullName.vb: LobsterFramework.EntitySystem.Entity.Damage(Integer, Integer, LobsterFramework.EntitySystem.Entity, LobsterFramework.EntitySystem.DamageType)
+  name.vb: Damage(Integer, Integer, Entity, DamageType)
+- uid: LobsterFramework.EntitySystem.Entity.Defense(System.Int32,System.Int32)
+  commentId: M:LobsterFramework.EntitySystem.Entity.Defense(System.Int32,System.Int32)
+  id: Defense(System.Int32,System.Int32)
   parent: LobsterFramework.EntitySystem.Entity
   langs:
   - csharp
   - vb
-  name: BlockMovement(bool)
-  nameWithType: Entity.BlockMovement(bool)
-  fullName: LobsterFramework.EntitySystem.Entity.BlockMovement(bool)
+  name: Defense(int, int)
+  nameWithType: Entity.Defense(int, int)
+  fullName: LobsterFramework.EntitySystem.Entity.Defense(int, int)
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: Defense
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 291
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  summary: "\nAdd a flat damage reduction to the entity, the damage taken will be reduced by the specified amount on update of next frame\n"
+  example: []
+  syntax:
+    content: public void Defense(int healthDefense, int postureDefense)
+    parameters:
+    - id: healthDefense
+      type: System.Int32
+      description: The amount of health defense
+    - id: postureDefense
+      type: System.Int32
+      description: The amount of posture defense
+    content.vb: Public Sub Defense(healthDefense As Integer, postureDefense As Integer)
+  overload: LobsterFramework.EntitySystem.Entity.Defense*
+  nameWithType.vb: Entity.Defense(Integer, Integer)
+  fullName.vb: LobsterFramework.EntitySystem.Entity.Defense(Integer, Integer)
+  name.vb: Defense(Integer, Integer)
+- uid: LobsterFramework.EntitySystem.Entity.BlockMovement
+  commentId: M:LobsterFramework.EntitySystem.Entity.BlockMovement
+  id: BlockMovement
+  parent: LobsterFramework.EntitySystem.Entity
+  langs:
+  - csharp
+  - vb
+  name: BlockMovement()
+  nameWithType: Entity.BlockMovement()
+  fullName: LobsterFramework.EntitySystem.Entity.BlockMovement()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
     id: BlockMovement
-    path: ../Assets/Scripts/Components/Entity/Entity.cs
-    startLine: 210
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 299
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
+  summary: "\nAdd an effector to block movement of this entity. The movement of the entity will be blocked if there&apos;s at least 1 effector.\n"
+  example: []
   syntax:
-    content: public void BlockMovement(bool value)
-    parameters:
-    - id: value
-      type: System.Boolean
-    content.vb: Public Sub BlockMovement(value As Boolean)
+    content: public int BlockMovement()
+    return:
+      type: System.Int32
+      description: The id of the newly added effector
+    content.vb: Public Function BlockMovement() As Integer
   overload: LobsterFramework.EntitySystem.Entity.BlockMovement*
-  nameWithType.vb: Entity.BlockMovement(Boolean)
-  fullName.vb: LobsterFramework.EntitySystem.Entity.BlockMovement(Boolean)
-  name.vb: BlockMovement(Boolean)
-- uid: LobsterFramework.EntitySystem.Entity.BlockAction(System.Boolean)
-  commentId: M:LobsterFramework.EntitySystem.Entity.BlockAction(System.Boolean)
-  id: BlockAction(System.Boolean)
+- uid: LobsterFramework.EntitySystem.Entity.UnblockMovement(System.Int32)
+  commentId: M:LobsterFramework.EntitySystem.Entity.UnblockMovement(System.Int32)
+  id: UnblockMovement(System.Int32)
   parent: LobsterFramework.EntitySystem.Entity
   langs:
   - csharp
   - vb
-  name: BlockAction(bool)
-  nameWithType: Entity.BlockAction(bool)
-  fullName: LobsterFramework.EntitySystem.Entity.BlockAction(bool)
+  name: UnblockMovement(int)
+  nameWithType: Entity.UnblockMovement(int)
+  fullName: LobsterFramework.EntitySystem.Entity.UnblockMovement(int)
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity/Entity.cs
-    id: BlockAction
-    path: ../Assets/Scripts/Components/Entity/Entity.cs
-    startLine: 220
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: UnblockMovement
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 310
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
   syntax:
-    content: public void BlockAction(bool value)
+    content: public bool UnblockMovement(int key)
     parameters:
-    - id: value
+    - id: key
+      type: System.Int32
+    return:
       type: System.Boolean
-    content.vb: Public Sub BlockAction(value As Boolean)
-  overload: LobsterFramework.EntitySystem.Entity.BlockAction*
-  nameWithType.vb: Entity.BlockAction(Boolean)
-  fullName.vb: LobsterFramework.EntitySystem.Entity.BlockAction(Boolean)
-  name.vb: BlockAction(Boolean)
+    content.vb: Public Function UnblockMovement(key As Integer) As Boolean
+  overload: LobsterFramework.EntitySystem.Entity.UnblockMovement*
+  nameWithType.vb: Entity.UnblockMovement(Integer)
+  fullName.vb: LobsterFramework.EntitySystem.Entity.UnblockMovement(Integer)
+  name.vb: UnblockMovement(Integer)
+- uid: LobsterFramework.EntitySystem.Entity.RotateTowards(UnityEngine.Vector2)
+  commentId: M:LobsterFramework.EntitySystem.Entity.RotateTowards(UnityEngine.Vector2)
+  id: RotateTowards(UnityEngine.Vector2)
+  parent: LobsterFramework.EntitySystem.Entity
+  langs:
+  - csharp
+  - vb
+  name: RotateTowards(Vector2)
+  nameWithType: Entity.RotateTowards(Vector2)
+  fullName: LobsterFramework.EntitySystem.Entity.RotateTowards(UnityEngine.Vector2)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: RotateTowards
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 325
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  summary: "\nAttempt to rotate the entity towards the specified direction. If the specified angle is larger than the max rotation speed,\nthe entity will rotate towards target angle will max speed. Will fail if Movement blocked. \n"
+  example: []
+  syntax:
+    content: public void RotateTowards(Vector2 direction)
+    parameters:
+    - id: direction
+      type: UnityEngine.Vector2
+      description: The target direction to rotate towards
+    content.vb: Public Sub RotateTowards(direction As Vector2)
+  overload: LobsterFramework.EntitySystem.Entity.RotateTowards*
+- uid: LobsterFramework.EntitySystem.Entity.RotateByDegrees(System.Single)
+  commentId: M:LobsterFramework.EntitySystem.Entity.RotateByDegrees(System.Single)
+  id: RotateByDegrees(System.Single)
+  parent: LobsterFramework.EntitySystem.Entity
+  langs:
+  - csharp
+  - vb
+  name: RotateByDegrees(float)
+  nameWithType: Entity.RotateByDegrees(float)
+  fullName: LobsterFramework.EntitySystem.Entity.RotateByDegrees(float)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: RotateByDegrees
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 358
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  summary: "\nAttempt to rotate the entity by the specified degree. If the specified angle is larger than the max rotation speed,\nthe entity will rotate towards target angle will max speed. Will fail if Movement blocked. \n"
+  example: []
+  syntax:
+    content: public void RotateByDegrees(float degree)
+    parameters:
+    - id: degree
+      type: System.Single
+      description: The degree to rotate the entity by
+    content.vb: Public Sub RotateByDegrees(degree As Single)
+  overload: LobsterFramework.EntitySystem.Entity.RotateByDegrees*
+  nameWithType.vb: Entity.RotateByDegrees(Single)
+  fullName.vb: LobsterFramework.EntitySystem.Entity.RotateByDegrees(Single)
+  name.vb: RotateByDegrees(Single)
+- uid: LobsterFramework.EntitySystem.Entity.Move(UnityEngine.Vector2)
+  commentId: M:LobsterFramework.EntitySystem.Entity.Move(UnityEngine.Vector2)
+  id: Move(UnityEngine.Vector2)
+  parent: LobsterFramework.EntitySystem.Entity
+  langs:
+  - csharp
+  - vb
+  name: Move(Vector2)
+  nameWithType: Entity.Move(Vector2)
+  fullName: LobsterFramework.EntitySystem.Entity.Move(UnityEngine.Vector2)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: Move
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 379
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  summary: "\nStart moving the entity towards the specified direction, will fail is Movement is blocked on this entity\n"
+  example: []
+  syntax:
+    content: public void Move(Vector2 direction)
+    parameters:
+    - id: direction
+      type: UnityEngine.Vector2
+      description: ''
+    content.vb: Public Sub Move(direction As Vector2)
+  overload: LobsterFramework.EntitySystem.Entity.Move*
 references:
 - uid: LobsterFramework.EntitySystem
   commentId: N:LobsterFramework.EntitySystem
@@ -1074,6 +1325,13 @@ references:
     name: Object
     isExternal: true
   - name: )
+- uid: UnityEngine.MonoBehaviour.destroyCancellationToken
+  commentId: P:UnityEngine.MonoBehaviour.destroyCancellationToken
+  parent: UnityEngine.MonoBehaviour
+  isExternal: true
+  name: destroyCancellationToken
+  nameWithType: MonoBehaviour.destroyCancellationToken
+  fullName: UnityEngine.MonoBehaviour.destroyCancellationToken
 - uid: UnityEngine.MonoBehaviour.useGUILayout
   commentId: P:UnityEngine.MonoBehaviour.useGUILayout
   parent: UnityEngine.MonoBehaviour
@@ -4561,83 +4819,51 @@ references:
     name: Boolean
     isExternal: true
   - name: )
-- uid: UnityEngine.Events.UnityAction{System.Boolean}
-  commentId: T:UnityEngine.Events.UnityAction{System.Boolean}
-  parent: UnityEngine.Events
-  definition: UnityEngine.Events.UnityAction`1
-  name: UnityAction<bool>
-  nameWithType: UnityAction<bool>
-  fullName: UnityEngine.Events.UnityAction<bool>
-  nameWithType.vb: UnityAction(Of Boolean)
-  fullName.vb: UnityEngine.Events.UnityAction(Of Boolean)
-  name.vb: UnityAction(Of Boolean)
-  spec.csharp:
-  - uid: UnityEngine.Events.UnityAction`1
-    name: UnityAction
-    isExternal: true
-  - name: <
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-  - name: '>'
-  spec.vb:
-  - uid: UnityEngine.Events.UnityAction`1
-    name: UnityAction
-    isExternal: true
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-  - name: )
-- uid: UnityEngine.Events.UnityAction`1
-  commentId: T:UnityEngine.Events.UnityAction`1
+- uid: LobsterFramework.EntitySystem.Entity.MaxHealth*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.MaxHealth
+  name: MaxHealth
+  nameWithType: Entity.MaxHealth
+  fullName: LobsterFramework.EntitySystem.Entity.MaxHealth
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
   isExternal: true
-  name: UnityAction<T0>
-  nameWithType: UnityAction<T0>
-  fullName: UnityEngine.Events.UnityAction<T0>
-  nameWithType.vb: UnityAction(Of T0)
-  fullName.vb: UnityEngine.Events.UnityAction(Of T0)
-  name.vb: UnityAction(Of T0)
-  spec.csharp:
-  - uid: UnityEngine.Events.UnityAction`1
-    name: UnityAction
-    isExternal: true
-  - name: <
-  - name: T0
-  - name: '>'
-  spec.vb:
-  - uid: UnityEngine.Events.UnityAction`1
-    name: UnityAction
-    isExternal: true
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T0
-  - name: )
-- uid: UnityEngine.Events
-  commentId: N:UnityEngine.Events
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: LobsterFramework.EntitySystem.Entity.MaxPosture*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.MaxPosture
+  name: MaxPosture
+  nameWithType: Entity.MaxPosture
+  fullName: LobsterFramework.EntitySystem.Entity.MaxPosture
+- uid: LobsterFramework.EntitySystem.Entity.MoveSpeed*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.MoveSpeed
+  name: MoveSpeed
+  nameWithType: Entity.MoveSpeed
+  fullName: LobsterFramework.EntitySystem.Entity.MoveSpeed
+- uid: LobsterFramework.EntitySystem.Entity.RotateSpeed*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.RotateSpeed
+  name: RotateSpeed
+  nameWithType: Entity.RotateSpeed
+  fullName: LobsterFramework.EntitySystem.Entity.RotateSpeed
+- uid: LobsterFramework.EntitySystem.Entity.MovementBlocked*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.MovementBlocked
+  name: MovementBlocked
+  nameWithType: Entity.MovementBlocked
+  fullName: LobsterFramework.EntitySystem.Entity.MovementBlocked
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
   isExternal: true
-  name: UnityEngine.Events
-  nameWithType: UnityEngine.Events
-  fullName: UnityEngine.Events
-  spec.csharp:
-  - uid: UnityEngine
-    name: UnityEngine
-    isExternal: true
-  - name: .
-  - uid: UnityEngine.Events
-    name: Events
-    isExternal: true
-  spec.vb:
-  - uid: UnityEngine
-    name: UnityEngine
-    isExternal: true
-  - name: .
-  - uid: UnityEngine.Events
-    name: Events
-    isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: System.Collections.Generic.Dictionary{System.Type,LobsterFramework.EntitySystem.Effect}
   commentId: T:System.Collections.Generic.Dictionary{System.Type,LobsterFramework.EntitySystem.Effect}
   parent: System.Collections.Generic
@@ -4737,31 +4963,168 @@ references:
   - uid: System.Collections.Generic
     name: Generic
     isExternal: true
-- uid: LobsterFramework.EntitySystem.Entity.ActionBlocked*
-  commentId: Overload:LobsterFramework.EntitySystem.Entity.ActionBlocked
-  name: ActionBlocked
-  nameWithType: Entity.ActionBlocked
-  fullName: LobsterFramework.EntitySystem.Entity.ActionBlocked
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
+- uid: UnityEngine.Events.UnityAction{System.Boolean}
+  commentId: T:UnityEngine.Events.UnityAction{System.Boolean}
+  parent: UnityEngine.Events
+  definition: UnityEngine.Events.UnityAction`1
+  name: UnityAction<bool>
+  nameWithType: UnityAction<bool>
+  fullName: UnityEngine.Events.UnityAction<bool>
+  nameWithType.vb: UnityAction(Of Boolean)
+  fullName.vb: UnityEngine.Events.UnityAction(Of Boolean)
+  name.vb: UnityAction(Of Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Events.UnityAction`1
+    name: UnityAction
+    isExternal: true
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: UnityEngine.Events.UnityAction`1
+    name: UnityAction
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Events.UnityAction`1
+  commentId: T:UnityEngine.Events.UnityAction`1
   isExternal: true
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
-- uid: LobsterFramework.EntitySystem.Entity.MovementBlocked*
-  commentId: Overload:LobsterFramework.EntitySystem.Entity.MovementBlocked
-  name: MovementBlocked
-  nameWithType: Entity.MovementBlocked
-  fullName: LobsterFramework.EntitySystem.Entity.MovementBlocked
-- uid: LobsterFramework.EntitySystem.Entity.MaxHealth*
-  commentId: Overload:LobsterFramework.EntitySystem.Entity.MaxHealth
-  name: MaxHealth
-  nameWithType: Entity.MaxHealth
-  fullName: LobsterFramework.EntitySystem.Entity.MaxHealth
+  name: UnityAction<T0>
+  nameWithType: UnityAction<T0>
+  fullName: UnityEngine.Events.UnityAction<T0>
+  nameWithType.vb: UnityAction(Of T0)
+  fullName.vb: UnityEngine.Events.UnityAction(Of T0)
+  name.vb: UnityAction(Of T0)
+  spec.csharp:
+  - uid: UnityEngine.Events.UnityAction`1
+    name: UnityAction
+    isExternal: true
+  - name: <
+  - name: T0
+  - name: '>'
+  spec.vb:
+  - uid: UnityEngine.Events.UnityAction`1
+    name: UnityAction
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T0
+  - name: )
+- uid: UnityEngine.Events
+  commentId: N:UnityEngine.Events
+  isExternal: true
+  name: UnityEngine.Events
+  nameWithType: UnityEngine.Events
+  fullName: UnityEngine.Events
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.Events
+    name: Events
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.Events
+    name: Events
+    isExternal: true
+- uid: UnityEngine.Events.UnityAction{LobsterFramework.EntitySystem.Damage}
+  commentId: T:UnityEngine.Events.UnityAction{LobsterFramework.EntitySystem.Damage}
+  parent: UnityEngine.Events
+  definition: UnityEngine.Events.UnityAction`1
+  name: UnityAction<Damage>
+  nameWithType: UnityAction<Damage>
+  fullName: UnityEngine.Events.UnityAction<LobsterFramework.EntitySystem.Damage>
+  nameWithType.vb: UnityAction(Of Damage)
+  fullName.vb: UnityEngine.Events.UnityAction(Of LobsterFramework.EntitySystem.Damage)
+  name.vb: UnityAction(Of Damage)
+  spec.csharp:
+  - uid: UnityEngine.Events.UnityAction`1
+    name: UnityAction
+    isExternal: true
+  - name: <
+  - uid: LobsterFramework.EntitySystem.Damage
+    name: Damage
+  - name: '>'
+  spec.vb:
+  - uid: UnityEngine.Events.UnityAction`1
+    name: UnityAction
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.EntitySystem.Damage
+    name: Damage
+  - name: )
+- uid: LobsterFramework.EntitySystem.Entity.RegenSuppressed*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.RegenSuppressed
+  name: RegenSuppressed
+  nameWithType: Entity.RegenSuppressed
+  fullName: LobsterFramework.EntitySystem.Entity.RegenSuppressed
+- uid: LobsterFramework.EntitySystem.Entity.Health*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.Health
+  name: Health
+  nameWithType: Entity.Health
+  fullName: LobsterFramework.EntitySystem.Entity.Health
+- uid: LobsterFramework.EntitySystem.Entity.Posture*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.Posture
+  name: Posture
+  nameWithType: Entity.Posture
+  fullName: LobsterFramework.EntitySystem.Entity.Posture
+- uid: LobsterFramework.EntitySystem.Entity.IsDead*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.IsDead
+  name: IsDead
+  nameWithType: Entity.IsDead
+  fullName: LobsterFramework.EntitySystem.Entity.IsDead
+- uid: LobsterFramework.EntitySystem.Entity.PostureBroken*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.PostureBroken
+  name: PostureBroken
+  nameWithType: Entity.PostureBroken
+  fullName: LobsterFramework.EntitySystem.Entity.PostureBroken
+- uid: LobsterFramework.EntitySystem.Entity.LatestDamageInfo*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.LatestDamageInfo
+  name: LatestDamageInfo
+  nameWithType: Entity.LatestDamageInfo
+  fullName: LobsterFramework.EntitySystem.Entity.LatestDamageInfo
+- uid: LobsterFramework.EntitySystem.Damage
+  commentId: T:LobsterFramework.EntitySystem.Damage
+  parent: LobsterFramework.EntitySystem
+  name: Damage
+  nameWithType: Damage
+  fullName: LobsterFramework.EntitySystem.Damage
+- uid: LobsterFramework.EntitySystem.Entity.Reset*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.Reset
+  name: Reset
+  nameWithType: Entity.Reset
+  fullName: LobsterFramework.EntitySystem.Entity.Reset
+- uid: LobsterFramework.EntitySystem.Entity.AddEffect*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.AddEffect
+  name: AddEffect
+  nameWithType: Entity.AddEffect
+  fullName: LobsterFramework.EntitySystem.Entity.AddEffect
+- uid: LobsterFramework.EntitySystem.Effect
+  commentId: T:LobsterFramework.EntitySystem.Effect
+  parent: LobsterFramework.EntitySystem
+  name: Effect
+  nameWithType: Effect
+  fullName: LobsterFramework.EntitySystem.Effect
+- uid: LobsterFramework.EntitySystem.Entity.Damage*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.Damage
+  name: Damage
+  nameWithType: Entity.Damage
+  fullName: LobsterFramework.EntitySystem.Entity.Damage
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -4772,71 +5135,52 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: LobsterFramework.EntitySystem.Entity.Health*
-  commentId: Overload:LobsterFramework.EntitySystem.Entity.Health
-  name: Health
-  nameWithType: Entity.Health
-  fullName: LobsterFramework.EntitySystem.Entity.Health
-- uid: LobsterFramework.EntitySystem.Entity.IncomingDamage*
-  commentId: Overload:LobsterFramework.EntitySystem.Entity.IncomingDamage
-  name: IncomingDamage
-  nameWithType: Entity.IncomingDamage
-  fullName: LobsterFramework.EntitySystem.Entity.IncomingDamage
-- uid: LobsterFramework.EntitySystem.Entity.IsDead*
-  commentId: Overload:LobsterFramework.EntitySystem.Entity.IsDead
-  name: IsDead
-  nameWithType: Entity.IsDead
-  fullName: LobsterFramework.EntitySystem.Entity.IsDead
-- uid: LobsterFramework.EntitySystem.Entity.LatestDamageInfo*
-  commentId: Overload:LobsterFramework.EntitySystem.Entity.LatestDamageInfo
-  name: LatestDamageInfo
-  nameWithType: Entity.LatestDamageInfo
-  fullName: LobsterFramework.EntitySystem.Entity.LatestDamageInfo
-- uid: LobsterFramework.EntitySystem.DamageInfo
-  commentId: T:LobsterFramework.EntitySystem.DamageInfo
-  parent: LobsterFramework.EntitySystem
-  name: DamageInfo
-  nameWithType: DamageInfo
-  fullName: LobsterFramework.EntitySystem.DamageInfo
-- uid: LobsterFramework.EntitySystem.Entity.Reset*
-  commentId: Overload:LobsterFramework.EntitySystem.Entity.Reset
-  name: Reset
-  nameWithType: Entity.Reset
-  fullName: LobsterFramework.EntitySystem.Entity.Reset
-- uid: LobsterFramework.EntitySystem.Entity.Die*
-  commentId: Overload:LobsterFramework.EntitySystem.Entity.Die
-  name: Die
-  nameWithType: Entity.Die
-  fullName: LobsterFramework.EntitySystem.Entity.Die
-- uid: LobsterFramework.EntitySystem.Entity.RegisterEffect*
-  commentId: Overload:LobsterFramework.EntitySystem.Entity.RegisterEffect
-  name: RegisterEffect
-  nameWithType: Entity.RegisterEffect
-  fullName: LobsterFramework.EntitySystem.Entity.RegisterEffect
-- uid: LobsterFramework.EntitySystem.Effect
-  commentId: T:LobsterFramework.EntitySystem.Effect
-  parent: LobsterFramework.EntitySystem
-  name: Effect
-  nameWithType: Effect
-  fullName: LobsterFramework.EntitySystem.Effect
-- uid: LobsterFramework.EntitySystem.Entity.RegisterDamage*
-  commentId: Overload:LobsterFramework.EntitySystem.Entity.RegisterDamage
-  name: RegisterDamage
-  nameWithType: Entity.RegisterDamage
-  fullName: LobsterFramework.EntitySystem.Entity.RegisterDamage
 - uid: LobsterFramework.EntitySystem.Entity
   commentId: T:LobsterFramework.EntitySystem.Entity
   parent: LobsterFramework.EntitySystem
   name: Entity
   nameWithType: Entity
   fullName: LobsterFramework.EntitySystem.Entity
+- uid: LobsterFramework.EntitySystem.DamageType
+  commentId: T:LobsterFramework.EntitySystem.DamageType
+  parent: LobsterFramework.EntitySystem
+  name: DamageType
+  nameWithType: DamageType
+  fullName: LobsterFramework.EntitySystem.DamageType
+- uid: LobsterFramework.EntitySystem.Entity.Defense*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.Defense
+  name: Defense
+  nameWithType: Entity.Defense
+  fullName: LobsterFramework.EntitySystem.Entity.Defense
 - uid: LobsterFramework.EntitySystem.Entity.BlockMovement*
   commentId: Overload:LobsterFramework.EntitySystem.Entity.BlockMovement
   name: BlockMovement
   nameWithType: Entity.BlockMovement
   fullName: LobsterFramework.EntitySystem.Entity.BlockMovement
-- uid: LobsterFramework.EntitySystem.Entity.BlockAction*
-  commentId: Overload:LobsterFramework.EntitySystem.Entity.BlockAction
-  name: BlockAction
-  nameWithType: Entity.BlockAction
-  fullName: LobsterFramework.EntitySystem.Entity.BlockAction
+- uid: LobsterFramework.EntitySystem.Entity.UnblockMovement*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.UnblockMovement
+  name: UnblockMovement
+  nameWithType: Entity.UnblockMovement
+  fullName: LobsterFramework.EntitySystem.Entity.UnblockMovement
+- uid: LobsterFramework.EntitySystem.Entity.RotateTowards*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.RotateTowards
+  name: RotateTowards
+  nameWithType: Entity.RotateTowards
+  fullName: LobsterFramework.EntitySystem.Entity.RotateTowards
+- uid: UnityEngine.Vector2
+  commentId: T:UnityEngine.Vector2
+  parent: UnityEngine
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: UnityEngine.Vector2
+- uid: LobsterFramework.EntitySystem.Entity.RotateByDegrees*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.RotateByDegrees
+  name: RotateByDegrees
+  nameWithType: Entity.RotateByDegrees
+  fullName: LobsterFramework.EntitySystem.Entity.RotateByDegrees
+- uid: LobsterFramework.EntitySystem.Entity.Move*
+  commentId: Overload:LobsterFramework.EntitySystem.Entity.Move
+  name: Move
+  nameWithType: Entity.Move
+  fullName: LobsterFramework.EntitySystem.Entity.Move

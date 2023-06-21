@@ -24,11 +24,11 @@ items:
   namespace: LobsterFramework.EditorUtility
   syntax:
     content: >-
-      [CustomEditor(typeof(ActionInstance.ActionConfig), true)]
+      [CustomEditor(typeof(Ability.AbilityConfig), true)]
 
       public class ActionConfigEditor : Editor
     content.vb: >-
-      <CustomEditor(GetType(ActionInstance.ActionConfig), True)>
+      <CustomEditor(GetType(Ability.AbilityConfig), True)>
 
       Public Class ActionConfigEditor Inherits Editor
   inheritance:
@@ -92,7 +92,7 @@ items:
     ctor: UnityEditor.CustomEditor.#ctor(System.Type,System.Boolean)
     arguments:
     - type: System.Type
-      value: LobsterFramework.Action.ActionInstance.ActionConfig
+      value: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     - type: System.Boolean
       value: true
 - uid: LobsterFramework.EditorUtility.ActionConfigEditor.OnInspectorGUI

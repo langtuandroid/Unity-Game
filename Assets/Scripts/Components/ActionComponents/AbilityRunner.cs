@@ -173,7 +173,7 @@ namespace LobsterFramework.AbilitySystem {
         /// Check if the action instance of type T with config is ready. <br/>
         /// If T is not present or config is not available, return false.
         /// </summary>
-        /// <typeparam name="T">Type of the ActionInstance to be queried</typeparam>
+        /// <typeparam name="T">Type of the Ability to be queried</typeparam>
         /// <param name="config">Name of the config to be queried</param>
         /// <returns>The result of the query</returns>
         public bool IsAbilityReady<T>(string config) where T : Ability
@@ -187,15 +187,20 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         /// <summary>
-        /// A shortcut for IsInstanceReady&ltT&gt("default")
+        /// A shortcut for IsInstanceReady&lt;T&gt;("default").
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <typeparam name="T">Type of the Ability to be queried</typeparam>
+        /// <returns> The result of the query </returns>
         public bool IsAbilityReady<T>() where T : Ability
         {
             return IsAbilityReady<T>("default");
         }
 
+        /// <summary>
+        /// Add an effector to block actions, actions will be blocked if there's at least 1 effector.
+        /// An event will be sent to all subscribers on action blocked.
+        /// </summary>
+        /// <returns>The id of the newly added effector</returns>
         public int BlockAction()
         {
             bool before = ActionBlocked;
@@ -207,6 +212,12 @@ namespace LobsterFramework.AbilitySystem {
             return id;
         }
 
+        /// <summary>
+        /// Remvoe the specified effector that blocks the action if it exists.
+        /// An event will be sent to subscribers on action unblocked.
+        /// </summary>
+        /// <param name="id">The id of the effector to be removed</param>
+        /// <returns>On successfully removal return true, otherwise false</returns>
         public bool UnblockAction(int id) {
             bool before = ActionBlocked;
             if (actionBlocked.RemoveEffector(id)) {
@@ -218,6 +229,12 @@ namespace LobsterFramework.AbilitySystem {
             return false;
         }
 
+        /// <summary>
+        /// Add an effector to provide hyperarmor for the object. While hyperarmored, abilities cannot be interrupted other than death.
+        /// Hyperarmor will exist if there's at least 1 effector.
+        /// An event will be sent to subscribers on hyperarmored.
+        /// </summary>
+        /// <returns>The id of the newly adde effector</returns>
         public int HyperArmor() {
             bool before = hyperArmored.Stat;
             int id = hyperArmored.AddEffector(true);
@@ -228,6 +245,12 @@ namespace LobsterFramework.AbilitySystem {
             return id;
         }
 
+        /// <summary>
+        /// Remove the specified effector for hyperarmor if it exists
+        /// An event will be sent to subscribers on dishyperarmored
+        /// </summary>
+        /// <param name="id">The id of the effector to be removed</param>
+        /// <returns>On successfully removal return true, otherwise false</returns>
         public bool DisArmor(int id) {
             if (hyperArmored.RemoveEffector(id))
             {
@@ -239,6 +262,10 @@ namespace LobsterFramework.AbilitySystem {
             }
             return false;
         }
+
+        /// <summary>
+        /// Reset the status of all abilities and their configs to their initial state
+        /// </summary>
 
         public void Reset()
         {
@@ -278,7 +305,7 @@ namespace LobsterFramework.AbilitySystem {
             abilityData.CopyActionAsset();
             abilityData.identifier = GetInstanceID();
         }
-
+         
         private T GetAbility<T>() where T : Ability
         {
             string type = typeof(T).ToString();
@@ -351,11 +378,11 @@ namespace LobsterFramework.AbilitySystem {
 
 
         /// <summary>
-        /// 
+        /// Check if the specified ability config pair is playing animation. 
         /// </summary>
-        /// <param name="ability"></param>
-        /// <param name="configName"></param>
-        /// <returns></returns>
+        /// <param name="ability">The ability to be queried</param>
+        /// <param name="configName">The config of the ability to be queried</param>
+        /// <returns>Return true if the ability and the config are both valid and present and are playing animation, otherwise false</returns>
         public bool IsAnimating(Ability ability, string configName) { 
             return animating == (ability, configName);
         }
@@ -407,6 +434,9 @@ namespace LobsterFramework.AbilitySystem {
             ability.Signal(configName);
         }
 
+        /// <summary>
+        /// Used by animation events to send signals
+        /// </summary>
         public void AnimationSignal() { 
             if(animating == default) { return; }
             animating.Item1.Signal(animating.Item2);

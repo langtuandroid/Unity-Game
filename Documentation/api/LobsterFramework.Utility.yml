@@ -4,15 +4,19 @@ items:
   commentId: N:LobsterFramework.Utility
   id: LobsterFramework.Utility
   children:
-  - LobsterFramework.Utility.ActionSet
+  - LobsterFramework.Utility.AbilitySet
+  - LobsterFramework.Utility.AttributeInitializer
+  - LobsterFramework.Utility.CollisionTrigger
+  - LobsterFramework.Utility.Condition
+  - LobsterFramework.Utility.GameUtility
   - LobsterFramework.Utility.IdDistributor
   - LobsterFramework.Utility.ManagedSet`1
   - LobsterFramework.Utility.SerializableDictionary`2
   - LobsterFramework.Utility.SerializableHashSet`1
   - LobsterFramework.Utility.SortableItem`1
-  - LobsterFramework.Utility.StringActionConfigDictionary
-  - LobsterFramework.Utility.TypeActionComponentDictionary
-  - LobsterFramework.Utility.TypeActionInstanceDictionary
+  - LobsterFramework.Utility.StringAbilityConfigDictionary
+  - LobsterFramework.Utility.TypeAbilityDictionary
+  - LobsterFramework.Utility.TypeAbilityStatDictionary
   langs:
   - csharp
   - vb
@@ -23,33 +27,43 @@ items:
   assemblies:
   - MyScripts
 references:
-- uid: LobsterFramework.Utility.SerializableHashSet`1
-  commentId: T:LobsterFramework.Utility.SerializableHashSet`1
-  name: SerializableHashSet<TValue>
-  nameWithType: SerializableHashSet<TValue>
-  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>
-  nameWithType.vb: SerializableHashSet(Of TValue)
-  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue)
-  name.vb: SerializableHashSet(Of TValue)
+- uid: LobsterFramework.Utility.ManagedSet`1
+  commentId: T:LobsterFramework.Utility.ManagedSet`1
+  name: ManagedSet<T>
+  nameWithType: ManagedSet<T>
+  fullName: LobsterFramework.Utility.ManagedSet<T>
+  nameWithType.vb: ManagedSet(Of T)
+  fullName.vb: LobsterFramework.Utility.ManagedSet(Of T)
+  name.vb: ManagedSet(Of T)
   spec.csharp:
-  - uid: LobsterFramework.Utility.SerializableHashSet`1
-    name: SerializableHashSet
+  - uid: LobsterFramework.Utility.ManagedSet`1
+    name: ManagedSet
   - name: <
-  - name: TValue
+  - name: T
   - name: '>'
   spec.vb:
-  - uid: LobsterFramework.Utility.SerializableHashSet`1
-    name: SerializableHashSet
+  - uid: LobsterFramework.Utility.ManagedSet`1
+    name: ManagedSet
   - name: (
   - name: Of
   - name: " "
-  - name: TValue
+  - name: T
   - name: )
-- uid: LobsterFramework.Utility.ActionSet
-  commentId: T:LobsterFramework.Utility.ActionSet
-  name: ActionSet
-  nameWithType: ActionSet
-  fullName: LobsterFramework.Utility.ActionSet
+- uid: LobsterFramework.Utility.GameUtility
+  commentId: T:LobsterFramework.Utility.GameUtility
+  name: GameUtility
+  nameWithType: GameUtility
+  fullName: LobsterFramework.Utility.GameUtility
+- uid: LobsterFramework.Utility.CollisionTrigger
+  commentId: T:LobsterFramework.Utility.CollisionTrigger
+  name: CollisionTrigger
+  nameWithType: CollisionTrigger
+  fullName: LobsterFramework.Utility.CollisionTrigger
+- uid: LobsterFramework.Utility.IdDistributor
+  commentId: T:LobsterFramework.Utility.IdDistributor
+  name: IdDistributor
+  nameWithType: IdDistributor
+  fullName: LobsterFramework.Utility.IdDistributor
 - uid: LobsterFramework.Utility.SerializableDictionary`2
   commentId: T:LobsterFramework.Utility.SerializableDictionary`2
   name: SerializableDictionary<TKey, TValue>
@@ -78,45 +92,60 @@ references:
   - name: " "
   - name: TValue
   - name: )
-- uid: LobsterFramework.Utility.TypeActionComponentDictionary
-  commentId: T:LobsterFramework.Utility.TypeActionComponentDictionary
+- uid: LobsterFramework.Utility.TypeAbilityStatDictionary
+  commentId: T:LobsterFramework.Utility.TypeAbilityStatDictionary
   parent: LobsterFramework.Utility
-  name: TypeActionComponentDictionary
-  nameWithType: TypeActionComponentDictionary
-  fullName: LobsterFramework.Utility.TypeActionComponentDictionary
-- uid: LobsterFramework.Utility.TypeActionInstanceDictionary
-  commentId: T:LobsterFramework.Utility.TypeActionInstanceDictionary
+  name: TypeAbilityStatDictionary
+  nameWithType: TypeAbilityStatDictionary
+  fullName: LobsterFramework.Utility.TypeAbilityStatDictionary
+- uid: LobsterFramework.Utility.TypeAbilityDictionary
+  commentId: T:LobsterFramework.Utility.TypeAbilityDictionary
   parent: LobsterFramework.Utility
-  name: TypeActionInstanceDictionary
-  nameWithType: TypeActionInstanceDictionary
-  fullName: LobsterFramework.Utility.TypeActionInstanceDictionary
-- uid: LobsterFramework.Utility.StringActionConfigDictionary
-  commentId: T:LobsterFramework.Utility.StringActionConfigDictionary
-  name: StringActionConfigDictionary
-  nameWithType: StringActionConfigDictionary
-  fullName: LobsterFramework.Utility.StringActionConfigDictionary
-- uid: LobsterFramework.Utility.ManagedSet`1
-  commentId: T:LobsterFramework.Utility.ManagedSet`1
-  name: ManagedSet<T>
-  nameWithType: ManagedSet<T>
-  fullName: LobsterFramework.Utility.ManagedSet<T>
-  nameWithType.vb: ManagedSet(Of T)
-  fullName.vb: LobsterFramework.Utility.ManagedSet(Of T)
-  name.vb: ManagedSet(Of T)
+  name: TypeAbilityDictionary
+  nameWithType: TypeAbilityDictionary
+  fullName: LobsterFramework.Utility.TypeAbilityDictionary
+- uid: LobsterFramework.Utility.StringAbilityConfigDictionary
+  commentId: T:LobsterFramework.Utility.StringAbilityConfigDictionary
+  name: StringAbilityConfigDictionary
+  nameWithType: StringAbilityConfigDictionary
+  fullName: LobsterFramework.Utility.StringAbilityConfigDictionary
+- uid: LobsterFramework.Utility.AttributeInitializer
+  commentId: T:LobsterFramework.Utility.AttributeInitializer
+  name: AttributeInitializer
+  nameWithType: AttributeInitializer
+  fullName: LobsterFramework.Utility.AttributeInitializer
+- uid: LobsterFramework.Utility.SerializableHashSet`1
+  commentId: T:LobsterFramework.Utility.SerializableHashSet`1
+  name: SerializableHashSet<TValue>
+  nameWithType: SerializableHashSet<TValue>
+  fullName: LobsterFramework.Utility.SerializableHashSet<TValue>
+  nameWithType.vb: SerializableHashSet(Of TValue)
+  fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue)
+  name.vb: SerializableHashSet(Of TValue)
   spec.csharp:
-  - uid: LobsterFramework.Utility.ManagedSet`1
-    name: ManagedSet
+  - uid: LobsterFramework.Utility.SerializableHashSet`1
+    name: SerializableHashSet
   - name: <
-  - name: T
+  - name: TValue
   - name: '>'
   spec.vb:
-  - uid: LobsterFramework.Utility.ManagedSet`1
-    name: ManagedSet
+  - uid: LobsterFramework.Utility.SerializableHashSet`1
+    name: SerializableHashSet
   - name: (
   - name: Of
   - name: " "
-  - name: T
+  - name: TValue
   - name: )
+- uid: LobsterFramework.Utility.AbilitySet
+  commentId: T:LobsterFramework.Utility.AbilitySet
+  name: AbilitySet
+  nameWithType: AbilitySet
+  fullName: LobsterFramework.Utility.AbilitySet
+- uid: LobsterFramework.Utility.Condition
+  commentId: T:LobsterFramework.Utility.Condition
+  name: Condition
+  nameWithType: Condition
+  fullName: LobsterFramework.Utility.Condition
 - uid: LobsterFramework.Utility.SortableItem`1
   commentId: T:LobsterFramework.Utility.SortableItem`1
   parent: LobsterFramework.Utility
@@ -140,11 +169,6 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: LobsterFramework.Utility.IdDistributor
-  commentId: T:LobsterFramework.Utility.IdDistributor
-  name: IdDistributor
-  nameWithType: IdDistributor
-  fullName: LobsterFramework.Utility.IdDistributor
 - uid: LobsterFramework.Utility
   commentId: N:LobsterFramework.Utility
   name: LobsterFramework.Utility

@@ -25,11 +25,11 @@ items:
   namespace: Global
   syntax:
     content: >-
-      [CustomPropertyDrawer(typeof(RefActionPriority))]
+      [CustomPropertyDrawer(typeof(RefAbilityPriority))]
 
       public class RefActionPriorityDrawer : PropertyDrawer
     content.vb: >-
-      <CustomPropertyDrawer(GetType(RefActionPriority))>
+      <CustomPropertyDrawer(GetType(RefAbilityPriority))>
 
       Public Class RefActionPriorityDrawer Inherits PropertyDrawer
   inheritance:
@@ -41,7 +41,7 @@ items:
     ctor: UnityEditor.CustomPropertyDrawer.#ctor(System.Type)
     arguments:
     - type: System.Type
-      value: Global.RefActionPriority
+      value: Global.RefAbilityPriority
 - uid: Global.RefActionPriorityDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
   commentId: M:Global.RefActionPriorityDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
   id: GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)

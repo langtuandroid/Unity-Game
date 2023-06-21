@@ -25,13 +25,13 @@ items:
   namespace: LobsterFramework.Interaction
   syntax:
     content: >-
-      [Interaction(typeof(CollectableItem), new Type[] { typeof(Inventory) })]
+      [Interaction(new Type[] { typeof(Inventory) })]
 
       [RequireComponent(typeof(SpriteRenderer))]
 
       public class CollectableItem : InteractableObject
     content.vb: >-
-      <Interaction(GetType(CollectableItem), New Type() { GetType(Inventory) })>
+      <Interaction(New Type() { GetType(Inventory) })>
 
       <RequireComponent(GetType(SpriteRenderer))>
 
@@ -49,6 +49,7 @@ items:
   - LobsterFramework.Interaction.InteractableObject.InteractEnabled
   - LobsterFramework.Interaction.InteractableObject.OnInteract(LobsterFramework.Interaction.Interactor,LobsterFramework.Interaction.InteractionType)
   - LobsterFramework.Interaction.InteractableObject.Update
+  - LobsterFramework.Interaction.InteractableObject.IUpdate
   - LobsterFramework.Interaction.InteractableObject.OnDisable
   - UnityEngine.MonoBehaviour.IsInvoking
   - UnityEngine.MonoBehaviour.CancelInvoke
@@ -65,6 +66,7 @@ items:
   - UnityEngine.MonoBehaviour.StopCoroutine(System.String)
   - UnityEngine.MonoBehaviour.StopAllCoroutines
   - UnityEngine.MonoBehaviour.print(System.Object)
+  - UnityEngine.MonoBehaviour.destroyCancellationToken
   - UnityEngine.MonoBehaviour.useGUILayout
   - UnityEngine.MonoBehaviour.runInEditMode
   - UnityEngine.Behaviour.enabled
@@ -354,6 +356,22 @@ references:
   spec.vb:
   - uid: LobsterFramework.Interaction.InteractableObject.Update
     name: Update
+  - name: (
+  - name: )
+- uid: LobsterFramework.Interaction.InteractableObject.IUpdate
+  commentId: M:LobsterFramework.Interaction.InteractableObject.IUpdate
+  parent: LobsterFramework.Interaction.InteractableObject
+  name: IUpdate()
+  nameWithType: InteractableObject.IUpdate()
+  fullName: LobsterFramework.Interaction.InteractableObject.IUpdate()
+  spec.csharp:
+  - uid: LobsterFramework.Interaction.InteractableObject.IUpdate
+    name: IUpdate
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Interaction.InteractableObject.IUpdate
+    name: IUpdate
   - name: (
   - name: )
 - uid: LobsterFramework.Interaction.InteractableObject.OnDisable
@@ -793,6 +811,13 @@ references:
     name: Object
     isExternal: true
   - name: )
+- uid: UnityEngine.MonoBehaviour.destroyCancellationToken
+  commentId: P:UnityEngine.MonoBehaviour.destroyCancellationToken
+  parent: UnityEngine.MonoBehaviour
+  isExternal: true
+  name: destroyCancellationToken
+  nameWithType: MonoBehaviour.destroyCancellationToken
+  fullName: UnityEngine.MonoBehaviour.destroyCancellationToken
 - uid: UnityEngine.MonoBehaviour.useGUILayout
   commentId: P:UnityEngine.MonoBehaviour.useGUILayout
   parent: UnityEngine.MonoBehaviour

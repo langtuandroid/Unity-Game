@@ -56,5 +56,9 @@ namespace LobsterFramework.EntitySystem
         protected virtual void OnUpdate() { }
 
         protected virtual void OnEffectOver() { }
+
+        public void TerminateEffect() {
+            OnEffectOver();
+        }
     }
 }

@@ -19,7 +19,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Effect/StunEffect.cs
     id: StunEffect
     path: ../Assets/Scripts/Scriptable Objects/Effect/StunEffect.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
@@ -45,6 +45,7 @@ items:
   - LobsterFramework.EntitySystem.Effect.ActivateEffect(LobsterFramework.EntitySystem.Entity)
   - LobsterFramework.EntitySystem.Effect.Update
   - LobsterFramework.EntitySystem.Effect.OnUpdate
+  - LobsterFramework.EntitySystem.Effect.TerminateEffect
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
   - UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -119,7 +120,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Effect/StunEffect.cs
     id: OnApply
     path: ../Assets/Scripts/Scriptable Objects/Effect/StunEffect.cs
-    startLine: 9
+    startLine: 13
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
@@ -144,7 +145,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Effect/StunEffect.cs
     id: OnEffectOver
     path: ../Assets/Scripts/Scriptable Objects/Effect/StunEffect.cs
-    startLine: 15
+    startLine: 22
   assemblies:
   - MyScripts
   namespace: LobsterFramework.EntitySystem
@@ -275,6 +276,22 @@ references:
   spec.vb:
   - uid: LobsterFramework.EntitySystem.Effect.OnUpdate
     name: OnUpdate
+  - name: (
+  - name: )
+- uid: LobsterFramework.EntitySystem.Effect.TerminateEffect
+  commentId: M:LobsterFramework.EntitySystem.Effect.TerminateEffect
+  parent: LobsterFramework.EntitySystem.Effect
+  name: TerminateEffect()
+  nameWithType: Effect.TerminateEffect()
+  fullName: LobsterFramework.EntitySystem.Effect.TerminateEffect()
+  spec.csharp:
+  - uid: LobsterFramework.EntitySystem.Effect.TerminateEffect
+    name: TerminateEffect
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.EntitySystem.Effect.TerminateEffect
+    name: TerminateEffect
   - name: (
   - name: )
 - uid: UnityEngine.ScriptableObject.SetDirty

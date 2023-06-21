@@ -6,6 +6,8 @@ items:
   parent: Global
   children:
   - Global.RefFloat.#ctor(System.Single,System.Boolean,VarFloat)
+  - Global.RefFloat.op_Implicit(RefFloat)~System.Single
+  - Global.RefFloat.op_Implicit(System.Single)~RefFloat
   - Global.RefFloat.Value
   langs:
   - csharp
@@ -70,6 +72,70 @@ items:
   nameWithType.vb: RefFloat.New(Single, Boolean, VarFloat)
   fullName.vb: RefFloat.New(Single, Boolean, VarFloat)
   name.vb: New(Single, Boolean, VarFloat)
+- uid: Global.RefFloat.op_Implicit(System.Single)~RefFloat
+  commentId: M:Global.RefFloat.op_Implicit(System.Single)~RefFloat
+  id: op_Implicit(System.Single)~RefFloat
+  parent: Global.RefFloat
+  langs:
+  - csharp
+  - vb
+  name: implicit operator RefFloat(float)
+  nameWithType: RefFloat.implicit operator RefFloat(float)
+  fullName: RefFloat.implicit operator RefFloat(float)
+  type: Operator
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+    id: op_Implicit
+    path: ../Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+    startLine: 17
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public static implicit operator RefFloat(float value)
+    parameters:
+    - id: value
+      type: System.Single
+    return:
+      type: Global.RefFloat
+    content.vb: Public Shared Widening Operator CType(value As Single) As RefFloat
+  overload: Global.RefFloat.op_Implicit*
+  nameWithType.vb: RefFloat.CType(Single)
+  fullName.vb: RefFloat.CType(Single)
+  name.vb: CType(Single)
+- uid: Global.RefFloat.op_Implicit(RefFloat)~System.Single
+  commentId: M:Global.RefFloat.op_Implicit(RefFloat)~System.Single
+  id: op_Implicit(RefFloat)~System.Single
+  parent: Global.RefFloat
+  langs:
+  - csharp
+  - vb
+  name: implicit operator float(RefFloat)
+  nameWithType: RefFloat.implicit operator float(RefFloat)
+  fullName: RefFloat.implicit operator float(RefFloat)
+  type: Operator
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+    id: op_Implicit
+    path: ../Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+    startLine: 22
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public static implicit operator float(RefFloat value)
+    parameters:
+    - id: value
+      type: Global.RefFloat
+    return:
+      type: System.Single
+    content.vb: Public Shared Widening Operator CType(value As RefFloat) As Single
+  overload: Global.RefFloat.op_Implicit*
+  nameWithType.vb: RefFloat.CType(RefFloat)
+  fullName.vb: RefFloat.CType(RefFloat)
+  name.vb: CType(RefFloat)
 - uid: Global.RefFloat.Value
   commentId: P:Global.RefFloat.Value
   id: Value
@@ -86,7 +152,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
     id: Value
     path: ../Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
-    startLine: 17
+    startLine: 26
   assemblies:
   - MyScripts
   namespace: Global
@@ -138,6 +204,23 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: Global.RefFloat.op_Implicit*
+  commentId: Overload:Global.RefFloat.op_Implicit
+  name: implicit operator
+  nameWithType: RefFloat.implicit operator
+  fullName: RefFloat.implicit operator
+  nameWithType.vb: RefFloat.CType
+  fullName.vb: RefFloat.CType
+  name.vb: CType
+  spec.csharp:
+  - name: implicit
+  - name: " "
+  - name: operator
+- uid: Global.RefFloat
+  commentId: T:Global.RefFloat
+  name: RefFloat
+  nameWithType: RefFloat
+  fullName: RefFloat
 - uid: Global.RefFloat.Value*
   commentId: Overload:Global.RefFloat.Value
   name: Value

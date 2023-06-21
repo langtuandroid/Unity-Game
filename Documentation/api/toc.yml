@@ -4,8 +4,6 @@
   items:
   - uid: Global.ActionDataSODrawer
     name: ActionDataSODrawer
-  - uid: Global.ActionInstanceAttribute
-    name: ActionInstanceAttribute
   - uid: Global.ActionPriority
     name: ActionPriority
   - uid: Global.ActionPrioritySO
@@ -18,25 +16,12 @@
     name: AstarPath
   - uid: Global.AstarPath.AstarDistribution
     name: AstarPath.AstarDistribution
-  - uid: Global.AttributeInitializer
-    name: AttributeInitializer
   - uid: Global.BoolEventChannel
     name: BoolEventChannel
   - uid: Global.ChatController
     name: ChatController
-  - uid: Global.ColorChangeCoroutine
-    name: ColorChangeCoroutine
-  - uid: Global.Condition
-    name: Condition
-  - uid: Global.Condition`1
-    name: Condition<T>
-    name.vb: Condition(Of T)
-  - uid: Global.ConditionSO
-    name: ConditionSO
   - uid: Global.ControllerData
     name: ControllerData
-  - uid: Global.CoroutineOperationSO
-    name: CoroutineOperationSO
   - uid: Global.DescriptionBaseSO
     name: DescriptionBaseSO
   - uid: Global.DialogueBox
@@ -47,20 +32,12 @@
     name: EnvMapAnimator
   - uid: Global.ExposedFieldAttribute
     name: ExposedFieldAttribute
-  - uid: Global.ExposedPropertyTable
-    name: ExposedPropertyTable
-  - uid: Global.ExposedPropertyTable.Info
-    name: ExposedPropertyTable.Info
-  - uid: Global.ExposedPropertyTableEditor
-    name: ExposedPropertyTableEditor
   - uid: Global.FloatEventChannel
     name: FloatEventChannel
   - uid: Global.GameManager
     name: GameManager
   - uid: Global.GameStateManager
     name: GameStateManager
-  - uid: Global.GameUtility
-    name: GameUtility
   - uid: Global.IConsumable
     name: IConsumable
   - uid: Global.IEquipable
@@ -69,16 +46,6 @@
     name: IntEventChannel
   - uid: Global.IntroMenu
     name: IntroMenu
-  - uid: Global.InvalidKeyException
-    name: InvalidKeyException
-  - uid: Global.LogOperationSO
-    name: LogOperationSO
-  - uid: Global.OperactionReferenceDrawer
-    name: OperactionReferenceDrawer
-  - uid: Global.OperationReference
-    name: OperationReference
-  - uid: Global.OperationSO
-    name: OperationSO
   - uid: Global.OrderedSet`1
     name: OrderedSet<T>
     name.vb: OrderedSet(Of T)
@@ -90,14 +57,8 @@
     name: PlayerInput.PlayerActions
   - uid: Global.Projectile
     name: Projectile
-  - uid: Global.QuestEditor
-    name: QuestEditor
-  - uid: Global.QuestEventChannel
-    name: QuestEventChannel
-  - uid: Global.QuestSO
-    name: QuestSO
-  - uid: Global.RefActionPriority
-    name: RefActionPriority
+  - uid: Global.RefAbilityPriority
+    name: RefAbilityPriority
   - uid: Global.RefActionPriorityDrawer
     name: RefActionPriorityDrawer
   - uid: Global.RefBool
@@ -124,17 +85,11 @@
     name: SceneEventChannel
   - uid: Global.SceneLoader
     name: SceneLoader
-  - uid: Global.SceneReferenceSO
-    name: SceneReferenceSO
   - uid: Global.SerializableLinkedList`1
     name: SerializableLinkedList<T>
     name.vb: SerializableLinkedList(Of T)
   - uid: Global.SerializedPropertyExtensions
     name: SerializedPropertyExtensions
-  - uid: Global.Setting
-    name: Setting
-  - uid: Global.Setting.CoroutineStatus
-    name: Setting.CoroutineStatus
   - uid: Global.SimpleItem
     name: SimpleItem
   - uid: Global.SnapToNode
@@ -175,51 +130,76 @@
   items:
   - uid: LobsterFramework.FindMissingScript
     name: FindMissingScript
-- uid: LobsterFramework.Action
-  name: LobsterFramework.Action
+- uid: LobsterFramework.AbilitySystem
+  name: LobsterFramework.AbilitySystem
   items:
-  - uid: LobsterFramework.Action.Actionable
-    name: Actionable
-  - uid: LobsterFramework.Action.ActionableData
-    name: ActionableData
-  - uid: LobsterFramework.Action.ActionComponent
-    name: ActionComponent
-  - uid: LobsterFramework.Action.ActionComponentAttribute
-    name: ActionComponentAttribute
-  - uid: LobsterFramework.Action.ActionInstance
-    name: ActionInstance
-  - uid: LobsterFramework.Action.ActionInstance.ActionConfig
-    name: ActionInstance.ActionConfig
-  - uid: LobsterFramework.Action.ActionOverseer
+  - uid: LobsterFramework.AbilitySystem.Ability
+    name: Ability
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+    name: Ability.AbilityConfig
+  - uid: LobsterFramework.AbilitySystem.AbilityData
+    name: AbilityData
+  - uid: LobsterFramework.AbilitySystem.AbilityRunner
+    name: AbilityRunner
+  - uid: LobsterFramework.AbilitySystem.AbilityStat
+    name: AbilityStat
+  - uid: LobsterFramework.AbilitySystem.AbilityStatAttribute
+    name: AbilityStatAttribute
+  - uid: LobsterFramework.AbilitySystem.ActionOverseer
     name: ActionOverseer
-  - uid: LobsterFramework.Action.CircleAttack
+  - uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
+    name: AddAbilityMenuAttribute
+  - uid: LobsterFramework.AbilitySystem.CircleAttack
     name: CircleAttack
-  - uid: LobsterFramework.Action.CircleAttack.CircleAttackConfig
+  - uid: LobsterFramework.AbilitySystem.CircleAttack.CircleAttackConfig
     name: CircleAttack.CircleAttackConfig
-  - uid: LobsterFramework.Action.CombatComponent
-    name: CombatComponent
-  - uid: LobsterFramework.Action.Guard
+  - uid: LobsterFramework.AbilitySystem.ClassNode
+    name: ClassNode
+  - uid: LobsterFramework.AbilitySystem.CombatStat
+    name: CombatStat
+  - uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
+    name: ComponentRequiredAttribute
+  - uid: LobsterFramework.AbilitySystem.Endure
+    name: Endure
+  - uid: LobsterFramework.AbilitySystem.Endure.EndureConfig
+    name: Endure.EndureConfig
+  - uid: LobsterFramework.AbilitySystem.Guard
     name: Guard
-  - uid: LobsterFramework.Action.Guard.GuardConfig
+  - uid: LobsterFramework.AbilitySystem.Guard.GuardConfig
     name: Guard.GuardConfig
-  - uid: LobsterFramework.Action.Mana
+  - uid: LobsterFramework.AbilitySystem.Mana
     name: Mana
-  - uid: LobsterFramework.Action.RequireActionComponentAttribute
-    name: RequireActionComponentAttribute
-  - uid: LobsterFramework.Action.RequireCMPAttribute
-    name: RequireCMPAttribute
-  - uid: LobsterFramework.Action.RightSwipe
+  - uid: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute
+    name: RequireAbilityStatsAttribute
+  - uid: LobsterFramework.AbilitySystem.RightSwipe
     name: RightSwipe
-  - uid: LobsterFramework.Action.RightSwipe.RightSwipeConfig
+  - uid: LobsterFramework.AbilitySystem.RightSwipe.RightSwipeConfig
     name: RightSwipe.RightSwipeConfig
-  - uid: LobsterFramework.Action.RightSwipe.State
+  - uid: LobsterFramework.AbilitySystem.RightSwipe.State
     name: RightSwipe.State
-  - uid: LobsterFramework.Action.Shoot
+  - uid: LobsterFramework.AbilitySystem.Shoot
     name: Shoot
-  - uid: LobsterFramework.Action.Shoot.ShootConfig
+  - uid: LobsterFramework.AbilitySystem.Shoot.ShootConfig
     name: Shoot.ShootConfig
-  - uid: LobsterFramework.Action.TargetSetting
+  - uid: LobsterFramework.AbilitySystem.TargetSetting
     name: TargetSetting
+- uid: LobsterFramework.AbilitySystem.Weapon
+  name: LobsterFramework.AbilitySystem.Weapon
+  items:
+  - uid: LobsterFramework.AbilitySystem.Weapon.RequireWeaponAttribute
+    name: RequireWeaponAttribute
+  - uid: LobsterFramework.AbilitySystem.Weapon.TestWeapon
+    name: TestWeapon
+  - uid: LobsterFramework.AbilitySystem.Weapon.TestWeapon.TestWeaponConfig
+    name: TestWeapon.TestWeaponConfig
+  - uid: LobsterFramework.AbilitySystem.Weapon.Weapon
+    name: Weapon
+  - uid: LobsterFramework.AbilitySystem.Weapon.WeaponAbility
+    name: WeaponAbility
+  - uid: LobsterFramework.AbilitySystem.Weapon.WeaponType
+    name: WeaponType
+  - uid: LobsterFramework.AbilitySystem.Weapon.WeaponWielder
+    name: WeaponWielder
 - uid: LobsterFramework.AI
   name: LobsterFramework.AI
   items:
@@ -255,12 +235,12 @@
 - uid: LobsterFramework.EditorUtility
   name: LobsterFramework.EditorUtility
   items:
-  - uid: LobsterFramework.EditorUtility.ActionableDataEditor
-    name: ActionableDataEditor
+  - uid: LobsterFramework.EditorUtility.AbilityDataEditor
+    name: AbilityDataEditor
+  - uid: LobsterFramework.EditorUtility.AbilityRunnerEditor
+    name: AbilityRunnerEditor
   - uid: LobsterFramework.EditorUtility.ActionConfigEditor
     name: ActionConfigEditor
-  - uid: LobsterFramework.EditorUtility.ActionEditor
-    name: ActionEditor
   - uid: LobsterFramework.EditorUtility.ActionInstanceDrawer
     name: ActionInstanceDrawer
   - uid: LobsterFramework.EditorUtility.ActionInstanceEditor
@@ -270,12 +250,20 @@
 - uid: LobsterFramework.EntitySystem
   name: LobsterFramework.EntitySystem
   items:
-  - uid: LobsterFramework.EntitySystem.DamageInfo
-    name: DamageInfo
+  - uid: LobsterFramework.EntitySystem.Damage
+    name: Damage
+  - uid: LobsterFramework.EntitySystem.DamageBuffer
+    name: DamageBuffer
+  - uid: LobsterFramework.EntitySystem.DamageType
+    name: DamageType
   - uid: LobsterFramework.EntitySystem.Effect
     name: Effect
   - uid: LobsterFramework.EntitySystem.Entity
     name: Entity
+  - uid: LobsterFramework.EntitySystem.RegenBuffer
+    name: RegenBuffer
+  - uid: LobsterFramework.EntitySystem.SilentEffect
+    name: SilentEffect
   - uid: LobsterFramework.EntitySystem.StunEffect
     name: StunEffect
 - uid: LobsterFramework.InputControl
@@ -321,30 +309,11 @@
     name: ObjectPool
   - uid: LobsterFramework.Pool.TemporalObject
     name: TemporalObject
-- uid: LobsterFramework.QuestSystem
-  name: LobsterFramework.QuestSystem
-  items:
-  - uid: LobsterFramework.QuestSystem.CollisionTrigger
-    name: CollisionTrigger
-  - uid: LobsterFramework.QuestSystem.CoroutineOperation
-    name: CoroutineOperation
-  - uid: LobsterFramework.QuestSystem.HealthCheckCondition
-    name: HealthCheckCondition
-  - uid: LobsterFramework.QuestSystem.HealthLogOperation
-    name: HealthLogOperation
-  - uid: LobsterFramework.QuestSystem.LogOperation
-    name: LogOperation
-  - uid: LobsterFramework.QuestSystem.Operation
-    name: Operation
-  - uid: LobsterFramework.QuestSystem.Quest
-    name: Quest
 - uid: LobsterFramework.UI
   name: LobsterFramework.UI
   items:
   - uid: LobsterFramework.UI.DialogueDisplayer
     name: DialogueDisplayer
-  - uid: LobsterFramework.UI.GameplayUI
-    name: GameplayUI
   - uid: LobsterFramework.UI.InteractionUI
     name: InteractionUI
   - uid: LobsterFramework.UI.PlayerUIDisplayer
@@ -352,8 +321,16 @@
 - uid: LobsterFramework.Utility
   name: LobsterFramework.Utility
   items:
-  - uid: LobsterFramework.Utility.ActionSet
-    name: ActionSet
+  - uid: LobsterFramework.Utility.AbilitySet
+    name: AbilitySet
+  - uid: LobsterFramework.Utility.AttributeInitializer
+    name: AttributeInitializer
+  - uid: LobsterFramework.Utility.CollisionTrigger
+    name: CollisionTrigger
+  - uid: LobsterFramework.Utility.Condition
+    name: Condition
+  - uid: LobsterFramework.Utility.GameUtility
+    name: GameUtility
   - uid: LobsterFramework.Utility.IdDistributor
     name: IdDistributor
   - uid: LobsterFramework.Utility.ManagedSet`1
@@ -368,12 +345,28 @@
   - uid: LobsterFramework.Utility.SortableItem`1
     name: SortableItem<T>
     name.vb: SortableItem(Of T)
-  - uid: LobsterFramework.Utility.StringActionConfigDictionary
-    name: StringActionConfigDictionary
-  - uid: LobsterFramework.Utility.TypeActionComponentDictionary
-    name: TypeActionComponentDictionary
-  - uid: LobsterFramework.Utility.TypeActionInstanceDictionary
-    name: TypeActionInstanceDictionary
+  - uid: LobsterFramework.Utility.StringAbilityConfigDictionary
+    name: StringAbilityConfigDictionary
+  - uid: LobsterFramework.Utility.TypeAbilityDictionary
+    name: TypeAbilityDictionary
+  - uid: LobsterFramework.Utility.TypeAbilityStatDictionary
+    name: TypeAbilityStatDictionary
+- uid: LobsterFramework.Utility.BufferedStats
+  name: LobsterFramework.Utility.BufferedStats
+  items:
+  - uid: LobsterFramework.Utility.BufferedStats.BaseAnd
+    name: BaseAnd
+  - uid: LobsterFramework.Utility.BufferedStats.BaseOr
+    name: BaseOr
+  - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1
+    name: BufferedStat<T>
+    name.vb: BufferedStat(Of T)
+  - uid: LobsterFramework.Utility.BufferedStats.FloatProduct
+    name: FloatProduct
+  - uid: LobsterFramework.Utility.BufferedStats.FloatSum
+    name: FloatSum
+  - uid: LobsterFramework.Utility.BufferedStats.IntSum
+    name: IntSum
 - uid: LobsterFramework.Utility.EventChannels
   name: LobsterFramework.Utility.EventChannels
   items:

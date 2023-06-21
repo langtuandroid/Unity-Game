@@ -26,18 +26,11 @@ items:
   assemblies:
   - MyScripts
 references:
-- uid: LobsterFramework.Interaction.Teleportor
-  commentId: T:LobsterFramework.Interaction.Teleportor
-  parent: LobsterFramework.Interaction
-  name: Teleportor
-  nameWithType: Teleportor
-  fullName: LobsterFramework.Interaction.Teleportor
-- uid: LobsterFramework.Interaction.Interactor
-  commentId: T:LobsterFramework.Interaction.Interactor
-  parent: LobsterFramework.Interaction
-  name: Interactor
-  nameWithType: Interactor
-  fullName: LobsterFramework.Interaction.Interactor
+- uid: LobsterFramework.Interaction.LockableDoor
+  commentId: T:LobsterFramework.Interaction.LockableDoor
+  name: LockableDoor
+  nameWithType: LockableDoor
+  fullName: LobsterFramework.Interaction.LockableDoor
 - uid: LobsterFramework.Interaction.InteractionType
   commentId: T:LobsterFramework.Interaction.InteractionType
   parent: LobsterFramework.Interaction
@@ -56,12 +49,17 @@ references:
   name: InteractableObject
   nameWithType: InteractableObject
   fullName: LobsterFramework.Interaction.InteractableObject
-- uid: LobsterFramework.Interaction.LockableDoor
-  commentId: T:LobsterFramework.Interaction.LockableDoor
+- uid: LobsterFramework.Interaction.InteractionAttribute
+  commentId: T:LobsterFramework.Interaction.InteractionAttribute
   parent: LobsterFramework.Interaction
-  name: LockableDoor
-  nameWithType: LockableDoor
-  fullName: LobsterFramework.Interaction.LockableDoor
+  name: InteractionAttribute
+  nameWithType: InteractionAttribute
+  fullName: LobsterFramework.Interaction.InteractionAttribute
+- uid: LobsterFramework.Interaction.CollectableItem
+  commentId: T:LobsterFramework.Interaction.CollectableItem
+  name: CollectableItem
+  nameWithType: CollectableItem
+  fullName: LobsterFramework.Interaction.CollectableItem
 - uid: LobsterFramework.Interaction.Inventory
   commentId: T:LobsterFramework.Interaction.Inventory
   name: Inventory
@@ -73,30 +71,28 @@ references:
   name: InventoryItem
   nameWithType: InventoryItem
   fullName: LobsterFramework.Interaction.InventoryItem
-- uid: LobsterFramework.Interaction.InteractionAttribute
-  commentId: T:LobsterFramework.Interaction.InteractionAttribute
+- uid: LobsterFramework.Interaction.Interactor
+  commentId: T:LobsterFramework.Interaction.Interactor
   parent: LobsterFramework.Interaction
-  name: InteractionAttribute
-  nameWithType: InteractionAttribute
-  fullName: LobsterFramework.Interaction.InteractionAttribute
-- uid: LobsterFramework.Interaction.CollectableItem
-  commentId: T:LobsterFramework.Interaction.CollectableItem
-  parent: LobsterFramework.Interaction
-  name: CollectableItem
-  nameWithType: CollectableItem
-  fullName: LobsterFramework.Interaction.CollectableItem
-- uid: LobsterFramework.Interaction.SimpleDoor
-  commentId: T:LobsterFramework.Interaction.SimpleDoor
-  parent: LobsterFramework.Interaction
-  name: SimpleDoor
-  nameWithType: SimpleDoor
-  fullName: LobsterFramework.Interaction.SimpleDoor
+  name: Interactor
+  nameWithType: Interactor
+  fullName: LobsterFramework.Interaction.Interactor
 - uid: LobsterFramework.Interaction.GeneralInteractor
   commentId: T:LobsterFramework.Interaction.GeneralInteractor
   parent: LobsterFramework.Interaction
   name: GeneralInteractor
   nameWithType: GeneralInteractor
   fullName: LobsterFramework.Interaction.GeneralInteractor
+- uid: LobsterFramework.Interaction.Teleportor
+  commentId: T:LobsterFramework.Interaction.Teleportor
+  name: Teleportor
+  nameWithType: Teleportor
+  fullName: LobsterFramework.Interaction.Teleportor
+- uid: LobsterFramework.Interaction.SimpleDoor
+  commentId: T:LobsterFramework.Interaction.SimpleDoor
+  name: SimpleDoor
+  nameWithType: SimpleDoor
+  fullName: LobsterFramework.Interaction.SimpleDoor
 - uid: LobsterFramework.Interaction
   commentId: N:LobsterFramework.Interaction
   name: LobsterFramework.Interaction

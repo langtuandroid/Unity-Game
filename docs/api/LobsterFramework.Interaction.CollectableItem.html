@@ -112,6 +112,9 @@
       <a class="xref" href="LobsterFramework.Interaction.InteractableObject.html#LobsterFramework_Interaction_InteractableObject_Update">InteractableObject.Update()</a>
     </div>
     <div>
+      <a class="xref" href="LobsterFramework.Interaction.InteractableObject.html#LobsterFramework_Interaction_InteractableObject_IUpdate">InteractableObject.IUpdate()</a>
+    </div>
+    <div>
       <a class="xref" href="LobsterFramework.Interaction.InteractableObject.html#LobsterFramework_Interaction_InteractableObject_OnDisable">InteractableObject.OnDisable()</a>
     </div>
     <div>
@@ -158,6 +161,9 @@
     </div>
     <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/MonoBehaviour-print.html">MonoBehaviour.print(object)</a>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.MonoBehaviour.destroyCancellationToken</span>
     </div>
     <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/MonoBehaviour-useGUILayout.html">MonoBehaviour.useGUILayout</a>
@@ -446,7 +452,7 @@
   <h6><strong>Assembly</strong>: MyScripts.dll</h6>
   <h5 id="LobsterFramework_Interaction_CollectableItem_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Interaction(typeof(CollectableItem), new Type[] { typeof(Inventory) })]
+    <pre><code class="lang-csharp hljs">[Interaction(new Type[] { typeof(Inventory) })]
 [RequireComponent(typeof(SpriteRenderer))]
 public class CollectableItem : InteractableObject</code></pre>
   </div>

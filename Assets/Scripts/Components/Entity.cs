@@ -7,6 +7,10 @@ using LobsterFramework.Utility.BufferedStats;
 
 namespace LobsterFramework.EntitySystem
 {
+    /// <summary>
+    /// Character class of the game. Provides an interface for character movement and health/damage system. Entities will be disabled
+    /// when their health goes down to or below 0.
+    /// </summary>
     [AddComponentMenu("Entity")]
     public class Entity : MonoBehaviour
     {   
@@ -164,6 +168,9 @@ namespace LobsterFramework.EntitySystem
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, moveSpeed.Value);
         }
 
+        /// <summary>
+        /// Apply regeneration effects to health and posture
+        /// </summary>
         private void Regen() {
             if (!RegenSuppressed)
             {
@@ -180,10 +187,20 @@ namespace LobsterFramework.EntitySystem
             }
         }
 
+        /// <summary>
+        /// Reset the entity to its full health and posture and clear all of the damage and effects
+        /// </summary>
         public void Reset()
         {
             damageBuffer.Reset();
             Health = startHealth.Value;
+            Posture = MaxPosture;
+
+            foreach (Effect effect in activeEffects.Values) {
+                effect.TerminateEffect();
+                Destroy(effect);
+            }
+            activeEffects.Clear();
             
             IsDead = false;
             gameObject.SetActive(true);
@@ -231,6 +248,10 @@ namespace LobsterFramework.EntitySystem
             }
         }
 
+        /// <summary>
+        /// Apply an effect to the entity
+        /// </summary>
+        /// <param name="effect"></param>
         public void AddEffect(Effect effect)
         {
             Type t = effect.GetType();
@@ -243,6 +264,14 @@ namespace LobsterFramework.EntitySystem
             eft.ActivateEffect(this);
         }
 
+
+        /// <summary>
+        /// Add damage to the entity, the damage will be dealt on update of next frame
+        /// </summary>
+        /// <param name="health">The amount of health damage</param>
+        /// <param name="posture">The amount of posture damage</param>
+        /// <param name="source">The source of this attack</param>
+        /// <param name="type">The type of the damage</param>
         public void Damage(int health, int posture, Entity source = null, DamageType type = DamageType.General)
         {
             Damage damage = new Damage() { health = health, posture = posture, source = source };
@@ -254,10 +283,20 @@ namespace LobsterFramework.EntitySystem
             damagedSince = Time.time;
         }
 
+
+        /// <summary>
+        /// Add a flat damage reduction to the entity, the damage taken will be reduced by the specified amount on update of next frame
+        /// </summary>
+        /// <param name="healthDefense">The amount of health defense</param>
+        /// <param name="postureDefense">The amount of posture defense</param>
         public void Defense(int healthDefense, int postureDefense) { 
             damageBuffer.AddDefense(healthDefense, postureDefense);
         }
 
+        /// <summary>
+        /// Add an effector to block movement of this entity. The movement of the entity will be blocked if there's at least 1 effector.
+        /// </summary>
+        /// <returns>The id of the newly added effector</returns>
         public int BlockMovement()
         {
             bool before = MovementBlocked;
@@ -279,6 +318,11 @@ namespace LobsterFramework.EntitySystem
             return false;
         }
 
+        /// <summary>
+        /// Attempt to rotate the entity towards the specified direction. If the specified angle is larger than the max rotation speed,
+        /// the entity will rotate towards target angle will max speed. Will fail if Movement blocked. 
+        /// </summary>
+        /// <param name="direction">The target direction to rotate towards</param>
         public void RotateTowards(Vector2 direction) {
             if (MovementBlocked) {
                 return;
@@ -307,7 +351,11 @@ namespace LobsterFramework.EntitySystem
                 }
             }
         }
-
+        /// <summary>
+        /// Attempt to rotate the entity by the specified degree. If the specified angle is larger than the max rotation speed,
+        /// the entity will rotate towards target angle will max speed. Will fail if Movement blocked. 
+        /// </summary>
+        /// <param name="degree">The degree to rotate the entity by</param>
         public void RotateByDegrees(float degree) {
             if (MovementBlocked) {
                 return;
@@ -325,6 +373,10 @@ namespace LobsterFramework.EntitySystem
             _transform.rotation = Quaternion.AngleAxis(degree, _transform.forward) * _transform.rotation;
         }
 
+        /// <summary>
+        /// Start moving the entity towards the specified direction, will fail is Movement is blocked on this entity
+        /// </summary>
+        /// <param name="direction"></param>
         public void Move(Vector2 direction)
         {
             if (MovementBlocked)

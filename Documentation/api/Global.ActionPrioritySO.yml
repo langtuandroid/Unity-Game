@@ -26,11 +26,11 @@ items:
   namespace: Global
   syntax:
     content: >-
-      [CreateAssetMenu(menuName = "Action/ActionPrioritySO")]
+      [CreateAssetMenu(menuName = "Ability/ActionPrioritySO")]
 
       public class ActionPrioritySO : ScriptableObject
     content.vb: >-
-      <CreateAssetMenu(menuName:="Action/ActionPrioritySO")>
+      <CreateAssetMenu(menuName:="Ability/ActionPrioritySO")>
 
       Public Class ActionPrioritySO Inherits ScriptableObject
   inheritance:
@@ -95,7 +95,7 @@ items:
     namedArguments:
     - name: menuName
       type: System.String
-      value: Action/ActionPrioritySO
+      value: Ability/ActionPrioritySO
 - uid: Global.ActionPrioritySO.ExecutionPriority
   commentId: P:Global.ActionPrioritySO.ExecutionPriority
   id: ExecutionPriority

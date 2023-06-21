@@ -9,15 +9,12 @@ items:
   - LobsterFramework.InputControl.PlayerController.CircleAttack2(UnityEngine.InputSystem.InputAction.CallbackContext)
   - LobsterFramework.InputControl.PlayerController.Guard(UnityEngine.InputSystem.InputAction.CallbackContext)
   - LobsterFramework.InputControl.PlayerController.LateUpdate
-  - LobsterFramework.InputControl.PlayerController.LookAtMouse(UnityEngine.InputSystem.InputAction.CallbackContext)
-  - LobsterFramework.InputControl.PlayerController.Move(UnityEngine.InputSystem.InputAction.CallbackContext)
   - LobsterFramework.InputControl.PlayerController.NextInteractable(UnityEngine.InputSystem.InputAction.CallbackContext)
   - LobsterFramework.InputControl.PlayerController.PreviousInteractable(UnityEngine.InputSystem.InputAction.CallbackContext)
   - LobsterFramework.InputControl.PlayerController.PrimaryInteraction(UnityEngine.InputSystem.InputAction.CallbackContext)
   - LobsterFramework.InputControl.PlayerController.SecondaryInteraction(UnityEngine.InputSystem.InputAction.CallbackContext)
   - LobsterFramework.InputControl.PlayerController.Shoot(UnityEngine.InputSystem.InputAction.CallbackContext)
   - LobsterFramework.InputControl.PlayerController.Start
-  - LobsterFramework.InputControl.PlayerController.TriggerDialogue(UnityEngine.InputSystem.InputAction.CallbackContext)
   langs:
   - csharp
   - vb
@@ -30,7 +27,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Components/Controllers/PlayerController.cs
     id: PlayerController
     path: ../Assets/Scripts/Components/Controllers/PlayerController.cs
-    startLine: 9
+    startLine: 10
   assemblies:
   - MyScripts
   namespace: LobsterFramework.InputControl
@@ -65,6 +62,7 @@ items:
   - UnityEngine.MonoBehaviour.StopCoroutine(System.String)
   - UnityEngine.MonoBehaviour.StopAllCoroutines
   - UnityEngine.MonoBehaviour.print(System.Object)
+  - UnityEngine.MonoBehaviour.destroyCancellationToken
   - UnityEngine.MonoBehaviour.useGUILayout
   - UnityEngine.MonoBehaviour.runInEditMode
   - UnityEngine.Behaviour.enabled
@@ -181,7 +179,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Components/Controllers/PlayerController.cs
     id: Start
     path: ../Assets/Scripts/Components/Controllers/PlayerController.cs
-    startLine: 32
+    startLine: 35
   assemblies:
   - MyScripts
   namespace: LobsterFramework.InputControl
@@ -205,7 +203,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Components/Controllers/PlayerController.cs
     id: CircleAttack
     path: ../Assets/Scripts/Components/Controllers/PlayerController.cs
-    startLine: 71
+    startLine: 87
   assemblies:
   - MyScripts
   namespace: LobsterFramework.InputControl
@@ -232,7 +230,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Components/Controllers/PlayerController.cs
     id: CircleAttack2
     path: ../Assets/Scripts/Components/Controllers/PlayerController.cs
-    startLine: 79
+    startLine: 95
   assemblies:
   - MyScripts
   namespace: LobsterFramework.InputControl
@@ -243,33 +241,6 @@ items:
       type: UnityEngine.InputSystem.InputAction.CallbackContext
     content.vb: Public Sub CircleAttack2(context As InputAction.CallbackContext)
   overload: LobsterFramework.InputControl.PlayerController.CircleAttack2*
-- uid: LobsterFramework.InputControl.PlayerController.Move(UnityEngine.InputSystem.InputAction.CallbackContext)
-  commentId: M:LobsterFramework.InputControl.PlayerController.Move(UnityEngine.InputSystem.InputAction.CallbackContext)
-  id: Move(UnityEngine.InputSystem.InputAction.CallbackContext)
-  parent: LobsterFramework.InputControl.PlayerController
-  langs:
-  - csharp
-  - vb
-  name: Move(CallbackContext)
-  nameWithType: PlayerController.Move(InputAction.CallbackContext)
-  fullName: LobsterFramework.InputControl.PlayerController.Move(UnityEngine.InputSystem.InputAction.CallbackContext)
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Controllers/PlayerController.cs
-    id: Move
-    path: ../Assets/Scripts/Components/Controllers/PlayerController.cs
-    startLine: 87
-  assemblies:
-  - MyScripts
-  namespace: LobsterFramework.InputControl
-  syntax:
-    content: public void Move(InputAction.CallbackContext context)
-    parameters:
-    - id: context
-      type: UnityEngine.InputSystem.InputAction.CallbackContext
-    content.vb: Public Sub Move(context As InputAction.CallbackContext)
-  overload: LobsterFramework.InputControl.PlayerController.Move*
 - uid: LobsterFramework.InputControl.PlayerController.Guard(UnityEngine.InputSystem.InputAction.CallbackContext)
   commentId: M:LobsterFramework.InputControl.PlayerController.Guard(UnityEngine.InputSystem.InputAction.CallbackContext)
   id: Guard(UnityEngine.InputSystem.InputAction.CallbackContext)
@@ -324,33 +295,6 @@ items:
       type: UnityEngine.InputSystem.InputAction.CallbackContext
     content.vb: Public Sub Shoot(context As InputAction.CallbackContext)
   overload: LobsterFramework.InputControl.PlayerController.Shoot*
-- uid: LobsterFramework.InputControl.PlayerController.TriggerDialogue(UnityEngine.InputSystem.InputAction.CallbackContext)
-  commentId: M:LobsterFramework.InputControl.PlayerController.TriggerDialogue(UnityEngine.InputSystem.InputAction.CallbackContext)
-  id: TriggerDialogue(UnityEngine.InputSystem.InputAction.CallbackContext)
-  parent: LobsterFramework.InputControl.PlayerController
-  langs:
-  - csharp
-  - vb
-  name: TriggerDialogue(CallbackContext)
-  nameWithType: PlayerController.TriggerDialogue(InputAction.CallbackContext)
-  fullName: LobsterFramework.InputControl.PlayerController.TriggerDialogue(UnityEngine.InputSystem.InputAction.CallbackContext)
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Controllers/PlayerController.cs
-    id: TriggerDialogue
-    path: ../Assets/Scripts/Components/Controllers/PlayerController.cs
-    startLine: 119
-  assemblies:
-  - MyScripts
-  namespace: LobsterFramework.InputControl
-  syntax:
-    content: public void TriggerDialogue(InputAction.CallbackContext context)
-    parameters:
-    - id: context
-      type: UnityEngine.InputSystem.InputAction.CallbackContext
-    content.vb: Public Sub TriggerDialogue(context As InputAction.CallbackContext)
-  overload: LobsterFramework.InputControl.PlayerController.TriggerDialogue*
 - uid: LobsterFramework.InputControl.PlayerController.PrimaryInteraction(UnityEngine.InputSystem.InputAction.CallbackContext)
   commentId: M:LobsterFramework.InputControl.PlayerController.PrimaryInteraction(UnityEngine.InputSystem.InputAction.CallbackContext)
   id: PrimaryInteraction(UnityEngine.InputSystem.InputAction.CallbackContext)
@@ -367,7 +311,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Components/Controllers/PlayerController.cs
     id: PrimaryInteraction
     path: ../Assets/Scripts/Components/Controllers/PlayerController.cs
-    startLine: 127
+    startLine: 119
   assemblies:
   - MyScripts
   namespace: LobsterFramework.InputControl
@@ -394,7 +338,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Components/Controllers/PlayerController.cs
     id: SecondaryInteraction
     path: ../Assets/Scripts/Components/Controllers/PlayerController.cs
-    startLine: 135
+    startLine: 127
   assemblies:
   - MyScripts
   namespace: LobsterFramework.InputControl
@@ -421,7 +365,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Components/Controllers/PlayerController.cs
     id: NextInteractable
     path: ../Assets/Scripts/Components/Controllers/PlayerController.cs
-    startLine: 143
+    startLine: 135
   assemblies:
   - MyScripts
   namespace: LobsterFramework.InputControl
@@ -448,7 +392,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Components/Controllers/PlayerController.cs
     id: PreviousInteractable
     path: ../Assets/Scripts/Components/Controllers/PlayerController.cs
-    startLine: 151
+    startLine: 143
   assemblies:
   - MyScripts
   namespace: LobsterFramework.InputControl
@@ -459,33 +403,6 @@ items:
       type: UnityEngine.InputSystem.InputAction.CallbackContext
     content.vb: Public Sub PreviousInteractable(context As InputAction.CallbackContext)
   overload: LobsterFramework.InputControl.PlayerController.PreviousInteractable*
-- uid: LobsterFramework.InputControl.PlayerController.LookAtMouse(UnityEngine.InputSystem.InputAction.CallbackContext)
-  commentId: M:LobsterFramework.InputControl.PlayerController.LookAtMouse(UnityEngine.InputSystem.InputAction.CallbackContext)
-  id: LookAtMouse(UnityEngine.InputSystem.InputAction.CallbackContext)
-  parent: LobsterFramework.InputControl.PlayerController
-  langs:
-  - csharp
-  - vb
-  name: LookAtMouse(CallbackContext)
-  nameWithType: PlayerController.LookAtMouse(InputAction.CallbackContext)
-  fullName: LobsterFramework.InputControl.PlayerController.LookAtMouse(UnityEngine.InputSystem.InputAction.CallbackContext)
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Controllers/PlayerController.cs
-    id: LookAtMouse
-    path: ../Assets/Scripts/Components/Controllers/PlayerController.cs
-    startLine: 159
-  assemblies:
-  - MyScripts
-  namespace: LobsterFramework.InputControl
-  syntax:
-    content: public void LookAtMouse(InputAction.CallbackContext context)
-    parameters:
-    - id: context
-      type: UnityEngine.InputSystem.InputAction.CallbackContext
-    content.vb: Public Sub LookAtMouse(context As InputAction.CallbackContext)
-  overload: LobsterFramework.InputControl.PlayerController.LookAtMouse*
 - uid: LobsterFramework.InputControl.PlayerController.LateUpdate
   commentId: M:LobsterFramework.InputControl.PlayerController.LateUpdate
   id: LateUpdate
@@ -502,7 +419,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Components/Controllers/PlayerController.cs
     id: LateUpdate
     path: ../Assets/Scripts/Components/Controllers/PlayerController.cs
-    startLine: 195
+    startLine: 151
   assemblies:
   - MyScripts
   namespace: LobsterFramework.InputControl
@@ -987,6 +904,13 @@ references:
     name: Object
     isExternal: true
   - name: )
+- uid: UnityEngine.MonoBehaviour.destroyCancellationToken
+  commentId: P:UnityEngine.MonoBehaviour.destroyCancellationToken
+  parent: UnityEngine.MonoBehaviour
+  isExternal: true
+  name: destroyCancellationToken
+  nameWithType: MonoBehaviour.destroyCancellationToken
+  fullName: UnityEngine.MonoBehaviour.destroyCancellationToken
 - uid: UnityEngine.MonoBehaviour.useGUILayout
   commentId: P:UnityEngine.MonoBehaviour.useGUILayout
   parent: UnityEngine.MonoBehaviour
@@ -4534,11 +4458,6 @@ references:
   name: CircleAttack2
   nameWithType: PlayerController.CircleAttack2
   fullName: LobsterFramework.InputControl.PlayerController.CircleAttack2
-- uid: LobsterFramework.InputControl.PlayerController.Move*
-  commentId: Overload:LobsterFramework.InputControl.PlayerController.Move
-  name: Move
-  nameWithType: PlayerController.Move
-  fullName: LobsterFramework.InputControl.PlayerController.Move
 - uid: LobsterFramework.InputControl.PlayerController.Guard*
   commentId: Overload:LobsterFramework.InputControl.PlayerController.Guard
   name: Guard
@@ -4549,11 +4468,6 @@ references:
   name: Shoot
   nameWithType: PlayerController.Shoot
   fullName: LobsterFramework.InputControl.PlayerController.Shoot
-- uid: LobsterFramework.InputControl.PlayerController.TriggerDialogue*
-  commentId: Overload:LobsterFramework.InputControl.PlayerController.TriggerDialogue
-  name: TriggerDialogue
-  nameWithType: PlayerController.TriggerDialogue
-  fullName: LobsterFramework.InputControl.PlayerController.TriggerDialogue
 - uid: LobsterFramework.InputControl.PlayerController.PrimaryInteraction*
   commentId: Overload:LobsterFramework.InputControl.PlayerController.PrimaryInteraction
   name: PrimaryInteraction
@@ -4574,11 +4488,6 @@ references:
   name: PreviousInteractable
   nameWithType: PlayerController.PreviousInteractable
   fullName: LobsterFramework.InputControl.PlayerController.PreviousInteractable
-- uid: LobsterFramework.InputControl.PlayerController.LookAtMouse*
-  commentId: Overload:LobsterFramework.InputControl.PlayerController.LookAtMouse
-  name: LookAtMouse
-  nameWithType: PlayerController.LookAtMouse
-  fullName: LobsterFramework.InputControl.PlayerController.LookAtMouse
 - uid: LobsterFramework.InputControl.PlayerController.LateUpdate*
   commentId: Overload:LobsterFramework.InputControl.PlayerController.LateUpdate
   name: LateUpdate

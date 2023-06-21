@@ -50,6 +50,7 @@ items:
   - UnityEngine.MonoBehaviour.StopCoroutine(System.String)
   - UnityEngine.MonoBehaviour.StopAllCoroutines
   - UnityEngine.MonoBehaviour.print(System.Object)
+  - UnityEngine.MonoBehaviour.destroyCancellationToken
   - UnityEngine.MonoBehaviour.useGUILayout
   - UnityEngine.MonoBehaviour.runInEditMode
   - UnityEngine.Behaviour.enabled
@@ -240,10 +241,10 @@ items:
   - MyScripts
   namespace: LobsterFramework.UI
   syntax:
-    content: public Actionable actionComponent
+    content: public AbilityRunner actionComponent
     return:
-      type: LobsterFramework.Action.Actionable
-    content.vb: Public actionComponent As Actionable
+      type: LobsterFramework.AbilitySystem.AbilityRunner
+    content.vb: Public actionComponent As AbilityRunner
 references:
 - uid: LobsterFramework.UI
   commentId: N:LobsterFramework.UI
@@ -721,6 +722,13 @@ references:
     name: Object
     isExternal: true
   - name: )
+- uid: UnityEngine.MonoBehaviour.destroyCancellationToken
+  commentId: P:UnityEngine.MonoBehaviour.destroyCancellationToken
+  parent: UnityEngine.MonoBehaviour
+  isExternal: true
+  name: destroyCancellationToken
+  nameWithType: MonoBehaviour.destroyCancellationToken
+  fullName: UnityEngine.MonoBehaviour.destroyCancellationToken
 - uid: UnityEngine.MonoBehaviour.useGUILayout
   commentId: P:UnityEngine.MonoBehaviour.useGUILayout
   parent: UnityEngine.MonoBehaviour
@@ -4260,26 +4268,26 @@ references:
   - uid: UnityEngine.UI
     name: UI
     isExternal: true
-- uid: LobsterFramework.Action.Actionable
-  commentId: T:LobsterFramework.Action.Actionable
-  parent: LobsterFramework.Action
-  name: Actionable
-  nameWithType: Actionable
-  fullName: LobsterFramework.Action.Actionable
-- uid: LobsterFramework.Action
-  commentId: N:LobsterFramework.Action
-  name: LobsterFramework.Action
-  nameWithType: LobsterFramework.Action
-  fullName: LobsterFramework.Action
+- uid: LobsterFramework.AbilitySystem.AbilityRunner
+  commentId: T:LobsterFramework.AbilitySystem.AbilityRunner
+  parent: LobsterFramework.AbilitySystem
+  name: AbilityRunner
+  nameWithType: AbilityRunner
+  fullName: LobsterFramework.AbilitySystem.AbilityRunner
+- uid: LobsterFramework.AbilitySystem
+  commentId: N:LobsterFramework.AbilitySystem
+  name: LobsterFramework.AbilitySystem
+  nameWithType: LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
   - name: .
-  - uid: LobsterFramework.Action
-    name: Action
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
   - name: .
-  - uid: LobsterFramework.Action
-    name: Action
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem

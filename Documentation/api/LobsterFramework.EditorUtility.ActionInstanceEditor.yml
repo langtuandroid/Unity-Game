@@ -24,11 +24,11 @@ items:
   namespace: LobsterFramework.EditorUtility
   syntax:
     content: >-
-      [CustomEditor(typeof(ActionInstance), true)]
+      [CustomEditor(typeof(Ability), true)]
 
       public class ActionInstanceEditor : Editor
     content.vb: >-
-      <CustomEditor(GetType(ActionInstance), True)>
+      <CustomEditor(GetType(Ability), True)>
 
       Public Class ActionInstanceEditor Inherits Editor
   inheritance:
@@ -92,7 +92,7 @@ items:
     ctor: UnityEditor.CustomEditor.#ctor(System.Type,System.Boolean)
     arguments:
     - type: System.Type
-      value: LobsterFramework.Action.ActionInstance
+      value: LobsterFramework.AbilitySystem.Ability
     - type: System.Boolean
       value: true
 - uid: LobsterFramework.EditorUtility.ActionInstanceEditor.OnInspectorGUI

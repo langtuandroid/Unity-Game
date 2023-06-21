@@ -5,9 +5,18 @@ items:
   id: GameManager
   parent: Global
   children:
-  - Global.GameManager.BeginCoroutine(System.Collections.IEnumerator)
-  - Global.GameManager.EndCoroutine(UnityEngine.Coroutine)
   - Global.GameManager.ExecuteDelegate(UnityEngine.Events.UnityAction,System.Single)
+  - Global.GameManager.EXPIRE_ATTACK_TIME
+  - Global.GameManager.Instance
+  - Global.GameManager.POSTURE_BROKEN_DAMAGE_MODIFIER
+  - Global.GameManager.POSTURE_BROKEN_DURATION
+  - Global.GameManager.SUPPRESS_REGEN_DURATION
+  - Global.GameManager.TAG_ENTITY
+  - Global.GameManager.TAG_INTERACTABLE
+  - Global.GameManager.TAG_INTERACTOR
+  - Global.GameManager.TAG_PLAYER
+  - Global.GameManager.TAG_PROJECTILE
+  - Global.GameManager.TARGET_FRAME_RATE
   - Global.GameManager.Update
   langs:
   - csharp
@@ -50,6 +59,7 @@ items:
   - UnityEngine.MonoBehaviour.StopCoroutine(System.String)
   - UnityEngine.MonoBehaviour.StopAllCoroutines
   - UnityEngine.MonoBehaviour.print(System.Object)
+  - UnityEngine.MonoBehaviour.destroyCancellationToken
   - UnityEngine.MonoBehaviour.useGUILayout
   - UnityEngine.MonoBehaviour.runInEditMode
   - UnityEngine.Behaviour.enabled
@@ -144,62 +154,303 @@ items:
   - UnityEngine.Object.ToString
   - UnityEngine.Object.name
   - UnityEngine.Object.hideFlags
-- uid: Global.GameManager.BeginCoroutine(System.Collections.IEnumerator)
-  commentId: M:Global.GameManager.BeginCoroutine(System.Collections.IEnumerator)
-  id: BeginCoroutine(System.Collections.IEnumerator)
+- uid: Global.GameManager.Instance
+  commentId: P:Global.GameManager.Instance
+  id: Instance
   parent: Global.GameManager
   langs:
   - csharp
   - vb
-  name: BeginCoroutine(IEnumerator)
-  nameWithType: GameManager.BeginCoroutine(IEnumerator)
-  fullName: GameManager.BeginCoroutine(System.Collections.IEnumerator)
-  type: Method
+  name: Instance
+  nameWithType: GameManager.Instance
+  fullName: GameManager.Instance
+  type: Property
   source:
     remote:
       path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/GameManager.cs
-    id: BeginCoroutine
+    id: Instance
+    path: ../Assets/Scripts/Persistent Managers/GameManager.cs
+    startLine: 17
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public static GameManager Instance { get; }
+    parameters: []
+    return:
+      type: Global.GameManager
+    content.vb: Public Shared ReadOnly Property Instance As GameManager
+  overload: Global.GameManager.Instance*
+- uid: Global.GameManager.TARGET_FRAME_RATE
+  commentId: P:Global.GameManager.TARGET_FRAME_RATE
+  id: TARGET_FRAME_RATE
+  parent: Global.GameManager
+  langs:
+  - csharp
+  - vb
+  name: TARGET_FRAME_RATE
+  nameWithType: GameManager.TARGET_FRAME_RATE
+  fullName: GameManager.TARGET_FRAME_RATE
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/GameManager.cs
+    id: TARGET_FRAME_RATE
     path: ../Assets/Scripts/Persistent Managers/GameManager.cs
     startLine: 21
   assemblies:
   - MyScripts
   namespace: Global
   syntax:
-    content: public static Coroutine BeginCoroutine(IEnumerator method)
-    parameters:
-    - id: method
-      type: System.Collections.IEnumerator
+    content: public int TARGET_FRAME_RATE { get; }
+    parameters: []
     return:
-      type: UnityEngine.Coroutine
-    content.vb: Public Shared Function BeginCoroutine(method As IEnumerator) As Coroutine
-  overload: Global.GameManager.BeginCoroutine*
-- uid: Global.GameManager.EndCoroutine(UnityEngine.Coroutine)
-  commentId: M:Global.GameManager.EndCoroutine(UnityEngine.Coroutine)
-  id: EndCoroutine(UnityEngine.Coroutine)
+      type: System.Int32
+    content.vb: Public Property TARGET_FRAME_RATE As Integer
+  overload: Global.GameManager.TARGET_FRAME_RATE*
+- uid: Global.GameManager.EXPIRE_ATTACK_TIME
+  commentId: P:Global.GameManager.EXPIRE_ATTACK_TIME
+  id: EXPIRE_ATTACK_TIME
   parent: Global.GameManager
   langs:
   - csharp
   - vb
-  name: EndCoroutine(Coroutine)
-  nameWithType: GameManager.EndCoroutine(Coroutine)
-  fullName: GameManager.EndCoroutine(UnityEngine.Coroutine)
-  type: Method
+  name: EXPIRE_ATTACK_TIME
+  nameWithType: GameManager.EXPIRE_ATTACK_TIME
+  fullName: GameManager.EXPIRE_ATTACK_TIME
+  type: Property
   source:
     remote:
       path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/GameManager.cs
-    id: EndCoroutine
+    id: EXPIRE_ATTACK_TIME
     path: ../Assets/Scripts/Persistent Managers/GameManager.cs
-    startLine: 25
+    startLine: 24
   assemblies:
   - MyScripts
   namespace: Global
   syntax:
-    content: public static void EndCoroutine(Coroutine coroutine)
-    parameters:
-    - id: coroutine
-      type: UnityEngine.Coroutine
-    content.vb: Public Shared Sub EndCoroutine(coroutine As Coroutine)
-  overload: Global.GameManager.EndCoroutine*
+    content: public float EXPIRE_ATTACK_TIME { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property EXPIRE_ATTACK_TIME As Single
+  overload: Global.GameManager.EXPIRE_ATTACK_TIME*
+- uid: Global.GameManager.POSTURE_BROKEN_DAMAGE_MODIFIER
+  commentId: P:Global.GameManager.POSTURE_BROKEN_DAMAGE_MODIFIER
+  id: POSTURE_BROKEN_DAMAGE_MODIFIER
+  parent: Global.GameManager
+  langs:
+  - csharp
+  - vb
+  name: POSTURE_BROKEN_DAMAGE_MODIFIER
+  nameWithType: GameManager.POSTURE_BROKEN_DAMAGE_MODIFIER
+  fullName: GameManager.POSTURE_BROKEN_DAMAGE_MODIFIER
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/GameManager.cs
+    id: POSTURE_BROKEN_DAMAGE_MODIFIER
+    path: ../Assets/Scripts/Persistent Managers/GameManager.cs
+    startLine: 27
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public float POSTURE_BROKEN_DAMAGE_MODIFIER { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property POSTURE_BROKEN_DAMAGE_MODIFIER As Single
+  overload: Global.GameManager.POSTURE_BROKEN_DAMAGE_MODIFIER*
+- uid: Global.GameManager.POSTURE_BROKEN_DURATION
+  commentId: P:Global.GameManager.POSTURE_BROKEN_DURATION
+  id: POSTURE_BROKEN_DURATION
+  parent: Global.GameManager
+  langs:
+  - csharp
+  - vb
+  name: POSTURE_BROKEN_DURATION
+  nameWithType: GameManager.POSTURE_BROKEN_DURATION
+  fullName: GameManager.POSTURE_BROKEN_DURATION
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/GameManager.cs
+    id: POSTURE_BROKEN_DURATION
+    path: ../Assets/Scripts/Persistent Managers/GameManager.cs
+    startLine: 28
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public float POSTURE_BROKEN_DURATION { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property POSTURE_BROKEN_DURATION As Single
+  overload: Global.GameManager.POSTURE_BROKEN_DURATION*
+- uid: Global.GameManager.SUPPRESS_REGEN_DURATION
+  commentId: P:Global.GameManager.SUPPRESS_REGEN_DURATION
+  id: SUPPRESS_REGEN_DURATION
+  parent: Global.GameManager
+  langs:
+  - csharp
+  - vb
+  name: SUPPRESS_REGEN_DURATION
+  nameWithType: GameManager.SUPPRESS_REGEN_DURATION
+  fullName: GameManager.SUPPRESS_REGEN_DURATION
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/GameManager.cs
+    id: SUPPRESS_REGEN_DURATION
+    path: ../Assets/Scripts/Persistent Managers/GameManager.cs
+    startLine: 29
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public float SUPPRESS_REGEN_DURATION { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property SUPPRESS_REGEN_DURATION As Single
+  overload: Global.GameManager.SUPPRESS_REGEN_DURATION*
+- uid: Global.GameManager.TAG_ENTITY
+  commentId: P:Global.GameManager.TAG_ENTITY
+  id: TAG_ENTITY
+  parent: Global.GameManager
+  langs:
+  - csharp
+  - vb
+  name: TAG_ENTITY
+  nameWithType: GameManager.TAG_ENTITY
+  fullName: GameManager.TAG_ENTITY
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/GameManager.cs
+    id: TAG_ENTITY
+    path: ../Assets/Scripts/Persistent Managers/GameManager.cs
+    startLine: 30
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public string TAG_ENTITY { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property TAG_ENTITY As String
+  overload: Global.GameManager.TAG_ENTITY*
+- uid: Global.GameManager.TAG_PROJECTILE
+  commentId: P:Global.GameManager.TAG_PROJECTILE
+  id: TAG_PROJECTILE
+  parent: Global.GameManager
+  langs:
+  - csharp
+  - vb
+  name: TAG_PROJECTILE
+  nameWithType: GameManager.TAG_PROJECTILE
+  fullName: GameManager.TAG_PROJECTILE
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/GameManager.cs
+    id: TAG_PROJECTILE
+    path: ../Assets/Scripts/Persistent Managers/GameManager.cs
+    startLine: 31
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public string TAG_PROJECTILE { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property TAG_PROJECTILE As String
+  overload: Global.GameManager.TAG_PROJECTILE*
+- uid: Global.GameManager.TAG_PLAYER
+  commentId: P:Global.GameManager.TAG_PLAYER
+  id: TAG_PLAYER
+  parent: Global.GameManager
+  langs:
+  - csharp
+  - vb
+  name: TAG_PLAYER
+  nameWithType: GameManager.TAG_PLAYER
+  fullName: GameManager.TAG_PLAYER
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/GameManager.cs
+    id: TAG_PLAYER
+    path: ../Assets/Scripts/Persistent Managers/GameManager.cs
+    startLine: 32
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public string TAG_PLAYER { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property TAG_PLAYER As String
+  overload: Global.GameManager.TAG_PLAYER*
+- uid: Global.GameManager.TAG_INTERACTABLE
+  commentId: P:Global.GameManager.TAG_INTERACTABLE
+  id: TAG_INTERACTABLE
+  parent: Global.GameManager
+  langs:
+  - csharp
+  - vb
+  name: TAG_INTERACTABLE
+  nameWithType: GameManager.TAG_INTERACTABLE
+  fullName: GameManager.TAG_INTERACTABLE
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/GameManager.cs
+    id: TAG_INTERACTABLE
+    path: ../Assets/Scripts/Persistent Managers/GameManager.cs
+    startLine: 33
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public string TAG_INTERACTABLE { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property TAG_INTERACTABLE As String
+  overload: Global.GameManager.TAG_INTERACTABLE*
+- uid: Global.GameManager.TAG_INTERACTOR
+  commentId: P:Global.GameManager.TAG_INTERACTOR
+  id: TAG_INTERACTOR
+  parent: Global.GameManager
+  langs:
+  - csharp
+  - vb
+  name: TAG_INTERACTOR
+  nameWithType: GameManager.TAG_INTERACTOR
+  fullName: GameManager.TAG_INTERACTOR
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/GameManager.cs
+    id: TAG_INTERACTOR
+    path: ../Assets/Scripts/Persistent Managers/GameManager.cs
+    startLine: 35
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public string TAG_INTERACTOR { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property TAG_INTERACTOR As String
+  overload: Global.GameManager.TAG_INTERACTOR*
 - uid: Global.GameManager.Update
   commentId: M:Global.GameManager.Update
   id: Update
@@ -216,7 +467,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/GameManager.cs
     id: Update
     path: ../Assets/Scripts/Persistent Managers/GameManager.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - MyScripts
   namespace: Global
@@ -240,18 +491,22 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/GameManager.cs
     id: ExecuteDelegate
     path: ../Assets/Scripts/Persistent Managers/GameManager.cs
-    startLine: 67
+    startLine: 82
   assemblies:
   - MyScripts
   namespace: Global
+  summary: "\nExecute UnityAction after specified seconds of delay in the Update Loop. If delay is set to 0, action will be executed on next frame\n"
+  example: []
   syntax:
-    content: public static void ExecuteDelegate(UnityAction method, float time)
+    content: public static void ExecuteDelegate(UnityAction action, float timeDelay)
     parameters:
-    - id: method
+    - id: action
       type: UnityEngine.Events.UnityAction
-    - id: time
+      description: Action to be executed
+    - id: timeDelay
       type: System.Single
-    content.vb: Public Shared Sub ExecuteDelegate(method As UnityAction, time As Single)
+      description: ''
+    content.vb: Public Shared Sub ExecuteDelegate(action As UnityAction, timeDelay As Single)
   overload: Global.GameManager.ExecuteDelegate*
   nameWithType.vb: GameManager.ExecuteDelegate(UnityAction, Single)
   fullName.vb: GameManager.ExecuteDelegate(UnityEngine.Events.UnityAction, Single)
@@ -717,6 +972,13 @@ references:
     name: Object
     isExternal: true
   - name: )
+- uid: UnityEngine.MonoBehaviour.destroyCancellationToken
+  commentId: P:UnityEngine.MonoBehaviour.destroyCancellationToken
+  parent: UnityEngine.MonoBehaviour
+  isExternal: true
+  name: destroyCancellationToken
+  nameWithType: MonoBehaviour.destroyCancellationToken
+  fullName: UnityEngine.MonoBehaviour.destroyCancellationToken
 - uid: UnityEngine.MonoBehaviour.useGUILayout
   commentId: P:UnityEngine.MonoBehaviour.useGUILayout
   parent: UnityEngine.MonoBehaviour
@@ -4204,52 +4466,96 @@ references:
     name: Boolean
     isExternal: true
   - name: )
-- uid: Global.GameManager.BeginCoroutine*
-  commentId: Overload:Global.GameManager.BeginCoroutine
-  name: BeginCoroutine
-  nameWithType: GameManager.BeginCoroutine
-  fullName: GameManager.BeginCoroutine
-- uid: System.Collections.IEnumerator
-  commentId: T:System.Collections.IEnumerator
-  parent: System.Collections
+- uid: Global.GameManager.Instance*
+  commentId: Overload:Global.GameManager.Instance
+  name: Instance
+  nameWithType: GameManager.Instance
+  fullName: GameManager.Instance
+- uid: Global.GameManager
+  commentId: T:Global.GameManager
+  name: GameManager
+  nameWithType: GameManager
+  fullName: GameManager
+- uid: Global.GameManager.TARGET_FRAME_RATE*
+  commentId: Overload:Global.GameManager.TARGET_FRAME_RATE
+  name: TARGET_FRAME_RATE
+  nameWithType: GameManager.TARGET_FRAME_RATE
+  fullName: GameManager.TARGET_FRAME_RATE
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
   isExternal: true
-  name: IEnumerator
-  nameWithType: IEnumerator
-  fullName: System.Collections.IEnumerator
-- uid: UnityEngine.Coroutine
-  commentId: T:UnityEngine.Coroutine
-  parent: UnityEngine
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Global.GameManager.EXPIRE_ATTACK_TIME*
+  commentId: Overload:Global.GameManager.EXPIRE_ATTACK_TIME
+  name: EXPIRE_ATTACK_TIME
+  nameWithType: GameManager.EXPIRE_ATTACK_TIME
+  fullName: GameManager.EXPIRE_ATTACK_TIME
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
   isExternal: true
-  name: Coroutine
-  nameWithType: Coroutine
-  fullName: UnityEngine.Coroutine
-- uid: System.Collections
-  commentId: N:System.Collections
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Global.GameManager.POSTURE_BROKEN_DAMAGE_MODIFIER*
+  commentId: Overload:Global.GameManager.POSTURE_BROKEN_DAMAGE_MODIFIER
+  name: POSTURE_BROKEN_DAMAGE_MODIFIER
+  nameWithType: GameManager.POSTURE_BROKEN_DAMAGE_MODIFIER
+  fullName: GameManager.POSTURE_BROKEN_DAMAGE_MODIFIER
+- uid: Global.GameManager.POSTURE_BROKEN_DURATION*
+  commentId: Overload:Global.GameManager.POSTURE_BROKEN_DURATION
+  name: POSTURE_BROKEN_DURATION
+  nameWithType: GameManager.POSTURE_BROKEN_DURATION
+  fullName: GameManager.POSTURE_BROKEN_DURATION
+- uid: Global.GameManager.SUPPRESS_REGEN_DURATION*
+  commentId: Overload:Global.GameManager.SUPPRESS_REGEN_DURATION
+  name: SUPPRESS_REGEN_DURATION
+  nameWithType: GameManager.SUPPRESS_REGEN_DURATION
+  fullName: GameManager.SUPPRESS_REGEN_DURATION
+- uid: Global.GameManager.TAG_ENTITY*
+  commentId: Overload:Global.GameManager.TAG_ENTITY
+  name: TAG_ENTITY
+  nameWithType: GameManager.TAG_ENTITY
+  fullName: GameManager.TAG_ENTITY
+- uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
-  name: System.Collections
-  nameWithType: System.Collections
-  fullName: System.Collections
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-- uid: Global.GameManager.EndCoroutine*
-  commentId: Overload:Global.GameManager.EndCoroutine
-  name: EndCoroutine
-  nameWithType: GameManager.EndCoroutine
-  fullName: GameManager.EndCoroutine
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Global.GameManager.TAG_PROJECTILE*
+  commentId: Overload:Global.GameManager.TAG_PROJECTILE
+  name: TAG_PROJECTILE
+  nameWithType: GameManager.TAG_PROJECTILE
+  fullName: GameManager.TAG_PROJECTILE
+- uid: Global.GameManager.TAG_PLAYER*
+  commentId: Overload:Global.GameManager.TAG_PLAYER
+  name: TAG_PLAYER
+  nameWithType: GameManager.TAG_PLAYER
+  fullName: GameManager.TAG_PLAYER
+- uid: Global.GameManager.TAG_INTERACTABLE*
+  commentId: Overload:Global.GameManager.TAG_INTERACTABLE
+  name: TAG_INTERACTABLE
+  nameWithType: GameManager.TAG_INTERACTABLE
+  fullName: GameManager.TAG_INTERACTABLE
+- uid: Global.GameManager.TAG_INTERACTOR*
+  commentId: Overload:Global.GameManager.TAG_INTERACTOR
+  name: TAG_INTERACTOR
+  nameWithType: GameManager.TAG_INTERACTOR
+  fullName: GameManager.TAG_INTERACTOR
 - uid: Global.GameManager.Update*
   commentId: Overload:Global.GameManager.Update
   name: Update
@@ -4267,16 +4573,6 @@ references:
   name: UnityAction
   nameWithType: UnityAction
   fullName: UnityEngine.Events.UnityAction
-- uid: System.Single
-  commentId: T:System.Single
-  parent: System
-  isExternal: true
-  name: float
-  nameWithType: float
-  fullName: float
-  nameWithType.vb: Single
-  fullName.vb: Single
-  name.vb: Single
 - uid: UnityEngine.Events
   commentId: N:UnityEngine.Events
   isExternal: true

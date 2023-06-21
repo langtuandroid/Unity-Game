@@ -4,9 +4,13 @@ items:
   commentId: N:LobsterFramework.EntitySystem
   id: LobsterFramework.EntitySystem
   children:
-  - LobsterFramework.EntitySystem.DamageInfo
+  - LobsterFramework.EntitySystem.Damage
+  - LobsterFramework.EntitySystem.DamageBuffer
+  - LobsterFramework.EntitySystem.DamageType
   - LobsterFramework.EntitySystem.Effect
   - LobsterFramework.EntitySystem.Entity
+  - LobsterFramework.EntitySystem.RegenBuffer
+  - LobsterFramework.EntitySystem.SilentEffect
   - LobsterFramework.EntitySystem.StunEffect
   langs:
   - csharp
@@ -18,29 +22,50 @@ items:
   assemblies:
   - MyScripts
 references:
-- uid: LobsterFramework.EntitySystem.StunEffect
-  commentId: T:LobsterFramework.EntitySystem.StunEffect
-  name: StunEffect
-  nameWithType: StunEffect
-  fullName: LobsterFramework.EntitySystem.StunEffect
-- uid: LobsterFramework.EntitySystem.Entity
-  commentId: T:LobsterFramework.EntitySystem.Entity
-  parent: LobsterFramework.EntitySystem
-  name: Entity
-  nameWithType: Entity
-  fullName: LobsterFramework.EntitySystem.Entity
-- uid: LobsterFramework.EntitySystem.DamageInfo
-  commentId: T:LobsterFramework.EntitySystem.DamageInfo
-  parent: LobsterFramework.EntitySystem
-  name: DamageInfo
-  nameWithType: DamageInfo
-  fullName: LobsterFramework.EntitySystem.DamageInfo
 - uid: LobsterFramework.EntitySystem.Effect
   commentId: T:LobsterFramework.EntitySystem.Effect
   parent: LobsterFramework.EntitySystem
   name: Effect
   nameWithType: Effect
   fullName: LobsterFramework.EntitySystem.Effect
+- uid: LobsterFramework.EntitySystem.Entity
+  commentId: T:LobsterFramework.EntitySystem.Entity
+  parent: LobsterFramework.EntitySystem
+  name: Entity
+  nameWithType: Entity
+  fullName: LobsterFramework.EntitySystem.Entity
+- uid: LobsterFramework.EntitySystem.DamageType
+  commentId: T:LobsterFramework.EntitySystem.DamageType
+  parent: LobsterFramework.EntitySystem
+  name: DamageType
+  nameWithType: DamageType
+  fullName: LobsterFramework.EntitySystem.DamageType
+- uid: LobsterFramework.EntitySystem.Damage
+  commentId: T:LobsterFramework.EntitySystem.Damage
+  parent: LobsterFramework.EntitySystem
+  name: Damage
+  nameWithType: Damage
+  fullName: LobsterFramework.EntitySystem.Damage
+- uid: LobsterFramework.EntitySystem.DamageBuffer
+  commentId: T:LobsterFramework.EntitySystem.DamageBuffer
+  name: DamageBuffer
+  nameWithType: DamageBuffer
+  fullName: LobsterFramework.EntitySystem.DamageBuffer
+- uid: LobsterFramework.EntitySystem.RegenBuffer
+  commentId: T:LobsterFramework.EntitySystem.RegenBuffer
+  name: RegenBuffer
+  nameWithType: RegenBuffer
+  fullName: LobsterFramework.EntitySystem.RegenBuffer
+- uid: LobsterFramework.EntitySystem.StunEffect
+  commentId: T:LobsterFramework.EntitySystem.StunEffect
+  name: StunEffect
+  nameWithType: StunEffect
+  fullName: LobsterFramework.EntitySystem.StunEffect
+- uid: LobsterFramework.EntitySystem.SilentEffect
+  commentId: T:LobsterFramework.EntitySystem.SilentEffect
+  name: SilentEffect
+  nameWithType: SilentEffect
+  fullName: LobsterFramework.EntitySystem.SilentEffect
 - uid: LobsterFramework.EntitySystem
   commentId: N:LobsterFramework.EntitySystem
   name: LobsterFramework.EntitySystem

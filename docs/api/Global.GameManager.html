@@ -141,6 +141,9 @@
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/MonoBehaviour-print.html">MonoBehaviour.print(object)</a>
     </div>
     <div>
+      <span class="xref">UnityEngine.MonoBehaviour.destroyCancellationToken</span>
+    </div>
+    <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/MonoBehaviour-useGUILayout.html">MonoBehaviour.useGUILayout</a>
     </div>
     <div>
@@ -429,86 +432,295 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class GameManager : MonoBehaviour</code></pre>
   </div>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Global_GameManager_EXPIRE_ATTACK_TIME_" data-uid="Global.GameManager.EXPIRE_ATTACK_TIME*"></a>
+  <h4 id="Global_GameManager_EXPIRE_ATTACK_TIME" data-uid="Global.GameManager.EXPIRE_ATTACK_TIME">EXPIRE_ATTACK_TIME</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float EXPIRE_ATTACK_TIME { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Global_GameManager_Instance_" data-uid="Global.GameManager.Instance*"></a>
+  <h4 id="Global_GameManager_Instance" data-uid="Global.GameManager.Instance">Instance</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameManager Instance { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.GameManager.html">GameManager</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Global_GameManager_POSTURE_BROKEN_DAMAGE_MODIFIER_" data-uid="Global.GameManager.POSTURE_BROKEN_DAMAGE_MODIFIER*"></a>
+  <h4 id="Global_GameManager_POSTURE_BROKEN_DAMAGE_MODIFIER" data-uid="Global.GameManager.POSTURE_BROKEN_DAMAGE_MODIFIER">POSTURE_BROKEN_DAMAGE_MODIFIER</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float POSTURE_BROKEN_DAMAGE_MODIFIER { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Global_GameManager_POSTURE_BROKEN_DURATION_" data-uid="Global.GameManager.POSTURE_BROKEN_DURATION*"></a>
+  <h4 id="Global_GameManager_POSTURE_BROKEN_DURATION" data-uid="Global.GameManager.POSTURE_BROKEN_DURATION">POSTURE_BROKEN_DURATION</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float POSTURE_BROKEN_DURATION { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Global_GameManager_SUPPRESS_REGEN_DURATION_" data-uid="Global.GameManager.SUPPRESS_REGEN_DURATION*"></a>
+  <h4 id="Global_GameManager_SUPPRESS_REGEN_DURATION" data-uid="Global.GameManager.SUPPRESS_REGEN_DURATION">SUPPRESS_REGEN_DURATION</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float SUPPRESS_REGEN_DURATION { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Global_GameManager_TAG_ENTITY_" data-uid="Global.GameManager.TAG_ENTITY*"></a>
+  <h4 id="Global_GameManager_TAG_ENTITY" data-uid="Global.GameManager.TAG_ENTITY">TAG_ENTITY</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TAG_ENTITY { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Global_GameManager_TAG_INTERACTABLE_" data-uid="Global.GameManager.TAG_INTERACTABLE*"></a>
+  <h4 id="Global_GameManager_TAG_INTERACTABLE" data-uid="Global.GameManager.TAG_INTERACTABLE">TAG_INTERACTABLE</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TAG_INTERACTABLE { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Global_GameManager_TAG_INTERACTOR_" data-uid="Global.GameManager.TAG_INTERACTOR*"></a>
+  <h4 id="Global_GameManager_TAG_INTERACTOR" data-uid="Global.GameManager.TAG_INTERACTOR">TAG_INTERACTOR</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TAG_INTERACTOR { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Global_GameManager_TAG_PLAYER_" data-uid="Global.GameManager.TAG_PLAYER*"></a>
+  <h4 id="Global_GameManager_TAG_PLAYER" data-uid="Global.GameManager.TAG_PLAYER">TAG_PLAYER</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TAG_PLAYER { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Global_GameManager_TAG_PROJECTILE_" data-uid="Global.GameManager.TAG_PROJECTILE*"></a>
+  <h4 id="Global_GameManager_TAG_PROJECTILE" data-uid="Global.GameManager.TAG_PROJECTILE">TAG_PROJECTILE</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TAG_PROJECTILE { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Global_GameManager_TARGET_FRAME_RATE_" data-uid="Global.GameManager.TARGET_FRAME_RATE*"></a>
+  <h4 id="Global_GameManager_TARGET_FRAME_RATE" data-uid="Global.GameManager.TARGET_FRAME_RATE">TARGET_FRAME_RATE</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TARGET_FRAME_RATE { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
 </h3>
 
 
-  <a id="Global_GameManager_BeginCoroutine_" data-uid="Global.GameManager.BeginCoroutine*"></a>
-  <h4 id="Global_GameManager_BeginCoroutine_System_Collections_IEnumerator_" data-uid="Global.GameManager.BeginCoroutine(System.Collections.IEnumerator)">BeginCoroutine(IEnumerator)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Coroutine BeginCoroutine(IEnumerator method)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></td>
-        <td><span class="parametername">method</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/Coroutine.html">Coroutine</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <a id="Global_GameManager_EndCoroutine_" data-uid="Global.GameManager.EndCoroutine*"></a>
-  <h4 id="Global_GameManager_EndCoroutine_UnityEngine_Coroutine_" data-uid="Global.GameManager.EndCoroutine(UnityEngine.Coroutine)">EndCoroutine(Coroutine)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void EndCoroutine(Coroutine coroutine)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/Coroutine.html">Coroutine</a></td>
-        <td><span class="parametername">coroutine</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
   <a id="Global_GameManager_ExecuteDelegate_" data-uid="Global.GameManager.ExecuteDelegate*"></a>
   <h4 id="Global_GameManager_ExecuteDelegate_UnityEngine_Events_UnityAction_System_Single_" data-uid="Global.GameManager.ExecuteDelegate(UnityEngine.Events.UnityAction,System.Single)">ExecuteDelegate(UnityAction, float)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Execute UnityAction after specified seconds of delay in the Update Loop. If delay is set to 0, action will be executed on next frame</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ExecuteDelegate(UnityAction method, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ExecuteDelegate(UnityAction action, float timeDelay)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -522,12 +734,13 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/Events.UnityAction.html">UnityAction</a></td>
-        <td><span class="parametername">method</span></td>
-        <td></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Action to be executed</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td><span class="parametername">time</span></td>
+        <td><span class="parametername">timeDelay</span></td>
         <td></td>
       </tr>
     </tbody>

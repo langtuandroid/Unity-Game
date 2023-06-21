@@ -7,9 +7,7 @@ items:
   children:
   - Global.PlayerInput.PlayerActions.#ctor(PlayerInput)
   - Global.PlayerInput.PlayerActions.AddCallbacks(PlayerInput.IPlayerActions)
-  - Global.PlayerInput.PlayerActions.Aim
   - Global.PlayerInput.PlayerActions.Attack
-  - Global.PlayerInput.PlayerActions.Attack2
   - Global.PlayerInput.PlayerActions.Disable
   - Global.PlayerInput.PlayerActions.Enable
   - Global.PlayerInput.PlayerActions.enabled
@@ -22,6 +20,7 @@ items:
   - Global.PlayerInput.PlayerActions.PreviousInteractable
   - Global.PlayerInput.PlayerActions.PrimaryInteraction
   - Global.PlayerInput.PlayerActions.RemoveCallbacks(PlayerInput.IPlayerActions)
+  - Global.PlayerInput.PlayerActions.Rotate
   - Global.PlayerInput.PlayerActions.SecondaryInteraction
   - Global.PlayerInput.PlayerActions.SetCallbacks(PlayerInput.IPlayerActions)
   - Global.PlayerInput.PlayerActions.Shoot
@@ -37,7 +36,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: PlayerActions
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 385
+    startLine: 363
   assemblies:
   - MyScripts
   namespace: Global
@@ -60,7 +59,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: .ctor
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 388
+    startLine: 366
   assemblies:
   - MyScripts
   namespace: Global
@@ -90,7 +89,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: Move
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 389
+    startLine: 367
   assemblies:
   - MyScripts
   namespace: Global
@@ -117,7 +116,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: Attack
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 390
+    startLine: 368
   assemblies:
   - MyScripts
   namespace: Global
@@ -144,7 +143,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: Guard
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 391
+    startLine: 369
   assemblies:
   - MyScripts
   namespace: Global
@@ -171,7 +170,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: PauseResume
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 392
+    startLine: 370
   assemblies:
   - MyScripts
   namespace: Global
@@ -198,7 +197,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: PrimaryInteraction
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 393
+    startLine: 371
   assemblies:
   - MyScripts
   namespace: Global
@@ -225,7 +224,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: SecondaryInteraction
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 394
+    startLine: 372
   assemblies:
   - MyScripts
   namespace: Global
@@ -252,7 +251,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: NextInteractable
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 395
+    startLine: 373
   assemblies:
   - MyScripts
   namespace: Global
@@ -279,7 +278,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: PreviousInteractable
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 396
+    startLine: 374
   assemblies:
   - MyScripts
   namespace: Global
@@ -290,33 +289,33 @@ items:
       type: UnityEngine.InputSystem.InputAction
     content.vb: Public ReadOnly Property PreviousInteractable As InputAction
   overload: Global.PlayerInput.PlayerActions.PreviousInteractable*
-- uid: Global.PlayerInput.PlayerActions.Aim
-  commentId: P:Global.PlayerInput.PlayerActions.Aim
-  id: Aim
+- uid: Global.PlayerInput.PlayerActions.Rotate
+  commentId: P:Global.PlayerInput.PlayerActions.Rotate
+  id: Rotate
   parent: Global.PlayerInput.PlayerActions
   langs:
   - csharp
   - vb
-  name: Aim
-  nameWithType: PlayerInput.PlayerActions.Aim
-  fullName: PlayerInput.PlayerActions.Aim
+  name: Rotate
+  nameWithType: PlayerInput.PlayerActions.Rotate
+  fullName: PlayerInput.PlayerActions.Rotate
   type: Property
   source:
     remote:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
-    id: Aim
+    id: Rotate
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 397
+    startLine: 375
   assemblies:
   - MyScripts
   namespace: Global
   syntax:
-    content: public InputAction Aim { get; }
+    content: public InputAction Rotate { get; }
     parameters: []
     return:
       type: UnityEngine.InputSystem.InputAction
-    content.vb: Public ReadOnly Property Aim As InputAction
-  overload: Global.PlayerInput.PlayerActions.Aim*
+    content.vb: Public ReadOnly Property Rotate As InputAction
+  overload: Global.PlayerInput.PlayerActions.Rotate*
 - uid: Global.PlayerInput.PlayerActions.Shoot
   commentId: P:Global.PlayerInput.PlayerActions.Shoot
   id: Shoot
@@ -333,7 +332,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: Shoot
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 398
+    startLine: 376
   assemblies:
   - MyScripts
   namespace: Global
@@ -344,33 +343,6 @@ items:
       type: UnityEngine.InputSystem.InputAction
     content.vb: Public ReadOnly Property Shoot As InputAction
   overload: Global.PlayerInput.PlayerActions.Shoot*
-- uid: Global.PlayerInput.PlayerActions.Attack2
-  commentId: P:Global.PlayerInput.PlayerActions.Attack2
-  id: Attack2
-  parent: Global.PlayerInput.PlayerActions
-  langs:
-  - csharp
-  - vb
-  name: Attack2
-  nameWithType: PlayerInput.PlayerActions.Attack2
-  fullName: PlayerInput.PlayerActions.Attack2
-  type: Property
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
-    id: Attack2
-    path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 399
-  assemblies:
-  - MyScripts
-  namespace: Global
-  syntax:
-    content: public InputAction Attack2 { get; }
-    parameters: []
-    return:
-      type: UnityEngine.InputSystem.InputAction
-    content.vb: Public ReadOnly Property Attack2 As InputAction
-  overload: Global.PlayerInput.PlayerActions.Attack2*
 - uid: Global.PlayerInput.PlayerActions.Get
   commentId: M:Global.PlayerInput.PlayerActions.Get
   id: Get
@@ -387,7 +359,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: Get
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 400
+    startLine: 377
   assemblies:
   - MyScripts
   namespace: Global
@@ -413,7 +385,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: Enable
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 401
+    startLine: 378
   assemblies:
   - MyScripts
   namespace: Global
@@ -437,7 +409,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: Disable
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 402
+    startLine: 379
   assemblies:
   - MyScripts
   namespace: Global
@@ -461,7 +433,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: enabled
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 403
+    startLine: 380
   assemblies:
   - MyScripts
   namespace: Global
@@ -488,7 +460,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: op_Implicit
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 404
+    startLine: 381
   assemblies:
   - MyScripts
   namespace: Global
@@ -520,7 +492,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: AddCallbacks
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 405
+    startLine: 382
   assemblies:
   - MyScripts
   namespace: Global
@@ -547,7 +519,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: RemoveCallbacks
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 481
+    startLine: 452
   assemblies:
   - MyScripts
   namespace: Global
@@ -574,7 +546,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
     id: SetCallbacks
     path: ../Assets/Scripts/Input/PlayerInput.cs
-    startLine: 487
+    startLine: 458
   assemblies:
   - MyScripts
   namespace: Global
@@ -669,21 +641,16 @@ references:
   name: PreviousInteractable
   nameWithType: PlayerInput.PlayerActions.PreviousInteractable
   fullName: PlayerInput.PlayerActions.PreviousInteractable
-- uid: Global.PlayerInput.PlayerActions.Aim*
-  commentId: Overload:Global.PlayerInput.PlayerActions.Aim
-  name: Aim
-  nameWithType: PlayerInput.PlayerActions.Aim
-  fullName: PlayerInput.PlayerActions.Aim
+- uid: Global.PlayerInput.PlayerActions.Rotate*
+  commentId: Overload:Global.PlayerInput.PlayerActions.Rotate
+  name: Rotate
+  nameWithType: PlayerInput.PlayerActions.Rotate
+  fullName: PlayerInput.PlayerActions.Rotate
 - uid: Global.PlayerInput.PlayerActions.Shoot*
   commentId: Overload:Global.PlayerInput.PlayerActions.Shoot
   name: Shoot
   nameWithType: PlayerInput.PlayerActions.Shoot
   fullName: PlayerInput.PlayerActions.Shoot
-- uid: Global.PlayerInput.PlayerActions.Attack2*
-  commentId: Overload:Global.PlayerInput.PlayerActions.Attack2
-  name: Attack2
-  nameWithType: PlayerInput.PlayerActions.Attack2
-  fullName: PlayerInput.PlayerActions.Attack2
 - uid: Global.PlayerInput.PlayerActions.Get*
   commentId: Overload:Global.PlayerInput.PlayerActions.Get
   name: Get

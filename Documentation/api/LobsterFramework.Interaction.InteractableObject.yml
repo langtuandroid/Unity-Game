@@ -8,6 +8,7 @@ items:
   - LobsterFramework.Interaction.InteractableObject.GetInteractionOptions(System.Type)
   - LobsterFramework.Interaction.InteractableObject.InteractEnabled
   - LobsterFramework.Interaction.InteractableObject.interactionChannel
+  - LobsterFramework.Interaction.InteractableObject.IUpdate
   - LobsterFramework.Interaction.InteractableObject.OnDisable
   - LobsterFramework.Interaction.InteractableObject.OnInteract(LobsterFramework.Interaction.Interactor,LobsterFramework.Interaction.InteractionType)
   - LobsterFramework.Interaction.InteractableObject.Start
@@ -59,6 +60,7 @@ items:
   - UnityEngine.MonoBehaviour.StopCoroutine(System.String)
   - UnityEngine.MonoBehaviour.StopAllCoroutines
   - UnityEngine.MonoBehaviour.print(System.Object)
+  - UnityEngine.MonoBehaviour.destroyCancellationToken
   - UnityEngine.MonoBehaviour.useGUILayout
   - UnityEngine.MonoBehaviour.runInEditMode
   - UnityEngine.Behaviour.enabled
@@ -204,7 +206,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractableObject.cs
     id: Start
     path: ../Assets/Scripts/Components/Interaction/InteractableObject.cs
-    startLine: 39
+    startLine: 38
   assemblies:
   - MyScripts
   namespace: LobsterFramework.Interaction
@@ -228,7 +230,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractableObject.cs
     id: InteractEnabled
     path: ../Assets/Scripts/Components/Interaction/InteractableObject.cs
-    startLine: 53
+    startLine: 52
   assemblies:
   - MyScripts
   namespace: LobsterFramework.Interaction
@@ -255,7 +257,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractableObject.cs
     id: OnInteract
     path: ../Assets/Scripts/Components/Interaction/InteractableObject.cs
-    startLine: 69
+    startLine: 68
   assemblies:
   - MyScripts
   namespace: LobsterFramework.Interaction
@@ -284,7 +286,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractableObject.cs
     id: GetInteractionOptions
     path: ../Assets/Scripts/Components/Interaction/InteractableObject.cs
-    startLine: 71
+    startLine: 70
   assemblies:
   - MyScripts
   namespace: LobsterFramework.Interaction
@@ -313,7 +315,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractableObject.cs
     id: Update
     path: ../Assets/Scripts/Components/Interaction/InteractableObject.cs
-    startLine: 73
+    startLine: 72
   assemblies:
   - MyScripts
   namespace: LobsterFramework.Interaction
@@ -321,6 +323,30 @@ items:
     content: public void Update()
     content.vb: Public Sub Update()
   overload: LobsterFramework.Interaction.InteractableObject.Update*
+- uid: LobsterFramework.Interaction.InteractableObject.IUpdate
+  commentId: M:LobsterFramework.Interaction.InteractableObject.IUpdate
+  id: IUpdate
+  parent: LobsterFramework.Interaction.InteractableObject
+  langs:
+  - csharp
+  - vb
+  name: IUpdate()
+  nameWithType: InteractableObject.IUpdate()
+  fullName: LobsterFramework.Interaction.InteractableObject.IUpdate()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractableObject.cs
+    id: IUpdate
+    path: ../Assets/Scripts/Components/Interaction/InteractableObject.cs
+    startLine: 85
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: protected virtual void IUpdate()
+    content.vb: Protected Overridable Sub IUpdate()
+  overload: LobsterFramework.Interaction.InteractableObject.IUpdate*
 - uid: LobsterFramework.Interaction.InteractableObject.OnDisable
   commentId: M:LobsterFramework.Interaction.InteractableObject.OnDisable
   id: OnDisable
@@ -337,7 +363,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractableObject.cs
     id: OnDisable
     path: ../Assets/Scripts/Components/Interaction/InteractableObject.cs
-    startLine: 85
+    startLine: 87
   assemblies:
   - MyScripts
   namespace: LobsterFramework.Interaction
@@ -822,6 +848,13 @@ references:
     name: Object
     isExternal: true
   - name: )
+- uid: UnityEngine.MonoBehaviour.destroyCancellationToken
+  commentId: P:UnityEngine.MonoBehaviour.destroyCancellationToken
+  parent: UnityEngine.MonoBehaviour
+  isExternal: true
+  name: destroyCancellationToken
+  nameWithType: MonoBehaviour.destroyCancellationToken
+  fullName: UnityEngine.MonoBehaviour.destroyCancellationToken
 - uid: UnityEngine.MonoBehaviour.useGUILayout
   commentId: P:UnityEngine.MonoBehaviour.useGUILayout
   parent: UnityEngine.MonoBehaviour
@@ -4374,6 +4407,11 @@ references:
   name: Update
   nameWithType: InteractableObject.Update
   fullName: LobsterFramework.Interaction.InteractableObject.Update
+- uid: LobsterFramework.Interaction.InteractableObject.IUpdate*
+  commentId: Overload:LobsterFramework.Interaction.InteractableObject.IUpdate
+  name: IUpdate
+  nameWithType: InteractableObject.IUpdate
+  fullName: LobsterFramework.Interaction.InteractableObject.IUpdate
 - uid: LobsterFramework.Interaction.InteractableObject.OnDisable*
   commentId: Overload:LobsterFramework.Interaction.InteractableObject.OnDisable
   name: OnDisable

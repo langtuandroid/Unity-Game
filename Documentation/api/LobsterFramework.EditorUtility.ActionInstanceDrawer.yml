@@ -26,11 +26,11 @@ items:
   namespace: LobsterFramework.EditorUtility
   syntax:
     content: >-
-      [CustomPropertyDrawer(typeof(ActionInstance))]
+      [CustomPropertyDrawer(typeof(Ability))]
 
       public class ActionInstanceDrawer : PropertyDrawer
     content.vb: >-
-      <CustomPropertyDrawer(GetType(ActionInstance))>
+      <CustomPropertyDrawer(GetType(Ability))>
 
       Public Class ActionInstanceDrawer Inherits PropertyDrawer
   inheritance:
@@ -42,7 +42,7 @@ items:
     ctor: UnityEditor.CustomPropertyDrawer.#ctor(System.Type)
     arguments:
     - type: System.Type
-      value: LobsterFramework.Action.ActionInstance
+      value: LobsterFramework.AbilitySystem.Ability
 - uid: LobsterFramework.EditorUtility.ActionInstanceDrawer.#ctor
   commentId: M:LobsterFramework.EditorUtility.ActionInstanceDrawer.#ctor
   id: '#ctor'

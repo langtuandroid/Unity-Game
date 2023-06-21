@@ -5,12 +5,13 @@ items:
   id: InteractionAttribute
   parent: LobsterFramework.Interaction
   children:
-  - LobsterFramework.Interaction.InteractionAttribute.#ctor(System.Type,System.Type[])
+  - LobsterFramework.Interaction.InteractionAttribute.#ctor(System.Type[])
   - LobsterFramework.Interaction.InteractionAttribute.AddInteractor(LobsterFramework.Interaction.Interactor)
   - LobsterFramework.Interaction.InteractionAttribute.ExistInteractor(LobsterFramework.Interaction.Interactor)
   - LobsterFramework.Interaction.InteractionAttribute.GetInteractors(System.Type,System.Collections.Generic.List{LobsterFramework.Interaction.Interactor})
   - LobsterFramework.Interaction.InteractionAttribute.GetInteractorTransform(LobsterFramework.Interaction.Interactor)
   - LobsterFramework.Interaction.InteractionAttribute.GetInteractorTypes(System.Type)
+  - LobsterFramework.Interaction.InteractionAttribute.Init(System.Type)
   - LobsterFramework.Interaction.InteractionAttribute.IsInteractable(System.Type,System.Type)
   - LobsterFramework.Interaction.InteractionAttribute.RemoveInteractor(LobsterFramework.Interaction.Interactor)
   langs:
@@ -22,20 +23,22 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractionAttribute.cs
     id: InteractionAttribute
-    path: ../Assets/Scripts/Components/Attributes/InteractionAttribute.cs
-    startLine: 8
+    path: ../Assets/Scripts/Components/Interaction/InteractionAttribute.cs
+    startLine: 11
   assemblies:
   - MyScripts
   namespace: LobsterFramework.Interaction
+  summary: "\nSpecifies the types of interactors this interable object can have interactions with.\n"
+  example: []
   syntax:
     content: >-
-      [AttributeUsage(AttributeTargets.Class, Inherited = false)]
+      [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
 
       public class InteractionAttribute : Attribute
     content.vb: >-
-      <AttributeUsage(AttributeTargets.Class, Inherited:=False)>
+      <AttributeUsage(AttributeTargets.Class, AllowMultiple:=False, Inherited:=False)>
 
       Public Class InteractionAttribute Inherits Attribute
   inheritance:
@@ -48,41 +51,69 @@ items:
     - type: System.AttributeTargets
       value: 4
     namedArguments:
+    - name: AllowMultiple
+      type: System.Boolean
+      value: false
     - name: Inherited
       type: System.Boolean
       value: false
-- uid: LobsterFramework.Interaction.InteractionAttribute.#ctor(System.Type,System.Type[])
-  commentId: M:LobsterFramework.Interaction.InteractionAttribute.#ctor(System.Type,System.Type[])
-  id: '#ctor(System.Type,System.Type[])'
+- uid: LobsterFramework.Interaction.InteractionAttribute.#ctor(System.Type[])
+  commentId: M:LobsterFramework.Interaction.InteractionAttribute.#ctor(System.Type[])
+  id: '#ctor(System.Type[])'
   parent: LobsterFramework.Interaction.InteractionAttribute
   langs:
   - csharp
   - vb
-  name: InteractionAttribute(Type, params Type[])
-  nameWithType: InteractionAttribute.InteractionAttribute(Type, params Type[])
-  fullName: LobsterFramework.Interaction.InteractionAttribute.InteractionAttribute(System.Type, params System.Type[])
+  name: InteractionAttribute(params Type[])
+  nameWithType: InteractionAttribute.InteractionAttribute(params Type[])
+  fullName: LobsterFramework.Interaction.InteractionAttribute.InteractionAttribute(params System.Type[])
   type: Constructor
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractionAttribute.cs
     id: .ctor
-    path: ../Assets/Scripts/Components/Attributes/InteractionAttribute.cs
-    startLine: 15
+    path: ../Assets/Scripts/Components/Interaction/InteractionAttribute.cs
+    startLine: 20
   assemblies:
   - MyScripts
   namespace: LobsterFramework.Interaction
   syntax:
-    content: public InteractionAttribute(Type interactable, params Type[] interactors)
+    content: public InteractionAttribute(params Type[] interactors)
+    parameters:
+    - id: interactors
+      type: System.Type[]
+    content.vb: Public Sub New(ParamArray interactors As Type())
+  overload: LobsterFramework.Interaction.InteractionAttribute.#ctor*
+  nameWithType.vb: InteractionAttribute.New(ParamArray Type())
+  fullName.vb: LobsterFramework.Interaction.InteractionAttribute.New(ParamArray System.Type())
+  name.vb: New(ParamArray Type())
+- uid: LobsterFramework.Interaction.InteractionAttribute.Init(System.Type)
+  commentId: M:LobsterFramework.Interaction.InteractionAttribute.Init(System.Type)
+  id: Init(System.Type)
+  parent: LobsterFramework.Interaction.InteractionAttribute
+  langs:
+  - csharp
+  - vb
+  name: Init(Type)
+  nameWithType: InteractionAttribute.Init(Type)
+  fullName: LobsterFramework.Interaction.InteractionAttribute.Init(System.Type)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractionAttribute.cs
+    id: Init
+    path: ../Assets/Scripts/Components/Interaction/InteractionAttribute.cs
+    startLine: 25
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public void Init(Type interactable)
     parameters:
     - id: interactable
       type: System.Type
-    - id: interactors
-      type: System.Type[]
-    content.vb: Public Sub New(interactable As Type, ParamArray interactors As Type())
-  overload: LobsterFramework.Interaction.InteractionAttribute.#ctor*
-  nameWithType.vb: InteractionAttribute.New(Type, ParamArray Type())
-  fullName.vb: LobsterFramework.Interaction.InteractionAttribute.New(System.Type, ParamArray System.Type())
-  name.vb: New(Type, ParamArray Type())
+    content.vb: Public Sub Init(interactable As Type)
+  overload: LobsterFramework.Interaction.InteractionAttribute.Init*
 - uid: LobsterFramework.Interaction.InteractionAttribute.GetInteractorTypes(System.Type)
   commentId: M:LobsterFramework.Interaction.InteractionAttribute.GetInteractorTypes(System.Type)
   id: GetInteractorTypes(System.Type)
@@ -96,10 +127,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractionAttribute.cs
     id: GetInteractorTypes
-    path: ../Assets/Scripts/Components/Attributes/InteractionAttribute.cs
-    startLine: 38
+    path: ../Assets/Scripts/Components/Interaction/InteractionAttribute.cs
+    startLine: 47
   assemblies:
   - MyScripts
   namespace: LobsterFramework.Interaction
@@ -125,10 +156,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractionAttribute.cs
     id: GetInteractors
-    path: ../Assets/Scripts/Components/Attributes/InteractionAttribute.cs
-    startLine: 49
+    path: ../Assets/Scripts/Components/Interaction/InteractionAttribute.cs
+    startLine: 58
   assemblies:
   - MyScripts
   namespace: LobsterFramework.Interaction
@@ -157,10 +188,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractionAttribute.cs
     id: GetInteractorTransform
-    path: ../Assets/Scripts/Components/Attributes/InteractionAttribute.cs
-    startLine: 63
+    path: ../Assets/Scripts/Components/Interaction/InteractionAttribute.cs
+    startLine: 72
   assemblies:
   - MyScripts
   namespace: LobsterFramework.Interaction
@@ -186,10 +217,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractionAttribute.cs
     id: IsInteractable
-    path: ../Assets/Scripts/Components/Attributes/InteractionAttribute.cs
-    startLine: 72
+    path: ../Assets/Scripts/Components/Interaction/InteractionAttribute.cs
+    startLine: 81
   assemblies:
   - MyScripts
   namespace: LobsterFramework.Interaction
@@ -217,10 +248,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractionAttribute.cs
     id: AddInteractor
-    path: ../Assets/Scripts/Components/Attributes/InteractionAttribute.cs
-    startLine: 81
+    path: ../Assets/Scripts/Components/Interaction/InteractionAttribute.cs
+    startLine: 90
   assemblies:
   - MyScripts
   namespace: LobsterFramework.Interaction
@@ -244,10 +275,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractionAttribute.cs
     id: RemoveInteractor
-    path: ../Assets/Scripts/Components/Attributes/InteractionAttribute.cs
-    startLine: 92
+    path: ../Assets/Scripts/Components/Interaction/InteractionAttribute.cs
+    startLine: 101
   assemblies:
   - MyScripts
   namespace: LobsterFramework.Interaction
@@ -271,10 +302,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Attributes/InteractionAttribute.cs
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractionAttribute.cs
     id: ExistInteractor
-    path: ../Assets/Scripts/Components/Attributes/InteractionAttribute.cs
-    startLine: 102
+    path: ../Assets/Scripts/Components/Interaction/InteractionAttribute.cs
+    startLine: 111
   assemblies:
   - MyScripts
   namespace: LobsterFramework.Interaction
@@ -336,13 +367,6 @@ references:
   nameWithType.vb: InteractionAttribute.New
   fullName.vb: LobsterFramework.Interaction.InteractionAttribute.New
   name.vb: New
-- uid: System.Type
-  commentId: T:System.Type
-  parent: System
-  isExternal: true
-  name: Type
-  nameWithType: Type
-  fullName: System.Type
 - uid: System.Type[]
   isExternal: true
   name: Type[]
@@ -363,6 +387,18 @@ references:
     isExternal: true
   - name: (
   - name: )
+- uid: LobsterFramework.Interaction.InteractionAttribute.Init*
+  commentId: Overload:LobsterFramework.Interaction.InteractionAttribute.Init
+  name: Init
+  nameWithType: InteractionAttribute.Init
+  fullName: LobsterFramework.Interaction.InteractionAttribute.Init
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
 - uid: LobsterFramework.Interaction.InteractionAttribute.GetInteractorTypes*
   commentId: Overload:LobsterFramework.Interaction.InteractionAttribute.GetInteractorTypes
   name: GetInteractorTypes

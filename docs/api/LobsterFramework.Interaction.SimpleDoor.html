@@ -109,6 +109,9 @@
       <a class="xref" href="LobsterFramework.Interaction.InteractableObject.html#LobsterFramework_Interaction_InteractableObject_Update">InteractableObject.Update()</a>
     </div>
     <div>
+      <a class="xref" href="LobsterFramework.Interaction.InteractableObject.html#LobsterFramework_Interaction_InteractableObject_IUpdate">InteractableObject.IUpdate()</a>
+    </div>
+    <div>
       <a class="xref" href="LobsterFramework.Interaction.InteractableObject.html#LobsterFramework_Interaction_InteractableObject_OnDisable">InteractableObject.OnDisable()</a>
     </div>
     <div>
@@ -155,6 +158,9 @@
     </div>
     <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/MonoBehaviour-print.html">MonoBehaviour.print(object)</a>
+    </div>
+    <div>
+      <span class="xref">UnityEngine.MonoBehaviour.destroyCancellationToken</span>
     </div>
     <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/MonoBehaviour-useGUILayout.html">MonoBehaviour.useGUILayout</a>
@@ -444,7 +450,7 @@
   <h5 id="LobsterFramework_Interaction_SimpleDoor_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[RequireComponent(typeof(Collider2D), typeof(SpriteRenderer))]
-[Interaction(typeof(SimpleDoor), new Type[] { typeof(GeneralInteractor) })]
+[Interaction(new Type[] { typeof(GeneralInteractor) })]
 public class SimpleDoor : InteractableObject</code></pre>
   </div>
   <h3 id="properties">Properties

@@ -53,6 +53,7 @@ items:
   - UnityEngine.MonoBehaviour.StopCoroutine(System.String)
   - UnityEngine.MonoBehaviour.StopAllCoroutines
   - UnityEngine.MonoBehaviour.print(System.Object)
+  - UnityEngine.MonoBehaviour.destroyCancellationToken
   - UnityEngine.MonoBehaviour.useGUILayout
   - UnityEngine.MonoBehaviour.runInEditMode
   - UnityEngine.Behaviour.enabled
@@ -163,7 +164,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/SceneManagement/GameStateManager.cs
     id: PauseOrResume
     path: ../Assets/Scripts/SceneManagement/GameStateManager.cs
-    startLine: 34
+    startLine: 36
   assemblies:
   - MyScripts
   namespace: Global
@@ -187,7 +188,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/SceneManagement/GameStateManager.cs
     id: OnPlayerDeath
     path: ../Assets/Scripts/SceneManagement/GameStateManager.cs
-    startLine: 44
+    startLine: 46
   assemblies:
   - MyScripts
   namespace: Global
@@ -211,7 +212,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/SceneManagement/GameStateManager.cs
     id: RespawnPlayer
     path: ../Assets/Scripts/SceneManagement/GameStateManager.cs
-    startLine: 50
+    startLine: 53
   assemblies:
   - MyScripts
   namespace: Global
@@ -235,7 +236,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/SceneManagement/GameStateManager.cs
     id: Pause
     path: ../Assets/Scripts/SceneManagement/GameStateManager.cs
-    startLine: 57
+    startLine: 61
   assemblies:
   - MyScripts
   namespace: Global
@@ -262,7 +263,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/SceneManagement/GameStateManager.cs
     id: PauseGame
     path: ../Assets/Scripts/SceneManagement/GameStateManager.cs
-    startLine: 64
+    startLine: 68
   assemblies:
   - MyScripts
   namespace: Global
@@ -286,7 +287,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/SceneManagement/GameStateManager.cs
     id: ResumeGame
     path: ../Assets/Scripts/SceneManagement/GameStateManager.cs
-    startLine: 73
+    startLine: 78
   assemblies:
   - MyScripts
   namespace: Global
@@ -310,7 +311,7 @@ items:
       path: H:/Stuff/BallField/Assets/Scripts/SceneManagement/GameStateManager.cs
     id: ExitToMenu
     path: ../Assets/Scripts/SceneManagement/GameStateManager.cs
-    startLine: 83
+    startLine: 89
   assemblies:
   - MyScripts
   namespace: Global
@@ -779,6 +780,13 @@ references:
     name: Object
     isExternal: true
   - name: )
+- uid: UnityEngine.MonoBehaviour.destroyCancellationToken
+  commentId: P:UnityEngine.MonoBehaviour.destroyCancellationToken
+  parent: UnityEngine.MonoBehaviour
+  isExternal: true
+  name: destroyCancellationToken
+  nameWithType: MonoBehaviour.destroyCancellationToken
+  fullName: UnityEngine.MonoBehaviour.destroyCancellationToken
 - uid: UnityEngine.MonoBehaviour.useGUILayout
   commentId: P:UnityEngine.MonoBehaviour.useGUILayout
   parent: UnityEngine.MonoBehaviour
