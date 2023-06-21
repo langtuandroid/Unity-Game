@@ -7,7 +7,7 @@ namespace LobsterFramework.Interaction
 {
 
     [RequireComponent(typeof(Collider2D), typeof(SpriteRenderer))]
-    [Interaction(interactable: typeof(SimpleDoor), interactors: typeof(GeneralInteractor))]
+    [Interaction(interactors: typeof(GeneralInteractor))]
     public class SimpleDoor : InteractableObject
     {
         [SerializeField] private RefBool isClosed;

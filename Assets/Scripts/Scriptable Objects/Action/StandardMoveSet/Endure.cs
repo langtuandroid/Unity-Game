@@ -7,7 +7,7 @@ namespace LobsterFramework.AbilitySystem
     /// <summary>
     /// A supplimental ability that provides hyperarmor for the entity that casts it
     /// </summary>
-    [Ability(typeof(Endure))]
+    [AddAbilityMenu]
     public class Endure : Ability
     {
         public class EndureConfig : AbilityConfig

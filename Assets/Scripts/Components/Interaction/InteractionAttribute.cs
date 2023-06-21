@@ -6,15 +6,24 @@ using System;
 
 namespace LobsterFramework.Interaction
 {
-    [AttributeUsage(AttributeTargets.Class, Inherited = false)]
+    /// <summary>
+    /// Specifies the types of interactors this interable object can have interactions with.
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public class InteractionAttribute : Attribute
     {
         private static Dictionary<Type, HashSet<Type>> interactorTypes = new();
-        private static Dictionary<Type, HashSet<Interactor>> interactors = new();
+        private static Dictionary<Type, HashSet<Interactor>> allInteractors = new();
         private static Dictionary<Interactor, Transform> transformBuffer = new();
 
-        public InteractionAttribute(Type interactable, params Type[] interactors)
+        private Type[] interactors;
+
+        public InteractionAttribute(params Type[] interactors)
         {
+            this.interactors = interactors;   
+        }
+
+        public void Init(Type interactable) {
             if (!interactable.IsSubclassOf(typeof(InteractableObject)))
             {
                 Debug.LogError(typeof(InteractableObject).ToString() + " is not a subtype of Interactable Object!");
@@ -50,9 +59,9 @@ namespace LobsterFramework.Interaction
         public static void GetInteractors(Type interactorType, List<Interactor> container)
         {
             container.Clear();
-            if (interactors.ContainsKey(interactorType))
+            if (allInteractors.ContainsKey(interactorType))
             {
-                HashSet<Interactor> i = interactors[interactorType];
+                HashSet<Interactor> i = allInteractors[interactorType];
                 foreach (Interactor intc in i)
                 {
                     container.Add(intc);
@@ -82,20 +91,20 @@ namespace LobsterFramework.Interaction
         public static void AddInteractor(Interactor interactor)
         {
             Type t = interactor.GetType();
-            if (!interactors.ContainsKey(t))
+            if (!allInteractors.ContainsKey(t))
             {
-                interactors[t] = new();
+                allInteractors[t] = new();
             }
-            interactors[t].Add(interactor);
+            allInteractors[t].Add(interactor);
             transformBuffer[interactor] = interactor.GetComponent<Transform>();
         }
 
         public static void RemoveInteractor(Interactor interactor)
         {
             Type t = interactor.GetType();
-            if (interactors.ContainsKey(t))
+            if (allInteractors.ContainsKey(t))
             {
-                interactors[t].Remove(interactor);
+                allInteractors[t].Remove(interactor);
                 transformBuffer.Remove(interactor);
             }
         }
@@ -103,9 +112,9 @@ namespace LobsterFramework.Interaction
         public static bool ExistInteractor(Interactor interactor)
         {
             Type t = interactor.GetType();
-            if (interactors.ContainsKey(t))
+            if (allInteractors.ContainsKey(t))
             {
-                return interactors[t].Contains(interactor);
+                return allInteractors[t].Contains(interactor);
             }
             return false;
         }

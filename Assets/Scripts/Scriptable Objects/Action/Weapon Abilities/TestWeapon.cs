@@ -1,20 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using LobsterFramework.AbilitySystem;
 
-namespace LobsterFramework
+namespace LobsterFramework.AbilitySystem.Weapon
 {
-    [Ability(typeof(Combo))]
-    public class Combo : Ability
+    [AddAbilityMenu]
+    [ComponentRequired(typeof(AudioBehaviour))]
+    public class TestWeapon : WeaponAbility
     {
-        
-
         protected override bool Action(AbilityConfig config)
         {
             throw new System.NotImplementedException();
         }
 
-        public class ComboConfig : AbilityConfig { }
+        public class TestWeaponConfig : AbilityConfig { }
     }
 }

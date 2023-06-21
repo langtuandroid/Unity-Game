@@ -24,7 +24,7 @@ namespace LobsterFramework.AbilitySystem
             availableAbilities.Clear();
             foreach (Ability ai in allAbilities.Values)
             {
-                if (ai.ComponentCheck(actionable))
+                if (ComponentRequiredAttribute.ComponentCheck(ai.GetType(), actionable.gameObject))
                 {
                     ai.abilityRunner = actionable;
                     ai.OnStartUp();

@@ -331,7 +331,7 @@ namespace LobsterFramework.AbilitySystem {
                 Ability ac = ap.ability;
                 if (ActionBlocked)
                 {
-                    ac.HaltActions();
+                    ac.HaltAbilities();
                 }
                 if (!ac.IsExecuting(ap.config))
                 {

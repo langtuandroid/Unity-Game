@@ -6,8 +6,8 @@ using LobsterFramework.Utility;
 
 namespace LobsterFramework.AbilitySystem
 {
-    [RequireAbilityStats(typeof(CircleAttack), typeof(CombatStat))]
-    [Ability(typeof(CircleAttack))]
+    [RequireAbilityStats(typeof(CombatStat))]
+    [AddAbilityMenu]
     public class CircleAttack : Ability
     {
         public class CircleAttackConfig : AbilityConfig

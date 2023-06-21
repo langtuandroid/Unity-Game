@@ -28,8 +28,8 @@ namespace LobsterFramework.AbilitySystem {
     }
 
     /// <summary>
-    /// An instance of Action that defines the kind of action the parent object can take. <br/>
-    /// Each subclass of Ability defines its own ActionConfig and can be runned on multiple instances of its AbilityConfigs.
+    /// Abilities defines the kind of actions the parent object can make. <br/>
+    /// Each subclass of Ability defines its own AbilityConfig and can be runned on multiple instances of its AbilityConfigs.
     /// </summary>
     public abstract class Ability : ScriptableObject
     {
@@ -65,7 +65,7 @@ namespace LobsterFramework.AbilitySystem {
                 method.Invoke(this, new[] { name });
                 return true;
             }
-            Debug.LogError("The ability config for '" + GetType().Name + "' is not declared or made public!");
+            Debug.LogError("The ability config for '" + GetType().Name + "' is not declared, inheriting from AbilityConfig or made public!");
             return false;
         }
 
@@ -121,56 +121,17 @@ namespace LobsterFramework.AbilitySystem {
             return abilityPriority.Value.enqueuePriority - other.abilityPriority.Value.enqueuePriority;
         }
 
-        /// <summary>
-        /// Check if the action component and the gameobject satisfies the requirements of the ActionInstance defined by its attributes.
-        /// </summary>
-        /// <param name="abilityRunner">The actionComponent of the gameobject to be inspected</param>
-        /// <returns>Whether the gameobject satisfied the component requirements</returns>
-        internal bool ComponentCheck(AbilityRunner abilityRunner)
-        {
-            Type type = GetType();
-            bool f2 = true;
-            // Check of gameobject Components
-            if (RequireCMPAttribute.requirement.ContainsKey(type))
-            {
-                HashSet<Type> ts2 = RequireCMPAttribute.requirement[type];
-
-                List<Type> lst2 = new List<Type>();
-                foreach (Type t in ts2)
-                {
-                    if (abilityRunner.GetComponent(t) == null)
-                    {
-                        f2 = false;
-                        lst2.Add(t);
-                    }
-                }
-                if (!f2)
-                {
-                    StringBuilder sb = new StringBuilder();
-                    sb.Append("Missing Component: ");
-                    foreach (Type t in lst2)
-                    {
-                        sb.Append(t.Name);
-                        sb.Append(", ");
-                    }
-                    sb.Remove(sb.Length - 2, 2);
-                    Debug.LogError(sb.ToString(), abilityRunner);
-                }
-            }
-            return f2;
-        }
-
        /// <summary>
-       /// Additionaly utility method for skill check that can be imeplemented if the action have additional requirements, this may varies beween different configs
+       /// Additionaly utility method for skill check that can be imeplemented if the ability have additional requirements, this may varies beween different configs
        /// </summary>
        /// <param name="config">The config being queried</param>
        /// <returns></returns>
         protected virtual bool ConditionSatisfied(AbilityConfig config) { return true; }
 
         /// <summary>
-        /// Enqueue the action if its not on cooldown and conditions are satisfied.  <br/>
+        /// Enqueue the ability if its not on cooldown and conditions are satisfied.  <br/>
         /// This method should not be directly called by external modules such as play input or AI. <br/> 
-        /// Actionable.EnqueueAction&lt;T&gt;(string configName) shoud be used instead.
+        /// AbilityRunner.EnqueueAbility&lt;T&gt;(string configName) shoud be used instead.
         /// </summary>
         /// <param name="config">Name of the config being enqueued</param>
         /// <returns>The result of this operation</returns>
@@ -244,7 +205,10 @@ namespace LobsterFramework.AbilitySystem {
             return true;
         }
 
-        public void HaltActions()
+        /// <summary>
+        /// Halt the execution of all abilities
+        /// </summary>
+        public void HaltAbilities()
         {
             foreach (string name in configs.Keys)
             {
@@ -252,7 +216,7 @@ namespace LobsterFramework.AbilitySystem {
             }
         }
 
-        // Callback when the gameobject is being initialized during Start(). Do not initialize action configs in this method! Override This!
+        // Callback when the gameobject is being initialized during Start(). Do not initialize ability configs in this method! Override This!
         protected virtual void Initialize() { }
 
         /// <summary>
@@ -362,7 +326,7 @@ namespace LobsterFramework.AbilitySystem {
             foreach (Type innerType in type.GetNestedTypes())
             {
                 string inner = innerType.Name;
-                if (inner.Equals(typeName))
+                if (inner.Equals(typeName) && innerType.IsSubclassOf(typeof(Ability.AbilityConfig)))
                 {
                     return true;
                 }

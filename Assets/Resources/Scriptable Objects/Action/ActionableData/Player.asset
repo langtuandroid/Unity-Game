@@ -1,6 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5312173341687072873
+--- !u!114 &-8813455307375128445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bddb4d3b04c96644598c218b6d67a82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage:
+    value: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: 404f1ca56cb622c408adec943f91ca10, type: 2}
+  attackRange:
+    value: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: c363db7b1a08bdc4687dbfef5b3b7ce0, type: 2}
+  defense:
+    value: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: d88c5ed475ddd6341b02b248ad26c7fd, type: 2}
+--- !u!114 &-7147495359285949615
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18,13 +42,37 @@ MonoBehaviour:
       executionPriority: 0
       enqueuePriority: 0
     useSharedValue: 0
+    sharedValue: {fileID: 0}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: 1254183770270643827}
+--- !u!114 &-4442568466895691956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eec34eea6c62446b70df6baef69aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 1
     sharedValue: {fileID: 11400000, guid: b193983ee42c6494da4e9b812145dab9, type: 2}
   configs:
     keys:
     - default
     values:
-    - {fileID: 2133908042462590693}
---- !u!114 &-2540234168032229540
+    - {fileID: -2516798769624608483}
+--- !u!114 &-2516798769624608483
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,48 +107,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5cd7a81edede6f4c9921cd097a98b3c, type: 3}
-  m_Name: PlayerData
+  m_Name: Player
   m_EditorClassIdentifier: 
   identifier: 0
   stats:
     keys:
     - LobsterFramework.AbilitySystem.CombatStat
-    - LobsterFramework.AbilitySystem.Mana
     values:
-    - {fileID: 581086236176536559}
-    - {fileID: 8898201411650655134}
+    - {fileID: -8813455307375128445}
   allAbilities:
     keys:
     - LobsterFramework.AbilitySystem.CircleAttack
     - LobsterFramework.AbilitySystem.Guard
     values:
-    - {fileID: 7987545595356351397}
-    - {fileID: -5312173341687072873}
---- !u!114 &581086236176536559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bddb4d3b04c96644598c218b6d67a82a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackDamage:
-    value: 0
-    useSharedValue: 1
-    sharedValue: {fileID: 11400000, guid: 404f1ca56cb622c408adec943f91ca10, type: 2}
-  attackRange:
-    value: 0
-    useSharedValue: 1
-    sharedValue: {fileID: 11400000, guid: c363db7b1a08bdc4687dbfef5b3b7ce0, type: 2}
-  defense:
-    value: 0
-    useSharedValue: 1
-    sharedValue: {fileID: 11400000, guid: d88c5ed475ddd6341b02b248ad26c7fd, type: 2}
---- !u!114 &2133908042462590693
+    - {fileID: -4442568466895691956}
+    - {fileID: -7147495359285949615}
+--- !u!114 &1254183770270643827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,7 +137,7 @@ MonoBehaviour:
   accessKey: -1
   endTime: 0
   useCooldown: 1
-  cooldown: 0
+  cooldown: 0.8
   isSuspended: 0
   duration:
     value: 0.4
@@ -130,48 +152,3 @@ MonoBehaviour:
   durationCounter: 0
   actionStart: 0
   guardAnimation: {fileID: 0}
---- !u!114 &7987545595356351397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79eec34eea6c62446b70df6baef69aa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
-  abilityPriority:
-    value:
-      executionPriority: 0
-      enqueuePriority: 0
-    useSharedValue: 1
-    sharedValue: {fileID: 11400000, guid: b193983ee42c6494da4e9b812145dab9, type: 2}
-  configs:
-    keys:
-    - default
-    values:
-    - {fileID: -2540234168032229540}
---- !u!114 &8898201411650655134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23cafed77cafc444eb80658fa3b67136, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxMana:
-    value: 0
-    useSharedValue: 1
-    sharedValue: {fileID: 11400000, guid: fc7eaa15bb27b4a4d8622d4e81cd4921, type: 2}
-  manaRegen:
-    value: 0
-    useSharedValue: 1
-    sharedValue: {fileID: 11400000, guid: 4e0bd4a0150b0d746ad939b2bb729fef, type: 2}
-  mana: 100

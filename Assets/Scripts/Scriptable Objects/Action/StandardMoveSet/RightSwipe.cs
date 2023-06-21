@@ -7,9 +7,9 @@ using LobsterFramework.Pool;
 
 namespace LobsterFramework.AbilitySystem
 {
-    [Ability(typeof(RightSwipe))]
-    [RequireAbilityStats(typeof(RightSwipe), typeof(CombatStat))]
-    [RequireCMP(typeof(RightSwipe), typeof(Animator))]
+    [AddAbilityMenu]
+    [RequireAbilityStats(typeof(CombatStat))]
+    [ComponentRequired(typeof(Animator))]
     public class RightSwipe : Ability
     {
         private CombatStat combatCmp;

@@ -26132,50 +26132,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!1 &992120397
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 992120398}
-  - component: {fileID: 992120399}
-  m_Layer: 0
-  m_Name: ExposedPropertyTable
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &992120398
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992120397}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1308160731}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &992120399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992120397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 460ff2d0db5e64e42868d5c34fc5a5cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1001045626
 GameObject:
   m_ObjectHideFlags: 0
@@ -26734,7 +26690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityData: {fileID: 0}
-  data: {fileID: 11400000, guid: 0a2d2eea03523b14abb4f29260cb7b35, type: 2}
+  data: {fileID: 11400000, guid: acb703e72dd6be543b4620976d895bf7, type: 2}
 --- !u!114 &1014439924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29284,7 +29240,6 @@ Transform:
   m_Children:
   - {fileID: 1377438053}
   - {fileID: 755208727}
-  - {fileID: 992120398}
   - {fileID: 892156320}
   - {fileID: 1817643376}
   m_Father: {fileID: 0}
@@ -30442,11 +30397,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactRadius:
-    value: 0
+    value: 1
     useSharedValue: 0
     sharedValue: {fileID: 0}
   interactEnabled: 1
-  interactionChannel: {fileID: 0}
+  interactionChannel: {fileID: 11400000, guid: 93a3318fdbb08694ea00741cff5dd1e0, type: 2}
   destroyWhenDeplete:
     value: 1
     useSharedValue: 0
@@ -30552,11 +30507,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactRadius:
-    value: 0
+    value: 1
     useSharedValue: 0
     sharedValue: {fileID: 0}
   interactEnabled: 1
-  interactionChannel: {fileID: 0}
+  interactionChannel: {fileID: 11400000, guid: 93a3318fdbb08694ea00741cff5dd1e0, type: 2}
   destroyWhenDeplete:
     value: 1
     useSharedValue: 0

@@ -6,7 +6,7 @@ using UnityEngine;
 namespace LobsterFramework.Interaction
 {
 
-    [Interaction(interactable: typeof(CollectableItem), interactors: typeof(Inventory))]
+    [Interaction(interactors: typeof(Inventory))]
     [RequireComponent(typeof(SpriteRenderer))]
     public class CollectableItem : InteractableObject
     {

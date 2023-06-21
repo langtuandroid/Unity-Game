@@ -7,12 +7,10 @@ using LobsterFramework.Pool;
 
 namespace LobsterFramework.AbilitySystem
 {
-    [Ability(typeof(Shoot))]
-    [RequireAbilityStats(typeof(Shoot), typeof(CombatStat), typeof(Mana))]
+    [AddAbilityMenu]
+    [RequireAbilityStats(typeof(CombatStat), typeof(Mana))]
     public class Shoot : Ability
     {
-
-
         public class ShootConfig : AbilityConfig
         {
             public VarString bulletPoolTag;
@@ -25,7 +23,6 @@ namespace LobsterFramework.AbilitySystem
 
         private Mana manaComponent;
         private Entity attacker;
-
 
         protected override void Initialize()
         {

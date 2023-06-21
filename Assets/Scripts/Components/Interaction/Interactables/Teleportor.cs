@@ -6,7 +6,7 @@ using UnityEngine;
 namespace LobsterFramework.Interaction
 {
     // Set the type of interactors to interact with by changing the "interactors" field
-    [Interaction(interactable: typeof(Teleportor), interactors: typeof(GeneralInteractor))]
+    [Interaction(interactors: typeof(GeneralInteractor))]
     public class Teleportor : InteractableObject
     {
         [SerializeField] private Transform destination;

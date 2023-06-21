@@ -6,7 +6,7 @@ using UnityEngine;
 namespace LobsterFramework.Interaction
 {
     [RequireComponent(typeof(Collider2D), typeof(SpriteRenderer))]
-    [Interaction(interactable: typeof(LockableDoor), interactors: typeof(GeneralInteractor))]
+    [Interaction(interactors: typeof(GeneralInteractor))]
     public class LockableDoor : InteractableObject
     {
         [SerializeField] private RefBool isClosed;

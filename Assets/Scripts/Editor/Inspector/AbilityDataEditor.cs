@@ -116,7 +116,7 @@ namespace LobsterFramework.EditorUtility
             if (aiButton) // Add action component button clicked
             {
                 GenericMenu menu = new GenericMenu();
-                foreach (Type type in AbilityAttribute.actions)
+                foreach (Type type in AddAbilityMenuAttribute.actions)
                 {
                     menu.AddItem(new GUIContent(type.Name), false,
                         () =>

@@ -9,7 +9,7 @@ using LobsterFramework.DialogueSystem;
 
 namespace LobsterFramework.UI
 {
-    [Interaction(interactable: typeof(DialogueDisplayer), interactors: typeof(GeneralInteractor))]
+    [Interaction(interactors: typeof(GeneralInteractor))]
     public class DialogueDisplayer : InteractableObject
     {
         [Header("Settings")]

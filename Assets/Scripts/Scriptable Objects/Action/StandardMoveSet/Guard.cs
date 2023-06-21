@@ -6,8 +6,8 @@ using LobsterFramework.EntitySystem;
 
 namespace LobsterFramework.AbilitySystem
 {
-    [RequireAbilityStats(typeof(Guard), typeof(CombatStat))]
-    [Ability(typeof(Guard))]
+    [RequireAbilityStats(typeof(CombatStat))]
+    [AddAbilityMenu]
     public class Guard : Ability
     {
         public class GuardConfig : AbilityConfig
