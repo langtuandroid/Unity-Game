@@ -1,0 +1,104 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility.AttributeInitializer
+  commentId: T:LobsterFramework.Utility.AttributeInitializer
+  id: AttributeInitializer
+  parent: LobsterFramework.Utility
+  children:
+  - LobsterFramework.Utility.AttributeInitializer.Initialize
+  langs:
+  - csharp
+  - vb
+  name: AttributeInitializer
+  nameWithType: AttributeInitializer
+  fullName: LobsterFramework.Utility.AttributeInitializer
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/AttributeInitializer.cs
+    id: AttributeInitializer
+    path: ../Assets/Scripts/Editor/Attributes/AttributeInitializer.cs
+    startLine: 13
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Utility
+  summary: "\nInitializes all of the custom attributes of namespace LobsterFramework\n"
+  example: []
+  syntax:
+    content: public class AttributeInitializer
+    content.vb: Public Class AttributeInitializer
+  inheritance:
+  - System.Object
+- uid: LobsterFramework.Utility.AttributeInitializer.Initialize
+  commentId: M:LobsterFramework.Utility.AttributeInitializer.Initialize
+  id: Initialize
+  parent: LobsterFramework.Utility.AttributeInitializer
+  langs:
+  - csharp
+  - vb
+  name: Initialize()
+  nameWithType: AttributeInitializer.Initialize()
+  fullName: LobsterFramework.Utility.AttributeInitializer.Initialize()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/AttributeInitializer.cs
+    id: Initialize
+    path: ../Assets/Scripts/Editor/Attributes/AttributeInitializer.cs
+    startLine: 15
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: >-
+      [DidReloadScripts]
+
+      public static void Initialize()
+    content.vb: >-
+      <DidReloadScripts>
+
+      Public Shared Sub Initialize()
+  overload: LobsterFramework.Utility.AttributeInitializer.Initialize*
+  attributes:
+  - type: UnityEditor.Callbacks.DidReloadScripts
+    ctor: UnityEditor.Callbacks.DidReloadScripts.#ctor
+    arguments: []
+references:
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Utility.AttributeInitializer.Initialize*
+  commentId: Overload:LobsterFramework.Utility.AttributeInitializer.Initialize
+  name: Initialize
+  nameWithType: AttributeInitializer.Initialize
+  fullName: LobsterFramework.Utility.AttributeInitializer.Initialize

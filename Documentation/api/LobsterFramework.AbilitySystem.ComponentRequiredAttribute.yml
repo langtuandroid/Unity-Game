@@ -1,0 +1,255 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
+  commentId: T:LobsterFramework.AbilitySystem.ComponentRequiredAttribute
+  id: ComponentRequiredAttribute
+  parent: LobsterFramework.AbilitySystem
+  children:
+  - LobsterFramework.AbilitySystem.ComponentRequiredAttribute.#ctor(System.Type[])
+  - LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(System.Type,UnityEngine.GameObject)
+  - LobsterFramework.AbilitySystem.ComponentRequiredAttribute.Init(System.Type)
+  langs:
+  - csharp
+  - vb
+  name: ComponentRequiredAttribute
+  nameWithType: ComponentRequiredAttribute
+  fullName: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+    id: ComponentRequiredAttribute
+    path: ../Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+    startLine: 11
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.AbilitySystem
+  summary: "\nMark this ability as requiring the specified components on the parent gameobject to run\n"
+  example: []
+  syntax:
+    content: >-
+      [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
+
+      public class ComponentRequiredAttribute : Attribute
+    content.vb: >-
+      <AttributeUsage(AttributeTargets.Class, AllowMultiple:=False, Inherited:=False)>
+
+      Public Class ComponentRequiredAttribute Inherits Attribute
+  inheritance:
+  - System.Object
+  - System.Attribute
+  attributes:
+  - type: System.AttributeUsageAttribute
+    ctor: System.AttributeUsageAttribute.#ctor(System.AttributeTargets)
+    arguments:
+    - type: System.AttributeTargets
+      value: 4
+    namedArguments:
+    - name: AllowMultiple
+      type: System.Boolean
+      value: false
+    - name: Inherited
+      type: System.Boolean
+      value: false
+- uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.#ctor(System.Type[])
+  commentId: M:LobsterFramework.AbilitySystem.ComponentRequiredAttribute.#ctor(System.Type[])
+  id: '#ctor(System.Type[])'
+  parent: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
+  langs:
+  - csharp
+  - vb
+  name: ComponentRequiredAttribute(params Type[])
+  nameWithType: ComponentRequiredAttribute.ComponentRequiredAttribute(params Type[])
+  fullName: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentRequiredAttribute(params System.Type[])
+  type: Constructor
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+    id: .ctor
+    path: ../Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+    startLine: 18
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public ComponentRequiredAttribute(params Type[] requiredComponents)
+    parameters:
+    - id: requiredComponents
+      type: System.Type[]
+    content.vb: Public Sub New(ParamArray requiredComponents As Type())
+  overload: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.#ctor*
+  nameWithType.vb: ComponentRequiredAttribute.New(ParamArray Type())
+  fullName.vb: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.New(ParamArray System.Type())
+  name.vb: New(ParamArray Type())
+- uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.Init(System.Type)
+  commentId: M:LobsterFramework.AbilitySystem.ComponentRequiredAttribute.Init(System.Type)
+  id: Init(System.Type)
+  parent: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
+  langs:
+  - csharp
+  - vb
+  name: Init(Type)
+  nameWithType: ComponentRequiredAttribute.Init(Type)
+  fullName: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.Init(System.Type)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+    id: Init
+    path: ../Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+    startLine: 23
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public void Init(Type type)
+    parameters:
+    - id: type
+      type: System.Type
+    content.vb: Public Sub Init(type As Type)
+  overload: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.Init*
+- uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(System.Type,UnityEngine.GameObject)
+  commentId: M:LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(System.Type,UnityEngine.GameObject)
+  id: ComponentCheck(System.Type,UnityEngine.GameObject)
+  parent: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
+  langs:
+  - csharp
+  - vb
+  name: ComponentCheck(Type, GameObject)
+  nameWithType: ComponentRequiredAttribute.ComponentCheck(Type, GameObject)
+  fullName: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(System.Type, UnityEngine.GameObject)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+    id: ComponentCheck
+    path: ../Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+    startLine: 108
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.AbilitySystem
+  summary: "\nCheck if the action component and the gameobject satisfies the requirements of the ActionInstance defined by its attributes.\n"
+  example: []
+  syntax:
+    content: public static bool ComponentCheck(Type type, GameObject obj)
+    parameters:
+    - id: type
+      type: System.Type
+      description: The type of the ability to examine for requirements
+    - id: obj
+      type: UnityEngine.GameObject
+      description: 'The gameobject for examination '
+    return:
+      type: System.Boolean
+      description: Whether the gameobject satisfied the component requirements. If there&apos;s no requirement, return true. If obj is null, return false.
+    content.vb: Public Shared Function ComponentCheck(type As Type, obj As GameObject) As Boolean
+  overload: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck*
+references:
+- uid: LobsterFramework.AbilitySystem
+  commentId: N:LobsterFramework.AbilitySystem
+  name: LobsterFramework.AbilitySystem
+  nameWithType: LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Attribute
+  commentId: T:System.Attribute
+  parent: System
+  isExternal: true
+  name: Attribute
+  nameWithType: Attribute
+  fullName: System.Attribute
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.#ctor*
+  commentId: Overload:LobsterFramework.AbilitySystem.ComponentRequiredAttribute.#ctor
+  name: ComponentRequiredAttribute
+  nameWithType: ComponentRequiredAttribute.ComponentRequiredAttribute
+  fullName: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentRequiredAttribute
+  nameWithType.vb: ComponentRequiredAttribute.New
+  fullName.vb: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.New
+  name.vb: New
+- uid: System.Type[]
+  isExternal: true
+  name: Type[]
+  nameWithType: Type[]
+  fullName: System.Type[]
+  nameWithType.vb: Type()
+  fullName.vb: System.Type()
+  name.vb: Type()
+  spec.csharp:
+  - uid: System.Type
+    name: Type
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Type
+    name: Type
+    isExternal: true
+  - name: (
+  - name: )
+- uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.Init*
+  commentId: Overload:LobsterFramework.AbilitySystem.ComponentRequiredAttribute.Init
+  name: Init
+  nameWithType: ComponentRequiredAttribute.Init
+  fullName: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.Init
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck*
+  commentId: Overload:LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck
+  name: ComponentCheck
+  nameWithType: ComponentRequiredAttribute.ComponentCheck
+  fullName: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck
+- uid: UnityEngine.GameObject
+  commentId: T:UnityEngine.GameObject
+  parent: UnityEngine
+  isExternal: true
+  name: GameObject
+  nameWithType: GameObject
+  fullName: UnityEngine.GameObject
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine

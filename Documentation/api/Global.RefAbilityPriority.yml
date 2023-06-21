@@ -1,0 +1,140 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.RefAbilityPriority
+  commentId: T:Global.RefAbilityPriority
+  id: RefAbilityPriority
+  parent: Global
+  children:
+  - Global.RefAbilityPriority.#ctor(ActionPriority,System.Boolean,ActionPrioritySO)
+  - Global.RefAbilityPriority.Value
+  langs:
+  - csharp
+  - vb
+  name: RefAbilityPriority
+  nameWithType: RefAbilityPriority
+  fullName: RefAbilityPriority
+  type: Struct
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefAbilityPriority.cs
+    id: RefAbilityPriority
+    path: ../Assets/Scripts/Scriptable Objects/Variables/RefAbilityPriority.cs
+    startLine: 4
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: >-
+      [Serializable]
+
+      public struct RefAbilityPriority
+    content.vb: >-
+      <Serializable>
+
+      Public Structure RefAbilityPriority
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: Global.RefAbilityPriority.#ctor(ActionPriority,System.Boolean,ActionPrioritySO)
+  commentId: M:Global.RefAbilityPriority.#ctor(ActionPriority,System.Boolean,ActionPrioritySO)
+  id: '#ctor(ActionPriority,System.Boolean,ActionPrioritySO)'
+  parent: Global.RefAbilityPriority
+  langs:
+  - csharp
+  - vb
+  name: RefAbilityPriority(ActionPriority, bool, ActionPrioritySO)
+  nameWithType: RefAbilityPriority.RefAbilityPriority(ActionPriority, bool, ActionPrioritySO)
+  fullName: RefAbilityPriority.RefAbilityPriority(ActionPriority, bool, ActionPrioritySO)
+  type: Constructor
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefAbilityPriority.cs
+    id: .ctor
+    path: ../Assets/Scripts/Scriptable Objects/Variables/RefAbilityPriority.cs
+    startLine: 11
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public RefAbilityPriority(ActionPriority value = default, bool useSharedValue = false, ActionPrioritySO sharedValue = null)
+    parameters:
+    - id: value
+      type: Global.ActionPriority
+    - id: useSharedValue
+      type: System.Boolean
+    - id: sharedValue
+      type: Global.ActionPrioritySO
+    content.vb: Public Sub New(value As ActionPriority = Nothing, useSharedValue As Boolean = False, sharedValue As ActionPrioritySO = Nothing)
+  overload: Global.RefAbilityPriority.#ctor*
+  nameWithType.vb: RefAbilityPriority.New(ActionPriority, Boolean, ActionPrioritySO)
+  fullName.vb: RefAbilityPriority.New(ActionPriority, Boolean, ActionPrioritySO)
+  name.vb: New(ActionPriority, Boolean, ActionPrioritySO)
+- uid: Global.RefAbilityPriority.Value
+  commentId: P:Global.RefAbilityPriority.Value
+  id: Value
+  parent: Global.RefAbilityPriority
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: RefAbilityPriority.Value
+  fullName: RefAbilityPriority.Value
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefAbilityPriority.cs
+    id: Value
+    path: ../Assets/Scripts/Scriptable Objects/Variables/RefAbilityPriority.cs
+    startLine: 17
+  assemblies:
+  - MyScripts
+  namespace: Global
+  syntax:
+    content: public ActionPriority Value { get; }
+    parameters: []
+    return:
+      type: Global.ActionPriority
+    content.vb: Public ReadOnly Property Value As ActionPriority
+  overload: Global.RefAbilityPriority.Value*
+references:
+- uid: Global
+- uid: Global.RefAbilityPriority.#ctor*
+  commentId: Overload:Global.RefAbilityPriority.#ctor
+  name: RefAbilityPriority
+  nameWithType: RefAbilityPriority.RefAbilityPriority
+  fullName: RefAbilityPriority.RefAbilityPriority
+  nameWithType.vb: RefAbilityPriority.New
+  fullName.vb: RefAbilityPriority.New
+  name.vb: New
+- uid: Global.ActionPriority
+  commentId: T:Global.ActionPriority
+  name: ActionPriority
+  nameWithType: ActionPriority
+  fullName: ActionPriority
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Global.ActionPrioritySO
+  commentId: T:Global.ActionPrioritySO
+  name: ActionPrioritySO
+  nameWithType: ActionPrioritySO
+  fullName: ActionPrioritySO
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.RefAbilityPriority.Value*
+  commentId: Overload:Global.RefAbilityPriority.Value
+  name: Value
+  nameWithType: RefAbilityPriority.Value
+  fullName: RefAbilityPriority.Value

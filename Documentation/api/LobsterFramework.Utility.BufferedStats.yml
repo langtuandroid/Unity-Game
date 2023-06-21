@@ -1,0 +1,69 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility.BufferedStats
+  commentId: N:LobsterFramework.Utility.BufferedStats
+  id: LobsterFramework.Utility.BufferedStats
+  children:
+  - LobsterFramework.Utility.BufferedStats.BaseAnd
+  - LobsterFramework.Utility.BufferedStats.BaseOr
+  - LobsterFramework.Utility.BufferedStats.BufferedStat`1
+  - LobsterFramework.Utility.BufferedStats.FloatProduct
+  - LobsterFramework.Utility.BufferedStats.FloatSum
+  - LobsterFramework.Utility.BufferedStats.IntSum
+  langs:
+  - csharp
+  - vb
+  name: LobsterFramework.Utility.BufferedStats
+  nameWithType: LobsterFramework.Utility.BufferedStats
+  fullName: LobsterFramework.Utility.BufferedStats
+  type: Namespace
+  assemblies:
+  - MyScripts
+references:
+- uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1
+  commentId: T:LobsterFramework.Utility.BufferedStats.BufferedStat`1
+  name: BufferedStat<T>
+  nameWithType: BufferedStat<T>
+  fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>
+  nameWithType.vb: BufferedStat(Of T)
+  fullName.vb: LobsterFramework.Utility.BufferedStats.BufferedStat(Of T)
+  name.vb: BufferedStat(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1
+    name: BufferedStat
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1
+    name: BufferedStat
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.BufferedStats.IntSum
+  commentId: T:LobsterFramework.Utility.BufferedStats.IntSum
+  name: IntSum
+  nameWithType: IntSum
+  fullName: LobsterFramework.Utility.BufferedStats.IntSum
+- uid: LobsterFramework.Utility.BufferedStats.FloatSum
+  commentId: T:LobsterFramework.Utility.BufferedStats.FloatSum
+  name: FloatSum
+  nameWithType: FloatSum
+  fullName: LobsterFramework.Utility.BufferedStats.FloatSum
+- uid: LobsterFramework.Utility.BufferedStats.FloatProduct
+  commentId: T:LobsterFramework.Utility.BufferedStats.FloatProduct
+  name: FloatProduct
+  nameWithType: FloatProduct
+  fullName: LobsterFramework.Utility.BufferedStats.FloatProduct
+- uid: LobsterFramework.Utility.BufferedStats.BaseOr
+  commentId: T:LobsterFramework.Utility.BufferedStats.BaseOr
+  name: BaseOr
+  nameWithType: BaseOr
+  fullName: LobsterFramework.Utility.BufferedStats.BaseOr
+- uid: LobsterFramework.Utility.BufferedStats.BaseAnd
+  commentId: T:LobsterFramework.Utility.BufferedStats.BaseAnd
+  name: BaseAnd
+  nameWithType: BaseAnd
+  fullName: LobsterFramework.Utility.BufferedStats.BaseAnd

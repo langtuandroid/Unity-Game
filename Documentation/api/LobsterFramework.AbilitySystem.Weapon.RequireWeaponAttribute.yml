@@ -1,0 +1,149 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AbilitySystem.Weapon.RequireWeaponAttribute
+  commentId: T:LobsterFramework.AbilitySystem.Weapon.RequireWeaponAttribute
+  id: RequireWeaponAttribute
+  parent: LobsterFramework.AbilitySystem.Weapon
+  children:
+  - LobsterFramework.AbilitySystem.Weapon.RequireWeaponAttribute.#ctor(System.Type,LobsterFramework.AbilitySystem.Weapon.WeaponType)
+  langs:
+  - csharp
+  - vb
+  name: RequireWeaponAttribute
+  nameWithType: RequireWeaponAttribute
+  fullName: LobsterFramework.AbilitySystem.Weapon.RequireWeaponAttribute
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/RequireWeaponAttribute.cs
+    id: RequireWeaponAttribute
+    path: ../Assets/Scripts/Components/ActionComponents/RequireWeaponAttribute.cs
+    startLine: 7
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.AbilitySystem.Weapon
+  syntax:
+    content: >-
+      [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
+
+      public class RequireWeaponAttribute : Attribute
+    content.vb: >-
+      <AttributeUsage(AttributeTargets.Class, AllowMultiple:=False, Inherited:=False)>
+
+      Public Class RequireWeaponAttribute Inherits Attribute
+  inheritance:
+  - System.Object
+  - System.Attribute
+  attributes:
+  - type: System.AttributeUsageAttribute
+    ctor: System.AttributeUsageAttribute.#ctor(System.AttributeTargets)
+    arguments:
+    - type: System.AttributeTargets
+      value: 4
+    namedArguments:
+    - name: AllowMultiple
+      type: System.Boolean
+      value: false
+    - name: Inherited
+      type: System.Boolean
+      value: false
+- uid: LobsterFramework.AbilitySystem.Weapon.RequireWeaponAttribute.#ctor(System.Type,LobsterFramework.AbilitySystem.Weapon.WeaponType)
+  commentId: M:LobsterFramework.AbilitySystem.Weapon.RequireWeaponAttribute.#ctor(System.Type,LobsterFramework.AbilitySystem.Weapon.WeaponType)
+  id: '#ctor(System.Type,LobsterFramework.AbilitySystem.Weapon.WeaponType)'
+  parent: LobsterFramework.AbilitySystem.Weapon.RequireWeaponAttribute
+  langs:
+  - csharp
+  - vb
+  name: RequireWeaponAttribute(Type, WeaponType)
+  nameWithType: RequireWeaponAttribute.RequireWeaponAttribute(Type, WeaponType)
+  fullName: LobsterFramework.AbilitySystem.Weapon.RequireWeaponAttribute.RequireWeaponAttribute(System.Type, LobsterFramework.AbilitySystem.Weapon.WeaponType)
+  type: Constructor
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/RequireWeaponAttribute.cs
+    id: .ctor
+    path: ../Assets/Scripts/Components/ActionComponents/RequireWeaponAttribute.cs
+    startLine: 12
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.AbilitySystem.Weapon
+  syntax:
+    content: public RequireWeaponAttribute(Type abilityType, WeaponType weaponType)
+    parameters:
+    - id: abilityType
+      type: System.Type
+    - id: weaponType
+      type: LobsterFramework.AbilitySystem.Weapon.WeaponType
+    content.vb: Public Sub New(abilityType As Type, weaponType As WeaponType)
+  overload: LobsterFramework.AbilitySystem.Weapon.RequireWeaponAttribute.#ctor*
+  nameWithType.vb: RequireWeaponAttribute.New(Type, WeaponType)
+  fullName.vb: LobsterFramework.AbilitySystem.Weapon.RequireWeaponAttribute.New(System.Type, LobsterFramework.AbilitySystem.Weapon.WeaponType)
+  name.vb: New(Type, WeaponType)
+references:
+- uid: LobsterFramework.AbilitySystem.Weapon
+  commentId: N:LobsterFramework.AbilitySystem.Weapon
+  name: LobsterFramework.AbilitySystem.Weapon
+  nameWithType: LobsterFramework.AbilitySystem.Weapon
+  fullName: LobsterFramework.AbilitySystem.Weapon
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Weapon
+    name: Weapon
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Weapon
+    name: Weapon
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Attribute
+  commentId: T:System.Attribute
+  parent: System
+  isExternal: true
+  name: Attribute
+  nameWithType: Attribute
+  fullName: System.Attribute
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.AbilitySystem.Weapon.RequireWeaponAttribute.#ctor*
+  commentId: Overload:LobsterFramework.AbilitySystem.Weapon.RequireWeaponAttribute.#ctor
+  name: RequireWeaponAttribute
+  nameWithType: RequireWeaponAttribute.RequireWeaponAttribute
+  fullName: LobsterFramework.AbilitySystem.Weapon.RequireWeaponAttribute.RequireWeaponAttribute
+  nameWithType.vb: RequireWeaponAttribute.New
+  fullName.vb: LobsterFramework.AbilitySystem.Weapon.RequireWeaponAttribute.New
+  name.vb: New
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: LobsterFramework.AbilitySystem.Weapon.WeaponType
+  commentId: T:LobsterFramework.AbilitySystem.Weapon.WeaponType
+  parent: LobsterFramework.AbilitySystem.Weapon
+  name: WeaponType
+  nameWithType: WeaponType
+  fullName: LobsterFramework.AbilitySystem.Weapon.WeaponType

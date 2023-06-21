@@ -1,0 +1,117 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility.GameUtility
+  commentId: T:LobsterFramework.Utility.GameUtility
+  id: GameUtility
+  parent: LobsterFramework.Utility
+  children:
+  - LobsterFramework.Utility.GameUtility.SetAbsoluteScale(UnityEngine.GameObject,UnityEngine.Vector2)
+  langs:
+  - csharp
+  - vb
+  name: GameUtility
+  nameWithType: GameUtility
+  fullName: LobsterFramework.Utility.GameUtility
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/GameUtility.cs
+    id: GameUtility
+    path: ../Assets/Scripts/Utility/GameUtility.cs
+    startLine: 5
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public static class GameUtility
+    content.vb: Public Module GameUtility
+  inheritance:
+  - System.Object
+- uid: LobsterFramework.Utility.GameUtility.SetAbsoluteScale(UnityEngine.GameObject,UnityEngine.Vector2)
+  commentId: M:LobsterFramework.Utility.GameUtility.SetAbsoluteScale(UnityEngine.GameObject,UnityEngine.Vector2)
+  id: SetAbsoluteScale(UnityEngine.GameObject,UnityEngine.Vector2)
+  parent: LobsterFramework.Utility.GameUtility
+  langs:
+  - csharp
+  - vb
+  name: SetAbsoluteScale(GameObject, Vector2)
+  nameWithType: GameUtility.SetAbsoluteScale(GameObject, Vector2)
+  fullName: LobsterFramework.Utility.GameUtility.SetAbsoluteScale(UnityEngine.GameObject, UnityEngine.Vector2)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Utility/GameUtility.cs
+    id: SetAbsoluteScale
+    path: ../Assets/Scripts/Utility/GameUtility.cs
+    startLine: 7
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public static void SetAbsoluteScale(GameObject obj, Vector2 size)
+    parameters:
+    - id: obj
+      type: UnityEngine.GameObject
+    - id: size
+      type: UnityEngine.Vector2
+    content.vb: Public Shared Sub SetAbsoluteScale(obj As GameObject, size As Vector2)
+  overload: LobsterFramework.Utility.GameUtility.SetAbsoluteScale*
+references:
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Utility.GameUtility.SetAbsoluteScale*
+  commentId: Overload:LobsterFramework.Utility.GameUtility.SetAbsoluteScale
+  name: SetAbsoluteScale
+  nameWithType: GameUtility.SetAbsoluteScale
+  fullName: LobsterFramework.Utility.GameUtility.SetAbsoluteScale
+- uid: UnityEngine.GameObject
+  commentId: T:UnityEngine.GameObject
+  parent: UnityEngine
+  isExternal: true
+  name: GameObject
+  nameWithType: GameObject
+  fullName: UnityEngine.GameObject
+- uid: UnityEngine.Vector2
+  commentId: T:UnityEngine.Vector2
+  parent: UnityEngine
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: UnityEngine.Vector2
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine

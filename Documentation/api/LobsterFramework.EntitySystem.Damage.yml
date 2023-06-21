@@ -1,0 +1,218 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.EntitySystem.Damage
+  commentId: T:LobsterFramework.EntitySystem.Damage
+  id: Damage
+  parent: LobsterFramework.EntitySystem
+  children:
+  - LobsterFramework.EntitySystem.Damage.health
+  - LobsterFramework.EntitySystem.Damage.none
+  - LobsterFramework.EntitySystem.Damage.posture
+  - LobsterFramework.EntitySystem.Damage.source
+  - LobsterFramework.EntitySystem.Damage.type
+  langs:
+  - csharp
+  - vb
+  name: Damage
+  nameWithType: Damage
+  fullName: LobsterFramework.EntitySystem.Damage
+  type: Struct
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: Damage
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 415
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: >-
+      [Serializable]
+
+      public struct Damage
+    content.vb: >-
+      <Serializable>
+
+      Public Structure Damage
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: LobsterFramework.EntitySystem.Damage.health
+  commentId: F:LobsterFramework.EntitySystem.Damage.health
+  id: health
+  parent: LobsterFramework.EntitySystem.Damage
+  langs:
+  - csharp
+  - vb
+  name: health
+  nameWithType: Damage.health
+  fullName: LobsterFramework.EntitySystem.Damage.health
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: health
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 419
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public float health
+    return:
+      type: System.Single
+    content.vb: Public health As Single
+- uid: LobsterFramework.EntitySystem.Damage.posture
+  commentId: F:LobsterFramework.EntitySystem.Damage.posture
+  id: posture
+  parent: LobsterFramework.EntitySystem.Damage
+  langs:
+  - csharp
+  - vb
+  name: posture
+  nameWithType: Damage.posture
+  fullName: LobsterFramework.EntitySystem.Damage.posture
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: posture
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 420
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public float posture
+    return:
+      type: System.Single
+    content.vb: Public posture As Single
+- uid: LobsterFramework.EntitySystem.Damage.source
+  commentId: F:LobsterFramework.EntitySystem.Damage.source
+  id: source
+  parent: LobsterFramework.EntitySystem.Damage
+  langs:
+  - csharp
+  - vb
+  name: source
+  nameWithType: Damage.source
+  fullName: LobsterFramework.EntitySystem.Damage.source
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: source
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 421
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public Entity source
+    return:
+      type: LobsterFramework.EntitySystem.Entity
+    content.vb: Public source As Entity
+- uid: LobsterFramework.EntitySystem.Damage.type
+  commentId: F:LobsterFramework.EntitySystem.Damage.type
+  id: type
+  parent: LobsterFramework.EntitySystem.Damage
+  langs:
+  - csharp
+  - vb
+  name: type
+  nameWithType: Damage.type
+  fullName: LobsterFramework.EntitySystem.Damage.type
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: type
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 422
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public DamageType type
+    return:
+      type: LobsterFramework.EntitySystem.DamageType
+    content.vb: Public type As DamageType
+- uid: LobsterFramework.EntitySystem.Damage.none
+  commentId: F:LobsterFramework.EntitySystem.Damage.none
+  id: none
+  parent: LobsterFramework.EntitySystem.Damage
+  langs:
+  - csharp
+  - vb
+  name: none
+  nameWithType: Damage.none
+  fullName: LobsterFramework.EntitySystem.Damage.none
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: none
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 424
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public static Damage none
+    return:
+      type: LobsterFramework.EntitySystem.Damage
+    content.vb: Public Shared none As Damage
+references:
+- uid: LobsterFramework.EntitySystem
+  commentId: N:LobsterFramework.EntitySystem
+  name: LobsterFramework.EntitySystem
+  nameWithType: LobsterFramework.EntitySystem
+  fullName: LobsterFramework.EntitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.EntitySystem
+    name: EntitySystem
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.EntitySystem
+    name: EntitySystem
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.EntitySystem.Entity
+  commentId: T:LobsterFramework.EntitySystem.Entity
+  parent: LobsterFramework.EntitySystem
+  name: Entity
+  nameWithType: Entity
+  fullName: LobsterFramework.EntitySystem.Entity
+- uid: LobsterFramework.EntitySystem.DamageType
+  commentId: T:LobsterFramework.EntitySystem.DamageType
+  parent: LobsterFramework.EntitySystem
+  name: DamageType
+  nameWithType: DamageType
+  fullName: LobsterFramework.EntitySystem.DamageType
+- uid: LobsterFramework.EntitySystem.Damage
+  commentId: T:LobsterFramework.EntitySystem.Damage
+  parent: LobsterFramework.EntitySystem
+  name: Damage
+  nameWithType: Damage
+  fullName: LobsterFramework.EntitySystem.Damage

@@ -1,0 +1,544 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.EntitySystem.DamageBuffer
+  commentId: T:LobsterFramework.EntitySystem.DamageBuffer
+  id: DamageBuffer
+  parent: LobsterFramework.EntitySystem
+  children:
+  - LobsterFramework.EntitySystem.DamageBuffer.#ctor(System.Boolean)
+  - LobsterFramework.EntitySystem.DamageBuffer.AddDamage(LobsterFramework.EntitySystem.Damage)
+  - LobsterFramework.EntitySystem.DamageBuffer.AddDefense(System.Int32,System.Int32)
+  - LobsterFramework.EntitySystem.DamageBuffer.AddHealthModifier(System.Single)
+  - LobsterFramework.EntitySystem.DamageBuffer.AddPostureModifier(System.Single)
+  - LobsterFramework.EntitySystem.DamageBuffer.HealthDamage
+  - LobsterFramework.EntitySystem.DamageBuffer.PostureDamage
+  - LobsterFramework.EntitySystem.DamageBuffer.RemoveHealthModifier(System.Int32)
+  - LobsterFramework.EntitySystem.DamageBuffer.RemovePostureModifier(System.Int32)
+  - LobsterFramework.EntitySystem.DamageBuffer.Reset
+  - LobsterFramework.EntitySystem.DamageBuffer.ResetDamage
+  - LobsterFramework.EntitySystem.DamageBuffer.ResetDefense
+  - LobsterFramework.EntitySystem.DamageBuffer.ResetModifiers
+  langs:
+  - csharp
+  - vb
+  name: DamageBuffer
+  nameWithType: DamageBuffer
+  fullName: LobsterFramework.EntitySystem.DamageBuffer
+  type: Struct
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: DamageBuffer
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 427
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: >-
+      [Serializable]
+
+      public struct DamageBuffer
+    content.vb: >-
+      <Serializable>
+
+      Public Structure DamageBuffer
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: LobsterFramework.EntitySystem.DamageBuffer.#ctor(System.Boolean)
+  commentId: M:LobsterFramework.EntitySystem.DamageBuffer.#ctor(System.Boolean)
+  id: '#ctor(System.Boolean)'
+  parent: LobsterFramework.EntitySystem.DamageBuffer
+  langs:
+  - csharp
+  - vb
+  name: DamageBuffer(bool)
+  nameWithType: DamageBuffer.DamageBuffer(bool)
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.DamageBuffer(bool)
+  type: Constructor
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: .ctor
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 438
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public DamageBuffer(bool defaultSetting = true)
+    parameters:
+    - id: defaultSetting
+      type: System.Boolean
+    content.vb: Public Sub New(defaultSetting As Boolean = True)
+  overload: LobsterFramework.EntitySystem.DamageBuffer.#ctor*
+  nameWithType.vb: DamageBuffer.New(Boolean)
+  fullName.vb: LobsterFramework.EntitySystem.DamageBuffer.New(Boolean)
+  name.vb: New(Boolean)
+- uid: LobsterFramework.EntitySystem.DamageBuffer.HealthDamage
+  commentId: P:LobsterFramework.EntitySystem.DamageBuffer.HealthDamage
+  id: HealthDamage
+  parent: LobsterFramework.EntitySystem.DamageBuffer
+  langs:
+  - csharp
+  - vb
+  name: HealthDamage
+  nameWithType: DamageBuffer.HealthDamage
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.HealthDamage
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: HealthDamage
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 451
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public readonly float HealthDamage { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property HealthDamage As Single
+  overload: LobsterFramework.EntitySystem.DamageBuffer.HealthDamage*
+- uid: LobsterFramework.EntitySystem.DamageBuffer.PostureDamage
+  commentId: P:LobsterFramework.EntitySystem.DamageBuffer.PostureDamage
+  id: PostureDamage
+  parent: LobsterFramework.EntitySystem.DamageBuffer
+  langs:
+  - csharp
+  - vb
+  name: PostureDamage
+  nameWithType: DamageBuffer.PostureDamage
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.PostureDamage
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: PostureDamage
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 453
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public readonly float PostureDamage { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property PostureDamage As Single
+  overload: LobsterFramework.EntitySystem.DamageBuffer.PostureDamage*
+- uid: LobsterFramework.EntitySystem.DamageBuffer.AddDamage(LobsterFramework.EntitySystem.Damage)
+  commentId: M:LobsterFramework.EntitySystem.DamageBuffer.AddDamage(LobsterFramework.EntitySystem.Damage)
+  id: AddDamage(LobsterFramework.EntitySystem.Damage)
+  parent: LobsterFramework.EntitySystem.DamageBuffer
+  langs:
+  - csharp
+  - vb
+  name: AddDamage(Damage)
+  nameWithType: DamageBuffer.AddDamage(Damage)
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.AddDamage(LobsterFramework.EntitySystem.Damage)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: AddDamage
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 460
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public void AddDamage(Damage damage)
+    parameters:
+    - id: damage
+      type: LobsterFramework.EntitySystem.Damage
+    content.vb: Public Sub AddDamage(damage As Damage)
+  overload: LobsterFramework.EntitySystem.DamageBuffer.AddDamage*
+- uid: LobsterFramework.EntitySystem.DamageBuffer.AddDefense(System.Int32,System.Int32)
+  commentId: M:LobsterFramework.EntitySystem.DamageBuffer.AddDefense(System.Int32,System.Int32)
+  id: AddDefense(System.Int32,System.Int32)
+  parent: LobsterFramework.EntitySystem.DamageBuffer
+  langs:
+  - csharp
+  - vb
+  name: AddDefense(int, int)
+  nameWithType: DamageBuffer.AddDefense(int, int)
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.AddDefense(int, int)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: AddDefense
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 466
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public void AddDefense(int healthDefense, int postureDefense)
+    parameters:
+    - id: healthDefense
+      type: System.Int32
+    - id: postureDefense
+      type: System.Int32
+    content.vb: Public Sub AddDefense(healthDefense As Integer, postureDefense As Integer)
+  overload: LobsterFramework.EntitySystem.DamageBuffer.AddDefense*
+  nameWithType.vb: DamageBuffer.AddDefense(Integer, Integer)
+  fullName.vb: LobsterFramework.EntitySystem.DamageBuffer.AddDefense(Integer, Integer)
+  name.vb: AddDefense(Integer, Integer)
+- uid: LobsterFramework.EntitySystem.DamageBuffer.AddHealthModifier(System.Single)
+  commentId: M:LobsterFramework.EntitySystem.DamageBuffer.AddHealthModifier(System.Single)
+  id: AddHealthModifier(System.Single)
+  parent: LobsterFramework.EntitySystem.DamageBuffer
+  langs:
+  - csharp
+  - vb
+  name: AddHealthModifier(float)
+  nameWithType: DamageBuffer.AddHealthModifier(float)
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.AddHealthModifier(float)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: AddHealthModifier
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 472
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public int AddHealthModifier(float factor)
+    parameters:
+    - id: factor
+      type: System.Single
+    return:
+      type: System.Int32
+    content.vb: Public Function AddHealthModifier(factor As Single) As Integer
+  overload: LobsterFramework.EntitySystem.DamageBuffer.AddHealthModifier*
+  nameWithType.vb: DamageBuffer.AddHealthModifier(Single)
+  fullName.vb: LobsterFramework.EntitySystem.DamageBuffer.AddHealthModifier(Single)
+  name.vb: AddHealthModifier(Single)
+- uid: LobsterFramework.EntitySystem.DamageBuffer.RemoveHealthModifier(System.Int32)
+  commentId: M:LobsterFramework.EntitySystem.DamageBuffer.RemoveHealthModifier(System.Int32)
+  id: RemoveHealthModifier(System.Int32)
+  parent: LobsterFramework.EntitySystem.DamageBuffer
+  langs:
+  - csharp
+  - vb
+  name: RemoveHealthModifier(int)
+  nameWithType: DamageBuffer.RemoveHealthModifier(int)
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.RemoveHealthModifier(int)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: RemoveHealthModifier
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 478
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public bool RemoveHealthModifier(int key)
+    parameters:
+    - id: key
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public Function RemoveHealthModifier(key As Integer) As Boolean
+  overload: LobsterFramework.EntitySystem.DamageBuffer.RemoveHealthModifier*
+  nameWithType.vb: DamageBuffer.RemoveHealthModifier(Integer)
+  fullName.vb: LobsterFramework.EntitySystem.DamageBuffer.RemoveHealthModifier(Integer)
+  name.vb: RemoveHealthModifier(Integer)
+- uid: LobsterFramework.EntitySystem.DamageBuffer.AddPostureModifier(System.Single)
+  commentId: M:LobsterFramework.EntitySystem.DamageBuffer.AddPostureModifier(System.Single)
+  id: AddPostureModifier(System.Single)
+  parent: LobsterFramework.EntitySystem.DamageBuffer
+  langs:
+  - csharp
+  - vb
+  name: AddPostureModifier(float)
+  nameWithType: DamageBuffer.AddPostureModifier(float)
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.AddPostureModifier(float)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: AddPostureModifier
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 485
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public int AddPostureModifier(float factor)
+    parameters:
+    - id: factor
+      type: System.Single
+    return:
+      type: System.Int32
+    content.vb: Public Function AddPostureModifier(factor As Single) As Integer
+  overload: LobsterFramework.EntitySystem.DamageBuffer.AddPostureModifier*
+  nameWithType.vb: DamageBuffer.AddPostureModifier(Single)
+  fullName.vb: LobsterFramework.EntitySystem.DamageBuffer.AddPostureModifier(Single)
+  name.vb: AddPostureModifier(Single)
+- uid: LobsterFramework.EntitySystem.DamageBuffer.RemovePostureModifier(System.Int32)
+  commentId: M:LobsterFramework.EntitySystem.DamageBuffer.RemovePostureModifier(System.Int32)
+  id: RemovePostureModifier(System.Int32)
+  parent: LobsterFramework.EntitySystem.DamageBuffer
+  langs:
+  - csharp
+  - vb
+  name: RemovePostureModifier(int)
+  nameWithType: DamageBuffer.RemovePostureModifier(int)
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.RemovePostureModifier(int)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: RemovePostureModifier
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 492
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public bool RemovePostureModifier(int key)
+    parameters:
+    - id: key
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public Function RemovePostureModifier(key As Integer) As Boolean
+  overload: LobsterFramework.EntitySystem.DamageBuffer.RemovePostureModifier*
+  nameWithType.vb: DamageBuffer.RemovePostureModifier(Integer)
+  fullName.vb: LobsterFramework.EntitySystem.DamageBuffer.RemovePostureModifier(Integer)
+  name.vb: RemovePostureModifier(Integer)
+- uid: LobsterFramework.EntitySystem.DamageBuffer.ResetDamage
+  commentId: M:LobsterFramework.EntitySystem.DamageBuffer.ResetDamage
+  id: ResetDamage
+  parent: LobsterFramework.EntitySystem.DamageBuffer
+  langs:
+  - csharp
+  - vb
+  name: ResetDamage()
+  nameWithType: DamageBuffer.ResetDamage()
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.ResetDamage()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: ResetDamage
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 499
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public void ResetDamage()
+    content.vb: Public Sub ResetDamage()
+  overload: LobsterFramework.EntitySystem.DamageBuffer.ResetDamage*
+- uid: LobsterFramework.EntitySystem.DamageBuffer.ResetDefense
+  commentId: M:LobsterFramework.EntitySystem.DamageBuffer.ResetDefense
+  id: ResetDefense
+  parent: LobsterFramework.EntitySystem.DamageBuffer
+  langs:
+  - csharp
+  - vb
+  name: ResetDefense()
+  nameWithType: DamageBuffer.ResetDefense()
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.ResetDefense()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: ResetDefense
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 505
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public void ResetDefense()
+    content.vb: Public Sub ResetDefense()
+  overload: LobsterFramework.EntitySystem.DamageBuffer.ResetDefense*
+- uid: LobsterFramework.EntitySystem.DamageBuffer.ResetModifiers
+  commentId: M:LobsterFramework.EntitySystem.DamageBuffer.ResetModifiers
+  id: ResetModifiers
+  parent: LobsterFramework.EntitySystem.DamageBuffer
+  langs:
+  - csharp
+  - vb
+  name: ResetModifiers()
+  nameWithType: DamageBuffer.ResetModifiers()
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.ResetModifiers()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: ResetModifiers
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 511
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public void ResetModifiers()
+    content.vb: Public Sub ResetModifiers()
+  overload: LobsterFramework.EntitySystem.DamageBuffer.ResetModifiers*
+- uid: LobsterFramework.EntitySystem.DamageBuffer.Reset
+  commentId: M:LobsterFramework.EntitySystem.DamageBuffer.Reset
+  id: Reset
+  parent: LobsterFramework.EntitySystem.DamageBuffer
+  langs:
+  - csharp
+  - vb
+  name: Reset()
+  nameWithType: DamageBuffer.Reset()
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.Reset()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: Reset
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 517
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public void Reset()
+    content.vb: Public Sub Reset()
+  overload: LobsterFramework.EntitySystem.DamageBuffer.Reset*
+references:
+- uid: LobsterFramework.EntitySystem
+  commentId: N:LobsterFramework.EntitySystem
+  name: LobsterFramework.EntitySystem
+  nameWithType: LobsterFramework.EntitySystem
+  fullName: LobsterFramework.EntitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.EntitySystem
+    name: EntitySystem
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.EntitySystem
+    name: EntitySystem
+- uid: LobsterFramework.EntitySystem.DamageBuffer.#ctor*
+  commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.#ctor
+  name: DamageBuffer
+  nameWithType: DamageBuffer.DamageBuffer
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.DamageBuffer
+  nameWithType.vb: DamageBuffer.New
+  fullName.vb: LobsterFramework.EntitySystem.DamageBuffer.New
+  name.vb: New
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.EntitySystem.DamageBuffer.HealthDamage*
+  commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.HealthDamage
+  name: HealthDamage
+  nameWithType: DamageBuffer.HealthDamage
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.HealthDamage
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: LobsterFramework.EntitySystem.DamageBuffer.PostureDamage*
+  commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.PostureDamage
+  name: PostureDamage
+  nameWithType: DamageBuffer.PostureDamage
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.PostureDamage
+- uid: LobsterFramework.EntitySystem.DamageBuffer.AddDamage*
+  commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.AddDamage
+  name: AddDamage
+  nameWithType: DamageBuffer.AddDamage
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.AddDamage
+- uid: LobsterFramework.EntitySystem.Damage
+  commentId: T:LobsterFramework.EntitySystem.Damage
+  parent: LobsterFramework.EntitySystem
+  name: Damage
+  nameWithType: Damage
+  fullName: LobsterFramework.EntitySystem.Damage
+- uid: LobsterFramework.EntitySystem.DamageBuffer.AddDefense*
+  commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.AddDefense
+  name: AddDefense
+  nameWithType: DamageBuffer.AddDefense
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.AddDefense
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: LobsterFramework.EntitySystem.DamageBuffer.AddHealthModifier*
+  commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.AddHealthModifier
+  name: AddHealthModifier
+  nameWithType: DamageBuffer.AddHealthModifier
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.AddHealthModifier
+- uid: LobsterFramework.EntitySystem.DamageBuffer.RemoveHealthModifier*
+  commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.RemoveHealthModifier
+  name: RemoveHealthModifier
+  nameWithType: DamageBuffer.RemoveHealthModifier
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.RemoveHealthModifier
+- uid: LobsterFramework.EntitySystem.DamageBuffer.AddPostureModifier*
+  commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.AddPostureModifier
+  name: AddPostureModifier
+  nameWithType: DamageBuffer.AddPostureModifier
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.AddPostureModifier
+- uid: LobsterFramework.EntitySystem.DamageBuffer.RemovePostureModifier*
+  commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.RemovePostureModifier
+  name: RemovePostureModifier
+  nameWithType: DamageBuffer.RemovePostureModifier
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.RemovePostureModifier
+- uid: LobsterFramework.EntitySystem.DamageBuffer.ResetDamage*
+  commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.ResetDamage
+  name: ResetDamage
+  nameWithType: DamageBuffer.ResetDamage
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.ResetDamage
+- uid: LobsterFramework.EntitySystem.DamageBuffer.ResetDefense*
+  commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.ResetDefense
+  name: ResetDefense
+  nameWithType: DamageBuffer.ResetDefense
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.ResetDefense
+- uid: LobsterFramework.EntitySystem.DamageBuffer.ResetModifiers*
+  commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.ResetModifiers
+  name: ResetModifiers
+  nameWithType: DamageBuffer.ResetModifiers
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.ResetModifiers
+- uid: LobsterFramework.EntitySystem.DamageBuffer.Reset*
+  commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.Reset
+  name: Reset
+  nameWithType: DamageBuffer.Reset
+  fullName: LobsterFramework.EntitySystem.DamageBuffer.Reset

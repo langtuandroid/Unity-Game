@@ -1,0 +1,125 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.EntitySystem.DamageType
+  commentId: T:LobsterFramework.EntitySystem.DamageType
+  id: DamageType
+  parent: LobsterFramework.EntitySystem
+  children:
+  - LobsterFramework.EntitySystem.DamageType.General
+  - LobsterFramework.EntitySystem.DamageType.Hit
+  - LobsterFramework.EntitySystem.DamageType.StatusEffect
+  langs:
+  - csharp
+  - vb
+  name: DamageType
+  nameWithType: DamageType
+  fullName: LobsterFramework.EntitySystem.DamageType
+  type: Enum
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: DamageType
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 409
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: public enum DamageType
+    content.vb: Public Enum DamageType
+- uid: LobsterFramework.EntitySystem.DamageType.Hit
+  commentId: F:LobsterFramework.EntitySystem.DamageType.Hit
+  id: Hit
+  parent: LobsterFramework.EntitySystem.DamageType
+  langs:
+  - csharp
+  - vb
+  name: Hit
+  nameWithType: DamageType.Hit
+  fullName: LobsterFramework.EntitySystem.DamageType.Hit
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: Hit
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 410
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: Hit = 0
+    return:
+      type: LobsterFramework.EntitySystem.DamageType
+- uid: LobsterFramework.EntitySystem.DamageType.StatusEffect
+  commentId: F:LobsterFramework.EntitySystem.DamageType.StatusEffect
+  id: StatusEffect
+  parent: LobsterFramework.EntitySystem.DamageType
+  langs:
+  - csharp
+  - vb
+  name: StatusEffect
+  nameWithType: DamageType.StatusEffect
+  fullName: LobsterFramework.EntitySystem.DamageType.StatusEffect
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: StatusEffect
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 411
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: StatusEffect = 1
+    return:
+      type: LobsterFramework.EntitySystem.DamageType
+- uid: LobsterFramework.EntitySystem.DamageType.General
+  commentId: F:LobsterFramework.EntitySystem.DamageType.General
+  id: General
+  parent: LobsterFramework.EntitySystem.DamageType
+  langs:
+  - csharp
+  - vb
+  name: General
+  nameWithType: DamageType.General
+  fullName: LobsterFramework.EntitySystem.DamageType.General
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+    id: General
+    path: ../Assets/Scripts/Components/Entity.cs
+    startLine: 412
+  assemblies:
+  - MyScripts
+  namespace: LobsterFramework.EntitySystem
+  syntax:
+    content: General = 2
+    return:
+      type: LobsterFramework.EntitySystem.DamageType
+references:
+- uid: LobsterFramework.EntitySystem
+  commentId: N:LobsterFramework.EntitySystem
+  name: LobsterFramework.EntitySystem
+  nameWithType: LobsterFramework.EntitySystem
+  fullName: LobsterFramework.EntitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.EntitySystem
+    name: EntitySystem
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+  - name: .
+  - uid: LobsterFramework.EntitySystem
+    name: EntitySystem
+- uid: LobsterFramework.EntitySystem.DamageType
+  commentId: T:LobsterFramework.EntitySystem.DamageType
+  parent: LobsterFramework.EntitySystem
+  name: DamageType
+  nameWithType: DamageType
+  fullName: LobsterFramework.EntitySystem.DamageType
