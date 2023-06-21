@@ -181,7 +181,7 @@ namespace LobsterFramework.AbilitySystem {
         public int RunningCount() { return executing.Count; }
 
         /// <summary>
-        /// // Suspend the execution of provided action and force it to finish at the current frame
+        /// Suspend the execution of provided action and force it to finish at the current frame
         /// </summary>
         /// <param name="name"> Name of the configuration to terminate </param>
         /// <returns> The status of this operation </returns>
