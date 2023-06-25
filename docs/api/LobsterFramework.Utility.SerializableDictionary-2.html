@@ -12,7 +12,7 @@
  | LobsterFramework documentation ">
     
       <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
       <link rel="stylesheet" href="../styles/main.css">
       <meta property="docfx:navrel" content="../toc.html">
@@ -80,6 +80,7 @@
             <article class="content wrap" id="_content" data-uid="LobsterFramework.Utility.SerializableDictionary`2">
 
 
+
   <h1 id="LobsterFramework_Utility_SerializableDictionary_2" data-uid="LobsterFramework.Utility.SerializableDictionary`2" class="text-break">Class SerializableDictionary&lt;TKey, TValue&gt;
 </h1>
   <div class="markdown level0 summary"></div>
@@ -97,14 +98,14 @@
     <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/ISerializationCallbackReceiver.html">ISerializationCallbackReceiver</a></div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="LobsterFramework.html">LobsterFramework</a>.<a class="xref" href="LobsterFramework.Utility.html">Utility</a></h6>
-  <h6><strong>Assembly</strong>: MyScripts.dll</h6>
+  <h6><strong>Assembly</strong>: LobsterFramework.dll</h6>
   <h5 id="LobsterFramework_Utility_SerializableDictionary_2_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
 public abstract class SerializableDictionary&lt;TKey, TValue&gt; : ISerializationCallbackReceiver</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Name</th>
@@ -134,7 +135,7 @@ public abstract class SerializableDictionary&lt;TKey, TValue&gt; : ISerializatio
     <pre><code class="lang-csharp hljs">protected Dictionary&lt;TKey, TValue&gt; dictionary</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -159,7 +160,7 @@ public abstract class SerializableDictionary&lt;TKey, TValue&gt; : ISerializatio
 protected List&lt;TKey&gt; keys</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -184,7 +185,7 @@ protected List&lt;TKey&gt; keys</code></pre>
 protected List&lt;TValue&gt; values</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -211,7 +212,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public int Count { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -236,7 +237,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public bool IsReadOnly { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -261,7 +262,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public TValue this[TKey key] { get; set; }</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -278,7 +279,7 @@ protected List&lt;TValue&gt; values</code></pre>
     </tbody>
   </table>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -303,7 +304,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public ICollection&lt;TKey&gt; Keys { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -328,7 +329,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public ICollection&lt;TValue&gt; Values { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -347,6 +348,33 @@ protected List&lt;TValue&gt; values</code></pre>
 
 
   <a id="LobsterFramework_Utility_SerializableDictionary_2_Add_" data-uid="LobsterFramework.Utility.SerializableDictionary`2.Add*"></a>
+  <h4 id="LobsterFramework_Utility_SerializableDictionary_2_Add_System_Collections_Generic_KeyValuePair__0__1__" data-uid="LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})">Add(KeyValuePair&lt;TKey, TValue&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(KeyValuePair&lt;TKey, TValue&gt; item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_Utility_SerializableDictionary_2_Add_" data-uid="LobsterFramework.Utility.SerializableDictionary`2.Add*"></a>
   <h4 id="LobsterFramework_Utility_SerializableDictionary_2_Add__0__1_" data-uid="LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)">Add(TKey, TValue)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
@@ -355,7 +383,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public void Add(TKey key, TValue value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -372,33 +400,6 @@ protected List&lt;TValue&gt; values</code></pre>
       <tr>
         <td><span class="xref">TValue</span></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <a id="LobsterFramework_Utility_SerializableDictionary_2_Add_" data-uid="LobsterFramework.Utility.SerializableDictionary`2.Add*"></a>
-  <h4 id="LobsterFramework_Utility_SerializableDictionary_2_Add_System_Collections_Generic_KeyValuePair__0__1__" data-uid="LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})">Add(KeyValuePair&lt;TKey, TValue&gt;)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Add(KeyValuePair&lt;TKey, TValue&gt; item)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;TKey, TValue&gt;</td>
-        <td><span class="parametername">item</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -424,7 +425,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public bool Contains(KeyValuePair&lt;TKey, TValue&gt; item)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -441,7 +442,7 @@ protected List&lt;TValue&gt; values</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -466,7 +467,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public bool ContainsKey(TKey key)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -483,7 +484,7 @@ protected List&lt;TValue&gt; values</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -508,7 +509,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public void CopyTo(KeyValuePair&lt;TKey, TValue&gt;[] array, int arrayIndex)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -540,7 +541,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public IEnumerator&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; GetEnumerator()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -558,7 +559,8 @@ protected List&lt;TValue&gt; values</code></pre>
 
   <a id="LobsterFramework_Utility_SerializableDictionary_2_OnAfterDeserialize_" data-uid="LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize*"></a>
   <h4 id="LobsterFramework_Utility_SerializableDictionary_2_OnAfterDeserialize" data-uid="LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize">OnAfterDeserialize()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Implement this method to receive a callback after Unity deserializes your object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -568,54 +570,13 @@ protected List&lt;TValue&gt; values</code></pre>
 
   <a id="LobsterFramework_Utility_SerializableDictionary_2_OnBeforeSerialize_" data-uid="LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize*"></a>
   <h4 id="LobsterFramework_Utility_SerializableDictionary_2_OnBeforeSerialize" data-uid="LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize">OnBeforeSerialize()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Implement this method to receive a callback before Unity serializes your object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void OnBeforeSerialize()</code></pre>
   </div>
-
-
-  <a id="LobsterFramework_Utility_SerializableDictionary_2_Remove_" data-uid="LobsterFramework.Utility.SerializableDictionary`2.Remove*"></a>
-  <h4 id="LobsterFramework_Utility_SerializableDictionary_2_Remove__0_" data-uid="LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)">Remove(TKey)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Remove(TKey key)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TKey</span></td>
-        <td><span class="parametername">key</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
 
 
   <a id="LobsterFramework_Utility_SerializableDictionary_2_Remove_" data-uid="LobsterFramework.Utility.SerializableDictionary`2.Remove*"></a>
@@ -627,7 +588,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public bool Remove(KeyValuePair&lt;TKey, TValue&gt; item)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -644,7 +605,49 @@ protected List&lt;TValue&gt; values</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_Utility_SerializableDictionary_2_Remove_" data-uid="LobsterFramework.Utility.SerializableDictionary`2.Remove*"></a>
+  <h4 id="LobsterFramework_Utility_SerializableDictionary_2_Remove__0_" data-uid="LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)">Remove(TKey)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -669,7 +672,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public bool TryGetValue(TKey key, out TValue value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -691,7 +694,7 @@ protected List&lt;TValue&gt; values</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -709,6 +712,7 @@ protected List&lt;TValue&gt; values</code></pre>
   <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/ISerializationCallbackReceiver.html">ISerializationCallbackReceiver</a>
   </div>
+
 </article>
           </div>
 
@@ -741,7 +745,7 @@ protected List&lt;TValue&gt; values</code></pre>
       </footer>
     </div>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
   </body>

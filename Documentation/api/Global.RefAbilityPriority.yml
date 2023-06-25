@@ -16,12 +16,12 @@ items:
   type: Struct
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefAbilityPriority.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Variables/RefAbilityPriority.cs
     id: RefAbilityPriority
-    path: ../Assets/Scripts/Scriptable Objects/Variables/RefAbilityPriority.cs
+    path: ../Assets/Framework/Scriptable Objects/Variables/RefAbilityPriority.cs
     startLine: 4
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: >-
@@ -49,12 +49,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefAbilityPriority.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Variables/RefAbilityPriority.cs
     id: .ctor
-    path: ../Assets/Scripts/Scriptable Objects/Variables/RefAbilityPriority.cs
+    path: ../Assets/Framework/Scriptable Objects/Variables/RefAbilityPriority.cs
     startLine: 11
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public RefAbilityPriority(ActionPriority value = default, bool useSharedValue = false, ActionPrioritySO sharedValue = null)
@@ -83,12 +83,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefAbilityPriority.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Variables/RefAbilityPriority.cs
     id: Value
-    path: ../Assets/Scripts/Scriptable Objects/Variables/RefAbilityPriority.cs
+    path: ../Assets/Framework/Scriptable Objects/Variables/RefAbilityPriority.cs
     startLine: 17
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public ActionPriority Value { get; }
@@ -101,6 +101,7 @@ references:
 - uid: Global
 - uid: Global.RefAbilityPriority.#ctor*
   commentId: Overload:Global.RefAbilityPriority.#ctor
+  href: Global.RefAbilityPriority.html#RefAbilityPriority.#ctor(ActionPriority,System.Boolean,ActionPrioritySO)
   name: RefAbilityPriority
   nameWithType: RefAbilityPriority.RefAbilityPriority
   fullName: RefAbilityPriority.RefAbilityPriority
@@ -109,6 +110,7 @@ references:
   name.vb: New
 - uid: Global.ActionPriority
   commentId: T:Global.ActionPriority
+  href: ActionPriority.html
   name: ActionPriority
   nameWithType: ActionPriority
   fullName: ActionPriority
@@ -116,6 +118,7 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
@@ -124,17 +127,20 @@ references:
   name.vb: Boolean
 - uid: Global.ActionPrioritySO
   commentId: T:Global.ActionPrioritySO
+  href: ActionPrioritySO.html
   name: ActionPrioritySO
   nameWithType: ActionPrioritySO
   fullName: ActionPrioritySO
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: Global.RefAbilityPriority.Value*
   commentId: Overload:Global.RefAbilityPriority.Value
+  href: Global.RefAbilityPriority.html#RefAbilityPriority.Value
   name: Value
   nameWithType: RefAbilityPriority.Value
   fullName: RefAbilityPriority.Value

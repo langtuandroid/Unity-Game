@@ -12,7 +12,7 @@
  | LobsterFramework documentation ">
     
       <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
       <link rel="stylesheet" href="../styles/main.css">
       <meta property="docfx:navrel" content="../toc.html">
@@ -80,6 +80,7 @@
             <article class="content wrap" id="_content" data-uid="Global.RefStringDrawer">
 
 
+
   <h1 id="Global_RefStringDrawer" data-uid="Global.RefStringDrawer" class="text-break">Class RefStringDrawer
 </h1>
   <div class="markdown level0 summary"></div>
@@ -92,7 +93,7 @@
     <div class="level3"><span class="xref">RefStringDrawer</span></div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
-  <h6><strong>Assembly</strong>: MyScripts.dll</h6>
+  <h6><strong>Assembly</strong>: LobsterFramework.dll</h6>
   <h5 id="Global_RefStringDrawer_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CustomPropertyDrawer(typeof(RefString))]
@@ -104,14 +105,15 @@ public class RefStringDrawer : PropertyDrawer</code></pre>
 
   <a id="Global_RefStringDrawer_GetPropertyHeight_" data-uid="Global.RefStringDrawer.GetPropertyHeight*"></a>
   <h4 id="Global_RefStringDrawer_GetPropertyHeight_UnityEditor_SerializedProperty_UnityEngine_GUIContent_" data-uid="Global.RefStringDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">GetPropertyHeight(SerializedProperty, GUIContent)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Override this method to specify how tall the GUI for this field is in pixels.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override float GetPropertyHeight(SerializedProperty property, GUIContent label)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -123,17 +125,19 @@ public class RefStringDrawer : PropertyDrawer</code></pre>
       <tr>
         <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/SerializedProperty.html">SerializedProperty</a></td>
         <td><span class="parametername">property</span></td>
-        <td></td>
+        <td><p>The SerializedProperty to make the custom GUI for.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/GUIContent.html">GUIContent</a></td>
         <td><span class="parametername">label</span></td>
-        <td></td>
+        <td><p>The label of this property.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -143,7 +147,8 @@ public class RefStringDrawer : PropertyDrawer</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
+        <td><p>The height in pixels.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -153,14 +158,15 @@ public class RefStringDrawer : PropertyDrawer</code></pre>
 
   <a id="Global_RefStringDrawer_OnGUI_" data-uid="Global.RefStringDrawer.OnGUI*"></a>
   <h4 id="Global_RefStringDrawer_OnGUI_UnityEngine_Rect_UnityEditor_SerializedProperty_UnityEngine_GUIContent_" data-uid="Global.RefStringDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">OnGUI(Rect, SerializedProperty, GUIContent)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Override this method to make your own IMGUI based GUI for the property.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -172,22 +178,26 @@ public class RefStringDrawer : PropertyDrawer</code></pre>
       <tr>
         <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/Rect.html">Rect</a></td>
         <td><span class="parametername">position</span></td>
-        <td></td>
+        <td><p>Rectangle on the screen to use for the property GUI.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/SerializedProperty.html">SerializedProperty</a></td>
         <td><span class="parametername">property</span></td>
-        <td></td>
+        <td><p>The SerializedProperty to make the custom GUI for.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/GUIContent.html">GUIContent</a></td>
         <td><span class="parametername">label</span></td>
-        <td></td>
+        <td><p>The label of this property.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/PropertyDrawer.OnGUI.html">PropertyDrawer.OnGUI(Rect, SerializedProperty, GUIContent)</a></div>
+
 </article>
           </div>
 
@@ -220,7 +230,7 @@ public class RefStringDrawer : PropertyDrawer</code></pre>
       </footer>
     </div>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
   </body>

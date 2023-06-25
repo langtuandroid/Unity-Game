@@ -14,12 +14,12 @@ items:
   type: Delegate
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/TaskManager.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/TaskManager.cs
     id: FinishedHandler
-    path: ../Assets/Scripts/Utility/TaskManager.cs
+    path: ../Assets/Framework/Utility/TaskManager.cs
     startLine: 63
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   example: []
   syntax:
@@ -34,6 +34,7 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
@@ -43,6 +44,7 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System

@@ -5,7 +5,7 @@ items:
   id: AttributeInitializer
   parent: LobsterFramework.Utility
   children:
-  - LobsterFramework.Utility.AttributeInitializer.Initialize
+  - LobsterFramework.Utility.AttributeInitializer.Initialize(System.Reflection.Assembly)
   langs:
   - csharp
   - vb
@@ -15,76 +15,75 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/AttributeInitializer.cs
+      path: H:/Stuff/BallField/Assets/Framework/AttributeInitializer.cs
     id: AttributeInitializer
-    path: ../Assets/Scripts/Editor/Attributes/AttributeInitializer.cs
-    startLine: 13
+    path: ../Assets/Framework/AttributeInitializer.cs
+    startLine: 10
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
-  summary: "\nInitializes all of the custom attributes of namespace LobsterFramework\n"
+  summary: Initializes all of the custom attributes of namespace LobsterFramework
   example: []
   syntax:
     content: public class AttributeInitializer
     content.vb: Public Class AttributeInitializer
   inheritance:
   - System.Object
-- uid: LobsterFramework.Utility.AttributeInitializer.Initialize
-  commentId: M:LobsterFramework.Utility.AttributeInitializer.Initialize
-  id: Initialize
+- uid: LobsterFramework.Utility.AttributeInitializer.Initialize(System.Reflection.Assembly)
+  commentId: M:LobsterFramework.Utility.AttributeInitializer.Initialize(System.Reflection.Assembly)
+  id: Initialize(System.Reflection.Assembly)
   parent: LobsterFramework.Utility.AttributeInitializer
   langs:
   - csharp
   - vb
-  name: Initialize()
-  nameWithType: AttributeInitializer.Initialize()
-  fullName: LobsterFramework.Utility.AttributeInitializer.Initialize()
+  name: Initialize(Assembly)
+  nameWithType: AttributeInitializer.Initialize(Assembly)
+  fullName: LobsterFramework.Utility.AttributeInitializer.Initialize(System.Reflection.Assembly)
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/AttributeInitializer.cs
+      path: H:/Stuff/BallField/Assets/Framework/AttributeInitializer.cs
     id: Initialize
-    path: ../Assets/Scripts/Editor/Attributes/AttributeInitializer.cs
-    startLine: 15
+    path: ../Assets/Framework/AttributeInitializer.cs
+    startLine: 13
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
-    content: >-
-      [DidReloadScripts]
-
-      public static void Initialize()
-    content.vb: >-
-      <DidReloadScripts>
-
-      Public Shared Sub Initialize()
+    content: public static void Initialize(Assembly assembly)
+    parameters:
+    - id: assembly
+      type: System.Reflection.Assembly
+    content.vb: Public Shared Sub Initialize(assembly As Assembly)
   overload: LobsterFramework.Utility.AttributeInitializer.Initialize*
-  attributes:
-  - type: UnityEditor.Callbacks.DidReloadScripts
-    ctor: UnityEditor.Callbacks.DidReloadScripts.#ctor
-    arguments: []
 references:
 - uid: LobsterFramework.Utility
   commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
   name: LobsterFramework.Utility
   nameWithType: LobsterFramework.Utility
   fullName: LobsterFramework.Utility
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -94,11 +93,48 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: LobsterFramework.Utility.AttributeInitializer.Initialize*
   commentId: Overload:LobsterFramework.Utility.AttributeInitializer.Initialize
+  href: LobsterFramework.Utility.AttributeInitializer.html#LobsterFramework.Utility.AttributeInitializer.Initialize(System.Reflection.Assembly)
   name: Initialize
   nameWithType: AttributeInitializer.Initialize
   fullName: LobsterFramework.Utility.AttributeInitializer.Initialize
+- uid: System.Reflection.Assembly
+  commentId: T:System.Reflection.Assembly
+  parent: System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.reflection.assembly
+  name: Assembly
+  nameWithType: Assembly
+  fullName: System.Reflection.Assembly
+- uid: System.Reflection
+  commentId: N:System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Reflection
+  nameWithType: System.Reflection
+  fullName: System.Reflection
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection

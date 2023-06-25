@@ -5,26 +5,26 @@ items:
   id: SerializableDictionary`2
   parent: LobsterFramework.Utility
   children:
-  - LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
   - LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
+  - LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
   - LobsterFramework.Utility.SerializableDictionary`2.Clear
   - LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
   - LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
   - LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
   - LobsterFramework.Utility.SerializableDictionary`2.Count
-  - LobsterFramework.Utility.SerializableDictionary`2.dictionary
   - LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
   - LobsterFramework.Utility.SerializableDictionary`2.IsReadOnly
   - LobsterFramework.Utility.SerializableDictionary`2.Item(`0)
-  - LobsterFramework.Utility.SerializableDictionary`2.keys
   - LobsterFramework.Utility.SerializableDictionary`2.Keys
   - LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
   - LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
-  - LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
   - LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+  - LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
   - LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
-  - LobsterFramework.Utility.SerializableDictionary`2.values
   - LobsterFramework.Utility.SerializableDictionary`2.Values
+  - LobsterFramework.Utility.SerializableDictionary`2.dictionary
+  - LobsterFramework.Utility.SerializableDictionary`2.keys
+  - LobsterFramework.Utility.SerializableDictionary`2.values
   langs:
   - csharp
   - vb
@@ -34,12 +34,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: SerializableDictionary
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 7
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: >-
@@ -81,12 +81,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: keys
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 11
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: >-
@@ -118,12 +118,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: values
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 12
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: >-
@@ -155,12 +155,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: dictionary
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 13
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: protected Dictionary<TKey, TValue> dictionary
@@ -182,13 +182,14 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: this[]
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 15
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public TValue this[TKey key] { get; set; }
     parameters:
@@ -214,13 +215,14 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: Keys
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 17
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public ICollection<TKey> Keys { get; }
     parameters: []
@@ -243,13 +245,14 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: Values
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 19
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public ICollection<TValue> Values { get; }
     parameters: []
@@ -272,13 +275,14 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: Count
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 21
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public int Count { get; }
     parameters: []
@@ -301,13 +305,14 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: IsReadOnly
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 23
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public bool IsReadOnly { get; }
     parameters: []
@@ -330,13 +335,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: Add
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 25
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public void Add(TKey key, TValue value)
     parameters:
@@ -361,13 +367,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: Add
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 30
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public void Add(KeyValuePair<TKey, TValue> item)
     parameters:
@@ -391,13 +398,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: Clear
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 35
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public void Clear()
     content.vb: Public Sub Clear()
@@ -417,13 +425,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: Contains
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 40
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public bool Contains(KeyValuePair<TKey, TValue> item)
     parameters:
@@ -449,13 +458,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: ContainsKey
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 45
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public bool ContainsKey(TKey key)
     parameters:
@@ -480,13 +490,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: CopyTo
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 50
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public void CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex)
     parameters:
@@ -512,13 +523,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: GetEnumerator
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 55
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
     return:
@@ -540,13 +552,15 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: OnAfterDeserialize
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 60
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  summary: <p>Implement this method to receive a callback after Unity deserializes your object.</p>
+  example: []
   syntax:
     content: public void OnAfterDeserialize()
     content.vb: Public Sub OnAfterDeserialize()
@@ -568,13 +582,15 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: OnBeforeSerialize
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 72
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  summary: <p>Implement this method to receive a callback before Unity serializes your object.</p>
+  example: []
   syntax:
     content: public void OnBeforeSerialize()
     content.vb: Public Sub OnBeforeSerialize()
@@ -596,13 +612,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: Remove
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 83
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public bool Remove(TKey key)
     parameters:
@@ -627,13 +644,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: Remove
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 88
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public bool Remove(KeyValuePair<TKey, TValue> item)
     parameters:
@@ -659,13 +677,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: TryGetValue
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 93
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public bool TryGetValue(TKey key, out TValue value)
     parameters:
@@ -683,25 +702,31 @@ items:
 references:
 - uid: LobsterFramework.Utility
   commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
   name: LobsterFramework.Utility
   nameWithType: LobsterFramework.Utility
   fullName: LobsterFramework.Utility
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -718,6 +743,7 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
@@ -731,6 +757,7 @@ references:
   commentId: T:System.Collections.Generic.List{`0}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: List<TKey>
   nameWithType: List<TKey>
   fullName: System.Collections.Generic.List<TKey>
@@ -741,6 +768,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: TKey
   - name: '>'
@@ -748,6 +776,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -756,6 +785,7 @@ references:
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: List<T>
   nameWithType: List<T>
   fullName: System.Collections.Generic.List<T>
@@ -766,6 +796,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -773,6 +804,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -781,6 +813,7 @@ references:
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
@@ -788,30 +821,37 @@ references:
   - uid: System
     name: System
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
   - uid: System.Collections
     name: Collections
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
   - uid: System.Collections.Generic
     name: Generic
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
   spec.vb:
   - uid: System
     name: System
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
   - uid: System.Collections
     name: Collections
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
   - uid: System.Collections.Generic
     name: Generic
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: System.Collections.Generic.List{{TValue}}
   commentId: T:System.Collections.Generic.List{`1}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: List<TValue>
   nameWithType: List<TValue>
   fullName: System.Collections.Generic.List<TValue>
@@ -822,6 +862,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: TValue
   - name: '>'
@@ -829,6 +870,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -838,6 +880,7 @@ references:
   commentId: T:System.Collections.Generic.Dictionary{`0,`1}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   name: Dictionary<TKey, TValue>
   nameWithType: Dictionary<TKey, TValue>
   fullName: System.Collections.Generic.Dictionary<TKey, TValue>
@@ -848,6 +891,7 @@ references:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: <
   - name: TKey
   - name: ','
@@ -858,6 +902,7 @@ references:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: (
   - name: Of
   - name: " "
@@ -869,6 +914,7 @@ references:
 - uid: System.Collections.Generic.Dictionary`2
   commentId: T:System.Collections.Generic.Dictionary`2
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   name: Dictionary<TKey, TValue>
   nameWithType: Dictionary<TKey, TValue>
   fullName: System.Collections.Generic.Dictionary<TKey, TValue>
@@ -879,6 +925,7 @@ references:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: <
   - name: TKey
   - name: ','
@@ -889,6 +936,7 @@ references:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: (
   - name: Of
   - name: " "
@@ -899,6 +947,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.Item*
   commentId: Overload:LobsterFramework.Utility.SerializableDictionary`2.Item
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Item(`0)
   name: this
   nameWithType: SerializableDictionary<TKey, TValue>.this
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.this
@@ -927,6 +976,7 @@ references:
   fullName: TValue
 - uid: LobsterFramework.Utility.SerializableDictionary`2.Keys*
   commentId: Overload:LobsterFramework.Utility.SerializableDictionary`2.Keys
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Keys
   name: Keys
   nameWithType: SerializableDictionary<TKey, TValue>.Keys
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Keys
@@ -936,6 +986,7 @@ references:
   commentId: T:System.Collections.Generic.ICollection{`0}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
   name: ICollection<TKey>
   nameWithType: ICollection<TKey>
   fullName: System.Collections.Generic.ICollection<TKey>
@@ -946,6 +997,7 @@ references:
   - uid: System.Collections.Generic.ICollection`1
     name: ICollection
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
   - name: <
   - name: TKey
   - name: '>'
@@ -953,6 +1005,7 @@ references:
   - uid: System.Collections.Generic.ICollection`1
     name: ICollection
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
   - name: (
   - name: Of
   - name: " "
@@ -961,6 +1014,7 @@ references:
 - uid: System.Collections.Generic.ICollection`1
   commentId: T:System.Collections.Generic.ICollection`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
   name: ICollection<T>
   nameWithType: ICollection<T>
   fullName: System.Collections.Generic.ICollection<T>
@@ -971,6 +1025,7 @@ references:
   - uid: System.Collections.Generic.ICollection`1
     name: ICollection
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
   - name: <
   - name: T
   - name: '>'
@@ -978,6 +1033,7 @@ references:
   - uid: System.Collections.Generic.ICollection`1
     name: ICollection
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
   - name: (
   - name: Of
   - name: " "
@@ -985,6 +1041,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.Values*
   commentId: Overload:LobsterFramework.Utility.SerializableDictionary`2.Values
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Values
   name: Values
   nameWithType: SerializableDictionary<TKey, TValue>.Values
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Values
@@ -994,6 +1051,7 @@ references:
   commentId: T:System.Collections.Generic.ICollection{`1}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
   name: ICollection<TValue>
   nameWithType: ICollection<TValue>
   fullName: System.Collections.Generic.ICollection<TValue>
@@ -1004,6 +1062,7 @@ references:
   - uid: System.Collections.Generic.ICollection`1
     name: ICollection
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
   - name: <
   - name: TValue
   - name: '>'
@@ -1011,6 +1070,7 @@ references:
   - uid: System.Collections.Generic.ICollection`1
     name: ICollection
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
   - name: (
   - name: Of
   - name: " "
@@ -1018,6 +1078,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.Count*
   commentId: Overload:LobsterFramework.Utility.SerializableDictionary`2.Count
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Count
   name: Count
   nameWithType: SerializableDictionary<TKey, TValue>.Count
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Count
@@ -1027,6 +1088,7 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
   name: int
   nameWithType: int
   fullName: int
@@ -1035,6 +1097,7 @@ references:
   name.vb: Integer
 - uid: LobsterFramework.Utility.SerializableDictionary`2.IsReadOnly*
   commentId: Overload:LobsterFramework.Utility.SerializableDictionary`2.IsReadOnly
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.IsReadOnly
   name: IsReadOnly
   nameWithType: SerializableDictionary<TKey, TValue>.IsReadOnly
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.IsReadOnly
@@ -1044,6 +1107,7 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
@@ -1052,6 +1116,7 @@ references:
   name.vb: Boolean
 - uid: LobsterFramework.Utility.SerializableDictionary`2.Add*
   commentId: Overload:LobsterFramework.Utility.SerializableDictionary`2.Add
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
   name: Add
   nameWithType: SerializableDictionary<TKey, TValue>.Add
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Add
@@ -1061,6 +1126,7 @@ references:
   commentId: T:System.Collections.Generic.KeyValuePair{`0,`1}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.KeyValuePair`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   name: KeyValuePair<TKey, TValue>
   nameWithType: KeyValuePair<TKey, TValue>
   fullName: System.Collections.Generic.KeyValuePair<TKey, TValue>
@@ -1071,6 +1137,7 @@ references:
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: <
   - name: TKey
   - name: ','
@@ -1081,6 +1148,7 @@ references:
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: (
   - name: Of
   - name: " "
@@ -1092,6 +1160,7 @@ references:
 - uid: System.Collections.Generic.KeyValuePair`2
   commentId: T:System.Collections.Generic.KeyValuePair`2
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   name: KeyValuePair<TKey, TValue>
   nameWithType: KeyValuePair<TKey, TValue>
   fullName: System.Collections.Generic.KeyValuePair<TKey, TValue>
@@ -1102,6 +1171,7 @@ references:
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: <
   - name: TKey
   - name: ','
@@ -1112,6 +1182,7 @@ references:
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: (
   - name: Of
   - name: " "
@@ -1122,6 +1193,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.Clear*
   commentId: Overload:LobsterFramework.Utility.SerializableDictionary`2.Clear
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Clear
   name: Clear
   nameWithType: SerializableDictionary<TKey, TValue>.Clear
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Clear
@@ -1129,6 +1201,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Clear
 - uid: LobsterFramework.Utility.SerializableDictionary`2.Contains*
   commentId: Overload:LobsterFramework.Utility.SerializableDictionary`2.Contains
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
   name: Contains
   nameWithType: SerializableDictionary<TKey, TValue>.Contains
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Contains
@@ -1136,6 +1209,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Contains
 - uid: LobsterFramework.Utility.SerializableDictionary`2.ContainsKey*
   commentId: Overload:LobsterFramework.Utility.SerializableDictionary`2.ContainsKey
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
   name: ContainsKey
   nameWithType: SerializableDictionary<TKey, TValue>.ContainsKey
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.ContainsKey
@@ -1143,6 +1217,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).ContainsKey
 - uid: LobsterFramework.Utility.SerializableDictionary`2.CopyTo*
   commentId: Overload:LobsterFramework.Utility.SerializableDictionary`2.CopyTo
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
   name: CopyTo
   nameWithType: SerializableDictionary<TKey, TValue>.CopyTo
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.CopyTo
@@ -1150,6 +1225,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).CopyTo
 - uid: System.Collections.Generic.KeyValuePair{{TKey},{TValue}}[]
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   name: KeyValuePair<TKey, TValue>[]
   nameWithType: KeyValuePair<TKey, TValue>[]
   fullName: System.Collections.Generic.KeyValuePair<TKey, TValue>[]
@@ -1160,6 +1236,7 @@ references:
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: <
   - name: TKey
   - name: ','
@@ -1172,6 +1249,7 @@ references:
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: (
   - name: Of
   - name: " "
@@ -1184,6 +1262,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator*
   commentId: Overload:LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
   name: GetEnumerator
   nameWithType: SerializableDictionary<TKey, TValue>.GetEnumerator
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.GetEnumerator
@@ -1193,6 +1272,7 @@ references:
   commentId: T:System.Collections.Generic.IEnumerator{System.Collections.Generic.KeyValuePair{`0,`1}}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerator`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   name: IEnumerator<KeyValuePair<TKey, TValue>>
   nameWithType: IEnumerator<KeyValuePair<TKey, TValue>>
   fullName: System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<TKey, TValue>>
@@ -1203,10 +1283,12 @@ references:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   - name: <
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: <
   - name: TKey
   - name: ','
@@ -1218,12 +1300,14 @@ references:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   - name: (
   - name: Of
   - name: " "
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: (
   - name: Of
   - name: " "
@@ -1236,6 +1320,7 @@ references:
 - uid: System.Collections.Generic.IEnumerator`1
   commentId: T:System.Collections.Generic.IEnumerator`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   name: IEnumerator<T>
   nameWithType: IEnumerator<T>
   fullName: System.Collections.Generic.IEnumerator<T>
@@ -1246,6 +1331,7 @@ references:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   - name: <
   - name: T
   - name: '>'
@@ -1253,6 +1339,7 @@ references:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   - name: (
   - name: Of
   - name: " "
@@ -1260,6 +1347,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize*
   commentId: Overload:LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
   name: OnAfterDeserialize
   nameWithType: SerializableDictionary<TKey, TValue>.OnAfterDeserialize
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.OnAfterDeserialize
@@ -1286,6 +1374,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize*
   commentId: Overload:LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
   name: OnBeforeSerialize
   nameWithType: SerializableDictionary<TKey, TValue>.OnBeforeSerialize
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.OnBeforeSerialize
@@ -1312,6 +1401,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.Remove*
   commentId: Overload:LobsterFramework.Utility.SerializableDictionary`2.Remove
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
   name: Remove
   nameWithType: SerializableDictionary<TKey, TValue>.Remove
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Remove
@@ -1319,6 +1409,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Remove
 - uid: LobsterFramework.Utility.SerializableDictionary`2.TryGetValue*
   commentId: Overload:LobsterFramework.Utility.SerializableDictionary`2.TryGetValue
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
   name: TryGetValue
   nameWithType: SerializableDictionary<TKey, TValue>.TryGetValue
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.TryGetValue

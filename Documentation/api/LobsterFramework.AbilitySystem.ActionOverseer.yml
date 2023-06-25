@@ -14,12 +14,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Gameplay/ActionOverseer.cs
+      path: H:/Stuff/BallField/Assets/Framework/Gameplay/ActionOverseer.cs
     id: ActionOverseer
-    path: ../Assets/Scripts/Gameplay/ActionOverseer.cs
+    path: ../Assets/Framework/Gameplay/ActionOverseer.cs
     startLine: 7
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: 'public class ActionOverseer : MonoBehaviour'
@@ -144,25 +144,31 @@ items:
 references:
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
   name: LobsterFramework.AbilitySystem
   nameWithType: LobsterFramework.AbilitySystem
   fullName: LobsterFramework.AbilitySystem
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -239,6 +245,7 @@ references:
   commentId: M:UnityEngine.MonoBehaviour.Invoke(System.String,System.Single)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: Invoke(string, float)
   nameWithType: MonoBehaviour.Invoke(string, float)
   fullName: UnityEngine.MonoBehaviour.Invoke(string, float)
@@ -253,11 +260,13 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Single
     name: float
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.Invoke(System.String,System.Single)
@@ -267,16 +276,19 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Single
     name: Single
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
 - uid: UnityEngine.MonoBehaviour.InvokeRepeating(System.String,System.Single,System.Single)
   commentId: M:UnityEngine.MonoBehaviour.InvokeRepeating(System.String,System.Single,System.Single)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: InvokeRepeating(string, float, float)
   nameWithType: MonoBehaviour.InvokeRepeating(string, float, float)
   fullName: UnityEngine.MonoBehaviour.InvokeRepeating(string, float, float)
@@ -291,16 +303,19 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Single
     name: float
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: ','
   - name: " "
   - uid: System.Single
     name: float
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.InvokeRepeating(System.String,System.Single,System.Single)
@@ -310,21 +325,25 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Single
     name: Single
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: ','
   - name: " "
   - uid: System.Single
     name: Single
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
 - uid: UnityEngine.MonoBehaviour.CancelInvoke(System.String)
   commentId: M:UnityEngine.MonoBehaviour.CancelInvoke(System.String)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: CancelInvoke(string)
   nameWithType: MonoBehaviour.CancelInvoke(string)
   fullName: UnityEngine.MonoBehaviour.CancelInvoke(string)
@@ -339,6 +358,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.CancelInvoke(System.String)
@@ -348,11 +368,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.MonoBehaviour.IsInvoking(System.String)
   commentId: M:UnityEngine.MonoBehaviour.IsInvoking(System.String)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: IsInvoking(string)
   nameWithType: MonoBehaviour.IsInvoking(string)
   fullName: UnityEngine.MonoBehaviour.IsInvoking(string)
@@ -367,6 +389,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.IsInvoking(System.String)
@@ -376,11 +399,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.MonoBehaviour.StartCoroutine(System.String)
   commentId: M:UnityEngine.MonoBehaviour.StartCoroutine(System.String)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: StartCoroutine(string)
   nameWithType: MonoBehaviour.StartCoroutine(string)
   fullName: UnityEngine.MonoBehaviour.StartCoroutine(string)
@@ -395,6 +420,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.StartCoroutine(System.String)
@@ -404,11 +430,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.MonoBehaviour.StartCoroutine(System.String,System.Object)
   commentId: M:UnityEngine.MonoBehaviour.StartCoroutine(System.String,System.Object)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: StartCoroutine(string, object)
   nameWithType: MonoBehaviour.StartCoroutine(string, object)
   fullName: UnityEngine.MonoBehaviour.StartCoroutine(string, object)
@@ -423,11 +451,13 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.StartCoroutine(System.String,System.Object)
@@ -437,16 +467,19 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: UnityEngine.MonoBehaviour.StartCoroutine(System.Collections.IEnumerator)
   commentId: M:UnityEngine.MonoBehaviour.StartCoroutine(System.Collections.IEnumerator)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
   name: StartCoroutine(IEnumerator)
   nameWithType: MonoBehaviour.StartCoroutine(IEnumerator)
   fullName: UnityEngine.MonoBehaviour.StartCoroutine(System.Collections.IEnumerator)
@@ -458,6 +491,7 @@ references:
   - uid: System.Collections.IEnumerator
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.StartCoroutine(System.Collections.IEnumerator)
@@ -467,11 +501,13 @@ references:
   - uid: System.Collections.IEnumerator
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
   - name: )
 - uid: UnityEngine.MonoBehaviour.StartCoroutine_Auto(System.Collections.IEnumerator)
   commentId: M:UnityEngine.MonoBehaviour.StartCoroutine_Auto(System.Collections.IEnumerator)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
   name: StartCoroutine_Auto(IEnumerator)
   nameWithType: MonoBehaviour.StartCoroutine_Auto(IEnumerator)
   fullName: UnityEngine.MonoBehaviour.StartCoroutine_Auto(System.Collections.IEnumerator)
@@ -483,6 +519,7 @@ references:
   - uid: System.Collections.IEnumerator
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.StartCoroutine_Auto(System.Collections.IEnumerator)
@@ -492,11 +529,13 @@ references:
   - uid: System.Collections.IEnumerator
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
   - name: )
 - uid: UnityEngine.MonoBehaviour.StopCoroutine(System.Collections.IEnumerator)
   commentId: M:UnityEngine.MonoBehaviour.StopCoroutine(System.Collections.IEnumerator)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
   name: StopCoroutine(IEnumerator)
   nameWithType: MonoBehaviour.StopCoroutine(IEnumerator)
   fullName: UnityEngine.MonoBehaviour.StopCoroutine(System.Collections.IEnumerator)
@@ -508,6 +547,7 @@ references:
   - uid: System.Collections.IEnumerator
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.StopCoroutine(System.Collections.IEnumerator)
@@ -517,6 +557,7 @@ references:
   - uid: System.Collections.IEnumerator
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
   - name: )
 - uid: UnityEngine.MonoBehaviour.StopCoroutine(UnityEngine.Coroutine)
   commentId: M:UnityEngine.MonoBehaviour.StopCoroutine(UnityEngine.Coroutine)
@@ -547,6 +588,7 @@ references:
   commentId: M:UnityEngine.MonoBehaviour.StopCoroutine(System.String)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: StopCoroutine(string)
   nameWithType: MonoBehaviour.StopCoroutine(string)
   fullName: UnityEngine.MonoBehaviour.StopCoroutine(string)
@@ -561,6 +603,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.StopCoroutine(System.String)
@@ -570,6 +613,7 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.MonoBehaviour.StopAllCoroutines
   commentId: M:UnityEngine.MonoBehaviour.StopAllCoroutines
@@ -594,6 +638,7 @@ references:
   commentId: M:UnityEngine.MonoBehaviour.print(System.Object)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: print(object)
   nameWithType: MonoBehaviour.print(object)
   fullName: UnityEngine.MonoBehaviour.print(object)
@@ -608,6 +653,7 @@ references:
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.print(System.Object)
@@ -617,6 +663,7 @@ references:
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: UnityEngine.MonoBehaviour.destroyCancellationToken
   commentId: P:UnityEngine.MonoBehaviour.destroyCancellationToken
@@ -657,6 +704,7 @@ references:
   commentId: M:UnityEngine.Component.GetComponent(System.Type)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponent(Type)
   nameWithType: Component.GetComponent(Type)
   fullName: UnityEngine.Component.GetComponent(System.Type)
@@ -668,6 +716,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponent(System.Type)
@@ -677,6 +726,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Component.GetComponent``1
   commentId: M:UnityEngine.Component.GetComponent``1
@@ -712,6 +762,7 @@ references:
   commentId: M:UnityEngine.Component.TryGetComponent(System.Type,UnityEngine.Component@)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: TryGetComponent(Type, out Component)
   nameWithType: Component.TryGetComponent(Type, out Component)
   fullName: UnityEngine.Component.TryGetComponent(System.Type, out UnityEngine.Component)
@@ -726,6 +777,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - name: out
@@ -742,6 +794,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.Component
@@ -786,6 +839,7 @@ references:
   commentId: M:UnityEngine.Component.GetComponent(System.String)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: GetComponent(string)
   nameWithType: Component.GetComponent(string)
   fullName: UnityEngine.Component.GetComponent(string)
@@ -800,6 +854,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponent(System.String)
@@ -809,11 +864,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.Component.GetComponentInChildren(System.Type,System.Boolean)
   commentId: M:UnityEngine.Component.GetComponentInChildren(System.Type,System.Boolean)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponentInChildren(Type, bool)
   nameWithType: Component.GetComponentInChildren(Type, bool)
   fullName: UnityEngine.Component.GetComponentInChildren(System.Type, bool)
@@ -828,11 +885,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentInChildren(System.Type,System.Boolean)
@@ -842,16 +901,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Component.GetComponentInChildren(System.Type)
   commentId: M:UnityEngine.Component.GetComponentInChildren(System.Type)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponentInChildren(Type)
   nameWithType: Component.GetComponentInChildren(Type)
   fullName: UnityEngine.Component.GetComponentInChildren(System.Type)
@@ -863,6 +925,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentInChildren(System.Type)
@@ -872,11 +935,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Component.GetComponentInChildren``1(System.Boolean)
   commentId: M:UnityEngine.Component.GetComponentInChildren``1(System.Boolean)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: GetComponentInChildren<T>(bool)
   nameWithType: Component.GetComponentInChildren<T>(bool)
   fullName: UnityEngine.Component.GetComponentInChildren<T>(bool)
@@ -894,6 +959,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentInChildren``1(System.Boolean)
@@ -908,6 +974,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Component.GetComponentInChildren``1
   commentId: M:UnityEngine.Component.GetComponentInChildren``1
@@ -943,6 +1010,7 @@ references:
   commentId: M:UnityEngine.Component.GetComponentsInChildren(System.Type,System.Boolean)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponentsInChildren(Type, bool)
   nameWithType: Component.GetComponentsInChildren(Type, bool)
   fullName: UnityEngine.Component.GetComponentsInChildren(System.Type, bool)
@@ -957,11 +1025,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentsInChildren(System.Type,System.Boolean)
@@ -971,16 +1041,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Component.GetComponentsInChildren(System.Type)
   commentId: M:UnityEngine.Component.GetComponentsInChildren(System.Type)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponentsInChildren(Type)
   nameWithType: Component.GetComponentsInChildren(Type)
   fullName: UnityEngine.Component.GetComponentsInChildren(System.Type)
@@ -992,6 +1065,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentsInChildren(System.Type)
@@ -1001,11 +1075,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Component.GetComponentsInChildren``1(System.Boolean)
   commentId: M:UnityEngine.Component.GetComponentsInChildren``1(System.Boolean)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: GetComponentsInChildren<T>(bool)
   nameWithType: Component.GetComponentsInChildren<T>(bool)
   fullName: UnityEngine.Component.GetComponentsInChildren<T>(bool)
@@ -1023,6 +1099,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentsInChildren``1(System.Boolean)
@@ -1037,11 +1114,13 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Component.GetComponentsInChildren``1(System.Boolean,System.Collections.Generic.List{{T}})
   commentId: M:UnityEngine.Component.GetComponentsInChildren``1(System.Boolean,System.Collections.Generic.List{``0})
   parent: UnityEngine.Component
   definition: UnityEngine.Component.GetComponentsInChildren``1(System.Boolean,System.Collections.Generic.List{``0})
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: GetComponentsInChildren<T>(bool, List<T>)
   nameWithType: Component.GetComponentsInChildren<T>(bool, List<T>)
   fullName: UnityEngine.Component.GetComponentsInChildren<T>(bool, System.Collections.Generic.List<T>)
@@ -1059,11 +1138,13 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -1081,11 +1162,13 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -1126,6 +1209,7 @@ references:
   commentId: M:UnityEngine.Component.GetComponentsInChildren``1(System.Collections.Generic.List{``0})
   parent: UnityEngine.Component
   definition: UnityEngine.Component.GetComponentsInChildren``1(System.Collections.Generic.List{``0})
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: GetComponentsInChildren<T>(List<T>)
   nameWithType: Component.GetComponentsInChildren<T>(List<T>)
   fullName: UnityEngine.Component.GetComponentsInChildren<T>(System.Collections.Generic.List<T>)
@@ -1143,6 +1227,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -1160,6 +1245,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -1170,6 +1256,7 @@ references:
   commentId: M:UnityEngine.Component.GetComponentInParent(System.Type,System.Boolean)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponentInParent(Type, bool)
   nameWithType: Component.GetComponentInParent(Type, bool)
   fullName: UnityEngine.Component.GetComponentInParent(System.Type, bool)
@@ -1184,11 +1271,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentInParent(System.Type,System.Boolean)
@@ -1198,16 +1287,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Component.GetComponentInParent(System.Type)
   commentId: M:UnityEngine.Component.GetComponentInParent(System.Type)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponentInParent(Type)
   nameWithType: Component.GetComponentInParent(Type)
   fullName: UnityEngine.Component.GetComponentInParent(System.Type)
@@ -1219,6 +1311,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentInParent(System.Type)
@@ -1228,11 +1321,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Component.GetComponentInParent``1(System.Boolean)
   commentId: M:UnityEngine.Component.GetComponentInParent``1(System.Boolean)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: GetComponentInParent<T>(bool)
   nameWithType: Component.GetComponentInParent<T>(bool)
   fullName: UnityEngine.Component.GetComponentInParent<T>(bool)
@@ -1250,6 +1345,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentInParent``1(System.Boolean)
@@ -1264,6 +1360,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Component.GetComponentInParent``1
   commentId: M:UnityEngine.Component.GetComponentInParent``1
@@ -1299,6 +1396,7 @@ references:
   commentId: M:UnityEngine.Component.GetComponentsInParent(System.Type,System.Boolean)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponentsInParent(Type, bool)
   nameWithType: Component.GetComponentsInParent(Type, bool)
   fullName: UnityEngine.Component.GetComponentsInParent(System.Type, bool)
@@ -1313,11 +1411,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentsInParent(System.Type,System.Boolean)
@@ -1327,16 +1427,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Component.GetComponentsInParent(System.Type)
   commentId: M:UnityEngine.Component.GetComponentsInParent(System.Type)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponentsInParent(Type)
   nameWithType: Component.GetComponentsInParent(Type)
   fullName: UnityEngine.Component.GetComponentsInParent(System.Type)
@@ -1348,6 +1451,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentsInParent(System.Type)
@@ -1357,11 +1461,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Component.GetComponentsInParent``1(System.Boolean)
   commentId: M:UnityEngine.Component.GetComponentsInParent``1(System.Boolean)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: GetComponentsInParent<T>(bool)
   nameWithType: Component.GetComponentsInParent<T>(bool)
   fullName: UnityEngine.Component.GetComponentsInParent<T>(bool)
@@ -1379,6 +1485,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentsInParent``1(System.Boolean)
@@ -1393,11 +1500,13 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Component.GetComponentsInParent``1(System.Boolean,System.Collections.Generic.List{{T}})
   commentId: M:UnityEngine.Component.GetComponentsInParent``1(System.Boolean,System.Collections.Generic.List{``0})
   parent: UnityEngine.Component
   definition: UnityEngine.Component.GetComponentsInParent``1(System.Boolean,System.Collections.Generic.List{``0})
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: GetComponentsInParent<T>(bool, List<T>)
   nameWithType: Component.GetComponentsInParent<T>(bool, List<T>)
   fullName: UnityEngine.Component.GetComponentsInParent<T>(bool, System.Collections.Generic.List<T>)
@@ -1415,11 +1524,13 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -1437,11 +1548,13 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -1482,6 +1595,7 @@ references:
   commentId: M:UnityEngine.Component.GetComponents(System.Type)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponents(Type)
   nameWithType: Component.GetComponents(Type)
   fullName: UnityEngine.Component.GetComponents(System.Type)
@@ -1493,6 +1607,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponents(System.Type)
@@ -1502,11 +1617,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Component.GetComponents(System.Type,System.Collections.Generic.List{UnityEngine.Component})
   commentId: M:UnityEngine.Component.GetComponents(System.Type,System.Collections.Generic.List{UnityEngine.Component})
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponents(Type, List<Component>)
   nameWithType: Component.GetComponents(Type, List<Component>)
   fullName: UnityEngine.Component.GetComponents(System.Type, System.Collections.Generic.List<UnityEngine.Component>)
@@ -1521,11 +1638,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - uid: UnityEngine.Component
     name: Component
@@ -1540,11 +1659,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -1557,6 +1678,7 @@ references:
   commentId: M:UnityEngine.Component.GetComponents``1(System.Collections.Generic.List{``0})
   parent: UnityEngine.Component
   definition: UnityEngine.Component.GetComponents``1(System.Collections.Generic.List{``0})
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: GetComponents<T>(List<T>)
   nameWithType: Component.GetComponents<T>(List<T>)
   fullName: UnityEngine.Component.GetComponents<T>(System.Collections.Generic.List<T>)
@@ -1574,6 +1696,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -1591,6 +1714,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -1631,6 +1755,7 @@ references:
   commentId: M:UnityEngine.Component.CompareTag(System.String)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: CompareTag(string)
   nameWithType: Component.CompareTag(string)
   fullName: UnityEngine.Component.CompareTag(string)
@@ -1645,6 +1770,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.CompareTag(System.String)
@@ -1654,11 +1780,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.Component.SendMessageUpwards(System.String,System.Object,UnityEngine.SendMessageOptions)
   commentId: M:UnityEngine.Component.SendMessageUpwards(System.String,System.Object,UnityEngine.SendMessageOptions)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: SendMessageUpwards(string, object, SendMessageOptions)
   nameWithType: Component.SendMessageUpwards(string, object, SendMessageOptions)
   fullName: UnityEngine.Component.SendMessageUpwards(string, object, UnityEngine.SendMessageOptions)
@@ -1673,11 +1801,13 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -1692,11 +1822,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -1707,6 +1839,7 @@ references:
   commentId: M:UnityEngine.Component.SendMessageUpwards(System.String,System.Object)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: SendMessageUpwards(string, object)
   nameWithType: Component.SendMessageUpwards(string, object)
   fullName: UnityEngine.Component.SendMessageUpwards(string, object)
@@ -1721,11 +1854,13 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.SendMessageUpwards(System.String,System.Object)
@@ -1735,16 +1870,19 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: UnityEngine.Component.SendMessageUpwards(System.String)
   commentId: M:UnityEngine.Component.SendMessageUpwards(System.String)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: SendMessageUpwards(string)
   nameWithType: Component.SendMessageUpwards(string)
   fullName: UnityEngine.Component.SendMessageUpwards(string)
@@ -1759,6 +1897,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.SendMessageUpwards(System.String)
@@ -1768,11 +1907,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.Component.SendMessageUpwards(System.String,UnityEngine.SendMessageOptions)
   commentId: M:UnityEngine.Component.SendMessageUpwards(System.String,UnityEngine.SendMessageOptions)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: SendMessageUpwards(string, SendMessageOptions)
   nameWithType: Component.SendMessageUpwards(string, SendMessageOptions)
   fullName: UnityEngine.Component.SendMessageUpwards(string, UnityEngine.SendMessageOptions)
@@ -1787,6 +1928,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -1801,6 +1943,7 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -1811,6 +1954,7 @@ references:
   commentId: M:UnityEngine.Component.SendMessage(System.String,System.Object)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: SendMessage(string, object)
   nameWithType: Component.SendMessage(string, object)
   fullName: UnityEngine.Component.SendMessage(string, object)
@@ -1825,11 +1969,13 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.SendMessage(System.String,System.Object)
@@ -1839,16 +1985,19 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: UnityEngine.Component.SendMessage(System.String)
   commentId: M:UnityEngine.Component.SendMessage(System.String)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: SendMessage(string)
   nameWithType: Component.SendMessage(string)
   fullName: UnityEngine.Component.SendMessage(string)
@@ -1863,6 +2012,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.SendMessage(System.String)
@@ -1872,11 +2022,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.Component.SendMessage(System.String,System.Object,UnityEngine.SendMessageOptions)
   commentId: M:UnityEngine.Component.SendMessage(System.String,System.Object,UnityEngine.SendMessageOptions)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: SendMessage(string, object, SendMessageOptions)
   nameWithType: Component.SendMessage(string, object, SendMessageOptions)
   fullName: UnityEngine.Component.SendMessage(string, object, UnityEngine.SendMessageOptions)
@@ -1891,11 +2043,13 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -1910,11 +2064,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -1925,6 +2081,7 @@ references:
   commentId: M:UnityEngine.Component.SendMessage(System.String,UnityEngine.SendMessageOptions)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: SendMessage(string, SendMessageOptions)
   nameWithType: Component.SendMessage(string, SendMessageOptions)
   fullName: UnityEngine.Component.SendMessage(string, UnityEngine.SendMessageOptions)
@@ -1939,6 +2096,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -1953,6 +2111,7 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -1963,6 +2122,7 @@ references:
   commentId: M:UnityEngine.Component.BroadcastMessage(System.String,System.Object,UnityEngine.SendMessageOptions)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: BroadcastMessage(string, object, SendMessageOptions)
   nameWithType: Component.BroadcastMessage(string, object, SendMessageOptions)
   fullName: UnityEngine.Component.BroadcastMessage(string, object, UnityEngine.SendMessageOptions)
@@ -1977,11 +2137,13 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -1996,11 +2158,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -2011,6 +2175,7 @@ references:
   commentId: M:UnityEngine.Component.BroadcastMessage(System.String,System.Object)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: BroadcastMessage(string, object)
   nameWithType: Component.BroadcastMessage(string, object)
   fullName: UnityEngine.Component.BroadcastMessage(string, object)
@@ -2025,11 +2190,13 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.BroadcastMessage(System.String,System.Object)
@@ -2039,16 +2206,19 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: UnityEngine.Component.BroadcastMessage(System.String)
   commentId: M:UnityEngine.Component.BroadcastMessage(System.String)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: BroadcastMessage(string)
   nameWithType: Component.BroadcastMessage(string)
   fullName: UnityEngine.Component.BroadcastMessage(string)
@@ -2063,6 +2233,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.BroadcastMessage(System.String)
@@ -2072,11 +2243,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.Component.BroadcastMessage(System.String,UnityEngine.SendMessageOptions)
   commentId: M:UnityEngine.Component.BroadcastMessage(System.String,UnityEngine.SendMessageOptions)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: BroadcastMessage(string, SendMessageOptions)
   nameWithType: Component.BroadcastMessage(string, SendMessageOptions)
   fullName: UnityEngine.Component.BroadcastMessage(string, UnityEngine.SendMessageOptions)
@@ -2091,6 +2264,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -2105,6 +2279,7 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -2174,6 +2349,7 @@ references:
   commentId: M:UnityEngine.Object.Equals(System.Object)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: Equals(object)
   nameWithType: Object.Equals(object)
   fullName: UnityEngine.Object.Equals(object)
@@ -2188,6 +2364,7 @@ references:
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Equals(System.Object)
@@ -2197,6 +2374,7 @@ references:
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
   commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
@@ -2362,6 +2540,7 @@ references:
   commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: Instantiate(Object, Transform, bool)
   nameWithType: Object.Instantiate(Object, Transform, bool)
   fullName: UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Transform, bool)
@@ -2386,6 +2565,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
@@ -2405,6 +2585,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.Instantiate``1({T})
   commentId: M:UnityEngine.Object.Instantiate``1(``0)
@@ -2598,6 +2779,7 @@ references:
   commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
   parent: UnityEngine.Object
   definition: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: Instantiate<T>(T, Transform, bool)
   nameWithType: Object.Instantiate<T>(T, Transform, bool)
   fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Transform, bool)
@@ -2623,6 +2805,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
@@ -2645,11 +2828,13 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
   commentId: M:UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
   name: Destroy(Object, float)
   nameWithType: Object.Destroy(Object, float)
   fullName: UnityEngine.Object.Destroy(UnityEngine.Object, float)
@@ -2669,6 +2854,7 @@ references:
   - uid: System.Single
     name: float
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
@@ -2683,6 +2869,7 @@ references:
   - uid: System.Single
     name: Single
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
 - uid: UnityEngine.Object.Destroy(UnityEngine.Object)
   commentId: M:UnityEngine.Object.Destroy(UnityEngine.Object)
@@ -2713,6 +2900,7 @@ references:
   commentId: M:UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: DestroyImmediate(Object, bool)
   nameWithType: Object.DestroyImmediate(Object, bool)
   fullName: UnityEngine.Object.DestroyImmediate(UnityEngine.Object, bool)
@@ -2732,6 +2920,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
@@ -2746,6 +2935,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
   commentId: M:UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
@@ -2776,6 +2966,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsOfType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfType(Type)
   nameWithType: Object.FindObjectsOfType(Type)
   fullName: UnityEngine.Object.FindObjectsOfType(System.Type)
@@ -2787,6 +2978,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfType(System.Type)
@@ -2796,11 +2988,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
   commentId: M:UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfType(Type, bool)
   nameWithType: Object.FindObjectsOfType(Type, bool)
   fullName: UnityEngine.Object.FindObjectsOfType(System.Type, bool)
@@ -2815,11 +3009,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
@@ -2829,16 +3025,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsSortMode)
   commentId: M:UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsSortMode)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsByType(Type, FindObjectsSortMode)
   nameWithType: Object.FindObjectsByType(Type, FindObjectsSortMode)
   fullName: UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsSortMode)
@@ -2850,6 +3049,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsSortMode
@@ -2864,6 +3064,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsSortMode
@@ -2874,6 +3075,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)
   nameWithType: Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)
   fullName: UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsInactive, UnityEngine.FindObjectsSortMode)
@@ -2885,6 +3087,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -2904,6 +3107,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -2944,6 +3148,7 @@ references:
   commentId: M:UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
   name: DestroyObject(Object, float)
   nameWithType: Object.DestroyObject(Object, float)
   fullName: UnityEngine.Object.DestroyObject(UnityEngine.Object, float)
@@ -2963,6 +3168,7 @@ references:
   - uid: System.Single
     name: float
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
@@ -2977,6 +3183,7 @@ references:
   - uid: System.Single
     name: Single
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
 - uid: UnityEngine.Object.DestroyObject(UnityEngine.Object)
   commentId: M:UnityEngine.Object.DestroyObject(UnityEngine.Object)
@@ -3007,6 +3214,7 @@ references:
   commentId: M:UnityEngine.Object.FindSceneObjectsOfType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindSceneObjectsOfType(Type)
   nameWithType: Object.FindSceneObjectsOfType(Type)
   fullName: UnityEngine.Object.FindSceneObjectsOfType(System.Type)
@@ -3018,6 +3226,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindSceneObjectsOfType(System.Type)
@@ -3027,11 +3236,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
   commentId: M:UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfTypeIncludingAssets(Type)
   nameWithType: Object.FindObjectsOfTypeIncludingAssets(Type)
   fullName: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
@@ -3043,6 +3254,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
@@ -3052,6 +3264,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectsOfType``1
   commentId: M:UnityEngine.Object.FindObjectsOfType``1
@@ -3123,6 +3336,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: FindObjectsOfType<T>(bool)
   nameWithType: Object.FindObjectsOfType<T>(bool)
   fullName: UnityEngine.Object.FindObjectsOfType<T>(bool)
@@ -3140,6 +3354,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
@@ -3154,6 +3369,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
   commentId: M:UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
@@ -3235,6 +3451,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectOfType``1(System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: FindObjectOfType<T>(bool)
   nameWithType: Object.FindObjectOfType<T>(bool)
   fullName: UnityEngine.Object.FindObjectOfType<T>(bool)
@@ -3252,6 +3469,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectOfType``1(System.Boolean)
@@ -3266,6 +3484,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindFirstObjectByType``1
   commentId: M:UnityEngine.Object.FindFirstObjectByType``1
@@ -3403,6 +3622,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfTypeAll(Type)
   nameWithType: Object.FindObjectsOfTypeAll(Type)
   fullName: UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
@@ -3414,6 +3634,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
@@ -3423,11 +3644,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectOfType(System.Type)
   commentId: M:UnityEngine.Object.FindObjectOfType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectOfType(Type)
   nameWithType: Object.FindObjectOfType(Type)
   fullName: UnityEngine.Object.FindObjectOfType(System.Type)
@@ -3439,6 +3662,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectOfType(System.Type)
@@ -3448,11 +3672,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindFirstObjectByType(System.Type)
   commentId: M:UnityEngine.Object.FindFirstObjectByType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindFirstObjectByType(Type)
   nameWithType: Object.FindFirstObjectByType(Type)
   fullName: UnityEngine.Object.FindFirstObjectByType(System.Type)
@@ -3464,6 +3690,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindFirstObjectByType(System.Type)
@@ -3473,11 +3700,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindAnyObjectByType(System.Type)
   commentId: M:UnityEngine.Object.FindAnyObjectByType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindAnyObjectByType(Type)
   nameWithType: Object.FindAnyObjectByType(Type)
   fullName: UnityEngine.Object.FindAnyObjectByType(System.Type)
@@ -3489,6 +3718,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindAnyObjectByType(System.Type)
@@ -3498,11 +3728,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
   commentId: M:UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectOfType(Type, bool)
   nameWithType: Object.FindObjectOfType(Type, bool)
   fullName: UnityEngine.Object.FindObjectOfType(System.Type, bool)
@@ -3517,11 +3749,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
@@ -3531,16 +3765,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindFirstObjectByType(System.Type,UnityEngine.FindObjectsInactive)
   commentId: M:UnityEngine.Object.FindFirstObjectByType(System.Type,UnityEngine.FindObjectsInactive)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindFirstObjectByType(Type, FindObjectsInactive)
   nameWithType: Object.FindFirstObjectByType(Type, FindObjectsInactive)
   fullName: UnityEngine.Object.FindFirstObjectByType(System.Type, UnityEngine.FindObjectsInactive)
@@ -3552,6 +3789,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -3566,6 +3804,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -3576,6 +3815,7 @@ references:
   commentId: M:UnityEngine.Object.FindAnyObjectByType(System.Type,UnityEngine.FindObjectsInactive)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindAnyObjectByType(Type, FindObjectsInactive)
   nameWithType: Object.FindAnyObjectByType(Type, FindObjectsInactive)
   fullName: UnityEngine.Object.FindAnyObjectByType(System.Type, UnityEngine.FindObjectsInactive)
@@ -3587,6 +3827,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -3601,6 +3842,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -3643,6 +3885,7 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
@@ -3688,6 +3931,7 @@ references:
 - uid: UnityEngine.Component.GetComponentsInChildren``1(System.Boolean,System.Collections.Generic.List{``0})
   commentId: M:UnityEngine.Component.GetComponentsInChildren``1(System.Boolean,System.Collections.Generic.List{``0})
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: GetComponentsInChildren<T>(bool, List<T>)
   nameWithType: Component.GetComponentsInChildren<T>(bool, List<T>)
   fullName: UnityEngine.Component.GetComponentsInChildren<T>(bool, System.Collections.Generic.List<T>)
@@ -3705,11 +3949,13 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -3727,11 +3973,13 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -3741,6 +3989,7 @@ references:
 - uid: UnityEngine.Component.GetComponentsInChildren``1(System.Collections.Generic.List{``0})
   commentId: M:UnityEngine.Component.GetComponentsInChildren``1(System.Collections.Generic.List{``0})
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: GetComponentsInChildren<T>(List<T>)
   nameWithType: Component.GetComponentsInChildren<T>(List<T>)
   fullName: UnityEngine.Component.GetComponentsInChildren<T>(System.Collections.Generic.List<T>)
@@ -3758,6 +4007,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -3775,6 +4025,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -3784,6 +4035,7 @@ references:
 - uid: UnityEngine.Component.GetComponentsInParent``1(System.Boolean,System.Collections.Generic.List{``0})
   commentId: M:UnityEngine.Component.GetComponentsInParent``1(System.Boolean,System.Collections.Generic.List{``0})
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: GetComponentsInParent<T>(bool, List<T>)
   nameWithType: Component.GetComponentsInParent<T>(bool, List<T>)
   fullName: UnityEngine.Component.GetComponentsInParent<T>(bool, System.Collections.Generic.List<T>)
@@ -3801,11 +4053,13 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -3823,11 +4077,13 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -3837,6 +4093,7 @@ references:
 - uid: UnityEngine.Component.GetComponents``1(System.Collections.Generic.List{``0})
   commentId: M:UnityEngine.Component.GetComponents``1(System.Collections.Generic.List{``0})
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: GetComponents<T>(List<T>)
   nameWithType: Component.GetComponents<T>(List<T>)
   fullName: UnityEngine.Component.GetComponents<T>(System.Collections.Generic.List<T>)
@@ -3854,6 +4111,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -3871,6 +4129,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -4064,6 +4323,7 @@ references:
 - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
   commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: Instantiate<T>(T, Transform, bool)
   nameWithType: Object.Instantiate<T>(T, Transform, bool)
   fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Transform, bool)
@@ -4089,6 +4349,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
@@ -4111,4 +4372,5 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )

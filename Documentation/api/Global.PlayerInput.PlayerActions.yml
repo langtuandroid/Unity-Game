@@ -10,12 +10,10 @@ items:
   - Global.PlayerInput.PlayerActions.Attack
   - Global.PlayerInput.PlayerActions.Disable
   - Global.PlayerInput.PlayerActions.Enable
-  - Global.PlayerInput.PlayerActions.enabled
   - Global.PlayerInput.PlayerActions.Get
   - Global.PlayerInput.PlayerActions.Guard
   - Global.PlayerInput.PlayerActions.Move
   - Global.PlayerInput.PlayerActions.NextInteractable
-  - Global.PlayerInput.PlayerActions.op_Implicit(PlayerInput.PlayerActions)~UnityEngine.InputSystem.InputActionMap
   - Global.PlayerInput.PlayerActions.PauseResume
   - Global.PlayerInput.PlayerActions.PreviousInteractable
   - Global.PlayerInput.PlayerActions.PrimaryInteraction
@@ -24,6 +22,8 @@ items:
   - Global.PlayerInput.PlayerActions.SecondaryInteraction
   - Global.PlayerInput.PlayerActions.SetCallbacks(PlayerInput.IPlayerActions)
   - Global.PlayerInput.PlayerActions.Shoot
+  - Global.PlayerInput.PlayerActions.enabled
+  - Global.PlayerInput.PlayerActions.op_Implicit(PlayerInput.PlayerActions)~UnityEngine.InputSystem.InputActionMap
   langs:
   - csharp
   - vb
@@ -33,12 +33,12 @@ items:
   type: Struct
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: PlayerActions
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 363
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public struct PlayerInput.PlayerActions
@@ -56,12 +56,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: .ctor
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 366
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public PlayerActions(PlayerInput wrapper)
@@ -86,12 +86,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: Move
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 367
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public InputAction Move { get; }
@@ -113,12 +113,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: Attack
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 368
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public InputAction Attack { get; }
@@ -140,12 +140,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: Guard
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 369
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public InputAction Guard { get; }
@@ -167,12 +167,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: PauseResume
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 370
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public InputAction PauseResume { get; }
@@ -194,12 +194,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: PrimaryInteraction
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 371
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public InputAction PrimaryInteraction { get; }
@@ -221,12 +221,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: SecondaryInteraction
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 372
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public InputAction SecondaryInteraction { get; }
@@ -248,12 +248,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: NextInteractable
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 373
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public InputAction NextInteractable { get; }
@@ -275,12 +275,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: PreviousInteractable
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 374
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public InputAction PreviousInteractable { get; }
@@ -302,12 +302,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: Rotate
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 375
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public InputAction Rotate { get; }
@@ -329,12 +329,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: Shoot
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 376
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public InputAction Shoot { get; }
@@ -356,12 +356,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: Get
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 377
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public InputActionMap Get()
@@ -382,12 +382,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: Enable
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 378
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public void Enable()
@@ -406,12 +406,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: Disable
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 379
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public void Disable()
@@ -430,12 +430,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: enabled
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 380
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public bool enabled { get; }
@@ -457,12 +457,12 @@ items:
   type: Operator
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: op_Implicit
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 381
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public static implicit operator InputActionMap(PlayerInput.PlayerActions set)
@@ -489,12 +489,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: AddCallbacks
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 382
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public void AddCallbacks(PlayerInput.IPlayerActions instance)
@@ -516,12 +516,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: RemoveCallbacks
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 452
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public void RemoveCallbacks(PlayerInput.IPlayerActions instance)
@@ -543,12 +543,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Input/PlayerInput.cs
+      path: H:/Stuff/BallField/Assets/GameScripts/Input/PlayerInput.cs
     id: SetCallbacks
-    path: ../Assets/Scripts/Input/PlayerInput.cs
+    path: ../Assets/GameScripts/Input/PlayerInput.cs
     startLine: 458
   assemblies:
-  - MyScripts
+  - GameScripts
   namespace: Global
   syntax:
     content: public void SetCallbacks(PlayerInput.IPlayerActions instance)
@@ -561,6 +561,7 @@ references:
 - uid: Global
 - uid: Global.PlayerInput.PlayerActions.#ctor*
   commentId: Overload:Global.PlayerInput.PlayerActions.#ctor
+  href: Global.PlayerInput.PlayerActions.html#PlayerInput.PlayerActions.#ctor(PlayerInput)
   name: PlayerActions
   nameWithType: PlayerInput.PlayerActions.PlayerActions
   fullName: PlayerInput.PlayerActions.PlayerActions
@@ -569,11 +570,13 @@ references:
   name.vb: New
 - uid: Global.PlayerInput
   commentId: T:Global.PlayerInput
+  href: PlayerInput.html
   name: PlayerInput
   nameWithType: PlayerInput
   fullName: PlayerInput
 - uid: Global.PlayerInput.PlayerActions.Move*
   commentId: Overload:Global.PlayerInput.PlayerActions.Move
+  href: Global.PlayerInput.PlayerActions.html#PlayerInput.PlayerActions.Move
   name: Move
   nameWithType: PlayerInput.PlayerActions.Move
   fullName: PlayerInput.PlayerActions.Move
@@ -608,51 +611,61 @@ references:
     isExternal: true
 - uid: Global.PlayerInput.PlayerActions.Attack*
   commentId: Overload:Global.PlayerInput.PlayerActions.Attack
+  href: Global.PlayerInput.PlayerActions.html#PlayerInput.PlayerActions.Attack
   name: Attack
   nameWithType: PlayerInput.PlayerActions.Attack
   fullName: PlayerInput.PlayerActions.Attack
 - uid: Global.PlayerInput.PlayerActions.Guard*
   commentId: Overload:Global.PlayerInput.PlayerActions.Guard
+  href: Global.PlayerInput.PlayerActions.html#PlayerInput.PlayerActions.Guard
   name: Guard
   nameWithType: PlayerInput.PlayerActions.Guard
   fullName: PlayerInput.PlayerActions.Guard
 - uid: Global.PlayerInput.PlayerActions.PauseResume*
   commentId: Overload:Global.PlayerInput.PlayerActions.PauseResume
+  href: Global.PlayerInput.PlayerActions.html#PlayerInput.PlayerActions.PauseResume
   name: PauseResume
   nameWithType: PlayerInput.PlayerActions.PauseResume
   fullName: PlayerInput.PlayerActions.PauseResume
 - uid: Global.PlayerInput.PlayerActions.PrimaryInteraction*
   commentId: Overload:Global.PlayerInput.PlayerActions.PrimaryInteraction
+  href: Global.PlayerInput.PlayerActions.html#PlayerInput.PlayerActions.PrimaryInteraction
   name: PrimaryInteraction
   nameWithType: PlayerInput.PlayerActions.PrimaryInteraction
   fullName: PlayerInput.PlayerActions.PrimaryInteraction
 - uid: Global.PlayerInput.PlayerActions.SecondaryInteraction*
   commentId: Overload:Global.PlayerInput.PlayerActions.SecondaryInteraction
+  href: Global.PlayerInput.PlayerActions.html#PlayerInput.PlayerActions.SecondaryInteraction
   name: SecondaryInteraction
   nameWithType: PlayerInput.PlayerActions.SecondaryInteraction
   fullName: PlayerInput.PlayerActions.SecondaryInteraction
 - uid: Global.PlayerInput.PlayerActions.NextInteractable*
   commentId: Overload:Global.PlayerInput.PlayerActions.NextInteractable
+  href: Global.PlayerInput.PlayerActions.html#PlayerInput.PlayerActions.NextInteractable
   name: NextInteractable
   nameWithType: PlayerInput.PlayerActions.NextInteractable
   fullName: PlayerInput.PlayerActions.NextInteractable
 - uid: Global.PlayerInput.PlayerActions.PreviousInteractable*
   commentId: Overload:Global.PlayerInput.PlayerActions.PreviousInteractable
+  href: Global.PlayerInput.PlayerActions.html#PlayerInput.PlayerActions.PreviousInteractable
   name: PreviousInteractable
   nameWithType: PlayerInput.PlayerActions.PreviousInteractable
   fullName: PlayerInput.PlayerActions.PreviousInteractable
 - uid: Global.PlayerInput.PlayerActions.Rotate*
   commentId: Overload:Global.PlayerInput.PlayerActions.Rotate
+  href: Global.PlayerInput.PlayerActions.html#PlayerInput.PlayerActions.Rotate
   name: Rotate
   nameWithType: PlayerInput.PlayerActions.Rotate
   fullName: PlayerInput.PlayerActions.Rotate
 - uid: Global.PlayerInput.PlayerActions.Shoot*
   commentId: Overload:Global.PlayerInput.PlayerActions.Shoot
+  href: Global.PlayerInput.PlayerActions.html#PlayerInput.PlayerActions.Shoot
   name: Shoot
   nameWithType: PlayerInput.PlayerActions.Shoot
   fullName: PlayerInput.PlayerActions.Shoot
 - uid: Global.PlayerInput.PlayerActions.Get*
   commentId: Overload:Global.PlayerInput.PlayerActions.Get
+  href: Global.PlayerInput.PlayerActions.html#PlayerInput.PlayerActions.Get
   name: Get
   nameWithType: PlayerInput.PlayerActions.Get
   fullName: PlayerInput.PlayerActions.Get
@@ -665,16 +678,19 @@ references:
   fullName: UnityEngine.InputSystem.InputActionMap
 - uid: Global.PlayerInput.PlayerActions.Enable*
   commentId: Overload:Global.PlayerInput.PlayerActions.Enable
+  href: Global.PlayerInput.PlayerActions.html#PlayerInput.PlayerActions.Enable
   name: Enable
   nameWithType: PlayerInput.PlayerActions.Enable
   fullName: PlayerInput.PlayerActions.Enable
 - uid: Global.PlayerInput.PlayerActions.Disable*
   commentId: Overload:Global.PlayerInput.PlayerActions.Disable
+  href: Global.PlayerInput.PlayerActions.html#PlayerInput.PlayerActions.Disable
   name: Disable
   nameWithType: PlayerInput.PlayerActions.Disable
   fullName: PlayerInput.PlayerActions.Disable
 - uid: Global.PlayerInput.PlayerActions.enabled*
   commentId: Overload:Global.PlayerInput.PlayerActions.enabled
+  href: Global.PlayerInput.PlayerActions.html#PlayerInput.PlayerActions.enabled
   name: enabled
   nameWithType: PlayerInput.PlayerActions.enabled
   fullName: PlayerInput.PlayerActions.enabled
@@ -682,6 +698,7 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
@@ -691,6 +708,7 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
@@ -708,50 +726,63 @@ references:
   - name: operator
 - uid: Global.PlayerInput.PlayerActions
   commentId: T:Global.PlayerInput.PlayerActions
+  href: PlayerInput.html
   name: PlayerInput.PlayerActions
   nameWithType: PlayerInput.PlayerActions
   fullName: PlayerInput.PlayerActions
   spec.csharp:
   - uid: Global.PlayerInput
     name: PlayerInput
+    href: PlayerInput.html
   - name: .
   - uid: Global.PlayerInput.PlayerActions
     name: PlayerActions
+    href: PlayerInput.PlayerActions.html
   spec.vb:
   - uid: Global.PlayerInput
     name: PlayerInput
+    href: PlayerInput.html
   - name: .
   - uid: Global.PlayerInput.PlayerActions
     name: PlayerActions
+    href: PlayerInput.PlayerActions.html
 - uid: Global.PlayerInput.PlayerActions.AddCallbacks*
   commentId: Overload:Global.PlayerInput.PlayerActions.AddCallbacks
+  href: Global.PlayerInput.PlayerActions.html#PlayerInput.PlayerActions.AddCallbacks(PlayerInput.IPlayerActions)
   name: AddCallbacks
   nameWithType: PlayerInput.PlayerActions.AddCallbacks
   fullName: PlayerInput.PlayerActions.AddCallbacks
 - uid: Global.PlayerInput.IPlayerActions
   commentId: T:Global.PlayerInput.IPlayerActions
+  href: PlayerInput.html
   name: PlayerInput.IPlayerActions
   nameWithType: PlayerInput.IPlayerActions
   fullName: PlayerInput.IPlayerActions
   spec.csharp:
   - uid: Global.PlayerInput
     name: PlayerInput
+    href: PlayerInput.html
   - name: .
   - uid: Global.PlayerInput.IPlayerActions
     name: IPlayerActions
+    href: PlayerInput.IPlayerActions.html
   spec.vb:
   - uid: Global.PlayerInput
     name: PlayerInput
+    href: PlayerInput.html
   - name: .
   - uid: Global.PlayerInput.IPlayerActions
     name: IPlayerActions
+    href: PlayerInput.IPlayerActions.html
 - uid: Global.PlayerInput.PlayerActions.RemoveCallbacks*
   commentId: Overload:Global.PlayerInput.PlayerActions.RemoveCallbacks
+  href: Global.PlayerInput.PlayerActions.html#PlayerInput.PlayerActions.RemoveCallbacks(PlayerInput.IPlayerActions)
   name: RemoveCallbacks
   nameWithType: PlayerInput.PlayerActions.RemoveCallbacks
   fullName: PlayerInput.PlayerActions.RemoveCallbacks
 - uid: Global.PlayerInput.PlayerActions.SetCallbacks*
   commentId: Overload:Global.PlayerInput.PlayerActions.SetCallbacks
+  href: Global.PlayerInput.PlayerActions.html#PlayerInput.PlayerActions.SetCallbacks(PlayerInput.IPlayerActions)
   name: SetCallbacks
   nameWithType: PlayerInput.PlayerActions.SetCallbacks
   fullName: PlayerInput.PlayerActions.SetCallbacks

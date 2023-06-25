@@ -16,14 +16,14 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/BufferedStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedStat.cs
     id: IntSum
-    path: ../Assets/Scripts/Utility/BufferedStat.cs
+    path: ../Assets/Framework/Utility/BufferedStat.cs
     startLine: 69
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility.BufferedStats
-  summary: "\nValue is the sum of all effectors\n"
+  summary: Value is the sum of all effectors
   example: []
   syntax:
     content: 'public class IntSum : BufferedStat<int>'
@@ -53,12 +53,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/BufferedStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedStat.cs
     id: .ctor
-    path: ../Assets/Scripts/Utility/BufferedStat.cs
+    path: ../Assets/Framework/Utility/BufferedStat.cs
     startLine: 71
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility.BufferedStats
   syntax:
     content: public IntSum(int value)
@@ -83,13 +83,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/BufferedStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedStat.cs
     id: Value
-    path: ../Assets/Scripts/Utility/BufferedStat.cs
+    path: ../Assets/Framework/Utility/BufferedStat.cs
     startLine: 75
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility.BufferedStats
+  example: []
   syntax:
     content: protected override int Value()
     return:
@@ -100,31 +101,39 @@ items:
 references:
 - uid: LobsterFramework.Utility.BufferedStats
   commentId: N:LobsterFramework.Utility.BufferedStats
+  href: LobsterFramework.html
   name: LobsterFramework.Utility.BufferedStats
   nameWithType: LobsterFramework.Utility.BufferedStats
   fullName: LobsterFramework.Utility.BufferedStats
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
   - name: .
   - uid: LobsterFramework.Utility.BufferedStats
     name: BufferedStats
+    href: LobsterFramework.Utility.BufferedStats.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
   - name: .
   - uid: LobsterFramework.Utility.BufferedStats
     name: BufferedStats
+    href: LobsterFramework.Utility.BufferedStats.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -135,6 +144,7 @@ references:
   commentId: T:LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}
   parent: LobsterFramework.Utility.BufferedStats
   definition: LobsterFramework.Utility.BufferedStats.BufferedStat`1
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html
   name: BufferedStat<int>
   nameWithType: BufferedStat<int>
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<int>
@@ -144,25 +154,30 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1
     name: BufferedStat
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html
   - name: <
   - uid: System.Int32
     name: int
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: '>'
   spec.vb:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1
     name: BufferedStat
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html
   - name: (
   - name: Of
   - name: " "
   - uid: System.Int32
     name: Integer
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.stats
   commentId: F:LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.stats
   parent: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}
   definition: LobsterFramework.Utility.BufferedStats.BufferedStat`1.stats
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.stats
   name: stats
   nameWithType: BufferedStat<int>.stats
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<int>.stats
@@ -172,6 +187,7 @@ references:
   commentId: F:LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.baseValue
   parent: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}
   definition: LobsterFramework.Utility.BufferedStats.BufferedStat`1.baseValue
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.baseValue
   name: baseValue
   nameWithType: BufferedStat<int>.baseValue
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<int>.baseValue
@@ -181,6 +197,7 @@ references:
   commentId: P:LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.Stat
   parent: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}
   definition: LobsterFramework.Utility.BufferedStats.BufferedStat`1.Stat
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.Stat
   name: Stat
   nameWithType: BufferedStat<int>.Stat
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<int>.Stat
@@ -190,6 +207,7 @@ references:
   commentId: M:LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.Compatible(System.Int32)
   parent: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}
   definition: LobsterFramework.Utility.BufferedStats.BufferedStat`1.Compatible(`0)
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.Compatible(System.Int32)
   name: Compatible(int)
   nameWithType: BufferedStat<int>.Compatible(int)
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<int>.Compatible(int)
@@ -199,23 +217,28 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.Compatible(System.Int32)
     name: Compatible
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.Compatible(System.Int32)
   - name: (
   - uid: System.Int32
     name: int
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.Compatible(System.Int32)
     name: Compatible
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.Compatible(System.Int32)
   - name: (
   - uid: System.Int32
     name: Integer
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.AddEffector(System.Int32)
   commentId: M:LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.AddEffector(System.Int32)
   parent: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}
   definition: LobsterFramework.Utility.BufferedStats.BufferedStat`1.AddEffector(`0)
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.AddEffector(System.Int32)
   name: AddEffector(int)
   nameWithType: BufferedStat<int>.AddEffector(int)
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<int>.AddEffector(int)
@@ -225,23 +248,28 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.AddEffector(System.Int32)
     name: AddEffector
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.AddEffector(System.Int32)
   - name: (
   - uid: System.Int32
     name: int
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.AddEffector(System.Int32)
     name: AddEffector
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.AddEffector(System.Int32)
   - name: (
   - uid: System.Int32
     name: Integer
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.RemoveEffector(System.Int32)
   commentId: M:LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.RemoveEffector(System.Int32)
   parent: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}
   definition: LobsterFramework.Utility.BufferedStats.BufferedStat`1.RemoveEffector(System.Int32)
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.RemoveEffector(System.Int32)
   name: RemoveEffector(int)
   nameWithType: BufferedStat<int>.RemoveEffector(int)
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<int>.RemoveEffector(int)
@@ -251,23 +279,28 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.RemoveEffector(System.Int32)
     name: RemoveEffector
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.RemoveEffector(System.Int32)
   - name: (
   - uid: System.Int32
     name: int
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.RemoveEffector(System.Int32)
     name: RemoveEffector
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.RemoveEffector(System.Int32)
   - name: (
   - uid: System.Int32
     name: Integer
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.SetEffector(System.Int32,System.Int32)
   commentId: M:LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.SetEffector(System.Int32,System.Int32)
   parent: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}
   definition: LobsterFramework.Utility.BufferedStats.BufferedStat`1.SetEffector(System.Int32,`0)
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.SetEffector(System.Int32,System.Int32)
   name: SetEffector(int, int)
   nameWithType: BufferedStat<int>.SetEffector(int, int)
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<int>.SetEffector(int, int)
@@ -277,33 +310,40 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.SetEffector(System.Int32,System.Int32)
     name: SetEffector
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.SetEffector(System.Int32,System.Int32)
   - name: (
   - uid: System.Int32
     name: int
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: ','
   - name: " "
   - uid: System.Int32
     name: int
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.SetEffector(System.Int32,System.Int32)
     name: SetEffector
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.SetEffector(System.Int32,System.Int32)
   - name: (
   - uid: System.Int32
     name: Integer
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: ','
   - name: " "
   - uid: System.Int32
     name: Integer
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.ClearEffectors
   commentId: M:LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.ClearEffectors
   parent: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}
   definition: LobsterFramework.Utility.BufferedStats.BufferedStat`1.ClearEffectors
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.ClearEffectors
   name: ClearEffectors()
   nameWithType: BufferedStat<int>.ClearEffectors()
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<int>.ClearEffectors()
@@ -312,21 +352,25 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.ClearEffectors
     name: ClearEffectors
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.ClearEffectors
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.ClearEffectors
     name: ClearEffectors
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.ClearEffectors
   - name: (
   - name: )
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1
   commentId: T:LobsterFramework.Utility.BufferedStats.BufferedStat`1
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html
   name: BufferedStat<T>
   nameWithType: BufferedStat<T>
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>
@@ -336,12 +380,14 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1
     name: BufferedStat
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html
   - name: <
   - name: T
   - name: '>'
   spec.vb:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1
     name: BufferedStat
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html
   - name: (
   - name: Of
   - name: " "
@@ -349,6 +395,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.stats
   commentId: F:LobsterFramework.Utility.BufferedStats.BufferedStat`1.stats
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.stats
   name: stats
   nameWithType: BufferedStat<T>.stats
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>.stats
@@ -356,6 +403,7 @@ references:
   fullName.vb: LobsterFramework.Utility.BufferedStats.BufferedStat(Of T).stats
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.baseValue
   commentId: F:LobsterFramework.Utility.BufferedStats.BufferedStat`1.baseValue
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.baseValue
   name: baseValue
   nameWithType: BufferedStat<T>.baseValue
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>.baseValue
@@ -363,6 +411,7 @@ references:
   fullName.vb: LobsterFramework.Utility.BufferedStats.BufferedStat(Of T).baseValue
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.Stat
   commentId: P:LobsterFramework.Utility.BufferedStats.BufferedStat`1.Stat
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.Stat
   name: Stat
   nameWithType: BufferedStat<T>.Stat
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>.Stat
@@ -370,6 +419,7 @@ references:
   fullName.vb: LobsterFramework.Utility.BufferedStats.BufferedStat(Of T).Stat
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.Compatible(`0)
   commentId: M:LobsterFramework.Utility.BufferedStats.BufferedStat`1.Compatible(`0)
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.Compatible(`0)
   name: Compatible(T)
   nameWithType: BufferedStat<T>.Compatible(T)
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>.Compatible(T)
@@ -378,17 +428,20 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.Compatible(`0)
     name: Compatible
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.Compatible(`0)
   - name: (
   - name: T
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.Compatible(`0)
     name: Compatible
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.Compatible(`0)
   - name: (
   - name: T
   - name: )
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.AddEffector(`0)
   commentId: M:LobsterFramework.Utility.BufferedStats.BufferedStat`1.AddEffector(`0)
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.AddEffector(`0)
   name: AddEffector(T)
   nameWithType: BufferedStat<T>.AddEffector(T)
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>.AddEffector(T)
@@ -397,18 +450,21 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.AddEffector(`0)
     name: AddEffector
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.AddEffector(`0)
   - name: (
   - name: T
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.AddEffector(`0)
     name: AddEffector
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.AddEffector(`0)
   - name: (
   - name: T
   - name: )
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.RemoveEffector(System.Int32)
   commentId: M:LobsterFramework.Utility.BufferedStats.BufferedStat`1.RemoveEffector(System.Int32)
   isExternal: true
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.RemoveEffector(System.Int32)
   name: RemoveEffector(int)
   nameWithType: BufferedStat<T>.RemoveEffector(int)
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>.RemoveEffector(int)
@@ -418,22 +474,27 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.RemoveEffector(System.Int32)
     name: RemoveEffector
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.RemoveEffector(System.Int32)
   - name: (
   - uid: System.Int32
     name: int
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.RemoveEffector(System.Int32)
     name: RemoveEffector
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.RemoveEffector(System.Int32)
   - name: (
   - uid: System.Int32
     name: Integer
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.SetEffector(System.Int32,`0)
   commentId: M:LobsterFramework.Utility.BufferedStats.BufferedStat`1.SetEffector(System.Int32,`0)
   isExternal: true
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.SetEffector(System.Int32,`0)
   name: SetEffector(int, T)
   nameWithType: BufferedStat<T>.SetEffector(int, T)
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>.SetEffector(int, T)
@@ -443,10 +504,12 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.SetEffector(System.Int32,`0)
     name: SetEffector
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.SetEffector(System.Int32,`0)
   - name: (
   - uid: System.Int32
     name: int
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: ','
   - name: " "
   - name: T
@@ -454,16 +517,19 @@ references:
   spec.vb:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.SetEffector(System.Int32,`0)
     name: SetEffector
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.SetEffector(System.Int32,`0)
   - name: (
   - uid: System.Int32
     name: Integer
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: ','
   - name: " "
   - name: T
   - name: )
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.ClearEffectors
   commentId: M:LobsterFramework.Utility.BufferedStats.BufferedStat`1.ClearEffectors
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.ClearEffectors
   name: ClearEffectors()
   nameWithType: BufferedStat<T>.ClearEffectors()
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>.ClearEffectors()
@@ -472,15 +538,18 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.ClearEffectors
     name: ClearEffectors
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.ClearEffectors
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.ClearEffectors
     name: ClearEffectors
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.ClearEffectors
   - name: (
   - name: )
 - uid: LobsterFramework.Utility.BufferedStats.IntSum.#ctor*
   commentId: Overload:LobsterFramework.Utility.BufferedStats.IntSum.#ctor
+  href: LobsterFramework.Utility.BufferedStats.IntSum.html#LobsterFramework.Utility.BufferedStats.IntSum.#ctor(System.Int32)
   name: IntSum
   nameWithType: IntSum.IntSum
   fullName: LobsterFramework.Utility.BufferedStats.IntSum.IntSum
@@ -491,6 +560,7 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
   name: int
   nameWithType: int
   fullName: int
@@ -501,6 +571,7 @@ references:
   commentId: M:LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.Value
   parent: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}
   definition: LobsterFramework.Utility.BufferedStats.BufferedStat`1.Value
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.Value
   name: Value()
   nameWithType: BufferedStat<int>.Value()
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<int>.Value()
@@ -509,20 +580,24 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.Value
     name: Value
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.Value
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.Value
     name: Value
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.html#LobsterFramework.Utility.BufferedStats.BufferedStat{System.Int32}.Value
   - name: (
   - name: )
 - uid: LobsterFramework.Utility.BufferedStats.IntSum.Value*
   commentId: Overload:LobsterFramework.Utility.BufferedStats.IntSum.Value
+  href: LobsterFramework.Utility.BufferedStats.IntSum.html#LobsterFramework.Utility.BufferedStats.IntSum.Value
   name: Value
   nameWithType: IntSum.Value
   fullName: LobsterFramework.Utility.BufferedStats.IntSum.Value
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.Value
   commentId: M:LobsterFramework.Utility.BufferedStats.BufferedStat`1.Value
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.Value
   name: Value()
   nameWithType: BufferedStat<T>.Value()
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>.Value()
@@ -531,10 +606,12 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.Value
     name: Value
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.Value
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.Value
     name: Value
+    href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.Value
   - name: (
   - name: )

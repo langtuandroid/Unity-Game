@@ -12,7 +12,7 @@
  | LobsterFramework documentation ">
     
       <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
       <link rel="stylesheet" href="../styles/main.css">
       <meta property="docfx:navrel" content="../toc.html">
@@ -80,6 +80,7 @@
             <article class="content wrap" id="_content" data-uid="LobsterFramework.AbilitySystem.Weapon.WeaponAbility">
 
 
+
   <h1 id="LobsterFramework_AbilitySystem_Weapon_WeaponAbility" data-uid="LobsterFramework.AbilitySystem.Weapon.WeaponAbility" class="text-break">Class WeaponAbility
 </h1>
   <div class="markdown level0 summary"></div>
@@ -91,7 +92,6 @@
     <div class="level2"><a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.html">ScriptableObject</a></div>
     <div class="level3"><a class="xref" href="LobsterFramework.AbilitySystem.Ability.html">Ability</a></div>
     <div class="level4"><span class="xref">WeaponAbility</span></div>
-      <div class="level5"><a class="xref" href="LobsterFramework.AbilitySystem.Weapon.TestWeapon.html">TestWeapon</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -100,9 +100,6 @@
     </div>
     <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_abilityPriority">Ability.abilityPriority</a>
-    </div>
-    <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_AddConfig_System_String_">Ability.AddConfig(string)</a>
     </div>
     <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_RemoveConfig_System_String_">Ability.RemoveConfig(string)</a>
@@ -115,6 +112,9 @@
     </div>
     <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_CompareByEnqueuePriority_LobsterFramework_AbilitySystem_Ability_">Ability.CompareByEnqueuePriority(Ability)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_ConditionSatisfied_LobsterFramework_AbilitySystem_Ability_AbilityConfig_">Ability.ConditionSatisfied(Ability.AbilityConfig)</a>
     </div>
     <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_RunningCount">Ability.RunningCount()</a>
@@ -144,9 +144,6 @@
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_ResetStatus">Ability.ResetStatus()</a>
     </div>
     <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_OnDestroy">Ability.OnDestroy()</a>
-    </div>
-    <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_SaveConfigsAsAsset">Ability.SaveConfigsAsAsset()</a>
     </div>
     <div>
@@ -157,9 +154,6 @@
     </div>
     <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_OnAnimationInterrupt_LobsterFramework_AbilitySystem_Ability_AbilityConfig_">Ability.OnAnimationInterrupt(Ability.AbilityConfig)</a>
-    </div>
-    <div>
-      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_InterruptAnimation_System_String_">Ability.InterruptAnimation(string)</a>
     </div>
     <div>
       <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_OnEnqueue_LobsterFramework_AbilitySystem_Ability_AbilityConfig_System_String_">Ability.OnEnqueue(Ability.AbilityConfig, string)</a>
@@ -177,10 +171,10 @@
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.SetDirty.html">ScriptableObject.SetDirty()</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.CreateInstance.html">ScriptableObject.CreateInstance(string)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ScriptableObject.CreateInstance(string)</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.CreateInstance.html">ScriptableObject.CreateInstance(Type)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">ScriptableObject.CreateInstance(Type)</a>
     </div>
     <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.CreateInstance.html">ScriptableObject.CreateInstance&lt;T&gt;()</a>
@@ -192,127 +186,127 @@
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.GetHashCode.html">Object.GetHashCode()</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Equals.html">Object.Equals(object)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object.Equals(object)</a>
     </div>
     <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate(Object, Vector3, Quaternion)</a>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)</span>
+      <span class="xref">Object.Instantiate(Object, Vector3, Quaternion, Transform)</span>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.Instantiate(UnityEngine.Object)</span>
+      <span class="xref">Object.Instantiate(Object)</span>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Transform)</span>
+      <span class="xref">Object.Instantiate(Object, Transform)</span>
     </div>
     <div>
-      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate(Object, Transform, bool)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate(Object, Transform, bool)</a>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.Instantiate&lt;T&gt;(T)</span>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T)</span>
     </div>
     <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion)</a>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.Instantiate&lt;T&gt;(T, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)</span>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, Transform)</span>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.Instantiate&lt;T&gt;(T, UnityEngine.Transform)</span>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Transform)</span>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.Instantiate&lt;T&gt;(T, UnityEngine.Transform, bool)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate&lt;T&gt;(T, Transform, bool)</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Destroy.html">Object.Destroy(Object, float)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.Destroy(Object, float)</a>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.Destroy(UnityEngine.Object)</span>
+      <span class="xref">Object.Destroy(Object)</span>
     </div>
     <div>
-      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.DestroyImmediate.html">Object.DestroyImmediate(Object, bool)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.DestroyImmediate(Object, bool)</a>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.DestroyImmediate(UnityEngine.Object)</span>
+      <span class="xref">Object.DestroyImmediate(Object)</span>
     </div>
     <div>
-      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectsOfType.html">Object.FindObjectsOfType(Type)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type)</a>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.FindObjectsOfType(System.Type, bool)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type, bool)</a>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsSortMode)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsSortMode)</a>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsInactive, UnityEngine.FindObjectsSortMode)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)</a>
     </div>
     <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.DontDestroyOnLoad.html">Object.DontDestroyOnLoad(Object)</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.DestroyObject.html">Object.DestroyObject(Object, float)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.DestroyObject(Object, float)</a>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.DestroyObject(UnityEngine.Object)</span>
+      <span class="xref">Object.DestroyObject(Object)</span>
     </div>
     <div>
-      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindSceneObjectsOfType.html">Object.FindSceneObjectsOfType(Type)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindSceneObjectsOfType(Type)</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectsOfTypeIncludingAssets.html">Object.FindObjectsOfTypeIncludingAssets(Type)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeIncludingAssets(Type)</a>
     </div>
     <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectsOfType.html">Object.FindObjectsOfType&lt;T&gt;()</a>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.FindObjectsByType&lt;T&gt;(UnityEngine.FindObjectsSortMode)</span>
+      <span class="xref">Object.FindObjectsByType&lt;T&gt;(FindObjectsSortMode)</span>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.FindObjectsOfType&lt;T&gt;(bool)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectsOfType&lt;T&gt;(bool)</a>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.FindObjectsByType&lt;T&gt;(UnityEngine.FindObjectsInactive, UnityEngine.FindObjectsSortMode)</span>
+      <span class="xref">Object.FindObjectsByType&lt;T&gt;(FindObjectsInactive, FindObjectsSortMode)</span>
     </div>
     <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectOfType.html">Object.FindObjectOfType&lt;T&gt;()</a>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.FindObjectOfType&lt;T&gt;(bool)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectOfType&lt;T&gt;(bool)</a>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.FindFirstObjectByType&lt;T&gt;()</span>
+      <span class="xref">Object.FindFirstObjectByType&lt;T&gt;()</span>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.FindAnyObjectByType&lt;T&gt;()</span>
+      <span class="xref">Object.FindAnyObjectByType&lt;T&gt;()</span>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.FindFirstObjectByType&lt;T&gt;(UnityEngine.FindObjectsInactive)</span>
+      <span class="xref">Object.FindFirstObjectByType&lt;T&gt;(FindObjectsInactive)</span>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.FindAnyObjectByType&lt;T&gt;(UnityEngine.FindObjectsInactive)</span>
+      <span class="xref">Object.FindAnyObjectByType&lt;T&gt;(FindObjectsInactive)</span>
     </div>
     <div>
-      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectsOfTypeAll.html">Object.FindObjectsOfTypeAll(Type)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeAll(Type)</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectOfType.html">Object.FindObjectOfType(Type)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type)</a>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.FindFirstObjectByType(System.Type)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type)</a>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.FindAnyObjectByType(System.Type)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type)</a>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.FindObjectOfType(System.Type, bool)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type, bool)</a>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.FindFirstObjectByType(System.Type, UnityEngine.FindObjectsInactive)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type, FindObjectsInactive)</a>
     </div>
     <div>
-      <span class="xref">UnityEngine.Object.FindAnyObjectByType(System.Type, UnityEngine.FindObjectsInactive)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type, FindObjectsInactive)</a>
     </div>
     <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.ToString.html">Object.ToString()</a>
@@ -325,100 +319,13 @@
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="LobsterFramework.html">LobsterFramework</a>.<a class="xref" href="LobsterFramework.AbilitySystem.html">AbilitySystem</a>.<a class="xref" href="LobsterFramework.AbilitySystem.Weapon.html">Weapon</a></h6>
-  <h6><strong>Assembly</strong>: MyScripts.dll</h6>
+  <h6><strong>Assembly</strong>: LobsterFramework.dll</h6>
   <h5 id="LobsterFramework_AbilitySystem_Weapon_WeaponAbility_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ComponentRequired(new Type[] { typeof(WeaponWielder) })]
 public abstract class WeaponAbility : Ability</code></pre>
   </div>
-  <h3 id="methods">Methods
-</h3>
 
-
-  <a id="LobsterFramework_AbilitySystem_Weapon_WeaponAbility_ConditionSatisfied_" data-uid="LobsterFramework.AbilitySystem.Weapon.WeaponAbility.ConditionSatisfied*"></a>
-  <h4 id="LobsterFramework_AbilitySystem_Weapon_WeaponAbility_ConditionSatisfied_LobsterFramework_AbilitySystem_Ability_AbilityConfig_" data-uid="LobsterFramework.AbilitySystem.Weapon.WeaponAbility.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)">ConditionSatisfied(AbilityConfig)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override sealed bool ConditionSatisfied(Ability.AbilityConfig config)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="LobsterFramework.AbilitySystem.Ability.html">Ability</a>.<a class="xref" href="LobsterFramework.AbilitySystem.Ability.AbilityConfig.html">AbilityConfig</a></td>
-        <td><span class="parametername">config</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_ConditionSatisfied_LobsterFramework_AbilitySystem_Ability_AbilityConfig_">Ability.ConditionSatisfied(Ability.AbilityConfig)</a></div>
-
-
-  <a id="LobsterFramework_AbilitySystem_Weapon_WeaponAbility_OtherConditions_" data-uid="LobsterFramework.AbilitySystem.Weapon.WeaponAbility.OtherConditions*"></a>
-  <h4 id="LobsterFramework_AbilitySystem_Weapon_WeaponAbility_OtherConditions_LobsterFramework_AbilitySystem_Ability_AbilityConfig_" data-uid="LobsterFramework.AbilitySystem.Weapon.WeaponAbility.OtherConditions(LobsterFramework.AbilitySystem.Ability.AbilityConfig)">OtherConditions(AbilityConfig)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual bool OtherConditions(Ability.AbilityConfig config)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="LobsterFramework.AbilitySystem.Ability.html">Ability</a>.<a class="xref" href="LobsterFramework.AbilitySystem.Ability.AbilityConfig.html">AbilityConfig</a></td>
-        <td><span class="parametername">config</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
 </article>
           </div>
 
@@ -451,7 +358,7 @@ public abstract class WeaponAbility : Ability</code></pre>
       </footer>
     </div>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
   </body>

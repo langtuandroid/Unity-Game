@@ -17,12 +17,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/ResourceStorage.cs
+      path: H:/Stuff/BallField/Assets/Framework/Persistent Managers/ResourceStorage.cs
     id: ResourceStorage
-    path: ../Assets/Scripts/Persistent Managers/ResourceStorage.cs
+    path: ../Assets/Framework/Persistent Managers/ResourceStorage.cs
     startLine: 4
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public static class ResourceStorage
@@ -42,12 +42,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/ResourceStorage.cs
+      path: H:/Stuff/BallField/Assets/Framework/Persistent Managers/ResourceStorage.cs
     id: LoadResource
-    path: ../Assets/Scripts/Persistent Managers/ResourceStorage.cs
+    path: ../Assets/Framework/Persistent Managers/ResourceStorage.cs
     startLine: 7
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public static void LoadResource()
@@ -66,12 +66,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/ResourceStorage.cs
+      path: H:/Stuff/BallField/Assets/Framework/Persistent Managers/ResourceStorage.cs
     id: SaveResource
-    path: ../Assets/Scripts/Persistent Managers/ResourceStorage.cs
+    path: ../Assets/Framework/Persistent Managers/ResourceStorage.cs
     startLine: 11
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public static void SaveResource()
@@ -90,12 +90,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/ResourceStorage.cs
+      path: H:/Stuff/BallField/Assets/Framework/Persistent Managers/ResourceStorage.cs
     id: GetSprite
-    path: ../Assets/Scripts/Persistent Managers/ResourceStorage.cs
+    path: ../Assets/Framework/Persistent Managers/ResourceStorage.cs
     startLine: 13
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public static Sprite GetSprite(string name)
@@ -115,6 +115,7 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -124,21 +125,25 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: Global.ResourceStorage.LoadResource*
   commentId: Overload:Global.ResourceStorage.LoadResource
+  href: Global.ResourceStorage.html#ResourceStorage.LoadResource
   name: LoadResource
   nameWithType: ResourceStorage.LoadResource
   fullName: ResourceStorage.LoadResource
 - uid: Global.ResourceStorage.SaveResource*
   commentId: Overload:Global.ResourceStorage.SaveResource
+  href: Global.ResourceStorage.html#ResourceStorage.SaveResource
   name: SaveResource
   nameWithType: ResourceStorage.SaveResource
   fullName: ResourceStorage.SaveResource
 - uid: Global.ResourceStorage.GetSprite*
   commentId: Overload:Global.ResourceStorage.GetSprite
+  href: Global.ResourceStorage.html#ResourceStorage.GetSprite(System.String)
   name: GetSprite
   nameWithType: ResourceStorage.GetSprite
   fullName: ResourceStorage.GetSprite
@@ -146,6 +151,7 @@ references:
   commentId: T:System.String
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: string
   nameWithType: string
   fullName: string

@@ -19,7 +19,6 @@ items:
   - LobsterFramework.Utility.SerializableHashSet`1.IsReadOnly
   - LobsterFramework.Utility.SerializableHashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
   - LobsterFramework.Utility.SerializableHashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
-  - LobsterFramework.Utility.SerializableHashSet`1.m_HashSet
   - LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize
   - LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize
   - LobsterFramework.Utility.SerializableHashSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
@@ -27,6 +26,7 @@ items:
   - LobsterFramework.Utility.SerializableHashSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
   - LobsterFramework.Utility.SerializableHashSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
   - LobsterFramework.Utility.SerializableHashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
+  - LobsterFramework.Utility.SerializableHashSet`1.m_HashSet
   - LobsterFramework.Utility.SerializableHashSet`1.values
   langs:
   - csharp
@@ -37,12 +37,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: SerializableHashSet
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 7
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: >-
@@ -81,12 +81,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: m_HashSet
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 10
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: protected HashSet<TValue> m_HashSet
@@ -108,12 +108,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: values
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 11
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: >-
@@ -145,13 +145,14 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: Count
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 13
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public int Count { get; }
     parameters: []
@@ -174,13 +175,14 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: IsReadOnly
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 15
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public bool IsReadOnly { get; }
     parameters: []
@@ -203,13 +205,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: Add
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 17
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public bool Add(TValue item)
     parameters:
@@ -234,13 +237,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: Clear
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 22
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public void Clear()
     content.vb: Public Sub Clear()
@@ -260,13 +264,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: Contains
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 27
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public bool Contains(TValue item)
     parameters:
@@ -291,13 +296,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: CopyTo
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 32
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public void CopyTo(TValue[] array, int arrayIndex)
     parameters:
@@ -323,13 +329,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: ExceptWith
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 37
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public void ExceptWith(IEnumerable<TValue> other)
     parameters:
@@ -353,13 +360,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: GetEnumerator
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 42
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public IEnumerator<TValue> GetEnumerator()
     return:
@@ -381,13 +389,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: IntersectWith
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 47
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public void IntersectWith(IEnumerable<TValue> other)
     parameters:
@@ -411,13 +420,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: IsProperSubsetOf
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 52
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public bool IsProperSubsetOf(IEnumerable<TValue> other)
     parameters:
@@ -443,13 +453,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: IsProperSupersetOf
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 57
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public bool IsProperSupersetOf(IEnumerable<TValue> other)
     parameters:
@@ -475,13 +486,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: IsSubsetOf
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 62
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public bool IsSubsetOf(IEnumerable<TValue> other)
     parameters:
@@ -507,13 +519,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: IsSupersetOf
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 67
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public bool IsSupersetOf(IEnumerable<TValue> other)
     parameters:
@@ -539,13 +552,15 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: OnAfterDeserialize
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 72
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  summary: <p>Implement this method to receive a callback after Unity deserializes your object.</p>
+  example: []
   syntax:
     content: public void OnAfterDeserialize()
     content.vb: Public Sub OnAfterDeserialize()
@@ -567,13 +582,15 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: OnBeforeSerialize
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 82
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  summary: <p>Implement this method to receive a callback before Unity serializes your object.</p>
+  example: []
   syntax:
     content: public void OnBeforeSerialize()
     content.vb: Public Sub OnBeforeSerialize()
@@ -595,13 +612,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: Overlaps
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 91
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public bool Overlaps(IEnumerable<TValue> other)
     parameters:
@@ -627,13 +645,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: Remove
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 96
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public bool Remove(TValue item)
     parameters:
@@ -658,13 +677,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: SetEquals
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 101
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public bool SetEquals(IEnumerable<TValue> other)
     parameters:
@@ -690,13 +710,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: SymmetricExceptWith
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 106
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public void SymmetricExceptWith(IEnumerable<TValue> other)
     parameters:
@@ -720,13 +741,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: UnionWith
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 111
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public void UnionWith(IEnumerable<TValue> other)
     parameters:
@@ -750,12 +772,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: GetValueInList
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 126
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: public List<TValue> GetValueInList()
@@ -768,25 +790,31 @@ items:
 references:
 - uid: LobsterFramework.Utility
   commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
   name: LobsterFramework.Utility
   nameWithType: LobsterFramework.Utility
   fullName: LobsterFramework.Utility
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -803,6 +831,7 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
@@ -816,6 +845,7 @@ references:
   commentId: T:System.Collections.Generic.HashSet{`0}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.HashSet`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
   name: HashSet<TValue>
   nameWithType: HashSet<TValue>
   fullName: System.Collections.Generic.HashSet<TValue>
@@ -826,6 +856,7 @@ references:
   - uid: System.Collections.Generic.HashSet`1
     name: HashSet
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
   - name: <
   - name: TValue
   - name: '>'
@@ -833,6 +864,7 @@ references:
   - uid: System.Collections.Generic.HashSet`1
     name: HashSet
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
   - name: (
   - name: Of
   - name: " "
@@ -841,6 +873,7 @@ references:
 - uid: System.Collections.Generic.HashSet`1
   commentId: T:System.Collections.Generic.HashSet`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
   name: HashSet<T>
   nameWithType: HashSet<T>
   fullName: System.Collections.Generic.HashSet<T>
@@ -851,6 +884,7 @@ references:
   - uid: System.Collections.Generic.HashSet`1
     name: HashSet
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
   - name: <
   - name: T
   - name: '>'
@@ -858,6 +892,7 @@ references:
   - uid: System.Collections.Generic.HashSet`1
     name: HashSet
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
   - name: (
   - name: Of
   - name: " "
@@ -866,6 +901,7 @@ references:
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
@@ -873,30 +909,37 @@ references:
   - uid: System
     name: System
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
   - uid: System.Collections
     name: Collections
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
   - uid: System.Collections.Generic
     name: Generic
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
   spec.vb:
   - uid: System
     name: System
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
   - uid: System.Collections
     name: Collections
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
   - uid: System.Collections.Generic
     name: Generic
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: System.Collections.Generic.List{{TValue}}
   commentId: T:System.Collections.Generic.List{`1}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: List<TValue>
   nameWithType: List<TValue>
   fullName: System.Collections.Generic.List<TValue>
@@ -907,6 +950,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: TValue
   - name: '>'
@@ -914,6 +958,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -922,6 +967,7 @@ references:
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: List<T>
   nameWithType: List<T>
   fullName: System.Collections.Generic.List<T>
@@ -932,6 +978,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -939,6 +986,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -946,6 +994,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet`1.Count*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.Count
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Count
   name: Count
   nameWithType: SerializableHashSet<TValue>.Count
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.Count
@@ -955,6 +1004,7 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
   name: int
   nameWithType: int
   fullName: int
@@ -963,6 +1013,7 @@ references:
   name.vb: Integer
 - uid: LobsterFramework.Utility.SerializableHashSet`1.IsReadOnly*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.IsReadOnly
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IsReadOnly
   name: IsReadOnly
   nameWithType: SerializableHashSet<TValue>.IsReadOnly
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.IsReadOnly
@@ -972,6 +1023,7 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
@@ -980,6 +1032,7 @@ references:
   name.vb: Boolean
 - uid: LobsterFramework.Utility.SerializableHashSet`1.Add*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.Add
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Add(`0)
   name: Add
   nameWithType: SerializableHashSet<TValue>.Add
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.Add
@@ -997,6 +1050,7 @@ references:
   fullName: TValue
 - uid: LobsterFramework.Utility.SerializableHashSet`1.Clear*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.Clear
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Clear
   name: Clear
   nameWithType: SerializableHashSet<TValue>.Clear
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.Clear
@@ -1004,6 +1058,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).Clear
 - uid: LobsterFramework.Utility.SerializableHashSet`1.Contains*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.Contains
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Contains(`0)
   name: Contains
   nameWithType: SerializableHashSet<TValue>.Contains
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.Contains
@@ -1011,6 +1066,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).Contains
 - uid: LobsterFramework.Utility.SerializableHashSet`1.CopyTo*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.CopyTo
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.CopyTo(`0[],System.Int32)
   name: CopyTo
   nameWithType: SerializableHashSet<TValue>.CopyTo
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.CopyTo
@@ -1034,6 +1090,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet`1.ExceptWith*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.ExceptWith
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
   name: ExceptWith
   nameWithType: SerializableHashSet<TValue>.ExceptWith
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.ExceptWith
@@ -1043,6 +1100,7 @@ references:
   commentId: T:System.Collections.Generic.IEnumerable{`0}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   name: IEnumerable<TValue>
   nameWithType: IEnumerable<TValue>
   fullName: System.Collections.Generic.IEnumerable<TValue>
@@ -1053,6 +1111,7 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: TValue
   - name: '>'
@@ -1060,6 +1119,7 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -1068,6 +1128,7 @@ references:
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   name: IEnumerable<T>
   nameWithType: IEnumerable<T>
   fullName: System.Collections.Generic.IEnumerable<T>
@@ -1078,6 +1139,7 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: T
   - name: '>'
@@ -1085,6 +1147,7 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -1092,6 +1155,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet`1.GetEnumerator*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.GetEnumerator
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.GetEnumerator
   name: GetEnumerator
   nameWithType: SerializableHashSet<TValue>.GetEnumerator
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.GetEnumerator
@@ -1101,6 +1165,7 @@ references:
   commentId: T:System.Collections.Generic.IEnumerator{`0}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerator`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   name: IEnumerator<TValue>
   nameWithType: IEnumerator<TValue>
   fullName: System.Collections.Generic.IEnumerator<TValue>
@@ -1111,6 +1176,7 @@ references:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   - name: <
   - name: TValue
   - name: '>'
@@ -1118,6 +1184,7 @@ references:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   - name: (
   - name: Of
   - name: " "
@@ -1126,6 +1193,7 @@ references:
 - uid: System.Collections.Generic.IEnumerator`1
   commentId: T:System.Collections.Generic.IEnumerator`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   name: IEnumerator<T>
   nameWithType: IEnumerator<T>
   fullName: System.Collections.Generic.IEnumerator<T>
@@ -1136,6 +1204,7 @@ references:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   - name: <
   - name: T
   - name: '>'
@@ -1143,6 +1212,7 @@ references:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   - name: (
   - name: Of
   - name: " "
@@ -1150,6 +1220,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet`1.IntersectWith*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.IntersectWith
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
   name: IntersectWith
   nameWithType: SerializableHashSet<TValue>.IntersectWith
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.IntersectWith
@@ -1157,6 +1228,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).IntersectWith
 - uid: LobsterFramework.Utility.SerializableHashSet`1.IsProperSubsetOf*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.IsProperSubsetOf
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
   name: IsProperSubsetOf
   nameWithType: SerializableHashSet<TValue>.IsProperSubsetOf
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.IsProperSubsetOf
@@ -1164,6 +1236,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).IsProperSubsetOf
 - uid: LobsterFramework.Utility.SerializableHashSet`1.IsProperSupersetOf*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.IsProperSupersetOf
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
   name: IsProperSupersetOf
   nameWithType: SerializableHashSet<TValue>.IsProperSupersetOf
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.IsProperSupersetOf
@@ -1171,6 +1244,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).IsProperSupersetOf
 - uid: LobsterFramework.Utility.SerializableHashSet`1.IsSubsetOf*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.IsSubsetOf
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
   name: IsSubsetOf
   nameWithType: SerializableHashSet<TValue>.IsSubsetOf
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.IsSubsetOf
@@ -1178,6 +1252,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).IsSubsetOf
 - uid: LobsterFramework.Utility.SerializableHashSet`1.IsSupersetOf*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.IsSupersetOf
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
   name: IsSupersetOf
   nameWithType: SerializableHashSet<TValue>.IsSupersetOf
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.IsSupersetOf
@@ -1185,6 +1260,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).IsSupersetOf
 - uid: LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize
   name: OnAfterDeserialize
   nameWithType: SerializableHashSet<TValue>.OnAfterDeserialize
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.OnAfterDeserialize
@@ -1211,6 +1287,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize
   name: OnBeforeSerialize
   nameWithType: SerializableHashSet<TValue>.OnBeforeSerialize
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.OnBeforeSerialize
@@ -1237,6 +1314,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet`1.Overlaps*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.Overlaps
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
   name: Overlaps
   nameWithType: SerializableHashSet<TValue>.Overlaps
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.Overlaps
@@ -1244,6 +1322,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).Overlaps
 - uid: LobsterFramework.Utility.SerializableHashSet`1.Remove*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.Remove
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Remove(`0)
   name: Remove
   nameWithType: SerializableHashSet<TValue>.Remove
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.Remove
@@ -1251,6 +1330,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).Remove
 - uid: LobsterFramework.Utility.SerializableHashSet`1.SetEquals*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.SetEquals
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
   name: SetEquals
   nameWithType: SerializableHashSet<TValue>.SetEquals
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.SetEquals
@@ -1258,6 +1338,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).SetEquals
 - uid: LobsterFramework.Utility.SerializableHashSet`1.SymmetricExceptWith*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.SymmetricExceptWith
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
   name: SymmetricExceptWith
   nameWithType: SerializableHashSet<TValue>.SymmetricExceptWith
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.SymmetricExceptWith
@@ -1265,6 +1346,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).SymmetricExceptWith
 - uid: LobsterFramework.Utility.SerializableHashSet`1.UnionWith*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.UnionWith
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
   name: UnionWith
   nameWithType: SerializableHashSet<TValue>.UnionWith
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.UnionWith
@@ -1272,6 +1354,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).UnionWith
 - uid: LobsterFramework.Utility.SerializableHashSet`1.GetValueInList*
   commentId: Overload:LobsterFramework.Utility.SerializableHashSet`1.GetValueInList
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.GetValueInList
   name: GetValueInList
   nameWithType: SerializableHashSet<TValue>.GetValueInList
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.GetValueInList

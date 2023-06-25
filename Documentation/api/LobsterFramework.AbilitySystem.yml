@@ -9,25 +9,12 @@ items:
   - LobsterFramework.AbilitySystem.AbilityData
   - LobsterFramework.AbilitySystem.AbilityRunner
   - LobsterFramework.AbilitySystem.AbilityStat
-  - LobsterFramework.AbilitySystem.AbilityStatAttribute
   - LobsterFramework.AbilitySystem.ActionOverseer
   - LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
-  - LobsterFramework.AbilitySystem.CircleAttack
-  - LobsterFramework.AbilitySystem.CircleAttack.CircleAttackConfig
+  - LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute
   - LobsterFramework.AbilitySystem.ClassNode
-  - LobsterFramework.AbilitySystem.CombatStat
   - LobsterFramework.AbilitySystem.ComponentRequiredAttribute
-  - LobsterFramework.AbilitySystem.Endure
-  - LobsterFramework.AbilitySystem.Endure.EndureConfig
-  - LobsterFramework.AbilitySystem.Guard
-  - LobsterFramework.AbilitySystem.Guard.GuardConfig
-  - LobsterFramework.AbilitySystem.Mana
   - LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute
-  - LobsterFramework.AbilitySystem.RightSwipe
-  - LobsterFramework.AbilitySystem.RightSwipe.RightSwipeConfig
-  - LobsterFramework.AbilitySystem.RightSwipe.State
-  - LobsterFramework.AbilitySystem.Shoot
-  - LobsterFramework.AbilitySystem.Shoot.ShootConfig
   - LobsterFramework.AbilitySystem.TargetSetting
   langs:
   - csharp
@@ -37,244 +24,122 @@ items:
   fullName: LobsterFramework.AbilitySystem
   type: Namespace
   assemblies:
-  - MyScripts
+  - LobsterFramework
 references:
-- uid: LobsterFramework.AbilitySystem.CombatStat
-  commentId: T:LobsterFramework.AbilitySystem.CombatStat
-  parent: LobsterFramework.AbilitySystem
-  name: CombatStat
-  nameWithType: CombatStat
-  fullName: LobsterFramework.AbilitySystem.CombatStat
-- uid: LobsterFramework.AbilitySystem.AbilityRunner
-  commentId: T:LobsterFramework.AbilitySystem.AbilityRunner
-  parent: LobsterFramework.AbilitySystem
-  name: AbilityRunner
-  nameWithType: AbilityRunner
-  fullName: LobsterFramework.AbilitySystem.AbilityRunner
-- uid: LobsterFramework.AbilitySystem.Ability
-  commentId: T:LobsterFramework.AbilitySystem.Ability
-  parent: LobsterFramework.AbilitySystem
-  name: Ability
-  nameWithType: Ability
-  fullName: LobsterFramework.AbilitySystem.Ability
-- uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-  commentId: T:LobsterFramework.AbilitySystem.Ability.AbilityConfig
-  parent: LobsterFramework.AbilitySystem
-  name: Ability.AbilityConfig
-  nameWithType: Ability.AbilityConfig
-  fullName: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability
-    name: Ability
-  - name: .
-  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-    name: AbilityConfig
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability
-    name: Ability
-  - name: .
-  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-    name: AbilityConfig
-- uid: LobsterFramework.AbilitySystem.AbilityData
-  commentId: T:LobsterFramework.AbilitySystem.AbilityData
-  parent: LobsterFramework.AbilitySystem
-  name: AbilityData
-  nameWithType: AbilityData
-  fullName: LobsterFramework.AbilitySystem.AbilityData
-- uid: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute
-  commentId: T:LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute
-  parent: LobsterFramework.AbilitySystem
-  name: RequireAbilityStatsAttribute
-  nameWithType: RequireAbilityStatsAttribute
-  fullName: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute
-- uid: LobsterFramework.AbilitySystem.RightSwipe
-  commentId: T:LobsterFramework.AbilitySystem.RightSwipe
-  name: RightSwipe
-  nameWithType: RightSwipe
-  fullName: LobsterFramework.AbilitySystem.RightSwipe
-- uid: LobsterFramework.AbilitySystem.RightSwipe.State
-  commentId: T:LobsterFramework.AbilitySystem.RightSwipe.State
-  parent: LobsterFramework.AbilitySystem
-  name: RightSwipe.State
-  nameWithType: RightSwipe.State
-  fullName: LobsterFramework.AbilitySystem.RightSwipe.State
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.RightSwipe
-    name: RightSwipe
-  - name: .
-  - uid: LobsterFramework.AbilitySystem.RightSwipe.State
-    name: State
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.RightSwipe
-    name: RightSwipe
-  - name: .
-  - uid: LobsterFramework.AbilitySystem.RightSwipe.State
-    name: State
-- uid: LobsterFramework.AbilitySystem.RightSwipe.RightSwipeConfig
-  commentId: T:LobsterFramework.AbilitySystem.RightSwipe.RightSwipeConfig
-  name: RightSwipe.RightSwipeConfig
-  nameWithType: RightSwipe.RightSwipeConfig
-  fullName: LobsterFramework.AbilitySystem.RightSwipe.RightSwipeConfig
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.RightSwipe
-    name: RightSwipe
-  - name: .
-  - uid: LobsterFramework.AbilitySystem.RightSwipe.RightSwipeConfig
-    name: RightSwipeConfig
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.RightSwipe
-    name: RightSwipe
-  - name: .
-  - uid: LobsterFramework.AbilitySystem.RightSwipe.RightSwipeConfig
-    name: RightSwipeConfig
-- uid: LobsterFramework.AbilitySystem.CircleAttack
-  commentId: T:LobsterFramework.AbilitySystem.CircleAttack
-  name: CircleAttack
-  nameWithType: CircleAttack
-  fullName: LobsterFramework.AbilitySystem.CircleAttack
-- uid: LobsterFramework.AbilitySystem.CircleAttack.CircleAttackConfig
-  commentId: T:LobsterFramework.AbilitySystem.CircleAttack.CircleAttackConfig
-  name: CircleAttack.CircleAttackConfig
-  nameWithType: CircleAttack.CircleAttackConfig
-  fullName: LobsterFramework.AbilitySystem.CircleAttack.CircleAttackConfig
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.CircleAttack
-    name: CircleAttack
-  - name: .
-  - uid: LobsterFramework.AbilitySystem.CircleAttack.CircleAttackConfig
-    name: CircleAttackConfig
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.CircleAttack
-    name: CircleAttack
-  - name: .
-  - uid: LobsterFramework.AbilitySystem.CircleAttack.CircleAttackConfig
-    name: CircleAttackConfig
-- uid: LobsterFramework.AbilitySystem.Guard
-  commentId: T:LobsterFramework.AbilitySystem.Guard
-  name: Guard
-  nameWithType: Guard
-  fullName: LobsterFramework.AbilitySystem.Guard
-- uid: LobsterFramework.AbilitySystem.Guard.GuardConfig
-  commentId: T:LobsterFramework.AbilitySystem.Guard.GuardConfig
-  name: Guard.GuardConfig
-  nameWithType: Guard.GuardConfig
-  fullName: LobsterFramework.AbilitySystem.Guard.GuardConfig
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Guard
-    name: Guard
-  - name: .
-  - uid: LobsterFramework.AbilitySystem.Guard.GuardConfig
-    name: GuardConfig
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Guard
-    name: Guard
-  - name: .
-  - uid: LobsterFramework.AbilitySystem.Guard.GuardConfig
-    name: GuardConfig
-- uid: LobsterFramework.AbilitySystem.AbilityStat
-  commentId: T:LobsterFramework.AbilitySystem.AbilityStat
-  parent: LobsterFramework.AbilitySystem
-  name: AbilityStat
-  nameWithType: AbilityStat
-  fullName: LobsterFramework.AbilitySystem.AbilityStat
-- uid: LobsterFramework.AbilitySystem.Shoot
-  commentId: T:LobsterFramework.AbilitySystem.Shoot
-  name: Shoot
-  nameWithType: Shoot
-  fullName: LobsterFramework.AbilitySystem.Shoot
-- uid: LobsterFramework.AbilitySystem.Shoot.ShootConfig
-  commentId: T:LobsterFramework.AbilitySystem.Shoot.ShootConfig
-  name: Shoot.ShootConfig
-  nameWithType: Shoot.ShootConfig
-  fullName: LobsterFramework.AbilitySystem.Shoot.ShootConfig
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Shoot
-    name: Shoot
-  - name: .
-  - uid: LobsterFramework.AbilitySystem.Shoot.ShootConfig
-    name: ShootConfig
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Shoot
-    name: Shoot
-  - name: .
-  - uid: LobsterFramework.AbilitySystem.Shoot.ShootConfig
-    name: ShootConfig
-- uid: LobsterFramework.AbilitySystem.TargetSetting
-  commentId: T:LobsterFramework.AbilitySystem.TargetSetting
-  parent: LobsterFramework.AbilitySystem
-  name: TargetSetting
-  nameWithType: TargetSetting
-  fullName: LobsterFramework.AbilitySystem.TargetSetting
-- uid: LobsterFramework.AbilitySystem.Mana
-  commentId: T:LobsterFramework.AbilitySystem.Mana
-  parent: LobsterFramework.AbilitySystem
-  name: Mana
-  nameWithType: Mana
-  fullName: LobsterFramework.AbilitySystem.Mana
-- uid: LobsterFramework.AbilitySystem.Endure
-  commentId: T:LobsterFramework.AbilitySystem.Endure
-  name: Endure
-  nameWithType: Endure
-  fullName: LobsterFramework.AbilitySystem.Endure
-- uid: LobsterFramework.AbilitySystem.Endure.EndureConfig
-  commentId: T:LobsterFramework.AbilitySystem.Endure.EndureConfig
-  name: Endure.EndureConfig
-  nameWithType: Endure.EndureConfig
-  fullName: LobsterFramework.AbilitySystem.Endure.EndureConfig
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Endure
-    name: Endure
-  - name: .
-  - uid: LobsterFramework.AbilitySystem.Endure.EndureConfig
-    name: EndureConfig
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Endure
-    name: Endure
-  - name: .
-  - uid: LobsterFramework.AbilitySystem.Endure.EndureConfig
-    name: EndureConfig
 - uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
   commentId: T:LobsterFramework.AbilitySystem.ComponentRequiredAttribute
   parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.html
   name: ComponentRequiredAttribute
   nameWithType: ComponentRequiredAttribute
   fullName: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
 - uid: LobsterFramework.AbilitySystem.ClassNode
   commentId: T:LobsterFramework.AbilitySystem.ClassNode
   parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.ClassNode.html
   name: ClassNode
   nameWithType: ClassNode
   fullName: LobsterFramework.AbilitySystem.ClassNode
-- uid: LobsterFramework.AbilitySystem.AbilityStatAttribute
-  commentId: T:LobsterFramework.AbilitySystem.AbilityStatAttribute
+- uid: LobsterFramework.AbilitySystem.TargetSetting
+  commentId: T:LobsterFramework.AbilitySystem.TargetSetting
   parent: LobsterFramework.AbilitySystem
-  name: AbilityStatAttribute
-  nameWithType: AbilityStatAttribute
-  fullName: LobsterFramework.AbilitySystem.AbilityStatAttribute
+  href: LobsterFramework.AbilitySystem.TargetSetting.html
+  name: TargetSetting
+  nameWithType: TargetSetting
+  fullName: LobsterFramework.AbilitySystem.TargetSetting
+- uid: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute
+  commentId: T:LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute
+  href: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.html
+  name: RequireAbilityStatsAttribute
+  nameWithType: RequireAbilityStatsAttribute
+  fullName: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute
+- uid: LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute
+  commentId: T:LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute
+  href: LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute.html
+  name: AddAbilityStatMenuAttribute
+  nameWithType: AddAbilityStatMenuAttribute
+  fullName: LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute
+- uid: LobsterFramework.AbilitySystem.AbilityStat
+  commentId: T:LobsterFramework.AbilitySystem.AbilityStat
+  href: LobsterFramework.AbilitySystem.AbilityStat.html
+  name: AbilityStat
+  nameWithType: AbilityStat
+  fullName: LobsterFramework.AbilitySystem.AbilityStat
 - uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
   commentId: T:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
+  href: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html
   name: AddAbilityMenuAttribute
   nameWithType: AddAbilityMenuAttribute
   fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
 - uid: LobsterFramework.AbilitySystem.ActionOverseer
   commentId: T:LobsterFramework.AbilitySystem.ActionOverseer
+  href: LobsterFramework.AbilitySystem.ActionOverseer.html
   name: ActionOverseer
   nameWithType: ActionOverseer
   fullName: LobsterFramework.AbilitySystem.ActionOverseer
+- uid: LobsterFramework.AbilitySystem.Ability
+  commentId: T:LobsterFramework.AbilitySystem.Ability
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.Ability.html
+  name: Ability
+  nameWithType: Ability
+  fullName: LobsterFramework.AbilitySystem.Ability
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+  commentId: T:LobsterFramework.AbilitySystem.Ability.AbilityConfig
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.Ability.html
+  name: Ability.AbilityConfig
+  nameWithType: Ability.AbilityConfig
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.Ability
+    name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+    name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.Ability
+    name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+    name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
+- uid: LobsterFramework.AbilitySystem.AbilityRunner
+  commentId: T:LobsterFramework.AbilitySystem.AbilityRunner
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html
+  name: AbilityRunner
+  nameWithType: AbilityRunner
+  fullName: LobsterFramework.AbilitySystem.AbilityRunner
+- uid: LobsterFramework.AbilitySystem.AbilityData
+  commentId: T:LobsterFramework.AbilitySystem.AbilityData
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityData.html
+  name: AbilityData
+  nameWithType: AbilityData
+  fullName: LobsterFramework.AbilitySystem.AbilityData
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
   name: LobsterFramework.AbilitySystem
   nameWithType: LobsterFramework.AbilitySystem
   fullName: LobsterFramework.AbilitySystem
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html

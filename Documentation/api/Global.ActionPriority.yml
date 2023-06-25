@@ -16,12 +16,12 @@ items:
   type: Struct
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/ActionPrioritySO.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/ActionPrioritySO.cs
     id: ActionPriority
-    path: ../Assets/Scripts/Components/ActionComponents/ActionPrioritySO.cs
+    path: ../Assets/Framework/Components/ActionComponents/ActionPrioritySO.cs
     startLine: 31
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: >-
@@ -49,12 +49,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/ActionPrioritySO.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/ActionPrioritySO.cs
     id: executionPriority
-    path: ../Assets/Scripts/Components/ActionComponents/ActionPrioritySO.cs
+    path: ../Assets/Framework/Components/ActionComponents/ActionPrioritySO.cs
     startLine: 34
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public int executionPriority
@@ -74,12 +74,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/ActionPrioritySO.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/ActionPrioritySO.cs
     id: enqueuePriority
-    path: ../Assets/Scripts/Components/ActionComponents/ActionPrioritySO.cs
+    path: ../Assets/Framework/Components/ActionComponents/ActionPrioritySO.cs
     startLine: 35
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public int enqueuePriority
@@ -92,6 +92,7 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
   name: int
   nameWithType: int
   fullName: int
@@ -101,6 +102,7 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System

@@ -16,12 +16,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/IdDistributor.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/IdDistributor.cs
     id: IdDistributor
-    path: ../Assets/Scripts/Utility/IdDistributor.cs
+    path: ../Assets/Framework/Utility/IdDistributor.cs
     startLine: 8
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: public class IdDistributor
@@ -41,12 +41,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/IdDistributor.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/IdDistributor.cs
     id: GetID
-    path: ../Assets/Scripts/Utility/IdDistributor.cs
+    path: ../Assets/Framework/Utility/IdDistributor.cs
     startLine: 13
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: public int GetID()
@@ -67,12 +67,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/IdDistributor.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/IdDistributor.cs
     id: RecycleID
-    path: ../Assets/Scripts/Utility/IdDistributor.cs
+    path: ../Assets/Framework/Utility/IdDistributor.cs
     startLine: 31
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: public bool RecycleID(int id)
@@ -89,25 +89,31 @@ items:
 references:
 - uid: LobsterFramework.Utility
   commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
   name: LobsterFramework.Utility
   nameWithType: LobsterFramework.Utility
   fullName: LobsterFramework.Utility
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -117,11 +123,13 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: LobsterFramework.Utility.IdDistributor.GetID*
   commentId: Overload:LobsterFramework.Utility.IdDistributor.GetID
+  href: LobsterFramework.Utility.IdDistributor.html#LobsterFramework.Utility.IdDistributor.GetID
   name: GetID
   nameWithType: IdDistributor.GetID
   fullName: LobsterFramework.Utility.IdDistributor.GetID
@@ -129,6 +137,7 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
   name: int
   nameWithType: int
   fullName: int
@@ -137,6 +146,7 @@ references:
   name.vb: Integer
 - uid: LobsterFramework.Utility.IdDistributor.RecycleID*
   commentId: Overload:LobsterFramework.Utility.IdDistributor.RecycleID
+  href: LobsterFramework.Utility.IdDistributor.html#LobsterFramework.Utility.IdDistributor.RecycleID(System.Int32)
   name: RecycleID
   nameWithType: IdDistributor.RecycleID
   fullName: LobsterFramework.Utility.IdDistributor.RecycleID
@@ -144,6 +154,7 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool

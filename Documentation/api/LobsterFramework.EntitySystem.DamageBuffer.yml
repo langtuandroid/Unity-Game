@@ -27,12 +27,12 @@ items:
   type: Struct
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: DamageBuffer
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 427
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: >-
@@ -60,12 +60,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: .ctor
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 438
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public DamageBuffer(bool defaultSetting = true)
@@ -90,12 +90,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: HealthDamage
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 451
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public readonly float HealthDamage { get; }
@@ -117,12 +117,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: PostureDamage
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 453
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public readonly float PostureDamage { get; }
@@ -144,12 +144,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: AddDamage
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 460
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public void AddDamage(Damage damage)
@@ -171,12 +171,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: AddDefense
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 466
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public void AddDefense(int healthDefense, int postureDefense)
@@ -203,12 +203,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: AddHealthModifier
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 472
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public int AddHealthModifier(float factor)
@@ -235,12 +235,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: RemoveHealthModifier
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 478
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public bool RemoveHealthModifier(int key)
@@ -267,12 +267,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: AddPostureModifier
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 485
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public int AddPostureModifier(float factor)
@@ -299,12 +299,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: RemovePostureModifier
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 492
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public bool RemovePostureModifier(int key)
@@ -331,12 +331,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: ResetDamage
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 499
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public void ResetDamage()
@@ -355,12 +355,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: ResetDefense
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 505
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public void ResetDefense()
@@ -379,12 +379,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: ResetModifiers
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 511
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public void ResetModifiers()
@@ -403,12 +403,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: Reset
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 517
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public void Reset()
@@ -417,23 +417,29 @@ items:
 references:
 - uid: LobsterFramework.EntitySystem
   commentId: N:LobsterFramework.EntitySystem
+  href: LobsterFramework.html
   name: LobsterFramework.EntitySystem
   nameWithType: LobsterFramework.EntitySystem
   fullName: LobsterFramework.EntitySystem
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.EntitySystem
     name: EntitySystem
+    href: LobsterFramework.EntitySystem.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.EntitySystem
     name: EntitySystem
+    href: LobsterFramework.EntitySystem.html
 - uid: LobsterFramework.EntitySystem.DamageBuffer.#ctor*
   commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.#ctor
+  href: LobsterFramework.EntitySystem.DamageBuffer.html#LobsterFramework.EntitySystem.DamageBuffer.#ctor(System.Boolean)
   name: DamageBuffer
   nameWithType: DamageBuffer.DamageBuffer
   fullName: LobsterFramework.EntitySystem.DamageBuffer.DamageBuffer
@@ -444,6 +450,7 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
@@ -453,11 +460,13 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: LobsterFramework.EntitySystem.DamageBuffer.HealthDamage*
   commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.HealthDamage
+  href: LobsterFramework.EntitySystem.DamageBuffer.html#LobsterFramework.EntitySystem.DamageBuffer.HealthDamage
   name: HealthDamage
   nameWithType: DamageBuffer.HealthDamage
   fullName: LobsterFramework.EntitySystem.DamageBuffer.HealthDamage
@@ -465,6 +474,7 @@ references:
   commentId: T:System.Single
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
   name: float
   nameWithType: float
   fullName: float
@@ -473,22 +483,26 @@ references:
   name.vb: Single
 - uid: LobsterFramework.EntitySystem.DamageBuffer.PostureDamage*
   commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.PostureDamage
+  href: LobsterFramework.EntitySystem.DamageBuffer.html#LobsterFramework.EntitySystem.DamageBuffer.PostureDamage
   name: PostureDamage
   nameWithType: DamageBuffer.PostureDamage
   fullName: LobsterFramework.EntitySystem.DamageBuffer.PostureDamage
 - uid: LobsterFramework.EntitySystem.DamageBuffer.AddDamage*
   commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.AddDamage
+  href: LobsterFramework.EntitySystem.DamageBuffer.html#LobsterFramework.EntitySystem.DamageBuffer.AddDamage(LobsterFramework.EntitySystem.Damage)
   name: AddDamage
   nameWithType: DamageBuffer.AddDamage
   fullName: LobsterFramework.EntitySystem.DamageBuffer.AddDamage
 - uid: LobsterFramework.EntitySystem.Damage
   commentId: T:LobsterFramework.EntitySystem.Damage
   parent: LobsterFramework.EntitySystem
+  href: LobsterFramework.EntitySystem.Damage.html
   name: Damage
   nameWithType: Damage
   fullName: LobsterFramework.EntitySystem.Damage
 - uid: LobsterFramework.EntitySystem.DamageBuffer.AddDefense*
   commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.AddDefense
+  href: LobsterFramework.EntitySystem.DamageBuffer.html#LobsterFramework.EntitySystem.DamageBuffer.AddDefense(System.Int32,System.Int32)
   name: AddDefense
   nameWithType: DamageBuffer.AddDefense
   fullName: LobsterFramework.EntitySystem.DamageBuffer.AddDefense
@@ -496,6 +510,7 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
   name: int
   nameWithType: int
   fullName: int
@@ -504,41 +519,49 @@ references:
   name.vb: Integer
 - uid: LobsterFramework.EntitySystem.DamageBuffer.AddHealthModifier*
   commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.AddHealthModifier
+  href: LobsterFramework.EntitySystem.DamageBuffer.html#LobsterFramework.EntitySystem.DamageBuffer.AddHealthModifier(System.Single)
   name: AddHealthModifier
   nameWithType: DamageBuffer.AddHealthModifier
   fullName: LobsterFramework.EntitySystem.DamageBuffer.AddHealthModifier
 - uid: LobsterFramework.EntitySystem.DamageBuffer.RemoveHealthModifier*
   commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.RemoveHealthModifier
+  href: LobsterFramework.EntitySystem.DamageBuffer.html#LobsterFramework.EntitySystem.DamageBuffer.RemoveHealthModifier(System.Int32)
   name: RemoveHealthModifier
   nameWithType: DamageBuffer.RemoveHealthModifier
   fullName: LobsterFramework.EntitySystem.DamageBuffer.RemoveHealthModifier
 - uid: LobsterFramework.EntitySystem.DamageBuffer.AddPostureModifier*
   commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.AddPostureModifier
+  href: LobsterFramework.EntitySystem.DamageBuffer.html#LobsterFramework.EntitySystem.DamageBuffer.AddPostureModifier(System.Single)
   name: AddPostureModifier
   nameWithType: DamageBuffer.AddPostureModifier
   fullName: LobsterFramework.EntitySystem.DamageBuffer.AddPostureModifier
 - uid: LobsterFramework.EntitySystem.DamageBuffer.RemovePostureModifier*
   commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.RemovePostureModifier
+  href: LobsterFramework.EntitySystem.DamageBuffer.html#LobsterFramework.EntitySystem.DamageBuffer.RemovePostureModifier(System.Int32)
   name: RemovePostureModifier
   nameWithType: DamageBuffer.RemovePostureModifier
   fullName: LobsterFramework.EntitySystem.DamageBuffer.RemovePostureModifier
 - uid: LobsterFramework.EntitySystem.DamageBuffer.ResetDamage*
   commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.ResetDamage
+  href: LobsterFramework.EntitySystem.DamageBuffer.html#LobsterFramework.EntitySystem.DamageBuffer.ResetDamage
   name: ResetDamage
   nameWithType: DamageBuffer.ResetDamage
   fullName: LobsterFramework.EntitySystem.DamageBuffer.ResetDamage
 - uid: LobsterFramework.EntitySystem.DamageBuffer.ResetDefense*
   commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.ResetDefense
+  href: LobsterFramework.EntitySystem.DamageBuffer.html#LobsterFramework.EntitySystem.DamageBuffer.ResetDefense
   name: ResetDefense
   nameWithType: DamageBuffer.ResetDefense
   fullName: LobsterFramework.EntitySystem.DamageBuffer.ResetDefense
 - uid: LobsterFramework.EntitySystem.DamageBuffer.ResetModifiers*
   commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.ResetModifiers
+  href: LobsterFramework.EntitySystem.DamageBuffer.html#LobsterFramework.EntitySystem.DamageBuffer.ResetModifiers
   name: ResetModifiers
   nameWithType: DamageBuffer.ResetModifiers
   fullName: LobsterFramework.EntitySystem.DamageBuffer.ResetModifiers
 - uid: LobsterFramework.EntitySystem.DamageBuffer.Reset*
   commentId: Overload:LobsterFramework.EntitySystem.DamageBuffer.Reset
+  href: LobsterFramework.EntitySystem.DamageBuffer.html#LobsterFramework.EntitySystem.DamageBuffer.Reset
   name: Reset
   nameWithType: DamageBuffer.Reset
   fullName: LobsterFramework.EntitySystem.DamageBuffer.Reset

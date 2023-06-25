@@ -12,7 +12,7 @@
  | LobsterFramework documentation ">
     
       <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
       <link rel="stylesheet" href="../styles/main.css">
       <meta property="docfx:navrel" content="../toc.html">
@@ -80,6 +80,7 @@
             <article class="content wrap" id="_content" data-uid="LobsterFramework.Utility.SerializableHashSet`1">
 
 
+
   <h1 id="LobsterFramework_Utility_SerializableHashSet_1" data-uid="LobsterFramework.Utility.SerializableHashSet`1" class="text-break">Class SerializableHashSet&lt;TValue&gt;
 </h1>
   <div class="markdown level0 summary"></div>
@@ -95,14 +96,14 @@
     <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/ISerializationCallbackReceiver.html">ISerializationCallbackReceiver</a></div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="LobsterFramework.html">LobsterFramework</a>.<a class="xref" href="LobsterFramework.Utility.html">Utility</a></h6>
-  <h6><strong>Assembly</strong>: MyScripts.dll</h6>
+  <h6><strong>Assembly</strong>: LobsterFramework.dll</h6>
   <h5 id="LobsterFramework_Utility_SerializableHashSet_1_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
 public class SerializableHashSet&lt;TValue&gt; : ISerializationCallbackReceiver</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Name</th>
@@ -128,7 +129,7 @@ public class SerializableHashSet&lt;TValue&gt; : ISerializationCallbackReceiver<
     <pre><code class="lang-csharp hljs">protected HashSet&lt;TValue&gt; m_HashSet</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -153,7 +154,7 @@ public class SerializableHashSet&lt;TValue&gt; : ISerializationCallbackReceiver<
 protected List&lt;TValue&gt; values</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -180,7 +181,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public int Count { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -205,7 +206,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public bool IsReadOnly { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -232,7 +233,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public bool Add(TValue item)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -249,7 +250,7 @@ protected List&lt;TValue&gt; values</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -284,7 +285,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public bool Contains(TValue item)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -301,7 +302,7 @@ protected List&lt;TValue&gt; values</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -326,7 +327,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public void CopyTo(TValue[] array, int arrayIndex)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -358,7 +359,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public void ExceptWith(IEnumerable&lt;TValue&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -385,7 +386,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public IEnumerator&lt;TValue&gt; GetEnumerator()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -410,7 +411,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public List&lt;TValue&gt; GetValueInList()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -435,7 +436,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public void IntersectWith(IEnumerable&lt;TValue&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -462,7 +463,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public bool IsProperSubsetOf(IEnumerable&lt;TValue&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -479,7 +480,7 @@ protected List&lt;TValue&gt; values</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -504,7 +505,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public bool IsProperSupersetOf(IEnumerable&lt;TValue&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -521,7 +522,7 @@ protected List&lt;TValue&gt; values</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -546,7 +547,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public bool IsSubsetOf(IEnumerable&lt;TValue&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -563,7 +564,7 @@ protected List&lt;TValue&gt; values</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -588,7 +589,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public bool IsSupersetOf(IEnumerable&lt;TValue&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -605,7 +606,7 @@ protected List&lt;TValue&gt; values</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -623,7 +624,8 @@ protected List&lt;TValue&gt; values</code></pre>
 
   <a id="LobsterFramework_Utility_SerializableHashSet_1_OnAfterDeserialize_" data-uid="LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize*"></a>
   <h4 id="LobsterFramework_Utility_SerializableHashSet_1_OnAfterDeserialize" data-uid="LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize">OnAfterDeserialize()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Implement this method to receive a callback after Unity deserializes your object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -633,7 +635,8 @@ protected List&lt;TValue&gt; values</code></pre>
 
   <a id="LobsterFramework_Utility_SerializableHashSet_1_OnBeforeSerialize_" data-uid="LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize*"></a>
   <h4 id="LobsterFramework_Utility_SerializableHashSet_1_OnBeforeSerialize" data-uid="LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize">OnBeforeSerialize()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Implement this method to receive a callback before Unity serializes your object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -650,7 +653,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public bool Overlaps(IEnumerable&lt;TValue&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -667,7 +670,7 @@ protected List&lt;TValue&gt; values</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -692,7 +695,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public bool Remove(TValue item)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -709,7 +712,7 @@ protected List&lt;TValue&gt; values</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -734,7 +737,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public bool SetEquals(IEnumerable&lt;TValue&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -751,7 +754,7 @@ protected List&lt;TValue&gt; values</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -776,7 +779,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public void SymmetricExceptWith(IEnumerable&lt;TValue&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -803,7 +806,7 @@ protected List&lt;TValue&gt; values</code></pre>
     <pre><code class="lang-csharp hljs">public void UnionWith(IEnumerable&lt;TValue&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -823,6 +826,7 @@ protected List&lt;TValue&gt; values</code></pre>
   <div>
       <a class="xref" href="https://docs.unity3d.com/ScriptReference/ISerializationCallbackReceiver.html">ISerializationCallbackReceiver</a>
   </div>
+
 </article>
           </div>
 
@@ -855,7 +859,7 @@ protected List&lt;TValue&gt; values</code></pre>
       </footer>
     </div>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
   </body>

@@ -5,7 +5,7 @@ items:
   id: RequireAbilityStatsAttribute
   parent: LobsterFramework.AbilitySystem
   children:
-  - LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.#ctor(System.Type,System.Type[])
+  - LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.#ctor(System.Type[])
   - LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.Init(System.Type)
   - LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.requirement
   - LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.rev_requirement
@@ -18,14 +18,14 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/RequireAbilityStatsAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
     id: RequireAbilityStatsAttribute
-    path: ../Assets/Scripts/Editor/Attributes/RequireAbilityStatsAttribute.cs
+    path: ../Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
     startLine: 10
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nMarks this ability as requiring specified AbilityStats to run\n"
+  summary: Marks this ability as requiring specified AbilityStats to run
   example: []
   syntax:
     content: >-
@@ -58,12 +58,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/RequireAbilityStatsAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
     id: requirement
-    path: ../Assets/Scripts/Editor/Attributes/RequireAbilityStatsAttribute.cs
+    path: ../Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
     startLine: 13
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public static Dictionary<Type, HashSet<Type>> requirement
@@ -83,50 +83,48 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/RequireAbilityStatsAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
     id: rev_requirement
-    path: ../Assets/Scripts/Editor/Attributes/RequireAbilityStatsAttribute.cs
+    path: ../Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
     startLine: 14
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public static Dictionary<Type, HashSet<Type>> rev_requirement
     return:
       type: System.Collections.Generic.Dictionary{System.Type,System.Collections.Generic.HashSet{System.Type}}
     content.vb: Public Shared rev_requirement As Dictionary(Of Type, HashSet(Of Type))
-- uid: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.#ctor(System.Type,System.Type[])
-  commentId: M:LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.#ctor(System.Type,System.Type[])
-  id: '#ctor(System.Type,System.Type[])'
+- uid: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.#ctor(System.Type[])
+  commentId: M:LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.#ctor(System.Type[])
+  id: '#ctor(System.Type[])'
   parent: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute
   langs:
   - csharp
   - vb
-  name: RequireAbilityStatsAttribute(Type, params Type[])
-  nameWithType: RequireAbilityStatsAttribute.RequireAbilityStatsAttribute(Type, params Type[])
-  fullName: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.RequireAbilityStatsAttribute(System.Type, params System.Type[])
+  name: RequireAbilityStatsAttribute(params Type[])
+  nameWithType: RequireAbilityStatsAttribute.RequireAbilityStatsAttribute(params Type[])
+  fullName: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.RequireAbilityStatsAttribute(params System.Type[])
   type: Constructor
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/RequireAbilityStatsAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
     id: .ctor
-    path: ../Assets/Scripts/Editor/Attributes/RequireAbilityStatsAttribute.cs
+    path: ../Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
     startLine: 18
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
-    content: public RequireAbilityStatsAttribute(Type ability, params Type[] abilityStats)
+    content: public RequireAbilityStatsAttribute(params Type[] abilityStats)
     parameters:
-    - id: ability
-      type: System.Type
     - id: abilityStats
       type: System.Type[]
-    content.vb: Public Sub New(ability As Type, ParamArray abilityStats As Type())
+    content.vb: Public Sub New(ParamArray abilityStats As Type())
   overload: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.#ctor*
-  nameWithType.vb: RequireAbilityStatsAttribute.New(Type, ParamArray Type())
-  fullName.vb: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.New(System.Type, ParamArray System.Type())
-  name.vb: New(Type, ParamArray Type())
+  nameWithType.vb: RequireAbilityStatsAttribute.New(ParamArray Type())
+  fullName.vb: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.New(ParamArray System.Type())
+  name.vb: New(ParamArray Type())
 - uid: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.Init(System.Type)
   commentId: M:LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.Init(System.Type)
   id: Init(System.Type)
@@ -140,12 +138,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/RequireAbilityStatsAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
     id: Init
-    path: ../Assets/Scripts/Editor/Attributes/RequireAbilityStatsAttribute.cs
+    path: ../Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
     startLine: 23
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public void Init(Type ability)
@@ -157,25 +155,31 @@ items:
 references:
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
   name: LobsterFramework.AbilitySystem
   nameWithType: LobsterFramework.AbilitySystem
   fullName: LobsterFramework.AbilitySystem
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -186,12 +190,14 @@ references:
   commentId: T:System.Attribute
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.attribute
   name: Attribute
   nameWithType: Attribute
   fullName: System.Attribute
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
@@ -199,6 +205,7 @@ references:
   commentId: T:System.Collections.Generic.Dictionary{System.Type,System.Collections.Generic.HashSet{System.Type}}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   name: Dictionary<Type, HashSet<Type>>
   nameWithType: Dictionary<Type, HashSet<Type>>
   fullName: System.Collections.Generic.Dictionary<System.Type, System.Collections.Generic.HashSet<System.Type>>
@@ -209,47 +216,56 @@ references:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: <
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.HashSet`1
     name: HashSet
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
   - name: <
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: (
   - name: Of
   - name: " "
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.HashSet`1
     name: HashSet
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
   - name: (
   - name: Of
   - name: " "
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   - name: )
 - uid: System.Collections.Generic.Dictionary`2
   commentId: T:System.Collections.Generic.Dictionary`2
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   name: Dictionary<TKey, TValue>
   nameWithType: Dictionary<TKey, TValue>
   fullName: System.Collections.Generic.Dictionary<TKey, TValue>
@@ -260,6 +276,7 @@ references:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: <
   - name: TKey
   - name: ','
@@ -270,6 +287,7 @@ references:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: (
   - name: Of
   - name: " "
@@ -281,6 +299,7 @@ references:
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
@@ -288,43 +307,44 @@ references:
   - uid: System
     name: System
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
   - uid: System.Collections
     name: Collections
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
   - uid: System.Collections.Generic
     name: Generic
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
   spec.vb:
   - uid: System
     name: System
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
   - uid: System.Collections
     name: Collections
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
   - uid: System.Collections.Generic
     name: Generic
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.#ctor*
   commentId: Overload:LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.#ctor
+  href: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.html#LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.#ctor(System.Type[])
   name: RequireAbilityStatsAttribute
   nameWithType: RequireAbilityStatsAttribute.RequireAbilityStatsAttribute
   fullName: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.RequireAbilityStatsAttribute
   nameWithType.vb: RequireAbilityStatsAttribute.New
   fullName.vb: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.New
   name.vb: New
-- uid: System.Type
-  commentId: T:System.Type
-  parent: System
-  isExternal: true
-  name: Type
-  nameWithType: Type
-  fullName: System.Type
 - uid: System.Type[]
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: Type[]
   nameWithType: Type[]
   fullName: System.Type[]
@@ -335,16 +355,27 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: '['
   - name: ']'
   spec.vb:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: (
   - name: )
 - uid: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.Init*
   commentId: Overload:LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.Init
+  href: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.html#LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.Init(System.Type)
   name: Init
   nameWithType: RequireAbilityStatsAttribute.Init
   fullName: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.Init
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type

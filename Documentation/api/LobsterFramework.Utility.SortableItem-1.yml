@@ -17,12 +17,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SortableItem.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SortableItem.cs
     id: SortableItem
-    path: ../Assets/Scripts/Utility/SortableItem.cs
+    path: ../Assets/Framework/Utility/SortableItem.cs
     startLine: 7
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: public class SortableItem<T>
@@ -47,12 +47,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SortableItem.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SortableItem.cs
     id: priority
-    path: ../Assets/Scripts/Utility/SortableItem.cs
+    path: ../Assets/Framework/Utility/SortableItem.cs
     startLine: 9
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: public int priority
@@ -74,12 +74,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SortableItem.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SortableItem.cs
     id: item
-    path: ../Assets/Scripts/Utility/SortableItem.cs
+    path: ../Assets/Framework/Utility/SortableItem.cs
     startLine: 10
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: public T item
@@ -101,13 +101,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SortableItem.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SortableItem.cs
     id: CompareTo
-    path: ../Assets/Scripts/Utility/SortableItem.cs
+    path: ../Assets/Framework/Utility/SortableItem.cs
     startLine: 12
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
+  example: []
   syntax:
     content: public int CompareTo(SortableItem<T> other)
     parameters:
@@ -123,25 +124,31 @@ items:
 references:
 - uid: LobsterFramework.Utility
   commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
   name: LobsterFramework.Utility
   nameWithType: LobsterFramework.Utility
   fullName: LobsterFramework.Utility
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -151,6 +158,7 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
@@ -158,6 +166,7 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
   name: int
   nameWithType: int
   fullName: int
@@ -176,6 +185,7 @@ references:
   fullName: T
 - uid: LobsterFramework.Utility.SortableItem`1.CompareTo*
   commentId: Overload:LobsterFramework.Utility.SortableItem`1.CompareTo
+  href: LobsterFramework.Utility.SortableItem-1.html#LobsterFramework.Utility.SortableItem`1.CompareTo(LobsterFramework.Utility.SortableItem{`0})
   name: CompareTo
   nameWithType: SortableItem<T>.CompareTo
   fullName: LobsterFramework.Utility.SortableItem<T>.CompareTo
@@ -184,6 +194,7 @@ references:
 - uid: LobsterFramework.Utility.SortableItem`1
   commentId: T:LobsterFramework.Utility.SortableItem`1
   parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.SortableItem-1.html
   name: SortableItem<T>
   nameWithType: SortableItem<T>
   fullName: LobsterFramework.Utility.SortableItem<T>
@@ -193,12 +204,14 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SortableItem`1
     name: SortableItem
+    href: LobsterFramework.Utility.SortableItem-1.html
   - name: <
   - name: T
   - name: '>'
   spec.vb:
   - uid: LobsterFramework.Utility.SortableItem`1
     name: SortableItem
+    href: LobsterFramework.Utility.SortableItem-1.html
   - name: (
   - name: Of
   - name: " "

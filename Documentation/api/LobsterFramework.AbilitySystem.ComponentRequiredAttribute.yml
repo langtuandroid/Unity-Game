@@ -17,14 +17,14 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     id: ComponentRequiredAttribute
-    path: ../Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+    path: ../Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     startLine: 11
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nMark this ability as requiring the specified components on the parent gameobject to run\n"
+  summary: Mark this ability as requiring the specified components on the parent gameobject to run
   example: []
   syntax:
     content: >-
@@ -64,12 +64,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     id: .ctor
-    path: ../Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+    path: ../Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     startLine: 18
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public ComponentRequiredAttribute(params Type[] requiredComponents)
@@ -94,12 +94,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     id: Init
-    path: ../Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+    path: ../Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     startLine: 23
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public void Init(Type type)
@@ -121,14 +121,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     id: ComponentCheck
-    path: ../Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+    path: ../Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     startLine: 108
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nCheck if the action component and the gameobject satisfies the requirements of the ActionInstance defined by its attributes.\n"
+  summary: Check if the action component and the gameobject satisfies the requirements of the ActionInstance defined by its attributes.
   example: []
   syntax:
     content: public static bool ComponentCheck(Type type, GameObject obj)
@@ -138,34 +138,40 @@ items:
       description: The type of the ability to examine for requirements
     - id: obj
       type: UnityEngine.GameObject
-      description: 'The gameobject for examination '
+      description: The gameobject for examination
     return:
       type: System.Boolean
-      description: Whether the gameobject satisfied the component requirements. If there&apos;s no requirement, return true. If obj is null, return false.
+      description: Whether the gameobject satisfied the component requirements. If there's no requirement, return true. If obj is null, return false.
     content.vb: Public Shared Function ComponentCheck(type As Type, obj As GameObject) As Boolean
   overload: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck*
 references:
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
   name: LobsterFramework.AbilitySystem
   nameWithType: LobsterFramework.AbilitySystem
   fullName: LobsterFramework.AbilitySystem
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -176,17 +182,20 @@ references:
   commentId: T:System.Attribute
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.attribute
   name: Attribute
   nameWithType: Attribute
   fullName: System.Attribute
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.#ctor*
   commentId: Overload:LobsterFramework.AbilitySystem.ComponentRequiredAttribute.#ctor
+  href: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.html#LobsterFramework.AbilitySystem.ComponentRequiredAttribute.#ctor(System.Type[])
   name: ComponentRequiredAttribute
   nameWithType: ComponentRequiredAttribute.ComponentRequiredAttribute
   fullName: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentRequiredAttribute
@@ -195,6 +204,7 @@ references:
   name.vb: New
 - uid: System.Type[]
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: Type[]
   nameWithType: Type[]
   fullName: System.Type[]
@@ -205,16 +215,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: '['
   - name: ']'
   spec.vb:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: (
   - name: )
 - uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.Init*
   commentId: Overload:LobsterFramework.AbilitySystem.ComponentRequiredAttribute.Init
+  href: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.html#LobsterFramework.AbilitySystem.ComponentRequiredAttribute.Init(System.Type)
   name: Init
   nameWithType: ComponentRequiredAttribute.Init
   fullName: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.Init
@@ -222,11 +235,13 @@ references:
   commentId: T:System.Type
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: Type
   nameWithType: Type
   fullName: System.Type
 - uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck*
   commentId: Overload:LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck
+  href: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.html#LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck(System.Type,UnityEngine.GameObject)
   name: ComponentCheck
   nameWithType: ComponentRequiredAttribute.ComponentCheck
   fullName: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.ComponentCheck
@@ -241,6 +256,7 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool

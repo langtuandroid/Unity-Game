@@ -17,12 +17,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Action/ActionInstanceDrawer.cs
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Action/AbilityDrawer.cs
     id: ActionInstanceDrawer
-    path: ../Assets/Scripts/Editor/Property Drawer/Action/ActionInstanceDrawer.cs
+    path: ../Assets/Framework/Editor/Property Drawer/Action/AbilityDrawer.cs
     startLine: 8
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EditorUtility
   syntax:
     content: >-
@@ -56,12 +56,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Action/ActionInstanceDrawer.cs
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Action/AbilityDrawer.cs
     id: .ctor
-    path: ../Assets/Scripts/Editor/Property Drawer/Action/ActionInstanceDrawer.cs
+    path: ../Assets/Framework/Editor/Property Drawer/Action/AbilityDrawer.cs
     startLine: 13
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EditorUtility
   syntax:
     content: public ActionInstanceDrawer()
@@ -83,22 +83,27 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Action/ActionInstanceDrawer.cs
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Action/AbilityDrawer.cs
     id: GetPropertyHeight
-    path: ../Assets/Scripts/Editor/Property Drawer/Action/ActionInstanceDrawer.cs
+    path: ../Assets/Framework/Editor/Property Drawer/Action/AbilityDrawer.cs
     startLine: 18
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EditorUtility
+  summary: <p>Override this method to specify how tall the GUI for this field is in pixels.</p>
+  example: []
   syntax:
     content: public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     parameters:
     - id: property
       type: UnityEditor.SerializedProperty
+      description: The SerializedProperty to make the custom GUI for.
     - id: label
       type: UnityEngine.GUIContent
+      description: The label of this property.
     return:
       type: System.Single
+      description: <p>The height in pixels.</p>
     content.vb: Public Overrides Function GetPropertyHeight([property] As SerializedProperty, label As GUIContent) As Single
   overridden: UnityEditor.PropertyDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
   overload: LobsterFramework.EditorUtility.ActionInstanceDrawer.GetPropertyHeight*
@@ -115,47 +120,58 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Action/ActionInstanceDrawer.cs
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Action/AbilityDrawer.cs
     id: OnGUI
-    path: ../Assets/Scripts/Editor/Property Drawer/Action/ActionInstanceDrawer.cs
+    path: ../Assets/Framework/Editor/Property Drawer/Action/AbilityDrawer.cs
     startLine: 40
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EditorUtility
+  summary: <p>Override this method to make your own IMGUI based GUI for the property.</p>
+  example: []
   syntax:
     content: public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     parameters:
     - id: position
       type: UnityEngine.Rect
+      description: Rectangle on the screen to use for the property GUI.
     - id: property
       type: UnityEditor.SerializedProperty
+      description: The SerializedProperty to make the custom GUI for.
     - id: label
       type: UnityEngine.GUIContent
+      description: The label of this property.
     content.vb: Public Overrides Sub OnGUI(position As Rect, [property] As SerializedProperty, label As GUIContent)
   overridden: UnityEditor.PropertyDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
   overload: LobsterFramework.EditorUtility.ActionInstanceDrawer.OnGUI*
 references:
 - uid: LobsterFramework.EditorUtility
   commentId: N:LobsterFramework.EditorUtility
+  href: LobsterFramework.html
   name: LobsterFramework.EditorUtility
   nameWithType: LobsterFramework.EditorUtility
   fullName: LobsterFramework.EditorUtility
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.EditorUtility
     name: EditorUtility
+    href: LobsterFramework.EditorUtility.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.EditorUtility
     name: EditorUtility
+    href: LobsterFramework.EditorUtility.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -179,6 +195,7 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
@@ -190,6 +207,7 @@ references:
   fullName: UnityEditor
 - uid: LobsterFramework.EditorUtility.ActionInstanceDrawer.#ctor*
   commentId: Overload:LobsterFramework.EditorUtility.ActionInstanceDrawer.#ctor
+  href: LobsterFramework.EditorUtility.ActionInstanceDrawer.html#LobsterFramework.EditorUtility.ActionInstanceDrawer.#ctor
   name: ActionInstanceDrawer
   nameWithType: ActionInstanceDrawer.ActionInstanceDrawer
   fullName: LobsterFramework.EditorUtility.ActionInstanceDrawer.ActionInstanceDrawer
@@ -233,6 +251,7 @@ references:
   - name: )
 - uid: LobsterFramework.EditorUtility.ActionInstanceDrawer.GetPropertyHeight*
   commentId: Overload:LobsterFramework.EditorUtility.ActionInstanceDrawer.GetPropertyHeight
+  href: LobsterFramework.EditorUtility.ActionInstanceDrawer.html#LobsterFramework.EditorUtility.ActionInstanceDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)
   name: GetPropertyHeight
   nameWithType: ActionInstanceDrawer.GetPropertyHeight
   fullName: LobsterFramework.EditorUtility.ActionInstanceDrawer.GetPropertyHeight
@@ -254,6 +273,7 @@ references:
   commentId: T:System.Single
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
   name: float
   nameWithType: float
   fullName: float
@@ -313,6 +333,7 @@ references:
   - name: )
 - uid: LobsterFramework.EditorUtility.ActionInstanceDrawer.OnGUI*
   commentId: Overload:LobsterFramework.EditorUtility.ActionInstanceDrawer.OnGUI
+  href: LobsterFramework.EditorUtility.ActionInstanceDrawer.html#LobsterFramework.EditorUtility.ActionInstanceDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)
   name: OnGUI
   nameWithType: ActionInstanceDrawer.OnGUI
   fullName: LobsterFramework.EditorUtility.ActionInstanceDrawer.OnGUI

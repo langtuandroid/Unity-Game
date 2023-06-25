@@ -6,9 +6,9 @@ items:
   parent: Global
   children:
   - Global.RefFloat.#ctor(System.Single,System.Boolean,VarFloat)
+  - Global.RefFloat.Value
   - Global.RefFloat.op_Implicit(RefFloat)~System.Single
   - Global.RefFloat.op_Implicit(System.Single)~RefFloat
-  - Global.RefFloat.Value
   langs:
   - csharp
   - vb
@@ -18,12 +18,12 @@ items:
   type: Struct
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Variables/RefFloat.cs
     id: RefFloat
-    path: ../Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+    path: ../Assets/Framework/Scriptable Objects/Variables/RefFloat.cs
     startLine: 4
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: >-
@@ -51,12 +51,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Variables/RefFloat.cs
     id: .ctor
-    path: ../Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+    path: ../Assets/Framework/Scriptable Objects/Variables/RefFloat.cs
     startLine: 11
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public RefFloat(float value = 0, bool useSharedValue = false, VarFloat sharedValue = null)
@@ -85,12 +85,12 @@ items:
   type: Operator
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Variables/RefFloat.cs
     id: op_Implicit
-    path: ../Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+    path: ../Assets/Framework/Scriptable Objects/Variables/RefFloat.cs
     startLine: 17
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public static implicit operator RefFloat(float value)
@@ -117,12 +117,12 @@ items:
   type: Operator
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Variables/RefFloat.cs
     id: op_Implicit
-    path: ../Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+    path: ../Assets/Framework/Scriptable Objects/Variables/RefFloat.cs
     startLine: 22
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public static implicit operator float(RefFloat value)
@@ -149,12 +149,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Variables/RefFloat.cs
     id: Value
-    path: ../Assets/Scripts/Scriptable Objects/Variables/RefFloat.cs
+    path: ../Assets/Framework/Scriptable Objects/Variables/RefFloat.cs
     startLine: 26
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public float Value { get; set; }
@@ -167,6 +167,7 @@ references:
 - uid: Global
 - uid: Global.RefFloat.#ctor*
   commentId: Overload:Global.RefFloat.#ctor
+  href: Global.RefFloat.html#RefFloat.#ctor(System.Single,System.Boolean,VarFloat)
   name: RefFloat
   nameWithType: RefFloat.RefFloat
   fullName: RefFloat.RefFloat
@@ -177,6 +178,7 @@ references:
   commentId: T:System.Single
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
   name: float
   nameWithType: float
   fullName: float
@@ -187,6 +189,7 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
@@ -195,12 +198,14 @@ references:
   name.vb: Boolean
 - uid: Global.VarFloat
   commentId: T:Global.VarFloat
+  href: VarFloat.html
   name: VarFloat
   nameWithType: VarFloat
   fullName: VarFloat
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
@@ -218,11 +223,13 @@ references:
   - name: operator
 - uid: Global.RefFloat
   commentId: T:Global.RefFloat
+  href: RefFloat.html
   name: RefFloat
   nameWithType: RefFloat
   fullName: RefFloat
 - uid: Global.RefFloat.Value*
   commentId: Overload:Global.RefFloat.Value
+  href: Global.RefFloat.html#RefFloat.Value
   name: Value
   nameWithType: RefFloat.Value
   fullName: RefFloat.Value

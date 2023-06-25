@@ -12,7 +12,7 @@
  | LobsterFramework documentation ">
     
       <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
       <link rel="stylesheet" href="../styles/main.css">
       <meta property="docfx:navrel" content="../toc.html">
@@ -80,6 +80,7 @@
             <article class="content wrap" id="_content" data-uid="LobsterFramework.Utility.BufferedStats.BufferedStat`1">
 
 
+
   <h1 id="LobsterFramework_Utility_BufferedStats_BufferedStat_1" data-uid="LobsterFramework.Utility.BufferedStats.BufferedStat`1" class="text-break">Class BufferedStat&lt;T&gt;
 </h1>
   <div class="markdown level0 summary"><p>Stats that can buffered, meaning it can be affected by multiple effectors. <br>
@@ -99,13 +100,13 @@ all of these effects (effectors) are removed.</p>
       <div class="level2"><a class="xref" href="LobsterFramework.Utility.BufferedStats.IntSum.html">IntSum</a></div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="LobsterFramework.html">LobsterFramework</a>.<a class="xref" href="LobsterFramework.Utility.html">Utility</a>.<a class="xref" href="LobsterFramework.Utility.BufferedStats.html">BufferedStats</a></h6>
-  <h6><strong>Assembly</strong>: MyScripts.dll</h6>
+  <h6><strong>Assembly</strong>: LobsterFramework.dll</h6>
   <h5 id="LobsterFramework_Utility_BufferedStats_BufferedStat_1_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract class BufferedStat&lt;T&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Name</th>
@@ -132,7 +133,7 @@ all of these effects (effectors) are removed.</p>
     <pre><code class="lang-csharp hljs">public BufferedStat(T value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -160,7 +161,7 @@ all of these effects (effectors) are removed.</p>
     <pre><code class="lang-csharp hljs">protected T baseValue</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -184,7 +185,7 @@ all of these effects (effectors) are removed.</p>
     <pre><code class="lang-csharp hljs">protected Dictionary&lt;int, T&gt; stats</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -211,7 +212,7 @@ all of these effects (effectors) are removed.</p>
     <pre><code class="lang-csharp hljs">public T Stat { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -238,7 +239,7 @@ all of these effects (effectors) are removed.</p>
     <pre><code class="lang-csharp hljs">public int AddEffector(T obj)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -255,7 +256,7 @@ all of these effects (effectors) are removed.</p>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -290,7 +291,7 @@ all of these effects (effectors) are removed.</p>
     <pre><code class="lang-csharp hljs">public virtual bool Compatible(T obj)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -307,7 +308,7 @@ all of these effects (effectors) are removed.</p>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -332,7 +333,7 @@ all of these effects (effectors) are removed.</p>
     <pre><code class="lang-csharp hljs">public bool RemoveEffector(int id)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -349,7 +350,7 @@ all of these effects (effectors) are removed.</p>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -374,7 +375,7 @@ all of these effects (effectors) are removed.</p>
     <pre><code class="lang-csharp hljs">public bool SetEffector(int id, T obj)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -396,7 +397,7 @@ all of these effects (effectors) are removed.</p>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -421,7 +422,7 @@ all of these effects (effectors) are removed.</p>
     <pre><code class="lang-csharp hljs">protected abstract T Value()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -435,6 +436,7 @@ all of these effects (effectors) are removed.</p>
       </tr>
     </tbody>
   </table>
+
 </article>
           </div>
 
@@ -467,7 +469,7 @@ all of these effects (effectors) are removed.</p>
       </footer>
     </div>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
   </body>

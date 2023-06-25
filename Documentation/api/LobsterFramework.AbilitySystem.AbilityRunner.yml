@@ -20,13 +20,13 @@ items:
   - LobsterFramework.AbilitySystem.AbilityRunner.IsAbilityReady``1
   - LobsterFramework.AbilitySystem.AbilityRunner.IsAbilityReady``1(System.String)
   - LobsterFramework.AbilitySystem.AbilityRunner.IsAnimating(LobsterFramework.AbilitySystem.Ability,System.String)
-  - LobsterFramework.AbilitySystem.AbilityRunner.onActionBlocked
-  - LobsterFramework.AbilitySystem.AbilityRunner.onHyperArmored
   - LobsterFramework.AbilitySystem.AbilityRunner.Reset
   - LobsterFramework.AbilitySystem.AbilityRunner.SaveAbilityData(System.String)
   - LobsterFramework.AbilitySystem.AbilityRunner.Signal``1(System.String)
   - LobsterFramework.AbilitySystem.AbilityRunner.StartAnimation``1(System.String,System.String)
   - LobsterFramework.AbilitySystem.AbilityRunner.UnblockAction(System.Int32)
+  - LobsterFramework.AbilitySystem.AbilityRunner.onActionBlocked
+  - LobsterFramework.AbilitySystem.AbilityRunner.onHyperArmored
   langs:
   - csharp
   - vb
@@ -36,14 +36,19 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: AbilityRunner
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 14
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nComponent that provides access to a variety of movesets, it acts as a container and platform for \ndifferent kinds of abilitiess and moves which are provided and fully implemented by associated sub-components.\nRequires actionable data to be supplied. \n"
+  summary: >-
+    Component that provides access to a variety of movesets, it acts as a container and platform for 
+
+    different kinds of abilitiess and moves which are provided and fully implemented by associated sub-components.
+
+    Requires actionable data to be supplied.
   example: []
   syntax:
     content: >-
@@ -190,12 +195,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: onActionBlocked
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 18
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public UnityAction<bool> onActionBlocked
@@ -215,12 +220,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: onHyperArmored
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 19
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public UnityAction<bool> onHyperArmored
@@ -240,12 +245,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: ActionBlocked
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 41
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public bool ActionBlocked { get; }
@@ -267,12 +272,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: HyperArmored
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 45
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public bool HyperArmored { get; }
@@ -294,14 +299,31 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: EnqueueAbility
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 63
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nAdd the action with specified type (T) and config (name) to the executing queue, return the status of this operation. <br />\nFor this operation to be successful, the following must be satisfied: <br />\n1. The entity must not be action blocked. (i.e Not affected by stun effect) <br />\n2. The specified action of Type (T) as well as the config (name) must be present in the actionable data.<br />\n3. The precondition of the specified action must be satisfied as well as the cooldown of the config if the action uses cooldowns. <br />\n4. The specified action must not be currently running or enqueued. <br />\n5. There must be no other actions with higher enqueue priority in the same action group executing by the entity. <br />\n<br />\nNote that this method should only be called inside Update(), calling it elsewhere will have unpredictable results.\n"
+  summary: >-
+    Add the action with specified type (T) and config (name) to the executing queue, return the status of this operation. <br />
+
+    For this operation to be successful, the following must be satisfied: <br />
+
+    1. The entity must not be action blocked. (i.e Not affected by stun effect) <br />
+
+    2. The specified action of Type (T) as well as the config (name) must be present in the actionable data.<br />
+
+    3. The precondition of the specified action must be satisfied as well as the cooldown of the config if the action uses cooldowns. <br />
+
+    4. The specified action must not be currently running or enqueued. <br />
+
+    5. There must be no other actions with higher enqueue priority in the same action group executing by the entity. <br />
+
+    <br />
+
+    Note that this method should only be called inside Update(), calling it elsewhere will have unpredictable results.
   example: []
   syntax:
     content: 'public bool EnqueueAbility<T>(string name) where T : Ability'
@@ -333,14 +355,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: EnqueueAbility
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 88
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nA shortcut for enqueuing the action with default config, see EnqueueAction&lt;T>(string name) for more details \n"
+  summary: A shortcut for enqueuing the action with default config, see EnqueueAction&lt;T&gt;(string name) for more details
   example: []
   syntax:
     content: 'public bool EnqueueAbility<T>() where T : Ability'
@@ -368,29 +390,32 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: EnqueueAbilitiesInJoint
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 102
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nEnqueue two abilities of different types together with the second one being guaranteed to <br />\nterminate no later than the first one.\n"
+  summary: >-
+    Enqueue two abilities of different types together with the second one being guaranteed to <br />
+
+    terminate no later than the first one.
   example: []
   syntax:
     content: 'public bool EnqueueAbilitiesInJoint<T, V>(string config1, string config2) where T : Ability where V : Ability'
     parameters:
     - id: config1
       type: System.String
-      description: 'Configuration for the first ability '
+      description: Configuration for the first ability
     - id: config2
       type: System.String
-      description: 'Configuration for the second ability '
+      description: Configuration for the second ability
     typeParameters:
     - id: T
-      description: 'The type of the first ability '
+      description: The type of the first ability
     - id: V
-      description: 'The type of the second ability '
+      description: The type of the second ability
     return:
       type: System.Boolean
       description: ''
@@ -412,22 +437,22 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: EnqueueAbilitiesInJoint
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 131
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nShorthand for EnqueueAbilitiesInJoint&lt;T, V>(&quot;default&quot;, &quot;default&quot;)\n"
+  summary: Shorthand for EnqueueAbilitiesInJoint&lt;T, V&gt;("default", "default")
   example: []
   syntax:
     content: 'public bool EnqueueAbilitiesInJoint<T, V>() where T : Ability where V : Ability'
     typeParameters:
     - id: T
-      description: 'The type of the first ability '
+      description: The type of the first ability
     - id: V
-      description: 'The type of the second ability '
+      description: The type of the second ability
     return:
       type: System.Boolean
       description: ''
@@ -449,14 +474,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: GetAbilityStat
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 143
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nGet the ability stat of type T attached to this Component if it is present.\n"
+  summary: Get the ability stat of type T attached to this Component if it is present.
   example: []
   syntax:
     content: 'public T GetAbilityStat<T>() where T : AbilityStat'
@@ -484,14 +509,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: HaltAbility
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 159
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nStops the execution of the action and returns the status of this operation\n"
+  summary: Stops the execution of the action and returns the status of this operation
   example: []
   syntax:
     content: 'public bool HaltAbility<T>(string name) where T : Ability'
@@ -523,14 +548,17 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: IsAbilityReady
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 178
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nCheck if the action instance of type T with config is ready. <br />\nIf T is not present or config is not available, return false.\n"
+  summary: >-
+    Check if the action instance of type T with config is ready. <br />
+
+    If T is not present or config is not available, return false.
   example: []
   syntax:
     content: 'public bool IsAbilityReady<T>(string config) where T : Ability'
@@ -562,14 +590,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: IsAbilityReady
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 193
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nA shortcut for IsInstanceReady&lt;T>(&quot;default&quot;).\n"
+  summary: A shortcut for IsInstanceReady&lt;T&gt;("default").
   example: []
   syntax:
     content: 'public bool IsAbilityReady<T>() where T : Ability'
@@ -578,7 +606,7 @@ items:
       description: Type of the Ability to be queried
     return:
       type: System.Boolean
-      description: 'The result of the query '
+      description: The result of the query
     content.vb: Public Function IsAbilityReady(Of T As Ability)() As Boolean
   overload: LobsterFramework.AbilitySystem.AbilityRunner.IsAbilityReady*
   nameWithType.vb: AbilityRunner.IsAbilityReady(Of T)()
@@ -597,14 +625,17 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: BlockAction
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 203
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nAdd an effector to block actions, actions will be blocked if there&apos;s at least 1 effector.\nAn event will be sent to all subscribers on action blocked.\n"
+  summary: >-
+    Add an effector to block actions, actions will be blocked if there's at least 1 effector.
+
+    An event will be sent to all subscribers on action blocked.
   example: []
   syntax:
     content: public int BlockAction()
@@ -626,14 +657,17 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: UnblockAction
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 220
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nRemvoe the specified effector that blocks the action if it exists.\nAn event will be sent to subscribers on action unblocked.\n"
+  summary: >-
+    Remvoe the specified effector that blocks the action if it exists.
+
+    An event will be sent to subscribers on action unblocked.
   example: []
   syntax:
     content: public bool UnblockAction(int id)
@@ -662,14 +696,19 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: HyperArmor
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 237
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nAdd an effector to provide hyperarmor for the object. While hyperarmored, abilities cannot be interrupted other than death.\nHyperarmor will exist if there&apos;s at least 1 effector.\nAn event will be sent to subscribers on hyperarmored.\n"
+  summary: >-
+    Add an effector to provide hyperarmor for the object. While hyperarmored, abilities cannot be interrupted other than death.
+
+    Hyperarmor will exist if there's at least 1 effector.
+
+    An event will be sent to subscribers on hyperarmored.
   example: []
   syntax:
     content: public int HyperArmor()
@@ -691,14 +730,17 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: DisArmor
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 253
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nRemove the specified effector for hyperarmor if it exists\nAn event will be sent to subscribers on dishyperarmored\n"
+  summary: >-
+    Remove the specified effector for hyperarmor if it exists
+
+    An event will be sent to subscribers on dishyperarmored
   example: []
   syntax:
     content: public bool DisArmor(int id)
@@ -727,14 +769,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: Reset
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 269
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nReset the status of all abilities and their configs to their initial state\n"
+  summary: Reset the status of all abilities and their configs to their initial state
   example: []
   syntax:
     content: public void Reset()
@@ -753,14 +795,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: SaveAbilityData
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 285
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nOnly to be called inside play mode! Save the current ability data as an asset with specified assetName to the default path.\n"
+  summary: Only to be called inside play mode! Save the current ability data as an asset with specified assetName to the default path.
   example: []
   syntax:
     content: public void SaveAbilityData(string assetName)
@@ -786,14 +828,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: IsAnimating
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 385
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nCheck if the specified ability config pair is playing animation. \n"
+  summary: Check if the specified ability config pair is playing animation.
   example: []
   syntax:
     content: public bool IsAnimating(Ability ability, string configName)
@@ -825,14 +867,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: StartAnimation
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 395
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nUsed by abilities to initiate animations, will override any currently running animations by other abilities\n"
+  summary: Used by abilities to initiate animations, will override any currently running animations by other abilities
   example: []
   syntax:
     content: 'public void StartAnimation<T>(string configName, string animation) where T : Ability'
@@ -864,14 +906,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: Signal
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 427
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nSend a signal to the specified ability. \n"
+  summary: Send a signal to the specified ability.
   example: []
   syntax:
     content: 'public void Signal<T>(string configName = "default") where T : Ability'
@@ -898,14 +940,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     id: AnimationSignal
-    path: ../Assets/Scripts/Components/ActionComponents/AbilityRunner.cs
+    path: ../Assets/Framework/Components/ActionComponents/AbilityRunner.cs
     startLine: 439
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nUsed by animation events to send signals\n"
+  summary: Used by animation events to send signals
   example: []
   syntax:
     content: public void AnimationSignal()
@@ -914,25 +956,31 @@ items:
 references:
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
   name: LobsterFramework.AbilitySystem
   nameWithType: LobsterFramework.AbilitySystem
   fullName: LobsterFramework.AbilitySystem
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -1009,6 +1057,7 @@ references:
   commentId: M:UnityEngine.MonoBehaviour.Invoke(System.String,System.Single)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: Invoke(string, float)
   nameWithType: MonoBehaviour.Invoke(string, float)
   fullName: UnityEngine.MonoBehaviour.Invoke(string, float)
@@ -1023,11 +1072,13 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Single
     name: float
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.Invoke(System.String,System.Single)
@@ -1037,16 +1088,19 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Single
     name: Single
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
 - uid: UnityEngine.MonoBehaviour.InvokeRepeating(System.String,System.Single,System.Single)
   commentId: M:UnityEngine.MonoBehaviour.InvokeRepeating(System.String,System.Single,System.Single)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: InvokeRepeating(string, float, float)
   nameWithType: MonoBehaviour.InvokeRepeating(string, float, float)
   fullName: UnityEngine.MonoBehaviour.InvokeRepeating(string, float, float)
@@ -1061,16 +1115,19 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Single
     name: float
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: ','
   - name: " "
   - uid: System.Single
     name: float
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.InvokeRepeating(System.String,System.Single,System.Single)
@@ -1080,21 +1137,25 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Single
     name: Single
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: ','
   - name: " "
   - uid: System.Single
     name: Single
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
 - uid: UnityEngine.MonoBehaviour.CancelInvoke(System.String)
   commentId: M:UnityEngine.MonoBehaviour.CancelInvoke(System.String)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: CancelInvoke(string)
   nameWithType: MonoBehaviour.CancelInvoke(string)
   fullName: UnityEngine.MonoBehaviour.CancelInvoke(string)
@@ -1109,6 +1170,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.CancelInvoke(System.String)
@@ -1118,11 +1180,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.MonoBehaviour.IsInvoking(System.String)
   commentId: M:UnityEngine.MonoBehaviour.IsInvoking(System.String)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: IsInvoking(string)
   nameWithType: MonoBehaviour.IsInvoking(string)
   fullName: UnityEngine.MonoBehaviour.IsInvoking(string)
@@ -1137,6 +1201,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.IsInvoking(System.String)
@@ -1146,11 +1211,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.MonoBehaviour.StartCoroutine(System.String)
   commentId: M:UnityEngine.MonoBehaviour.StartCoroutine(System.String)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: StartCoroutine(string)
   nameWithType: MonoBehaviour.StartCoroutine(string)
   fullName: UnityEngine.MonoBehaviour.StartCoroutine(string)
@@ -1165,6 +1232,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.StartCoroutine(System.String)
@@ -1174,11 +1242,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.MonoBehaviour.StartCoroutine(System.String,System.Object)
   commentId: M:UnityEngine.MonoBehaviour.StartCoroutine(System.String,System.Object)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: StartCoroutine(string, object)
   nameWithType: MonoBehaviour.StartCoroutine(string, object)
   fullName: UnityEngine.MonoBehaviour.StartCoroutine(string, object)
@@ -1193,11 +1263,13 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.StartCoroutine(System.String,System.Object)
@@ -1207,16 +1279,19 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: UnityEngine.MonoBehaviour.StartCoroutine(System.Collections.IEnumerator)
   commentId: M:UnityEngine.MonoBehaviour.StartCoroutine(System.Collections.IEnumerator)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
   name: StartCoroutine(IEnumerator)
   nameWithType: MonoBehaviour.StartCoroutine(IEnumerator)
   fullName: UnityEngine.MonoBehaviour.StartCoroutine(System.Collections.IEnumerator)
@@ -1228,6 +1303,7 @@ references:
   - uid: System.Collections.IEnumerator
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.StartCoroutine(System.Collections.IEnumerator)
@@ -1237,11 +1313,13 @@ references:
   - uid: System.Collections.IEnumerator
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
   - name: )
 - uid: UnityEngine.MonoBehaviour.StartCoroutine_Auto(System.Collections.IEnumerator)
   commentId: M:UnityEngine.MonoBehaviour.StartCoroutine_Auto(System.Collections.IEnumerator)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
   name: StartCoroutine_Auto(IEnumerator)
   nameWithType: MonoBehaviour.StartCoroutine_Auto(IEnumerator)
   fullName: UnityEngine.MonoBehaviour.StartCoroutine_Auto(System.Collections.IEnumerator)
@@ -1253,6 +1331,7 @@ references:
   - uid: System.Collections.IEnumerator
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.StartCoroutine_Auto(System.Collections.IEnumerator)
@@ -1262,11 +1341,13 @@ references:
   - uid: System.Collections.IEnumerator
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
   - name: )
 - uid: UnityEngine.MonoBehaviour.StopCoroutine(System.Collections.IEnumerator)
   commentId: M:UnityEngine.MonoBehaviour.StopCoroutine(System.Collections.IEnumerator)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
   name: StopCoroutine(IEnumerator)
   nameWithType: MonoBehaviour.StopCoroutine(IEnumerator)
   fullName: UnityEngine.MonoBehaviour.StopCoroutine(System.Collections.IEnumerator)
@@ -1278,6 +1359,7 @@ references:
   - uid: System.Collections.IEnumerator
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.StopCoroutine(System.Collections.IEnumerator)
@@ -1287,6 +1369,7 @@ references:
   - uid: System.Collections.IEnumerator
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
   - name: )
 - uid: UnityEngine.MonoBehaviour.StopCoroutine(UnityEngine.Coroutine)
   commentId: M:UnityEngine.MonoBehaviour.StopCoroutine(UnityEngine.Coroutine)
@@ -1317,6 +1400,7 @@ references:
   commentId: M:UnityEngine.MonoBehaviour.StopCoroutine(System.String)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: StopCoroutine(string)
   nameWithType: MonoBehaviour.StopCoroutine(string)
   fullName: UnityEngine.MonoBehaviour.StopCoroutine(string)
@@ -1331,6 +1415,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.StopCoroutine(System.String)
@@ -1340,6 +1425,7 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.MonoBehaviour.StopAllCoroutines
   commentId: M:UnityEngine.MonoBehaviour.StopAllCoroutines
@@ -1364,6 +1450,7 @@ references:
   commentId: M:UnityEngine.MonoBehaviour.print(System.Object)
   parent: UnityEngine.MonoBehaviour
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: print(object)
   nameWithType: MonoBehaviour.print(object)
   fullName: UnityEngine.MonoBehaviour.print(object)
@@ -1378,6 +1465,7 @@ references:
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
   spec.vb:
   - uid: UnityEngine.MonoBehaviour.print(System.Object)
@@ -1387,6 +1475,7 @@ references:
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: UnityEngine.MonoBehaviour.destroyCancellationToken
   commentId: P:UnityEngine.MonoBehaviour.destroyCancellationToken
@@ -1427,6 +1516,7 @@ references:
   commentId: M:UnityEngine.Component.GetComponent(System.Type)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponent(Type)
   nameWithType: Component.GetComponent(Type)
   fullName: UnityEngine.Component.GetComponent(System.Type)
@@ -1438,6 +1528,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponent(System.Type)
@@ -1447,6 +1538,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Component.GetComponent``1
   commentId: M:UnityEngine.Component.GetComponent``1
@@ -1482,6 +1574,7 @@ references:
   commentId: M:UnityEngine.Component.TryGetComponent(System.Type,UnityEngine.Component@)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: TryGetComponent(Type, out Component)
   nameWithType: Component.TryGetComponent(Type, out Component)
   fullName: UnityEngine.Component.TryGetComponent(System.Type, out UnityEngine.Component)
@@ -1496,6 +1589,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - name: out
@@ -1512,6 +1606,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.Component
@@ -1556,6 +1651,7 @@ references:
   commentId: M:UnityEngine.Component.GetComponent(System.String)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: GetComponent(string)
   nameWithType: Component.GetComponent(string)
   fullName: UnityEngine.Component.GetComponent(string)
@@ -1570,6 +1666,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponent(System.String)
@@ -1579,11 +1676,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.Component.GetComponentInChildren(System.Type,System.Boolean)
   commentId: M:UnityEngine.Component.GetComponentInChildren(System.Type,System.Boolean)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponentInChildren(Type, bool)
   nameWithType: Component.GetComponentInChildren(Type, bool)
   fullName: UnityEngine.Component.GetComponentInChildren(System.Type, bool)
@@ -1598,11 +1697,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentInChildren(System.Type,System.Boolean)
@@ -1612,16 +1713,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Component.GetComponentInChildren(System.Type)
   commentId: M:UnityEngine.Component.GetComponentInChildren(System.Type)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponentInChildren(Type)
   nameWithType: Component.GetComponentInChildren(Type)
   fullName: UnityEngine.Component.GetComponentInChildren(System.Type)
@@ -1633,6 +1737,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentInChildren(System.Type)
@@ -1642,11 +1747,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Component.GetComponentInChildren``1(System.Boolean)
   commentId: M:UnityEngine.Component.GetComponentInChildren``1(System.Boolean)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: GetComponentInChildren<T>(bool)
   nameWithType: Component.GetComponentInChildren<T>(bool)
   fullName: UnityEngine.Component.GetComponentInChildren<T>(bool)
@@ -1664,6 +1771,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentInChildren``1(System.Boolean)
@@ -1678,6 +1786,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Component.GetComponentInChildren``1
   commentId: M:UnityEngine.Component.GetComponentInChildren``1
@@ -1713,6 +1822,7 @@ references:
   commentId: M:UnityEngine.Component.GetComponentsInChildren(System.Type,System.Boolean)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponentsInChildren(Type, bool)
   nameWithType: Component.GetComponentsInChildren(Type, bool)
   fullName: UnityEngine.Component.GetComponentsInChildren(System.Type, bool)
@@ -1727,11 +1837,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentsInChildren(System.Type,System.Boolean)
@@ -1741,16 +1853,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Component.GetComponentsInChildren(System.Type)
   commentId: M:UnityEngine.Component.GetComponentsInChildren(System.Type)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponentsInChildren(Type)
   nameWithType: Component.GetComponentsInChildren(Type)
   fullName: UnityEngine.Component.GetComponentsInChildren(System.Type)
@@ -1762,6 +1877,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentsInChildren(System.Type)
@@ -1771,11 +1887,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Component.GetComponentsInChildren``1(System.Boolean)
   commentId: M:UnityEngine.Component.GetComponentsInChildren``1(System.Boolean)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: GetComponentsInChildren<T>(bool)
   nameWithType: Component.GetComponentsInChildren<T>(bool)
   fullName: UnityEngine.Component.GetComponentsInChildren<T>(bool)
@@ -1793,6 +1911,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentsInChildren``1(System.Boolean)
@@ -1807,11 +1926,13 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Component.GetComponentsInChildren``1(System.Boolean,System.Collections.Generic.List{{T}})
   commentId: M:UnityEngine.Component.GetComponentsInChildren``1(System.Boolean,System.Collections.Generic.List{``0})
   parent: UnityEngine.Component
   definition: UnityEngine.Component.GetComponentsInChildren``1(System.Boolean,System.Collections.Generic.List{``0})
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: GetComponentsInChildren<T>(bool, List<T>)
   nameWithType: Component.GetComponentsInChildren<T>(bool, List<T>)
   fullName: UnityEngine.Component.GetComponentsInChildren<T>(bool, System.Collections.Generic.List<T>)
@@ -1829,11 +1950,13 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -1851,11 +1974,13 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -1896,6 +2021,7 @@ references:
   commentId: M:UnityEngine.Component.GetComponentsInChildren``1(System.Collections.Generic.List{``0})
   parent: UnityEngine.Component
   definition: UnityEngine.Component.GetComponentsInChildren``1(System.Collections.Generic.List{``0})
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: GetComponentsInChildren<T>(List<T>)
   nameWithType: Component.GetComponentsInChildren<T>(List<T>)
   fullName: UnityEngine.Component.GetComponentsInChildren<T>(System.Collections.Generic.List<T>)
@@ -1913,6 +2039,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -1930,6 +2057,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -1940,6 +2068,7 @@ references:
   commentId: M:UnityEngine.Component.GetComponentInParent(System.Type,System.Boolean)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponentInParent(Type, bool)
   nameWithType: Component.GetComponentInParent(Type, bool)
   fullName: UnityEngine.Component.GetComponentInParent(System.Type, bool)
@@ -1954,11 +2083,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentInParent(System.Type,System.Boolean)
@@ -1968,16 +2099,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Component.GetComponentInParent(System.Type)
   commentId: M:UnityEngine.Component.GetComponentInParent(System.Type)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponentInParent(Type)
   nameWithType: Component.GetComponentInParent(Type)
   fullName: UnityEngine.Component.GetComponentInParent(System.Type)
@@ -1989,6 +2123,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentInParent(System.Type)
@@ -1998,11 +2133,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Component.GetComponentInParent``1(System.Boolean)
   commentId: M:UnityEngine.Component.GetComponentInParent``1(System.Boolean)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: GetComponentInParent<T>(bool)
   nameWithType: Component.GetComponentInParent<T>(bool)
   fullName: UnityEngine.Component.GetComponentInParent<T>(bool)
@@ -2020,6 +2157,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentInParent``1(System.Boolean)
@@ -2034,6 +2172,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Component.GetComponentInParent``1
   commentId: M:UnityEngine.Component.GetComponentInParent``1
@@ -2069,6 +2208,7 @@ references:
   commentId: M:UnityEngine.Component.GetComponentsInParent(System.Type,System.Boolean)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponentsInParent(Type, bool)
   nameWithType: Component.GetComponentsInParent(Type, bool)
   fullName: UnityEngine.Component.GetComponentsInParent(System.Type, bool)
@@ -2083,11 +2223,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentsInParent(System.Type,System.Boolean)
@@ -2097,16 +2239,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Component.GetComponentsInParent(System.Type)
   commentId: M:UnityEngine.Component.GetComponentsInParent(System.Type)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponentsInParent(Type)
   nameWithType: Component.GetComponentsInParent(Type)
   fullName: UnityEngine.Component.GetComponentsInParent(System.Type)
@@ -2118,6 +2263,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentsInParent(System.Type)
@@ -2127,11 +2273,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Component.GetComponentsInParent``1(System.Boolean)
   commentId: M:UnityEngine.Component.GetComponentsInParent``1(System.Boolean)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: GetComponentsInParent<T>(bool)
   nameWithType: Component.GetComponentsInParent<T>(bool)
   fullName: UnityEngine.Component.GetComponentsInParent<T>(bool)
@@ -2149,6 +2297,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponentsInParent``1(System.Boolean)
@@ -2163,11 +2312,13 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Component.GetComponentsInParent``1(System.Boolean,System.Collections.Generic.List{{T}})
   commentId: M:UnityEngine.Component.GetComponentsInParent``1(System.Boolean,System.Collections.Generic.List{``0})
   parent: UnityEngine.Component
   definition: UnityEngine.Component.GetComponentsInParent``1(System.Boolean,System.Collections.Generic.List{``0})
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: GetComponentsInParent<T>(bool, List<T>)
   nameWithType: Component.GetComponentsInParent<T>(bool, List<T>)
   fullName: UnityEngine.Component.GetComponentsInParent<T>(bool, System.Collections.Generic.List<T>)
@@ -2185,11 +2336,13 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -2207,11 +2360,13 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -2252,6 +2407,7 @@ references:
   commentId: M:UnityEngine.Component.GetComponents(System.Type)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponents(Type)
   nameWithType: Component.GetComponents(Type)
   fullName: UnityEngine.Component.GetComponents(System.Type)
@@ -2263,6 +2419,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.GetComponents(System.Type)
@@ -2272,11 +2429,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Component.GetComponents(System.Type,System.Collections.Generic.List{UnityEngine.Component})
   commentId: M:UnityEngine.Component.GetComponents(System.Type,System.Collections.Generic.List{UnityEngine.Component})
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: GetComponents(Type, List<Component>)
   nameWithType: Component.GetComponents(Type, List<Component>)
   fullName: UnityEngine.Component.GetComponents(System.Type, System.Collections.Generic.List<UnityEngine.Component>)
@@ -2291,11 +2450,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - uid: UnityEngine.Component
     name: Component
@@ -2310,11 +2471,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -2327,6 +2490,7 @@ references:
   commentId: M:UnityEngine.Component.GetComponents``1(System.Collections.Generic.List{``0})
   parent: UnityEngine.Component
   definition: UnityEngine.Component.GetComponents``1(System.Collections.Generic.List{``0})
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: GetComponents<T>(List<T>)
   nameWithType: Component.GetComponents<T>(List<T>)
   fullName: UnityEngine.Component.GetComponents<T>(System.Collections.Generic.List<T>)
@@ -2344,6 +2508,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -2361,6 +2526,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -2401,6 +2567,7 @@ references:
   commentId: M:UnityEngine.Component.CompareTag(System.String)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: CompareTag(string)
   nameWithType: Component.CompareTag(string)
   fullName: UnityEngine.Component.CompareTag(string)
@@ -2415,6 +2582,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.CompareTag(System.String)
@@ -2424,11 +2592,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.Component.SendMessageUpwards(System.String,System.Object,UnityEngine.SendMessageOptions)
   commentId: M:UnityEngine.Component.SendMessageUpwards(System.String,System.Object,UnityEngine.SendMessageOptions)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: SendMessageUpwards(string, object, SendMessageOptions)
   nameWithType: Component.SendMessageUpwards(string, object, SendMessageOptions)
   fullName: UnityEngine.Component.SendMessageUpwards(string, object, UnityEngine.SendMessageOptions)
@@ -2443,11 +2613,13 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -2462,11 +2634,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -2477,6 +2651,7 @@ references:
   commentId: M:UnityEngine.Component.SendMessageUpwards(System.String,System.Object)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: SendMessageUpwards(string, object)
   nameWithType: Component.SendMessageUpwards(string, object)
   fullName: UnityEngine.Component.SendMessageUpwards(string, object)
@@ -2491,11 +2666,13 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.SendMessageUpwards(System.String,System.Object)
@@ -2505,16 +2682,19 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: UnityEngine.Component.SendMessageUpwards(System.String)
   commentId: M:UnityEngine.Component.SendMessageUpwards(System.String)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: SendMessageUpwards(string)
   nameWithType: Component.SendMessageUpwards(string)
   fullName: UnityEngine.Component.SendMessageUpwards(string)
@@ -2529,6 +2709,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.SendMessageUpwards(System.String)
@@ -2538,11 +2719,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.Component.SendMessageUpwards(System.String,UnityEngine.SendMessageOptions)
   commentId: M:UnityEngine.Component.SendMessageUpwards(System.String,UnityEngine.SendMessageOptions)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: SendMessageUpwards(string, SendMessageOptions)
   nameWithType: Component.SendMessageUpwards(string, SendMessageOptions)
   fullName: UnityEngine.Component.SendMessageUpwards(string, UnityEngine.SendMessageOptions)
@@ -2557,6 +2740,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -2571,6 +2755,7 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -2581,6 +2766,7 @@ references:
   commentId: M:UnityEngine.Component.SendMessage(System.String,System.Object)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: SendMessage(string, object)
   nameWithType: Component.SendMessage(string, object)
   fullName: UnityEngine.Component.SendMessage(string, object)
@@ -2595,11 +2781,13 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.SendMessage(System.String,System.Object)
@@ -2609,16 +2797,19 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: UnityEngine.Component.SendMessage(System.String)
   commentId: M:UnityEngine.Component.SendMessage(System.String)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: SendMessage(string)
   nameWithType: Component.SendMessage(string)
   fullName: UnityEngine.Component.SendMessage(string)
@@ -2633,6 +2824,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.SendMessage(System.String)
@@ -2642,11 +2834,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.Component.SendMessage(System.String,System.Object,UnityEngine.SendMessageOptions)
   commentId: M:UnityEngine.Component.SendMessage(System.String,System.Object,UnityEngine.SendMessageOptions)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: SendMessage(string, object, SendMessageOptions)
   nameWithType: Component.SendMessage(string, object, SendMessageOptions)
   fullName: UnityEngine.Component.SendMessage(string, object, UnityEngine.SendMessageOptions)
@@ -2661,11 +2855,13 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -2680,11 +2876,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -2695,6 +2893,7 @@ references:
   commentId: M:UnityEngine.Component.SendMessage(System.String,UnityEngine.SendMessageOptions)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: SendMessage(string, SendMessageOptions)
   nameWithType: Component.SendMessage(string, SendMessageOptions)
   fullName: UnityEngine.Component.SendMessage(string, UnityEngine.SendMessageOptions)
@@ -2709,6 +2908,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -2723,6 +2923,7 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -2733,6 +2934,7 @@ references:
   commentId: M:UnityEngine.Component.BroadcastMessage(System.String,System.Object,UnityEngine.SendMessageOptions)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: BroadcastMessage(string, object, SendMessageOptions)
   nameWithType: Component.BroadcastMessage(string, object, SendMessageOptions)
   fullName: UnityEngine.Component.BroadcastMessage(string, object, UnityEngine.SendMessageOptions)
@@ -2747,11 +2949,13 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -2766,11 +2970,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -2781,6 +2987,7 @@ references:
   commentId: M:UnityEngine.Component.BroadcastMessage(System.String,System.Object)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: BroadcastMessage(string, object)
   nameWithType: Component.BroadcastMessage(string, object)
   fullName: UnityEngine.Component.BroadcastMessage(string, object)
@@ -2795,11 +3002,13 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.BroadcastMessage(System.String,System.Object)
@@ -2809,16 +3018,19 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: UnityEngine.Component.BroadcastMessage(System.String)
   commentId: M:UnityEngine.Component.BroadcastMessage(System.String)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: BroadcastMessage(string)
   nameWithType: Component.BroadcastMessage(string)
   fullName: UnityEngine.Component.BroadcastMessage(string)
@@ -2833,6 +3045,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.Component.BroadcastMessage(System.String)
@@ -2842,11 +3055,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.Component.BroadcastMessage(System.String,UnityEngine.SendMessageOptions)
   commentId: M:UnityEngine.Component.BroadcastMessage(System.String,UnityEngine.SendMessageOptions)
   parent: UnityEngine.Component
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: BroadcastMessage(string, SendMessageOptions)
   nameWithType: Component.BroadcastMessage(string, SendMessageOptions)
   fullName: UnityEngine.Component.BroadcastMessage(string, UnityEngine.SendMessageOptions)
@@ -2861,6 +3076,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -2875,6 +3091,7 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: UnityEngine.SendMessageOptions
@@ -2944,6 +3161,7 @@ references:
   commentId: M:UnityEngine.Object.Equals(System.Object)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: Equals(object)
   nameWithType: Object.Equals(object)
   fullName: UnityEngine.Object.Equals(object)
@@ -2958,6 +3176,7 @@ references:
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Equals(System.Object)
@@ -2967,6 +3186,7 @@ references:
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
   commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
@@ -3132,6 +3352,7 @@ references:
   commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: Instantiate(Object, Transform, bool)
   nameWithType: Object.Instantiate(Object, Transform, bool)
   fullName: UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Transform, bool)
@@ -3156,6 +3377,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
@@ -3175,6 +3397,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.Instantiate``1({T})
   commentId: M:UnityEngine.Object.Instantiate``1(``0)
@@ -3368,6 +3591,7 @@ references:
   commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
   parent: UnityEngine.Object
   definition: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: Instantiate<T>(T, Transform, bool)
   nameWithType: Object.Instantiate<T>(T, Transform, bool)
   fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Transform, bool)
@@ -3393,6 +3617,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
@@ -3415,11 +3640,13 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
   commentId: M:UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
   name: Destroy(Object, float)
   nameWithType: Object.Destroy(Object, float)
   fullName: UnityEngine.Object.Destroy(UnityEngine.Object, float)
@@ -3439,6 +3666,7 @@ references:
   - uid: System.Single
     name: float
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
@@ -3453,6 +3681,7 @@ references:
   - uid: System.Single
     name: Single
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
 - uid: UnityEngine.Object.Destroy(UnityEngine.Object)
   commentId: M:UnityEngine.Object.Destroy(UnityEngine.Object)
@@ -3483,6 +3712,7 @@ references:
   commentId: M:UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: DestroyImmediate(Object, bool)
   nameWithType: Object.DestroyImmediate(Object, bool)
   fullName: UnityEngine.Object.DestroyImmediate(UnityEngine.Object, bool)
@@ -3502,6 +3732,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
@@ -3516,6 +3747,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
   commentId: M:UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
@@ -3546,6 +3778,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsOfType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfType(Type)
   nameWithType: Object.FindObjectsOfType(Type)
   fullName: UnityEngine.Object.FindObjectsOfType(System.Type)
@@ -3557,6 +3790,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfType(System.Type)
@@ -3566,11 +3800,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
   commentId: M:UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfType(Type, bool)
   nameWithType: Object.FindObjectsOfType(Type, bool)
   fullName: UnityEngine.Object.FindObjectsOfType(System.Type, bool)
@@ -3585,11 +3821,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
@@ -3599,16 +3837,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsSortMode)
   commentId: M:UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsSortMode)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsByType(Type, FindObjectsSortMode)
   nameWithType: Object.FindObjectsByType(Type, FindObjectsSortMode)
   fullName: UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsSortMode)
@@ -3620,6 +3861,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsSortMode
@@ -3634,6 +3876,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsSortMode
@@ -3644,6 +3887,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)
   nameWithType: Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)
   fullName: UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsInactive, UnityEngine.FindObjectsSortMode)
@@ -3655,6 +3899,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -3674,6 +3919,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -3714,6 +3960,7 @@ references:
   commentId: M:UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
   name: DestroyObject(Object, float)
   nameWithType: Object.DestroyObject(Object, float)
   fullName: UnityEngine.Object.DestroyObject(UnityEngine.Object, float)
@@ -3733,6 +3980,7 @@ references:
   - uid: System.Single
     name: float
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
@@ -3747,6 +3995,7 @@ references:
   - uid: System.Single
     name: Single
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
 - uid: UnityEngine.Object.DestroyObject(UnityEngine.Object)
   commentId: M:UnityEngine.Object.DestroyObject(UnityEngine.Object)
@@ -3777,6 +4026,7 @@ references:
   commentId: M:UnityEngine.Object.FindSceneObjectsOfType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindSceneObjectsOfType(Type)
   nameWithType: Object.FindSceneObjectsOfType(Type)
   fullName: UnityEngine.Object.FindSceneObjectsOfType(System.Type)
@@ -3788,6 +4038,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindSceneObjectsOfType(System.Type)
@@ -3797,11 +4048,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
   commentId: M:UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfTypeIncludingAssets(Type)
   nameWithType: Object.FindObjectsOfTypeIncludingAssets(Type)
   fullName: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
@@ -3813,6 +4066,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
@@ -3822,6 +4076,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectsOfType``1
   commentId: M:UnityEngine.Object.FindObjectsOfType``1
@@ -3893,6 +4148,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: FindObjectsOfType<T>(bool)
   nameWithType: Object.FindObjectsOfType<T>(bool)
   fullName: UnityEngine.Object.FindObjectsOfType<T>(bool)
@@ -3910,6 +4166,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
@@ -3924,6 +4181,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
   commentId: M:UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
@@ -4005,6 +4263,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectOfType``1(System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: FindObjectOfType<T>(bool)
   nameWithType: Object.FindObjectOfType<T>(bool)
   fullName: UnityEngine.Object.FindObjectOfType<T>(bool)
@@ -4022,6 +4281,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectOfType``1(System.Boolean)
@@ -4036,6 +4296,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindFirstObjectByType``1
   commentId: M:UnityEngine.Object.FindFirstObjectByType``1
@@ -4173,6 +4434,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfTypeAll(Type)
   nameWithType: Object.FindObjectsOfTypeAll(Type)
   fullName: UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
@@ -4184,6 +4446,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
@@ -4193,11 +4456,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectOfType(System.Type)
   commentId: M:UnityEngine.Object.FindObjectOfType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectOfType(Type)
   nameWithType: Object.FindObjectOfType(Type)
   fullName: UnityEngine.Object.FindObjectOfType(System.Type)
@@ -4209,6 +4474,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectOfType(System.Type)
@@ -4218,11 +4484,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindFirstObjectByType(System.Type)
   commentId: M:UnityEngine.Object.FindFirstObjectByType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindFirstObjectByType(Type)
   nameWithType: Object.FindFirstObjectByType(Type)
   fullName: UnityEngine.Object.FindFirstObjectByType(System.Type)
@@ -4234,6 +4502,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindFirstObjectByType(System.Type)
@@ -4243,11 +4512,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindAnyObjectByType(System.Type)
   commentId: M:UnityEngine.Object.FindAnyObjectByType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindAnyObjectByType(Type)
   nameWithType: Object.FindAnyObjectByType(Type)
   fullName: UnityEngine.Object.FindAnyObjectByType(System.Type)
@@ -4259,6 +4530,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindAnyObjectByType(System.Type)
@@ -4268,11 +4540,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
   commentId: M:UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectOfType(Type, bool)
   nameWithType: Object.FindObjectOfType(Type, bool)
   fullName: UnityEngine.Object.FindObjectOfType(System.Type, bool)
@@ -4287,11 +4561,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
@@ -4301,16 +4577,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindFirstObjectByType(System.Type,UnityEngine.FindObjectsInactive)
   commentId: M:UnityEngine.Object.FindFirstObjectByType(System.Type,UnityEngine.FindObjectsInactive)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindFirstObjectByType(Type, FindObjectsInactive)
   nameWithType: Object.FindFirstObjectByType(Type, FindObjectsInactive)
   fullName: UnityEngine.Object.FindFirstObjectByType(System.Type, UnityEngine.FindObjectsInactive)
@@ -4322,6 +4601,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -4336,6 +4616,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -4346,6 +4627,7 @@ references:
   commentId: M:UnityEngine.Object.FindAnyObjectByType(System.Type,UnityEngine.FindObjectsInactive)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindAnyObjectByType(Type, FindObjectsInactive)
   nameWithType: Object.FindAnyObjectByType(Type, FindObjectsInactive)
   fullName: UnityEngine.Object.FindAnyObjectByType(System.Type, UnityEngine.FindObjectsInactive)
@@ -4357,6 +4639,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -4371,6 +4654,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -4413,6 +4697,7 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
@@ -4458,6 +4743,7 @@ references:
 - uid: UnityEngine.Component.GetComponentsInChildren``1(System.Boolean,System.Collections.Generic.List{``0})
   commentId: M:UnityEngine.Component.GetComponentsInChildren``1(System.Boolean,System.Collections.Generic.List{``0})
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: GetComponentsInChildren<T>(bool, List<T>)
   nameWithType: Component.GetComponentsInChildren<T>(bool, List<T>)
   fullName: UnityEngine.Component.GetComponentsInChildren<T>(bool, System.Collections.Generic.List<T>)
@@ -4475,11 +4761,13 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -4497,11 +4785,13 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -4511,6 +4801,7 @@ references:
 - uid: UnityEngine.Component.GetComponentsInChildren``1(System.Collections.Generic.List{``0})
   commentId: M:UnityEngine.Component.GetComponentsInChildren``1(System.Collections.Generic.List{``0})
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: GetComponentsInChildren<T>(List<T>)
   nameWithType: Component.GetComponentsInChildren<T>(List<T>)
   fullName: UnityEngine.Component.GetComponentsInChildren<T>(System.Collections.Generic.List<T>)
@@ -4528,6 +4819,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -4545,6 +4837,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -4554,6 +4847,7 @@ references:
 - uid: UnityEngine.Component.GetComponentsInParent``1(System.Boolean,System.Collections.Generic.List{``0})
   commentId: M:UnityEngine.Component.GetComponentsInParent``1(System.Boolean,System.Collections.Generic.List{``0})
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: GetComponentsInParent<T>(bool, List<T>)
   nameWithType: Component.GetComponentsInParent<T>(bool, List<T>)
   fullName: UnityEngine.Component.GetComponentsInParent<T>(bool, System.Collections.Generic.List<T>)
@@ -4571,11 +4865,13 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -4593,11 +4889,13 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: ','
   - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -4607,6 +4905,7 @@ references:
 - uid: UnityEngine.Component.GetComponents``1(System.Collections.Generic.List{``0})
   commentId: M:UnityEngine.Component.GetComponents``1(System.Collections.Generic.List{``0})
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: GetComponents<T>(List<T>)
   nameWithType: Component.GetComponents<T>(List<T>)
   fullName: UnityEngine.Component.GetComponents<T>(System.Collections.Generic.List<T>)
@@ -4624,6 +4923,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -4641,6 +4941,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -4834,6 +5135,7 @@ references:
 - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
   commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: Instantiate<T>(T, Transform, bool)
   nameWithType: Object.Instantiate<T>(T, Transform, bool)
   fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Transform, bool)
@@ -4859,6 +5161,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
@@ -4881,11 +5184,13 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Events.UnityAction{System.Boolean}
   commentId: T:UnityEngine.Events.UnityAction{System.Boolean}
   parent: UnityEngine.Events
   definition: UnityEngine.Events.UnityAction`1
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: UnityAction<bool>
   nameWithType: UnityAction<bool>
   fullName: UnityEngine.Events.UnityAction<bool>
@@ -4900,6 +5205,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: '>'
   spec.vb:
   - uid: UnityEngine.Events.UnityAction`1
@@ -4911,6 +5217,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Events.UnityAction`1
   commentId: T:UnityEngine.Events.UnityAction`1
@@ -4961,6 +5268,7 @@ references:
     isExternal: true
 - uid: LobsterFramework.AbilitySystem.AbilityRunner.ActionBlocked*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityRunner.ActionBlocked
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html#LobsterFramework.AbilitySystem.AbilityRunner.ActionBlocked
   name: ActionBlocked
   nameWithType: AbilityRunner.ActionBlocked
   fullName: LobsterFramework.AbilitySystem.AbilityRunner.ActionBlocked
@@ -4968,6 +5276,7 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
@@ -4976,11 +5285,13 @@ references:
   name.vb: Boolean
 - uid: LobsterFramework.AbilitySystem.AbilityRunner.HyperArmored*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityRunner.HyperArmored
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html#LobsterFramework.AbilitySystem.AbilityRunner.HyperArmored
   name: HyperArmored
   nameWithType: AbilityRunner.HyperArmored
   fullName: LobsterFramework.AbilitySystem.AbilityRunner.HyperArmored
 - uid: LobsterFramework.AbilitySystem.AbilityRunner.EnqueueAbility*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityRunner.EnqueueAbility
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html#LobsterFramework.AbilitySystem.AbilityRunner.EnqueueAbility``1(System.String)
   name: EnqueueAbility
   nameWithType: AbilityRunner.EnqueueAbility
   fullName: LobsterFramework.AbilitySystem.AbilityRunner.EnqueueAbility
@@ -4988,6 +5299,7 @@ references:
   commentId: T:System.String
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: string
   nameWithType: string
   fullName: string
@@ -4996,11 +5308,13 @@ references:
   name.vb: String
 - uid: LobsterFramework.AbilitySystem.AbilityRunner.EnqueueAbilitiesInJoint*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityRunner.EnqueueAbilitiesInJoint
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html#LobsterFramework.AbilitySystem.AbilityRunner.EnqueueAbilitiesInJoint``2(System.String,System.String)
   name: EnqueueAbilitiesInJoint
   nameWithType: AbilityRunner.EnqueueAbilitiesInJoint
   fullName: LobsterFramework.AbilitySystem.AbilityRunner.EnqueueAbilitiesInJoint
 - uid: LobsterFramework.AbilitySystem.AbilityRunner.GetAbilityStat*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityRunner.GetAbilityStat
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html#LobsterFramework.AbilitySystem.AbilityRunner.GetAbilityStat``1
   name: GetAbilityStat
   nameWithType: AbilityRunner.GetAbilityStat
   fullName: LobsterFramework.AbilitySystem.AbilityRunner.GetAbilityStat
@@ -5016,16 +5330,19 @@ references:
   fullName: T
 - uid: LobsterFramework.AbilitySystem.AbilityRunner.HaltAbility*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityRunner.HaltAbility
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html#LobsterFramework.AbilitySystem.AbilityRunner.HaltAbility``1(System.String)
   name: HaltAbility
   nameWithType: AbilityRunner.HaltAbility
   fullName: LobsterFramework.AbilitySystem.AbilityRunner.HaltAbility
 - uid: LobsterFramework.AbilitySystem.AbilityRunner.IsAbilityReady*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityRunner.IsAbilityReady
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html#LobsterFramework.AbilitySystem.AbilityRunner.IsAbilityReady``1(System.String)
   name: IsAbilityReady
   nameWithType: AbilityRunner.IsAbilityReady
   fullName: LobsterFramework.AbilitySystem.AbilityRunner.IsAbilityReady
 - uid: LobsterFramework.AbilitySystem.AbilityRunner.BlockAction*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityRunner.BlockAction
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html#LobsterFramework.AbilitySystem.AbilityRunner.BlockAction
   name: BlockAction
   nameWithType: AbilityRunner.BlockAction
   fullName: LobsterFramework.AbilitySystem.AbilityRunner.BlockAction
@@ -5033,6 +5350,7 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
   name: int
   nameWithType: int
   fullName: int
@@ -5041,52 +5359,62 @@ references:
   name.vb: Integer
 - uid: LobsterFramework.AbilitySystem.AbilityRunner.UnblockAction*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityRunner.UnblockAction
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html#LobsterFramework.AbilitySystem.AbilityRunner.UnblockAction(System.Int32)
   name: UnblockAction
   nameWithType: AbilityRunner.UnblockAction
   fullName: LobsterFramework.AbilitySystem.AbilityRunner.UnblockAction
 - uid: LobsterFramework.AbilitySystem.AbilityRunner.HyperArmor*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityRunner.HyperArmor
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html#LobsterFramework.AbilitySystem.AbilityRunner.HyperArmor
   name: HyperArmor
   nameWithType: AbilityRunner.HyperArmor
   fullName: LobsterFramework.AbilitySystem.AbilityRunner.HyperArmor
 - uid: LobsterFramework.AbilitySystem.AbilityRunner.DisArmor*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityRunner.DisArmor
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html#LobsterFramework.AbilitySystem.AbilityRunner.DisArmor(System.Int32)
   name: DisArmor
   nameWithType: AbilityRunner.DisArmor
   fullName: LobsterFramework.AbilitySystem.AbilityRunner.DisArmor
 - uid: LobsterFramework.AbilitySystem.AbilityRunner.Reset*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityRunner.Reset
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html#LobsterFramework.AbilitySystem.AbilityRunner.Reset
   name: Reset
   nameWithType: AbilityRunner.Reset
   fullName: LobsterFramework.AbilitySystem.AbilityRunner.Reset
 - uid: LobsterFramework.AbilitySystem.AbilityRunner.SaveAbilityData*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityRunner.SaveAbilityData
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html#LobsterFramework.AbilitySystem.AbilityRunner.SaveAbilityData(System.String)
   name: SaveAbilityData
   nameWithType: AbilityRunner.SaveAbilityData
   fullName: LobsterFramework.AbilitySystem.AbilityRunner.SaveAbilityData
 - uid: LobsterFramework.AbilitySystem.AbilityRunner.IsAnimating*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityRunner.IsAnimating
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html#LobsterFramework.AbilitySystem.AbilityRunner.IsAnimating(LobsterFramework.AbilitySystem.Ability,System.String)
   name: IsAnimating
   nameWithType: AbilityRunner.IsAnimating
   fullName: LobsterFramework.AbilitySystem.AbilityRunner.IsAnimating
 - uid: LobsterFramework.AbilitySystem.Ability
   commentId: T:LobsterFramework.AbilitySystem.Ability
   parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.Ability.html
   name: Ability
   nameWithType: Ability
   fullName: LobsterFramework.AbilitySystem.Ability
 - uid: LobsterFramework.AbilitySystem.AbilityRunner.StartAnimation*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityRunner.StartAnimation
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html#LobsterFramework.AbilitySystem.AbilityRunner.StartAnimation``1(System.String,System.String)
   name: StartAnimation
   nameWithType: AbilityRunner.StartAnimation
   fullName: LobsterFramework.AbilitySystem.AbilityRunner.StartAnimation
 - uid: LobsterFramework.AbilitySystem.AbilityRunner.Signal*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityRunner.Signal
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html#LobsterFramework.AbilitySystem.AbilityRunner.Signal``1(System.String)
   name: Signal
   nameWithType: AbilityRunner.Signal
   fullName: LobsterFramework.AbilitySystem.AbilityRunner.Signal
 - uid: LobsterFramework.AbilitySystem.AbilityRunner.AnimationSignal*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityRunner.AnimationSignal
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html#LobsterFramework.AbilitySystem.AbilityRunner.AnimationSignal
   name: AnimationSignal
   nameWithType: AbilityRunner.AnimationSignal
   fullName: LobsterFramework.AbilitySystem.AbilityRunner.AnimationSignal

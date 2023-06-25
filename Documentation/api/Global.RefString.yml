@@ -16,12 +16,12 @@ items:
   type: Struct
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefString.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Variables/RefString.cs
     id: RefString
-    path: ../Assets/Scripts/Scriptable Objects/Variables/RefString.cs
+    path: ../Assets/Framework/Scriptable Objects/Variables/RefString.cs
     startLine: 4
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: >-
@@ -49,12 +49,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefString.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Variables/RefString.cs
     id: .ctor
-    path: ../Assets/Scripts/Scriptable Objects/Variables/RefString.cs
+    path: ../Assets/Framework/Scriptable Objects/Variables/RefString.cs
     startLine: 11
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public RefString(string value = "", bool useSharedValue = false, VarString sharedValue = null)
@@ -83,12 +83,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefString.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Variables/RefString.cs
     id: Value
-    path: ../Assets/Scripts/Scriptable Objects/Variables/RefString.cs
+    path: ../Assets/Framework/Scriptable Objects/Variables/RefString.cs
     startLine: 17
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public string Value { get; set; }
@@ -101,6 +101,7 @@ references:
 - uid: Global
 - uid: Global.RefString.#ctor*
   commentId: Overload:Global.RefString.#ctor
+  href: Global.RefString.html#RefString.#ctor(System.String,System.Boolean,VarString)
   name: RefString
   nameWithType: RefString.RefString
   fullName: RefString.RefString
@@ -111,6 +112,7 @@ references:
   commentId: T:System.String
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: string
   nameWithType: string
   fullName: string
@@ -121,6 +123,7 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
@@ -129,17 +132,20 @@ references:
   name.vb: Boolean
 - uid: Global.VarString
   commentId: T:Global.VarString
+  href: VarString.html
   name: VarString
   nameWithType: VarString
   fullName: VarString
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: Global.RefString.Value*
   commentId: Overload:Global.RefString.Value
+  href: Global.RefString.html#RefString.Value
   name: Value
   nameWithType: RefString.Value
   fullName: RefString.Value

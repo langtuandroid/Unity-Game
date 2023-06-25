@@ -1,9 +1,8 @@
 ### YamlMime:TableOfContent
+items:
 - uid: Global
   name: ''
   items:
-  - uid: Global.ActionDataSODrawer
-    name: ActionDataSODrawer
   - uid: Global.ActionPriority
     name: ActionPriority
   - uid: Global.ActionPrioritySO
@@ -30,8 +29,6 @@
     name: DropdownSample
   - uid: Global.EnvMapAnimator
     name: EnvMapAnimator
-  - uid: Global.ExposedFieldAttribute
-    name: ExposedFieldAttribute
   - uid: Global.FloatEventChannel
     name: FloatEventChannel
   - uid: Global.GameManager
@@ -48,7 +45,6 @@
     name: IntroMenu
   - uid: Global.OrderedSet`1
     name: OrderedSet<T>
-    name.vb: OrderedSet(Of T)
   - uid: Global.PlayerInput
     name: PlayerInput
   - uid: Global.PlayerInput.IPlayerActions
@@ -87,7 +83,6 @@
     name: SceneLoader
   - uid: Global.SerializableLinkedList`1
     name: SerializableLinkedList<T>
-    name.vb: SerializableLinkedList(Of T)
   - uid: Global.SerializedPropertyExtensions
     name: SerializedPropertyExtensions
   - uid: Global.SimpleItem
@@ -102,8 +97,6 @@
     name: Task
   - uid: Global.Task.FinishedHandler
     name: Task.FinishedHandler
-  - uid: Global.TestBehavior
-    name: TestBehavior
   - uid: Global.VarBool
     name: VarBool
   - uid: Global.VarBoolDrawer
@@ -114,7 +107,6 @@
     name: VarFloatDrawer
   - uid: Global.Variable`1
     name: Variable<T>
-    name.vb: Variable(Of T)
   - uid: Global.VarInt
     name: VarInt
   - uid: Global.VarIntDrawer
@@ -143,44 +135,18 @@
     name: AbilityRunner
   - uid: LobsterFramework.AbilitySystem.AbilityStat
     name: AbilityStat
-  - uid: LobsterFramework.AbilitySystem.AbilityStatAttribute
-    name: AbilityStatAttribute
   - uid: LobsterFramework.AbilitySystem.ActionOverseer
     name: ActionOverseer
   - uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
     name: AddAbilityMenuAttribute
-  - uid: LobsterFramework.AbilitySystem.CircleAttack
-    name: CircleAttack
-  - uid: LobsterFramework.AbilitySystem.CircleAttack.CircleAttackConfig
-    name: CircleAttack.CircleAttackConfig
+  - uid: LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute
+    name: AddAbilityStatMenuAttribute
   - uid: LobsterFramework.AbilitySystem.ClassNode
     name: ClassNode
-  - uid: LobsterFramework.AbilitySystem.CombatStat
-    name: CombatStat
   - uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
     name: ComponentRequiredAttribute
-  - uid: LobsterFramework.AbilitySystem.Endure
-    name: Endure
-  - uid: LobsterFramework.AbilitySystem.Endure.EndureConfig
-    name: Endure.EndureConfig
-  - uid: LobsterFramework.AbilitySystem.Guard
-    name: Guard
-  - uid: LobsterFramework.AbilitySystem.Guard.GuardConfig
-    name: Guard.GuardConfig
-  - uid: LobsterFramework.AbilitySystem.Mana
-    name: Mana
   - uid: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute
     name: RequireAbilityStatsAttribute
-  - uid: LobsterFramework.AbilitySystem.RightSwipe
-    name: RightSwipe
-  - uid: LobsterFramework.AbilitySystem.RightSwipe.RightSwipeConfig
-    name: RightSwipe.RightSwipeConfig
-  - uid: LobsterFramework.AbilitySystem.RightSwipe.State
-    name: RightSwipe.State
-  - uid: LobsterFramework.AbilitySystem.Shoot
-    name: Shoot
-  - uid: LobsterFramework.AbilitySystem.Shoot.ShootConfig
-    name: Shoot.ShootConfig
   - uid: LobsterFramework.AbilitySystem.TargetSetting
     name: TargetSetting
 - uid: LobsterFramework.AbilitySystem.Weapon
@@ -188,10 +154,6 @@
   items:
   - uid: LobsterFramework.AbilitySystem.Weapon.RequireWeaponAttribute
     name: RequireWeaponAttribute
-  - uid: LobsterFramework.AbilitySystem.Weapon.TestWeapon
-    name: TestWeapon
-  - uid: LobsterFramework.AbilitySystem.Weapon.TestWeapon.TestWeaponConfig
-    name: TestWeapon.TestWeaponConfig
   - uid: LobsterFramework.AbilitySystem.Weapon.Weapon
     name: Weapon
   - uid: LobsterFramework.AbilitySystem.Weapon.WeaponAbility
@@ -203,14 +165,6 @@
 - uid: LobsterFramework.AI
   name: LobsterFramework.AI
   items:
-  - uid: LobsterFramework.AI.AIController
-    name: AIController
-  - uid: LobsterFramework.AI.MeleeChaseState
-    name: MeleeChaseState
-  - uid: LobsterFramework.AI.MeleeChaseState2
-    name: MeleeChaseState2
-  - uid: LobsterFramework.AI.RangedChaseState
-    name: RangedChaseState
   - uid: LobsterFramework.AI.State
     name: State
   - uid: LobsterFramework.AI.StateMachine
@@ -219,10 +173,6 @@
     name: Transition
   - uid: LobsterFramework.AI.TransitionTable
     name: TransitionTable
-  - uid: LobsterFramework.AI.Wander2
-    name: Wander2
-  - uid: LobsterFramework.AI.WanderState
-    name: WanderState
 - uid: LobsterFramework.DialogueSystem
   name: LobsterFramework.DialogueSystem
   items:
@@ -235,18 +185,18 @@
 - uid: LobsterFramework.EditorUtility
   name: LobsterFramework.EditorUtility
   items:
+  - uid: LobsterFramework.EditorUtility.AbilityConfigEditor
+    name: AbilityConfigEditor
   - uid: LobsterFramework.EditorUtility.AbilityDataEditor
     name: AbilityDataEditor
+  - uid: LobsterFramework.EditorUtility.AbilityEditor
+    name: AbilityEditor
   - uid: LobsterFramework.EditorUtility.AbilityRunnerEditor
     name: AbilityRunnerEditor
-  - uid: LobsterFramework.EditorUtility.ActionConfigEditor
-    name: ActionConfigEditor
   - uid: LobsterFramework.EditorUtility.ActionInstanceDrawer
     name: ActionInstanceDrawer
-  - uid: LobsterFramework.EditorUtility.ActionInstanceEditor
-    name: ActionInstanceEditor
-  - uid: LobsterFramework.EditorUtility.EntityComponentEditor
-    name: EntityComponentEditor
+  - uid: LobsterFramework.EditorUtility.EntityEditor
+    name: EntityEditor
 - uid: LobsterFramework.EntitySystem
   name: LobsterFramework.EntitySystem
   items:
@@ -266,18 +216,9 @@
     name: SilentEffect
   - uid: LobsterFramework.EntitySystem.StunEffect
     name: StunEffect
-- uid: LobsterFramework.InputControl
-  name: LobsterFramework.InputControl
-  items:
-  - uid: LobsterFramework.InputControl.PlayerController
-    name: PlayerController
 - uid: LobsterFramework.Interaction
   name: LobsterFramework.Interaction
   items:
-  - uid: LobsterFramework.Interaction.CollectableItem
-    name: CollectableItem
-  - uid: LobsterFramework.Interaction.GeneralInteractor
-    name: GeneralInteractor
   - uid: LobsterFramework.Interaction.InteractableObject
     name: InteractableObject
   - uid: LobsterFramework.Interaction.InteractionAttribute
@@ -288,16 +229,6 @@
     name: InteractionType
   - uid: LobsterFramework.Interaction.Interactor
     name: Interactor
-  - uid: LobsterFramework.Interaction.Inventory
-    name: Inventory
-  - uid: LobsterFramework.Interaction.InventoryItem
-    name: InventoryItem
-  - uid: LobsterFramework.Interaction.LockableDoor
-    name: LockableDoor
-  - uid: LobsterFramework.Interaction.SimpleDoor
-    name: SimpleDoor
-  - uid: LobsterFramework.Interaction.Teleportor
-    name: Teleportor
 - uid: LobsterFramework.Pool
   name: LobsterFramework.Pool
   items:
@@ -312,12 +243,8 @@
 - uid: LobsterFramework.UI
   name: LobsterFramework.UI
   items:
-  - uid: LobsterFramework.UI.DialogueDisplayer
-    name: DialogueDisplayer
   - uid: LobsterFramework.UI.InteractionUI
     name: InteractionUI
-  - uid: LobsterFramework.UI.PlayerUIDisplayer
-    name: PlayerUIDisplayer
 - uid: LobsterFramework.Utility
   name: LobsterFramework.Utility
   items:
@@ -335,16 +262,12 @@
     name: IdDistributor
   - uid: LobsterFramework.Utility.ManagedSet`1
     name: ManagedSet<T>
-    name.vb: ManagedSet(Of T)
   - uid: LobsterFramework.Utility.SerializableDictionary`2
     name: SerializableDictionary<TKey, TValue>
-    name.vb: SerializableDictionary(Of TKey, TValue)
   - uid: LobsterFramework.Utility.SerializableHashSet`1
     name: SerializableHashSet<TValue>
-    name.vb: SerializableHashSet(Of TValue)
   - uid: LobsterFramework.Utility.SortableItem`1
     name: SortableItem<T>
-    name.vb: SortableItem(Of T)
   - uid: LobsterFramework.Utility.StringAbilityConfigDictionary
     name: StringAbilityConfigDictionary
   - uid: LobsterFramework.Utility.TypeAbilityDictionary
@@ -360,7 +283,6 @@
     name: BaseOr
   - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1
     name: BufferedStat<T>
-    name.vb: BufferedStat(Of T)
   - uid: LobsterFramework.Utility.BufferedStats.FloatProduct
     name: FloatProduct
   - uid: LobsterFramework.Utility.BufferedStats.FloatSum
@@ -377,3 +299,4 @@
   items:
   - uid: LobsterFramework.Utility.Groups.EntityGroup
     name: EntityGroup
+memberLayout: SamePage

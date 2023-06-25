@@ -24,12 +24,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     id: SerializableLinkedList
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     startLine: 4
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: 'public class SerializableLinkedList<T> : ISerializationCallbackReceiver'
@@ -56,13 +56,14 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     id: Count
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     startLine: 9
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
+  example: []
   syntax:
     content: public int Count { get; }
     parameters: []
@@ -85,13 +86,14 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     id: IsReadOnly
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     startLine: 11
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
+  example: []
   syntax:
     content: public bool IsReadOnly { get; }
     parameters: []
@@ -114,13 +116,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     id: Add
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     startLine: 13
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
+  example: []
   syntax:
     content: public void Add(T item)
     parameters:
@@ -143,13 +146,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     id: Clear
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     startLine: 18
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
+  example: []
   syntax:
     content: public void Clear()
     content.vb: Public Sub Clear()
@@ -169,13 +173,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     id: Contains
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     startLine: 23
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
+  example: []
   syntax:
     content: public bool Contains(T item)
     parameters:
@@ -200,13 +205,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     id: CopyTo
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     startLine: 28
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
+  example: []
   syntax:
     content: public void CopyTo(T[] array, int arrayIndex)
     parameters:
@@ -232,13 +238,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     id: GetEnumerator
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     startLine: 33
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
+  example: []
   syntax:
     content: public IEnumerator<T> GetEnumerator()
     return:
@@ -260,13 +267,15 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     id: OnAfterDeserialize
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     startLine: 38
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
+  summary: <p>Implement this method to receive a callback after Unity deserializes your object.</p>
+  example: []
   syntax:
     content: public void OnAfterDeserialize()
     content.vb: Public Sub OnAfterDeserialize()
@@ -288,13 +297,15 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     id: OnBeforeSerialize
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     startLine: 46
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
+  summary: <p>Implement this method to receive a callback before Unity serializes your object.</p>
+  example: []
   syntax:
     content: public void OnBeforeSerialize()
     content.vb: Public Sub OnBeforeSerialize()
@@ -316,13 +327,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     id: Remove
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableLinkedList.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableLinkedList.cs
     startLine: 54
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
+  example: []
   syntax:
     content: public bool Remove(T item)
     parameters:
@@ -340,6 +352,7 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -356,6 +369,7 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
@@ -367,6 +381,7 @@ references:
   fullName: UnityEngine
 - uid: Global.SerializableLinkedList`1.Count*
   commentId: Overload:Global.SerializableLinkedList`1.Count
+  href: Global.SerializableLinkedList-1.html#SerializableLinkedList`1.Count
   name: Count
   nameWithType: SerializableLinkedList<T>.Count
   fullName: SerializableLinkedList<T>.Count
@@ -376,6 +391,7 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
   name: int
   nameWithType: int
   fullName: int
@@ -384,6 +400,7 @@ references:
   name.vb: Integer
 - uid: Global.SerializableLinkedList`1.IsReadOnly*
   commentId: Overload:Global.SerializableLinkedList`1.IsReadOnly
+  href: Global.SerializableLinkedList-1.html#SerializableLinkedList`1.IsReadOnly
   name: IsReadOnly
   nameWithType: SerializableLinkedList<T>.IsReadOnly
   fullName: SerializableLinkedList<T>.IsReadOnly
@@ -393,6 +410,7 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
@@ -401,6 +419,7 @@ references:
   name.vb: Boolean
 - uid: Global.SerializableLinkedList`1.Add*
   commentId: Overload:Global.SerializableLinkedList`1.Add
+  href: Global.SerializableLinkedList-1.html#SerializableLinkedList`1.Add(`0)
   name: Add
   nameWithType: SerializableLinkedList<T>.Add
   fullName: SerializableLinkedList<T>.Add
@@ -418,6 +437,7 @@ references:
   fullName: T
 - uid: Global.SerializableLinkedList`1.Clear*
   commentId: Overload:Global.SerializableLinkedList`1.Clear
+  href: Global.SerializableLinkedList-1.html#SerializableLinkedList`1.Clear
   name: Clear
   nameWithType: SerializableLinkedList<T>.Clear
   fullName: SerializableLinkedList<T>.Clear
@@ -425,6 +445,7 @@ references:
   fullName.vb: SerializableLinkedList(Of T).Clear
 - uid: Global.SerializableLinkedList`1.Contains*
   commentId: Overload:Global.SerializableLinkedList`1.Contains
+  href: Global.SerializableLinkedList-1.html#SerializableLinkedList`1.Contains(`0)
   name: Contains
   nameWithType: SerializableLinkedList<T>.Contains
   fullName: SerializableLinkedList<T>.Contains
@@ -432,6 +453,7 @@ references:
   fullName.vb: SerializableLinkedList(Of T).Contains
 - uid: Global.SerializableLinkedList`1.CopyTo*
   commentId: Overload:Global.SerializableLinkedList`1.CopyTo
+  href: Global.SerializableLinkedList-1.html#SerializableLinkedList`1.CopyTo(`0[],System.Int32)
   name: CopyTo
   nameWithType: SerializableLinkedList<T>.CopyTo
   fullName: SerializableLinkedList<T>.CopyTo
@@ -455,6 +477,7 @@ references:
   - name: )
 - uid: Global.SerializableLinkedList`1.GetEnumerator*
   commentId: Overload:Global.SerializableLinkedList`1.GetEnumerator
+  href: Global.SerializableLinkedList-1.html#SerializableLinkedList`1.GetEnumerator
   name: GetEnumerator
   nameWithType: SerializableLinkedList<T>.GetEnumerator
   fullName: SerializableLinkedList<T>.GetEnumerator
@@ -464,6 +487,7 @@ references:
   commentId: T:System.Collections.Generic.IEnumerator{`0}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerator`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   name: IEnumerator<T>
   nameWithType: IEnumerator<T>
   fullName: System.Collections.Generic.IEnumerator<T>
@@ -474,6 +498,7 @@ references:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   - name: <
   - name: T
   - name: '>'
@@ -481,6 +506,7 @@ references:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   - name: (
   - name: Of
   - name: " "
@@ -489,6 +515,7 @@ references:
 - uid: System.Collections.Generic.IEnumerator`1
   commentId: T:System.Collections.Generic.IEnumerator`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   name: IEnumerator<T>
   nameWithType: IEnumerator<T>
   fullName: System.Collections.Generic.IEnumerator<T>
@@ -499,6 +526,7 @@ references:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   - name: <
   - name: T
   - name: '>'
@@ -506,6 +534,7 @@ references:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   - name: (
   - name: Of
   - name: " "
@@ -514,6 +543,7 @@ references:
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
@@ -521,28 +551,35 @@ references:
   - uid: System
     name: System
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
   - uid: System.Collections
     name: Collections
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
   - uid: System.Collections.Generic
     name: Generic
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
   spec.vb:
   - uid: System
     name: System
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
   - uid: System.Collections
     name: Collections
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
   - uid: System.Collections.Generic
     name: Generic
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: Global.SerializableLinkedList`1.OnAfterDeserialize*
   commentId: Overload:Global.SerializableLinkedList`1.OnAfterDeserialize
+  href: Global.SerializableLinkedList-1.html#SerializableLinkedList`1.OnAfterDeserialize
   name: OnAfterDeserialize
   nameWithType: SerializableLinkedList<T>.OnAfterDeserialize
   fullName: SerializableLinkedList<T>.OnAfterDeserialize
@@ -569,6 +606,7 @@ references:
   - name: )
 - uid: Global.SerializableLinkedList`1.OnBeforeSerialize*
   commentId: Overload:Global.SerializableLinkedList`1.OnBeforeSerialize
+  href: Global.SerializableLinkedList-1.html#SerializableLinkedList`1.OnBeforeSerialize
   name: OnBeforeSerialize
   nameWithType: SerializableLinkedList<T>.OnBeforeSerialize
   fullName: SerializableLinkedList<T>.OnBeforeSerialize
@@ -595,6 +633,7 @@ references:
   - name: )
 - uid: Global.SerializableLinkedList`1.Remove*
   commentId: Overload:Global.SerializableLinkedList`1.Remove
+  href: Global.SerializableLinkedList-1.html#SerializableLinkedList`1.Remove(`0)
   name: Remove
   nameWithType: SerializableLinkedList<T>.Remove
   fullName: SerializableLinkedList<T>.Remove

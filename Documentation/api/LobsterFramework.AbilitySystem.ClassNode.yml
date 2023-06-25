@@ -19,12 +19,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     id: ClassNode
-    path: ../Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+    path: ../Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     startLine: 141
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public class ClassNode
@@ -44,12 +44,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     id: type
-    path: ../Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+    path: ../Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     startLine: 143
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public Type type
@@ -69,12 +69,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     id: parent
-    path: ../Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+    path: ../Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     startLine: 144
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public ClassNode parent
@@ -94,12 +94,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     id: children
-    path: ../Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+    path: ../Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     startLine: 145
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public List<ClassNode> children
@@ -119,12 +119,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     id: requirements
-    path: ../Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+    path: ../Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     startLine: 146
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public HashSet<Type> requirements
@@ -144,12 +144,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     id: .ctor
-    path: ../Assets/Scripts/Editor/Attributes/ComponentRequiredAttribute.cs
+    path: ../Assets/Framework/Attributes/ComponentRequiredAttribute.cs
     startLine: 148
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public ClassNode(Type type)
@@ -164,25 +164,31 @@ items:
 references:
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
   name: LobsterFramework.AbilitySystem
   nameWithType: LobsterFramework.AbilitySystem
   fullName: LobsterFramework.AbilitySystem
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -192,6 +198,7 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
@@ -199,12 +206,14 @@ references:
   commentId: T:System.Type
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: Type
   nameWithType: Type
   fullName: System.Type
 - uid: LobsterFramework.AbilitySystem.ClassNode
   commentId: T:LobsterFramework.AbilitySystem.ClassNode
   parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.ClassNode.html
   name: ClassNode
   nameWithType: ClassNode
   fullName: LobsterFramework.AbilitySystem.ClassNode
@@ -212,6 +221,7 @@ references:
   commentId: T:System.Collections.Generic.List{LobsterFramework.AbilitySystem.ClassNode}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: List<ClassNode>
   nameWithType: List<ClassNode>
   fullName: System.Collections.Generic.List<LobsterFramework.AbilitySystem.ClassNode>
@@ -222,23 +232,28 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - uid: LobsterFramework.AbilitySystem.ClassNode
     name: ClassNode
+    href: LobsterFramework.AbilitySystem.ClassNode.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
   - uid: LobsterFramework.AbilitySystem.ClassNode
     name: ClassNode
+    href: LobsterFramework.AbilitySystem.ClassNode.html
   - name: )
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: List<T>
   nameWithType: List<T>
   fullName: System.Collections.Generic.List<T>
@@ -249,6 +264,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -256,6 +272,7 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -264,6 +281,7 @@ references:
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
@@ -271,30 +289,37 @@ references:
   - uid: System
     name: System
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
   - uid: System.Collections
     name: Collections
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
   - uid: System.Collections.Generic
     name: Generic
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
   spec.vb:
   - uid: System
     name: System
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
   - uid: System.Collections
     name: Collections
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
   - uid: System.Collections.Generic
     name: Generic
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: System.Collections.Generic.HashSet{System.Type}
   commentId: T:System.Collections.Generic.HashSet{System.Type}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.HashSet`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
   name: HashSet<Type>
   nameWithType: HashSet<Type>
   fullName: System.Collections.Generic.HashSet<System.Type>
@@ -305,25 +330,30 @@ references:
   - uid: System.Collections.Generic.HashSet`1
     name: HashSet
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
   - name: <
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.HashSet`1
     name: HashSet
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
   - name: (
   - name: Of
   - name: " "
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: System.Collections.Generic.HashSet`1
   commentId: T:System.Collections.Generic.HashSet`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
   name: HashSet<T>
   nameWithType: HashSet<T>
   fullName: System.Collections.Generic.HashSet<T>
@@ -334,6 +364,7 @@ references:
   - uid: System.Collections.Generic.HashSet`1
     name: HashSet
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
   - name: <
   - name: T
   - name: '>'
@@ -341,6 +372,7 @@ references:
   - uid: System.Collections.Generic.HashSet`1
     name: HashSet
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
   - name: (
   - name: Of
   - name: " "
@@ -348,6 +380,7 @@ references:
   - name: )
 - uid: LobsterFramework.AbilitySystem.ClassNode.#ctor*
   commentId: Overload:LobsterFramework.AbilitySystem.ClassNode.#ctor
+  href: LobsterFramework.AbilitySystem.ClassNode.html#LobsterFramework.AbilitySystem.ClassNode.#ctor(System.Type)
   name: ClassNode
   nameWithType: ClassNode.ClassNode
   fullName: LobsterFramework.AbilitySystem.ClassNode.ClassNode

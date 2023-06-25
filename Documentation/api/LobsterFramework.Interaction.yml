@@ -4,18 +4,11 @@ items:
   commentId: N:LobsterFramework.Interaction
   id: LobsterFramework.Interaction
   children:
-  - LobsterFramework.Interaction.CollectableItem
-  - LobsterFramework.Interaction.GeneralInteractor
   - LobsterFramework.Interaction.InteractableObject
   - LobsterFramework.Interaction.InteractionAttribute
   - LobsterFramework.Interaction.InteractionPrompt
   - LobsterFramework.Interaction.InteractionType
   - LobsterFramework.Interaction.Interactor
-  - LobsterFramework.Interaction.Inventory
-  - LobsterFramework.Interaction.InventoryItem
-  - LobsterFramework.Interaction.LockableDoor
-  - LobsterFramework.Interaction.SimpleDoor
-  - LobsterFramework.Interaction.Teleportor
   langs:
   - csharp
   - vb
@@ -24,89 +17,61 @@ items:
   fullName: LobsterFramework.Interaction
   type: Namespace
   assemblies:
-  - MyScripts
+  - LobsterFramework
 references:
-- uid: LobsterFramework.Interaction.LockableDoor
-  commentId: T:LobsterFramework.Interaction.LockableDoor
-  name: LockableDoor
-  nameWithType: LockableDoor
-  fullName: LobsterFramework.Interaction.LockableDoor
+- uid: LobsterFramework.Interaction.InteractionAttribute
+  commentId: T:LobsterFramework.Interaction.InteractionAttribute
+  href: LobsterFramework.Interaction.InteractionAttribute.html
+  name: InteractionAttribute
+  nameWithType: InteractionAttribute
+  fullName: LobsterFramework.Interaction.InteractionAttribute
 - uid: LobsterFramework.Interaction.InteractionType
   commentId: T:LobsterFramework.Interaction.InteractionType
   parent: LobsterFramework.Interaction
+  href: LobsterFramework.Interaction.InteractionType.html
   name: InteractionType
   nameWithType: InteractionType
   fullName: LobsterFramework.Interaction.InteractionType
 - uid: LobsterFramework.Interaction.InteractionPrompt
   commentId: T:LobsterFramework.Interaction.InteractionPrompt
   parent: LobsterFramework.Interaction
+  href: LobsterFramework.Interaction.InteractionPrompt.html
   name: InteractionPrompt
   nameWithType: InteractionPrompt
   fullName: LobsterFramework.Interaction.InteractionPrompt
 - uid: LobsterFramework.Interaction.InteractableObject
   commentId: T:LobsterFramework.Interaction.InteractableObject
   parent: LobsterFramework.Interaction
+  href: LobsterFramework.Interaction.InteractableObject.html
   name: InteractableObject
   nameWithType: InteractableObject
   fullName: LobsterFramework.Interaction.InteractableObject
-- uid: LobsterFramework.Interaction.InteractionAttribute
-  commentId: T:LobsterFramework.Interaction.InteractionAttribute
-  parent: LobsterFramework.Interaction
-  name: InteractionAttribute
-  nameWithType: InteractionAttribute
-  fullName: LobsterFramework.Interaction.InteractionAttribute
-- uid: LobsterFramework.Interaction.CollectableItem
-  commentId: T:LobsterFramework.Interaction.CollectableItem
-  name: CollectableItem
-  nameWithType: CollectableItem
-  fullName: LobsterFramework.Interaction.CollectableItem
-- uid: LobsterFramework.Interaction.Inventory
-  commentId: T:LobsterFramework.Interaction.Inventory
-  name: Inventory
-  nameWithType: Inventory
-  fullName: LobsterFramework.Interaction.Inventory
-- uid: LobsterFramework.Interaction.InventoryItem
-  commentId: T:LobsterFramework.Interaction.InventoryItem
-  parent: LobsterFramework.Interaction
-  name: InventoryItem
-  nameWithType: InventoryItem
-  fullName: LobsterFramework.Interaction.InventoryItem
 - uid: LobsterFramework.Interaction.Interactor
   commentId: T:LobsterFramework.Interaction.Interactor
   parent: LobsterFramework.Interaction
+  href: LobsterFramework.Interaction.Interactor.html
   name: Interactor
   nameWithType: Interactor
   fullName: LobsterFramework.Interaction.Interactor
-- uid: LobsterFramework.Interaction.GeneralInteractor
-  commentId: T:LobsterFramework.Interaction.GeneralInteractor
-  parent: LobsterFramework.Interaction
-  name: GeneralInteractor
-  nameWithType: GeneralInteractor
-  fullName: LobsterFramework.Interaction.GeneralInteractor
-- uid: LobsterFramework.Interaction.Teleportor
-  commentId: T:LobsterFramework.Interaction.Teleportor
-  name: Teleportor
-  nameWithType: Teleportor
-  fullName: LobsterFramework.Interaction.Teleportor
-- uid: LobsterFramework.Interaction.SimpleDoor
-  commentId: T:LobsterFramework.Interaction.SimpleDoor
-  name: SimpleDoor
-  nameWithType: SimpleDoor
-  fullName: LobsterFramework.Interaction.SimpleDoor
 - uid: LobsterFramework.Interaction
   commentId: N:LobsterFramework.Interaction
+  href: LobsterFramework.html
   name: LobsterFramework.Interaction
   nameWithType: LobsterFramework.Interaction
   fullName: LobsterFramework.Interaction
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Interaction
     name: Interaction
+    href: LobsterFramework.Interaction.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Interaction
     name: Interaction
+    href: LobsterFramework.Interaction.html

@@ -16,12 +16,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/FindMissingScript.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/FindMissingScript.cs
     id: FindMissingScript
-    path: ../Assets/Scripts/Utility/FindMissingScript.cs
+    path: ../Assets/Framework/Utility/FindMissingScript.cs
     startLine: 8
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework
   syntax:
     content: public static class FindMissingScript
@@ -41,12 +41,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/FindMissingScript.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/FindMissingScript.cs
     id: FindMissingScriptInPrefab
-    path: ../Assets/Scripts/Utility/FindMissingScript.cs
+    path: ../Assets/Framework/Utility/FindMissingScript.cs
     startLine: 10
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework
   syntax:
     content: >-
@@ -77,12 +77,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/FindMissingScript.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/FindMissingScript.cs
     id: FindMissingScriptInScene
-    path: ../Assets/Scripts/Utility/FindMissingScript.cs
+    path: ../Assets/Framework/Utility/FindMissingScript.cs
     startLine: 25
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework
   syntax:
     content: >-
@@ -103,6 +103,7 @@ items:
 references:
 - uid: LobsterFramework
   commentId: N:LobsterFramework
+  href: LobsterFramework.html
   name: LobsterFramework
   nameWithType: LobsterFramework
   fullName: LobsterFramework
@@ -110,6 +111,7 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -119,16 +121,19 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: LobsterFramework.FindMissingScript.FindMissingScriptInPrefab*
   commentId: Overload:LobsterFramework.FindMissingScript.FindMissingScriptInPrefab
+  href: LobsterFramework.FindMissingScript.html#LobsterFramework.FindMissingScript.FindMissingScriptInPrefab
   name: FindMissingScriptInPrefab
   nameWithType: FindMissingScript.FindMissingScriptInPrefab
   fullName: LobsterFramework.FindMissingScript.FindMissingScriptInPrefab
 - uid: LobsterFramework.FindMissingScript.FindMissingScriptInScene*
   commentId: Overload:LobsterFramework.FindMissingScript.FindMissingScriptInScene
+  href: LobsterFramework.FindMissingScript.html#LobsterFramework.FindMissingScript.FindMissingScriptInScene
   name: FindMissingScriptInScene
   nameWithType: FindMissingScript.FindMissingScriptInScene
   fullName: LobsterFramework.FindMissingScript.FindMissingScriptInScene

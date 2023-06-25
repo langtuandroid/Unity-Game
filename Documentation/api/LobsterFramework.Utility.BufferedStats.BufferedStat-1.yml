@@ -7,14 +7,14 @@ items:
   children:
   - LobsterFramework.Utility.BufferedStats.BufferedStat`1.#ctor(`0)
   - LobsterFramework.Utility.BufferedStats.BufferedStat`1.AddEffector(`0)
-  - LobsterFramework.Utility.BufferedStats.BufferedStat`1.baseValue
   - LobsterFramework.Utility.BufferedStats.BufferedStat`1.ClearEffectors
   - LobsterFramework.Utility.BufferedStats.BufferedStat`1.Compatible(`0)
   - LobsterFramework.Utility.BufferedStats.BufferedStat`1.RemoveEffector(System.Int32)
   - LobsterFramework.Utility.BufferedStats.BufferedStat`1.SetEffector(System.Int32,`0)
   - LobsterFramework.Utility.BufferedStats.BufferedStat`1.Stat
-  - LobsterFramework.Utility.BufferedStats.BufferedStat`1.stats
   - LobsterFramework.Utility.BufferedStats.BufferedStat`1.Value
+  - LobsterFramework.Utility.BufferedStats.BufferedStat`1.baseValue
+  - LobsterFramework.Utility.BufferedStats.BufferedStat`1.stats
   langs:
   - csharp
   - vb
@@ -24,14 +24,21 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/BufferedStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedStat.cs
     id: BufferedStat
-    path: ../Assets/Scripts/Utility/BufferedStat.cs
+    path: ../Assets/Framework/Utility/BufferedStat.cs
     startLine: 15
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility.BufferedStats
-  summary: "\nStats that can buffered, meaning it can be affected by multiple effectors. <br />\ni.e The player may be unable to act for some time due to multiple sources of negative effects, <br />\nand the flag setting (buffered stat) that governs this player state will remain unchanged if not <br /> \nall of these effects (effectors) are removed.\n"
+  summary: >-
+    Stats that can buffered, meaning it can be affected by multiple effectors. <br />
+
+    i.e The player may be unable to act for some time due to multiple sources of negative effects, <br />
+
+    and the flag setting (buffered stat) that governs this player state will remain unchanged if not <br /> 
+
+    all of these effects (effectors) are removed.
   example: []
   syntax:
     content: public abstract class BufferedStat<T>
@@ -63,12 +70,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/BufferedStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedStat.cs
     id: stats
-    path: ../Assets/Scripts/Utility/BufferedStat.cs
+    path: ../Assets/Framework/Utility/BufferedStat.cs
     startLine: 18
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility.BufferedStats
   syntax:
     content: protected Dictionary<int, T> stats
@@ -90,12 +97,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/BufferedStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedStat.cs
     id: baseValue
-    path: ../Assets/Scripts/Utility/BufferedStat.cs
+    path: ../Assets/Framework/Utility/BufferedStat.cs
     startLine: 19
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility.BufferedStats
   syntax:
     content: protected T baseValue
@@ -117,12 +124,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/BufferedStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedStat.cs
     id: .ctor
-    path: ../Assets/Scripts/Utility/BufferedStat.cs
+    path: ../Assets/Framework/Utility/BufferedStat.cs
     startLine: 22
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility.BufferedStats
   syntax:
     content: public BufferedStat(T value)
@@ -147,12 +154,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/BufferedStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedStat.cs
     id: Stat
-    path: ../Assets/Scripts/Utility/BufferedStat.cs
+    path: ../Assets/Framework/Utility/BufferedStat.cs
     startLine: 24
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility.BufferedStats
   syntax:
     content: public T Stat { get; }
@@ -176,12 +183,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/BufferedStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedStat.cs
     id: Compatible
-    path: ../Assets/Scripts/Utility/BufferedStat.cs
+    path: ../Assets/Framework/Utility/BufferedStat.cs
     startLine: 28
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility.BufferedStats
   syntax:
     content: public virtual bool Compatible(T obj)
@@ -207,12 +214,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/BufferedStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedStat.cs
     id: AddEffector
-    path: ../Assets/Scripts/Utility/BufferedStat.cs
+    path: ../Assets/Framework/Utility/BufferedStat.cs
     startLine: 30
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility.BufferedStats
   syntax:
     content: public int AddEffector(T obj)
@@ -238,12 +245,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/BufferedStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedStat.cs
     id: RemoveEffector
-    path: ../Assets/Scripts/Utility/BufferedStat.cs
+    path: ../Assets/Framework/Utility/BufferedStat.cs
     startLine: 39
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility.BufferedStats
   syntax:
     content: public bool RemoveEffector(int id)
@@ -270,12 +277,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/BufferedStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedStat.cs
     id: SetEffector
-    path: ../Assets/Scripts/Utility/BufferedStat.cs
+    path: ../Assets/Framework/Utility/BufferedStat.cs
     startLine: 48
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility.BufferedStats
   syntax:
     content: public bool SetEffector(int id, T obj)
@@ -304,12 +311,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/BufferedStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedStat.cs
     id: ClearEffectors
-    path: ../Assets/Scripts/Utility/BufferedStat.cs
+    path: ../Assets/Framework/Utility/BufferedStat.cs
     startLine: 56
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility.BufferedStats
   syntax:
     content: public void ClearEffectors()
@@ -330,12 +337,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/BufferedStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedStat.cs
     id: Value
-    path: ../Assets/Scripts/Utility/BufferedStat.cs
+    path: ../Assets/Framework/Utility/BufferedStat.cs
     startLine: 63
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility.BufferedStats
   syntax:
     content: protected abstract T Value()
@@ -348,31 +355,39 @@ items:
 references:
 - uid: LobsterFramework.Utility.BufferedStats
   commentId: N:LobsterFramework.Utility.BufferedStats
+  href: LobsterFramework.html
   name: LobsterFramework.Utility.BufferedStats
   nameWithType: LobsterFramework.Utility.BufferedStats
   fullName: LobsterFramework.Utility.BufferedStats
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
   - name: .
   - uid: LobsterFramework.Utility.BufferedStats
     name: BufferedStats
+    href: LobsterFramework.Utility.BufferedStats.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
   - name: .
   - uid: LobsterFramework.Utility.BufferedStats
     name: BufferedStats
+    href: LobsterFramework.Utility.BufferedStats.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -382,6 +397,7 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
@@ -389,6 +405,7 @@ references:
   commentId: T:System.Collections.Generic.Dictionary{System.Int32,`0}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   name: Dictionary<int, T>
   nameWithType: Dictionary<int, T>
   fullName: System.Collections.Generic.Dictionary<int, T>
@@ -399,10 +416,12 @@ references:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: <
   - uid: System.Int32
     name: int
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: ','
   - name: " "
   - name: T
@@ -411,12 +430,14 @@ references:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: (
   - name: Of
   - name: " "
   - uid: System.Int32
     name: Integer
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: ','
   - name: " "
   - name: T
@@ -424,6 +445,7 @@ references:
 - uid: System.Collections.Generic.Dictionary`2
   commentId: T:System.Collections.Generic.Dictionary`2
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   name: Dictionary<TKey, TValue>
   nameWithType: Dictionary<TKey, TValue>
   fullName: System.Collections.Generic.Dictionary<TKey, TValue>
@@ -434,6 +456,7 @@ references:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: <
   - name: TKey
   - name: ','
@@ -444,6 +467,7 @@ references:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: (
   - name: Of
   - name: " "
@@ -455,6 +479,7 @@ references:
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
@@ -462,26 +487,32 @@ references:
   - uid: System
     name: System
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
   - uid: System.Collections
     name: Collections
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
   - uid: System.Collections.Generic
     name: Generic
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
   spec.vb:
   - uid: System
     name: System
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
   - uid: System.Collections
     name: Collections
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
   - uid: System.Collections.Generic
     name: Generic
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: '{T}'
   commentId: '!:T'
   definition: T
@@ -494,6 +525,7 @@ references:
   fullName: T
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.#ctor*
   commentId: Overload:LobsterFramework.Utility.BufferedStats.BufferedStat`1.#ctor
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.#ctor(`0)
   name: BufferedStat
   nameWithType: BufferedStat<T>.BufferedStat
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>.BufferedStat
@@ -502,6 +534,7 @@ references:
   name.vb: New
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.Stat*
   commentId: Overload:LobsterFramework.Utility.BufferedStats.BufferedStat`1.Stat
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.Stat
   name: Stat
   nameWithType: BufferedStat<T>.Stat
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>.Stat
@@ -509,6 +542,7 @@ references:
   fullName.vb: LobsterFramework.Utility.BufferedStats.BufferedStat(Of T).Stat
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.Compatible*
   commentId: Overload:LobsterFramework.Utility.BufferedStats.BufferedStat`1.Compatible
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.Compatible(`0)
   name: Compatible
   nameWithType: BufferedStat<T>.Compatible
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>.Compatible
@@ -518,6 +552,7 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
@@ -526,6 +561,7 @@ references:
   name.vb: Boolean
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.AddEffector*
   commentId: Overload:LobsterFramework.Utility.BufferedStats.BufferedStat`1.AddEffector
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.AddEffector(`0)
   name: AddEffector
   nameWithType: BufferedStat<T>.AddEffector
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>.AddEffector
@@ -535,6 +571,7 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
   name: int
   nameWithType: int
   fullName: int
@@ -543,6 +580,7 @@ references:
   name.vb: Integer
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.RemoveEffector*
   commentId: Overload:LobsterFramework.Utility.BufferedStats.BufferedStat`1.RemoveEffector
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.RemoveEffector(System.Int32)
   name: RemoveEffector
   nameWithType: BufferedStat<T>.RemoveEffector
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>.RemoveEffector
@@ -550,6 +588,7 @@ references:
   fullName.vb: LobsterFramework.Utility.BufferedStats.BufferedStat(Of T).RemoveEffector
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.SetEffector*
   commentId: Overload:LobsterFramework.Utility.BufferedStats.BufferedStat`1.SetEffector
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.SetEffector(System.Int32,`0)
   name: SetEffector
   nameWithType: BufferedStat<T>.SetEffector
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>.SetEffector
@@ -557,6 +596,7 @@ references:
   fullName.vb: LobsterFramework.Utility.BufferedStats.BufferedStat(Of T).SetEffector
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.ClearEffectors*
   commentId: Overload:LobsterFramework.Utility.BufferedStats.BufferedStat`1.ClearEffectors
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.ClearEffectors
   name: ClearEffectors
   nameWithType: BufferedStat<T>.ClearEffectors
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>.ClearEffectors
@@ -564,6 +604,7 @@ references:
   fullName.vb: LobsterFramework.Utility.BufferedStats.BufferedStat(Of T).ClearEffectors
 - uid: LobsterFramework.Utility.BufferedStats.BufferedStat`1.Value*
   commentId: Overload:LobsterFramework.Utility.BufferedStats.BufferedStat`1.Value
+  href: LobsterFramework.Utility.BufferedStats.BufferedStat-1.html#LobsterFramework.Utility.BufferedStats.BufferedStat`1.Value
   name: Value
   nameWithType: BufferedStat<T>.Value
   fullName: LobsterFramework.Utility.BufferedStats.BufferedStat<T>.Value

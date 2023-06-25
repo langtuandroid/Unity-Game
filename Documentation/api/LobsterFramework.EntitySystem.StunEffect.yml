@@ -16,12 +16,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Effect/StunEffect.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Effect/StunEffect.cs
     id: StunEffect
-    path: ../Assets/Scripts/Scriptable Objects/Effect/StunEffect.cs
+    path: ../Assets/Framework/Scriptable Objects/Effect/StunEffect.cs
     startLine: 7
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: >-
@@ -117,13 +117,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Effect/StunEffect.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Effect/StunEffect.cs
     id: OnApply
-    path: ../Assets/Scripts/Scriptable Objects/Effect/StunEffect.cs
+    path: ../Assets/Framework/Scriptable Objects/Effect/StunEffect.cs
     startLine: 13
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
+  example: []
   syntax:
     content: protected override void OnApply()
     content.vb: Protected Overrides Sub OnApply()
@@ -142,13 +143,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Effect/StunEffect.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Effect/StunEffect.cs
     id: OnEffectOver
-    path: ../Assets/Scripts/Scriptable Objects/Effect/StunEffect.cs
+    path: ../Assets/Framework/Scriptable Objects/Effect/StunEffect.cs
     startLine: 22
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
+  example: []
   syntax:
     content: protected override void OnEffectOver()
     content.vb: Protected Overrides Sub OnEffectOver()
@@ -157,25 +159,31 @@ items:
 references:
 - uid: LobsterFramework.EntitySystem
   commentId: N:LobsterFramework.EntitySystem
+  href: LobsterFramework.html
   name: LobsterFramework.EntitySystem
   nameWithType: LobsterFramework.EntitySystem
   fullName: LobsterFramework.EntitySystem
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.EntitySystem
     name: EntitySystem
+    href: LobsterFramework.EntitySystem.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.EntitySystem
     name: EntitySystem
+    href: LobsterFramework.EntitySystem.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -199,99 +207,118 @@ references:
 - uid: LobsterFramework.EntitySystem.Effect
   commentId: T:LobsterFramework.EntitySystem.Effect
   parent: LobsterFramework.EntitySystem
+  href: LobsterFramework.EntitySystem.Effect.html
   name: Effect
   nameWithType: Effect
   fullName: LobsterFramework.EntitySystem.Effect
 - uid: LobsterFramework.EntitySystem.Effect.entity
   commentId: F:LobsterFramework.EntitySystem.Effect.entity
   parent: LobsterFramework.EntitySystem.Effect
+  href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.entity
   name: entity
   nameWithType: Effect.entity
   fullName: LobsterFramework.EntitySystem.Effect.entity
 - uid: LobsterFramework.EntitySystem.Effect.Icon
   commentId: P:LobsterFramework.EntitySystem.Effect.Icon
   parent: LobsterFramework.EntitySystem.Effect
+  href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.Icon
   name: Icon
   nameWithType: Effect.Icon
   fullName: LobsterFramework.EntitySystem.Effect.Icon
 - uid: LobsterFramework.EntitySystem.Effect.Counter_t
   commentId: P:LobsterFramework.EntitySystem.Effect.Counter_t
   parent: LobsterFramework.EntitySystem.Effect
+  href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.Counter_t
   name: Counter_t
   nameWithType: Effect.Counter_t
   fullName: LobsterFramework.EntitySystem.Effect.Counter_t
 - uid: LobsterFramework.EntitySystem.Effect.Duration
   commentId: P:LobsterFramework.EntitySystem.Effect.Duration
   parent: LobsterFramework.EntitySystem.Effect
+  href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.Duration
   name: Duration
   nameWithType: Effect.Duration
   fullName: LobsterFramework.EntitySystem.Effect.Duration
 - uid: LobsterFramework.EntitySystem.Effect.ActivateEffect(LobsterFramework.EntitySystem.Entity)
   commentId: M:LobsterFramework.EntitySystem.Effect.ActivateEffect(LobsterFramework.EntitySystem.Entity)
   parent: LobsterFramework.EntitySystem.Effect
+  href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.ActivateEffect(LobsterFramework.EntitySystem.Entity)
   name: ActivateEffect(Entity)
   nameWithType: Effect.ActivateEffect(Entity)
   fullName: LobsterFramework.EntitySystem.Effect.ActivateEffect(LobsterFramework.EntitySystem.Entity)
   spec.csharp:
   - uid: LobsterFramework.EntitySystem.Effect.ActivateEffect(LobsterFramework.EntitySystem.Entity)
     name: ActivateEffect
+    href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.ActivateEffect(LobsterFramework.EntitySystem.Entity)
   - name: (
   - uid: LobsterFramework.EntitySystem.Entity
     name: Entity
+    href: LobsterFramework.EntitySystem.Entity.html
   - name: )
   spec.vb:
   - uid: LobsterFramework.EntitySystem.Effect.ActivateEffect(LobsterFramework.EntitySystem.Entity)
     name: ActivateEffect
+    href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.ActivateEffect(LobsterFramework.EntitySystem.Entity)
   - name: (
   - uid: LobsterFramework.EntitySystem.Entity
     name: Entity
+    href: LobsterFramework.EntitySystem.Entity.html
   - name: )
 - uid: LobsterFramework.EntitySystem.Effect.Update
   commentId: M:LobsterFramework.EntitySystem.Effect.Update
   parent: LobsterFramework.EntitySystem.Effect
+  href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.Update
   name: Update()
   nameWithType: Effect.Update()
   fullName: LobsterFramework.EntitySystem.Effect.Update()
   spec.csharp:
   - uid: LobsterFramework.EntitySystem.Effect.Update
     name: Update
+    href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.Update
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.EntitySystem.Effect.Update
     name: Update
+    href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.Update
   - name: (
   - name: )
 - uid: LobsterFramework.EntitySystem.Effect.OnUpdate
   commentId: M:LobsterFramework.EntitySystem.Effect.OnUpdate
   parent: LobsterFramework.EntitySystem.Effect
+  href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.OnUpdate
   name: OnUpdate()
   nameWithType: Effect.OnUpdate()
   fullName: LobsterFramework.EntitySystem.Effect.OnUpdate()
   spec.csharp:
   - uid: LobsterFramework.EntitySystem.Effect.OnUpdate
     name: OnUpdate
+    href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.OnUpdate
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.EntitySystem.Effect.OnUpdate
     name: OnUpdate
+    href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.OnUpdate
   - name: (
   - name: )
 - uid: LobsterFramework.EntitySystem.Effect.TerminateEffect
   commentId: M:LobsterFramework.EntitySystem.Effect.TerminateEffect
   parent: LobsterFramework.EntitySystem.Effect
+  href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.TerminateEffect
   name: TerminateEffect()
   nameWithType: Effect.TerminateEffect()
   fullName: LobsterFramework.EntitySystem.Effect.TerminateEffect()
   spec.csharp:
   - uid: LobsterFramework.EntitySystem.Effect.TerminateEffect
     name: TerminateEffect
+    href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.TerminateEffect
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.EntitySystem.Effect.TerminateEffect
     name: TerminateEffect
+    href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.TerminateEffect
   - name: (
   - name: )
 - uid: UnityEngine.ScriptableObject.SetDirty
@@ -317,6 +344,7 @@ references:
   commentId: M:UnityEngine.ScriptableObject.CreateInstance(System.String)
   parent: UnityEngine.ScriptableObject
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: CreateInstance(string)
   nameWithType: ScriptableObject.CreateInstance(string)
   fullName: UnityEngine.ScriptableObject.CreateInstance(string)
@@ -331,6 +359,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.ScriptableObject.CreateInstance(System.String)
@@ -340,11 +369,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.ScriptableObject.CreateInstance(System.Type)
   commentId: M:UnityEngine.ScriptableObject.CreateInstance(System.Type)
   parent: UnityEngine.ScriptableObject
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: CreateInstance(Type)
   nameWithType: ScriptableObject.CreateInstance(Type)
   fullName: UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -356,6 +387,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -365,6 +397,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.ScriptableObject.CreateInstance``1
   commentId: M:UnityEngine.ScriptableObject.CreateInstance``1
@@ -438,6 +471,7 @@ references:
   commentId: M:UnityEngine.Object.Equals(System.Object)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: Equals(object)
   nameWithType: Object.Equals(object)
   fullName: UnityEngine.Object.Equals(object)
@@ -452,6 +486,7 @@ references:
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Equals(System.Object)
@@ -461,6 +496,7 @@ references:
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
   commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
@@ -626,6 +662,7 @@ references:
   commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: Instantiate(Object, Transform, bool)
   nameWithType: Object.Instantiate(Object, Transform, bool)
   fullName: UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Transform, bool)
@@ -650,6 +687,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
@@ -669,6 +707,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.Instantiate``1({T})
   commentId: M:UnityEngine.Object.Instantiate``1(``0)
@@ -862,6 +901,7 @@ references:
   commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
   parent: UnityEngine.Object
   definition: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: Instantiate<T>(T, Transform, bool)
   nameWithType: Object.Instantiate<T>(T, Transform, bool)
   fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Transform, bool)
@@ -887,6 +927,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
@@ -909,11 +950,13 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
   commentId: M:UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
   name: Destroy(Object, float)
   nameWithType: Object.Destroy(Object, float)
   fullName: UnityEngine.Object.Destroy(UnityEngine.Object, float)
@@ -933,6 +976,7 @@ references:
   - uid: System.Single
     name: float
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
@@ -947,6 +991,7 @@ references:
   - uid: System.Single
     name: Single
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
 - uid: UnityEngine.Object.Destroy(UnityEngine.Object)
   commentId: M:UnityEngine.Object.Destroy(UnityEngine.Object)
@@ -977,6 +1022,7 @@ references:
   commentId: M:UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: DestroyImmediate(Object, bool)
   nameWithType: Object.DestroyImmediate(Object, bool)
   fullName: UnityEngine.Object.DestroyImmediate(UnityEngine.Object, bool)
@@ -996,6 +1042,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
@@ -1010,6 +1057,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
   commentId: M:UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
@@ -1040,6 +1088,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsOfType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfType(Type)
   nameWithType: Object.FindObjectsOfType(Type)
   fullName: UnityEngine.Object.FindObjectsOfType(System.Type)
@@ -1051,6 +1100,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfType(System.Type)
@@ -1060,11 +1110,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
   commentId: M:UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfType(Type, bool)
   nameWithType: Object.FindObjectsOfType(Type, bool)
   fullName: UnityEngine.Object.FindObjectsOfType(System.Type, bool)
@@ -1079,11 +1131,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
@@ -1093,16 +1147,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsSortMode)
   commentId: M:UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsSortMode)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsByType(Type, FindObjectsSortMode)
   nameWithType: Object.FindObjectsByType(Type, FindObjectsSortMode)
   fullName: UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsSortMode)
@@ -1114,6 +1171,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsSortMode
@@ -1128,6 +1186,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsSortMode
@@ -1138,6 +1197,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)
   nameWithType: Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)
   fullName: UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsInactive, UnityEngine.FindObjectsSortMode)
@@ -1149,6 +1209,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -1168,6 +1229,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -1208,6 +1270,7 @@ references:
   commentId: M:UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
   name: DestroyObject(Object, float)
   nameWithType: Object.DestroyObject(Object, float)
   fullName: UnityEngine.Object.DestroyObject(UnityEngine.Object, float)
@@ -1227,6 +1290,7 @@ references:
   - uid: System.Single
     name: float
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
@@ -1241,6 +1305,7 @@ references:
   - uid: System.Single
     name: Single
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
 - uid: UnityEngine.Object.DestroyObject(UnityEngine.Object)
   commentId: M:UnityEngine.Object.DestroyObject(UnityEngine.Object)
@@ -1271,6 +1336,7 @@ references:
   commentId: M:UnityEngine.Object.FindSceneObjectsOfType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindSceneObjectsOfType(Type)
   nameWithType: Object.FindSceneObjectsOfType(Type)
   fullName: UnityEngine.Object.FindSceneObjectsOfType(System.Type)
@@ -1282,6 +1348,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindSceneObjectsOfType(System.Type)
@@ -1291,11 +1358,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
   commentId: M:UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfTypeIncludingAssets(Type)
   nameWithType: Object.FindObjectsOfTypeIncludingAssets(Type)
   fullName: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
@@ -1307,6 +1376,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
@@ -1316,6 +1386,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectsOfType``1
   commentId: M:UnityEngine.Object.FindObjectsOfType``1
@@ -1387,6 +1458,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: FindObjectsOfType<T>(bool)
   nameWithType: Object.FindObjectsOfType<T>(bool)
   fullName: UnityEngine.Object.FindObjectsOfType<T>(bool)
@@ -1404,6 +1476,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
@@ -1418,6 +1491,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
   commentId: M:UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
@@ -1499,6 +1573,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectOfType``1(System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: FindObjectOfType<T>(bool)
   nameWithType: Object.FindObjectOfType<T>(bool)
   fullName: UnityEngine.Object.FindObjectOfType<T>(bool)
@@ -1516,6 +1591,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectOfType``1(System.Boolean)
@@ -1530,6 +1606,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindFirstObjectByType``1
   commentId: M:UnityEngine.Object.FindFirstObjectByType``1
@@ -1667,6 +1744,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfTypeAll(Type)
   nameWithType: Object.FindObjectsOfTypeAll(Type)
   fullName: UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
@@ -1678,6 +1756,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
@@ -1687,11 +1766,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectOfType(System.Type)
   commentId: M:UnityEngine.Object.FindObjectOfType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectOfType(Type)
   nameWithType: Object.FindObjectOfType(Type)
   fullName: UnityEngine.Object.FindObjectOfType(System.Type)
@@ -1703,6 +1784,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectOfType(System.Type)
@@ -1712,11 +1794,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindFirstObjectByType(System.Type)
   commentId: M:UnityEngine.Object.FindFirstObjectByType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindFirstObjectByType(Type)
   nameWithType: Object.FindFirstObjectByType(Type)
   fullName: UnityEngine.Object.FindFirstObjectByType(System.Type)
@@ -1728,6 +1812,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindFirstObjectByType(System.Type)
@@ -1737,11 +1822,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindAnyObjectByType(System.Type)
   commentId: M:UnityEngine.Object.FindAnyObjectByType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindAnyObjectByType(Type)
   nameWithType: Object.FindAnyObjectByType(Type)
   fullName: UnityEngine.Object.FindAnyObjectByType(System.Type)
@@ -1753,6 +1840,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindAnyObjectByType(System.Type)
@@ -1762,11 +1850,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
   commentId: M:UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectOfType(Type, bool)
   nameWithType: Object.FindObjectOfType(Type, bool)
   fullName: UnityEngine.Object.FindObjectOfType(System.Type, bool)
@@ -1781,11 +1871,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
@@ -1795,16 +1887,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindFirstObjectByType(System.Type,UnityEngine.FindObjectsInactive)
   commentId: M:UnityEngine.Object.FindFirstObjectByType(System.Type,UnityEngine.FindObjectsInactive)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindFirstObjectByType(Type, FindObjectsInactive)
   nameWithType: Object.FindFirstObjectByType(Type, FindObjectsInactive)
   fullName: UnityEngine.Object.FindFirstObjectByType(System.Type, UnityEngine.FindObjectsInactive)
@@ -1816,6 +1911,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -1830,6 +1926,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -1840,6 +1937,7 @@ references:
   commentId: M:UnityEngine.Object.FindAnyObjectByType(System.Type,UnityEngine.FindObjectsInactive)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindAnyObjectByType(Type, FindObjectsInactive)
   nameWithType: Object.FindAnyObjectByType(Type, FindObjectsInactive)
   fullName: UnityEngine.Object.FindAnyObjectByType(System.Type, UnityEngine.FindObjectsInactive)
@@ -1851,6 +1949,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -1865,6 +1964,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -1907,6 +2007,7 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
@@ -2103,6 +2204,7 @@ references:
 - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
   commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: Instantiate<T>(T, Transform, bool)
   nameWithType: Object.Instantiate<T>(T, Transform, bool)
   fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Transform, bool)
@@ -2128,6 +2230,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
@@ -2150,46 +2253,55 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: LobsterFramework.EntitySystem.Effect.OnApply
   commentId: M:LobsterFramework.EntitySystem.Effect.OnApply
   parent: LobsterFramework.EntitySystem.Effect
+  href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.OnApply
   name: OnApply()
   nameWithType: Effect.OnApply()
   fullName: LobsterFramework.EntitySystem.Effect.OnApply()
   spec.csharp:
   - uid: LobsterFramework.EntitySystem.Effect.OnApply
     name: OnApply
+    href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.OnApply
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.EntitySystem.Effect.OnApply
     name: OnApply
+    href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.OnApply
   - name: (
   - name: )
 - uid: LobsterFramework.EntitySystem.StunEffect.OnApply*
   commentId: Overload:LobsterFramework.EntitySystem.StunEffect.OnApply
+  href: LobsterFramework.EntitySystem.StunEffect.html#LobsterFramework.EntitySystem.StunEffect.OnApply
   name: OnApply
   nameWithType: StunEffect.OnApply
   fullName: LobsterFramework.EntitySystem.StunEffect.OnApply
 - uid: LobsterFramework.EntitySystem.Effect.OnEffectOver
   commentId: M:LobsterFramework.EntitySystem.Effect.OnEffectOver
   parent: LobsterFramework.EntitySystem.Effect
+  href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.OnEffectOver
   name: OnEffectOver()
   nameWithType: Effect.OnEffectOver()
   fullName: LobsterFramework.EntitySystem.Effect.OnEffectOver()
   spec.csharp:
   - uid: LobsterFramework.EntitySystem.Effect.OnEffectOver
     name: OnEffectOver
+    href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.OnEffectOver
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.EntitySystem.Effect.OnEffectOver
     name: OnEffectOver
+    href: LobsterFramework.EntitySystem.Effect.html#LobsterFramework.EntitySystem.Effect.OnEffectOver
   - name: (
   - name: )
 - uid: LobsterFramework.EntitySystem.StunEffect.OnEffectOver*
   commentId: Overload:LobsterFramework.EntitySystem.StunEffect.OnEffectOver
+  href: LobsterFramework.EntitySystem.StunEffect.html#LobsterFramework.EntitySystem.StunEffect.OnEffectOver
   name: OnEffectOver
   nameWithType: StunEffect.OnEffectOver
   fullName: LobsterFramework.EntitySystem.StunEffect.OnEffectOver

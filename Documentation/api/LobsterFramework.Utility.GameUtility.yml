@@ -15,12 +15,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/GameUtility.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/GameUtility.cs
     id: GameUtility
-    path: ../Assets/Scripts/Utility/GameUtility.cs
+    path: ../Assets/Framework/Utility/GameUtility.cs
     startLine: 5
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: public static class GameUtility
@@ -40,12 +40,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/GameUtility.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/GameUtility.cs
     id: SetAbsoluteScale
-    path: ../Assets/Scripts/Utility/GameUtility.cs
+    path: ../Assets/Framework/Utility/GameUtility.cs
     startLine: 7
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: public static void SetAbsoluteScale(GameObject obj, Vector2 size)
@@ -59,25 +59,31 @@ items:
 references:
 - uid: LobsterFramework.Utility
   commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
   name: LobsterFramework.Utility
   nameWithType: LobsterFramework.Utility
   fullName: LobsterFramework.Utility
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -87,11 +93,13 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: LobsterFramework.Utility.GameUtility.SetAbsoluteScale*
   commentId: Overload:LobsterFramework.Utility.GameUtility.SetAbsoluteScale
+  href: LobsterFramework.Utility.GameUtility.html#LobsterFramework.Utility.GameUtility.SetAbsoluteScale(UnityEngine.GameObject,UnityEngine.Vector2)
   name: SetAbsoluteScale
   nameWithType: GameUtility.SetAbsoluteScale
   fullName: LobsterFramework.Utility.GameUtility.SetAbsoluteScale

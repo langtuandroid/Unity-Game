@@ -17,12 +17,12 @@ items:
   type: Enum
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: DamageType
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 409
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public enum DamageType
@@ -40,12 +40,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: Hit
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 410
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: Hit = 0
@@ -64,12 +64,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: StatusEffect
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 411
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: StatusEffect = 1
@@ -88,12 +88,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: General
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 412
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: General = 2
@@ -102,24 +102,30 @@ items:
 references:
 - uid: LobsterFramework.EntitySystem
   commentId: N:LobsterFramework.EntitySystem
+  href: LobsterFramework.html
   name: LobsterFramework.EntitySystem
   nameWithType: LobsterFramework.EntitySystem
   fullName: LobsterFramework.EntitySystem
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.EntitySystem
     name: EntitySystem
+    href: LobsterFramework.EntitySystem.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.EntitySystem
     name: EntitySystem
+    href: LobsterFramework.EntitySystem.html
 - uid: LobsterFramework.EntitySystem.DamageType
   commentId: T:LobsterFramework.EntitySystem.DamageType
   parent: LobsterFramework.EntitySystem
+  href: LobsterFramework.EntitySystem.DamageType.html
   name: DamageType
   nameWithType: DamageType
   fullName: LobsterFramework.EntitySystem.DamageType

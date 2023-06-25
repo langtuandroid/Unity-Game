@@ -14,12 +14,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     id: AbilitySet
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableHashSet.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableHashSet.cs
     startLine: 137
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: >-
@@ -66,25 +66,31 @@ items:
 references:
 - uid: LobsterFramework.Utility
   commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
   name: LobsterFramework.Utility
   nameWithType: LobsterFramework.Utility
   fullName: LobsterFramework.Utility
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -95,6 +101,7 @@ references:
   commentId: T:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   parent: LobsterFramework.Utility
   definition: LobsterFramework.Utility.SerializableHashSet`1
+  href: LobsterFramework.Utility.SerializableHashSet-1.html
   name: SerializableHashSet<Ability>
   nameWithType: SerializableHashSet<Ability>
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>
@@ -104,18 +111,22 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1
     name: SerializableHashSet
+    href: LobsterFramework.Utility.SerializableHashSet-1.html
   - name: <
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: '>'
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1
     name: SerializableHashSet
+    href: LobsterFramework.Utility.SerializableHashSet-1.html
   - name: (
   - name: Of
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
 - uid: UnityEngine.ISerializationCallbackReceiver
   commentId: T:UnityEngine.ISerializationCallbackReceiver
@@ -128,6 +139,7 @@ references:
   commentId: F:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.m_HashSet
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.m_HashSet
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.m_HashSet
   name: m_HashSet
   nameWithType: SerializableHashSet<Ability>.m_HashSet
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.m_HashSet
@@ -137,6 +149,7 @@ references:
   commentId: F:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.values
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.values
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.values
   name: values
   nameWithType: SerializableHashSet<Ability>.values
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.values
@@ -146,6 +159,7 @@ references:
   commentId: P:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Count
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.Count
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Count
   name: Count
   nameWithType: SerializableHashSet<Ability>.Count
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.Count
@@ -155,6 +169,7 @@ references:
   commentId: P:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsReadOnly
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.IsReadOnly
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsReadOnly
   name: IsReadOnly
   nameWithType: SerializableHashSet<Ability>.IsReadOnly
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.IsReadOnly
@@ -164,6 +179,7 @@ references:
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Add(LobsterFramework.AbilitySystem.Ability)
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.Add(`0)
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Add(LobsterFramework.AbilitySystem.Ability)
   name: Add(Ability)
   nameWithType: SerializableHashSet<Ability>.Add(Ability)
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.Add(LobsterFramework.AbilitySystem.Ability)
@@ -172,21 +188,26 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Add(LobsterFramework.AbilitySystem.Ability)
     name: Add
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Add(LobsterFramework.AbilitySystem.Ability)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Add(LobsterFramework.AbilitySystem.Ability)
     name: Add
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Add(LobsterFramework.AbilitySystem.Ability)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Clear
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Clear
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.Clear
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Clear
   name: Clear()
   nameWithType: SerializableHashSet<Ability>.Clear()
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.Clear()
@@ -195,17 +216,20 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Clear
     name: Clear
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Clear
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Clear
     name: Clear
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Clear
   - name: (
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Contains(LobsterFramework.AbilitySystem.Ability)
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Contains(LobsterFramework.AbilitySystem.Ability)
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.Contains(`0)
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Contains(LobsterFramework.AbilitySystem.Ability)
   name: Contains(Ability)
   nameWithType: SerializableHashSet<Ability>.Contains(Ability)
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.Contains(LobsterFramework.AbilitySystem.Ability)
@@ -214,21 +238,26 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Contains(LobsterFramework.AbilitySystem.Ability)
     name: Contains
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Contains(LobsterFramework.AbilitySystem.Ability)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Contains(LobsterFramework.AbilitySystem.Ability)
     name: Contains
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Contains(LobsterFramework.AbilitySystem.Ability)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.CopyTo(LobsterFramework.AbilitySystem.Ability[],System.Int32)
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.CopyTo(LobsterFramework.AbilitySystem.Ability[],System.Int32)
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.CopyTo(`0[],System.Int32)
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.CopyTo(LobsterFramework.AbilitySystem.Ability[],System.Int32)
   name: CopyTo(Ability[], int)
   nameWithType: SerializableHashSet<Ability>.CopyTo(Ability[], int)
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.CopyTo(LobsterFramework.AbilitySystem.Ability[], int)
@@ -238,9 +267,11 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.CopyTo(LobsterFramework.AbilitySystem.Ability[],System.Int32)
     name: CopyTo
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.CopyTo(LobsterFramework.AbilitySystem.Ability[],System.Int32)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: '['
   - name: ']'
   - name: ','
@@ -248,13 +279,16 @@ references:
   - uid: System.Int32
     name: int
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.CopyTo(LobsterFramework.AbilitySystem.Ability[],System.Int32)
     name: CopyTo
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.CopyTo(LobsterFramework.AbilitySystem.Ability[],System.Int32)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: (
   - name: )
   - name: ','
@@ -262,11 +296,13 @@ references:
   - uid: System.Int32
     name: Integer
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   name: ExceptWith(IEnumerable<Ability>)
   nameWithType: SerializableHashSet<Ability>.ExceptWith(IEnumerable<Ability>)
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.ExceptWith(System.Collections.Generic.IEnumerable<LobsterFramework.AbilitySystem.Ability>)
@@ -276,33 +312,40 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: ExceptWith
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: '>'
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: ExceptWith
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.ExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.GetEnumerator
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.GetEnumerator
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.GetEnumerator
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.GetEnumerator
   name: GetEnumerator()
   nameWithType: SerializableHashSet<Ability>.GetEnumerator()
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.GetEnumerator()
@@ -311,17 +354,20 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.GetEnumerator
     name: GetEnumerator
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.GetEnumerator
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.GetEnumerator
     name: GetEnumerator
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.GetEnumerator
   - name: (
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IntersectWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IntersectWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IntersectWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   name: IntersectWith(IEnumerable<Ability>)
   nameWithType: SerializableHashSet<Ability>.IntersectWith(IEnumerable<Ability>)
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.IntersectWith(System.Collections.Generic.IEnumerable<LobsterFramework.AbilitySystem.Ability>)
@@ -331,33 +377,40 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IntersectWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: IntersectWith
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IntersectWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: '>'
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IntersectWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: IntersectWith
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IntersectWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   name: IsProperSubsetOf(IEnumerable<Ability>)
   nameWithType: SerializableHashSet<Ability>.IsProperSubsetOf(IEnumerable<Ability>)
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.IsProperSubsetOf(System.Collections.Generic.IEnumerable<LobsterFramework.AbilitySystem.Ability>)
@@ -367,33 +420,40 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: IsProperSubsetOf
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: '>'
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: IsProperSubsetOf
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   name: IsProperSupersetOf(IEnumerable<Ability>)
   nameWithType: SerializableHashSet<Ability>.IsProperSupersetOf(IEnumerable<Ability>)
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.IsProperSupersetOf(System.Collections.Generic.IEnumerable<LobsterFramework.AbilitySystem.Ability>)
@@ -403,33 +463,40 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: IsProperSupersetOf
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: '>'
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: IsProperSupersetOf
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   name: IsSubsetOf(IEnumerable<Ability>)
   nameWithType: SerializableHashSet<Ability>.IsSubsetOf(IEnumerable<Ability>)
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.IsSubsetOf(System.Collections.Generic.IEnumerable<LobsterFramework.AbilitySystem.Ability>)
@@ -439,33 +506,40 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: IsSubsetOf
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: '>'
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: IsSubsetOf
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsSubsetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   name: IsSupersetOf(IEnumerable<Ability>)
   nameWithType: SerializableHashSet<Ability>.IsSupersetOf(IEnumerable<Ability>)
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.IsSupersetOf(System.Collections.Generic.IEnumerable<LobsterFramework.AbilitySystem.Ability>)
@@ -475,33 +549,40 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: IsSupersetOf
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: '>'
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: IsSupersetOf
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.IsSupersetOf(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.OnAfterDeserialize
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.OnAfterDeserialize
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.OnAfterDeserialize
   name: OnAfterDeserialize()
   nameWithType: SerializableHashSet<Ability>.OnAfterDeserialize()
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.OnAfterDeserialize()
@@ -510,17 +591,20 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.OnAfterDeserialize
     name: OnAfterDeserialize
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.OnAfterDeserialize
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.OnAfterDeserialize
     name: OnAfterDeserialize
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.OnAfterDeserialize
   - name: (
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.OnBeforeSerialize
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.OnBeforeSerialize
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.OnBeforeSerialize
   name: OnBeforeSerialize()
   nameWithType: SerializableHashSet<Ability>.OnBeforeSerialize()
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.OnBeforeSerialize()
@@ -529,17 +613,20 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.OnBeforeSerialize
     name: OnBeforeSerialize
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.OnBeforeSerialize
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.OnBeforeSerialize
     name: OnBeforeSerialize
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.OnBeforeSerialize
   - name: (
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Overlaps(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Overlaps(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Overlaps(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   name: Overlaps(IEnumerable<Ability>)
   nameWithType: SerializableHashSet<Ability>.Overlaps(IEnumerable<Ability>)
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.Overlaps(System.Collections.Generic.IEnumerable<LobsterFramework.AbilitySystem.Ability>)
@@ -549,33 +636,40 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Overlaps(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: Overlaps
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Overlaps(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: '>'
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Overlaps(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: Overlaps
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Overlaps(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Remove(LobsterFramework.AbilitySystem.Ability)
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Remove(LobsterFramework.AbilitySystem.Ability)
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.Remove(`0)
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Remove(LobsterFramework.AbilitySystem.Ability)
   name: Remove(Ability)
   nameWithType: SerializableHashSet<Ability>.Remove(Ability)
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.Remove(LobsterFramework.AbilitySystem.Ability)
@@ -584,21 +678,26 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Remove(LobsterFramework.AbilitySystem.Ability)
     name: Remove
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Remove(LobsterFramework.AbilitySystem.Ability)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Remove(LobsterFramework.AbilitySystem.Ability)
     name: Remove
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.Remove(LobsterFramework.AbilitySystem.Ability)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.SetEquals(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.SetEquals(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.SetEquals(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   name: SetEquals(IEnumerable<Ability>)
   nameWithType: SerializableHashSet<Ability>.SetEquals(IEnumerable<Ability>)
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.SetEquals(System.Collections.Generic.IEnumerable<LobsterFramework.AbilitySystem.Ability>)
@@ -608,33 +707,40 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.SetEquals(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: SetEquals
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.SetEquals(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: '>'
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.SetEquals(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: SetEquals
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.SetEquals(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   name: SymmetricExceptWith(IEnumerable<Ability>)
   nameWithType: SerializableHashSet<Ability>.SymmetricExceptWith(IEnumerable<Ability>)
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.SymmetricExceptWith(System.Collections.Generic.IEnumerable<LobsterFramework.AbilitySystem.Ability>)
@@ -644,33 +750,40 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: SymmetricExceptWith
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: '>'
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: SymmetricExceptWith
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.UnionWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.UnionWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.UnionWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   name: UnionWith(IEnumerable<Ability>)
   nameWithType: SerializableHashSet<Ability>.UnionWith(IEnumerable<Ability>)
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.UnionWith(System.Collections.Generic.IEnumerable<LobsterFramework.AbilitySystem.Ability>)
@@ -680,33 +793,40 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.UnionWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: UnionWith
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.UnionWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: '>'
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.UnionWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
     name: UnionWith
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.UnionWith(System.Collections.Generic.IEnumerable{LobsterFramework.AbilitySystem.Ability})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.GetValueInList
   commentId: M:LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.GetValueInList
   parent: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}
   definition: LobsterFramework.Utility.SerializableHashSet`1.GetValueInList
+  href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.GetValueInList
   name: GetValueInList()
   nameWithType: SerializableHashSet<Ability>.GetValueInList()
   fullName: LobsterFramework.Utility.SerializableHashSet<LobsterFramework.AbilitySystem.Ability>.GetValueInList()
@@ -715,21 +835,25 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.GetValueInList
     name: GetValueInList
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.GetValueInList
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.GetValueInList
     name: GetValueInList
+    href: LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableHashSet{LobsterFramework.AbilitySystem.Ability}.GetValueInList
   - name: (
   - name: )
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: LobsterFramework.Utility.SerializableHashSet`1
   commentId: T:LobsterFramework.Utility.SerializableHashSet`1
+  href: LobsterFramework.Utility.SerializableHashSet-1.html
   name: SerializableHashSet<TValue>
   nameWithType: SerializableHashSet<TValue>
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>
@@ -739,12 +863,14 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1
     name: SerializableHashSet
+    href: LobsterFramework.Utility.SerializableHashSet-1.html
   - name: <
   - name: TValue
   - name: '>'
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1
     name: SerializableHashSet
+    href: LobsterFramework.Utility.SerializableHashSet-1.html
   - name: (
   - name: Of
   - name: " "
@@ -758,6 +884,7 @@ references:
   fullName: UnityEngine
 - uid: LobsterFramework.Utility.SerializableHashSet`1.m_HashSet
   commentId: F:LobsterFramework.Utility.SerializableHashSet`1.m_HashSet
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.m_HashSet
   name: m_HashSet
   nameWithType: SerializableHashSet<TValue>.m_HashSet
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.m_HashSet
@@ -765,6 +892,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).m_HashSet
 - uid: LobsterFramework.Utility.SerializableHashSet`1.values
   commentId: F:LobsterFramework.Utility.SerializableHashSet`1.values
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.values
   name: values
   nameWithType: SerializableHashSet<TValue>.values
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.values
@@ -772,6 +900,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).values
 - uid: LobsterFramework.Utility.SerializableHashSet`1.Count
   commentId: P:LobsterFramework.Utility.SerializableHashSet`1.Count
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Count
   name: Count
   nameWithType: SerializableHashSet<TValue>.Count
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.Count
@@ -779,6 +908,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).Count
 - uid: LobsterFramework.Utility.SerializableHashSet`1.IsReadOnly
   commentId: P:LobsterFramework.Utility.SerializableHashSet`1.IsReadOnly
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IsReadOnly
   name: IsReadOnly
   nameWithType: SerializableHashSet<TValue>.IsReadOnly
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.IsReadOnly
@@ -786,6 +916,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableHashSet(Of TValue).IsReadOnly
 - uid: LobsterFramework.Utility.SerializableHashSet`1.Add(`0)
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.Add(`0)
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Add(`0)
   name: Add(TValue)
   nameWithType: SerializableHashSet<TValue>.Add(TValue)
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.Add(TValue)
@@ -794,17 +925,20 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.Add(`0)
     name: Add
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Add(`0)
   - name: (
   - name: TValue
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.Add(`0)
     name: Add
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Add(`0)
   - name: (
   - name: TValue
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet`1.Clear
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.Clear
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Clear
   name: Clear()
   nameWithType: SerializableHashSet<TValue>.Clear()
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.Clear()
@@ -813,15 +947,18 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.Clear
     name: Clear
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Clear
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.Clear
     name: Clear
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Clear
   - name: (
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet`1.Contains(`0)
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.Contains(`0)
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Contains(`0)
   name: Contains(TValue)
   nameWithType: SerializableHashSet<TValue>.Contains(TValue)
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.Contains(TValue)
@@ -830,18 +967,21 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.Contains(`0)
     name: Contains
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Contains(`0)
   - name: (
   - name: TValue
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.Contains(`0)
     name: Contains
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Contains(`0)
   - name: (
   - name: TValue
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet`1.CopyTo(`0[],System.Int32)
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.CopyTo(`0[],System.Int32)
   isExternal: true
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.CopyTo(`0[],System.Int32)
   name: CopyTo(TValue[], int)
   nameWithType: SerializableHashSet<TValue>.CopyTo(TValue[], int)
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.CopyTo(TValue[], int)
@@ -851,6 +991,7 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.CopyTo(`0[],System.Int32)
     name: CopyTo
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.CopyTo(`0[],System.Int32)
   - name: (
   - name: TValue
   - name: '['
@@ -860,10 +1001,12 @@ references:
   - uid: System.Int32
     name: int
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.CopyTo(`0[],System.Int32)
     name: CopyTo
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.CopyTo(`0[],System.Int32)
   - name: (
   - name: TValue
   - name: (
@@ -873,10 +1016,12 @@ references:
   - uid: System.Int32
     name: Integer
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
   isExternal: true
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
   name: ExceptWith(IEnumerable<TValue>)
   nameWithType: SerializableHashSet<TValue>.ExceptWith(IEnumerable<TValue>)
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.ExceptWith(System.Collections.Generic.IEnumerable<TValue>)
@@ -886,10 +1031,12 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
     name: ExceptWith
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: TValue
   - name: '>'
@@ -897,10 +1044,12 @@ references:
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
     name: ExceptWith
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -909,6 +1058,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet`1.GetEnumerator
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.GetEnumerator
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.GetEnumerator
   name: GetEnumerator()
   nameWithType: SerializableHashSet<TValue>.GetEnumerator()
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.GetEnumerator()
@@ -917,16 +1067,19 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.GetEnumerator
     name: GetEnumerator
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.GetEnumerator
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.GetEnumerator
     name: GetEnumerator
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.GetEnumerator
   - name: (
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
   isExternal: true
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
   name: IntersectWith(IEnumerable<TValue>)
   nameWithType: SerializableHashSet<TValue>.IntersectWith(IEnumerable<TValue>)
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.IntersectWith(System.Collections.Generic.IEnumerable<TValue>)
@@ -936,10 +1089,12 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
     name: IntersectWith
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: TValue
   - name: '>'
@@ -947,10 +1102,12 @@ references:
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
     name: IntersectWith
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -960,6 +1117,7 @@ references:
 - uid: LobsterFramework.Utility.SerializableHashSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
   isExternal: true
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
   name: IsProperSubsetOf(IEnumerable<TValue>)
   nameWithType: SerializableHashSet<TValue>.IsProperSubsetOf(IEnumerable<TValue>)
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.IsProperSubsetOf(System.Collections.Generic.IEnumerable<TValue>)
@@ -969,10 +1127,12 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
     name: IsProperSubsetOf
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: TValue
   - name: '>'
@@ -980,10 +1140,12 @@ references:
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
     name: IsProperSubsetOf
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -993,6 +1155,7 @@ references:
 - uid: LobsterFramework.Utility.SerializableHashSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
   isExternal: true
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
   name: IsProperSupersetOf(IEnumerable<TValue>)
   nameWithType: SerializableHashSet<TValue>.IsProperSupersetOf(IEnumerable<TValue>)
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.IsProperSupersetOf(System.Collections.Generic.IEnumerable<TValue>)
@@ -1002,10 +1165,12 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
     name: IsProperSupersetOf
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: TValue
   - name: '>'
@@ -1013,10 +1178,12 @@ references:
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
     name: IsProperSupersetOf
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -1026,6 +1193,7 @@ references:
 - uid: LobsterFramework.Utility.SerializableHashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
   isExternal: true
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
   name: IsSubsetOf(IEnumerable<TValue>)
   nameWithType: SerializableHashSet<TValue>.IsSubsetOf(IEnumerable<TValue>)
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.IsSubsetOf(System.Collections.Generic.IEnumerable<TValue>)
@@ -1035,10 +1203,12 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
     name: IsSubsetOf
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: TValue
   - name: '>'
@@ -1046,10 +1216,12 @@ references:
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
     name: IsSubsetOf
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -1059,6 +1231,7 @@ references:
 - uid: LobsterFramework.Utility.SerializableHashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
   isExternal: true
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
   name: IsSupersetOf(IEnumerable<TValue>)
   nameWithType: SerializableHashSet<TValue>.IsSupersetOf(IEnumerable<TValue>)
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.IsSupersetOf(System.Collections.Generic.IEnumerable<TValue>)
@@ -1068,10 +1241,12 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
     name: IsSupersetOf
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: TValue
   - name: '>'
@@ -1079,10 +1254,12 @@ references:
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
     name: IsSupersetOf
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -1091,6 +1268,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize
   name: OnAfterDeserialize()
   nameWithType: SerializableHashSet<TValue>.OnAfterDeserialize()
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.OnAfterDeserialize()
@@ -1099,15 +1277,18 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize
     name: OnAfterDeserialize
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize
     name: OnAfterDeserialize
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.OnAfterDeserialize
   - name: (
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize
   name: OnBeforeSerialize()
   nameWithType: SerializableHashSet<TValue>.OnBeforeSerialize()
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.OnBeforeSerialize()
@@ -1116,16 +1297,19 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize
     name: OnBeforeSerialize
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize
     name: OnBeforeSerialize
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.OnBeforeSerialize
   - name: (
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
   isExternal: true
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
   name: Overlaps(IEnumerable<TValue>)
   nameWithType: SerializableHashSet<TValue>.Overlaps(IEnumerable<TValue>)
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.Overlaps(System.Collections.Generic.IEnumerable<TValue>)
@@ -1135,10 +1319,12 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
     name: Overlaps
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: TValue
   - name: '>'
@@ -1146,10 +1332,12 @@ references:
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
     name: Overlaps
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -1158,6 +1346,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet`1.Remove(`0)
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.Remove(`0)
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Remove(`0)
   name: Remove(TValue)
   nameWithType: SerializableHashSet<TValue>.Remove(TValue)
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.Remove(TValue)
@@ -1166,18 +1355,21 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.Remove(`0)
     name: Remove
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Remove(`0)
   - name: (
   - name: TValue
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.Remove(`0)
     name: Remove
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.Remove(`0)
   - name: (
   - name: TValue
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
   isExternal: true
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
   name: SetEquals(IEnumerable<TValue>)
   nameWithType: SerializableHashSet<TValue>.SetEquals(IEnumerable<TValue>)
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.SetEquals(System.Collections.Generic.IEnumerable<TValue>)
@@ -1187,10 +1379,12 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
     name: SetEquals
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: TValue
   - name: '>'
@@ -1198,10 +1392,12 @@ references:
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
     name: SetEquals
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -1211,6 +1407,7 @@ references:
 - uid: LobsterFramework.Utility.SerializableHashSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
   isExternal: true
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
   name: SymmetricExceptWith(IEnumerable<TValue>)
   nameWithType: SerializableHashSet<TValue>.SymmetricExceptWith(IEnumerable<TValue>)
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.SymmetricExceptWith(System.Collections.Generic.IEnumerable<TValue>)
@@ -1220,10 +1417,12 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
     name: SymmetricExceptWith
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: TValue
   - name: '>'
@@ -1231,10 +1430,12 @@ references:
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
     name: SymmetricExceptWith
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -1244,6 +1445,7 @@ references:
 - uid: LobsterFramework.Utility.SerializableHashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
   isExternal: true
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
   name: UnionWith(IEnumerable<TValue>)
   nameWithType: SerializableHashSet<TValue>.UnionWith(IEnumerable<TValue>)
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.UnionWith(System.Collections.Generic.IEnumerable<TValue>)
@@ -1253,10 +1455,12 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
     name: UnionWith
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: TValue
   - name: '>'
@@ -1264,10 +1468,12 @@ references:
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
     name: UnionWith
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -1276,6 +1482,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableHashSet`1.GetValueInList
   commentId: M:LobsterFramework.Utility.SerializableHashSet`1.GetValueInList
+  href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.GetValueInList
   name: GetValueInList()
   nameWithType: SerializableHashSet<TValue>.GetValueInList()
   fullName: LobsterFramework.Utility.SerializableHashSet<TValue>.GetValueInList()
@@ -1284,10 +1491,12 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.GetValueInList
     name: GetValueInList
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.GetValueInList
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableHashSet`1.GetValueInList
     name: GetValueInList
+    href: LobsterFramework.Utility.SerializableHashSet-1.html#LobsterFramework.Utility.SerializableHashSet`1.GetValueInList
   - name: (
   - name: )

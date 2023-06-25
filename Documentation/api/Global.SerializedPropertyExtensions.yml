@@ -21,14 +21,17 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
     id: SerializedPropertyExtensions
-    path: ../Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
     startLine: 21
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
-  summary: "\nExtension class for SerializedProperties\nSee also: http://answers.unity3d.com/questions/627090/convert-serializedproperty-to-custom-class.html\n"
+  summary: >-
+    Extension class for SerializedProperties
+
+    See also: http://answers.unity3d.com/questions/627090/convert-serializedproperty-to-custom-class.html
   example: []
   syntax:
     content: public static class SerializedPropertyExtensions
@@ -49,14 +52,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
     id: GetValue
-    path: ../Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
     startLine: 29
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
-  summary: "\nGet the object the serialized property holds by using reflection\n"
+  summary: Get the object the serialized property holds by using reflection
   example: []
   syntax:
     content: public static T GetValue<T>(this SerializedProperty property)
@@ -89,14 +92,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
     id: SetValue
-    path: ../Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
     startLine: 41
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
-  summary: "\nSet the value of a field of the property with the type T\n"
+  summary: Set the value of a field of the property with the type T
   example: []
   syntax:
     content: public static bool SetValue<T>(this SerializedProperty property, T value)
@@ -131,14 +134,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
     id: GetSerializedPropertyRootComponent
-    path: ../Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
     startLine: 62
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
-  summary: "\nGet the component of a serialized property\n"
+  summary: Get the component of a serialized property
   example: []
   syntax:
     content: public static Object GetSerializedPropertyRootComponent(SerializedProperty property)
@@ -164,14 +167,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
     id: GetNestedObject
-    path: ../Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
     startLine: 75
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
-  summary: "\nIterates through objects to handle objects that are nested in the root object\n"
+  summary: Iterates through objects to handle objects that are nested in the root object
   example: []
   syntax:
     content: public static T GetNestedObject<T>(string path, object obj, bool includeAllBases = false)
@@ -209,12 +212,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
     id: GetFieldOrPropertyValue
-    path: ../Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
     startLine: 84
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public static T GetFieldOrPropertyValue<T>(string fieldName, object obj, bool includeAllBases = false, BindingFlags bindings = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
@@ -249,12 +252,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
     id: SetFieldOrPropertyValue
-    path: ../Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
     startLine: 108
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public static bool SetFieldOrPropertyValue(string fieldName, object obj, object value, bool includeAllBases = false, BindingFlags bindings = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
@@ -290,12 +293,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
     id: GetBaseClassesAndInterfaces
-    path: ../Assets/Scripts/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
     startLine: 146
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public static IEnumerable<Type> GetBaseClassesAndInterfaces(this Type type, bool includeSelf = false)
@@ -317,6 +320,7 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -326,11 +330,13 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: Global.SerializedPropertyExtensions.GetValue*
   commentId: Overload:Global.SerializedPropertyExtensions.GetValue
+  href: Global.SerializedPropertyExtensions.html#SerializedPropertyExtensions.GetValue``1(UnityEditor.SerializedProperty)
   name: GetValue
   nameWithType: SerializedPropertyExtensions.GetValue
   fullName: SerializedPropertyExtensions.GetValue
@@ -359,6 +365,7 @@ references:
   fullName: T
 - uid: Global.SerializedPropertyExtensions.SetValue*
   commentId: Overload:Global.SerializedPropertyExtensions.SetValue
+  href: Global.SerializedPropertyExtensions.html#SerializedPropertyExtensions.SetValue``1(UnityEditor.SerializedProperty,``0)
   name: SetValue
   nameWithType: SerializedPropertyExtensions.SetValue
   fullName: SerializedPropertyExtensions.SetValue
@@ -366,6 +373,7 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
@@ -374,6 +382,7 @@ references:
   name.vb: Boolean
 - uid: Global.SerializedPropertyExtensions.GetSerializedPropertyRootComponent*
   commentId: Overload:Global.SerializedPropertyExtensions.GetSerializedPropertyRootComponent
+  href: Global.SerializedPropertyExtensions.html#SerializedPropertyExtensions.GetSerializedPropertyRootComponent(UnityEditor.SerializedProperty)
   name: GetSerializedPropertyRootComponent
   nameWithType: SerializedPropertyExtensions.GetSerializedPropertyRootComponent
   fullName: SerializedPropertyExtensions.GetSerializedPropertyRootComponent
@@ -392,6 +401,7 @@ references:
   fullName: UnityEngine
 - uid: Global.SerializedPropertyExtensions.GetNestedObject*
   commentId: Overload:Global.SerializedPropertyExtensions.GetNestedObject
+  href: Global.SerializedPropertyExtensions.html#SerializedPropertyExtensions.GetNestedObject``1(System.String,System.Object,System.Boolean)
   name: GetNestedObject
   nameWithType: SerializedPropertyExtensions.GetNestedObject
   fullName: SerializedPropertyExtensions.GetNestedObject
@@ -399,6 +409,7 @@ references:
   commentId: T:System.String
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: string
   nameWithType: string
   fullName: string
@@ -407,6 +418,7 @@ references:
   name.vb: String
 - uid: Global.SerializedPropertyExtensions.GetFieldOrPropertyValue*
   commentId: Overload:Global.SerializedPropertyExtensions.GetFieldOrPropertyValue
+  href: Global.SerializedPropertyExtensions.html#SerializedPropertyExtensions.GetFieldOrPropertyValue``1(System.String,System.Object,System.Boolean,System.Reflection.BindingFlags)
   name: GetFieldOrPropertyValue
   nameWithType: SerializedPropertyExtensions.GetFieldOrPropertyValue
   fullName: SerializedPropertyExtensions.GetFieldOrPropertyValue
@@ -414,12 +426,14 @@ references:
   commentId: T:System.Reflection.BindingFlags
   parent: System.Reflection
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags
   name: BindingFlags
   nameWithType: BindingFlags
   fullName: System.Reflection.BindingFlags
 - uid: System.Reflection
   commentId: N:System.Reflection
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System.Reflection
   nameWithType: System.Reflection
   fullName: System.Reflection
@@ -427,25 +441,31 @@ references:
   - uid: System
     name: System
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
   - uid: System.Reflection
     name: Reflection
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
   spec.vb:
   - uid: System
     name: System
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
   - uid: System.Reflection
     name: Reflection
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
 - uid: Global.SerializedPropertyExtensions.SetFieldOrPropertyValue*
   commentId: Overload:Global.SerializedPropertyExtensions.SetFieldOrPropertyValue
+  href: Global.SerializedPropertyExtensions.html#SerializedPropertyExtensions.SetFieldOrPropertyValue(System.String,System.Object,System.Object,System.Boolean,System.Reflection.BindingFlags)
   name: SetFieldOrPropertyValue
   nameWithType: SerializedPropertyExtensions.SetFieldOrPropertyValue
   fullName: SerializedPropertyExtensions.SetFieldOrPropertyValue
 - uid: Global.SerializedPropertyExtensions.GetBaseClassesAndInterfaces*
   commentId: Overload:Global.SerializedPropertyExtensions.GetBaseClassesAndInterfaces
+  href: Global.SerializedPropertyExtensions.html#SerializedPropertyExtensions.GetBaseClassesAndInterfaces(System.Type,System.Boolean)
   name: GetBaseClassesAndInterfaces
   nameWithType: SerializedPropertyExtensions.GetBaseClassesAndInterfaces
   fullName: SerializedPropertyExtensions.GetBaseClassesAndInterfaces
@@ -453,6 +473,7 @@ references:
   commentId: T:System.Type
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: Type
   nameWithType: Type
   fullName: System.Type
@@ -460,6 +481,7 @@ references:
   commentId: T:System.Collections.Generic.IEnumerable{System.Type}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   name: IEnumerable<Type>
   nameWithType: IEnumerable<Type>
   fullName: System.Collections.Generic.IEnumerable<System.Type>
@@ -470,25 +492,30 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   name: IEnumerable<T>
   nameWithType: IEnumerable<T>
   fullName: System.Collections.Generic.IEnumerable<T>
@@ -499,6 +526,7 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: T
   - name: '>'
@@ -506,6 +534,7 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -514,6 +543,7 @@ references:
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
@@ -521,23 +551,29 @@ references:
   - uid: System
     name: System
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
   - uid: System.Collections
     name: Collections
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
   - uid: System.Collections.Generic
     name: Generic
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
   spec.vb:
   - uid: System
     name: System
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
   - uid: System.Collections
     name: Collections
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
   - uid: System.Collections.Generic
     name: Generic
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

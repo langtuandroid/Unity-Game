@@ -4,12 +4,12 @@ items:
   commentId: N:LobsterFramework.EditorUtility
   id: LobsterFramework.EditorUtility
   children:
+  - LobsterFramework.EditorUtility.AbilityConfigEditor
   - LobsterFramework.EditorUtility.AbilityDataEditor
+  - LobsterFramework.EditorUtility.AbilityEditor
   - LobsterFramework.EditorUtility.AbilityRunnerEditor
-  - LobsterFramework.EditorUtility.ActionConfigEditor
   - LobsterFramework.EditorUtility.ActionInstanceDrawer
-  - LobsterFramework.EditorUtility.ActionInstanceEditor
-  - LobsterFramework.EditorUtility.EntityComponentEditor
+  - LobsterFramework.EditorUtility.EntityEditor
   langs:
   - csharp
   - vb
@@ -18,35 +18,41 @@ items:
   fullName: LobsterFramework.EditorUtility
   type: Namespace
   assemblies:
-  - MyScripts
+  - LobsterFramework
 references:
-- uid: LobsterFramework.EditorUtility.EntityComponentEditor
-  commentId: T:LobsterFramework.EditorUtility.EntityComponentEditor
-  name: EntityComponentEditor
-  nameWithType: EntityComponentEditor
-  fullName: LobsterFramework.EditorUtility.EntityComponentEditor
+- uid: LobsterFramework.EditorUtility.AbilityEditor
+  commentId: T:LobsterFramework.EditorUtility.AbilityEditor
+  href: LobsterFramework.EditorUtility.AbilityEditor.html
+  name: AbilityEditor
+  nameWithType: AbilityEditor
+  fullName: LobsterFramework.EditorUtility.AbilityEditor
 - uid: LobsterFramework.EditorUtility.AbilityRunnerEditor
   commentId: T:LobsterFramework.EditorUtility.AbilityRunnerEditor
+  href: LobsterFramework.EditorUtility.AbilityRunnerEditor.html
   name: AbilityRunnerEditor
   nameWithType: AbilityRunnerEditor
   fullName: LobsterFramework.EditorUtility.AbilityRunnerEditor
-- uid: LobsterFramework.EditorUtility.ActionInstanceDrawer
-  commentId: T:LobsterFramework.EditorUtility.ActionInstanceDrawer
-  name: ActionInstanceDrawer
-  nameWithType: ActionInstanceDrawer
-  fullName: LobsterFramework.EditorUtility.ActionInstanceDrawer
-- uid: LobsterFramework.EditorUtility.ActionInstanceEditor
-  commentId: T:LobsterFramework.EditorUtility.ActionInstanceEditor
-  name: ActionInstanceEditor
-  nameWithType: ActionInstanceEditor
-  fullName: LobsterFramework.EditorUtility.ActionInstanceEditor
+- uid: LobsterFramework.EditorUtility.EntityEditor
+  commentId: T:LobsterFramework.EditorUtility.EntityEditor
+  href: LobsterFramework.EditorUtility.EntityEditor.html
+  name: EntityEditor
+  nameWithType: EntityEditor
+  fullName: LobsterFramework.EditorUtility.EntityEditor
 - uid: LobsterFramework.EditorUtility.AbilityDataEditor
   commentId: T:LobsterFramework.EditorUtility.AbilityDataEditor
+  href: LobsterFramework.EditorUtility.AbilityDataEditor.html
   name: AbilityDataEditor
   nameWithType: AbilityDataEditor
   fullName: LobsterFramework.EditorUtility.AbilityDataEditor
-- uid: LobsterFramework.EditorUtility.ActionConfigEditor
-  commentId: T:LobsterFramework.EditorUtility.ActionConfigEditor
-  name: ActionConfigEditor
-  nameWithType: ActionConfigEditor
-  fullName: LobsterFramework.EditorUtility.ActionConfigEditor
+- uid: LobsterFramework.EditorUtility.AbilityConfigEditor
+  commentId: T:LobsterFramework.EditorUtility.AbilityConfigEditor
+  href: LobsterFramework.EditorUtility.AbilityConfigEditor.html
+  name: AbilityConfigEditor
+  nameWithType: AbilityConfigEditor
+  fullName: LobsterFramework.EditorUtility.AbilityConfigEditor
+- uid: LobsterFramework.EditorUtility.ActionInstanceDrawer
+  commentId: T:LobsterFramework.EditorUtility.ActionInstanceDrawer
+  href: LobsterFramework.EditorUtility.ActionInstanceDrawer.html
+  name: ActionInstanceDrawer
+  nameWithType: ActionInstanceDrawer
+  fullName: LobsterFramework.EditorUtility.ActionInstanceDrawer

@@ -24,12 +24,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/OrderedSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/OrderedSet.cs
     id: OrderedSet
-    path: ../Assets/Scripts/Utility/OrderedSet.cs
+    path: ../Assets/Framework/Utility/OrderedSet.cs
     startLine: 4
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public class OrderedSet<T>
@@ -54,12 +54,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/OrderedSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/OrderedSet.cs
     id: .ctor
-    path: ../Assets/Scripts/Utility/OrderedSet.cs
+    path: ../Assets/Framework/Utility/OrderedSet.cs
     startLine: 9
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public OrderedSet()
@@ -81,12 +81,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/OrderedSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/OrderedSet.cs
     id: .ctor
-    path: ../Assets/Scripts/Utility/OrderedSet.cs
+    path: ../Assets/Framework/Utility/OrderedSet.cs
     startLine: 14
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public OrderedSet(IEqualityComparer<T> comparer)
@@ -111,13 +111,14 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/OrderedSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/OrderedSet.cs
     id: Count
-    path: ../Assets/Scripts/Utility/OrderedSet.cs
+    path: ../Assets/Framework/Utility/OrderedSet.cs
     startLine: 20
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
+  example: []
   syntax:
     content: public int Count { get; }
     parameters: []
@@ -140,13 +141,14 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/OrderedSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/OrderedSet.cs
     id: IsReadOnly
-    path: ../Assets/Scripts/Utility/OrderedSet.cs
+    path: ../Assets/Framework/Utility/OrderedSet.cs
     startLine: 22
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
+  example: []
   syntax:
     content: public virtual bool IsReadOnly { get; }
     parameters: []
@@ -169,12 +171,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/OrderedSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/OrderedSet.cs
     id: Add
-    path: ../Assets/Scripts/Utility/OrderedSet.cs
+    path: ../Assets/Framework/Utility/OrderedSet.cs
     startLine: 29
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public bool Add(T item)
@@ -200,13 +202,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/OrderedSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/OrderedSet.cs
     id: Clear
-    path: ../Assets/Scripts/Utility/OrderedSet.cs
+    path: ../Assets/Framework/Utility/OrderedSet.cs
     startLine: 37
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
+  example: []
   syntax:
     content: public void Clear()
     content.vb: Public Sub Clear()
@@ -226,13 +229,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/OrderedSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/OrderedSet.cs
     id: Remove
-    path: ../Assets/Scripts/Utility/OrderedSet.cs
+    path: ../Assets/Framework/Utility/OrderedSet.cs
     startLine: 43
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
+  example: []
   syntax:
     content: public bool Remove(T item)
     parameters:
@@ -257,13 +261,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/OrderedSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/OrderedSet.cs
     id: GetEnumerator
-    path: ../Assets/Scripts/Utility/OrderedSet.cs
+    path: ../Assets/Framework/Utility/OrderedSet.cs
     startLine: 53
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
+  example: []
   syntax:
     content: public IEnumerator<T> GetEnumerator()
     return:
@@ -285,13 +290,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/OrderedSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/OrderedSet.cs
     id: Contains
-    path: ../Assets/Scripts/Utility/OrderedSet.cs
+    path: ../Assets/Framework/Utility/OrderedSet.cs
     startLine: 63
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
+  example: []
   syntax:
     content: public bool Contains(T item)
     parameters:
@@ -316,13 +322,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/OrderedSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/OrderedSet.cs
     id: CopyTo
-    path: ../Assets/Scripts/Utility/OrderedSet.cs
+    path: ../Assets/Framework/Utility/OrderedSet.cs
     startLine: 68
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
+  example: []
   syntax:
     content: public void CopyTo(T[] array, int arrayIndex)
     parameters:
@@ -341,6 +348,7 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -350,11 +358,13 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: Global.OrderedSet`1.#ctor*
   commentId: Overload:Global.OrderedSet`1.#ctor
+  href: Global.OrderedSet-1.html#OrderedSet`1.#ctor
   name: OrderedSet
   nameWithType: OrderedSet<T>.OrderedSet
   fullName: OrderedSet<T>.OrderedSet
@@ -365,6 +375,7 @@ references:
   commentId: T:System.Collections.Generic.IEqualityComparer{`0}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEqualityComparer`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
   name: IEqualityComparer<T>
   nameWithType: IEqualityComparer<T>
   fullName: System.Collections.Generic.IEqualityComparer<T>
@@ -375,6 +386,7 @@ references:
   - uid: System.Collections.Generic.IEqualityComparer`1
     name: IEqualityComparer
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
   - name: <
   - name: T
   - name: '>'
@@ -382,6 +394,7 @@ references:
   - uid: System.Collections.Generic.IEqualityComparer`1
     name: IEqualityComparer
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
   - name: (
   - name: Of
   - name: " "
@@ -390,6 +403,7 @@ references:
 - uid: System.Collections.Generic.IEqualityComparer`1
   commentId: T:System.Collections.Generic.IEqualityComparer`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
   name: IEqualityComparer<T>
   nameWithType: IEqualityComparer<T>
   fullName: System.Collections.Generic.IEqualityComparer<T>
@@ -400,6 +414,7 @@ references:
   - uid: System.Collections.Generic.IEqualityComparer`1
     name: IEqualityComparer
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
   - name: <
   - name: T
   - name: '>'
@@ -407,6 +422,7 @@ references:
   - uid: System.Collections.Generic.IEqualityComparer`1
     name: IEqualityComparer
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
   - name: (
   - name: Of
   - name: " "
@@ -415,6 +431,7 @@ references:
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
@@ -422,28 +439,35 @@ references:
   - uid: System
     name: System
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
   - uid: System.Collections
     name: Collections
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
   - uid: System.Collections.Generic
     name: Generic
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
   spec.vb:
   - uid: System
     name: System
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
   - uid: System.Collections
     name: Collections
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
   - uid: System.Collections.Generic
     name: Generic
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: Global.OrderedSet`1.Count*
   commentId: Overload:Global.OrderedSet`1.Count
+  href: Global.OrderedSet-1.html#OrderedSet`1.Count
   name: Count
   nameWithType: OrderedSet<T>.Count
   fullName: OrderedSet<T>.Count
@@ -453,6 +477,7 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
   name: int
   nameWithType: int
   fullName: int
@@ -461,6 +486,7 @@ references:
   name.vb: Integer
 - uid: Global.OrderedSet`1.IsReadOnly*
   commentId: Overload:Global.OrderedSet`1.IsReadOnly
+  href: Global.OrderedSet-1.html#OrderedSet`1.IsReadOnly
   name: IsReadOnly
   nameWithType: OrderedSet<T>.IsReadOnly
   fullName: OrderedSet<T>.IsReadOnly
@@ -470,6 +496,7 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
@@ -478,6 +505,7 @@ references:
   name.vb: Boolean
 - uid: Global.OrderedSet`1.Add*
   commentId: Overload:Global.OrderedSet`1.Add
+  href: Global.OrderedSet-1.html#OrderedSet`1.Add(`0)
   name: Add
   nameWithType: OrderedSet<T>.Add
   fullName: OrderedSet<T>.Add
@@ -495,6 +523,7 @@ references:
   fullName: T
 - uid: Global.OrderedSet`1.Clear*
   commentId: Overload:Global.OrderedSet`1.Clear
+  href: Global.OrderedSet-1.html#OrderedSet`1.Clear
   name: Clear
   nameWithType: OrderedSet<T>.Clear
   fullName: OrderedSet<T>.Clear
@@ -502,6 +531,7 @@ references:
   fullName.vb: OrderedSet(Of T).Clear
 - uid: Global.OrderedSet`1.Remove*
   commentId: Overload:Global.OrderedSet`1.Remove
+  href: Global.OrderedSet-1.html#OrderedSet`1.Remove(`0)
   name: Remove
   nameWithType: OrderedSet<T>.Remove
   fullName: OrderedSet<T>.Remove
@@ -509,6 +539,7 @@ references:
   fullName.vb: OrderedSet(Of T).Remove
 - uid: Global.OrderedSet`1.GetEnumerator*
   commentId: Overload:Global.OrderedSet`1.GetEnumerator
+  href: Global.OrderedSet-1.html#OrderedSet`1.GetEnumerator
   name: GetEnumerator
   nameWithType: OrderedSet<T>.GetEnumerator
   fullName: OrderedSet<T>.GetEnumerator
@@ -518,6 +549,7 @@ references:
   commentId: T:System.Collections.Generic.IEnumerator{`0}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerator`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   name: IEnumerator<T>
   nameWithType: IEnumerator<T>
   fullName: System.Collections.Generic.IEnumerator<T>
@@ -528,6 +560,7 @@ references:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   - name: <
   - name: T
   - name: '>'
@@ -535,6 +568,7 @@ references:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   - name: (
   - name: Of
   - name: " "
@@ -543,6 +577,7 @@ references:
 - uid: System.Collections.Generic.IEnumerator`1
   commentId: T:System.Collections.Generic.IEnumerator`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   name: IEnumerator<T>
   nameWithType: IEnumerator<T>
   fullName: System.Collections.Generic.IEnumerator<T>
@@ -553,6 +588,7 @@ references:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   - name: <
   - name: T
   - name: '>'
@@ -560,6 +596,7 @@ references:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   - name: (
   - name: Of
   - name: " "
@@ -567,6 +604,7 @@ references:
   - name: )
 - uid: Global.OrderedSet`1.Contains*
   commentId: Overload:Global.OrderedSet`1.Contains
+  href: Global.OrderedSet-1.html#OrderedSet`1.Contains(`0)
   name: Contains
   nameWithType: OrderedSet<T>.Contains
   fullName: OrderedSet<T>.Contains
@@ -574,6 +612,7 @@ references:
   fullName.vb: OrderedSet(Of T).Contains
 - uid: Global.OrderedSet`1.CopyTo*
   commentId: Overload:Global.OrderedSet`1.CopyTo
+  href: Global.OrderedSet-1.html#OrderedSet`1.CopyTo(`0[],System.Int32)
   name: CopyTo
   nameWithType: OrderedSet<T>.CopyTo
   fullName: OrderedSet<T>.CopyTo

@@ -4,9 +4,7 @@ items:
   commentId: T:LobsterFramework.AbilitySystem.Weapon.WeaponAbility
   id: WeaponAbility
   parent: LobsterFramework.AbilitySystem.Weapon
-  children:
-  - LobsterFramework.AbilitySystem.Weapon.WeaponAbility.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  - LobsterFramework.AbilitySystem.Weapon.WeaponAbility.OtherConditions(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  children: []
   langs:
   - csharp
   - vb
@@ -16,12 +14,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/WeaponAbility.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/WeaponAbility.cs
     id: WeaponAbility
-    path: ../Assets/Scripts/Components/ActionComponents/WeaponAbility.cs
+    path: ../Assets/Framework/Components/ActionComponents/WeaponAbility.cs
     startLine: 6
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.Weapon
   syntax:
     content: >-
@@ -37,16 +35,14 @@ items:
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
   - LobsterFramework.AbilitySystem.Ability
-  derivedClasses:
-  - LobsterFramework.AbilitySystem.Weapon.TestWeapon
   inheritedMembers:
   - LobsterFramework.AbilitySystem.Ability.abilityRunner
   - LobsterFramework.AbilitySystem.Ability.abilityPriority
-  - LobsterFramework.AbilitySystem.Ability.AddConfig(System.String)
   - LobsterFramework.AbilitySystem.Ability.RemoveConfig(System.String)
   - LobsterFramework.AbilitySystem.Ability.CleanUp
   - LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
   - LobsterFramework.AbilitySystem.Ability.CompareByEnqueuePriority(LobsterFramework.AbilitySystem.Ability)
+  - LobsterFramework.AbilitySystem.Ability.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   - LobsterFramework.AbilitySystem.Ability.RunningCount
   - LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution(System.String)
   - LobsterFramework.AbilitySystem.Ability.HaltAbilities
@@ -56,12 +52,10 @@ items:
   - LobsterFramework.AbilitySystem.Ability.OnStartUp
   - LobsterFramework.AbilitySystem.Ability.OnTermination
   - LobsterFramework.AbilitySystem.Ability.ResetStatus
-  - LobsterFramework.AbilitySystem.Ability.OnDestroy
   - LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
   - LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   - LobsterFramework.AbilitySystem.Ability.OnActionFinish(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   - LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  - LobsterFramework.AbilitySystem.Ability.InterruptAnimation(System.String)
   - LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig,System.String)
   - LobsterFramework.AbilitySystem.Ability.HasConfig(System.String)
   - LobsterFramework.AbilitySystem.Ability.Signal(System.String)
@@ -116,93 +110,42 @@ items:
   - UnityEngine.Object.ToString
   - UnityEngine.Object.name
   - UnityEngine.Object.hideFlags
-- uid: LobsterFramework.AbilitySystem.Weapon.WeaponAbility.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  commentId: M:LobsterFramework.AbilitySystem.Weapon.WeaponAbility.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  id: ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  parent: LobsterFramework.AbilitySystem.Weapon.WeaponAbility
-  langs:
-  - csharp
-  - vb
-  name: ConditionSatisfied(AbilityConfig)
-  nameWithType: WeaponAbility.ConditionSatisfied(Ability.AbilityConfig)
-  fullName: LobsterFramework.AbilitySystem.Weapon.WeaponAbility.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/WeaponAbility.cs
-    id: ConditionSatisfied
-    path: ../Assets/Scripts/Components/ActionComponents/WeaponAbility.cs
-    startLine: 9
-  assemblies:
-  - MyScripts
-  namespace: LobsterFramework.AbilitySystem.Weapon
-  syntax:
-    content: protected override sealed bool ConditionSatisfied(Ability.AbilityConfig config)
-    parameters:
-    - id: config
-      type: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-    return:
-      type: System.Boolean
-    content.vb: Protected NotOverridable Overrides Function ConditionSatisfied(config As Ability.AbilityConfig) As Boolean
-  overridden: LobsterFramework.AbilitySystem.Ability.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  overload: LobsterFramework.AbilitySystem.Weapon.WeaponAbility.ConditionSatisfied*
-- uid: LobsterFramework.AbilitySystem.Weapon.WeaponAbility.OtherConditions(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  commentId: M:LobsterFramework.AbilitySystem.Weapon.WeaponAbility.OtherConditions(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  id: OtherConditions(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  parent: LobsterFramework.AbilitySystem.Weapon.WeaponAbility
-  langs:
-  - csharp
-  - vb
-  name: OtherConditions(AbilityConfig)
-  nameWithType: WeaponAbility.OtherConditions(Ability.AbilityConfig)
-  fullName: LobsterFramework.AbilitySystem.Weapon.WeaponAbility.OtherConditions(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/WeaponAbility.cs
-    id: OtherConditions
-    path: ../Assets/Scripts/Components/ActionComponents/WeaponAbility.cs
-    startLine: 14
-  assemblies:
-  - MyScripts
-  namespace: LobsterFramework.AbilitySystem.Weapon
-  syntax:
-    content: protected virtual bool OtherConditions(Ability.AbilityConfig config)
-    parameters:
-    - id: config
-      type: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-    return:
-      type: System.Boolean
-    content.vb: Protected Overridable Function OtherConditions(config As Ability.AbilityConfig) As Boolean
-  overload: LobsterFramework.AbilitySystem.Weapon.WeaponAbility.OtherConditions*
 references:
 - uid: LobsterFramework.AbilitySystem.Weapon
   commentId: N:LobsterFramework.AbilitySystem.Weapon
+  href: LobsterFramework.html
   name: LobsterFramework.AbilitySystem.Weapon
   nameWithType: LobsterFramework.AbilitySystem.Weapon
   fullName: LobsterFramework.AbilitySystem.Weapon
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
   - name: .
   - uid: LobsterFramework.AbilitySystem.Weapon
     name: Weapon
+    href: LobsterFramework.AbilitySystem.Weapon.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
   - name: .
   - uid: LobsterFramework.AbilitySystem.Weapon
     name: Weapon
+    href: LobsterFramework.AbilitySystem.Weapon.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -226,51 +169,29 @@ references:
 - uid: LobsterFramework.AbilitySystem.Ability
   commentId: T:LobsterFramework.AbilitySystem.Ability
   parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.Ability.html
   name: Ability
   nameWithType: Ability
   fullName: LobsterFramework.AbilitySystem.Ability
 - uid: LobsterFramework.AbilitySystem.Ability.abilityRunner
   commentId: F:LobsterFramework.AbilitySystem.Ability.abilityRunner
   parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.abilityRunner
   name: abilityRunner
   nameWithType: Ability.abilityRunner
   fullName: LobsterFramework.AbilitySystem.Ability.abilityRunner
 - uid: LobsterFramework.AbilitySystem.Ability.abilityPriority
   commentId: F:LobsterFramework.AbilitySystem.Ability.abilityPriority
   parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.abilityPriority
   name: abilityPriority
   nameWithType: Ability.abilityPriority
   fullName: LobsterFramework.AbilitySystem.Ability.abilityPriority
-- uid: LobsterFramework.AbilitySystem.Ability.AddConfig(System.String)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.AddConfig(System.String)
-  parent: LobsterFramework.AbilitySystem.Ability
-  isExternal: true
-  name: AddConfig(string)
-  nameWithType: Ability.AddConfig(string)
-  fullName: LobsterFramework.AbilitySystem.Ability.AddConfig(string)
-  nameWithType.vb: Ability.AddConfig(String)
-  fullName.vb: LobsterFramework.AbilitySystem.Ability.AddConfig(String)
-  name.vb: AddConfig(String)
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.AddConfig(System.String)
-    name: AddConfig
-  - name: (
-  - uid: System.String
-    name: string
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.AddConfig(System.String)
-    name: AddConfig
-  - name: (
-  - uid: System.String
-    name: String
-    isExternal: true
-  - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.RemoveConfig(System.String)
   commentId: M:LobsterFramework.AbilitySystem.Ability.RemoveConfig(System.String)
   parent: LobsterFramework.AbilitySystem.Ability
   isExternal: true
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.RemoveConfig(System.String)
   name: RemoveConfig(string)
   nameWithType: Ability.RemoveConfig(string)
   fullName: LobsterFramework.AbilitySystem.Ability.RemoveConfig(string)
@@ -280,95 +201,141 @@ references:
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.RemoveConfig(System.String)
     name: RemoveConfig
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.RemoveConfig(System.String)
   - name: (
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.RemoveConfig(System.String)
     name: RemoveConfig
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.RemoveConfig(System.String)
   - name: (
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.CleanUp
   commentId: M:LobsterFramework.AbilitySystem.Ability.CleanUp
   parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CleanUp
   name: CleanUp()
   nameWithType: Ability.CleanUp()
   fullName: LobsterFramework.AbilitySystem.Ability.CleanUp()
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.CleanUp
     name: CleanUp
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CleanUp
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.CleanUp
     name: CleanUp
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CleanUp
   - name: (
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
   commentId: M:LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
   parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
   name: CompareByExecutionPriority(Ability)
   nameWithType: Ability.CompareByExecutionPriority(Ability)
   fullName: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
     name: CompareByExecutionPriority
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
     name: CompareByExecutionPriority
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.CompareByEnqueuePriority(LobsterFramework.AbilitySystem.Ability)
   commentId: M:LobsterFramework.AbilitySystem.Ability.CompareByEnqueuePriority(LobsterFramework.AbilitySystem.Ability)
   parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CompareByEnqueuePriority(LobsterFramework.AbilitySystem.Ability)
   name: CompareByEnqueuePriority(Ability)
   nameWithType: Ability.CompareByEnqueuePriority(Ability)
   fullName: LobsterFramework.AbilitySystem.Ability.CompareByEnqueuePriority(LobsterFramework.AbilitySystem.Ability)
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.CompareByEnqueuePriority(LobsterFramework.AbilitySystem.Ability)
     name: CompareByEnqueuePriority
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CompareByEnqueuePriority(LobsterFramework.AbilitySystem.Ability)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.CompareByEnqueuePriority(LobsterFramework.AbilitySystem.Ability)
     name: CompareByEnqueuePriority
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CompareByEnqueuePriority(LobsterFramework.AbilitySystem.Ability)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
+  - name: )
+- uid: LobsterFramework.AbilitySystem.Ability.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  commentId: M:LobsterFramework.AbilitySystem.Ability.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  name: ConditionSatisfied(AbilityConfig)
+  nameWithType: Ability.ConditionSatisfied(Ability.AbilityConfig)
+  fullName: LobsterFramework.AbilitySystem.Ability.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.Ability.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+    name: ConditionSatisfied
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  - name: (
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+    name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.Ability.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+    name: ConditionSatisfied
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  - name: (
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+    name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.RunningCount
   commentId: M:LobsterFramework.AbilitySystem.Ability.RunningCount
   parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.RunningCount
   name: RunningCount()
   nameWithType: Ability.RunningCount()
   fullName: LobsterFramework.AbilitySystem.Ability.RunningCount()
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.RunningCount
     name: RunningCount
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.RunningCount
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.RunningCount
     name: RunningCount
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.RunningCount
   - name: (
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution(System.String)
   commentId: M:LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution(System.String)
   parent: LobsterFramework.AbilitySystem.Ability
   isExternal: true
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution(System.String)
   name: HaltAbilityExecution(string)
   nameWithType: Ability.HaltAbilityExecution(string)
   fullName: LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution(string)
@@ -378,55 +345,66 @@ references:
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution(System.String)
     name: HaltAbilityExecution
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution(System.String)
   - name: (
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution(System.String)
     name: HaltAbilityExecution
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution(System.String)
   - name: (
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.HaltAbilities
   commentId: M:LobsterFramework.AbilitySystem.Ability.HaltAbilities
   parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.HaltAbilities
   name: HaltAbilities()
   nameWithType: Ability.HaltAbilities()
   fullName: LobsterFramework.AbilitySystem.Ability.HaltAbilities()
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.HaltAbilities
     name: HaltAbilities
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.HaltAbilities
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.HaltAbilities
     name: HaltAbilities
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.HaltAbilities
   - name: (
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.Initialize
   commentId: M:LobsterFramework.AbilitySystem.Ability.Initialize
   parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Initialize
   name: Initialize()
   nameWithType: Ability.Initialize()
   fullName: LobsterFramework.AbilitySystem.Ability.Initialize()
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.Initialize
     name: Initialize
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Initialize
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.Initialize
     name: Initialize
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Initialize
   - name: (
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.IsExecuting(System.String)
   commentId: M:LobsterFramework.AbilitySystem.Ability.IsExecuting(System.String)
   parent: LobsterFramework.AbilitySystem.Ability
   isExternal: true
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.IsExecuting(System.String)
   name: IsExecuting(string)
   nameWithType: Ability.IsExecuting(string)
   fullName: LobsterFramework.AbilitySystem.Ability.IsExecuting(string)
@@ -436,23 +414,28 @@ references:
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.IsExecuting(System.String)
     name: IsExecuting
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.IsExecuting(System.String)
   - name: (
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.IsExecuting(System.String)
     name: IsExecuting
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.IsExecuting(System.String)
   - name: (
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.IsReady(System.String)
   commentId: M:LobsterFramework.AbilitySystem.Ability.IsReady(System.String)
   parent: LobsterFramework.AbilitySystem.Ability
   isExternal: true
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.IsReady(System.String)
   name: IsReady(string)
   nameWithType: Ability.IsReady(string)
   fullName: LobsterFramework.AbilitySystem.Ability.IsReady(string)
@@ -462,189 +445,179 @@ references:
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.IsReady(System.String)
     name: IsReady
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.IsReady(System.String)
   - name: (
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.IsReady(System.String)
     name: IsReady
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.IsReady(System.String)
   - name: (
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.OnStartUp
   commentId: M:LobsterFramework.AbilitySystem.Ability.OnStartUp
   parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnStartUp
   name: OnStartUp()
   nameWithType: Ability.OnStartUp()
   fullName: LobsterFramework.AbilitySystem.Ability.OnStartUp()
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.OnStartUp
     name: OnStartUp
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnStartUp
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.OnStartUp
     name: OnStartUp
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnStartUp
   - name: (
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.OnTermination
   commentId: M:LobsterFramework.AbilitySystem.Ability.OnTermination
   parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnTermination
   name: OnTermination()
   nameWithType: Ability.OnTermination()
   fullName: LobsterFramework.AbilitySystem.Ability.OnTermination()
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.OnTermination
     name: OnTermination
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnTermination
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.OnTermination
     name: OnTermination
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnTermination
   - name: (
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.ResetStatus
   commentId: M:LobsterFramework.AbilitySystem.Ability.ResetStatus
   parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.ResetStatus
   name: ResetStatus()
   nameWithType: Ability.ResetStatus()
   fullName: LobsterFramework.AbilitySystem.Ability.ResetStatus()
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.ResetStatus
     name: ResetStatus
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.ResetStatus
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.ResetStatus
     name: ResetStatus
-  - name: (
-  - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.OnDestroy
-  commentId: M:LobsterFramework.AbilitySystem.Ability.OnDestroy
-  parent: LobsterFramework.AbilitySystem.Ability
-  name: OnDestroy()
-  nameWithType: Ability.OnDestroy()
-  fullName: LobsterFramework.AbilitySystem.Ability.OnDestroy()
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.OnDestroy
-    name: OnDestroy
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.OnDestroy
-    name: OnDestroy
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.ResetStatus
   - name: (
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
   commentId: M:LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
   parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
   name: SaveConfigsAsAsset()
   nameWithType: Ability.SaveConfigsAsAsset()
   fullName: LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset()
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
     name: SaveConfigsAsAsset
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
     name: SaveConfigsAsAsset
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
   - name: (
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   commentId: M:LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   name: Action(AbilityConfig)
   nameWithType: Ability.Action(Ability.AbilityConfig)
   fullName: LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
     name: Action
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
     name: Action
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.OnActionFinish(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   commentId: M:LobsterFramework.AbilitySystem.Ability.OnActionFinish(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnActionFinish(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   name: OnActionFinish(AbilityConfig)
   nameWithType: Ability.OnActionFinish(Ability.AbilityConfig)
   fullName: LobsterFramework.AbilitySystem.Ability.OnActionFinish(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.OnActionFinish(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
     name: OnActionFinish
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnActionFinish(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.OnActionFinish(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
     name: OnActionFinish
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnActionFinish(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   commentId: M:LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   name: OnAnimationInterrupt(AbilityConfig)
   nameWithType: Ability.OnAnimationInterrupt(Ability.AbilityConfig)
   fullName: LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
     name: OnAnimationInterrupt
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
     name: OnAnimationInterrupt
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
-  - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.InterruptAnimation(System.String)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.InterruptAnimation(System.String)
-  parent: LobsterFramework.AbilitySystem.Ability
-  isExternal: true
-  name: InterruptAnimation(string)
-  nameWithType: Ability.InterruptAnimation(string)
-  fullName: LobsterFramework.AbilitySystem.Ability.InterruptAnimation(string)
-  nameWithType.vb: Ability.InterruptAnimation(String)
-  fullName.vb: LobsterFramework.AbilitySystem.Ability.InterruptAnimation(String)
-  name.vb: InterruptAnimation(String)
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.InterruptAnimation(System.String)
-    name: InterruptAnimation
-  - name: (
-  - uid: System.String
-    name: string
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.InterruptAnimation(System.String)
-    name: InterruptAnimation
-  - name: (
-  - uid: System.String
-    name: String
-    isExternal: true
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig,System.String)
   commentId: M:LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig,System.String)
   parent: LobsterFramework.AbilitySystem.Ability
   isExternal: true
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig,System.String)
   name: OnEnqueue(AbilityConfig, string)
   nameWithType: Ability.OnEnqueue(Ability.AbilityConfig, string)
   fullName: LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig, string)
@@ -654,31 +627,38 @@ references:
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig,System.String)
     name: OnEnqueue
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig,System.String)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: ','
   - name: " "
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig,System.String)
     name: OnEnqueue
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig,System.String)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: ','
   - name: " "
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.HasConfig(System.String)
   commentId: M:LobsterFramework.AbilitySystem.Ability.HasConfig(System.String)
   parent: LobsterFramework.AbilitySystem.Ability
   isExternal: true
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.HasConfig(System.String)
   name: HasConfig(string)
   nameWithType: Ability.HasConfig(string)
   fullName: LobsterFramework.AbilitySystem.Ability.HasConfig(string)
@@ -688,23 +668,28 @@ references:
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.HasConfig(System.String)
     name: HasConfig
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.HasConfig(System.String)
   - name: (
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.HasConfig(System.String)
     name: HasConfig
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.HasConfig(System.String)
   - name: (
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.Signal(System.String)
   commentId: M:LobsterFramework.AbilitySystem.Ability.Signal(System.String)
   parent: LobsterFramework.AbilitySystem.Ability
   isExternal: true
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Signal(System.String)
   name: Signal(string)
   nameWithType: Ability.Signal(string)
   fullName: LobsterFramework.AbilitySystem.Ability.Signal(string)
@@ -714,38 +699,47 @@ references:
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.Signal(System.String)
     name: Signal
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Signal(System.String)
   - name: (
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.Signal(System.String)
     name: Signal
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Signal(System.String)
   - name: (
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: LobsterFramework.AbilitySystem.Ability.SignalBody(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   commentId: M:LobsterFramework.AbilitySystem.Ability.SignalBody(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   parent: LobsterFramework.AbilitySystem.Ability
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.SignalBody(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   name: SignalBody(AbilityConfig)
   nameWithType: Ability.SignalBody(Ability.AbilityConfig)
   fullName: LobsterFramework.AbilitySystem.Ability.SignalBody(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability.SignalBody(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
     name: SignalBody
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.SignalBody(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: )
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability.SignalBody(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
     name: SignalBody
+    href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.SignalBody(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   - name: (
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: )
 - uid: UnityEngine.ScriptableObject.SetDirty
   commentId: M:UnityEngine.ScriptableObject.SetDirty
@@ -770,6 +764,7 @@ references:
   commentId: M:UnityEngine.ScriptableObject.CreateInstance(System.String)
   parent: UnityEngine.ScriptableObject
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: CreateInstance(string)
   nameWithType: ScriptableObject.CreateInstance(string)
   fullName: UnityEngine.ScriptableObject.CreateInstance(string)
@@ -784,6 +779,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.ScriptableObject.CreateInstance(System.String)
@@ -793,11 +789,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.ScriptableObject.CreateInstance(System.Type)
   commentId: M:UnityEngine.ScriptableObject.CreateInstance(System.Type)
   parent: UnityEngine.ScriptableObject
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: CreateInstance(Type)
   nameWithType: ScriptableObject.CreateInstance(Type)
   fullName: UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -809,6 +807,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -818,6 +817,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.ScriptableObject.CreateInstance``1
   commentId: M:UnityEngine.ScriptableObject.CreateInstance``1
@@ -891,6 +891,7 @@ references:
   commentId: M:UnityEngine.Object.Equals(System.Object)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: Equals(object)
   nameWithType: Object.Equals(object)
   fullName: UnityEngine.Object.Equals(object)
@@ -905,6 +906,7 @@ references:
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Equals(System.Object)
@@ -914,6 +916,7 @@ references:
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
   commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
@@ -1079,6 +1082,7 @@ references:
   commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: Instantiate(Object, Transform, bool)
   nameWithType: Object.Instantiate(Object, Transform, bool)
   fullName: UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Transform, bool)
@@ -1103,6 +1107,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
@@ -1122,6 +1127,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.Instantiate``1({T})
   commentId: M:UnityEngine.Object.Instantiate``1(``0)
@@ -1315,6 +1321,7 @@ references:
   commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
   parent: UnityEngine.Object
   definition: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: Instantiate<T>(T, Transform, bool)
   nameWithType: Object.Instantiate<T>(T, Transform, bool)
   fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Transform, bool)
@@ -1340,6 +1347,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
@@ -1362,11 +1370,13 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
   commentId: M:UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
   name: Destroy(Object, float)
   nameWithType: Object.Destroy(Object, float)
   fullName: UnityEngine.Object.Destroy(UnityEngine.Object, float)
@@ -1386,6 +1396,7 @@ references:
   - uid: System.Single
     name: float
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
@@ -1400,6 +1411,7 @@ references:
   - uid: System.Single
     name: Single
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
 - uid: UnityEngine.Object.Destroy(UnityEngine.Object)
   commentId: M:UnityEngine.Object.Destroy(UnityEngine.Object)
@@ -1430,6 +1442,7 @@ references:
   commentId: M:UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: DestroyImmediate(Object, bool)
   nameWithType: Object.DestroyImmediate(Object, bool)
   fullName: UnityEngine.Object.DestroyImmediate(UnityEngine.Object, bool)
@@ -1449,6 +1462,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
@@ -1463,6 +1477,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
   commentId: M:UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
@@ -1493,6 +1508,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsOfType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfType(Type)
   nameWithType: Object.FindObjectsOfType(Type)
   fullName: UnityEngine.Object.FindObjectsOfType(System.Type)
@@ -1504,6 +1520,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfType(System.Type)
@@ -1513,11 +1530,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
   commentId: M:UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfType(Type, bool)
   nameWithType: Object.FindObjectsOfType(Type, bool)
   fullName: UnityEngine.Object.FindObjectsOfType(System.Type, bool)
@@ -1532,11 +1551,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
@@ -1546,16 +1567,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsSortMode)
   commentId: M:UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsSortMode)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsByType(Type, FindObjectsSortMode)
   nameWithType: Object.FindObjectsByType(Type, FindObjectsSortMode)
   fullName: UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsSortMode)
@@ -1567,6 +1591,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsSortMode
@@ -1581,6 +1606,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsSortMode
@@ -1591,6 +1617,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)
   nameWithType: Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)
   fullName: UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsInactive, UnityEngine.FindObjectsSortMode)
@@ -1602,6 +1629,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -1621,6 +1649,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -1661,6 +1690,7 @@ references:
   commentId: M:UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
   name: DestroyObject(Object, float)
   nameWithType: Object.DestroyObject(Object, float)
   fullName: UnityEngine.Object.DestroyObject(UnityEngine.Object, float)
@@ -1680,6 +1710,7 @@ references:
   - uid: System.Single
     name: float
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
@@ -1694,6 +1725,7 @@ references:
   - uid: System.Single
     name: Single
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
 - uid: UnityEngine.Object.DestroyObject(UnityEngine.Object)
   commentId: M:UnityEngine.Object.DestroyObject(UnityEngine.Object)
@@ -1724,6 +1756,7 @@ references:
   commentId: M:UnityEngine.Object.FindSceneObjectsOfType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindSceneObjectsOfType(Type)
   nameWithType: Object.FindSceneObjectsOfType(Type)
   fullName: UnityEngine.Object.FindSceneObjectsOfType(System.Type)
@@ -1735,6 +1768,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindSceneObjectsOfType(System.Type)
@@ -1744,11 +1778,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
   commentId: M:UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfTypeIncludingAssets(Type)
   nameWithType: Object.FindObjectsOfTypeIncludingAssets(Type)
   fullName: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
@@ -1760,6 +1796,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
@@ -1769,6 +1806,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectsOfType``1
   commentId: M:UnityEngine.Object.FindObjectsOfType``1
@@ -1840,6 +1878,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: FindObjectsOfType<T>(bool)
   nameWithType: Object.FindObjectsOfType<T>(bool)
   fullName: UnityEngine.Object.FindObjectsOfType<T>(bool)
@@ -1857,6 +1896,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
@@ -1871,6 +1911,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
   commentId: M:UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
@@ -1952,6 +1993,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectOfType``1(System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: FindObjectOfType<T>(bool)
   nameWithType: Object.FindObjectOfType<T>(bool)
   fullName: UnityEngine.Object.FindObjectOfType<T>(bool)
@@ -1969,6 +2011,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectOfType``1(System.Boolean)
@@ -1983,6 +2026,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindFirstObjectByType``1
   commentId: M:UnityEngine.Object.FindFirstObjectByType``1
@@ -2120,6 +2164,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfTypeAll(Type)
   nameWithType: Object.FindObjectsOfTypeAll(Type)
   fullName: UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
@@ -2131,6 +2176,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
@@ -2140,11 +2186,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectOfType(System.Type)
   commentId: M:UnityEngine.Object.FindObjectOfType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectOfType(Type)
   nameWithType: Object.FindObjectOfType(Type)
   fullName: UnityEngine.Object.FindObjectOfType(System.Type)
@@ -2156,6 +2204,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectOfType(System.Type)
@@ -2165,11 +2214,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindFirstObjectByType(System.Type)
   commentId: M:UnityEngine.Object.FindFirstObjectByType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindFirstObjectByType(Type)
   nameWithType: Object.FindFirstObjectByType(Type)
   fullName: UnityEngine.Object.FindFirstObjectByType(System.Type)
@@ -2181,6 +2232,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindFirstObjectByType(System.Type)
@@ -2190,11 +2242,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindAnyObjectByType(System.Type)
   commentId: M:UnityEngine.Object.FindAnyObjectByType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindAnyObjectByType(Type)
   nameWithType: Object.FindAnyObjectByType(Type)
   fullName: UnityEngine.Object.FindAnyObjectByType(System.Type)
@@ -2206,6 +2260,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindAnyObjectByType(System.Type)
@@ -2215,11 +2270,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
   commentId: M:UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectOfType(Type, bool)
   nameWithType: Object.FindObjectOfType(Type, bool)
   fullName: UnityEngine.Object.FindObjectOfType(System.Type, bool)
@@ -2234,11 +2291,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
@@ -2248,16 +2307,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindFirstObjectByType(System.Type,UnityEngine.FindObjectsInactive)
   commentId: M:UnityEngine.Object.FindFirstObjectByType(System.Type,UnityEngine.FindObjectsInactive)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindFirstObjectByType(Type, FindObjectsInactive)
   nameWithType: Object.FindFirstObjectByType(Type, FindObjectsInactive)
   fullName: UnityEngine.Object.FindFirstObjectByType(System.Type, UnityEngine.FindObjectsInactive)
@@ -2269,6 +2331,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -2283,6 +2346,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -2293,6 +2357,7 @@ references:
   commentId: M:UnityEngine.Object.FindAnyObjectByType(System.Type,UnityEngine.FindObjectsInactive)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindAnyObjectByType(Type, FindObjectsInactive)
   nameWithType: Object.FindAnyObjectByType(Type, FindObjectsInactive)
   fullName: UnityEngine.Object.FindAnyObjectByType(System.Type, UnityEngine.FindObjectsInactive)
@@ -2304,6 +2369,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -2318,6 +2384,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -2360,6 +2427,7 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
@@ -2371,21 +2439,26 @@ references:
   fullName: UnityEngine
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
   name: LobsterFramework.AbilitySystem
   nameWithType: LobsterFramework.AbilitySystem
   fullName: LobsterFramework.AbilitySystem
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
 - uid: UnityEngine.Object.Instantiate``1(``0)
   commentId: M:UnityEngine.Object.Instantiate``1(``0)
   isExternal: true
@@ -2573,6 +2646,7 @@ references:
 - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
   commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: Instantiate<T>(T, Transform, bool)
   nameWithType: Object.Instantiate<T>(T, Transform, bool)
   fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Transform, bool)
@@ -2598,6 +2672,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
@@ -2620,62 +2695,5 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: LobsterFramework.AbilitySystem.Ability.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  parent: LobsterFramework.AbilitySystem.Ability
-  name: ConditionSatisfied(AbilityConfig)
-  nameWithType: Ability.ConditionSatisfied(Ability.AbilityConfig)
-  fullName: LobsterFramework.AbilitySystem.Ability.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-    name: ConditionSatisfied
-  - name: (
-  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-    name: AbilityConfig
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-    name: ConditionSatisfied
-  - name: (
-  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-    name: AbilityConfig
-  - name: )
-- uid: LobsterFramework.AbilitySystem.Weapon.WeaponAbility.ConditionSatisfied*
-  commentId: Overload:LobsterFramework.AbilitySystem.Weapon.WeaponAbility.ConditionSatisfied
-  name: ConditionSatisfied
-  nameWithType: WeaponAbility.ConditionSatisfied
-  fullName: LobsterFramework.AbilitySystem.Weapon.WeaponAbility.ConditionSatisfied
-- uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-  commentId: T:LobsterFramework.AbilitySystem.Ability.AbilityConfig
-  parent: LobsterFramework.AbilitySystem
-  name: Ability.AbilityConfig
-  nameWithType: Ability.AbilityConfig
-  fullName: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability
-    name: Ability
-  - name: .
-  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-    name: AbilityConfig
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability
-    name: Ability
-  - name: .
-  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-    name: AbilityConfig
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
-- uid: LobsterFramework.AbilitySystem.Weapon.WeaponAbility.OtherConditions*
-  commentId: Overload:LobsterFramework.AbilitySystem.Weapon.WeaponAbility.OtherConditions
-  name: OtherConditions
-  nameWithType: WeaponAbility.OtherConditions
-  fullName: LobsterFramework.AbilitySystem.Weapon.WeaponAbility.OtherConditions

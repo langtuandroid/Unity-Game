@@ -8,8 +8,7 @@
                         "*.csproj"
                     ],
                     "exclude": [
-                        "Assets/Plugins/**",
-                        "Assets/Imported Assets/**"
+                        "Assets/Plugins/**"
                     ]
                 }
             ],
@@ -51,7 +50,7 @@
             {
                 "src": "..",
                 "files": [
-                    "Assets/Scripts/**/*.md"
+                    "Assets/Framework/**/*.md"
                 ]
             }
         ],
@@ -63,7 +62,7 @@
             }
         ],
         "sitemap": {
-            "baseUrl": "https://dicespinner.github.io/Unity-Project-1/",
+            "baseUrl": "https://dicespinner.github.io/Unity-Game/",
             "changefreq": "weekly",
             "fileOptions": {
                 "api/*": {

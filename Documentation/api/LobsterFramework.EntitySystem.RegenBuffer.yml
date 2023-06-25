@@ -28,12 +28,12 @@ items:
   type: Struct
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: RegenBuffer
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 530
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: >-
@@ -61,12 +61,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: .ctor
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 539
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public RegenBuffer(bool defaultSetting = true)
@@ -91,12 +91,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: HealthRegen
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 552
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public readonly float HealthRegen { get; }
@@ -118,12 +118,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: PostureRegen
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 554
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public readonly float PostureRegen { get; }
@@ -145,12 +145,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: PostureModifier
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 555
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public readonly float PostureModifier { get; }
@@ -172,12 +172,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: HealthModifier
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 556
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public readonly float HealthModifier { get; }
@@ -199,12 +199,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: AddHealth
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 566
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public void AddHealth(float health)
@@ -229,12 +229,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: AddPosture
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 572
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public void AddPosture(float posture)
@@ -259,12 +259,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: AddHealthModifier
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 577
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public int AddHealthModifier(float factor)
@@ -291,12 +291,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: RemoveHealthModifier
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 584
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public bool RemoveHealthModifier(int key)
@@ -323,12 +323,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: AddPostureModifier
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 591
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public int AddPostureModifier(float factor)
@@ -355,12 +355,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: RemovePostureModifier
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 598
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public bool RemovePostureModifier(int key)
@@ -387,12 +387,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: ResetRegen
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 605
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public void ResetRegen()
@@ -411,12 +411,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: ResetModifiers
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 612
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public void ResetModifiers()
@@ -435,12 +435,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Entity.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
     id: Reset
-    path: ../Assets/Scripts/Components/Entity.cs
+    path: ../Assets/Framework/Components/Entity.cs
     startLine: 619
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.EntitySystem
   syntax:
     content: public void Reset()
@@ -449,23 +449,29 @@ items:
 references:
 - uid: LobsterFramework.EntitySystem
   commentId: N:LobsterFramework.EntitySystem
+  href: LobsterFramework.html
   name: LobsterFramework.EntitySystem
   nameWithType: LobsterFramework.EntitySystem
   fullName: LobsterFramework.EntitySystem
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.EntitySystem
     name: EntitySystem
+    href: LobsterFramework.EntitySystem.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.EntitySystem
     name: EntitySystem
+    href: LobsterFramework.EntitySystem.html
 - uid: LobsterFramework.EntitySystem.RegenBuffer.#ctor*
   commentId: Overload:LobsterFramework.EntitySystem.RegenBuffer.#ctor
+  href: LobsterFramework.EntitySystem.RegenBuffer.html#LobsterFramework.EntitySystem.RegenBuffer.#ctor(System.Boolean)
   name: RegenBuffer
   nameWithType: RegenBuffer.RegenBuffer
   fullName: LobsterFramework.EntitySystem.RegenBuffer.RegenBuffer
@@ -476,6 +482,7 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
@@ -485,11 +492,13 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: LobsterFramework.EntitySystem.RegenBuffer.HealthRegen*
   commentId: Overload:LobsterFramework.EntitySystem.RegenBuffer.HealthRegen
+  href: LobsterFramework.EntitySystem.RegenBuffer.html#LobsterFramework.EntitySystem.RegenBuffer.HealthRegen
   name: HealthRegen
   nameWithType: RegenBuffer.HealthRegen
   fullName: LobsterFramework.EntitySystem.RegenBuffer.HealthRegen
@@ -497,6 +506,7 @@ references:
   commentId: T:System.Single
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
   name: float
   nameWithType: float
   fullName: float
@@ -505,31 +515,37 @@ references:
   name.vb: Single
 - uid: LobsterFramework.EntitySystem.RegenBuffer.PostureRegen*
   commentId: Overload:LobsterFramework.EntitySystem.RegenBuffer.PostureRegen
+  href: LobsterFramework.EntitySystem.RegenBuffer.html#LobsterFramework.EntitySystem.RegenBuffer.PostureRegen
   name: PostureRegen
   nameWithType: RegenBuffer.PostureRegen
   fullName: LobsterFramework.EntitySystem.RegenBuffer.PostureRegen
 - uid: LobsterFramework.EntitySystem.RegenBuffer.PostureModifier*
   commentId: Overload:LobsterFramework.EntitySystem.RegenBuffer.PostureModifier
+  href: LobsterFramework.EntitySystem.RegenBuffer.html#LobsterFramework.EntitySystem.RegenBuffer.PostureModifier
   name: PostureModifier
   nameWithType: RegenBuffer.PostureModifier
   fullName: LobsterFramework.EntitySystem.RegenBuffer.PostureModifier
 - uid: LobsterFramework.EntitySystem.RegenBuffer.HealthModifier*
   commentId: Overload:LobsterFramework.EntitySystem.RegenBuffer.HealthModifier
+  href: LobsterFramework.EntitySystem.RegenBuffer.html#LobsterFramework.EntitySystem.RegenBuffer.HealthModifier
   name: HealthModifier
   nameWithType: RegenBuffer.HealthModifier
   fullName: LobsterFramework.EntitySystem.RegenBuffer.HealthModifier
 - uid: LobsterFramework.EntitySystem.RegenBuffer.AddHealth*
   commentId: Overload:LobsterFramework.EntitySystem.RegenBuffer.AddHealth
+  href: LobsterFramework.EntitySystem.RegenBuffer.html#LobsterFramework.EntitySystem.RegenBuffer.AddHealth(System.Single)
   name: AddHealth
   nameWithType: RegenBuffer.AddHealth
   fullName: LobsterFramework.EntitySystem.RegenBuffer.AddHealth
 - uid: LobsterFramework.EntitySystem.RegenBuffer.AddPosture*
   commentId: Overload:LobsterFramework.EntitySystem.RegenBuffer.AddPosture
+  href: LobsterFramework.EntitySystem.RegenBuffer.html#LobsterFramework.EntitySystem.RegenBuffer.AddPosture(System.Single)
   name: AddPosture
   nameWithType: RegenBuffer.AddPosture
   fullName: LobsterFramework.EntitySystem.RegenBuffer.AddPosture
 - uid: LobsterFramework.EntitySystem.RegenBuffer.AddHealthModifier*
   commentId: Overload:LobsterFramework.EntitySystem.RegenBuffer.AddHealthModifier
+  href: LobsterFramework.EntitySystem.RegenBuffer.html#LobsterFramework.EntitySystem.RegenBuffer.AddHealthModifier(System.Single)
   name: AddHealthModifier
   nameWithType: RegenBuffer.AddHealthModifier
   fullName: LobsterFramework.EntitySystem.RegenBuffer.AddHealthModifier
@@ -537,6 +553,7 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
   name: int
   nameWithType: int
   fullName: int
@@ -545,31 +562,37 @@ references:
   name.vb: Integer
 - uid: LobsterFramework.EntitySystem.RegenBuffer.RemoveHealthModifier*
   commentId: Overload:LobsterFramework.EntitySystem.RegenBuffer.RemoveHealthModifier
+  href: LobsterFramework.EntitySystem.RegenBuffer.html#LobsterFramework.EntitySystem.RegenBuffer.RemoveHealthModifier(System.Int32)
   name: RemoveHealthModifier
   nameWithType: RegenBuffer.RemoveHealthModifier
   fullName: LobsterFramework.EntitySystem.RegenBuffer.RemoveHealthModifier
 - uid: LobsterFramework.EntitySystem.RegenBuffer.AddPostureModifier*
   commentId: Overload:LobsterFramework.EntitySystem.RegenBuffer.AddPostureModifier
+  href: LobsterFramework.EntitySystem.RegenBuffer.html#LobsterFramework.EntitySystem.RegenBuffer.AddPostureModifier(System.Single)
   name: AddPostureModifier
   nameWithType: RegenBuffer.AddPostureModifier
   fullName: LobsterFramework.EntitySystem.RegenBuffer.AddPostureModifier
 - uid: LobsterFramework.EntitySystem.RegenBuffer.RemovePostureModifier*
   commentId: Overload:LobsterFramework.EntitySystem.RegenBuffer.RemovePostureModifier
+  href: LobsterFramework.EntitySystem.RegenBuffer.html#LobsterFramework.EntitySystem.RegenBuffer.RemovePostureModifier(System.Int32)
   name: RemovePostureModifier
   nameWithType: RegenBuffer.RemovePostureModifier
   fullName: LobsterFramework.EntitySystem.RegenBuffer.RemovePostureModifier
 - uid: LobsterFramework.EntitySystem.RegenBuffer.ResetRegen*
   commentId: Overload:LobsterFramework.EntitySystem.RegenBuffer.ResetRegen
+  href: LobsterFramework.EntitySystem.RegenBuffer.html#LobsterFramework.EntitySystem.RegenBuffer.ResetRegen
   name: ResetRegen
   nameWithType: RegenBuffer.ResetRegen
   fullName: LobsterFramework.EntitySystem.RegenBuffer.ResetRegen
 - uid: LobsterFramework.EntitySystem.RegenBuffer.ResetModifiers*
   commentId: Overload:LobsterFramework.EntitySystem.RegenBuffer.ResetModifiers
+  href: LobsterFramework.EntitySystem.RegenBuffer.html#LobsterFramework.EntitySystem.RegenBuffer.ResetModifiers
   name: ResetModifiers
   nameWithType: RegenBuffer.ResetModifiers
   fullName: LobsterFramework.EntitySystem.RegenBuffer.ResetModifiers
 - uid: LobsterFramework.EntitySystem.RegenBuffer.Reset*
   commentId: Overload:LobsterFramework.EntitySystem.RegenBuffer.Reset
+  href: LobsterFramework.EntitySystem.RegenBuffer.html#LobsterFramework.EntitySystem.RegenBuffer.Reset
   name: Reset
   nameWithType: RegenBuffer.Reset
   fullName: LobsterFramework.EntitySystem.RegenBuffer.Reset

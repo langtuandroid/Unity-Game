@@ -12,7 +12,7 @@
  | LobsterFramework documentation ">
     
       <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
       <link rel="stylesheet" href="../styles/main.css">
       <meta property="docfx:navrel" content="../toc.html">
@@ -80,6 +80,7 @@
             <article class="content wrap" id="_content" data-uid="LobsterFramework.AbilitySystem.AddAbilityMenuAttribute">
 
 
+
   <h1 id="LobsterFramework_AbilitySystem_AddAbilityMenuAttribute" data-uid="LobsterFramework.AbilitySystem.AddAbilityMenuAttribute" class="text-break">Class AddAbilityMenuAttribute
 </h1>
   <div class="markdown level0 summary"><p>Used to add Abilities to the pool of available Abilities. This will allow the creations of these abilities inside AbilityData</p>
@@ -92,10 +93,10 @@
     <div class="level2"><span class="xref">AddAbilityMenuAttribute</span></div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="LobsterFramework.html">LobsterFramework</a>.<a class="xref" href="LobsterFramework.AbilitySystem.html">AbilitySystem</a></h6>
-  <h6><strong>Assembly</strong>: MyScripts.dll</h6>
+  <h6><strong>Assembly</strong>: LobsterFramework.dll</h6>
   <h5 id="LobsterFramework_AbilitySystem_AddAbilityMenuAttribute_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AttributeUsage(AttributeTargets.Class)]
+    <pre><code class="lang-csharp hljs">[AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
 public class AddAbilityMenuAttribute : Attribute</code></pre>
   </div>
   <h3 id="fields">Fields
@@ -110,7 +111,7 @@ public class AddAbilityMenuAttribute : Attribute</code></pre>
     <pre><code class="lang-csharp hljs">public static HashSet&lt;Type&gt; actions</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -137,7 +138,7 @@ public class AddAbilityMenuAttribute : Attribute</code></pre>
     <pre><code class="lang-csharp hljs">public void AddAbility(Type type)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -153,6 +154,7 @@ public class AddAbilityMenuAttribute : Attribute</code></pre>
       </tr>
     </tbody>
   </table>
+
 </article>
           </div>
 
@@ -185,7 +187,7 @@ public class AddAbilityMenuAttribute : Attribute</code></pre>
       </footer>
     </div>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
   </body>

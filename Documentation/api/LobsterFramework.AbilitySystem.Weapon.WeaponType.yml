@@ -18,12 +18,12 @@ items:
   type: Enum
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Weapon.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Weapon.cs
     id: WeaponType
-    path: ../Assets/Scripts/Components/ActionComponents/Weapon.cs
+    path: ../Assets/Framework/Components/ActionComponents/Weapon.cs
     startLine: 58
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.Weapon
   syntax:
     content: public enum WeaponType
@@ -41,12 +41,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Weapon.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Weapon.cs
     id: Sword
-    path: ../Assets/Scripts/Components/ActionComponents/Weapon.cs
+    path: ../Assets/Framework/Components/ActionComponents/Weapon.cs
     startLine: 59
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.Weapon
   syntax:
     content: Sword = 0
@@ -65,12 +65,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Weapon.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Weapon.cs
     id: Hammer
-    path: ../Assets/Scripts/Components/ActionComponents/Weapon.cs
+    path: ../Assets/Framework/Components/ActionComponents/Weapon.cs
     startLine: 60
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.Weapon
   syntax:
     content: Hammer = 1
@@ -89,12 +89,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Weapon.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Weapon.cs
     id: Shiv
-    path: ../Assets/Scripts/Components/ActionComponents/Weapon.cs
+    path: ../Assets/Framework/Components/ActionComponents/Weapon.cs
     startLine: 61
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.Weapon
   syntax:
     content: Shiv = 2
@@ -113,12 +113,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Weapon.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Weapon.cs
     id: Rod
-    path: ../Assets/Scripts/Components/ActionComponents/Weapon.cs
+    path: ../Assets/Framework/Components/ActionComponents/Weapon.cs
     startLine: 62
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem.Weapon
   syntax:
     content: Rod = 3
@@ -127,30 +127,38 @@ items:
 references:
 - uid: LobsterFramework.AbilitySystem.Weapon
   commentId: N:LobsterFramework.AbilitySystem.Weapon
+  href: LobsterFramework.html
   name: LobsterFramework.AbilitySystem.Weapon
   nameWithType: LobsterFramework.AbilitySystem.Weapon
   fullName: LobsterFramework.AbilitySystem.Weapon
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
   - name: .
   - uid: LobsterFramework.AbilitySystem.Weapon
     name: Weapon
+    href: LobsterFramework.AbilitySystem.Weapon.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
   - name: .
   - uid: LobsterFramework.AbilitySystem.Weapon
     name: Weapon
+    href: LobsterFramework.AbilitySystem.Weapon.html
 - uid: LobsterFramework.AbilitySystem.Weapon.WeaponType
   commentId: T:LobsterFramework.AbilitySystem.Weapon.WeaponType
   parent: LobsterFramework.AbilitySystem.Weapon
+  href: LobsterFramework.AbilitySystem.Weapon.WeaponType.html
   name: WeaponType
   nameWithType: WeaponType
   fullName: LobsterFramework.AbilitySystem.Weapon.WeaponType

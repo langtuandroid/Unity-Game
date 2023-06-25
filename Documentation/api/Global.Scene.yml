@@ -16,12 +16,12 @@ items:
   type: Enum
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/GameManager.cs
+      path: H:/Stuff/BallField/Assets/Framework/Persistent Managers/GameManager.cs
     id: Scene
-    path: ../Assets/Scripts/Persistent Managers/GameManager.cs
-    startLine: 8
+    path: ../Assets/Framework/Persistent Managers/GameManager.cs
+    startLine: 6
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public enum Scene
@@ -39,12 +39,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/GameManager.cs
+      path: H:/Stuff/BallField/Assets/Framework/Persistent Managers/GameManager.cs
     id: IntroMenu
-    path: ../Assets/Scripts/Persistent Managers/GameManager.cs
-    startLine: 9
+    path: ../Assets/Framework/Persistent Managers/GameManager.cs
+    startLine: 7
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: IntroMenu = 0
@@ -63,12 +63,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Persistent Managers/GameManager.cs
+      path: H:/Stuff/BallField/Assets/Framework/Persistent Managers/GameManager.cs
     id: Gameplay
-    path: ../Assets/Scripts/Persistent Managers/GameManager.cs
-    startLine: 10
+    path: ../Assets/Framework/Persistent Managers/GameManager.cs
+    startLine: 8
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: Gameplay = 1
@@ -78,6 +78,7 @@ references:
 - uid: Global
 - uid: Global.Scene
   commentId: T:Global.Scene
+  href: Scene.html
   name: Scene
   nameWithType: Scene
   fullName: Scene

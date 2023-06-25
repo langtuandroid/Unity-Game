@@ -19,12 +19,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/ManagedSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/ManagedSet.cs
     id: ManagedSet
-    path: ../Assets/Scripts/Utility/ManagedSet.cs
+    path: ../Assets/Framework/Utility/ManagedSet.cs
     startLine: 7
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: public class ManagedSet<T>
@@ -49,12 +49,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/ManagedSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/ManagedSet.cs
     id: CurrentItem
-    path: ../Assets/Scripts/Utility/ManagedSet.cs
+    path: ../Assets/Framework/Utility/ManagedSet.cs
     startLine: 33
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: public T CurrentItem { get; }
@@ -78,12 +78,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/ManagedSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/ManagedSet.cs
     id: Advance
-    path: ../Assets/Scripts/Utility/ManagedSet.cs
+    path: ../Assets/Framework/Utility/ManagedSet.cs
     startLine: 45
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: public void Advance()
@@ -104,12 +104,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/ManagedSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/ManagedSet.cs
     id: StepBack
-    path: ../Assets/Scripts/Utility/ManagedSet.cs
+    path: ../Assets/Framework/Utility/ManagedSet.cs
     startLine: 54
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: public void StepBack()
@@ -130,12 +130,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/ManagedSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/ManagedSet.cs
     id: Add
-    path: ../Assets/Scripts/Utility/ManagedSet.cs
+    path: ../Assets/Framework/Utility/ManagedSet.cs
     startLine: 63
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: public bool Add(T i)
@@ -161,12 +161,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/ManagedSet.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/ManagedSet.cs
     id: Remove
-    path: ../Assets/Scripts/Utility/ManagedSet.cs
+    path: ../Assets/Framework/Utility/ManagedSet.cs
     startLine: 68
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: public bool Remove(T i)
@@ -182,25 +182,31 @@ items:
 references:
 - uid: LobsterFramework.Utility
   commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
   name: LobsterFramework.Utility
   nameWithType: LobsterFramework.Utility
   fullName: LobsterFramework.Utility
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -210,11 +216,13 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: LobsterFramework.Utility.ManagedSet`1.CurrentItem*
   commentId: Overload:LobsterFramework.Utility.ManagedSet`1.CurrentItem
+  href: LobsterFramework.Utility.ManagedSet-1.html#LobsterFramework.Utility.ManagedSet`1.CurrentItem
   name: CurrentItem
   nameWithType: ManagedSet<T>.CurrentItem
   fullName: LobsterFramework.Utility.ManagedSet<T>.CurrentItem
@@ -232,6 +240,7 @@ references:
   fullName: T
 - uid: LobsterFramework.Utility.ManagedSet`1.Advance*
   commentId: Overload:LobsterFramework.Utility.ManagedSet`1.Advance
+  href: LobsterFramework.Utility.ManagedSet-1.html#LobsterFramework.Utility.ManagedSet`1.Advance
   name: Advance
   nameWithType: ManagedSet<T>.Advance
   fullName: LobsterFramework.Utility.ManagedSet<T>.Advance
@@ -239,6 +248,7 @@ references:
   fullName.vb: LobsterFramework.Utility.ManagedSet(Of T).Advance
 - uid: LobsterFramework.Utility.ManagedSet`1.StepBack*
   commentId: Overload:LobsterFramework.Utility.ManagedSet`1.StepBack
+  href: LobsterFramework.Utility.ManagedSet-1.html#LobsterFramework.Utility.ManagedSet`1.StepBack
   name: StepBack
   nameWithType: ManagedSet<T>.StepBack
   fullName: LobsterFramework.Utility.ManagedSet<T>.StepBack
@@ -246,6 +256,7 @@ references:
   fullName.vb: LobsterFramework.Utility.ManagedSet(Of T).StepBack
 - uid: LobsterFramework.Utility.ManagedSet`1.Add*
   commentId: Overload:LobsterFramework.Utility.ManagedSet`1.Add
+  href: LobsterFramework.Utility.ManagedSet-1.html#LobsterFramework.Utility.ManagedSet`1.Add(`0)
   name: Add
   nameWithType: ManagedSet<T>.Add
   fullName: LobsterFramework.Utility.ManagedSet<T>.Add
@@ -255,6 +266,7 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
@@ -263,6 +275,7 @@ references:
   name.vb: Boolean
 - uid: LobsterFramework.Utility.ManagedSet`1.Remove*
   commentId: Overload:LobsterFramework.Utility.ManagedSet`1.Remove
+  href: LobsterFramework.Utility.ManagedSet-1.html#LobsterFramework.Utility.ManagedSet`1.Remove(`0)
   name: Remove
   nameWithType: ManagedSet<T>.Remove
   fullName: LobsterFramework.Utility.ManagedSet<T>.Remove

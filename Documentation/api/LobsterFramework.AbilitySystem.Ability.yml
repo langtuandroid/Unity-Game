@@ -5,10 +5,7 @@ items:
   id: Ability
   parent: LobsterFramework.AbilitySystem
   children:
-  - LobsterFramework.AbilitySystem.Ability.abilityPriority
-  - LobsterFramework.AbilitySystem.Ability.abilityRunner
   - LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  - LobsterFramework.AbilitySystem.Ability.AddConfig(System.String)
   - LobsterFramework.AbilitySystem.Ability.CleanUp
   - LobsterFramework.AbilitySystem.Ability.CompareByEnqueuePriority(LobsterFramework.AbilitySystem.Ability)
   - LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
@@ -17,12 +14,10 @@ items:
   - LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution(System.String)
   - LobsterFramework.AbilitySystem.Ability.HasConfig(System.String)
   - LobsterFramework.AbilitySystem.Ability.Initialize
-  - LobsterFramework.AbilitySystem.Ability.InterruptAnimation(System.String)
   - LobsterFramework.AbilitySystem.Ability.IsExecuting(System.String)
   - LobsterFramework.AbilitySystem.Ability.IsReady(System.String)
   - LobsterFramework.AbilitySystem.Ability.OnActionFinish(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   - LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  - LobsterFramework.AbilitySystem.Ability.OnDestroy
   - LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig,System.String)
   - LobsterFramework.AbilitySystem.Ability.OnStartUp
   - LobsterFramework.AbilitySystem.Ability.OnTermination
@@ -32,6 +27,8 @@ items:
   - LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
   - LobsterFramework.AbilitySystem.Ability.Signal(System.String)
   - LobsterFramework.AbilitySystem.Ability.SignalBody(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  - LobsterFramework.AbilitySystem.Ability.abilityPriority
+  - LobsterFramework.AbilitySystem.Ability.abilityRunner
   langs:
   - csharp
   - vb
@@ -41,14 +38,17 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: Ability
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
-    startLine: 33
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
+    startLine: 32
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nAbilities defines the kind of actions the parent object can make. <br />\nEach subclass of Ability defines its own AbilityConfig and can be runned on multiple instances of its AbilityConfigs.\n"
+  summary: >-
+    Abilities defines the kind of actions the parent object can make. <br />
+
+    Each subclass of Ability defines its own AbilityConfig and can be runned on multiple instances of its AbilityConfigs.
   example: []
   syntax:
     content: 'public abstract class Ability : ScriptableObject'
@@ -58,11 +58,6 @@ items:
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
   derivedClasses:
-  - LobsterFramework.AbilitySystem.CircleAttack
-  - LobsterFramework.AbilitySystem.Endure
-  - LobsterFramework.AbilitySystem.Guard
-  - LobsterFramework.AbilitySystem.RightSwipe
-  - LobsterFramework.AbilitySystem.Shoot
   - LobsterFramework.AbilitySystem.Weapon.WeaponAbility
   inheritedMembers:
   - UnityEngine.ScriptableObject.SetDirty
@@ -128,12 +123,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: abilityRunner
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
-    startLine: 38
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
+    startLine: 37
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: >-
@@ -163,53 +158,18 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: abilityPriority
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
-    startLine: 39
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
+    startLine: 38
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public RefAbilityPriority abilityPriority
     return:
       type: Global.RefAbilityPriority
     content.vb: Public abilityPriority As RefAbilityPriority
-- uid: LobsterFramework.AbilitySystem.Ability.AddConfig(System.String)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.AddConfig(System.String)
-  id: AddConfig(System.String)
-  parent: LobsterFramework.AbilitySystem.Ability
-  langs:
-  - csharp
-  - vb
-  name: AddConfig(string)
-  nameWithType: Ability.AddConfig(string)
-  fullName: LobsterFramework.AbilitySystem.Ability.AddConfig(string)
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
-    id: AddConfig
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
-    startLine: 50
-  assemblies:
-  - MyScripts
-  namespace: LobsterFramework.AbilitySystem
-  summary: "\nAdd the config with specified name to this Ability, this should only be called by editor scripts\n"
-  example: []
-  syntax:
-    content: public bool AddConfig(string name)
-    parameters:
-    - id: name
-      type: System.String
-      description: The name of the config to be added
-    return:
-      type: System.Boolean
-    content.vb: Public Function AddConfig(name As String) As Boolean
-  overload: LobsterFramework.AbilitySystem.Ability.AddConfig*
-  nameWithType.vb: Ability.AddConfig(String)
-  fullName.vb: LobsterFramework.AbilitySystem.Ability.AddConfig(String)
-  name.vb: AddConfig(String)
 - uid: LobsterFramework.AbilitySystem.Ability.RemoveConfig(System.String)
   commentId: M:LobsterFramework.AbilitySystem.Ability.RemoveConfig(System.String)
   id: RemoveConfig(System.String)
@@ -223,14 +183,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: RemoveConfig
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
-    startLine: 94
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
+    startLine: 92
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nRemove the config with specified name if present, this should only be called by editor scripts\n"
+  summary: Remove the config with specified name if present, this should only be called by editor scripts
   example: []
   syntax:
     content: public bool RemoveConfig(string name)
@@ -259,14 +219,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: CleanUp
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
-    startLine: 110
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
+    startLine: 108
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nCallback when the gameobject is about to be disabled or destroyed\n"
+  summary: Callback when the gameobject is about to be disabled or destroyed
   example: []
   syntax:
     content: public virtual void CleanUp()
@@ -285,12 +245,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: CompareByExecutionPriority
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
-    startLine: 113
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
+    startLine: 111
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public int CompareByExecutionPriority(Ability other)
@@ -314,12 +274,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: CompareByEnqueuePriority
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
-    startLine: 118
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
+    startLine: 116
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public int CompareByEnqueuePriority(Ability other)
@@ -343,14 +303,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: ConditionSatisfied
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
-    startLine: 128
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
+    startLine: 126
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nAdditionaly utility method for skill check that can be imeplemented if the ability have additional requirements, this may varies beween different configs\n"
+  summary: Additionaly utility method for skill check that can be imeplemented if the ability have additional requirements, this may varies beween different configs
   example: []
   syntax:
     content: protected virtual bool ConditionSatisfied(Ability.AbilityConfig config)
@@ -376,12 +336,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: RunningCount
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
-    startLine: 180
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
+    startLine: 178
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public int RunningCount()
@@ -402,24 +362,24 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: HaltAbilityExecution
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
-    startLine: 187
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
+    startLine: 185
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\n// Suspend the execution of provided action and force it to finish at the current frame\n"
+  summary: Suspend the execution of provided action and force it to finish at the current frame
   example: []
   syntax:
     content: public bool HaltAbilityExecution(string name)
     parameters:
     - id: name
       type: System.String
-      description: 'Name of the configuration to terminate '
+      description: Name of the configuration to terminate
     return:
       type: System.Boolean
-      description: 'The status of this operation '
+      description: The status of this operation
     content.vb: Public Function HaltAbilityExecution(name As String) As Boolean
   overload: LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution*
   nameWithType.vb: Ability.HaltAbilityExecution(String)
@@ -438,14 +398,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: HaltAbilities
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
-    startLine: 210
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
+    startLine: 208
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nHalt the execution of all abilities\n"
+  summary: Halt the execution of all abilities
   example: []
   syntax:
     content: public void HaltAbilities()
@@ -464,13 +424,15 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: Initialize
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
     startLine: 219
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
+  summary: Callback when the gameobject is being initialized during Start()
+  example: []
   syntax:
     content: protected virtual void Initialize()
     content.vb: Protected Overridable Sub Initialize()
@@ -488,24 +450,24 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: IsExecuting
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
     startLine: 226
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nCheck if the provided config is executing, this method will return false if the config is not present\n"
+  summary: Check if the provided config is executing, this method will return false if the config is not present
   example: []
   syntax:
     content: public bool IsExecuting(string name)
     parameters:
     - id: name
       type: System.String
-      description: 'The name of the config to be examined '
+      description: The name of the config to be examined
     return:
       type: System.Boolean
-      description: 'True if the specified config is executing, otherwise false '
+      description: True if the specified config is executing, otherwise false
     content.vb: Public Function IsExecuting(name As String) As Boolean
   overload: LobsterFramework.AbilitySystem.Ability.IsExecuting*
   nameWithType.vb: Ability.IsExecuting(String)
@@ -524,12 +486,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: IsReady
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
     startLine: 232
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public bool IsReady(string name)
@@ -556,12 +518,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: OnStartUp
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
     startLine: 244
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public void OnStartUp()
@@ -580,12 +542,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: OnTermination
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
     startLine: 258
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public void OnTermination()
@@ -604,41 +566,17 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: ResetStatus
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
     startLine: 268
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public void ResetStatus()
     content.vb: Public Sub ResetStatus()
   overload: LobsterFramework.AbilitySystem.Ability.ResetStatus*
-- uid: LobsterFramework.AbilitySystem.Ability.OnDestroy
-  commentId: M:LobsterFramework.AbilitySystem.Ability.OnDestroy
-  id: OnDestroy
-  parent: LobsterFramework.AbilitySystem.Ability
-  langs:
-  - csharp
-  - vb
-  name: OnDestroy()
-  nameWithType: Ability.OnDestroy()
-  fullName: LobsterFramework.AbilitySystem.Ability.OnDestroy()
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
-    id: OnDestroy
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
-    startLine: 274
-  assemblies:
-  - MyScripts
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: public void OnDestroy()
-    content.vb: Public Sub OnDestroy()
-  overload: LobsterFramework.AbilitySystem.Ability.OnDestroy*
 - uid: LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
   commentId: M:LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
   id: SaveConfigsAsAsset
@@ -652,12 +590,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: SaveConfigsAsAsset
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
     startLine: 283
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public void SaveConfigsAsAsset()
@@ -676,14 +614,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: Action
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
     startLine: 295
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nMain body of the ability execution, implement this to create different abilities!\n"
+  summary: Main body of the ability execution, implement this to create different abilities!
   example: []
   syntax:
     content: protected abstract bool Action(Ability.AbilityConfig config)
@@ -709,14 +647,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: OnActionFinish
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
     startLine: 301
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nCallback when the action is finished or halted, override this to clean up temporary data generated during the action.\n"
+  summary: Callback when the action is finished or halted, override this to clean up temporary data generated during the action.
   example: []
   syntax:
     content: protected virtual void OnActionFinish(Ability.AbilityConfig config)
@@ -739,14 +677,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: OnAnimationInterrupt
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
     startLine: 307
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nCallback when the animation of the ability is interrupted by other abilities. Useful when abilities relies on animation events.\n"
+  summary: Callback when the animation of the ability is interrupted by other abilities. Useful when abilities relies on animation events.
   example: []
   syntax:
     content: protected virtual void OnAnimationInterrupt(Ability.AbilityConfig config)
@@ -756,36 +694,6 @@ items:
       description: ''
     content.vb: Protected Overridable Sub OnAnimationInterrupt(config As Ability.AbilityConfig)
   overload: LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt*
-- uid: LobsterFramework.AbilitySystem.Ability.InterruptAnimation(System.String)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.InterruptAnimation(System.String)
-  id: InterruptAnimation(System.String)
-  parent: LobsterFramework.AbilitySystem.Ability
-  langs:
-  - csharp
-  - vb
-  name: InterruptAnimation(string)
-  nameWithType: Ability.InterruptAnimation(string)
-  fullName: LobsterFramework.AbilitySystem.Ability.InterruptAnimation(string)
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
-    id: InterruptAnimation
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
-    startLine: 309
-  assemblies:
-  - MyScripts
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: public void InterruptAnimation(string configName)
-    parameters:
-    - id: configName
-      type: System.String
-    content.vb: Public Sub InterruptAnimation(configName As String)
-  overload: LobsterFramework.AbilitySystem.Ability.InterruptAnimation*
-  nameWithType.vb: Ability.InterruptAnimation(String)
-  fullName.vb: LobsterFramework.AbilitySystem.Ability.InterruptAnimation(String)
-  name.vb: InterruptAnimation(String)
 - uid: LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig,System.String)
   commentId: M:LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig,System.String)
   id: OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig,System.String)
@@ -799,14 +707,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: OnEnqueue
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
-    startLine: 319
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
+    startLine: 323
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nCallback when the ability is added to the action executing queue\n"
+  summary: Callback when the ability is added to the action executing queue
   example: []
   syntax:
     content: protected virtual void OnEnqueue(Ability.AbilityConfig config, string configName)
@@ -835,12 +743,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: HasConfig
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
-    startLine: 336
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
+    startLine: 340
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public bool HasConfig(string configName)
@@ -867,12 +775,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: Signal
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
-    startLine: 340
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
+    startLine: 344
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
     content: public void Signal(string configName)
@@ -897,14 +805,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
     id: SignalBody
-    path: ../Assets/Scripts/Components/ActionComponents/Ability.cs
-    startLine: 350
+    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
+    startLine: 354
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: "\nOverride this to implement signal event handler\n"
+  summary: Override this to implement signal event handler
   example: []
   syntax:
     content: protected virtual void SignalBody(Ability.AbilityConfig config)
@@ -917,25 +825,31 @@ items:
 references:
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
   name: LobsterFramework.AbilitySystem
   nameWithType: LobsterFramework.AbilitySystem
   fullName: LobsterFramework.AbilitySystem
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -979,6 +893,7 @@ references:
   commentId: M:UnityEngine.ScriptableObject.CreateInstance(System.String)
   parent: UnityEngine.ScriptableObject
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: CreateInstance(string)
   nameWithType: ScriptableObject.CreateInstance(string)
   fullName: UnityEngine.ScriptableObject.CreateInstance(string)
@@ -993,6 +908,7 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: UnityEngine.ScriptableObject.CreateInstance(System.String)
@@ -1002,11 +918,13 @@ references:
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: UnityEngine.ScriptableObject.CreateInstance(System.Type)
   commentId: M:UnityEngine.ScriptableObject.CreateInstance(System.Type)
   parent: UnityEngine.ScriptableObject
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: CreateInstance(Type)
   nameWithType: ScriptableObject.CreateInstance(Type)
   fullName: UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -1018,6 +936,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.ScriptableObject.CreateInstance(System.Type)
@@ -1027,6 +946,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.ScriptableObject.CreateInstance``1
   commentId: M:UnityEngine.ScriptableObject.CreateInstance``1
@@ -1100,6 +1020,7 @@ references:
   commentId: M:UnityEngine.Object.Equals(System.Object)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: Equals(object)
   nameWithType: Object.Equals(object)
   fullName: UnityEngine.Object.Equals(object)
@@ -1114,6 +1035,7 @@ references:
   - uid: System.Object
     name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Equals(System.Object)
@@ -1123,6 +1045,7 @@ references:
   - uid: System.Object
     name: Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
   commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
@@ -1288,6 +1211,7 @@ references:
   commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: Instantiate(Object, Transform, bool)
   nameWithType: Object.Instantiate(Object, Transform, bool)
   fullName: UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Transform, bool)
@@ -1312,6 +1236,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
@@ -1331,6 +1256,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.Instantiate``1({T})
   commentId: M:UnityEngine.Object.Instantiate``1(``0)
@@ -1524,6 +1450,7 @@ references:
   commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
   parent: UnityEngine.Object
   definition: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: Instantiate<T>(T, Transform, bool)
   nameWithType: Object.Instantiate<T>(T, Transform, bool)
   fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Transform, bool)
@@ -1549,6 +1476,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
@@ -1571,11 +1499,13 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
   commentId: M:UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
   name: Destroy(Object, float)
   nameWithType: Object.Destroy(Object, float)
   fullName: UnityEngine.Object.Destroy(UnityEngine.Object, float)
@@ -1595,6 +1525,7 @@ references:
   - uid: System.Single
     name: float
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
@@ -1609,6 +1540,7 @@ references:
   - uid: System.Single
     name: Single
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
 - uid: UnityEngine.Object.Destroy(UnityEngine.Object)
   commentId: M:UnityEngine.Object.Destroy(UnityEngine.Object)
@@ -1639,6 +1571,7 @@ references:
   commentId: M:UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: DestroyImmediate(Object, bool)
   nameWithType: Object.DestroyImmediate(Object, bool)
   fullName: UnityEngine.Object.DestroyImmediate(UnityEngine.Object, bool)
@@ -1658,6 +1591,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
@@ -1672,6 +1606,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
   commentId: M:UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
@@ -1702,6 +1637,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsOfType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfType(Type)
   nameWithType: Object.FindObjectsOfType(Type)
   fullName: UnityEngine.Object.FindObjectsOfType(System.Type)
@@ -1713,6 +1649,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfType(System.Type)
@@ -1722,11 +1659,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
   commentId: M:UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfType(Type, bool)
   nameWithType: Object.FindObjectsOfType(Type, bool)
   fullName: UnityEngine.Object.FindObjectsOfType(System.Type, bool)
@@ -1741,11 +1680,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
@@ -1755,16 +1696,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsSortMode)
   commentId: M:UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsSortMode)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsByType(Type, FindObjectsSortMode)
   nameWithType: Object.FindObjectsByType(Type, FindObjectsSortMode)
   fullName: UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsSortMode)
@@ -1776,6 +1720,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsSortMode
@@ -1790,6 +1735,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsSortMode
@@ -1800,6 +1746,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)
   nameWithType: Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)
   fullName: UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsInactive, UnityEngine.FindObjectsSortMode)
@@ -1811,6 +1758,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -1830,6 +1778,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -1870,6 +1819,7 @@ references:
   commentId: M:UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
   name: DestroyObject(Object, float)
   nameWithType: Object.DestroyObject(Object, float)
   fullName: UnityEngine.Object.DestroyObject(UnityEngine.Object, float)
@@ -1889,6 +1839,7 @@ references:
   - uid: System.Single
     name: float
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
@@ -1903,6 +1854,7 @@ references:
   - uid: System.Single
     name: Single
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
 - uid: UnityEngine.Object.DestroyObject(UnityEngine.Object)
   commentId: M:UnityEngine.Object.DestroyObject(UnityEngine.Object)
@@ -1933,6 +1885,7 @@ references:
   commentId: M:UnityEngine.Object.FindSceneObjectsOfType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindSceneObjectsOfType(Type)
   nameWithType: Object.FindSceneObjectsOfType(Type)
   fullName: UnityEngine.Object.FindSceneObjectsOfType(System.Type)
@@ -1944,6 +1897,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindSceneObjectsOfType(System.Type)
@@ -1953,11 +1907,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
   commentId: M:UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfTypeIncludingAssets(Type)
   nameWithType: Object.FindObjectsOfTypeIncludingAssets(Type)
   fullName: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
@@ -1969,6 +1925,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
@@ -1978,6 +1935,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectsOfType``1
   commentId: M:UnityEngine.Object.FindObjectsOfType``1
@@ -2049,6 +2007,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: FindObjectsOfType<T>(bool)
   nameWithType: Object.FindObjectsOfType<T>(bool)
   fullName: UnityEngine.Object.FindObjectsOfType<T>(bool)
@@ -2066,6 +2025,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
@@ -2080,6 +2040,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
   commentId: M:UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
@@ -2161,6 +2122,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectOfType``1(System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: FindObjectOfType<T>(bool)
   nameWithType: Object.FindObjectOfType<T>(bool)
   fullName: UnityEngine.Object.FindObjectOfType<T>(bool)
@@ -2178,6 +2140,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectOfType``1(System.Boolean)
@@ -2192,6 +2155,7 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindFirstObjectByType``1
   commentId: M:UnityEngine.Object.FindFirstObjectByType``1
@@ -2329,6 +2293,7 @@ references:
   commentId: M:UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectsOfTypeAll(Type)
   nameWithType: Object.FindObjectsOfTypeAll(Type)
   fullName: UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
@@ -2340,6 +2305,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
@@ -2349,11 +2315,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectOfType(System.Type)
   commentId: M:UnityEngine.Object.FindObjectOfType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectOfType(Type)
   nameWithType: Object.FindObjectOfType(Type)
   fullName: UnityEngine.Object.FindObjectOfType(System.Type)
@@ -2365,6 +2333,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectOfType(System.Type)
@@ -2374,11 +2343,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindFirstObjectByType(System.Type)
   commentId: M:UnityEngine.Object.FindFirstObjectByType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindFirstObjectByType(Type)
   nameWithType: Object.FindFirstObjectByType(Type)
   fullName: UnityEngine.Object.FindFirstObjectByType(System.Type)
@@ -2390,6 +2361,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindFirstObjectByType(System.Type)
@@ -2399,11 +2371,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindAnyObjectByType(System.Type)
   commentId: M:UnityEngine.Object.FindAnyObjectByType(System.Type)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindAnyObjectByType(Type)
   nameWithType: Object.FindAnyObjectByType(Type)
   fullName: UnityEngine.Object.FindAnyObjectByType(System.Type)
@@ -2415,6 +2389,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindAnyObjectByType(System.Type)
@@ -2424,11 +2399,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: )
 - uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
   commentId: M:UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindObjectOfType(Type, bool)
   nameWithType: Object.FindObjectOfType(Type, bool)
   fullName: UnityEngine.Object.FindObjectOfType(System.Type, bool)
@@ -2443,11 +2420,13 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
@@ -2457,16 +2436,19 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: UnityEngine.Object.FindFirstObjectByType(System.Type,UnityEngine.FindObjectsInactive)
   commentId: M:UnityEngine.Object.FindFirstObjectByType(System.Type,UnityEngine.FindObjectsInactive)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindFirstObjectByType(Type, FindObjectsInactive)
   nameWithType: Object.FindFirstObjectByType(Type, FindObjectsInactive)
   fullName: UnityEngine.Object.FindFirstObjectByType(System.Type, UnityEngine.FindObjectsInactive)
@@ -2478,6 +2460,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -2492,6 +2475,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -2502,6 +2486,7 @@ references:
   commentId: M:UnityEngine.Object.FindAnyObjectByType(System.Type,UnityEngine.FindObjectsInactive)
   parent: UnityEngine.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: FindAnyObjectByType(Type, FindObjectsInactive)
   nameWithType: Object.FindAnyObjectByType(Type, FindObjectsInactive)
   fullName: UnityEngine.Object.FindAnyObjectByType(System.Type, UnityEngine.FindObjectsInactive)
@@ -2513,6 +2498,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -2527,6 +2513,7 @@ references:
   - uid: System.Type
     name: Type
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: UnityEngine.FindObjectsInactive
@@ -2569,6 +2556,7 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
@@ -2765,6 +2753,7 @@ references:
 - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
   commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: Instantiate<T>(T, Transform, bool)
   nameWithType: Object.Instantiate<T>(T, Transform, bool)
   fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Transform, bool)
@@ -2790,6 +2779,7 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
@@ -2812,27 +2802,32 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: LobsterFramework.AbilitySystem.AbilityRunner
   commentId: T:LobsterFramework.AbilitySystem.AbilityRunner
   parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html
   name: AbilityRunner
   nameWithType: AbilityRunner
   fullName: LobsterFramework.AbilitySystem.AbilityRunner
 - uid: Global.RefAbilityPriority
   commentId: T:Global.RefAbilityPriority
+  href: RefAbilityPriority.html
   name: RefAbilityPriority
   nameWithType: RefAbilityPriority
   fullName: RefAbilityPriority
-- uid: LobsterFramework.AbilitySystem.Ability.AddConfig*
-  commentId: Overload:LobsterFramework.AbilitySystem.Ability.AddConfig
-  name: AddConfig
-  nameWithType: Ability.AddConfig
-  fullName: LobsterFramework.AbilitySystem.Ability.AddConfig
+- uid: LobsterFramework.AbilitySystem.Ability.RemoveConfig*
+  commentId: Overload:LobsterFramework.AbilitySystem.Ability.RemoveConfig
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.RemoveConfig(System.String)
+  name: RemoveConfig
+  nameWithType: Ability.RemoveConfig
+  fullName: LobsterFramework.AbilitySystem.Ability.RemoveConfig
 - uid: System.String
   commentId: T:System.String
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: string
   nameWithType: string
   fullName: string
@@ -2843,30 +2838,29 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: LobsterFramework.AbilitySystem.Ability.RemoveConfig*
-  commentId: Overload:LobsterFramework.AbilitySystem.Ability.RemoveConfig
-  name: RemoveConfig
-  nameWithType: Ability.RemoveConfig
-  fullName: LobsterFramework.AbilitySystem.Ability.RemoveConfig
 - uid: LobsterFramework.AbilitySystem.Ability.CleanUp*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.CleanUp
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CleanUp
   name: CleanUp
   nameWithType: Ability.CleanUp
   fullName: LobsterFramework.AbilitySystem.Ability.CleanUp
 - uid: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
   name: CompareByExecutionPriority
   nameWithType: Ability.CompareByExecutionPriority
   fullName: LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority
 - uid: LobsterFramework.AbilitySystem.Ability
   commentId: T:LobsterFramework.AbilitySystem.Ability
   parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.Ability.html
   name: Ability
   nameWithType: Ability
   fullName: LobsterFramework.AbilitySystem.Ability
@@ -2874,6 +2868,7 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
   name: int
   nameWithType: int
   fullName: int
@@ -2882,124 +2877,138 @@ references:
   name.vb: Integer
 - uid: LobsterFramework.AbilitySystem.Ability.CompareByEnqueuePriority*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.CompareByEnqueuePriority
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CompareByEnqueuePriority(LobsterFramework.AbilitySystem.Ability)
   name: CompareByEnqueuePriority
   nameWithType: Ability.CompareByEnqueuePriority
   fullName: LobsterFramework.AbilitySystem.Ability.CompareByEnqueuePriority
 - uid: LobsterFramework.AbilitySystem.Ability.ConditionSatisfied*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.ConditionSatisfied
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   name: ConditionSatisfied
   nameWithType: Ability.ConditionSatisfied
   fullName: LobsterFramework.AbilitySystem.Ability.ConditionSatisfied
 - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
   commentId: T:LobsterFramework.AbilitySystem.Ability.AbilityConfig
   parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.Ability.html
   name: Ability.AbilityConfig
   nameWithType: Ability.AbilityConfig
   fullName: LobsterFramework.AbilitySystem.Ability.AbilityConfig
   spec.csharp:
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: .
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   spec.vb:
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: .
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
 - uid: LobsterFramework.AbilitySystem.Ability.RunningCount*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.RunningCount
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.RunningCount
   name: RunningCount
   nameWithType: Ability.RunningCount
   fullName: LobsterFramework.AbilitySystem.Ability.RunningCount
 - uid: LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution(System.String)
   name: HaltAbilityExecution
   nameWithType: Ability.HaltAbilityExecution
   fullName: LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution
 - uid: LobsterFramework.AbilitySystem.Ability.HaltAbilities*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.HaltAbilities
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.HaltAbilities
   name: HaltAbilities
   nameWithType: Ability.HaltAbilities
   fullName: LobsterFramework.AbilitySystem.Ability.HaltAbilities
 - uid: LobsterFramework.AbilitySystem.Ability.Initialize*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.Initialize
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Initialize
   name: Initialize
   nameWithType: Ability.Initialize
   fullName: LobsterFramework.AbilitySystem.Ability.Initialize
 - uid: LobsterFramework.AbilitySystem.Ability.IsExecuting*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.IsExecuting
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.IsExecuting(System.String)
   name: IsExecuting
   nameWithType: Ability.IsExecuting
   fullName: LobsterFramework.AbilitySystem.Ability.IsExecuting
 - uid: LobsterFramework.AbilitySystem.Ability.IsReady*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.IsReady
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.IsReady(System.String)
   name: IsReady
   nameWithType: Ability.IsReady
   fullName: LobsterFramework.AbilitySystem.Ability.IsReady
 - uid: LobsterFramework.AbilitySystem.Ability.OnStartUp*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.OnStartUp
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnStartUp
   name: OnStartUp
   nameWithType: Ability.OnStartUp
   fullName: LobsterFramework.AbilitySystem.Ability.OnStartUp
 - uid: LobsterFramework.AbilitySystem.Ability.OnTermination*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.OnTermination
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnTermination
   name: OnTermination
   nameWithType: Ability.OnTermination
   fullName: LobsterFramework.AbilitySystem.Ability.OnTermination
 - uid: LobsterFramework.AbilitySystem.Ability.ResetStatus*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.ResetStatus
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.ResetStatus
   name: ResetStatus
   nameWithType: Ability.ResetStatus
   fullName: LobsterFramework.AbilitySystem.Ability.ResetStatus
-- uid: LobsterFramework.AbilitySystem.Ability.OnDestroy*
-  commentId: Overload:LobsterFramework.AbilitySystem.Ability.OnDestroy
-  name: OnDestroy
-  nameWithType: Ability.OnDestroy
-  fullName: LobsterFramework.AbilitySystem.Ability.OnDestroy
 - uid: LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
   name: SaveConfigsAsAsset
   nameWithType: Ability.SaveConfigsAsAsset
   fullName: LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
 - uid: LobsterFramework.AbilitySystem.Ability.Action*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.Action
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   name: Action
   nameWithType: Ability.Action
   fullName: LobsterFramework.AbilitySystem.Ability.Action
 - uid: LobsterFramework.AbilitySystem.Ability.OnActionFinish*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.OnActionFinish
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnActionFinish(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   name: OnActionFinish
   nameWithType: Ability.OnActionFinish
   fullName: LobsterFramework.AbilitySystem.Ability.OnActionFinish
 - uid: LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   name: OnAnimationInterrupt
   nameWithType: Ability.OnAnimationInterrupt
   fullName: LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt
-- uid: LobsterFramework.AbilitySystem.Ability.InterruptAnimation*
-  commentId: Overload:LobsterFramework.AbilitySystem.Ability.InterruptAnimation
-  name: InterruptAnimation
-  nameWithType: Ability.InterruptAnimation
-  fullName: LobsterFramework.AbilitySystem.Ability.InterruptAnimation
 - uid: LobsterFramework.AbilitySystem.Ability.OnEnqueue*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.OnEnqueue
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig,System.String)
   name: OnEnqueue
   nameWithType: Ability.OnEnqueue
   fullName: LobsterFramework.AbilitySystem.Ability.OnEnqueue
 - uid: LobsterFramework.AbilitySystem.Ability.HasConfig*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.HasConfig
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.HasConfig(System.String)
   name: HasConfig
   nameWithType: Ability.HasConfig
   fullName: LobsterFramework.AbilitySystem.Ability.HasConfig
 - uid: LobsterFramework.AbilitySystem.Ability.Signal*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.Signal
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Signal(System.String)
   name: Signal
   nameWithType: Ability.Signal
   fullName: LobsterFramework.AbilitySystem.Ability.Signal
 - uid: LobsterFramework.AbilitySystem.Ability.SignalBody*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.SignalBody
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.SignalBody(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   name: SignalBody
   nameWithType: Ability.SignalBody
   fullName: LobsterFramework.AbilitySystem.Ability.SignalBody

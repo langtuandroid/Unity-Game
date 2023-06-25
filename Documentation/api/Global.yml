@@ -3,11 +3,10 @@ items:
 - uid: Global
   id: Global
   children:
-  - Global.ActionDataSODrawer
-  - Global.ActionPriority
-  - Global.ActionPrioritySO
   - Global.AIAnimationConfigurator
   - Global.AITrackData
+  - Global.ActionPriority
+  - Global.ActionPrioritySO
   - Global.AstarPath
   - Global.AstarPath.AstarDistribution
   - Global.BoolEventChannel
@@ -17,7 +16,6 @@ items:
   - Global.DialogueBox
   - Global.DropdownSample
   - Global.EnvMapAnimator
-  - Global.ExposedFieldAttribute
   - Global.FloatEventChannel
   - Global.GameManager
   - Global.GameStateManager
@@ -52,16 +50,15 @@ items:
   - Global.TargetConfig
   - Global.Task
   - Global.Task.FinishedHandler
-  - Global.TestBehavior
   - Global.VarBool
   - Global.VarBoolDrawer
   - Global.VarFloat
   - Global.VarFloatDrawer
-  - Global.Variable`1
   - Global.VarInt
   - Global.VarIntDrawer
   - Global.VarString
   - Global.VarStringDrawer
+  - Global.Variable`1
   - Global.VoidEventChannel
   langs:
   - csharp
@@ -75,177 +72,271 @@ items:
 references:
 - uid: Global.EnvMapAnimator
   commentId: T:Global.EnvMapAnimator
+  href: EnvMapAnimator.html
   name: EnvMapAnimator
   nameWithType: EnvMapAnimator
   fullName: EnvMapAnimator
 - uid: Global.ChatController
   commentId: T:Global.ChatController
+  href: ChatController.html
   name: ChatController
   nameWithType: ChatController
   fullName: ChatController
 - uid: Global.DropdownSample
   commentId: T:Global.DropdownSample
+  href: DropdownSample.html
   name: DropdownSample
   nameWithType: DropdownSample
   fullName: DropdownSample
 - uid: Global.SnapToNode
   commentId: T:Global.SnapToNode
+  href: SnapToNode.html
   name: SnapToNode
   nameWithType: SnapToNode
   fullName: SnapToNode
 - uid: Global.AstarPath
   commentId: T:Global.AstarPath
+  href: AstarPath.html
   name: AstarPath
   nameWithType: AstarPath
   fullName: AstarPath
 - uid: Global.AstarPath.AstarDistribution
   commentId: T:Global.AstarPath.AstarDistribution
+  href: AstarPath.html
   name: AstarPath.AstarDistribution
   nameWithType: AstarPath.AstarDistribution
   fullName: AstarPath.AstarDistribution
   spec.csharp:
   - uid: Global.AstarPath
     name: AstarPath
+    href: AstarPath.html
   - name: .
   - uid: Global.AstarPath.AstarDistribution
     name: AstarDistribution
+    href: AstarPath.AstarDistribution.html
   spec.vb:
   - uid: Global.AstarPath
     name: AstarPath
+    href: AstarPath.html
   - name: .
   - uid: Global.AstarPath.AstarDistribution
     name: AstarDistribution
-- uid: Global.RefActionPriorityDrawer
-  commentId: T:Global.RefActionPriorityDrawer
-  name: RefActionPriorityDrawer
-  nameWithType: RefActionPriorityDrawer
-  fullName: RefActionPriorityDrawer
-- uid: Global.VarString
-  commentId: T:Global.VarString
-  name: VarString
-  nameWithType: VarString
-  fullName: VarString
-- uid: Global.RefBoolDrawer
-  commentId: T:Global.RefBoolDrawer
-  name: RefBoolDrawer
-  nameWithType: RefBoolDrawer
-  fullName: RefBoolDrawer
-- uid: Global.SceneLoader
-  commentId: T:Global.SceneLoader
-  name: SceneLoader
-  nameWithType: SceneLoader
-  fullName: SceneLoader
-- uid: Global.VarBool
-  commentId: T:Global.VarBool
-  name: VarBool
-  nameWithType: VarBool
-  fullName: VarBool
-- uid: Global.RefInt
-  commentId: T:Global.RefInt
-  name: RefInt
-  nameWithType: RefInt
-  fullName: RefInt
-- uid: Global.RefFloat
-  commentId: T:Global.RefFloat
-  name: RefFloat
-  nameWithType: RefFloat
-  fullName: RefFloat
+    href: AstarPath.AstarDistribution.html
+- uid: Global.DialogueBox
+  commentId: T:Global.DialogueBox
+  href: DialogueBox.html
+  name: DialogueBox
+  nameWithType: DialogueBox
+  fullName: DialogueBox
+- uid: Global.PlayerInput
+  commentId: T:Global.PlayerInput
+  href: PlayerInput.html
+  name: PlayerInput
+  nameWithType: PlayerInput
+  fullName: PlayerInput
+- uid: Global.PlayerInput.PlayerActions
+  commentId: T:Global.PlayerInput.PlayerActions
+  href: PlayerInput.html
+  name: PlayerInput.PlayerActions
+  nameWithType: PlayerInput.PlayerActions
+  fullName: PlayerInput.PlayerActions
+  spec.csharp:
+  - uid: Global.PlayerInput
+    name: PlayerInput
+    href: PlayerInput.html
+  - name: .
+  - uid: Global.PlayerInput.PlayerActions
+    name: PlayerActions
+    href: PlayerInput.PlayerActions.html
+  spec.vb:
+  - uid: Global.PlayerInput
+    name: PlayerInput
+    href: PlayerInput.html
+  - name: .
+  - uid: Global.PlayerInput.PlayerActions
+    name: PlayerActions
+    href: PlayerInput.PlayerActions.html
+- uid: Global.PlayerInput.IPlayerActions
+  commentId: T:Global.PlayerInput.IPlayerActions
+  href: PlayerInput.html
+  name: PlayerInput.IPlayerActions
+  nameWithType: PlayerInput.IPlayerActions
+  fullName: PlayerInput.IPlayerActions
+  spec.csharp:
+  - uid: Global.PlayerInput
+    name: PlayerInput
+    href: PlayerInput.html
+  - name: .
+  - uid: Global.PlayerInput.IPlayerActions
+    name: IPlayerActions
+    href: PlayerInput.IPlayerActions.html
+  spec.vb:
+  - uid: Global.PlayerInput
+    name: PlayerInput
+    href: PlayerInput.html
+  - name: .
+  - uid: Global.PlayerInput.IPlayerActions
+    name: IPlayerActions
+    href: PlayerInput.IPlayerActions.html
 - uid: Global.VarStringDrawer
   commentId: T:Global.VarStringDrawer
+  href: VarStringDrawer.html
   name: VarStringDrawer
   nameWithType: VarStringDrawer
   fullName: VarStringDrawer
-- uid: Global.VarBoolDrawer
-  commentId: T:Global.VarBoolDrawer
-  name: VarBoolDrawer
-  nameWithType: VarBoolDrawer
-  fullName: VarBoolDrawer
-- uid: Global.IConsumable
-  commentId: T:Global.IConsumable
-  name: IConsumable
-  nameWithType: IConsumable
-  fullName: IConsumable
-- uid: Global.Task
-  commentId: T:Global.Task
-  name: Task
-  nameWithType: Task
-  fullName: Task
-- uid: Global.Task.FinishedHandler
-  commentId: T:Global.Task.FinishedHandler
-  name: Task.FinishedHandler
-  nameWithType: Task.FinishedHandler
-  fullName: Task.FinishedHandler
-  spec.csharp:
-  - uid: Global.Task
-    name: Task
-  - name: .
-  - uid: Global.Task.FinishedHandler
-    name: FinishedHandler
-  spec.vb:
-  - uid: Global.Task
-    name: Task
-  - name: .
-  - uid: Global.Task.FinishedHandler
-    name: FinishedHandler
-- uid: Global.RefStringDrawer
-  commentId: T:Global.RefStringDrawer
-  name: RefStringDrawer
-  nameWithType: RefStringDrawer
-  fullName: RefStringDrawer
-- uid: Global.SceneEventChannel
-  commentId: T:Global.SceneEventChannel
-  name: SceneEventChannel
-  nameWithType: SceneEventChannel
-  fullName: SceneEventChannel
-- uid: Global.BoolEventChannel
-  commentId: T:Global.BoolEventChannel
-  name: BoolEventChannel
-  nameWithType: BoolEventChannel
-  fullName: BoolEventChannel
-- uid: Global.VoidEventChannel
-  commentId: T:Global.VoidEventChannel
-  name: VoidEventChannel
-  nameWithType: VoidEventChannel
-  fullName: VoidEventChannel
+- uid: Global.VarFloatDrawer
+  commentId: T:Global.VarFloatDrawer
+  href: VarFloatDrawer.html
+  name: VarFloatDrawer
+  nameWithType: VarFloatDrawer
+  fullName: VarFloatDrawer
+- uid: Global.RefInt
+  commentId: T:Global.RefInt
+  href: RefInt.html
+  name: RefInt
+  nameWithType: RefInt
+  fullName: RefInt
 - uid: Global.SerializedPropertyExtensions
   commentId: T:Global.SerializedPropertyExtensions
+  href: SerializedPropertyExtensions.html
   name: SerializedPropertyExtensions
   nameWithType: SerializedPropertyExtensions
   fullName: SerializedPropertyExtensions
-- uid: Global.IntroMenu
-  commentId: T:Global.IntroMenu
-  name: IntroMenu
-  nameWithType: IntroMenu
-  fullName: IntroMenu
-- uid: Global.OrderedSet`1
-  commentId: T:Global.OrderedSet`1
-  name: OrderedSet<T>
-  nameWithType: OrderedSet<T>
-  fullName: OrderedSet<T>
-  nameWithType.vb: OrderedSet(Of T)
-  fullName.vb: OrderedSet(Of T)
-  name.vb: OrderedSet(Of T)
-  spec.csharp:
-  - uid: Global.OrderedSet`1
-    name: OrderedSet
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: Global.OrderedSet`1
-    name: OrderedSet
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: Global.SimpleItem
-  commentId: T:Global.SimpleItem
-  name: SimpleItem
-  nameWithType: SimpleItem
-  fullName: SimpleItem
+- uid: Global.VarBoolDrawer
+  commentId: T:Global.VarBoolDrawer
+  href: VarBoolDrawer.html
+  name: VarBoolDrawer
+  nameWithType: VarBoolDrawer
+  fullName: VarBoolDrawer
+- uid: Global.RefActionPriorityDrawer
+  commentId: T:Global.RefActionPriorityDrawer
+  href: RefActionPriorityDrawer.html
+  name: RefActionPriorityDrawer
+  nameWithType: RefActionPriorityDrawer
+  fullName: RefActionPriorityDrawer
+- uid: Global.RefString
+  commentId: T:Global.RefString
+  href: RefString.html
+  name: RefString
+  nameWithType: RefString
+  fullName: RefString
+- uid: Global.ResourceStorage
+  commentId: T:Global.ResourceStorage
+  href: ResourceStorage.html
+  name: ResourceStorage
+  nameWithType: ResourceStorage
+  fullName: ResourceStorage
+- uid: Global.IEquipable
+  commentId: T:Global.IEquipable
+  href: IEquipable.html
+  name: IEquipable
+  nameWithType: IEquipable
+  fullName: IEquipable
+- uid: Global.AIAnimationConfigurator
+  commentId: T:Global.AIAnimationConfigurator
+  href: AIAnimationConfigurator.html
+  name: AIAnimationConfigurator
+  nameWithType: AIAnimationConfigurator
+  fullName: AIAnimationConfigurator
+- uid: Global.VarString
+  commentId: T:Global.VarString
+  href: VarString.html
+  name: VarString
+  nameWithType: VarString
+  fullName: VarString
+- uid: Global.IntEventChannel
+  commentId: T:Global.IntEventChannel
+  href: IntEventChannel.html
+  name: IntEventChannel
+  nameWithType: IntEventChannel
+  fullName: IntEventChannel
+- uid: Global.Projectile
+  commentId: T:Global.Projectile
+  href: Projectile.html
+  name: Projectile
+  nameWithType: Projectile
+  fullName: Projectile
+- uid: Global.ActionPrioritySO
+  commentId: T:Global.ActionPrioritySO
+  href: ActionPrioritySO.html
+  name: ActionPrioritySO
+  nameWithType: ActionPrioritySO
+  fullName: ActionPrioritySO
+- uid: Global.ActionPriority
+  commentId: T:Global.ActionPriority
+  href: ActionPriority.html
+  name: ActionPriority
+  nameWithType: ActionPriority
+  fullName: ActionPriority
+- uid: Global.StringEventChannel
+  commentId: T:Global.StringEventChannel
+  href: StringEventChannel.html
+  name: StringEventChannel
+  nameWithType: StringEventChannel
+  fullName: StringEventChannel
+- uid: Global.IConsumable
+  commentId: T:Global.IConsumable
+  href: IConsumable.html
+  name: IConsumable
+  nameWithType: IConsumable
+  fullName: IConsumable
+- uid: Global.RefAbilityPriority
+  commentId: T:Global.RefAbilityPriority
+  href: RefAbilityPriority.html
+  name: RefAbilityPriority
+  nameWithType: RefAbilityPriority
+  fullName: RefAbilityPriority
+- uid: Global.VarFloat
+  commentId: T:Global.VarFloat
+  href: VarFloat.html
+  name: VarFloat
+  nameWithType: VarFloat
+  fullName: VarFloat
+- uid: Global.FloatEventChannel
+  commentId: T:Global.FloatEventChannel
+  href: FloatEventChannel.html
+  name: FloatEventChannel
+  nameWithType: FloatEventChannel
+  fullName: FloatEventChannel
+- uid: Global.RefFloat
+  commentId: T:Global.RefFloat
+  href: RefFloat.html
+  name: RefFloat
+  nameWithType: RefFloat
+  fullName: RefFloat
+- uid: Global.RefIntDrawer
+  commentId: T:Global.RefIntDrawer
+  href: RefIntDrawer.html
+  name: RefIntDrawer
+  nameWithType: RefIntDrawer
+  fullName: RefIntDrawer
+- uid: Global.RefStringDrawer
+  commentId: T:Global.RefStringDrawer
+  href: RefStringDrawer.html
+  name: RefStringDrawer
+  nameWithType: RefStringDrawer
+  fullName: RefStringDrawer
+- uid: Global.TargetConfig
+  commentId: T:Global.TargetConfig
+  href: TargetConfig.html
+  name: TargetConfig
+  nameWithType: TargetConfig
+  fullName: TargetConfig
+- uid: Global.DescriptionBaseSO
+  commentId: T:Global.DescriptionBaseSO
+  href: DescriptionBaseSO.html
+  name: DescriptionBaseSO
+  nameWithType: DescriptionBaseSO
+  fullName: DescriptionBaseSO
+- uid: Global.RefBool
+  commentId: T:Global.RefBool
+  href: RefBool.html
+  name: RefBool
+  nameWithType: RefBool
+  fullName: RefBool
 - uid: Global.Variable`1
   commentId: T:Global.Variable`1
+  href: Variable-1.html
   name: Variable<T>
   nameWithType: Variable<T>
   fullName: Variable<T>
@@ -255,123 +346,122 @@ references:
   spec.csharp:
   - uid: Global.Variable`1
     name: Variable
+    href: Variable-1.html
   - name: <
   - name: T
   - name: '>'
   spec.vb:
   - uid: Global.Variable`1
     name: Variable
+    href: Variable-1.html
   - name: (
   - name: Of
   - name: " "
   - name: T
   - name: )
-- uid: Global.Scene
-  commentId: T:Global.Scene
-  name: Scene
-  nameWithType: Scene
-  fullName: Scene
-- uid: Global.GameManager
-  commentId: T:Global.GameManager
-  name: GameManager
-  nameWithType: GameManager
-  fullName: GameManager
-- uid: Global.TestBehavior
-  commentId: T:Global.TestBehavior
-  name: TestBehavior
-  nameWithType: TestBehavior
-  fullName: TestBehavior
-- uid: Global.RefBool
-  commentId: T:Global.RefBool
-  name: RefBool
-  nameWithType: RefBool
-  fullName: RefBool
-- uid: Global.PlayerInput
-  commentId: T:Global.PlayerInput
-  name: PlayerInput
-  nameWithType: PlayerInput
-  fullName: PlayerInput
-- uid: Global.PlayerInput.PlayerActions
-  commentId: T:Global.PlayerInput.PlayerActions
-  name: PlayerInput.PlayerActions
-  nameWithType: PlayerInput.PlayerActions
-  fullName: PlayerInput.PlayerActions
-  spec.csharp:
-  - uid: Global.PlayerInput
-    name: PlayerInput
-  - name: .
-  - uid: Global.PlayerInput.PlayerActions
-    name: PlayerActions
-  spec.vb:
-  - uid: Global.PlayerInput
-    name: PlayerInput
-  - name: .
-  - uid: Global.PlayerInput.PlayerActions
-    name: PlayerActions
-- uid: Global.PlayerInput.IPlayerActions
-  commentId: T:Global.PlayerInput.IPlayerActions
-  name: PlayerInput.IPlayerActions
-  nameWithType: PlayerInput.IPlayerActions
-  fullName: PlayerInput.IPlayerActions
-  spec.csharp:
-  - uid: Global.PlayerInput
-    name: PlayerInput
-  - name: .
-  - uid: Global.PlayerInput.IPlayerActions
-    name: IPlayerActions
-  spec.vb:
-  - uid: Global.PlayerInput
-    name: PlayerInput
-  - name: .
-  - uid: Global.PlayerInput.IPlayerActions
-    name: IPlayerActions
-- uid: Global.FloatEventChannel
-  commentId: T:Global.FloatEventChannel
-  name: FloatEventChannel
-  nameWithType: FloatEventChannel
-  fullName: FloatEventChannel
-- uid: Global.VarIntDrawer
-  commentId: T:Global.VarIntDrawer
-  name: VarIntDrawer
-  nameWithType: VarIntDrawer
-  fullName: VarIntDrawer
-- uid: Global.IEquipable
-  commentId: T:Global.IEquipable
-  name: IEquipable
-  nameWithType: IEquipable
-  fullName: IEquipable
-- uid: Global.VarFloatDrawer
-  commentId: T:Global.VarFloatDrawer
-  name: VarFloatDrawer
-  nameWithType: VarFloatDrawer
-  fullName: VarFloatDrawer
-- uid: Global.DescriptionBaseSO
-  commentId: T:Global.DescriptionBaseSO
-  name: DescriptionBaseSO
-  nameWithType: DescriptionBaseSO
-  fullName: DescriptionBaseSO
-- uid: Global.RefAbilityPriority
-  commentId: T:Global.RefAbilityPriority
-  name: RefAbilityPriority
-  nameWithType: RefAbilityPriority
-  fullName: RefAbilityPriority
-- uid: Global.RefIntDrawer
-  commentId: T:Global.RefIntDrawer
-  name: RefIntDrawer
-  nameWithType: RefIntDrawer
-  fullName: RefIntDrawer
+- uid: Global.VarBool
+  commentId: T:Global.VarBool
+  href: VarBool.html
+  name: VarBool
+  nameWithType: VarBool
+  fullName: VarBool
+- uid: Global.GameStateManager
+  commentId: T:Global.GameStateManager
+  href: GameStateManager.html
+  name: GameStateManager
+  nameWithType: GameStateManager
+  fullName: GameStateManager
 - uid: Global.VarInt
   commentId: T:Global.VarInt
+  href: VarInt.html
   name: VarInt
   nameWithType: VarInt
   fullName: VarInt
-- uid: Global.DialogueBox
-  commentId: T:Global.DialogueBox
-  name: DialogueBox
-  nameWithType: DialogueBox
-  fullName: DialogueBox
+- uid: Global.ControllerData
+  commentId: T:Global.ControllerData
+  href: ControllerData.html
+  name: ControllerData
+  nameWithType: ControllerData
+  fullName: ControllerData
+- uid: Global.SceneLoader
+  commentId: T:Global.SceneLoader
+  href: SceneLoader.html
+  name: SceneLoader
+  nameWithType: SceneLoader
+  fullName: SceneLoader
+- uid: Global.AITrackData
+  commentId: T:Global.AITrackData
+  href: AITrackData.html
+  name: AITrackData
+  nameWithType: AITrackData
+  fullName: AITrackData
+- uid: Global.BoolEventChannel
+  commentId: T:Global.BoolEventChannel
+  href: BoolEventChannel.html
+  name: BoolEventChannel
+  nameWithType: BoolEventChannel
+  fullName: BoolEventChannel
+- uid: Global.VoidEventChannel
+  commentId: T:Global.VoidEventChannel
+  href: VoidEventChannel.html
+  name: VoidEventChannel
+  nameWithType: VoidEventChannel
+  fullName: VoidEventChannel
+- uid: Global.VarIntDrawer
+  commentId: T:Global.VarIntDrawer
+  href: VarIntDrawer.html
+  name: VarIntDrawer
+  nameWithType: VarIntDrawer
+  fullName: VarIntDrawer
+- uid: Global.RefFloatDrawer
+  commentId: T:Global.RefFloatDrawer
+  href: RefFloatDrawer.html
+  name: RefFloatDrawer
+  nameWithType: RefFloatDrawer
+  fullName: RefFloatDrawer
+- uid: Global.SceneEventChannel
+  commentId: T:Global.SceneEventChannel
+  href: SceneEventChannel.html
+  name: SceneEventChannel
+  nameWithType: SceneEventChannel
+  fullName: SceneEventChannel
+- uid: Global.Task
+  commentId: T:Global.Task
+  href: Task.html
+  name: Task
+  nameWithType: Task
+  fullName: Task
+- uid: Global.Task.FinishedHandler
+  commentId: T:Global.Task.FinishedHandler
+  href: Task.html
+  name: Task.FinishedHandler
+  nameWithType: Task.FinishedHandler
+  fullName: Task.FinishedHandler
+  spec.csharp:
+  - uid: Global.Task
+    name: Task
+    href: Task.html
+  - name: .
+  - uid: Global.Task.FinishedHandler
+    name: FinishedHandler
+    href: Task.FinishedHandler.html
+  spec.vb:
+  - uid: Global.Task
+    name: Task
+    href: Task.html
+  - name: .
+  - uid: Global.Task.FinishedHandler
+    name: FinishedHandler
+    href: Task.FinishedHandler.html
+- uid: Global.RefBoolDrawer
+  commentId: T:Global.RefBoolDrawer
+  href: RefBoolDrawer.html
+  name: RefBoolDrawer
+  nameWithType: RefBoolDrawer
+  fullName: RefBoolDrawer
 - uid: Global.SerializableLinkedList`1
   commentId: T:Global.SerializableLinkedList`1
+  href: SerializableLinkedList-1.html
   name: SerializableLinkedList<T>
   nameWithType: SerializableLinkedList<T>
   fullName: SerializableLinkedList<T>
@@ -381,94 +471,65 @@ references:
   spec.csharp:
   - uid: Global.SerializableLinkedList`1
     name: SerializableLinkedList
+    href: SerializableLinkedList-1.html
   - name: <
   - name: T
   - name: '>'
   spec.vb:
   - uid: Global.SerializableLinkedList`1
     name: SerializableLinkedList
+    href: SerializableLinkedList-1.html
   - name: (
   - name: Of
   - name: " "
   - name: T
   - name: )
-- uid: Global.ExposedFieldAttribute
-  commentId: T:Global.ExposedFieldAttribute
-  name: ExposedFieldAttribute
-  nameWithType: ExposedFieldAttribute
-  fullName: ExposedFieldAttribute
-- uid: Global.Projectile
-  commentId: T:Global.Projectile
-  name: Projectile
-  nameWithType: Projectile
-  fullName: Projectile
-- uid: Global.AIAnimationConfigurator
-  commentId: T:Global.AIAnimationConfigurator
-  name: AIAnimationConfigurator
-  nameWithType: AIAnimationConfigurator
-  fullName: AIAnimationConfigurator
-- uid: Global.GameStateManager
-  commentId: T:Global.GameStateManager
-  name: GameStateManager
-  nameWithType: GameStateManager
-  fullName: GameStateManager
-- uid: Global.ControllerData
-  commentId: T:Global.ControllerData
-  name: ControllerData
-  nameWithType: ControllerData
-  fullName: ControllerData
-- uid: Global.RefFloatDrawer
-  commentId: T:Global.RefFloatDrawer
-  name: RefFloatDrawer
-  nameWithType: RefFloatDrawer
-  fullName: RefFloatDrawer
-- uid: Global.ActionDataSODrawer
-  commentId: T:Global.ActionDataSODrawer
-  name: ActionDataSODrawer
-  nameWithType: ActionDataSODrawer
-  fullName: ActionDataSODrawer
-- uid: Global.StringEventChannel
-  commentId: T:Global.StringEventChannel
-  name: StringEventChannel
-  nameWithType: StringEventChannel
-  fullName: StringEventChannel
-- uid: Global.ResourceStorage
-  commentId: T:Global.ResourceStorage
-  name: ResourceStorage
-  nameWithType: ResourceStorage
-  fullName: ResourceStorage
-- uid: Global.TargetConfig
-  commentId: T:Global.TargetConfig
-  name: TargetConfig
-  nameWithType: TargetConfig
-  fullName: TargetConfig
-- uid: Global.ActionPrioritySO
-  commentId: T:Global.ActionPrioritySO
-  name: ActionPrioritySO
-  nameWithType: ActionPrioritySO
-  fullName: ActionPrioritySO
-- uid: Global.ActionPriority
-  commentId: T:Global.ActionPriority
-  name: ActionPriority
-  nameWithType: ActionPriority
-  fullName: ActionPriority
-- uid: Global.AITrackData
-  commentId: T:Global.AITrackData
-  name: AITrackData
-  nameWithType: AITrackData
-  fullName: AITrackData
-- uid: Global.IntEventChannel
-  commentId: T:Global.IntEventChannel
-  name: IntEventChannel
-  nameWithType: IntEventChannel
-  fullName: IntEventChannel
-- uid: Global.RefString
-  commentId: T:Global.RefString
-  name: RefString
-  nameWithType: RefString
-  fullName: RefString
-- uid: Global.VarFloat
-  commentId: T:Global.VarFloat
-  name: VarFloat
-  nameWithType: VarFloat
-  fullName: VarFloat
+- uid: Global.IntroMenu
+  commentId: T:Global.IntroMenu
+  href: IntroMenu.html
+  name: IntroMenu
+  nameWithType: IntroMenu
+  fullName: IntroMenu
+- uid: Global.Scene
+  commentId: T:Global.Scene
+  href: Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: Scene
+- uid: Global.GameManager
+  commentId: T:Global.GameManager
+  href: GameManager.html
+  name: GameManager
+  nameWithType: GameManager
+  fullName: GameManager
+- uid: Global.SimpleItem
+  commentId: T:Global.SimpleItem
+  href: SimpleItem.html
+  name: SimpleItem
+  nameWithType: SimpleItem
+  fullName: SimpleItem
+- uid: Global.OrderedSet`1
+  commentId: T:Global.OrderedSet`1
+  href: OrderedSet-1.html
+  name: OrderedSet<T>
+  nameWithType: OrderedSet<T>
+  fullName: OrderedSet<T>
+  nameWithType.vb: OrderedSet(Of T)
+  fullName.vb: OrderedSet(Of T)
+  name.vb: OrderedSet(Of T)
+  spec.csharp:
+  - uid: Global.OrderedSet`1
+    name: OrderedSet
+    href: OrderedSet-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Global.OrderedSet`1
+    name: OrderedSet
+    href: OrderedSet-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

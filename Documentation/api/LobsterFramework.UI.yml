@@ -4,9 +4,7 @@ items:
   commentId: N:LobsterFramework.UI
   id: LobsterFramework.UI
   children:
-  - LobsterFramework.UI.DialogueDisplayer
   - LobsterFramework.UI.InteractionUI
-  - LobsterFramework.UI.PlayerUIDisplayer
   langs:
   - csharp
   - vb
@@ -15,20 +13,11 @@ items:
   fullName: LobsterFramework.UI
   type: Namespace
   assemblies:
-  - MyScripts
+  - LobsterFramework
 references:
 - uid: LobsterFramework.UI.InteractionUI
   commentId: T:LobsterFramework.UI.InteractionUI
+  href: LobsterFramework.UI.InteractionUI.html
   name: InteractionUI
   nameWithType: InteractionUI
   fullName: LobsterFramework.UI.InteractionUI
-- uid: LobsterFramework.UI.DialogueDisplayer
-  commentId: T:LobsterFramework.UI.DialogueDisplayer
-  name: DialogueDisplayer
-  nameWithType: DialogueDisplayer
-  fullName: LobsterFramework.UI.DialogueDisplayer
-- uid: LobsterFramework.UI.PlayerUIDisplayer
-  commentId: T:LobsterFramework.UI.PlayerUIDisplayer
-  name: PlayerUIDisplayer
-  nameWithType: PlayerUIDisplayer
-  fullName: LobsterFramework.UI.PlayerUIDisplayer

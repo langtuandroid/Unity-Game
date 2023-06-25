@@ -17,12 +17,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Dialogue/DialogueResponse.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Dialogue/DialogueResponse.cs
     id: DialogueResponse
-    path: ../Assets/Scripts/Scriptable Objects/Dialogue/DialogueResponse.cs
+    path: ../Assets/Framework/Scriptable Objects/Dialogue/DialogueResponse.cs
     startLine: 8
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.DialogueSystem
   syntax:
     content: >-
@@ -52,12 +52,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Dialogue/DialogueResponse.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Dialogue/DialogueResponse.cs
     id: Respond
-    path: ../Assets/Scripts/Scriptable Objects/Dialogue/DialogueResponse.cs
+    path: ../Assets/Framework/Scriptable Objects/Dialogue/DialogueResponse.cs
     startLine: 16
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.DialogueSystem
   syntax:
     content: public void Respond()
@@ -76,12 +76,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Dialogue/DialogueResponse.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Dialogue/DialogueResponse.cs
     id: Dialogue
-    path: ../Assets/Scripts/Scriptable Objects/Dialogue/DialogueResponse.cs
+    path: ../Assets/Framework/Scriptable Objects/Dialogue/DialogueResponse.cs
     startLine: 24
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.DialogueSystem
   syntax:
     content: public DialogueObject Dialogue { get; }
@@ -103,12 +103,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Dialogue/DialogueResponse.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Dialogue/DialogueResponse.cs
     id: Text
-    path: ../Assets/Scripts/Scriptable Objects/Dialogue/DialogueResponse.cs
+    path: ../Assets/Framework/Scriptable Objects/Dialogue/DialogueResponse.cs
     startLine: 29
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.DialogueSystem
   syntax:
     content: public string Text { get; }
@@ -120,25 +120,31 @@ items:
 references:
 - uid: LobsterFramework.DialogueSystem
   commentId: N:LobsterFramework.DialogueSystem
+  href: LobsterFramework.html
   name: LobsterFramework.DialogueSystem
   nameWithType: LobsterFramework.DialogueSystem
   fullName: LobsterFramework.DialogueSystem
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.DialogueSystem
     name: DialogueSystem
+    href: LobsterFramework.DialogueSystem.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.DialogueSystem
     name: DialogueSystem
+    href: LobsterFramework.DialogueSystem.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -148,27 +154,32 @@ references:
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: LobsterFramework.DialogueSystem.DialogueResponse.Respond*
   commentId: Overload:LobsterFramework.DialogueSystem.DialogueResponse.Respond
+  href: LobsterFramework.DialogueSystem.DialogueResponse.html#LobsterFramework.DialogueSystem.DialogueResponse.Respond
   name: Respond
   nameWithType: DialogueResponse.Respond
   fullName: LobsterFramework.DialogueSystem.DialogueResponse.Respond
 - uid: LobsterFramework.DialogueSystem.DialogueResponse.Dialogue*
   commentId: Overload:LobsterFramework.DialogueSystem.DialogueResponse.Dialogue
+  href: LobsterFramework.DialogueSystem.DialogueResponse.html#LobsterFramework.DialogueSystem.DialogueResponse.Dialogue
   name: Dialogue
   nameWithType: DialogueResponse.Dialogue
   fullName: LobsterFramework.DialogueSystem.DialogueResponse.Dialogue
 - uid: LobsterFramework.DialogueSystem.DialogueObject
   commentId: T:LobsterFramework.DialogueSystem.DialogueObject
   parent: LobsterFramework.DialogueSystem
+  href: LobsterFramework.DialogueSystem.DialogueObject.html
   name: DialogueObject
   nameWithType: DialogueObject
   fullName: LobsterFramework.DialogueSystem.DialogueObject
 - uid: LobsterFramework.DialogueSystem.DialogueResponse.Text*
   commentId: Overload:LobsterFramework.DialogueSystem.DialogueResponse.Text
+  href: LobsterFramework.DialogueSystem.DialogueResponse.html#LobsterFramework.DialogueSystem.DialogueResponse.Text
   name: Text
   nameWithType: DialogueResponse.Text
   fullName: LobsterFramework.DialogueSystem.DialogueResponse.Text
@@ -176,6 +187,7 @@ references:
   commentId: T:System.String
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: string
   nameWithType: string
   fullName: string

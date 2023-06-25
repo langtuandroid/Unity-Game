@@ -14,12 +14,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     id: StringAbilityConfigDictionary
-    path: ../Assets/Scripts/Utility/SerializableDataStructures/SerializableDictionary.cs
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
     startLine: 109
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: >-
@@ -63,25 +63,31 @@ items:
 references:
 - uid: LobsterFramework.Utility
   commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
   name: LobsterFramework.Utility
   nameWithType: LobsterFramework.Utility
   fullName: LobsterFramework.Utility
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Utility
     name: Utility
+    href: LobsterFramework.Utility.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -92,6 +98,7 @@ references:
   commentId: T:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   parent: LobsterFramework.Utility
   definition: LobsterFramework.Utility.SerializableDictionary`2
+  href: LobsterFramework.Utility.SerializableDictionary-2.html
   name: SerializableDictionary<string, Ability.AbilityConfig>
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>
@@ -101,34 +108,42 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary`2
     name: SerializableDictionary
+    href: LobsterFramework.Utility.SerializableDictionary-2.html
   - name: <
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: .
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: '>'
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary`2
     name: SerializableDictionary
+    href: LobsterFramework.Utility.SerializableDictionary-2.html
   - name: (
   - name: Of
   - name: " "
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability
     name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
   - name: .
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: )
 - uid: UnityEngine.ISerializationCallbackReceiver
   commentId: T:UnityEngine.ISerializationCallbackReceiver
@@ -141,6 +156,7 @@ references:
   commentId: F:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.keys
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.keys
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.keys
   name: keys
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.keys
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.keys
@@ -150,6 +166,7 @@ references:
   commentId: F:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.values
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.values
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.values
   name: values
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.values
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.values
@@ -159,6 +176,7 @@ references:
   commentId: F:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.dictionary
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.dictionary
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.dictionary
   name: dictionary
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.dictionary
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.dictionary
@@ -168,6 +186,7 @@ references:
   commentId: P:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Item(System.String)
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.Item(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.string
   name: this[string]
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.this[string]
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.this[string]
@@ -180,19 +199,23 @@ references:
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ']'
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Item(System.String)
     name: this[]
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Item(System.String)
   - name: (
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Keys
   commentId: P:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Keys
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.Keys
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Keys
   name: Keys
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.Keys
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.Keys
@@ -202,6 +225,7 @@ references:
   commentId: P:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Values
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.Values
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Values
   name: Values
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.Values
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.Values
@@ -211,6 +235,7 @@ references:
   commentId: P:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Count
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.Count
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Count
   name: Count
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.Count
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.Count
@@ -220,6 +245,7 @@ references:
   commentId: P:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.IsReadOnly
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.IsReadOnly
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.IsReadOnly
   name: IsReadOnly
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.IsReadOnly
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.IsReadOnly
@@ -229,6 +255,7 @@ references:
   commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Add(System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Add(System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   name: Add(string, AbilityConfig)
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.Add(string, Ability.AbilityConfig)
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.Add(string, LobsterFramework.AbilitySystem.Ability.AbilityConfig)
@@ -238,31 +265,38 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Add(System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig)
     name: Add
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Add(System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   - name: (
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Add(System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig)
     name: Add
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Add(System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig)
   - name: (
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
   commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
   name: Add(KeyValuePair<string, AbilityConfig>)
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.Add(KeyValuePair<string, Ability.AbilityConfig>)
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.Add(System.Collections.Generic.KeyValuePair<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>)
@@ -272,43 +306,52 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
     name: Add
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
   - name: (
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: <
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: '>'
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
     name: Add
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
   - name: (
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: (
   - name: Of
   - name: " "
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: )
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Clear
   commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Clear
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.Clear
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Clear
   name: Clear()
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.Clear()
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.Clear()
@@ -317,17 +360,20 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Clear
     name: Clear
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Clear
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Clear
     name: Clear
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Clear
   - name: (
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
   commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
   name: Contains(KeyValuePair<string, AbilityConfig>)
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.Contains(KeyValuePair<string, Ability.AbilityConfig>)
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.Contains(System.Collections.Generic.KeyValuePair<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>)
@@ -337,43 +383,52 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
     name: Contains
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
   - name: (
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: <
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: '>'
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
     name: Contains
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
   - name: (
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: (
   - name: Of
   - name: " "
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: )
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.ContainsKey(System.String)
   commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.ContainsKey(System.String)
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.ContainsKey(System.String)
   name: ContainsKey(string)
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.ContainsKey(string)
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.ContainsKey(string)
@@ -383,23 +438,28 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.ContainsKey(System.String)
     name: ContainsKey
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.ContainsKey(System.String)
   - name: (
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.ContainsKey(System.String)
     name: ContainsKey
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.ContainsKey(System.String)
   - name: (
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}[],System.Int32)
   commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}[],System.Int32)
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}[],System.Int32)
   name: CopyTo(KeyValuePair<string, AbilityConfig>[], int)
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.CopyTo(KeyValuePair<string, Ability.AbilityConfig>[], int)
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.CopyTo(System.Collections.Generic.KeyValuePair<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>[], int)
@@ -409,18 +469,22 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}[],System.Int32)
     name: CopyTo
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}[],System.Int32)
   - name: (
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: <
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: '>'
   - name: '['
   - name: ']'
@@ -429,24 +493,29 @@ references:
   - uid: System.Int32
     name: int
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}[],System.Int32)
     name: CopyTo
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}[],System.Int32)
   - name: (
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: (
   - name: Of
   - name: " "
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: )
   - name: (
   - name: )
@@ -455,11 +524,13 @@ references:
   - uid: System.Int32
     name: Integer
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.GetEnumerator
   commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.GetEnumerator
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.GetEnumerator
   name: GetEnumerator()
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.GetEnumerator()
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.GetEnumerator()
@@ -468,17 +539,20 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.GetEnumerator
     name: GetEnumerator
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.GetEnumerator
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.GetEnumerator
     name: GetEnumerator
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.GetEnumerator
   - name: (
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.OnAfterDeserialize
   commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.OnAfterDeserialize
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.OnAfterDeserialize
   name: OnAfterDeserialize()
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.OnAfterDeserialize()
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.OnAfterDeserialize()
@@ -487,17 +561,20 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.OnAfterDeserialize
     name: OnAfterDeserialize
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.OnAfterDeserialize
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.OnAfterDeserialize
     name: OnAfterDeserialize
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.OnAfterDeserialize
   - name: (
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.OnBeforeSerialize
   commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.OnBeforeSerialize
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.OnBeforeSerialize
   name: OnBeforeSerialize()
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.OnBeforeSerialize()
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.OnBeforeSerialize()
@@ -506,17 +583,20 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.OnBeforeSerialize
     name: OnBeforeSerialize
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.OnBeforeSerialize
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.OnBeforeSerialize
     name: OnBeforeSerialize
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.OnBeforeSerialize
   - name: (
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Remove(System.String)
   commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Remove(System.String)
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Remove(System.String)
   name: Remove(string)
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.Remove(string)
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.Remove(string)
@@ -526,23 +606,28 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Remove(System.String)
     name: Remove
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Remove(System.String)
   - name: (
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Remove(System.String)
     name: Remove
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Remove(System.String)
   - name: (
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
   commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
   name: Remove(KeyValuePair<string, AbilityConfig>)
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.Remove(KeyValuePair<string, Ability.AbilityConfig>)
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.Remove(System.Collections.Generic.KeyValuePair<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>)
@@ -552,43 +637,52 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
     name: Remove
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
   - name: (
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: <
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: '>'
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
     name: Remove
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig})
   - name: (
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: (
   - name: Of
   - name: " "
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: )
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.TryGetValue(System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig@)
   commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.TryGetValue(System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig@)
   parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}
   definition: LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.TryGetValue(System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig@)
   name: TryGetValue(string, out AbilityConfig)
   nameWithType: SerializableDictionary<string, Ability.AbilityConfig>.TryGetValue(string, out Ability.AbilityConfig)
   fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AbilitySystem.Ability.AbilityConfig>.TryGetValue(string, out LobsterFramework.AbilitySystem.Ability.AbilityConfig)
@@ -598,37 +692,45 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.TryGetValue(System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig@)
     name: TryGetValue
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.TryGetValue(System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig@)
   - name: (
   - uid: System.String
     name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - name: out
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.TryGetValue(System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig@)
     name: TryGetValue
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig}.TryGetValue(System.String,LobsterFramework.AbilitySystem.Ability.AbilityConfig@)
   - name: (
   - uid: System.String
     name: String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
   - name: )
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: LobsterFramework.Utility.SerializableDictionary`2
   commentId: T:LobsterFramework.Utility.SerializableDictionary`2
+  href: LobsterFramework.Utility.SerializableDictionary-2.html
   name: SerializableDictionary<TKey, TValue>
   nameWithType: SerializableDictionary<TKey, TValue>
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>
@@ -638,6 +740,7 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary`2
     name: SerializableDictionary
+    href: LobsterFramework.Utility.SerializableDictionary-2.html
   - name: <
   - name: TKey
   - name: ','
@@ -647,6 +750,7 @@ references:
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary`2
     name: SerializableDictionary
+    href: LobsterFramework.Utility.SerializableDictionary-2.html
   - name: (
   - name: Of
   - name: " "
@@ -663,6 +767,7 @@ references:
   fullName: UnityEngine
 - uid: LobsterFramework.Utility.SerializableDictionary`2.keys
   commentId: F:LobsterFramework.Utility.SerializableDictionary`2.keys
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.keys
   name: keys
   nameWithType: SerializableDictionary<TKey, TValue>.keys
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.keys
@@ -670,6 +775,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).keys
 - uid: LobsterFramework.Utility.SerializableDictionary`2.values
   commentId: F:LobsterFramework.Utility.SerializableDictionary`2.values
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.values
   name: values
   nameWithType: SerializableDictionary<TKey, TValue>.values
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.values
@@ -677,6 +783,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).values
 - uid: LobsterFramework.Utility.SerializableDictionary`2.dictionary
   commentId: F:LobsterFramework.Utility.SerializableDictionary`2.dictionary
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.dictionary
   name: dictionary
   nameWithType: SerializableDictionary<TKey, TValue>.dictionary
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.dictionary
@@ -684,6 +791,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).dictionary
 - uid: LobsterFramework.Utility.SerializableDictionary`2.Item(`0)
   commentId: P:LobsterFramework.Utility.SerializableDictionary`2.Item(`0)
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Item(`0)
   name: this[TKey]
   nameWithType: SerializableDictionary<TKey, TValue>.this[TKey]
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.this[TKey]
@@ -698,11 +806,13 @@ references:
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.Item(`0)
     name: this[]
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Item(`0)
   - name: (
   - name: TKey
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.Keys
   commentId: P:LobsterFramework.Utility.SerializableDictionary`2.Keys
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Keys
   name: Keys
   nameWithType: SerializableDictionary<TKey, TValue>.Keys
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Keys
@@ -710,6 +820,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Keys
 - uid: LobsterFramework.Utility.SerializableDictionary`2.Values
   commentId: P:LobsterFramework.Utility.SerializableDictionary`2.Values
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Values
   name: Values
   nameWithType: SerializableDictionary<TKey, TValue>.Values
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Values
@@ -717,6 +828,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Values
 - uid: LobsterFramework.Utility.SerializableDictionary`2.Count
   commentId: P:LobsterFramework.Utility.SerializableDictionary`2.Count
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Count
   name: Count
   nameWithType: SerializableDictionary<TKey, TValue>.Count
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Count
@@ -724,6 +836,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Count
 - uid: LobsterFramework.Utility.SerializableDictionary`2.IsReadOnly
   commentId: P:LobsterFramework.Utility.SerializableDictionary`2.IsReadOnly
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.IsReadOnly
   name: IsReadOnly
   nameWithType: SerializableDictionary<TKey, TValue>.IsReadOnly
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.IsReadOnly
@@ -731,6 +844,7 @@ references:
   fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).IsReadOnly
 - uid: LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
   commentId: M:LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
   name: Add(TKey, TValue)
   nameWithType: SerializableDictionary<TKey, TValue>.Add(TKey, TValue)
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Add(TKey, TValue)
@@ -739,6 +853,7 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
     name: Add
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
   - name: (
   - name: TKey
   - name: ','
@@ -748,6 +863,7 @@ references:
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
     name: Add
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
   - name: (
   - name: TKey
   - name: ','
@@ -757,6 +873,7 @@ references:
 - uid: LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
   commentId: M:LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
   isExternal: true
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
   name: Add(KeyValuePair<TKey, TValue>)
   nameWithType: SerializableDictionary<TKey, TValue>.Add(KeyValuePair<TKey, TValue>)
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Add(System.Collections.Generic.KeyValuePair<TKey, TValue>)
@@ -766,10 +883,12 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
     name: Add
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
   - name: (
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: <
   - name: TKey
   - name: ','
@@ -780,10 +899,12 @@ references:
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
     name: Add
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
   - name: (
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: (
   - name: Of
   - name: " "
@@ -795,6 +916,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.Clear
   commentId: M:LobsterFramework.Utility.SerializableDictionary`2.Clear
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Clear
   name: Clear()
   nameWithType: SerializableDictionary<TKey, TValue>.Clear()
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Clear()
@@ -803,16 +925,19 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.Clear
     name: Clear
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Clear
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.Clear
     name: Clear
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Clear
   - name: (
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
   commentId: M:LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
   isExternal: true
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
   name: Contains(KeyValuePair<TKey, TValue>)
   nameWithType: SerializableDictionary<TKey, TValue>.Contains(KeyValuePair<TKey, TValue>)
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Contains(System.Collections.Generic.KeyValuePair<TKey, TValue>)
@@ -822,10 +947,12 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
     name: Contains
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
   - name: (
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: <
   - name: TKey
   - name: ','
@@ -836,10 +963,12 @@ references:
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
     name: Contains
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
   - name: (
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: (
   - name: Of
   - name: " "
@@ -851,6 +980,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
   commentId: M:LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
   name: ContainsKey(TKey)
   nameWithType: SerializableDictionary<TKey, TValue>.ContainsKey(TKey)
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.ContainsKey(TKey)
@@ -859,18 +989,21 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
     name: ContainsKey
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
   - name: (
   - name: TKey
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
     name: ContainsKey
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
   - name: (
   - name: TKey
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
   commentId: M:LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
   isExternal: true
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
   name: CopyTo(KeyValuePair<TKey, TValue>[], int)
   nameWithType: SerializableDictionary<TKey, TValue>.CopyTo(KeyValuePair<TKey, TValue>[], int)
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.CopyTo(System.Collections.Generic.KeyValuePair<TKey, TValue>[], int)
@@ -880,10 +1013,12 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
     name: CopyTo
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
   - name: (
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: <
   - name: TKey
   - name: ','
@@ -897,14 +1032,17 @@ references:
   - uid: System.Int32
     name: int
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
     name: CopyTo
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
   - name: (
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: (
   - name: Of
   - name: " "
@@ -920,9 +1058,11 @@ references:
   - uid: System.Int32
     name: Integer
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
   commentId: M:LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
   name: GetEnumerator()
   nameWithType: SerializableDictionary<TKey, TValue>.GetEnumerator()
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.GetEnumerator()
@@ -931,15 +1071,18 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
     name: GetEnumerator
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
     name: GetEnumerator
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
   - name: (
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
   commentId: M:LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
   name: OnAfterDeserialize()
   nameWithType: SerializableDictionary<TKey, TValue>.OnAfterDeserialize()
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.OnAfterDeserialize()
@@ -948,15 +1091,18 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
     name: OnAfterDeserialize
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
     name: OnAfterDeserialize
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
   - name: (
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
   commentId: M:LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
   name: OnBeforeSerialize()
   nameWithType: SerializableDictionary<TKey, TValue>.OnBeforeSerialize()
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.OnBeforeSerialize()
@@ -965,15 +1111,18 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
     name: OnBeforeSerialize
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
   - name: (
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
     name: OnBeforeSerialize
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
   - name: (
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
   commentId: M:LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
   name: Remove(TKey)
   nameWithType: SerializableDictionary<TKey, TValue>.Remove(TKey)
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Remove(TKey)
@@ -982,18 +1131,21 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
     name: Remove
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
   - name: (
   - name: TKey
   - name: )
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
     name: Remove
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
   - name: (
   - name: TKey
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
   commentId: M:LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
   isExternal: true
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
   name: Remove(KeyValuePair<TKey, TValue>)
   nameWithType: SerializableDictionary<TKey, TValue>.Remove(KeyValuePair<TKey, TValue>)
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Remove(System.Collections.Generic.KeyValuePair<TKey, TValue>)
@@ -1003,10 +1155,12 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
     name: Remove
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
   - name: (
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: <
   - name: TKey
   - name: ','
@@ -1017,10 +1171,12 @@ references:
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
     name: Remove
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
   - name: (
   - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
   - name: (
   - name: Of
   - name: " "
@@ -1032,6 +1188,7 @@ references:
   - name: )
 - uid: LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
   commentId: M:LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
   name: TryGetValue(TKey, out TValue)
   nameWithType: SerializableDictionary<TKey, TValue>.TryGetValue(TKey, out TValue)
   fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.TryGetValue(TKey, out TValue)
@@ -1041,6 +1198,7 @@ references:
   spec.csharp:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
     name: TryGetValue
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
   - name: (
   - name: TKey
   - name: ','
@@ -1052,6 +1210,7 @@ references:
   spec.vb:
   - uid: LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
     name: TryGetValue
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
   - name: (
   - name: TKey
   - name: ','

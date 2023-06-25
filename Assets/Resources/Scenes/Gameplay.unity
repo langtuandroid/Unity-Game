@@ -23806,7 +23806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5482235366053718447, guid: 213afb349811dcf4495350629ffef984, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5482235366053718452, guid: 213afb349811dcf4495350629ffef984, type: 3}
       propertyPath: m_RootOrder
@@ -23860,10 +23860,34 @@ PrefabInstance:
       propertyPath: rotateSpeed.useSharedValue
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5482235366053718465, guid: 213afb349811dcf4495350629ffef984, type: 3}
+      propertyPath: maxHealth.value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482235366053718465, guid: 213afb349811dcf4495350629ffef984, type: 3}
+      propertyPath: maxPosture.value
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482235366053718465, guid: 213afb349811dcf4495350629ffef984, type: 3}
+      propertyPath: lowHealthRegen.value
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482235366053718465, guid: 213afb349811dcf4495350629ffef984, type: 3}
+      propertyPath: basePostureRegen.value
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482235366053718465, guid: 213afb349811dcf4495350629ffef984, type: 3}
+      propertyPath: lowHealthThreshold.value
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5482235366053718478, guid: 213afb349811dcf4495350629ffef984, type: 3}
       propertyPath: allStates.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8492195539783792894, guid: 213afb349811dcf4495350629ffef984, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: fa2dc5bfefc1f5f4b831c7b66a8f4269, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24035,7 +24059,7 @@ PrefabInstance:
     - target: {fileID: 7418350395924697828, guid: 5e9210b5ecf501a42ac9ff50e6fed96c, type: 3}
       propertyPath: data
       value: 
-      objectReference: {fileID: 11400000, guid: 086f471c8250ed3428032792b4b2a0e1, type: 2}
+      objectReference: {fileID: 11400000, guid: 19295613a1edf354285d3dc6c691790a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26690,7 +26714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityData: {fileID: 0}
-  data: {fileID: 11400000, guid: acb703e72dd6be543b4620976d895bf7, type: 2}
+  data: {fileID: 11400000, guid: 94cf967eb3fca474ab4e4e7b44a1dce0, type: 2}
 --- !u!114 &1014439924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28802,7 +28826,7 @@ PrefabInstance:
     - target: {fileID: 900687837731030965, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: data
       value: 
-      objectReference: {fileID: 11400000, guid: 0fc645c4e4251d94d9513a7e6dfb2cfb, type: 2}
+      objectReference: {fileID: 11400000, guid: 4d675b7709a6d0a45a7f0a1aabc2b378, type: 2}
     - target: {fileID: 900687837731030965, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: actionableData
       value: 
@@ -28889,7 +28913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3868983564069901962, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: maxPosture.value
-      value: 35
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3868983564069901962, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: lowHealthRegen.value
@@ -28901,7 +28925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3868983564069901962, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: basePostureRegen.value
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3868983564069901962, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: lowHealthThreshold.value
@@ -29868,7 +29892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5600618183844064284, guid: 48ff28f7a4ac45f47a6f196d679eb9b0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5600618183844064366, guid: 48ff28f7a4ac45f47a6f196d679eb9b0, type: 3}
       propertyPath: graphMask.value
@@ -32016,7 +32040,7 @@ PrefabInstance:
     - target: {fileID: 900687837731030965, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: data
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 4d675b7709a6d0a45a7f0a1aabc2b378, type: 2}
     - target: {fileID: 900687837731030965, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: actionableData
       value: 
@@ -32066,12 +32090,44 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3868983564069901962, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
+      propertyPath: maxHealth.value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3868983564069901962, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
+      propertyPath: moveSpeed.value
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3868983564069901962, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
+      propertyPath: maxPosture.value
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3868983564069901962, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
+      propertyPath: rotateSpeed.value
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 3868983564069901962, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
+      propertyPath: acceleration.value
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3868983564069901962, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
+      propertyPath: lowHealthRegen.value
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3868983564069901962, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: maxHealth.sharedValue
       value: 
+      objectReference: {fileID: 11400000, guid: 73f0729136bcaa34aace7b85ad4d509c, type: 2}
+    - target: {fileID: 3868983564069901962, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
+      propertyPath: basePostureRegen.value
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3868983564069901962, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
+      propertyPath: lowHealthThreshold.value
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3868983564069901962, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: maxHealth.useSharedValue
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3868983564069902052, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: m_Name
@@ -32079,7 +32135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3868983564069902052, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3868983564069902079, guid: febb6d4478075724899a7bfba8bd3da5, type: 3}
       propertyPath: m_RootOrder

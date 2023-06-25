@@ -16,12 +16,12 @@ items:
   type: Struct
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefInt.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Variables/RefInt.cs
     id: RefInt
-    path: ../Assets/Scripts/Scriptable Objects/Variables/RefInt.cs
+    path: ../Assets/Framework/Scriptable Objects/Variables/RefInt.cs
     startLine: 4
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: >-
@@ -49,12 +49,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefInt.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Variables/RefInt.cs
     id: .ctor
-    path: ../Assets/Scripts/Scriptable Objects/Variables/RefInt.cs
+    path: ../Assets/Framework/Scriptable Objects/Variables/RefInt.cs
     startLine: 11
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public RefInt(int value = 0, bool useSharedValue = false, VarInt sharedValue = null)
@@ -83,12 +83,12 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Variables/RefInt.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Variables/RefInt.cs
     id: Value
-    path: ../Assets/Scripts/Scriptable Objects/Variables/RefInt.cs
+    path: ../Assets/Framework/Scriptable Objects/Variables/RefInt.cs
     startLine: 18
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public int Value { get; set; }
@@ -101,6 +101,7 @@ references:
 - uid: Global
 - uid: Global.RefInt.#ctor*
   commentId: Overload:Global.RefInt.#ctor
+  href: Global.RefInt.html#RefInt.#ctor(System.Int32,System.Boolean,VarInt)
   name: RefInt
   nameWithType: RefInt.RefInt
   fullName: RefInt.RefInt
@@ -111,6 +112,7 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
   name: int
   nameWithType: int
   fullName: int
@@ -121,6 +123,7 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
@@ -129,17 +132,20 @@ references:
   name.vb: Boolean
 - uid: Global.VarInt
   commentId: T:Global.VarInt
+  href: VarInt.html
   name: VarInt
   nameWithType: VarInt
   fullName: VarInt
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: Global.RefInt.Value*
   commentId: Overload:Global.RefInt.Value
+  href: Global.RefInt.html#RefInt.Value
   name: Value
   nameWithType: RefInt.Value
   fullName: RefInt.Value

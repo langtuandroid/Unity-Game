@@ -15,12 +15,12 @@ items:
   type: Interface
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Items/IConsumable.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Items/IConsumable.cs
     id: IConsumable
-    path: ../Assets/Scripts/Scriptable Objects/Items/IConsumable.cs
+    path: ../Assets/Framework/Scriptable Objects/Items/IConsumable.cs
     startLine: 4
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: public interface IConsumable
@@ -38,12 +38,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Scriptable Objects/Items/IConsumable.cs
+      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Items/IConsumable.cs
     id: Consume
-    path: ../Assets/Scripts/Scriptable Objects/Items/IConsumable.cs
+    path: ../Assets/Framework/Scriptable Objects/Items/IConsumable.cs
     startLine: 6
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: Global
   syntax:
     content: void Consume()
@@ -53,6 +53,7 @@ references:
 - uid: Global
 - uid: Global.IConsumable.Consume*
   commentId: Overload:Global.IConsumable.Consume
+  href: Global.IConsumable.html#IConsumable.Consume
   name: Consume
   nameWithType: IConsumable.Consume
   fullName: IConsumable.Consume

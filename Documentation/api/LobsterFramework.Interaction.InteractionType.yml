@@ -18,12 +18,12 @@ items:
   type: Enum
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractableObject.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/InteractableObject.cs
     id: InteractionType
-    path: ../Assets/Scripts/Components/Interaction/InteractableObject.cs
+    path: ../Assets/Framework/Components/Interaction/InteractableObject.cs
     startLine: 7
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Interaction
   syntax:
     content: public enum InteractionType
@@ -41,12 +41,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractableObject.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/InteractableObject.cs
     id: Primary
-    path: ../Assets/Scripts/Components/Interaction/InteractableObject.cs
+    path: ../Assets/Framework/Components/Interaction/InteractableObject.cs
     startLine: 9
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Interaction
   syntax:
     content: Primary = 0
@@ -65,12 +65,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractableObject.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/InteractableObject.cs
     id: Secondary
-    path: ../Assets/Scripts/Components/Interaction/InteractableObject.cs
+    path: ../Assets/Framework/Components/Interaction/InteractableObject.cs
     startLine: 10
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Interaction
   syntax:
     content: Secondary = 1
@@ -89,12 +89,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractableObject.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/InteractableObject.cs
     id: Tertiary
-    path: ../Assets/Scripts/Components/Interaction/InteractableObject.cs
+    path: ../Assets/Framework/Components/Interaction/InteractableObject.cs
     startLine: 11
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Interaction
   syntax:
     content: Tertiary = 2
@@ -113,12 +113,12 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Scripts/Components/Interaction/InteractableObject.cs
+      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/InteractableObject.cs
     id: Quaternary
-    path: ../Assets/Scripts/Components/Interaction/InteractableObject.cs
+    path: ../Assets/Framework/Components/Interaction/InteractableObject.cs
     startLine: 12
   assemblies:
-  - MyScripts
+  - LobsterFramework
   namespace: LobsterFramework.Interaction
   syntax:
     content: Quaternary = 3
@@ -127,24 +127,30 @@ items:
 references:
 - uid: LobsterFramework.Interaction
   commentId: N:LobsterFramework.Interaction
+  href: LobsterFramework.html
   name: LobsterFramework.Interaction
   nameWithType: LobsterFramework.Interaction
   fullName: LobsterFramework.Interaction
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Interaction
     name: Interaction
+    href: LobsterFramework.Interaction.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
+    href: LobsterFramework.html
   - name: .
   - uid: LobsterFramework.Interaction
     name: Interaction
+    href: LobsterFramework.Interaction.html
 - uid: LobsterFramework.Interaction.InteractionType
   commentId: T:LobsterFramework.Interaction.InteractionType
   parent: LobsterFramework.Interaction
+  href: LobsterFramework.Interaction.InteractionType.html
   name: InteractionType
   nameWithType: InteractionType
   fullName: LobsterFramework.Interaction.InteractionType
