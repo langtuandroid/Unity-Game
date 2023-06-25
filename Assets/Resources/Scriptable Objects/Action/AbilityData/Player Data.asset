@@ -25,6 +25,31 @@ MonoBehaviour:
     sharedValue: {fileID: 0}
   targetSetting: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
   effects: []
+--- !u!114 &-6807459048227292798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:CircleAttack/CircleAttackConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 1
+  cooldown: 0
+  isSuspended: 0
+  sprite: {fileID: 0}
+  spritePoolTag: {fileID: 0}
+  spriteDuration:
+    value: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  targetSetting: {fileID: 0}
+  effects: []
 --- !u!114 &-4864273072688861833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,5 +175,7 @@ MonoBehaviour:
   configs:
     keys:
     - default
+    - 1
     values:
     - {fileID: -6995416392109266467}
+    - {fileID: -6807459048227292798}
