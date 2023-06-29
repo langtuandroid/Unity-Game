@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using LobsterFramework.EntitySystem;
+using LobsterFramework.Utility;
 
 namespace LobsterFramework.Pool
 {
@@ -26,8 +27,8 @@ namespace LobsterFramework.Pool
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Entity entity;
-            if (collision.gameObject.TryGetComponent<Entity>(out entity))
+            Entity entity = GameUtility.FindEntity(collision.gameObject);
+            if (entity != null)
             {
                 entityEvent.Invoke(entity);
             }

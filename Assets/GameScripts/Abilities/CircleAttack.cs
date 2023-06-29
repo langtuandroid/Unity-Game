@@ -63,7 +63,7 @@ namespace GameScripts.Abilities
                 {
                     continue;
                 }
-                Entity collided = collider.gameObject.GetComponent<Entity>();
+                Entity collided = GameUtility.FindEntity(collider.gameObject);
                 if (collided == null)
                 {
                     continue;

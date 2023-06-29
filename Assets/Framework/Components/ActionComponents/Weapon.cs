@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using LobsterFramework.EntitySystem;
+using LobsterFramework.Utility;
 
-namespace LobsterFramework.AbilitySystem.Weapon
+namespace LobsterFramework.AbilitySystem
 {
     /// <summary>
     /// 
@@ -22,6 +23,7 @@ namespace LobsterFramework.AbilitySystem.Weapon
 
         public float Weight { get { return weight; } }
         public float Sharpness { get { return sharpness; } }
+        public float AttackSpeed { get {  return attackSpeed; } }
 
         // Start is called before the first frame update
         void Start()
@@ -36,7 +38,7 @@ namespace LobsterFramework.AbilitySystem.Weapon
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Entity entity = collider.GetComponent<Entity>();
+            Entity entity = GameUtility.FindEntity(collision.gameObject);
             if (entity != null && onEntityHit != null) {
                 onEntityHit.Invoke(entity);
             }
@@ -44,10 +46,18 @@ namespace LobsterFramework.AbilitySystem.Weapon
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            Entity entity = collider.GetComponent<Entity>();
+            Entity entity = GameUtility.FindEntity(collision.gameObject);
             if (entity != null && onEntityHitExit != null)
             {
                 onEntityHitExit.Invoke(entity);
+            }
+        }
+
+        private void OnValidate()
+        {
+            if (attackSpeed <= 0) {
+                attackSpeed = 1;
+                Debug.LogWarning("Attack Speed Can't be non-positive");
             }
         }
 

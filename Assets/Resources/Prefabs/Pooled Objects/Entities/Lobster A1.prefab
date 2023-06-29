@@ -28,7 +28,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3868983564069902079
 Transform:
   m_ObjectHideFlags: 0
@@ -36,13 +36,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3868983564069902052}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.06, y: 0.1, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &900687837731030966
 SpriteRenderer:
@@ -113,6 +113,12 @@ Rigidbody2D:
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 7081e3d423413bf409d27f82c82d1bcb, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -127,6 +133,25 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 7081e3d423413bf409d27f82c82d1bcb, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -148,17 +173,48 @@ MonoBehaviour:
   groups:
   - {fileID: 11400000, guid: bedff8bc66ebeab45996c2806021c2ae, type: 2}
   - {fileID: 11400000, guid: 88417c86a09bbd4438fce976a5cb5306, type: 2}
-  startMaxHealth:
+  maxHealth:
     value: 100
+    useSharedValue: 0
+    sharedValue: {fileID: 11400000, guid: 73f0729136bcaa34aace7b85ad4d509c, type: 2}
+  baseHealthRegen:
+    value: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  lowHealthRegen:
+    value: 3
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  lowHealthThreshold:
+    value: 30
     useSharedValue: 0
     sharedValue: {fileID: 0}
   startHealth:
     value: 100
     useSharedValue: 0
     sharedValue: {fileID: 0}
+  maxPosture:
+    value: 50
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  basePostureRegen:
+    value: 8
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  _rigidBody: {fileID: 0}
+  moveSpeed:
+    value: 4
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  rotateSpeed:
+    value: 360
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  acceleration:
+    value: 15
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
   damageHistory: []
-  maxHealth: 0
-  health: 0
 --- !u!114 &3868983564069901963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,10 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cddaad69a76c9d2439165e61b3a387f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  executing:
-    values: []
-  actionableData: {fileID: 0}
-  data: {fileID: 11400000, guid: f3937c10a6eeab742beee0b1a8eb9bd8, type: 2}
+  abilityData: {fileID: 0}
+  data: {fileID: 11400000, guid: 4d675b7709a6d0a45a7f0a1aabc2b378, type: 2}
 --- !u!114 &3868983564069901957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,9 +262,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allStates:
-  - {fileID: 11400000, guid: 0f96154b23dd6bd46a51d69c95e8742c, type: 2}
-  - {fileID: 11400000, guid: 63ac88c740cf887419339bb002481c85, type: 2}
-  initialState: {fileID: 11400000, guid: 63ac88c740cf887419339bb002481c85, type: 2}
+  - {fileID: 11400000, guid: 06740814245ce4347a9138a8d38f5975, type: 2}
+  - {fileID: 11400000, guid: 205be45219efbef469e5e7ef02e9a9d6, type: 2}
+  initialState: {fileID: 11400000, guid: 205be45219efbef469e5e7ef02e9a9d6, type: 2}
   currentState: {fileID: 0}
 --- !u!114 &3868983564069901974
 MonoBehaviour:

@@ -332,6 +332,7 @@ namespace LobsterFramework.AbilitySystem {
 
         private void Start()
         {
+            animator = GetComponent<Animator>();
             if (abilityData == null)
             {
                 Debug.LogWarning("Ability Data is not set!", gameObject);
@@ -347,7 +348,6 @@ namespace LobsterFramework.AbilitySystem {
             stats = abilityData.stats;
             abilityData.Initialize(this);
             availableAbilities = abilityData.availableAbilities;
-            animator = GetComponent<Animator>();
         }
         private void Update()
         {
@@ -387,6 +387,8 @@ namespace LobsterFramework.AbilitySystem {
             return animating == (ability, configName);
         }
 
+        public Animator Animator { get { return animator; } }
+
         /// <summary>
         /// Used by abilities to initiate animations, will override any currently running animations by other abilities
         /// </summary>
@@ -420,6 +422,7 @@ namespace LobsterFramework.AbilitySystem {
             if(animating == default) { return; }
             animator.SetBool("isActing", false);
             animating = default;
+            animator.speed = 1;
         }
 
         /// <summary>

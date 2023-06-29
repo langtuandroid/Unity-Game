@@ -2,6 +2,7 @@ using UnityEngine;
 using LobsterFramework.Pool;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.AbilitySystem;
+using LobsterFramework.Utility;
 
 namespace GameScripts.Abilities
 {
@@ -36,7 +37,7 @@ namespace GameScripts.Abilities
         {
             base.Initialize();
             combat = abilityRunner.GetAbilityStat<CombatStat>();
-            defender = abilityRunner.GetComponent<Entity>();
+            defender = GameUtility.FindEntity(abilityRunner.gameObject);
             if (defender == null)
             {
                 Debug.LogError("The object is missing entity component to complete the action!");

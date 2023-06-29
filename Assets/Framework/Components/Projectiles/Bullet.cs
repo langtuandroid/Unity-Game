@@ -4,6 +4,7 @@ using UnityEngine;
 using Pathfinding;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.AbilitySystem;
+using LobsterFramework.Utility;
 
 namespace LobsterFramework.Pool
 {
@@ -74,14 +75,14 @@ namespace LobsterFramework.Pool
 
         private void HandleCollision(Collider2D collision)
         {
-            Entity entity = collision.GetComponent<Entity>();
+            Entity entity = GameUtility.FindEntity(collision.gameObject);
             if (entity != null)
             {
                 if (targetSetting.IsTarget(entity))
                 {
-                    entity.Damage(power, 0, attacker);
+                    entity.Damage(power, power / 2, attacker);
                     AIPath ai = entity.GetComponent<AIPath>();
-                    Rigidbody2D rb = entity.GetComponent<Rigidbody2D>();
+                    Rigidbody2D rb = entity.RigidBody;
                     if (ai != null)
                     {
                         ai.canMove = false;

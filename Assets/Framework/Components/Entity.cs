@@ -4,6 +4,7 @@ using System;
 using UnityEngine.Events;
 using LobsterFramework.Utility.Groups;
 using LobsterFramework.Utility.BufferedStats;
+using LobsterFramework.AbilitySystem;
 
 namespace LobsterFramework.EntitySystem
 {
@@ -33,6 +34,7 @@ namespace LobsterFramework.EntitySystem
         public float MaxPosture { get { return maxPosture.Value; } }
 
         [Header("Movement")]
+        [SerializeField] private Rigidbody2D _rigidBody;
         [SerializeField] private RefFloat moveSpeed;
         [SerializeField] private RefFloat rotateSpeed;
         [SerializeField] private RefFloat acceleration;
@@ -40,7 +42,12 @@ namespace LobsterFramework.EntitySystem
         private BaseOr movementBlock;
         public float MoveSpeed { get { return moveSpeed.Value; } }
         public float RotateSpeed { get { return rotateSpeed.Value; } }
+
+        public Rigidbody2D RigidBody { get { return _rigidBody; } }
         public bool MovementBlocked { get { return movementBlock.Stat; } }
+
+        [Header("Supplimentaries")]
+        private AbilityRunner abilityRunner;
 
         [Header("Status")]
         [SerializeField] private List<DamageTracker> damageHistory;
@@ -60,7 +67,7 @@ namespace LobsterFramework.EntitySystem
 
         // Caches
         private Transform _transform;
-        private Rigidbody2D rb;
+        
 
         public bool RegenSuppressed { get { return (Time.time - damagedSince) < GameManager.Instance.SUPPRESS_REGEN_DURATION; } }
 
@@ -116,7 +123,6 @@ namespace LobsterFramework.EntitySystem
             regenBuffer.AddPosture(basePostureRegen.Value);
 
             _transform = GetComponent<Transform>();
-            rb = GetComponent<Rigidbody2D>();
         }
 
         private void Update()
@@ -162,10 +168,14 @@ namespace LobsterFramework.EntitySystem
         {
             if (steering != Vector2.zero)
             {
-                rb.AddForce((acceleration.Value * (_transform.rotation * steering)));
+                _rigidBody.AddForce((acceleration.Value * (_transform.rotation * steering)));
             }
 
-            rb.velocity = Vector2.ClampMagnitude(rb.velocity, moveSpeed.Value);
+            _rigidBody.velocity = Vector2.ClampMagnitude(_rigidBody.velocity, moveSpeed.Value);
+            if (_rigidBody != GetComponent<Rigidbody2D>()) {
+                _transform.position = _rigidBody.position;
+                _rigidBody.transform.localPosition = Vector3.zero;
+            }
         }
 
         /// <summary>

@@ -25,7 +25,7 @@ public class VarBoolDrawer : PropertyDrawer
         property.isExpanded = EditorGUI.Foldout(foldOutRect, property.isExpanded, label);
 
         Rect rect = new(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
-        property.objectReferenceValue = (VarBool)EditorGUI.ObjectField(rect, label.text, property.objectReferenceValue, typeof(VarBool), true);
+        property.objectReferenceValue = (VarBool)EditorGUI.ObjectField(rect, " ", property.objectReferenceValue, typeof(VarBool), true);
         if (property.isExpanded && property.objectReferenceValue != null)
         {
             EditorGUI.indentLevel++;

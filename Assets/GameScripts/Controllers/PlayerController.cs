@@ -20,10 +20,10 @@ namespace GameScripts.InputControl
         [SerializeField] private VoidEventChannel playerDeathChannel;
         [SerializeField] private VoidEventChannel playerRespawnChennel;
 
-        private Entity player;
-        private AbilityRunner actionable;
-        private GeneralInteractor interactor;
-        private Transform _transform;
+        [SerializeField] private Entity player;
+        [SerializeField] private AbilityRunner actionable;
+        [SerializeField] private GeneralInteractor interactor;
+        [SerializeField] private Transform _transform;
 
 
         [Header("Inputs")]
@@ -35,12 +35,7 @@ namespace GameScripts.InputControl
 
         public void Start()
         {
-            player = GetComponent<Entity>();
-            actionable = GetComponent<AbilityRunner>();
-            interactor = GetComponent<GeneralInteractor>();
-
             playerRespawnChennel.OnEventRaised += RespawnPlayer;
-            _transform = GetComponent<Transform>();
         }
 
         private void FixedUpdate()
@@ -93,11 +88,11 @@ namespace GameScripts.InputControl
             }
         }
 
-        public void CircleAttack2(InputAction.CallbackContext context)
+        public void WeaponLightAttack(InputAction.CallbackContext context)
         {
             if (!gamePause.Value && context.started)
             {
-                actionable.EnqueueAbility<CircleAttack>("custom");
+                actionable.EnqueueAbility<LightWeaponAttack>();
             }
         }
 

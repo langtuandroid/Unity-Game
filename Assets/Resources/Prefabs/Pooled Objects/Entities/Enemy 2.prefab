@@ -24,7 +24,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5482235366053718452
 Transform:
   m_ObjectHideFlags: 0
@@ -39,7 +39,7 @@ Transform:
   m_Children:
   - {fileID: 6106901317594816109}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5482235366053718476
 Rigidbody2D:
@@ -58,6 +58,12 @@ Rigidbody2D:
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 7081e3d423413bf409d27f82c82d1bcb, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -72,6 +78,25 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 7081e3d423413bf409d27f82c82d1bcb, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -93,17 +118,48 @@ MonoBehaviour:
   groups:
   - {fileID: 11400000, guid: bedff8bc66ebeab45996c2806021c2ae, type: 2}
   - {fileID: 11400000, guid: 88417c86a09bbd4438fce976a5cb5306, type: 2}
-  startMaxHealth:
-    value: 100
+  maxHealth:
+    value: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  baseHealthRegen:
+    value: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  lowHealthRegen:
+    value: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  lowHealthThreshold:
+    value: 0
     useSharedValue: 0
     sharedValue: {fileID: 0}
   startHealth:
     value: 100
     useSharedValue: 0
     sharedValue: {fileID: 0}
+  maxPosture:
+    value: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  basePostureRegen:
+    value: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  _rigidBody: {fileID: 0}
+  moveSpeed:
+    value: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  rotateSpeed:
+    value: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  acceleration:
+    value: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
   damageHistory: []
-  maxHealth: 0
-  health: 0
 --- !u!114 &5482235366053718464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,8 +177,8 @@ MonoBehaviour:
   targetGroup: {fileID: 11400000, guid: 4f8f16cf72b4f07469b075ddf31d9ebe, type: 2}
   rotateSpeed:
     value: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: 2526ffbb1c3c38447acc973806822195, type: 2}
   target: {fileID: 0}
 --- !u!114 &8492195539783792894
 MonoBehaviour:
@@ -136,10 +192,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cddaad69a76c9d2439165e61b3a387f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  executing:
-    values: []
-  actionableData: {fileID: 0}
-  data: {fileID: 11400000, guid: f3937c10a6eeab742beee0b1a8eb9bd8, type: 2}
+  abilityData: {fileID: 0}
+  data: {fileID: 11400000, guid: feba942da02ab7e4fb23653ddf3c1fe4, type: 2}
 --- !u!114 &5482235366053718478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +209,6 @@ MonoBehaviour:
   allStates:
   - {fileID: 11400000, guid: d2e5e190341bcd849980b1793b589a9c, type: 2}
   - {fileID: 11400000, guid: b39eec5f158acfa4fa7d19005db727a9, type: 2}
-  - {fileID: 11400000, guid: 22788e607509a1b4da6506916a156f7a, type: 2}
   initialState: {fileID: 11400000, guid: b39eec5f158acfa4fa7d19005db727a9, type: 2}
   currentState: {fileID: 0}
 --- !u!114 &5482235366053718493

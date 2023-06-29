@@ -8,7 +8,6 @@ namespace GameScripts.Abilities
 {
     [AddAbilityMenu]
     [RequireAbilityStats(typeof(CombatStat))]
-    [ComponentRequired(typeof(Animator))]
     public class RightSwipe : Ability
     {
         private CombatStat combatCmp;
@@ -97,7 +96,7 @@ namespace GameScripts.Abilities
             abilityRunner.StartAnimation<RightSwipe>(configName, con.animation.Value);
         }
 
-        protected override void SignalBody(AbilityConfig configRaw)
+        protected override void Signal(AbilityConfig configRaw)
         {
             RightSwipeConfig config = (RightSwipeConfig)configRaw;
             switch (config.state)

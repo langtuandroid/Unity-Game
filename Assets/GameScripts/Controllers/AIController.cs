@@ -4,8 +4,10 @@ using UnityEngine;
 using Pathfinding;
 using System;
 using LobsterFramework.Utility.Groups;
+using LobsterFramework.Utility.Groups;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.AI;
+using LobsterFramework.Utility;
 
 namespace GameScripts.AI
 {
@@ -109,7 +111,7 @@ namespace GameScripts.AI
             RaycastHit2D hit = Physics2D.Raycast(_transform.position, _transform.up, sightRange);
             if (hit.collider != null)
             {
-                Entity t = hit.collider.GetComponent<Entity>();
+                Entity t = GameUtility.FindEntity(hit.collider.gameObject);
                 if (t != null && targetGroup.Contains(t))
                 {
                     target = t;
@@ -125,7 +127,7 @@ namespace GameScripts.AI
             RaycastHit2D hit = Physics2D.Raycast(position, target.transform.position - position, range);
             if (hit.collider != null)
             {
-                Entity t = hit.collider.GetComponent<Entity>();
+                Entity t = GameUtility.FindEntity(hit.collider.gameObject);
                 if (t != null && t == target)
                 {
                     return true;

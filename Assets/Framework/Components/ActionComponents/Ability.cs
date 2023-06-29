@@ -63,14 +63,14 @@ namespace LobsterFramework.AbilitySystem {
                 method.Invoke(this, new[] { name });
                 return true;
             }
-            Debug.LogError("The ability config for '" + GetType().Name + "' is not declared, inheriting from AbilityConfig or made public!");
+            Type t = GetBaseConfigType();
+            Debug.LogError("The ability config for '" + GetType().Name + "' is not declared, inheriting from " + t.Name + " or made public!");
             return false;
         }
 
         private void AddConfigGeneric<T>(string name) where T : AbilityConfig
         {
             Type type = GetType();
-            string typeString = type.ToString();
             if (typeof(T).Name != (type.Name + "Config"))
             {
                 Debug.LogError("Config of type" + typeof(T).ToString() + " cannot be added!");
@@ -323,14 +323,27 @@ namespace LobsterFramework.AbilitySystem {
         /// <param name="configName"></param>
         protected virtual void OnEnqueue(AbilityConfig config, string configName) { }
 
+        private Type GetBaseConfigType() {
+            Type type = GetType().BaseType;
+            while (type != typeof(Ability)) {
+                Type t = type.GetNestedType(type.Name + "Config");
+                if (t != null && t.IsSubclassOf(typeof(AbilityConfig))) { 
+                    return t;
+                }
+                type = type.BaseType;
+            }
+            return typeof(AbilityConfig);
+        }
+
         private bool HasConfigDefined()
         {
             Type type = GetType();
             string typeName = type.Name + "Config";
+            Type configType = GetBaseConfigType();
             foreach (Type innerType in type.GetNestedTypes())
             {
                 string inner = innerType.Name;
-                if (inner.Equals(typeName) && innerType.IsSubclassOf(typeof(Ability.AbilityConfig)))
+                if (inner.Equals(typeName) && innerType.IsSubclassOf(configType))
                 {
                     return true;
                 }
@@ -344,7 +357,7 @@ namespace LobsterFramework.AbilitySystem {
 
         public void Signal(string configName) {
             if (configs.ContainsKey(configName)) {
-                SignalBody(configs[configName]);
+                Signal(configs[configName]);
             }
         }
 
@@ -352,7 +365,7 @@ namespace LobsterFramework.AbilitySystem {
         /// Override this to implement signal event handler
         /// </summary>
         /// <param name="config">Config to be signaled</param>
-        protected virtual void SignalBody(AbilityConfig config) { }
+        protected virtual void Signal(AbilityConfig config) { }
 
         /// <summary>
         ///  A configuration of the Ability, each configuration has its own settings that affects the execution of the Ability.

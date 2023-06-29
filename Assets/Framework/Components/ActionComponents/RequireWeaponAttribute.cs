@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LobsterFramework.AbilitySystem.Weapon
+namespace LobsterFramework.AbilitySystem
 {
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public class RequireWeaponAttribute : Attribute
