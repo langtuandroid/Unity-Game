@@ -24154,6 +24154,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 980961665365348492, guid: 8af9b59482eb5c54398e142b4eea53ea, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000000029802315
+      objectReference: {fileID: 0}
     - target: {fileID: 1904381420976761666, guid: 8af9b59482eb5c54398e142b4eea53ea, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -24471,10 +24475,6 @@ MonoBehaviour:
     m_ActionId: beda39d2-0776-427a-ba1a-2b40a178d6cf
     m_ActionName: Player/Attack[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 1b2e8e6e-18af-4f28-9c57-9958e07efcf5
-    m_ActionName: Player/Guard[/Mouse/rightButton]
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1377438054}
         m_TargetAssemblyTypeName: GameStateManager, MyScripts
@@ -24664,8 +24664,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21d7712cfaae2ab4cb1cd62dc9916ee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 5619198934622560290, guid: 4e63230358c59ee4cb029ee29dae2118, type: 3}
-  weaponLocation: {fileID: 2132162805}
+  weaponPrefab: {fileID: 0}
+  weaponLocation: {fileID: 0}
 --- !u!1 &477182611
 GameObject:
   m_ObjectHideFlags: 0
