@@ -20,7 +20,7 @@ namespace LobsterFramework.EditorUtility
             EditorGUILayout.HelpBox("Note: The ability data may not work properly before the first run of the game. " +
                 "Enter play mode for the first time to verify its integrity!", MessageType.Info);
             base.OnInspectorGUI();
-            AbilityRunner actionable = (AbilityRunner)target;
+            AbilityRunner abilityRunner = (AbilityRunner)target;
             EditorGUI.BeginChangeCheck();
             SerializedProperty actionData = serializedObject.FindProperty("abilityData");
             if (!editData)
@@ -34,6 +34,12 @@ namespace LobsterFramework.EditorUtility
                 }
                 GUILayout.FlexibleSpace();
                 EditorGUILayout.EndHorizontal();
+            }
+
+            if (abilityRunner.executing.Count > 0) {
+                foreach (AbilityConfigPair pair in abilityRunner.executing) {
+                    EditorGUILayout.LabelField(pair.ability.GetType().Name, pair.config);
+                }
             }
 
             if (editData)
@@ -60,7 +66,7 @@ namespace LobsterFramework.EditorUtility
                 GUILayout.FlexibleSpace();
                 if (GUILayout.Button("Save Ability Data", GUILayout.Width(150)))
                 {
-                    actionable.SaveAbilityData(assetName);
+                    abilityRunner.SaveAbilityData(assetName);
                 }
                 GUILayout.FlexibleSpace();
                 EditorGUILayout.EndHorizontal();

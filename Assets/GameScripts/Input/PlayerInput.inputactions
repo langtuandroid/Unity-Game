@@ -24,9 +24,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Guard",
+                    "name": "ChargeAttack",
                     "type": "Button",
-                    "id": "1b2e8e6e-18af-4f28-9c57-9958e07efcf5",
+                    "id": "fcceabac-55b8-475a-a56f-bbfa39c01db4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -105,17 +105,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "81782731-54b0-40ca-98fb-8a0830ddcf79",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Guard",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -248,6 +237,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a7de3cb3-44c4-4b38-8089-608d800ca397",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChargeAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

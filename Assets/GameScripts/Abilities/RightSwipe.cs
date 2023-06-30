@@ -96,7 +96,7 @@ namespace GameScripts.Abilities
             abilityRunner.StartAnimation<RightSwipe>(configName, con.animation.Value);
         }
 
-        protected override void Signal(AbilityConfig configRaw)
+        protected override void Signal(AbilityConfig configRaw, bool isAnimation)
         {
             RightSwipeConfig config = (RightSwipeConfig)configRaw;
             switch (config.state)

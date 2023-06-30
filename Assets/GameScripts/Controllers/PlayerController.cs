@@ -21,7 +21,7 @@ namespace GameScripts.InputControl
         [SerializeField] private VoidEventChannel playerRespawnChennel;
 
         [SerializeField] private Entity player;
-        [SerializeField] private AbilityRunner actionable;
+        [SerializeField] private AbilityRunner abilityRunner;
         [SerializeField] private GeneralInteractor interactor;
         [SerializeField] private Transform _transform;
 
@@ -77,14 +77,14 @@ namespace GameScripts.InputControl
         private void RespawnPlayer()
         {
             player.Reset();
-            actionable.Reset();
+            abilityRunner.Reset();
         }
 
         public void CircleAttack(InputAction.CallbackContext context)
         {
             if (!gamePause.Value && context.started)
             {
-                actionable.EnqueueAbility<CircleAttack>();
+                abilityRunner.EnqueueAbility<CircleAttack>();
             }
         }
 
@@ -92,7 +92,20 @@ namespace GameScripts.InputControl
         {
             if (!gamePause.Value && context.started)
             {
-                actionable.EnqueueAbility<LightWeaponAttack>();
+                abilityRunner.EnqueueAbility<LightWeaponAttack>();
+            }
+        }
+
+        public void WeaponHeavyAttack(InputAction.CallbackContext context) {
+            if (gamePause.Value) {
+                return;
+            }
+            if (context.started)
+            {
+                abilityRunner.EnqueueAbility<HeavyWeaponAttack>();
+            }
+            else if (context.canceled) {
+                abilityRunner.Signal<HeavyWeaponAttack>();
             }
         }
 
@@ -100,7 +113,7 @@ namespace GameScripts.InputControl
         {
             if (!gamePause.Value && context.started)
             {
-                actionable.EnqueueAbility<Guard>();
+                abilityRunner.EnqueueAbility<Guard>();
             }
         }
 
@@ -108,7 +121,7 @@ namespace GameScripts.InputControl
         {
             if (!gamePause.Value && context.started)
             {
-                actionable.EnqueueAbility<Shoot>();
+                abilityRunner.EnqueueAbility<Shoot>();
             }
         }
 

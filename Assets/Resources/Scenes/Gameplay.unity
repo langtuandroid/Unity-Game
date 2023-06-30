@@ -24160,11 +24160,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2027659778131122433, guid: 8af9b59482eb5c54398e142b4eea53ea, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9077126
+      value: -0.98224175
       objectReference: {fileID: 0}
     - target: {fileID: 2027659778131122433, guid: 8af9b59482eb5c54398e142b4eea53ea, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.4195927
+      value: -0.18762009
       objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 8af9b59482eb5c54398e142b4eea53ea, type: 3}
       propertyPath: m_Name
@@ -24208,7 +24208,7 @@ PrefabInstance:
       objectReference: {fileID: 974773030}
     - target: {fileID: 4744424099397443643, guid: 8af9b59482eb5c54398e142b4eea53ea, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6768608
+      value: 0.7127916
       objectReference: {fileID: 0}
     - target: {fileID: 4744424099397443643, guid: 8af9b59482eb5c54398e142b4eea53ea, type: 3}
       propertyPath: m_LocalRotation.x
@@ -24220,7 +24220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4744424099397443643, guid: 8af9b59482eb5c54398e142b4eea53ea, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.7361111
+      value: -0.7013759
       objectReference: {fileID: 0}
     - target: {fileID: 4762156200885230265, guid: 8af9b59482eb5c54398e142b4eea53ea, type: 3}
       propertyPath: m_Layer
@@ -24328,19 +24328,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8350569784819965767, guid: 8af9b59482eb5c54398e142b4eea53ea, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9808232
+      value: 0.9999982
       objectReference: {fileID: 0}
     - target: {fileID: 8350569784819965767, guid: 8af9b59482eb5c54398e142b4eea53ea, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.1948998
+      value: -0.0018780548
       objectReference: {fileID: 0}
     - target: {fileID: 8825642813941901063, guid: 8af9b59482eb5c54398e142b4eea53ea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.33503613
+      value: 0.24426255
       objectReference: {fileID: 0}
     - target: {fileID: 8825642813941901063, guid: 8af9b59482eb5c54398e142b4eea53ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9017434
+      value: 0.93719566
       objectReference: {fileID: 0}
     - target: {fileID: 8952414743347840593, guid: 8af9b59482eb5c54398e142b4eea53ea, type: 3}
       propertyPath: m_Layer
@@ -24406,7 +24406,7 @@ MonoBehaviour:
   playerDeathChannel: {fileID: 11400000, guid: b77c1a7e01e0bb448b8b4cd522b26a43, type: 2}
   playerRespawnChennel: {fileID: 11400000, guid: c00fd75e694766e4aa1dd7cfde954a90, type: 2}
   player: {fileID: 476051099}
-  actionable: {fileID: 1692728410}
+  abilityRunner: {fileID: 1692728410}
   interactor: {fileID: 476051096}
   _transform: {fileID: 476051094}
   rotate: {fileID: -1975324386804856178, guid: 5f13414ae2f8d094d89473ba9b163d7b, type: 3}
@@ -24471,19 +24471,7 @@ MonoBehaviour:
     m_ActionId: beda39d2-0776-427a-ba1a-2b40a178d6cf
     m_ActionName: Player/Attack[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 476051095}
-        m_TargetAssemblyTypeName: GameScripts.InputControl.PlayerController, GameScripts
-        m_MethodName: Guard
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 1b2e8e6e-18af-4f28-9c57-9958e07efcf5
     m_ActionName: Player/Guard[/Mouse/rightButton]
   - m_PersistentCalls:
@@ -24586,6 +24574,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6864dc9a-806b-4c14-a571-75cca0ee8a0c
     m_ActionName: Player/Shoot[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 476051095}
+        m_TargetAssemblyTypeName: GameScripts.InputControl.PlayerController, GameScripts
+        m_MethodName: WeaponHeavyAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fcceabac-55b8-475a-a56f-bbfa39c01db4
+    m_ActionName: Player/ChargeAttack[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -27003,7 +27007,7 @@ MonoBehaviour:
   playerDeathChannel: {fileID: 11400000, guid: b77c1a7e01e0bb448b8b4cd522b26a43, type: 2}
   playerRespawnChennel: {fileID: 11400000, guid: c00fd75e694766e4aa1dd7cfde954a90, type: 2}
   player: {fileID: 0}
-  actionable: {fileID: 0}
+  abilityRunner: {fileID: 0}
   interactor: {fileID: 0}
   _transform: {fileID: 0}
   rotate: {fileID: -1975324386804856178, guid: 5f13414ae2f8d094d89473ba9b163d7b, type: 3}
@@ -31255,7 +31259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityData: {fileID: 0}
-  data: {fileID: 11400000, guid: 94cf967eb3fca474ab4e4e7b44a1dce0, type: 2}
+  data: {fileID: 11400000, guid: 8d246552b9732c041a34ef1dd70f66de, type: 2}
 --- !u!114 &1692728411
 MonoBehaviour:
   m_ObjectHideFlags: 0

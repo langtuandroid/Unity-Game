@@ -204,7 +204,7 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         /// <summary>
-        /// Halt the execution of all abilities
+        /// Halt the execution of all configs
         /// </summary>
         public void HaltAbilities()
         {
@@ -355,9 +355,9 @@ namespace LobsterFramework.AbilitySystem {
             return configs.ContainsKey(configName);
         }
 
-        public void Signal(string configName) {
+        public void Signal(string configName, bool isAnimation) {
             if (configs.ContainsKey(configName)) {
-                Signal(configs[configName]);
+                Signal(configs[configName], isAnimation);
             }
         }
 
@@ -365,7 +365,7 @@ namespace LobsterFramework.AbilitySystem {
         /// Override this to implement signal event handler
         /// </summary>
         /// <param name="config">Config to be signaled</param>
-        protected virtual void Signal(AbilityConfig config) { }
+        protected virtual void Signal(AbilityConfig config, bool isAnimation) { }
 
         /// <summary>
         ///  A configuration of the Ability, each configuration has its own settings that affects the execution of the Ability.

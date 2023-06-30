@@ -83,15 +83,19 @@ namespace GameScripts.Abilities
             animator.speed = weapon.Weapon.AttackSpeed;
         }
 
-        protected override void Signal(AbilityConfig config)
+        protected override void Signal(AbilityConfig config, bool isAnimation)
         {
-            LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
-            c.signaled = true;
+            if (isAnimation) {
+                LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
+                c.signaled = true;
+            }
         }
 
-        protected override void OnCoroutineFinish(AbilityConfig config)
+        protected override void OnCoroutineFinish(AbilityConfig config){}
+
+        protected override void OnAnimationInterrupt(AbilityConfig config)
         {
-            
+            HaltAbilities();
         }
     }
 }

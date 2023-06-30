@@ -20,7 +20,7 @@ namespace LobsterFramework.AbilitySystem {
         public UnityAction<bool> onHyperArmored;
 
         // Execution Info
-        private HashSet<AbilityConfigPair> executing = new();
+        internal HashSet<AbilityConfigPair> executing = new();
         private Dictionary<AbilityConfigPair, AbilityConfigPair> jointlyRunning = new();
 
         // Data
@@ -434,7 +434,7 @@ namespace LobsterFramework.AbilitySystem {
             if (ability == null) {
                 return;
             }
-            ability.Signal(configName);
+            ability.Signal(configName, false);
         }
 
         /// <summary>
@@ -442,7 +442,7 @@ namespace LobsterFramework.AbilitySystem {
         /// </summary>
         public void AnimationSignal() { 
             if(animating == default) { return; }
-            animating.Item1.Signal(animating.Item2);
+            animating.Item1.Signal(animating.Item2, true);
         }
     }
 
