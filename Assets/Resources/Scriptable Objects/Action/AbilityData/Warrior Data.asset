@@ -218,3 +218,17 @@ MonoBehaviour:
   isSuspended: 0
   animationSignaled: 0
   inputSignaled: 0
+  baseDamageModifier:
+    value: 1.2
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  maxChargeDamageIncrease:
+    value: 0.6
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  chargeMaxTime:
+    value: 0.35
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  chargeTimer: 0
+  ability: {fileID: 0}
