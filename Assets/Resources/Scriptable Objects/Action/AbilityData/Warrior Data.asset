@@ -42,7 +42,7 @@ MonoBehaviour:
     - default
     values:
     - {fileID: -7828992693079389496}
-  animation: warrior-sword
+  animation: sword_light_attack
   targets: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
 --- !u!114 &-6995416392109266467
 MonoBehaviour:
@@ -172,7 +172,7 @@ MonoBehaviour:
     - default
     values:
     - {fileID: 1176693244868032109}
-  animation: Sword heavy attack
+  animation: sword_heavy_attack
   targets: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -223,7 +223,7 @@ MonoBehaviour:
     useSharedValue: 0
     sharedValue: {fileID: 0}
   maxChargeDamageIncrease:
-    value: 0.6
+    value: 0.8
     useSharedValue: 0
     sharedValue: {fileID: 0}
   chargeMaxTime:
