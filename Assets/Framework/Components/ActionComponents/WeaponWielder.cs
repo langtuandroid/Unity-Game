@@ -13,6 +13,7 @@ namespace LobsterFramework.AbilitySystem
     {
         [SerializeField] private GameObject weaponPrefab;
         [SerializeField] private Transform weaponLocation;
+        [SerializeField] private Entity entity;
 
         private Weapon weapon;
         private GameObject weaponPrefabInst;
@@ -27,6 +28,7 @@ namespace LobsterFramework.AbilitySystem
             t.position = weaponLocation.position;
             t.rotation = weaponLocation.rotation;
             t.SetParent(weaponLocation);
+            weapon.Entity = entity;
         }
     }
 }

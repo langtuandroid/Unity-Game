@@ -16,40 +16,68 @@ namespace LobsterFramework.AbilitySystem
         [SerializeField] private float weight;
         [SerializeField] private float sharpness;
         [SerializeField] private float attackSpeed;
+        [Range(0, 100)]
+        [SerializeField] private float healthDamageReduction;
+        [Range(0, 100)]
+        [SerializeField] private float postureDamageReduction;
+
+        private float momentumMultiplier;
+        private float oppressingForce;
 
         public UnityAction<Entity> onEntityHit;
-        public UnityAction<Entity> onEntityHitExit;
+        public UnityAction<Weapon> onWeaponHit;
+
         new private Collider2D collider;
 
         public float Weight { get { return weight; } }
         public float Sharpness { get { return sharpness; } }
         public float AttackSpeed { get {  return attackSpeed; } }
 
+        public float Momentum { get { return momentumMultiplier * weight; } }
+
+        public float HealthDamageReduction { get { return healthDamageReduction; } }
+        public float PostureDamageReduction { get { return postureDamageReduction; } }
+
+        public Entity Entity { get; set; }
+
+        private HashSet<Entity> blocked;
+
+        public WeaponState state { get; set; }
         // Start is called before the first frame update
         void Start()
         {
             collider = GetComponent<Collider2D>();
             collider.enabled = false;
+            momentumMultiplier = 1;
+            oppressingForce = 0;
+            blocked = new();
         }
 
-        public void Activate() { 
+        public void Activate(WeaponState state = WeaponState.Attacking) { 
             collider.enabled = true;
+            this.state = state;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             Entity entity = GameUtility.FindEntity(collision.gameObject);
-            if (entity != null && onEntityHit != null) {
+            if (entity != null && onEntityHit != null && !blocked.Contains(entity)) {
                 onEntityHit.Invoke(entity);
+                return;
+            }
+
+            Weapon weapon = collider.GetComponent<Weapon>();
+            if(weapon != null && weapon.state == WeaponState.Guarding && onWeaponHit != null)
+            {
+                onWeaponHit.Invoke(weapon);
+                blocked.Add(weapon.Entity);
             }
         }
 
-        private void OnTriggerExit2D(Collider2D collision)
+        private void Update()
         {
-            Entity entity = GameUtility.FindEntity(collision.gameObject);
-            if (entity != null && onEntityHitExit != null)
-            {
-                onEntityHitExit.Invoke(entity);
+            if(state == WeaponState.Attacking) {
+                momentumMultiplier += (attackSpeed / Time.deltaTime);
             }
         }
 
@@ -63,6 +91,9 @@ namespace LobsterFramework.AbilitySystem
 
         public void Deactivate() { 
             collider.enabled=false;
+            momentumMultiplier = 1;
+            state = WeaponState.Idle;
+            blocked.Clear();
         }
     }
 
@@ -71,5 +102,11 @@ namespace LobsterFramework.AbilitySystem
         Hammer,
         Shiv,
         Rod
+    }
+
+    public enum WeaponState { 
+        Attacking,
+        Guarding,
+        Idle
     }
 }

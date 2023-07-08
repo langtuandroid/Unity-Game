@@ -111,9 +111,17 @@ namespace GameScripts.InputControl
 
         public void Guard(InputAction.CallbackContext context)
         {
-            if (!gamePause.Value && context.started)
+            if (gamePause.Value)
+            {
+                return;
+            }
+            if (context.started)
             {
                 abilityRunner.EnqueueAbility<Guard>();
+            }
+            else if (context.canceled)
+            {
+                abilityRunner.Signal<Guard>();
             }
         }
 

@@ -3,103 +3,90 @@ using LobsterFramework.Pool;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.AbilitySystem;
 using LobsterFramework.Utility;
+using System.Collections;
+using Codice.Client.BaseCommands.CheckIn.Progress;
+using System;
 
 namespace GameScripts.Abilities
 {
-    [RequireAbilityStats(typeof(CombatStat))]
+    [ComponentRequired(typeof(WeaponWielder))]
     [AddAbilityMenu]
-    public class Guard : Ability
+    public class Guard : AbilityCoroutine
     {
-        public class GuardConfig : AbilityConfig
-        {
-            public RefFloat duration;
-            public Sprite sprite;
-            public RefFloat spriteAlpha;
-            public VarString spritePoolTag;
+        [SerializeField] private string animation;
+        private WeaponWielder weaponWielder;
 
-            [HideInInspector]
-            public float durationCounter;
-            [HideInInspector]
-            public bool actionStart;
-            [HideInInspector]
-            public TemporalObject guardAnimation;
+        public class GuardConfig : AbilityCoroutineConfig
+        {
+            [HideInInspector] public bool animationSignaled;
+            [HideInInspector] public bool inputSignaled;
 
             protected override void Initialize()
             {
-                durationCounter = 0;
-                actionStart = false;
+                animationSignaled = false;
+                inputSignaled = false;
             }
         }
-        private CombatStat combat;
-        private Entity defender;
+
+        protected override void OnCoroutineEnqueue(AbilityConfig config, string configName)
+        {
+            GuardConfig guardConfig = (GuardConfig)config;
+            abilityRunner.StartAnimation<Guard>(configName, animation, weaponWielder.Weapon.AttackSpeed);
+            guardConfig.animationSignaled = false;
+            guardConfig.inputSignaled = false;
+        }
+
+        protected override void OnCoroutineFinish(AbilityConfig config)
+        {
+            
+        }
+
+        protected override IEnumerator Coroutine(AbilityConfig config)
+        {
+            GuardConfig guardConfig = (GuardConfig)config; 
+
+            while(!guardConfig.animationSignaled)
+            {
+                yield return null;
+            }
+            guardConfig.animationSignaled = false;
+            abilityRunner.Animator.speed = 0;
+            weaponWielder.Weapon.Activate(WeaponState.Guarding);
+            
+            while(!guardConfig.inputSignaled)
+            {
+                yield return null;
+            }
+            guardConfig.inputSignaled = false;
+            abilityRunner.Animator.speed = weaponWielder.Weapon.AttackSpeed;
+            weaponWielder.Weapon.Deactivate();
+
+            while (!guardConfig.animationSignaled)
+            {
+                yield return null;
+            }
+        }
+
+        protected override void Signal(AbilityConfig config, bool isAnimation)
+        {
+            GuardConfig guardConfig = (GuardConfig)config;
+            if (isAnimation)
+            {
+                guardConfig.animationSignaled = true;
+            }
+            else { 
+                guardConfig.inputSignaled = true;
+            }
+        }
+
+        protected override void OnAnimationInterrupt(AbilityConfig config)
+        {
+            HaltAbilities();
+        }
 
         protected override void Initialize()
         {
-            base.Initialize();
-            combat = abilityRunner.GetAbilityStat<CombatStat>();
-            defender = GameUtility.FindEntity(abilityRunner.gameObject);
-            if (defender == null)
-            {
-                Debug.LogError("The object is missing entity component to complete the action!");
-            }
-            if (combat == null)
-            {
-                Debug.LogError("The object is missing the required action component to complete the action!");
-            }
-        }
-
-        protected override void OnEnqueue(AbilityConfig actionConfig, string configName)
-        {
-            GuardConfig config = (GuardConfig)actionConfig;
-            config.durationCounter = 0;
-            config.actionStart = true;
-        }
-
-        protected override bool Action(AbilityConfig actionConfig)
-        {
-            GuardConfig config = (GuardConfig)actionConfig;
-            if (!config.actionStart)
-            {
-                config.durationCounter += Time.deltaTime;
-                if (config.durationCounter > config.duration.Value)
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                config.actionStart = false;
-            }
-            defender.Defense(combat.defense.Value, 0);
-            if (config.guardAnimation == null)
-            {
-                // Set up guard sprite
-                GameObject g = ObjectPool.Instance.GetObject(config.spritePoolTag.Value, Vector3.zero, Quaternion.identity);
-                Transform gTransform = g.transform;
-                gTransform.SetParent(defender.transform);
-                gTransform.localPosition = Vector3.zero;
-
-                // Set Scale
-                float range = combat.attackRange.Value;
-                gTransform.localScale = Vector3.one;
-                Vector3 scale = gTransform.lossyScale;
-                gTransform.localScale = new Vector3(range / scale.x, range / scale.y, 1);
-
-                TemporalObject tmp = g.GetComponent<TemporalObject>();
-                tmp.ResetCounter();
-                tmp.duration = -1;
-                SpriteRenderer spriteRenderer = g.GetComponent<SpriteRenderer>();
-                spriteRenderer.sprite = config.sprite;
-                config.guardAnimation = tmp;
-            }
-            return true;
-        }
-
-        protected override void OnActionFinish(AbilityConfig actionConfig)
-        {
-            GuardConfig config = (GuardConfig)actionConfig;
-            config.guardAnimation.DisableObject();
-            config.guardAnimation = null;
+            weaponWielder = abilityRunner.GetComponent<WeaponWielder>();
         }
     }
 }

@@ -25,36 +25,6 @@ MonoBehaviour:
     sharedValue: {fileID: 0}
   targetSetting: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
   effects: []
---- !u!114 &-4864273072688861833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Guard/GuardConfig
-  accessKey: -1
-  endTime: 0
-  useCooldown: 1
-  cooldown: 1
-  isSuspended: 0
-  duration:
-    value: 0.4
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  sprite: {fileID: 21300000, guid: 9c0cc4be0be33c54cb685ff01b7c8ffc, type: 3}
-  spriteAlpha:
-    value: 1
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  spritePoolTag: {fileID: 11400000, guid: 3b82cb7d859145e4480133a3375eab4d, type: 2}
-  durationCounter: 0
-  actionStart: 0
-  guardAnimation: {fileID: 0}
 --- !u!114 &-4823794301270998663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,34 +70,8 @@ MonoBehaviour:
   allAbilities:
     keys:
     - GameScripts.Abilities.CircleAttack
-    - GameScripts.Abilities.Guard
     values:
     - {fileID: 6082429462667526025}
-    - {fileID: 5731192633498567770}
---- !u!114 &5731192633498567770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee0f315229b442b459f33b50ab403f04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
-  abilityPriority:
-    value:
-      executionPriority: 0
-      enqueuePriority: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  configs:
-    keys:
-    - default
-    values:
-    - {fileID: -4864273072688861833}
 --- !u!114 &6082429462667526025
 MonoBehaviour:
   m_ObjectHideFlags: 0

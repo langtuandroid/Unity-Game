@@ -79,8 +79,7 @@ namespace GameScripts.Abilities
         {
             LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
             c.signaled = false;
-            abilityRunner.StartAnimation<LightWeaponAttack>(configName, animation);
-            animator.speed = weapon.Weapon.AttackSpeed;
+            abilityRunner.StartAnimation<LightWeaponAttack>(configName, animation, weapon.Weapon.AttackSpeed);
         }
 
         protected override void Signal(AbilityConfig config, bool isAnimation)

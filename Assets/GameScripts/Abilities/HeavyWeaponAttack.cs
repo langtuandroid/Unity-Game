@@ -5,6 +5,7 @@ using LobsterFramework.EntitySystem;
 using LobsterFramework.Utility;
 using static GameScripts.Abilities.LightWeaponAttack;
 using UnityEditor;
+using static UnityEngine.EventSystems.EventTrigger;
 
 namespace GameScripts.Abilities
 {
@@ -36,6 +37,15 @@ namespace GameScripts.Abilities
                 }
                 ability.DealDamage(entity, baseDamageModifier + maxChargeDamageIncrease *  (chargeTimer / chargeMaxTime));
             }
+
+            public void DealGuardedDamage(Weapon weapon) {
+                if (chargeTimer > chargeMaxTime)
+                {
+                    chargeTimer = chargeMaxTime;
+                }
+                ability.DealDamage(weapon.Entity, baseDamageModifier + maxChargeDamageIncrease * (chargeTimer / chargeMaxTime), 
+                    weapon.HealthDamageReduction, weapon.PostureDamageReduction);
+            }
         }
 
         protected override void Initialize()
@@ -48,7 +58,6 @@ namespace GameScripts.Abilities
         protected override IEnumerator Coroutine(AbilityConfig config)
         {
             HeavyWeaponAttackConfig c = (HeavyWeaponAttackConfig)config;
-            Debug.Log("WindUp");
             // Wait for signal to charge
             while (!c.animationSignaled)
             {
@@ -56,7 +65,6 @@ namespace GameScripts.Abilities
             }
             c.animationSignaled = false;
             animator.speed = 0;
-            Debug.Log("Charging");
             // Wait for signal to attack
             while (!c.inputSignaled && c.chargeTimer < c.chargeMaxTime)
             {
@@ -64,7 +72,6 @@ namespace GameScripts.Abilities
                 yield return null;
             }
 
-            Debug.Log("Attack");
             c.inputSignaled = false;
             animator.speed = weapon.Weapon.AttackSpeed;
             SubscribeWeaponEvent(c);
@@ -74,7 +81,6 @@ namespace GameScripts.Abilities
             {
                 yield return null;
             }
-            Debug.Log("Recovery");
             c.animationSignaled = false;
             UnSubscribeWeaponEvent(c);
 
@@ -83,13 +89,12 @@ namespace GameScripts.Abilities
                 yield return null;
             }
             c.animationSignaled = false;
-            Debug.Log("Finish");
         }
 
         protected override void OnCoroutineEnqueue(AbilityConfig config, string configName)
         {
             HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)config;
-            abilityRunner.StartAnimation<HeavyWeaponAttack>(configName, animation);
+            abilityRunner.StartAnimation<HeavyWeaponAttack>(configName, animation, weapon.Weapon.AttackSpeed);
             h.animationSignaled = false;
             h.inputSignaled = false;
             h.chargeTimer = 0;
@@ -119,20 +124,24 @@ namespace GameScripts.Abilities
         {
             weapon.Weapon.Activate();
             weapon.Weapon.onEntityHit += config.DealDamage;
+            weapon.Weapon.onWeaponHit += config.DealGuardedDamage;
         }
 
         private void UnSubscribeWeaponEvent(HeavyWeaponAttackConfig config)
         {
             weapon.Weapon.Deactivate();
             weapon.Weapon.onEntityHit -= config.DealDamage;
+            weapon.Weapon.onWeaponHit -= config.DealGuardedDamage;
         }
 
-        private void DealDamage(Entity entity, float modifier)
+        private void DealDamage(Entity entity, float modifier, float healthDamageReduction=0, float postureDamageReduction=0)
         {
             if (targets.IsTarget(entity))
             {
-                float health = (0.7f * weapon.Weapon.Sharpness + 0.3f * weapon.Weapon.Weight) * modifier;
-                float posture = (0.3f * weapon.Weapon.Sharpness + 0.7f * weapon.Weapon.Weight) * modifier;
+                float health = (0.7f * weapon.Weapon.Sharpness + 0.3f * weapon.Weapon.Weight) * 
+                    modifier * ((100 - postureDamageReduction) / 100);
+                float posture = (0.3f * weapon.Weapon.Sharpness + 0.7f * weapon.Weapon.Weight) * 
+                    modifier * ((100 - postureDamageReduction) / 100);
                 entity.Damage(health, posture, attacker);
             }
         }

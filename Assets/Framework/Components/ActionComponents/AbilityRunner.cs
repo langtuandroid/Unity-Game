@@ -395,7 +395,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <typeparam name="T"></typeparam>
         /// <param name="configName"></param>
         /// <param name="animation"></param>
-        public void StartAnimation<T>(string configName, string animation) where T : Ability
+        public void StartAnimation<T>(string configName, string animation, float speed=1) where T : Ability
         {
             Ability ability = GetAbility<T>();
             if (ability == null) {
@@ -407,6 +407,7 @@ namespace LobsterFramework.AbilitySystem {
             if (animating != default) {
                 animating.Item1.InterruptAnimation(animating.Item2);
             }
+            animator.speed = speed;
             animating = (ability, configName);
             animator.SetBool("isActing", true);
             animator.Play(animation, -1, 0);
@@ -422,7 +423,6 @@ namespace LobsterFramework.AbilitySystem {
             if(animating == default) { return; }
             animator.SetBool("isActing", false);
             animating = default;
-            animator.speed = 1;
         }
 
         /// <summary>
