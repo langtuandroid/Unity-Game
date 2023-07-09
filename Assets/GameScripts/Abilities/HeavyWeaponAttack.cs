@@ -3,14 +3,11 @@ using LobsterFramework.AbilitySystem;
 using System.Collections;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.Utility;
-using static GameScripts.Abilities.LightWeaponAttack;
-using UnityEditor;
-using static UnityEngine.EventSystems.EventTrigger;
 
 namespace GameScripts.Abilities
 {
     [AddAbilityMenu]
-    [ComponentRequired(typeof(Animator))]
+    [ComponentRequired(typeof(WeaponWielder))]
     public class HeavyWeaponAttack : AbilityCoroutine
     {
         [SerializeField] private string animation;

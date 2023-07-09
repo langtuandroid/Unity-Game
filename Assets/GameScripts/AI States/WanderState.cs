@@ -9,7 +9,6 @@ namespace GameScripts.AI
     [CreateAssetMenu(menuName = "StateMachine/States/AI/WanderState")]
     public class WanderState : State
     {
-        private AIController controller;
         [SerializeField] private RefFloat wanderTime;
         [SerializeField] private RefInt wanderRadius;
         [SerializeField] private RefFloat idleTime;
@@ -32,8 +31,7 @@ namespace GameScripts.AI
 
         public override void InitializeFields(GameObject obj)
         {
-            controller = obj.GetComponent<AIController>();
-            transform = obj.transform;
+            transform = controller.transform;
             trackingData = controller.GetControllerData<AITrackData>();
         }
 

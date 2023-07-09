@@ -40,7 +40,7 @@ namespace LobsterFramework.AbilitySystem
 
         public Entity Entity { get; set; }
 
-        private HashSet<Entity> blocked;
+        private HashSet<Entity> hit;
 
         public WeaponState state { get; set; }
         // Start is called before the first frame update
@@ -50,7 +50,7 @@ namespace LobsterFramework.AbilitySystem
             collider.enabled = false;
             momentumMultiplier = 1;
             oppressingForce = 0;
-            blocked = new();
+            hit = new();
         }
 
         public void Activate(WeaponState state = WeaponState.Attacking) { 
@@ -60,17 +60,18 @@ namespace LobsterFramework.AbilitySystem
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Entity entity = GameUtility.FindEntity(collision.gameObject);
-            if (entity != null && onEntityHit != null && !blocked.Contains(entity)) {
+            Entity entity = collision.GetComponent<Entity>();
+            if (entity != null && onEntityHit != null && !hit.Contains(entity)) {
                 onEntityHit.Invoke(entity);
+                hit.Add(entity);
                 return;
             }
 
-            Weapon weapon = collider.GetComponent<Weapon>();
-            if(weapon != null && weapon.state == WeaponState.Guarding && onWeaponHit != null)
+            Weapon weapon = collision.GetComponent<Weapon>();
+            if(weapon != null && weapon.state == WeaponState.Guarding && onWeaponHit != null && !hit.Contains(weapon.Entity))
             {
                 onWeaponHit.Invoke(weapon);
-                blocked.Add(weapon.Entity);
+                hit.Add(weapon.Entity);
             }
         }
 
@@ -93,7 +94,7 @@ namespace LobsterFramework.AbilitySystem
             collider.enabled=false;
             momentumMultiplier = 1;
             state = WeaponState.Idle;
-            blocked.Clear();
+            hit.Clear();
         }
     }
 

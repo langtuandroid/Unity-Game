@@ -31,7 +31,7 @@ namespace LobsterFramework.AbilitySystem {
         private TypeAbilityStatDictionary stats;
 
         // Animation
-        private Animator animator;
+        [SerializeField] private Animator animator;
         private (Ability, string) animating;
 
         // Status
@@ -269,6 +269,9 @@ namespace LobsterFramework.AbilitySystem {
 
         public void Reset()
         {
+            if (stats == null || availableAbilities == null) {
+                return;
+            }
             foreach (AbilityStat component in stats.Values)
             {
                 component.Reset();
@@ -332,7 +335,6 @@ namespace LobsterFramework.AbilitySystem {
 
         private void Start()
         {
-            animator = GetComponent<Animator>();
             if (abilityData == null)
             {
                 Debug.LogWarning("Ability Data is not set!", gameObject);

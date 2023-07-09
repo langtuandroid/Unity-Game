@@ -4,7 +4,6 @@ using System;
 using UnityEngine.Events;
 using LobsterFramework.Utility.Groups;
 using LobsterFramework.Utility.BufferedStats;
-using LobsterFramework.AbilitySystem;
 
 namespace LobsterFramework.EntitySystem
 {
@@ -39,24 +38,21 @@ namespace LobsterFramework.EntitySystem
         [SerializeField] private RefFloat rotateSpeed;
         [SerializeField] private RefFloat acceleration;
         private Vector2 steering;
-        private BaseOr movementBlock;
+        private BaseOr movementBlock = new(false);
         public float MoveSpeed { get { return moveSpeed.Value; } }
         public float RotateSpeed { get { return rotateSpeed.Value; } }
 
         public Rigidbody2D RigidBody { get { return _rigidBody; } }
         public bool MovementBlocked { get { return movementBlock.Stat; } }
 
-        [Header("Supplimentaries")]
-        private AbilityRunner abilityRunner;
-
         [Header("Status")]
-        [SerializeField] private List<DamageTracker> damageHistory;
-        [SerializeField] public Dictionary<Type, Effect> activeEffects;
+        [SerializeField] private List<DamageTracker> damageHistory = new();
+        [SerializeField] public Dictionary<Type, Effect> activeEffects = new();
         
 
         // Buffers
-        private RegenBuffer regenBuffer;
-        private DamageBuffer damageBuffer;
+        private RegenBuffer regenBuffer = new(true);
+        private DamageBuffer damageBuffer = new(true);
 
         // Listeners
         public UnityAction<bool> onMovementBlocked;
@@ -112,11 +108,6 @@ namespace LobsterFramework.EntitySystem
             IsDead = false;
             PostureBroken = false;
             Posture = MaxPosture;
-            damageHistory = new();
-            activeEffects = new();
-            movementBlock = new(false);
-            damageBuffer = new(true);
-            regenBuffer = new(true);
             damagedSince = Time.time;
 
             regenBuffer.AddHealth(baseHealthRegen.Value);

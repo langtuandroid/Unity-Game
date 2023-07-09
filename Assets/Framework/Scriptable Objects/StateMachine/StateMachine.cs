@@ -7,9 +7,11 @@ namespace LobsterFramework.AI
 {
     public class StateMachine : MonoBehaviour
     {
+        [SerializeField] private AIController controller;
         [SerializeField] private List<State> allStates;
         [SerializeField] private State initialState;
         [SerializeField] private State currentState;
+        
         private Dictionary<Type, State> states = new();
 
         public State CurrentState
@@ -26,6 +28,7 @@ namespace LobsterFramework.AI
             {
                 State state = Instantiate(s);
                 states[state.GetType()] = state;
+                state.controller = controller;
                 state.InitializeFields(gameObject);
             }
             if (initialState == null)

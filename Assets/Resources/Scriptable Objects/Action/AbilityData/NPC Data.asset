@@ -1,30 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6995416392109266467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:CircleAttack/CircleAttackConfig
-  accessKey: -1
-  endTime: 0
-  useCooldown: 1
-  cooldown: 1
-  isSuspended: 0
-  sprite: {fileID: 21300000, guid: c83c81f28d484764c8b68c7040328cf6, type: 3}
-  spritePoolTag: {fileID: 11400000, guid: 3b82cb7d859145e4480133a3375eab4d, type: 2}
-  spriteDuration:
-    value: 0.4
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  targetSetting: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
-  effects: []
 --- !u!114 &-4823794301270998663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,10 +44,12 @@ MonoBehaviour:
     - {fileID: -4823794301270998663}
   allAbilities:
     keys:
-    - GameScripts.Abilities.CircleAttack
+    - GameScripts.Abilities.LightWeaponAttack
+    - GameScripts.Abilities.HeavyWeaponAttack
     values:
-    - {fileID: 6082429462667526025}
---- !u!114 &6082429462667526025
+    - {fileID: 1058309918592575858}
+    - {fileID: 1205781035251041652}
+--- !u!114 &1058309918592575858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,7 +58,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79eec34eea6c62446b70df6baef69aa2, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ec3510c1573a0445aa238c4e906624d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   abilityRunner: {fileID: 0}
@@ -95,4 +72,83 @@ MonoBehaviour:
     keys:
     - default
     values:
-    - {fileID: -6995416392109266467}
+    - {fileID: 4592671962921876183}
+  animation: sword_light_attack
+  targets: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
+--- !u!114 &1205781035251041652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ec3624525b82d4caf74927a4665d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: b193983ee42c6494da4e9b812145dab9, type: 2}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: 6539031060116376277}
+  animation: sword_heavy_attacl
+  targets: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
+--- !u!114 &4592671962921876183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:LightWeaponAttack/LightWeaponAttackConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 0
+  cooldown: 0
+  isSuspended: 0
+  signaled: 0
+--- !u!114 &6539031060116376277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:HeavyWeaponAttack/HeavyWeaponAttackConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 0
+  cooldown: 0
+  isSuspended: 0
+  animationSignaled: 0
+  inputSignaled: 0
+  baseDamageModifier:
+    value: 1.2
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  maxChargeDamageIncrease:
+    value: 0.8
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  chargeMaxTime:
+    value: 0.35
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  chargeTimer: 0
+  ability: {fileID: 0}

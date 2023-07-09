@@ -7,13 +7,12 @@ namespace GameScripts.UI
 {
     public class ParallelToCamera : MonoBehaviour
     {
-        [SerializeField] private new Camera camera;
         private Transform cameraTransform;
         private new Transform transform;
         private void Start()
         {
             transform = GetComponent<Transform>();
-            cameraTransform = camera.GetComponent<Transform>();
+            cameraTransform = Camera.main.GetComponent<Transform>();
         }
 
         // Update is called once per frame

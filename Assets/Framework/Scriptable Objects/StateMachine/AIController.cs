@@ -4,41 +4,37 @@ using UnityEngine;
 using Pathfinding;
 using System;
 using LobsterFramework.Utility.Groups;
-using LobsterFramework.Utility.Groups;
 using LobsterFramework.EntitySystem;
-using LobsterFramework.AI;
 using LobsterFramework.Utility;
+using LobsterFramework.AbilitySystem;
 
-namespace GameScripts.AI
+namespace LobsterFramework.AI
 {
     public class AIController : MonoBehaviour
     {
         [SerializeField] private List<ControllerData> controllerDatas;
         [SerializeField] private EntityGroup targetGroup;
-        [SerializeField] private RefInt rotateSpeed;
+        [SerializeField] private AbilityRunner abilityRunner;
+        [SerializeField] private StateMachine stateMachine;
 
         public Entity target;
         private Transform _transform;
         private Collider2D _collider;
 
         private AIPath aiPath;
-        private Seeker seeker;
         private GridGraph gridGraph;
-
-        private StateMachine stateMachine;
 
         private Dictionary<Type, ControllerData> controllerData;
         private Entity entityComponent;
-        private bool isRotating;
-        private Quaternion endGoal;
+
+
+        public AbilityRunner AbilityRunner { get { return abilityRunner; }}
 
         private void Awake()
         {
             _transform = transform;
             _collider = GetComponent<Collider2D>();
             aiPath = GetComponent<AIPath>();
-            seeker = GetComponent<Seeker>();
-            stateMachine = GetComponent<StateMachine>();
 
             gridGraph = AstarPath.active.data.gridGraph;
             controllerData = new();
@@ -49,9 +45,14 @@ namespace GameScripts.AI
             entityComponent = GetComponent<Entity>();
         }
 
-        private void Start()
+        private void OnEnable()
         {
             entityComponent.onMovementBlocked += BlockMovement;
+        }
+
+        private void OnDisable()
+        {
+            entityComponent.onMovementBlocked -= BlockMovement;
         }
 
         private void Update()
@@ -149,12 +150,7 @@ namespace GameScripts.AI
 
         public void LookTowards()
         {
-            if (entityComponent.MovementBlocked)
-            {
-                return;
-            }
-            Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, target.transform.position - _transform.position);
-            _transform.rotation = Quaternion.RotateTowards(_transform.rotation, targetRotation, rotateSpeed.Value * Time.deltaTime);
+            entityComponent.RotateTowards(target.transform.position - _transform.position);
         }
 
         public void BackStep()

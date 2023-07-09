@@ -2,7 +2,9 @@ using LobsterFramework.AbilitySystem;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.Utility;
 using System.Collections;
+using UnityEditor.Playables;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 namespace GameScripts.Abilities
 {
@@ -14,7 +16,7 @@ namespace GameScripts.Abilities
         [SerializeField] private TargetSetting targets;
         
         private Animator animator;
-        private WeaponWielder weapon;
+        private WeaponWielder weaponWielder;
         private Entity attacker;
 
         public class LightWeaponAttackConfig : AbilityCoroutineConfig {
@@ -25,19 +27,17 @@ namespace GameScripts.Abilities
         protected override void Initialize()
         {
             animator = abilityRunner.Animator;
-            weapon = abilityRunner.GetComponent<WeaponWielder>();
+            weaponWielder = abilityRunner.GetComponent<WeaponWielder>();
             attacker = GameUtility.FindEntity(abilityRunner.gameObject);
         }
 
         protected override IEnumerator Coroutine(AbilityConfig config)
         {
             LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
-            Debug.Log("WindUp");
             // Wait for signal to attack
             while (!c.signaled) { 
                 yield return null;
             }
-            Debug.Log("Attack");
             c.signaled = false;
             SubscribeWeaponEvent();
 
@@ -46,7 +46,6 @@ namespace GameScripts.Abilities
             {
                 yield return null;
             }
-            Debug.Log("Recovery");
             c.signaled = false;
             UnSubscribeWeaponEvent();
 
@@ -54,24 +53,38 @@ namespace GameScripts.Abilities
                 yield return null;
             }
             c.signaled = false;
-            Debug.Log("Finish");
         }
 
         private void SubscribeWeaponEvent() {
-            weapon.Weapon.Activate();
-            weapon.Weapon.onEntityHit += DealDamage;
+            weaponWielder.Weapon.Activate();
+            weaponWielder.Weapon.onEntityHit += DealDamage;
+            weaponWielder.Weapon.onWeaponHit += DealGuardedDamage;
         }
 
         private void UnSubscribeWeaponEvent() {
-            weapon.Weapon.Deactivate();
-            weapon.Weapon.onEntityHit -= DealDamage;
+            weaponWielder.Weapon.Deactivate();
+            weaponWielder.Weapon.onEntityHit -= DealDamage;
+            weaponWielder.Weapon.onWeaponHit -= DealGuardedDamage;
         }
 
         private void DealDamage(Entity entity) {
             if (targets.IsTarget(entity)) {
-                float health = 0.7f * weapon.Weapon.Sharpness + 0.3f * weapon.Weapon.Weight;
-                float posture = 0.3f * weapon.Weapon.Sharpness + 0.7f * weapon.Weapon.Weight;
+                float health = 0.7f * weaponWielder.Weapon.Sharpness + 0.3f * weaponWielder.Weapon.Weight;
+                float posture = 0.3f * weaponWielder.Weapon.Sharpness + 0.7f * weaponWielder.Weapon.Weight;
                 entity.Damage(health, posture, attacker);
+            }
+        }
+
+        public void DealGuardedDamage(Weapon weapon)
+        {
+            if (targets.IsTarget(weapon.Entity))
+            {
+                float health = 0.7f * weapon.Sharpness + 0.3f * weapon.Weight;
+                float posture = 0.3f * weapon.Sharpness + 0.7f * weapon.Weight;
+                float hp = (100 - weapon.HealthDamageReduction) / 100;
+                float pp = (100 - weapon.PostureDamageReduction) / 100;
+                weapon.Entity.Damage(health * hp, posture * pp, attacker);
+                Debug.Log("Guarded:" + Time.time);
             }
         }
 
@@ -79,7 +92,7 @@ namespace GameScripts.Abilities
         {
             LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
             c.signaled = false;
-            abilityRunner.StartAnimation<LightWeaponAttack>(configName, animation, weapon.Weapon.AttackSpeed);
+            abilityRunner.StartAnimation<LightWeaponAttack>(configName, animation, weaponWielder.Weapon.AttackSpeed);
         }
 
         protected override void Signal(AbilityConfig config, bool isAnimation)
