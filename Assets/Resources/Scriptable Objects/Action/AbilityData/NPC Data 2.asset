@@ -1,29 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8163339170250132205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48f70b9a967a96d4abc6cf3b83a774bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
-  abilityPriority:
-    value:
-      executionPriority: 0
-      enqueuePriority: 0
-    useSharedValue: 1
-    sharedValue: {fileID: 11400000, guid: b193983ee42c6494da4e9b812145dab9, type: 2}
-  configs:
-    keys:
-    - default
-    values:
-    - {fileID: 2723873561734504686}
 --- !u!114 &-6995416392109266467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49,6 +25,32 @@ MonoBehaviour:
     sharedValue: {fileID: 0}
   targetSetting: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
   effects: []
+--- !u!114 &-6173692783368507176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec3510c1573a0445aa238c4e906624d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: 3476681714428802223}
+  animation: stick_light_attack
+  targets: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
 --- !u!114 &-4864273072688861833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,43 +68,8 @@ MonoBehaviour:
   useCooldown: 1
   cooldown: 1
   isSuspended: 0
-  duration:
-    value: 0.4
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  sprite: {fileID: 21300000, guid: 9c0cc4be0be33c54cb685ff01b7c8ffc, type: 3}
-  spriteAlpha:
-    value: 1
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  spritePoolTag: {fileID: 11400000, guid: 3b82cb7d859145e4480133a3375eab4d, type: 2}
-  durationCounter: 0
-  actionStart: 0
-  guardAnimation: {fileID: 0}
---- !u!114 &-4823794301270998663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bddb4d3b04c96644598c218b6d67a82a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackDamage:
-    value: 15
-    useSharedValue: 0
-    sharedValue: {fileID: 11400000, guid: 404f1ca56cb622c408adec943f91ca10, type: 2}
-  attackRange:
-    value: 0
-    useSharedValue: 1
-    sharedValue: {fileID: 11400000, guid: dd7120c53031b414c90b277b6567f3a8, type: 2}
-  defense:
-    value: 0
-    useSharedValue: 1
-    sharedValue: {fileID: 11400000, guid: 16c8e05ac8064dd46a440f6f637658ce, type: 2}
+  animationSignaled: 0
+  inputSignaled: 0
 --- !u!114 &-3498647953827595702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,27 +102,6 @@ MonoBehaviour:
   begin: 0
   state: 0
   animationInterrupted: 0
---- !u!114 &-3201260788581971192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23cafed77cafc444eb80658fa3b67136, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxMana:
-    value: 100
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  manaRegen:
-    value: 5
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  mana: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,17 +116,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: 0
   stats:
-    keys:
-    - GameScripts.Abilities.CombatStat
-    - GameScripts.Abilities.Mana
-    values:
-    - {fileID: -4823794301270998663}
-    - {fileID: -3201260788581971192}
+    keys: []
+    values: []
   allAbilities:
     keys:
-    - GameScripts.Abilities.Shoot
+    - GameScripts.Abilities.LightWeaponAttack
     values:
-    - {fileID: -8163339170250132205}
+    - {fileID: -6173692783368507176}
 --- !u!114 &2723873561734504686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,3 +158,21 @@ MonoBehaviour:
     useSharedValue: 0
     sharedValue: {fileID: 0}
   targetSetting: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
+--- !u!114 &3476681714428802223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:LightWeaponAttack/LightWeaponAttackConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 0
+  cooldown: 0
+  isSuspended: 0
+  signaled: 0
