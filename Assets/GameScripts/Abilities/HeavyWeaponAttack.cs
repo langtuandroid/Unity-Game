@@ -10,11 +10,10 @@ namespace GameScripts.Abilities
     [ComponentRequired(typeof(WeaponWielder))]
     public class HeavyWeaponAttack : AbilityCoroutine
     {
-        [SerializeField] private string animation;
         [SerializeField] private TargetSetting targets;
 
         private Animator animator;
-        private WeaponWielder weapon;
+        private WeaponWielder weaponWielder;
         private Entity attacker;
         public class HeavyWeaponAttackConfig : AbilityCoroutineConfig {
             [HideInInspector] public bool animationSignaled;
@@ -48,8 +47,19 @@ namespace GameScripts.Abilities
         protected override void Initialize()
         {
             animator = abilityRunner.Animator;
-            weapon = abilityRunner.GetComponent<WeaponWielder>();
+            weaponWielder = abilityRunner.GetComponent<WeaponWielder>();
             attacker = GameUtility.FindEntity(abilityRunner.gameObject);
+        }
+
+        protected override bool ConditionSatisfied(AbilityConfig config)
+        {
+            if (weaponWielder.Mainhand != null)
+            {
+                int animation = Animator.StringToHash(weaponWielder.Mainhand.Name + "_heavy_attack");
+                int index = abilityRunner.Animator.GetLayerIndex("Base Layer");
+                return abilityRunner.Animator.HasState(index, animation);
+            }
+            return false;
         }
 
         protected override IEnumerator Coroutine(AbilityConfig config)
@@ -70,7 +80,7 @@ namespace GameScripts.Abilities
             }
 
             c.inputSignaled = false;
-            animator.speed = weapon.Weapon.AttackSpeed;
+            animator.speed = weaponWielder.Mainhand.AttackSpeed;
             SubscribeWeaponEvent(c);
 
             // Wait for signal of recovery
@@ -91,17 +101,19 @@ namespace GameScripts.Abilities
         protected override void OnCoroutineEnqueue(AbilityConfig config, string configName)
         {
             HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)config;
-            abilityRunner.StartAnimation<HeavyWeaponAttack>(configName, animation, weapon.Weapon.AttackSpeed);
+            abilityRunner.StartAnimation<HeavyWeaponAttack>(configName, weaponWielder.Mainhand.Name + "_heavy_attack", weaponWielder.Mainhand.AttackSpeed);
             h.animationSignaled = false;
             h.inputSignaled = false;
             h.chargeTimer = 0;
             h.ability = this;
+            weaponWielder.Mainhand.On();
         }
 
         protected override void OnCoroutineFinish(AbilityConfig config)
         {
             HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)config;
             h.animationSignaled = false;
+            weaponWielder.Mainhand.Off();
         }
 
         protected override void Signal(AbilityConfig config, bool isAnimation)
@@ -119,25 +131,25 @@ namespace GameScripts.Abilities
 
         private void SubscribeWeaponEvent(HeavyWeaponAttackConfig config)
         {
-            weapon.Weapon.Activate();
-            weapon.Weapon.onEntityHit += config.DealDamage;
-            weapon.Weapon.onWeaponHit += config.DealGuardedDamage;
+            weaponWielder.Mainhand.Action();
+            weaponWielder.Mainhand.onEntityHit += config.DealDamage;
+            weaponWielder.Mainhand.onWeaponHit += config.DealGuardedDamage;
         }
 
         private void UnSubscribeWeaponEvent(HeavyWeaponAttackConfig config)
         {
-            weapon.Weapon.Deactivate();
-            weapon.Weapon.onEntityHit -= config.DealDamage;
-            weapon.Weapon.onWeaponHit -= config.DealGuardedDamage;
+            weaponWielder.Mainhand.Pause();
+            weaponWielder.Mainhand.onEntityHit -= config.DealDamage;
+            weaponWielder.Mainhand.onWeaponHit -= config.DealGuardedDamage;
         }
 
         private void DealDamage(Entity entity, float modifier, float healthDamageReduction=0, float postureDamageReduction=0)
         {
             if (targets.IsTarget(entity))
             {
-                float health = (0.7f * weapon.Weapon.Sharpness + 0.3f * weapon.Weapon.Weight) * 
+                float health = (0.7f * weaponWielder.Mainhand.Sharpness + 0.3f * weaponWielder.Mainhand.Weight) * 
                     modifier * ((100 - postureDamageReduction) / 100);
-                float posture = (0.3f * weapon.Weapon.Sharpness + 0.7f * weapon.Weapon.Weight) * 
+                float posture = (0.3f * weaponWielder.Mainhand.Sharpness + 0.7f * weaponWielder.Mainhand.Weight) * 
                     modifier * ((100 - postureDamageReduction) / 100);
                 entity.Damage(health, posture, attacker);
             }

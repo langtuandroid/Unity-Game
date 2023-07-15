@@ -24,6 +24,7 @@ namespace GameScripts.InputControl
         [SerializeField] private AbilityRunner abilityRunner;
         [SerializeField] private GeneralInteractor interactor;
         [SerializeField] private Transform _transform;
+        [SerializeField] private WeaponWielder weaponWielder;
 
 
         [Header("Inputs")]
@@ -162,6 +163,14 @@ namespace GameScripts.InputControl
             if (!gamePause.Value && context.started)
             {
                 interactor.PreviousInteractable();
+            }
+        }
+
+        public void SwitchWeapon(InputAction.CallbackContext context)
+        {
+            if (!gamePause.Value && context.started)
+            {
+                weaponWielder.SwitchMainHand();
             }
         }
 

@@ -13,7 +13,6 @@ namespace GameScripts.Abilities
     [AddAbilityMenu]
     public class Guard : AbilityCoroutine
     {
-        [SerializeField] private string animation;
         private WeaponWielder weaponWielder;
 
         public class GuardConfig : AbilityCoroutineConfig
@@ -28,17 +27,29 @@ namespace GameScripts.Abilities
             }
         }
 
+        protected override bool ConditionSatisfied(AbilityConfig config)
+        {
+            if (weaponWielder.Mainhand != null)
+            {
+                int animation = Animator.StringToHash(weaponWielder.Mainhand.Name + "_guard");
+                int index = abilityRunner.Animator.GetLayerIndex("Base Layer");
+                return abilityRunner.Animator.HasState(index, animation);
+            }
+            return false;
+        }
+
         protected override void OnCoroutineEnqueue(AbilityConfig config, string configName)
         {
             GuardConfig guardConfig = (GuardConfig)config;
-            abilityRunner.StartAnimation<Guard>(configName, animation, weaponWielder.Weapon.AttackSpeed);
+            abilityRunner.StartAnimation<Guard>(configName, weaponWielder.Mainhand.Name + "_guard", weaponWielder.Mainhand.AttackSpeed);
             guardConfig.animationSignaled = false;
             guardConfig.inputSignaled = false;
+            weaponWielder.Mainhand.On();
         }
 
         protected override void OnCoroutineFinish(AbilityConfig config)
         {
-            
+            weaponWielder.Mainhand.Off();
         }
 
         protected override IEnumerator Coroutine(AbilityConfig config)
@@ -51,15 +62,15 @@ namespace GameScripts.Abilities
             }
             guardConfig.animationSignaled = false;
             abilityRunner.Animator.speed = 0;
-            weaponWielder.Weapon.Activate(WeaponState.Guarding);
+            weaponWielder.Mainhand.Action(WeaponState.Guarding);
             
             while(!guardConfig.inputSignaled)
             {
                 yield return null;
             }
             guardConfig.inputSignaled = false;
-            abilityRunner.Animator.speed = weaponWielder.Weapon.AttackSpeed;
-            weaponWielder.Weapon.Deactivate();
+            abilityRunner.Animator.speed = weaponWielder.Mainhand.AttackSpeed;
+            weaponWielder.Mainhand.Pause();
 
             while (!guardConfig.animationSignaled)
             {

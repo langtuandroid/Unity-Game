@@ -13,9 +13,11 @@ namespace LobsterFramework.AbilitySystem
     [RequireComponent(typeof(Collider2D))]
     public class Weapon : MonoBehaviour
     {
+        [SerializeField] private string weaponName;
         [SerializeField] private float weight;
         [SerializeField] private float sharpness;
         [SerializeField] private float attackSpeed;
+        [SerializeField] private bool doubleHanded;
         [Range(0, 100)]
         [SerializeField] private float healthDamageReduction;
         [Range(0, 100)]
@@ -23,15 +25,22 @@ namespace LobsterFramework.AbilitySystem
 
         private float momentumMultiplier;
         private float oppressingForce;
+        private bool isActive;
+
+        internal WeaponWielder weaponWielder;
 
         public UnityAction<Entity> onEntityHit;
         public UnityAction<Weapon> onWeaponHit;
 
         new private Collider2D collider;
 
+        public string Name { get { return weaponName; } }
         public float Weight { get { return weight; } }
         public float Sharpness { get { return sharpness; } }
         public float AttackSpeed { get {  return attackSpeed; } }
+
+        public bool DoubleHanded { get { return doubleHanded; } }
+        public bool Active { get { return isActive; } }
 
         public float Momentum { get { return momentumMultiplier * weight; } }
 
@@ -51,9 +60,15 @@ namespace LobsterFramework.AbilitySystem
             momentumMultiplier = 1;
             oppressingForce = 0;
             hit = new();
+            isActive = false;
         }
 
-        public void Activate(WeaponState state = WeaponState.Attacking) { 
+        /// <summary>
+        /// Enable the collider of the weapon and set its weapon state. Momentum will start to accumulate after this. Can only be used after calling On().
+        /// </summary>
+        /// <param name="state">The weapon state to set the weapon to be</param>
+        public void Action(WeaponState state = WeaponState.Attacking) {
+            if (!isActive) { return; }
             collider.enabled = true;
             this.state = state;
         }
@@ -90,11 +105,29 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
-        public void Deactivate() { 
+        /// <summary>
+        /// Disable the weapon collider and reset momentum
+        /// </summary>
+        public void Pause() { 
             collider.enabled=false;
             momentumMultiplier = 1;
             state = WeaponState.Idle;
             hit.Clear();
+        }
+
+        /// <summary>
+        /// Signal that the weapon is being used in action
+        /// </summary>
+        public void On() {
+            isActive = true;    
+        }
+
+        /// <summary>
+        /// Signal that the weapon is not being used in action
+        /// </summary>
+        public void Off() {
+            isActive = false;
+            weaponWielder.PlayDefaulWeaponAnimation();
         }
     }
 

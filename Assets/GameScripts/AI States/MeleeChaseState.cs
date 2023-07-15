@@ -4,6 +4,7 @@ using LobsterFramework.AbilitySystem;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.AI;
 using GameScripts.Abilities;
+using UnityEngine.InputSystem.Android;
 
 namespace GameScripts.AI
 {
@@ -14,7 +15,6 @@ namespace GameScripts.AI
         [SerializeField] private float attackRange;
         private AITrackData trackData;
         private AbilityRunner abilityRunner;
-
 
         public override void InitializeFields(GameObject obj)
         {
@@ -36,11 +36,10 @@ namespace GameScripts.AI
             if (!controller.target.gameObject.activeInHierarchy)
             {
                 return typeof(WanderState);
-            } 
-
+            }
             if (controller.TargetInRange(trackData.chaseDistance.Value))
             {
-                if (controller.TargetInRange(attackRange))
+                if (controller.TargetInRange(attackRange) )
                 {
                     abilityRunner.EnqueueAbility<LightWeaponAttack>();
                 }

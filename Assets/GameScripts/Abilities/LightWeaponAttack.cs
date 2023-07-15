@@ -12,10 +12,8 @@ namespace GameScripts.Abilities
     [ComponentRequired(typeof(WeaponWielder))]
     public class LightWeaponAttack : AbilityCoroutine
     {
-        [SerializeField] private string animation;
         [SerializeField] private TargetSetting targets;
         
-        private Animator animator;
         private WeaponWielder weaponWielder;
         private Entity attacker;
 
@@ -26,9 +24,19 @@ namespace GameScripts.Abilities
 
         protected override void Initialize()
         {
-            animator = abilityRunner.Animator;
             weaponWielder = abilityRunner.GetComponent<WeaponWielder>();
             attacker = GameUtility.FindEntity(abilityRunner.gameObject);
+        }
+
+        protected override bool ConditionSatisfied(AbilityConfig config)
+        {
+            if(weaponWielder.Mainhand != null)
+            {
+                int animation = Animator.StringToHash(weaponWielder.Mainhand.Name + "_light_attack");
+                int index = abilityRunner.Animator.GetLayerIndex("Base Layer");
+                return abilityRunner.Animator.HasState(index, animation);
+            }
+            return false;
         }
 
         protected override IEnumerator Coroutine(AbilityConfig config)
@@ -56,21 +64,21 @@ namespace GameScripts.Abilities
         }
 
         private void SubscribeWeaponEvent() {
-            weaponWielder.Weapon.Activate();
-            weaponWielder.Weapon.onEntityHit += DealDamage;
-            weaponWielder.Weapon.onWeaponHit += DealGuardedDamage;
+            weaponWielder.Mainhand.Action();
+            weaponWielder.Mainhand.onEntityHit += DealDamage;
+            weaponWielder.Mainhand.onWeaponHit += DealGuardedDamage;
         }
 
         private void UnSubscribeWeaponEvent() {
-            weaponWielder.Weapon.Deactivate();
-            weaponWielder.Weapon.onEntityHit -= DealDamage;
-            weaponWielder.Weapon.onWeaponHit -= DealGuardedDamage;
+            weaponWielder.Mainhand.Pause();
+            weaponWielder.Mainhand.onEntityHit -= DealDamage;
+            weaponWielder.Mainhand.onWeaponHit -= DealGuardedDamage;
         }
 
         private void DealDamage(Entity entity) {
             if (targets.IsTarget(entity)) {
-                float health = 0.7f * weaponWielder.Weapon.Sharpness + 0.3f * weaponWielder.Weapon.Weight;
-                float posture = 0.3f * weaponWielder.Weapon.Sharpness + 0.7f * weaponWielder.Weapon.Weight;
+                float health = 0.7f * weaponWielder.Mainhand.Sharpness + 0.3f * weaponWielder.Mainhand.Weight;
+                float posture = 0.3f * weaponWielder.Mainhand.Sharpness + 0.7f * weaponWielder.Mainhand.Weight;
                 entity.Damage(health, posture, attacker);
             }
         }
@@ -78,7 +86,7 @@ namespace GameScripts.Abilities
         public void DealGuardedDamage(Weapon weapon)
         {
             if (targets.IsTarget(weapon.Entity))
-            {
+            { 
                 float health = 0.7f * weapon.Sharpness + 0.3f * weapon.Weight;
                 float posture = 0.3f * weapon.Sharpness + 0.7f * weapon.Weight;
                 float hp = (100 - weapon.HealthDamageReduction) / 100;
@@ -92,18 +100,21 @@ namespace GameScripts.Abilities
         {
             LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
             c.signaled = false;
-            abilityRunner.StartAnimation<LightWeaponAttack>(configName, animation, weaponWielder.Weapon.AttackSpeed);
+            abilityRunner.StartAnimation<LightWeaponAttack>(configName, weaponWielder.Mainhand.Name + "_light_attack", weaponWielder.Mainhand.AttackSpeed);
+            weaponWielder.Mainhand.On();
         }
 
         protected override void Signal(AbilityConfig config, bool isAnimation)
         {
             if (isAnimation) {
-                LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
+                LightWeaponAttackConfig c = (LightWeaponAttackConfig)config; 
                 c.signaled = true;
             }
         }
 
-        protected override void OnCoroutineFinish(AbilityConfig config){}
+        protected override void OnCoroutineFinish(AbilityConfig config){
+            weaponWielder.Mainhand.Off();
+        }
 
         protected override void OnAnimationInterrupt(AbilityConfig config)
         {

@@ -87,7 +87,7 @@ namespace LobsterFramework.AbilitySystem
                 foreach (var kwp in ai.configs)
                 {
 
-                    cfs.Add((kwp.Key, Instantiate(kwp.Value)));
+                    cfs.Add((kwp.Key, Instantiate(kwp.Value)));  
                 }
                 foreach ((string name, Ability.AbilityConfig config) in cfs)
                 {

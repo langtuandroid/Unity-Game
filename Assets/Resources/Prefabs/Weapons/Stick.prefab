@@ -150,8 +150,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05362911, y: 0.0375407}
-  m_Size: {x: 0.85560274, y: 0.117794126}
+  m_Offset: {x: 0.05814494, y: 0.03347661}
+  m_Size: {x: 0.80322355, y: 0.077154264}
   m_Direction: 1
 --- !u!114 &1766288035062998633
 MonoBehaviour:
@@ -165,8 +165,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e73fdb35b1ad4544af3f25e2364b7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponName: stick
   weight: 5
   sharpness: 5
   attackSpeed: 1.5
+  doubleHanded: 0
   healthDamageReduction: 100
   postureDamageReduction: 100

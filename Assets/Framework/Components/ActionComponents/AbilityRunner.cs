@@ -411,7 +411,6 @@ namespace LobsterFramework.AbilitySystem {
             }
             animator.speed = speed;
             animating = (ability, configName);
-            animator.SetBool("isActing", true);
             animator.Play(animation, -1, 0);
         }
 
@@ -423,7 +422,6 @@ namespace LobsterFramework.AbilitySystem {
         {
             if(animator == null) { return; }
             if(animating == default) { return; }
-            animator.SetBool("isActing", false);
             animating = default;
         }
 
