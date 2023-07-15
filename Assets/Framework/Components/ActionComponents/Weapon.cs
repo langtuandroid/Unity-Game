@@ -25,7 +25,6 @@ namespace LobsterFramework.AbilitySystem
 
         private float momentumMultiplier;
         private float oppressingForce;
-        private bool isActive;
 
         internal WeaponWielder weaponWielder;
 
@@ -40,7 +39,6 @@ namespace LobsterFramework.AbilitySystem
         public float AttackSpeed { get {  return attackSpeed; } }
 
         public bool DoubleHanded { get { return doubleHanded; } }
-        public bool Active { get { return isActive; } }
 
         public float Momentum { get { return momentumMultiplier * weight; } }
 
@@ -60,7 +58,6 @@ namespace LobsterFramework.AbilitySystem
             momentumMultiplier = 1;
             oppressingForce = 0;
             hit = new();
-            isActive = false;
         }
 
         /// <summary>
@@ -68,7 +65,6 @@ namespace LobsterFramework.AbilitySystem
         /// </summary>
         /// <param name="state">The weapon state to set the weapon to be</param>
         public void Action(WeaponState state = WeaponState.Attacking) {
-            if (!isActive) { return; }
             collider.enabled = true;
             this.state = state;
         }
@@ -113,21 +109,6 @@ namespace LobsterFramework.AbilitySystem
             momentumMultiplier = 1;
             state = WeaponState.Idle;
             hit.Clear();
-        }
-
-        /// <summary>
-        /// Signal that the weapon is being used in action
-        /// </summary>
-        public void On() {
-            isActive = true;    
-        }
-
-        /// <summary>
-        /// Signal that the weapon is not being used in action
-        /// </summary>
-        public void Off() {
-            isActive = false;
-            weaponWielder.PlayDefaulWeaponAnimation();
         }
     }
 

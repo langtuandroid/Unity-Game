@@ -20,6 +20,7 @@ namespace LobsterFramework.AbilitySystem
         [SerializeField] private Transform offhandWeaponPosition;
         [SerializeField] private Entity entity;
         [SerializeField] private Animator animator;
+        [SerializeField] private AbilityRunner abilityRunner;
 
         private Weapon mainWeapon1;
         private Weapon mainWeapon2;
@@ -32,7 +33,9 @@ namespace LobsterFramework.AbilitySystem
         private GameObject offWeapon2Inst;
 
         public Weapon Mainhand { get; private set; }
+        public Weapon Mainhand2 { get; private set; }
         public Weapon Offhand { get; private set; }
+        public Weapon Offhand2 { get; private set; }
 
         private void Start()
         {
@@ -59,6 +62,7 @@ namespace LobsterFramework.AbilitySystem
                 }
                 else { 
                     mainWeapon2.gameObject.SetActive(false);
+                    Mainhand2 = mainWeapon2;
                 }
                 mainWeapon2.weaponWielder = this;
             }
@@ -86,6 +90,7 @@ namespace LobsterFramework.AbilitySystem
                 }
                 else { 
                     offWeapon2.gameObject.SetActive(false);
+                    Offhand2 = offWeapon2;
                 }
             }
             if (Mainhand != null && Mainhand.DoubleHanded) {
@@ -95,27 +100,21 @@ namespace LobsterFramework.AbilitySystem
                 }
             }
 
-            PlayDefaulWeaponAnimation();
+            PlayDefaultWeaponAnimation();
         }
 
         public void SwitchMainHand() {
-            if (mainWeapon1 == Mainhand && Mainhand.state == WeaponState.Idle)
+            if (Mainhand != null && Mainhand.state == WeaponState.Idle)
             {
-                if (mainhandWeapon2 != null)
+                if (Mainhand2 != null)
                 {
-                    Mainhand = mainWeapon2;
-                    mainWeapon1.gameObject.SetActive(false);
-                    mainWeapon2.gameObject.SetActive(true);
-                    PlayDefaulWeaponAnimation();
-                }
-            }
-            else if (mainWeapon2 == Mainhand && Mainhand.state == WeaponState.Idle) { 
-                if(mainhandWeapon1 != null)
-                {
-                    Mainhand = mainWeapon1;
-                    mainWeapon2.gameObject.SetActive(false);
-                    mainWeapon1.gameObject.SetActive(true);
-                    PlayDefaulWeaponAnimation();
+                    Mainhand.Pause();
+                    Weapon w = Mainhand;
+                    Mainhand = Mainhand2;
+                    Mainhand2 = w;
+                    w.gameObject.SetActive(false);
+                    Mainhand.gameObject.SetActive(true);
+                    PlayDefaultWeaponAnimation();
                 }
             }
             if (Offhand != null)
@@ -132,35 +131,29 @@ namespace LobsterFramework.AbilitySystem
 
         public void SwitchOffHand()
         {
-            if (offWeapon1 == Offhand && Offhand.state == WeaponState.Idle)
+            if (Offhand != null && Offhand.state == WeaponState.Idle)
             {
-                if (offhandWeapon2 != null)
+                if (Offhand2 != null)
                 {
+                    Offhand.Pause();
+                    Weapon w = Offhand;
                     Offhand.gameObject.SetActive(false);
-                    Offhand = offWeapon2;
+                    Offhand = Offhand2;
+                    Offhand2 = w;
                     if (Mainhand != null && !Mainhand.DoubleHanded) {
-                        Offhand.gameObject.SetActive(true);
-                    }
-                }
-            }
-            else if (offWeapon2 == Offhand && Offhand.state == WeaponState.Idle)
-            {
-                if (offhandWeapon1 != null)
-                {
-                    Offhand.gameObject.SetActive(false);
-                    Offhand = offWeapon1;
-                    if (Mainhand != null && !Mainhand.DoubleHanded)
-                    {
                         Offhand.gameObject.SetActive(true);
                     }
                 }
             }
         }
 
-        internal void PlayDefaulWeaponAnimation() {
+        public void PlayDefaultWeaponAnimation() {
             if(Mainhand != null && animator != null)
             {
-                animator.Play(Mainhand.Name + "_move", -1, 0);
+                animator.speed = 1;
+                if (abilityRunner != null && !abilityRunner.IsAnimating()) {
+                    animator.Play(Mainhand.Name + "_move", -1, 0);
+                }
             }
         }
     }

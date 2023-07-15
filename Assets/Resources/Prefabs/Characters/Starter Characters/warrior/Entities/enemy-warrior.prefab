@@ -594,7 +594,7 @@ MonoBehaviour:
   useRaycasting: 1
   mask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
   thickRaycast: 1
   thickRaycastRadius: 0.4
   use2DPhysics: 1
@@ -871,6 +871,7 @@ MonoBehaviour:
   abilityData: {fileID: 0}
   data: {fileID: 11400000, guid: 19295613a1edf354285d3dc6c691790a, type: 2}
   animator: {fileID: 7478630132905307239}
+  weaponWielder: {fileID: 6116060902999187534}
 --- !u!114 &6116060902999187534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,6 +892,7 @@ MonoBehaviour:
   offhandWeaponPosition: {fileID: 2679503213090513964}
   entity: {fileID: 4248079580029518340}
   animator: {fileID: 7478630132905307239}
+  abilityRunner: {fileID: 2585220681520976840}
 --- !u!114 &6827095745158944888
 MonoBehaviour:
   m_ObjectHideFlags: 0

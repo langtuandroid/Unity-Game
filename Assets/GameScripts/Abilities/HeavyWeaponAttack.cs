@@ -106,14 +106,12 @@ namespace GameScripts.Abilities
             h.inputSignaled = false;
             h.chargeTimer = 0;
             h.ability = this;
-            weaponWielder.Mainhand.On();
         }
 
         protected override void OnCoroutineFinish(AbilityConfig config)
         {
             HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)config;
             h.animationSignaled = false;
-            weaponWielder.Mainhand.Off();
         }
 
         protected override void Signal(AbilityConfig config, bool isAnimation)
@@ -148,7 +146,7 @@ namespace GameScripts.Abilities
             if (targets.IsTarget(entity))
             {
                 float health = (0.7f * weaponWielder.Mainhand.Sharpness + 0.3f * weaponWielder.Mainhand.Weight) * 
-                    modifier * ((100 - postureDamageReduction) / 100);
+                    modifier * ((100 - healthDamageReduction) / 100);
                 float posture = (0.3f * weaponWielder.Mainhand.Sharpness + 0.7f * weaponWielder.Mainhand.Weight) * 
                     modifier * ((100 - postureDamageReduction) / 100);
                 entity.Damage(health, posture, attacker);

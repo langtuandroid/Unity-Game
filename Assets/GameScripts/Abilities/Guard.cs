@@ -14,6 +14,7 @@ namespace GameScripts.Abilities
     public class Guard : AbilityCoroutine
     {
         private WeaponWielder weaponWielder;
+        private bool animationInterrupted;
 
         public class GuardConfig : AbilityCoroutineConfig
         {
@@ -40,16 +41,18 @@ namespace GameScripts.Abilities
 
         protected override void OnCoroutineEnqueue(AbilityConfig config, string configName)
         {
+            animationInterrupted = false;
             GuardConfig guardConfig = (GuardConfig)config;
             abilityRunner.StartAnimation<Guard>(configName, weaponWielder.Mainhand.Name + "_guard", weaponWielder.Mainhand.AttackSpeed);
             guardConfig.animationSignaled = false;
             guardConfig.inputSignaled = false;
-            weaponWielder.Mainhand.On();
         }
 
         protected override void OnCoroutineFinish(AbilityConfig config)
         {
-            weaponWielder.Mainhand.Off();
+            if(!animationInterrupted) {
+                weaponWielder.PlayDefaultWeaponAnimation();
+            }
         }
 
         protected override IEnumerator Coroutine(AbilityConfig config)
@@ -92,6 +95,7 @@ namespace GameScripts.Abilities
 
         protected override void OnAnimationInterrupt(AbilityConfig config)
         {
+            animationInterrupted = true;
             HaltAbilities();
         }
 

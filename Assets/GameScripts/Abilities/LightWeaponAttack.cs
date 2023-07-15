@@ -101,7 +101,6 @@ namespace GameScripts.Abilities
             LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
             c.signaled = false;
             abilityRunner.StartAnimation<LightWeaponAttack>(configName, weaponWielder.Mainhand.Name + "_light_attack", weaponWielder.Mainhand.AttackSpeed);
-            weaponWielder.Mainhand.On();
         }
 
         protected override void Signal(AbilityConfig config, bool isAnimation)
@@ -113,7 +112,6 @@ namespace GameScripts.Abilities
         }
 
         protected override void OnCoroutineFinish(AbilityConfig config){
-            weaponWielder.Mainhand.Off();
         }
 
         protected override void OnAnimationInterrupt(AbilityConfig config)

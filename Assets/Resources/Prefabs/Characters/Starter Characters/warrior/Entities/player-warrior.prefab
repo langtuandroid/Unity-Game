@@ -341,12 +341,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainhandWeapon1: {fileID: 5619198934622560290, guid: 4e63230358c59ee4cb029ee29dae2118, type: 3}
-  mainhandWeapon2: {fileID: 0}
+  mainhandWeapon2: {fileID: 1569198619848997945, guid: ce596d27f0ab3ec4b83b94e1dafc5e9f, type: 3}
   offhandWeapon1: {fileID: 0}
   offhandWeapon2: {fileID: 0}
   mainhandWeaponPosition: {fileID: 3854892406257841885}
   offhandWeaponPosition: {fileID: 1486961792709799100}
   entity: {fileID: 7068496779910381666}
+  animator: {fileID: 1335948948200267405}
+  abilityRunner: {fileID: 7267162014026458667}
 --- !u!114 &7267162014026458667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +364,7 @@ MonoBehaviour:
   abilityData: {fileID: 0}
   data: {fileID: 11400000, guid: 8d246552b9732c041a34ef1dd70f66de, type: 2}
   animator: {fileID: 1335948948200267405}
+  weaponWielder: {fileID: 2550395651689946785}
 --- !u!1 &3269545990442325622
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,6 +840,7 @@ MonoBehaviour:
   abilityRunner: {fileID: 7267162014026458667}
   interactor: {fileID: 5844803037107955105}
   _transform: {fileID: 960644489560204539}
+  weaponWielder: {fileID: 2550395651689946785}
   rotate: {fileID: -1975324386804856178, guid: 5f13414ae2f8d094d89473ba9b163d7b, type: 3}
   move: {fileID: -2194820454274590405, guid: 5f13414ae2f8d094d89473ba9b163d7b, type: 3}
   rotateAcceleration: 70
@@ -1002,6 +1006,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: fcceabac-55b8-475a-a56f-bbfa39c01db4
     m_ActionName: Player/ChargeAttack[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2550395651689946785}
+        m_TargetAssemblyTypeName: LobsterFramework.AbilitySystem.WeaponWielder, LobsterFramework
+        m_MethodName: SwitchMainHand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f2ad83b8-d27f-41f1-9732-70cfe71f75f6
+    m_ActionName: Player/SwitchWeapon[/Keyboard/1]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

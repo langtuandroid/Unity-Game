@@ -23379,14 +23379,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy-warrior
       objectReference: {fileID: 0}
-    - target: {fileID: 2490316291772389325, guid: 7307a907ad1804f4ab3b40994c86bce4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6116060902999187534, guid: 7307a907ad1804f4ab3b40994c86bce4, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1186979213}
     - target: {fileID: 7880835017238648108, guid: 7307a907ad1804f4ab3b40994c86bce4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -26452,11 +26444,6 @@ Transform:
   m_Father: {fileID: 546420029}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1186979213 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7478630132905307239, guid: 7307a907ad1804f4ab3b40994c86bce4, type: 3}
-  m_PrefabInstance: {fileID: 323963023}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1197727054
 GameObject:
   m_ObjectHideFlags: 0
@@ -30060,22 +30047,6 @@ SortingGroup:
   m_SortingLayer: 6
   m_SortingOrder: 0
   m_SortAtRoot: 0
---- !u!95 &1897737904 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1335948948200267405, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
-  m_PrefabInstance: {fileID: 7377006228987806280}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1897737905 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2550395651689946785, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
-  m_PrefabInstance: {fileID: 7377006228987806280}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21d7712cfaae2ab4cb1cd62dc9916ee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1931088935
 GameObject:
   m_ObjectHideFlags: 0
@@ -30168,37 +30139,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1478059220}
     m_Modifications:
-    - target: {fileID: 2027659778131122433, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.9596732
-      objectReference: {fileID: 0}
-    - target: {fileID: 2027659778131122433, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.2811182
-      objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
       propertyPath: m_Name
       value: enemy-stick
-      objectReference: {fileID: 0}
-    - target: {fileID: 2507858982516418033, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.94493115
-      objectReference: {fileID: 0}
-    - target: {fileID: 2507858982516418033, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.32726938
-      objectReference: {fileID: 0}
-    - target: {fileID: 4744424099397443643, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.8295485
-      objectReference: {fileID: 0}
-    - target: {fileID: 4744424099397443643, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.55843467
-      objectReference: {fileID: 0}
-    - target: {fileID: 5809995016669437630, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.0000062584863
       objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
       propertyPath: m_RootOrder
@@ -30251,22 +30194,6 @@ PrefabInstance:
     - target: {fileID: 8170020915448518620, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8350569784819965767, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9602425
-      objectReference: {fileID: 0}
-    - target: {fileID: 8350569784819965767, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.2791673
-      objectReference: {fileID: 0}
-    - target: {fileID: 8996973663062646835, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.96131027
-      objectReference: {fileID: 0}
-    - target: {fileID: 8996973663062646835, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.27546778
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30864,14 +30791,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2550395651689946785, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1897737904}
-    - target: {fileID: 2550395651689946785, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
-      propertyPath: mainhandWeapon2
-      value: 
-      objectReference: {fileID: 1569198619848997945, guid: ce596d27f0ab3ec4b83b94e1dafc5e9f, type: 3}
     - target: {fileID: 5972108920578178929, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
       propertyPath: m_Name
       value: Player
@@ -30881,57 +30800,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 974773030}
     - target: {fileID: 6372606751347597144, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 6372606751347597144, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_ActionId
-      value: f2ad83b8-d27f-41f1-9732-70cfe71f75f6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6372606751347597144, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_ActionName
-      value: Player/SwitchWeapon[/Keyboard/1]
-      objectReference: {fileID: 0}
-    - target: {fileID: 6372606751347597144, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6372606751347597144, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6372606751347597144, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1377438054}
-    - target: {fileID: 6372606751347597144, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1897737905}
-    - target: {fileID: 6372606751347597144, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6372606751347597144, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchMainHand
-      objectReference: {fileID: 0}
-    - target: {fileID: 6372606751347597144, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LobsterFramework.AbilitySystem.WeaponWielder, LobsterFramework
-      objectReference: {fileID: 0}
-    - target: {fileID: 6372606751347597144, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 7904142114192959457, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 974773030}
-    - target: {fileID: 7904142114192959457, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
-      propertyPath: weaponWielder
-      value: 
-      objectReference: {fileID: 1897737905}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -32,6 +32,7 @@ namespace LobsterFramework.AbilitySystem {
 
         // Animation
         [SerializeField] private Animator animator;
+        [SerializeField] private WeaponWielder weaponWielder;
         private (Ability, string) animating;
 
         // Status
@@ -385,8 +386,13 @@ namespace LobsterFramework.AbilitySystem {
         /// <param name="ability">The ability to be queried</param>
         /// <param name="configName">The config of the ability to be queried</param>
         /// <returns>Return true if the ability and the config are both valid and present and are playing animation, otherwise false</returns>
-        public bool IsAnimating(Ability ability, string configName) { 
+        private bool IsAnimating(Ability ability, string configName) { 
             return animating == (ability, configName);
+        }
+
+        public bool IsAnimating()
+        {
+            return animating != default;
         }
 
         public Animator Animator { get { return animator; } }
@@ -423,6 +429,10 @@ namespace LobsterFramework.AbilitySystem {
             if(animator == null) { return; }
             if(animating == default) { return; }
             animating = default;
+            if(weaponWielder != null)
+            {
+                weaponWielder.PlayDefaultWeaponAnimation();
+            }
         }
 
         /// <summary>
