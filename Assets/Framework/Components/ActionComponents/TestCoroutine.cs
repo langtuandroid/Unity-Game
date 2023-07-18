@@ -9,7 +9,7 @@ namespace LobsterFramework.AbilitySystem
     {
         public class TestCoroutineConfig : AbilityCoroutineConfig { }
 
-        protected override IEnumerator Coroutine(AbilityConfig config)
+        protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config)
         {
             Debug.Log("1: " + Time.time);
             yield return null;
@@ -26,14 +26,19 @@ namespace LobsterFramework.AbilitySystem
             Debug.Log("5: " + Time.time);
         }
 
-        protected override void OnCoroutineEnqueue(AbilityConfig config, string configName)
+        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config)
         {
             Debug.Log("Coroutining!");
         }
 
-        protected override void OnCoroutineFinish(AbilityConfig config)
+        protected override void OnCoroutineFinish(AbilityCoroutineConfig config)
         {
             Debug.Log("Coroutined!");
+        }
+
+        protected override void OnCoroutineReset(AbilityCoroutineConfig config)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

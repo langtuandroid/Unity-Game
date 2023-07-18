@@ -1,10 +1,8 @@
 using LobsterFramework.AbilitySystem;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.Utility;
-using System.Collections;
-using UnityEditor.Playables;
+using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.EventSystems.EventTrigger;
 
 namespace GameScripts.Abilities
 {
@@ -34,12 +32,12 @@ namespace GameScripts.Abilities
             {
                 int animation = Animator.StringToHash(weaponWielder.Mainhand.Name + "_light_attack");
                 int index = abilityRunner.Animator.GetLayerIndex("Base Layer");
-                return abilityRunner.Animator.HasState(index, animation);
+                return abilityRunner.Animator.HasState(index, animation) && weaponWielder.Mainhand.state != WeaponState.Attacking;
             }
             return false;
         }
 
-        protected override IEnumerator Coroutine(AbilityConfig config)
+        protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config)
         {
             LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
             // Wait for signal to attack
@@ -96,11 +94,11 @@ namespace GameScripts.Abilities
             }
         }
 
-        protected override void OnCoroutineEnqueue(AbilityConfig config, string configName)
+        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config)
         {
             LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
             c.signaled = false;
-            abilityRunner.StartAnimation<LightWeaponAttack>(configName, weaponWielder.Mainhand.Name + "_light_attack", weaponWielder.Mainhand.AttackSpeed);
+            abilityRunner.StartAnimation<LightWeaponAttack>(config.Name, weaponWielder.Mainhand.Name + "_light_attack", weaponWielder.Mainhand.AttackSpeed);
         }
 
         protected override void Signal(AbilityConfig config, bool isAnimation)
@@ -111,12 +109,17 @@ namespace GameScripts.Abilities
             }
         }
 
-        protected override void OnCoroutineFinish(AbilityConfig config){
+        protected override void OnCoroutineFinish(AbilityCoroutineConfig config){
         }
 
         protected override void OnAnimationInterrupt(AbilityConfig config)
         {
             HaltAbilities();
+        }
+
+        protected override void OnCoroutineReset(AbilityCoroutineConfig config)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

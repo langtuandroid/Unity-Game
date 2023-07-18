@@ -1,11 +1,6 @@
 using UnityEngine;
-using LobsterFramework.Pool;
-using LobsterFramework.EntitySystem;
 using LobsterFramework.AbilitySystem;
-using LobsterFramework.Utility;
-using System.Collections;
-using Codice.Client.BaseCommands.CheckIn.Progress;
-using System;
+using System.Collections.Generic;
 
 namespace GameScripts.Abilities
 {
@@ -34,28 +29,28 @@ namespace GameScripts.Abilities
             {
                 int animation = Animator.StringToHash(weaponWielder.Mainhand.Name + "_guard");
                 int index = abilityRunner.Animator.GetLayerIndex("Base Layer");
-                return abilityRunner.Animator.HasState(index, animation);
+                return abilityRunner.Animator.HasState(index, animation) && weaponWielder.Mainhand.state == WeaponState.Idle;
             }
             return false;
         }
 
-        protected override void OnCoroutineEnqueue(AbilityConfig config, string configName)
+        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config)
         {
             animationInterrupted = false;
             GuardConfig guardConfig = (GuardConfig)config;
-            abilityRunner.StartAnimation<Guard>(configName, weaponWielder.Mainhand.Name + "_guard", weaponWielder.Mainhand.AttackSpeed);
+            abilityRunner.StartAnimation<Guard>(config.Name, weaponWielder.Mainhand.Name + "_guard", weaponWielder.Mainhand.AttackSpeed);
             guardConfig.animationSignaled = false;
             guardConfig.inputSignaled = false;
         }
 
-        protected override void OnCoroutineFinish(AbilityConfig config)
+        protected override void OnCoroutineFinish(AbilityCoroutineConfig config)
         {
             if(!animationInterrupted) {
                 weaponWielder.PlayDefaultWeaponAnimation();
             }
         }
 
-        protected override IEnumerator Coroutine(AbilityConfig config)
+        protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config)
         {
             GuardConfig guardConfig = (GuardConfig)config; 
 
@@ -102,6 +97,11 @@ namespace GameScripts.Abilities
         protected override void Initialize()
         {
             weaponWielder = abilityRunner.GetComponent<WeaponWielder>();
+        }
+
+        protected override void OnCoroutineReset(AbilityCoroutineConfig config)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

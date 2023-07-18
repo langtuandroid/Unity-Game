@@ -417,7 +417,7 @@ namespace LobsterFramework.AbilitySystem {
             }
             animator.speed = speed;
             animating = (ability, configName);
-            animator.Play(animation, -1, 0);
+            animator.CrossFade(animation, 0.1f, -1, 0.1f);
         }
 
         /// <summary>

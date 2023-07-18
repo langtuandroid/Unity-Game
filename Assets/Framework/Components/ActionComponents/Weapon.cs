@@ -57,6 +57,7 @@ namespace LobsterFramework.AbilitySystem
             collider.enabled = false;
             momentumMultiplier = 1;
             oppressingForce = 0;
+            state = WeaponState.Idle;
             hit = new();
         }
 
