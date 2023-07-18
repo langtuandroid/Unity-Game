@@ -8,7 +8,7 @@ namespace LobsterFramework.AbilitySystem
     /// <summary>
     /// Marks this ability as requiring specified AbilityStats to run
     /// </summary>
-    [AttributeUsage(AttributeTargets.Class)]
+    [AttributeUsage(AttributeTargets.Class, Inherited = true, AllowMultiple = true)]
     public class RequireAbilityStatsAttribute : Attribute
     {
         public static Dictionary<Type, HashSet<Type>> requirement = new();
@@ -24,15 +24,14 @@ namespace LobsterFramework.AbilitySystem
         public void Init(Type ability) {
             if (!ability.IsSubclassOf(typeof(Ability)))
             {
-                Debug.LogError("Type:" + ability.ToString() + " is not an ActionInstance!");
+                Debug.LogError("Type:" + ability.ToString() + " is not an Ability!");
                 return;
             }
-            if (requirement.ContainsKey(ability))
+            if (!requirement.ContainsKey(ability))
             {
-                Debug.LogWarning("Ability:" + ability.ToString() + " is requiring AbilityStats from multiple sources!");
-                return;
+                requirement[ability] = new HashSet<Type>();
             }
-            requirement[ability] = new HashSet<Type>();
+            
             foreach (Type t in abilityStats)
             {
                 if (!t.IsSubclassOf(typeof(AbilityStat)))

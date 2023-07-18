@@ -55,9 +55,7 @@ namespace LobsterFramework.Utility
         private static void AddAbilityStatRequirement(Assembly assembly) {
             foreach (Type type in assembly.GetTypes())
             {
-                RequireAbilityStatsAttribute info = type.GetCustomAttribute<RequireAbilityStatsAttribute>(false);
-                if (info != null) 
-                { 
+                foreach (RequireAbilityStatsAttribute info in type.GetCustomAttributes<RequireAbilityStatsAttribute>()) {
                     info.Init(type);
                 }
             }
