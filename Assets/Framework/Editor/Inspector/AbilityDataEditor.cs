@@ -6,13 +6,13 @@ using System;
 using System.Reflection;
 using LobsterFramework.AbilitySystem;
 
-namespace LobsterFramework.EditorUtility
+namespace LobsterFramework.Editor
 {
     [CustomEditor(typeof(AbilityData))]
-    public class AbilityDataEditor : Editor
+    public class AbilityDataEditor : UnityEditor.Editor
     {
-        private Dictionary<Type, Editor> aiEditors = new();
-        private Dictionary<Type, Editor> acEditors = new();
+        private Dictionary<Type, UnityEditor.Editor> aiEditors = new();
+        private Dictionary<Type, UnityEditor.Editor> acEditors = new();
         private bool init = true;
         private GUIStyle style1 = new();
         private GUIStyle style2 = new();
@@ -66,7 +66,7 @@ namespace LobsterFramework.EditorUtility
                 foreach (AbilityStat component in abilityData.stats.Values)
                 {
                     i += 1;
-                    Editor editor;
+                    UnityEditor.Editor editor;
                     Type type = component.GetType();
                     if (acEditors.ContainsKey(type))
                     {
@@ -139,7 +139,7 @@ namespace LobsterFramework.EditorUtility
                 foreach (Ability action in abilityData.allAbilities.Values)
                 {
                     i += 1;
-                    Editor editor;
+                    UnityEditor.Editor editor;
                     Type actionType = action.GetType();
                     if (!aiEditors.ContainsKey(actionType))
                     {

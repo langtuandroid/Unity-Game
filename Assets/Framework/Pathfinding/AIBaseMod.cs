@@ -1,11 +1,11 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Serialization;
+using Pathfinding;
+using LobsterFramework.EntitySystem;
 
-namespace Pathfinding {
-	using Pathfinding.RVO;
+namespace LobsterFramework.ModifiedPathfinding {
 	using Pathfinding.Util;
-    using System.Xml;
 
     /// <summary>
     /// Base class for AIPath and RichAI.
@@ -16,12 +16,14 @@ namespace Pathfinding {
     /// See: <see cref="Pathfinding.IAstarAI"/> (all movement scripts implement this interface)
     /// </summary>
     [RequireComponent(typeof(Seeker))]
-	public abstract class AIBase : VersionedMonoBehaviour {
+	public abstract class AIBaseMod : VersionedMonoBehaviour {
 		/// <summary>\copydoc Pathfinding::IAstarAI::radius</summary>
 		public float radius = 0.5f;
 
 		/// <summary>\copydoc Pathfinding::IAstarAI::height</summary>
 		public float height = 2;
+
+		private Entity entity;
 
 		/// <summary>
 		/// Determines how often the agent will search for new paths (in seconds).
@@ -340,7 +342,7 @@ namespace Pathfinding {
 			}
 		}
 
-		protected AIBase () {
+		protected AIBaseMod () {
 			// Note that this needs to be set here in the constructor and not in e.g Awake
 			// because it is possible that other code runs and sets the destination property
 			// before the Awake method on this script runs.
@@ -360,6 +362,7 @@ namespace Pathfinding {
 			controller = GetComponent<CharacterController>();
 			rigid = GetComponent<Rigidbody>();
 			rigid2D = GetComponent<Rigidbody2D>();
+			entity = GetComponent<Entity>();
 		}
 
 		/// <summary>Called when the component is enabled</summary>
@@ -656,6 +659,7 @@ namespace Pathfinding {
 				// Note that rigid.MovePosition may or may not move the character immediately.
 				// Check the Unity documentation for the special cases.
 				if (rigid != null) rigid.MovePosition(currentPosition);
+				else if (entity != null) { entity.Move(currentPosition - transform.position); }
 				else if (rigid2D != null) rigid2D.MovePosition(currentPosition);
 				else tr.position = currentPosition;
 			}

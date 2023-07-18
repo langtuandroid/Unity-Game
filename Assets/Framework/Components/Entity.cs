@@ -13,7 +13,8 @@ namespace LobsterFramework.EntitySystem
     /// </summary>
     [AddComponentMenu("Entity")]
     public class Entity : MonoBehaviour
-    {   
+    {
+        #region Fields
         [Header("Group Setting")]
         [SerializeField] private List<EntityGroup> groups;
 
@@ -34,12 +35,12 @@ namespace LobsterFramework.EntitySystem
 
         [Header("Movement")]
         [SerializeField] private Rigidbody2D _rigidBody;
-        [SerializeField] private RefFloat moveSpeed;
+        [SerializeField] private RefFloat maxSpeed;
         [SerializeField] private RefFloat rotateSpeed;
-        [SerializeField] private RefFloat acceleration;
+        [SerializeField] private RefFloat maxAcceleration;
         private Vector2 steering;
         private BaseOr movementBlock = new(false);
-        public float MoveSpeed { get { return moveSpeed.Value; } }
+        public float MoveSpeed { get { return maxSpeed.Value; } }
         public float RotateSpeed { get { return rotateSpeed.Value; } }
 
         public Rigidbody2D RigidBody { get { return _rigidBody; } }
@@ -95,7 +96,9 @@ namespace LobsterFramework.EntitySystem
                 return EntitySystem.Damage.none;
             }
         }
+        #endregion
 
+        #region StatusUpdate
         private void Start()
         {
             foreach (EntityGroup group in groups)
@@ -153,20 +156,6 @@ namespace LobsterFramework.EntitySystem
                 Destroy(effect);
             }
             Regen();
-        }
-
-        private void FixedUpdate()
-        {
-            if (steering != Vector2.zero)
-            {
-                _rigidBody.AddForce((acceleration.Value * (_transform.rotation * steering)));
-            }
-
-            _rigidBody.velocity = Vector2.ClampMagnitude(_rigidBody.velocity, moveSpeed.Value);
-            if (_rigidBody != GetComponent<Rigidbody2D>()) {
-                _transform.position = _rigidBody.position;
-                _rigidBody.transform.localPosition = Vector3.zero;
-            }
         }
 
         /// <summary>
@@ -248,6 +237,7 @@ namespace LobsterFramework.EntitySystem
                 group.Add(this);
             }
         }
+        #endregion
 
         /// <summary>
         /// Apply an effect to the entity
@@ -264,7 +254,6 @@ namespace LobsterFramework.EntitySystem
             activeEffects.Add(t, eft);
             eft.ActivateEffect(this);
         }
-
 
         /// <summary>
         /// Add damage to the entity, the damage will be dealt on update of next frame
@@ -284,7 +273,6 @@ namespace LobsterFramework.EntitySystem
             damagedSince = Time.time;
         }
 
-
         /// <summary>
         /// Add a flat damage reduction to the entity, the damage taken will be reduced by the specified amount on update of next frame
         /// </summary>
@@ -292,6 +280,20 @@ namespace LobsterFramework.EntitySystem
         /// <param name="postureDefense">The amount of posture defense</param>
         public void Defense(int healthDefense, int postureDefense) { 
             damageBuffer.AddDefense(healthDefense, postureDefense);
+        }
+
+        #region Movement
+        private void FixedUpdate()
+        {
+            if (steering != Vector2.zero)
+            {
+                _rigidBody.AddForce(_transform.rotation * steering);
+            }
+
+            float brakeMagnitude = _rigidBody.velocity.magnitude - maxSpeed;
+            if (brakeMagnitude > 0) {
+                _rigidBody.AddForce(-_rigidBody.velocity.normalized * brakeMagnitude / Time.fixedDeltaTime * _rigidBody.mass, ForceMode2D.Force);
+            }
         }
 
         /// <summary>
@@ -375,18 +377,22 @@ namespace LobsterFramework.EntitySystem
         }
 
         /// <summary>
-        /// Start moving the entity towards the specified direction, will fail is Movement is blocked on this entity
+        /// Start moving the entity towards the specified direction, will fail if Movement is blocked on this entity
         /// </summary>
         /// <param name="direction"></param>
-        public void Move(Vector2 direction)
+        public void Move(Vector2 direction, float acceleration = -1)
         {
             if (MovementBlocked)
             {
                 steering = Vector2.zero;
                 return;
             }
-            steering = direction;
+            if (acceleration <= 0) {
+                acceleration = maxAcceleration;
+            }
+            steering = direction.normalized * acceleration;
         }
+        #endregion
 
         [System.Serializable]
         private class DamageTracker
@@ -408,6 +414,7 @@ namespace LobsterFramework.EntitySystem
         }
     }
 
+    #region Utility Structs
     public enum DamageType { 
         Hit,
         StatusEffect,
@@ -426,6 +433,7 @@ namespace LobsterFramework.EntitySystem
         public static Damage none = new() { health = 0, posture = 0, source = null, type = DamageType.General };
     };
 
+    
     [System.Serializable]
     public struct DamageBuffer {
         private FloatSum healthDamage;
@@ -471,6 +479,7 @@ namespace LobsterFramework.EntitySystem
             ComputeDamage();
         }
 
+        #region Health/Posture Modifiers
         public int AddHealthModifier(float factor) {
            int key = hdModifier.AddEffector(factor);
            ComputeDamage();
@@ -490,14 +499,14 @@ namespace LobsterFramework.EntitySystem
             ComputeDamage();
             return key;
         }
-
         public bool RemovePostureModifier(int key)
         {
             bool result = pdModifier.RemoveEffector(key);
             ComputeDamage();
             return result;
         }
-
+        #endregion
+        #region Reset
         public void ResetDamage() {
             healthDamage.ClearEffectors();
             postureDamage.ClearEffectors();
@@ -527,8 +536,10 @@ namespace LobsterFramework.EntitySystem
             pdModifier.ClearEffectors();
             ComputeDamage();
         }
+        #endregion
     }
 
+    
     [System.Serializable]
     public struct RegenBuffer
     {
@@ -630,3 +641,4 @@ namespace LobsterFramework.EntitySystem
 
     }
 }
+#endregion

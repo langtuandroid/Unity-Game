@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using LobsterFramework.AbilitySystem;
 
-namespace LobsterFramework.EditorUtility
+namespace LobsterFramework.Editor
 {
     [CustomPropertyDrawer(typeof(Ability))]
     public class ActionInstanceDrawer : PropertyDrawer

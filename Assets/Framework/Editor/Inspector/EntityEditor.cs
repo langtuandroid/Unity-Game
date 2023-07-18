@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEditor;
 using LobsterFramework.EntitySystem;
 
-namespace LobsterFramework.EditorUtility
+namespace LobsterFramework.Editor
 {
     [CustomEditor(typeof(Entity))]
-    public class EntityEditor : Editor
+    public class EntityEditor : UnityEditor.Editor
     {
         public void OnInspectorUpdate()
         {

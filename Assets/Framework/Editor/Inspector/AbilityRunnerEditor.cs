@@ -6,12 +6,12 @@ using System;
 using System.Reflection;
 using LobsterFramework.AbilitySystem;
 
-namespace LobsterFramework.EditorUtility
+namespace LobsterFramework.Editor
 {
     [CustomEditor(typeof(AbilityRunner))]
-    public class AbilityRunnerEditor : Editor
+    public class AbilityRunnerEditor : UnityEditor.Editor
     {
-        private Editor editor;
+        private UnityEditor.Editor editor;
         private bool editData = false;
         private string assetName = "";
 

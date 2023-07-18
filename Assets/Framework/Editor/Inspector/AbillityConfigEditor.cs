@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEditor;
 using LobsterFramework.AbilitySystem;
 
-namespace LobsterFramework.EditorUtility
+namespace LobsterFramework.Editor
 {
     [CustomEditor(typeof(Ability.AbilityConfig), true)]
-    public class AbilityConfigEditor : Editor
+    public class AbilityConfigEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {

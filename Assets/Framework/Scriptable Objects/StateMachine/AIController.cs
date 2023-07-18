@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
 using System;
 using LobsterFramework.Utility.Groups;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.Utility;
 using LobsterFramework.AbilitySystem;
+using Pathfinding;
+using LobsterFramework.ModifiedPathfinding;
 
 namespace LobsterFramework.AI
 {
@@ -21,7 +22,7 @@ namespace LobsterFramework.AI
         private Transform _transform;
         private Collider2D _collider;
 
-        private AIPath aiPath;
+        private AIPathMod aiPath;
         private GridGraph gridGraph;
 
         private Dictionary<Type, ControllerData> controllerData;
@@ -34,7 +35,7 @@ namespace LobsterFramework.AI
         {
             _transform = transform;
             _collider = GetComponent<Collider2D>();
-            aiPath = GetComponent<AIPath>();
+            aiPath = GetComponent<AIPathMod>();
 
             gridGraph = AstarPath.active.data.gridGraph;
             controllerData = new();

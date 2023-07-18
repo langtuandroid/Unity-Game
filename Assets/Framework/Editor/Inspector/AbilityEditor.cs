@@ -3,14 +3,14 @@ using UnityEngine;
 using UnityEditor;
 using LobsterFramework.AbilitySystem;
 
-namespace LobsterFramework.EditorUtility
+namespace LobsterFramework.Editor
 {
     [CustomEditor(typeof(Ability), true)]
-    public class AbilityEditor : Editor
+    public class AbilityEditor : UnityEditor.Editor
     {
         private string selectedConfig;
         private string addConfigName;
-        private Editor editor;
+        private UnityEditor.Editor editor;
 
         public override void OnInspectorGUI()
         {
