@@ -34,11 +34,6 @@ namespace GameScripts.AI
             targetTransform = aiController.target.transform;
         }
 
-        public override void OnExit()
-        {
-            aiController.AutoRotation = true;
-        }
-
         public bool InChaseRange()
         {
             return Vector3.Distance(transform.position, chaseTarget.transform.position) <= trackData.chaseDistance.Value;
@@ -54,7 +49,6 @@ namespace GameScripts.AI
             Debug.DrawLine(transform.position, (aiController.target.transform.position - transform.position).normalized * trackData.engageDistance.Value + transform.position, Color.red);
             if (aiController.TargetVisible(aiController.transform.position, trackData.engageDistance.Value))
             {
-                aiController.AutoRotation = false;
                 aiController.LookTowards();
                 if (aiController.TargetInRange(trackData.keepDistance.Value))
                 {
@@ -63,9 +57,12 @@ namespace GameScripts.AI
                 actionComponent.EnqueueAbility<Shoot>();
                 return null;
             }
-            aiController.AutoRotation = true;
             aiController.ChaseTarget();
             return null;
+        }
+
+        public override void OnExit()
+        {
         }
     }
 }

@@ -8,6 +8,7 @@ using LobsterFramework.Utility;
 using LobsterFramework.AbilitySystem;
 using Pathfinding;
 using LobsterFramework.ModifiedPathfinding;
+using Pathfinding.Util;
 
 namespace LobsterFramework.AI
 {
@@ -22,7 +23,7 @@ namespace LobsterFramework.AI
         private Transform _transform;
         private Collider2D _collider;
 
-        private AIPathMod aiPath;
+        private AIPathFinder pathFinder;
         private GridGraph gridGraph;
 
         private Dictionary<Type, ControllerData> controllerData;
@@ -35,7 +36,7 @@ namespace LobsterFramework.AI
         {
             _transform = transform;
             _collider = GetComponent<Collider2D>();
-            aiPath = GetComponent<AIPathMod>();
+            pathFinder = GetComponent<AIPathFinder>();
 
             gridGraph = AstarPath.active.data.gridGraph;
             controllerData = new();
@@ -56,9 +57,13 @@ namespace LobsterFramework.AI
             entityComponent.onMovementBlocked -= BlockMovement;
         }
 
-        private void Update()
+        private void OnDrawGizmos()
         {
-            Debug.DrawLine(_transform.position, aiPath.destination, Color.green);
+            if (_transform != null)
+            {
+                Draw.Gizmos.Line(_transform.position, pathFinder.Destination, Color.yellow);
+            }
+          
         }
 
         private void BlockMovement(bool value)
@@ -67,9 +72,9 @@ namespace LobsterFramework.AI
             {
                 stateMachine.enabled = !value;
             }
-            if (aiPath)
+            if (pathFinder)
             {
-                aiPath.enabled = !value;
+                pathFinder.enabled = !value;
             }
         }
 
@@ -97,8 +102,17 @@ namespace LobsterFramework.AI
         {
             if (target != null)
             {
-                aiPath.destination = target.transform.position;
+                pathFinder.SetTarget(target.transform);
             }
+        }
+
+        public void ResetTarget()
+        {
+            if(target != null)
+            {
+                pathFinder.Stop();
+            }
+            target = null;
         }
 
         public bool SearchTarget(float sightRange)
@@ -145,22 +159,13 @@ namespace LobsterFramework.AI
             if (nodes.Count > 0)
             {
                 Vector3 dest = PathUtilities.GetPointsOnNodes(nodes, 1)[0];
-                aiPath.destination = dest;
+                pathFinder.MoveTowards(dest);
             }
         }
 
         public void LookTowards()
         {
             entityComponent.RotateTowards(target.transform.position - _transform.position);
-        }
-
-        public void BackStep()
-        {
-            if (entityComponent.MovementBlocked)
-            {
-                return;
-            }
-            aiPath.Move((-_transform.up).normalized * aiPath.maxSpeed / 2 * Time.deltaTime);
         }
 
         public void MoveInDirection(Vector3 direction, float distance)
@@ -173,41 +178,18 @@ namespace LobsterFramework.AI
             RaycastHit2D hit = Physics2D.Raycast(_transform.position, direction, distance + offset);
             if (hit.collider == null)
             {
-                aiPath.destination = _transform.position + direction.normalized * distance;
+                pathFinder.MoveTowards(_transform.position + direction.normalized * distance);
             }
             else
             {
                 Vector2 dir = (Vector2)direction;
-                aiPath.destination = hit.point - dir.normalized * offset;
+                pathFinder.MoveTowards(hit.point - dir.normalized * offset);
             }
-        }
-
-        public void ClearPath()
-        {
-            aiPath.SetPath(null);
-            aiPath.destination = _transform.position;
-        }
-
-        public Vector3 NextWayPoint()
-        {
-            return aiPath.steeringTarget;
-        }
-
-        public bool Stopped
-        {
-            get { return aiPath.isStopped; }
-            set { aiPath.isStopped = value; }
-        }
-
-        public bool AutoRotation
-        {
-            get { return aiPath.enableRotation; }
-            set { aiPath.enableRotation = value; }
         }
 
         public bool ReachedDestination()
         {
-            return aiPath.reachedDestination;
+            return pathFinder.ReachedDestination;
         }
     }
 }

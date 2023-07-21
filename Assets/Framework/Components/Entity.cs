@@ -4,6 +4,7 @@ using System;
 using UnityEngine.Events;
 using LobsterFramework.Utility.Groups;
 using LobsterFramework.Utility.BufferedStats;
+using Pathfinding.Util;
 
 namespace LobsterFramework.EntitySystem
 {
@@ -331,28 +332,12 @@ namespace LobsterFramework.EntitySystem
                 return;
             }
             float angle = Vector2.SignedAngle(transform.up, direction);
-
-            float currentAngle = _transform.rotation.eulerAngles.z;
-            float angleDif = Mathf.DeltaAngle(angle, currentAngle);
-            if (Mathf.Abs(angleDif) > 0)
-            {
-                float rotateMax = rotateSpeed * Time.deltaTime;
-                if (Mathf.Abs(angleDif) > rotateMax && rotateSpeed > 0)
-                {
-                    if (angleDif > 0)
-                    {
-                        _transform.rotation = Quaternion.Euler(new Vector3(0, 0, currentAngle - rotateMax));
-                    }
-                    else
-                    {
-                        _transform.rotation = Quaternion.Euler(new Vector3(0, 0, currentAngle + rotateMax));
-                    }
-                }
-                else
-                {
-                    _transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-                }
+            Quaternion target = Quaternion.Euler(0, 0, angle);
+            float maxRotate = rotateSpeed * Time.deltaTime;
+            if (Math.Abs(angle) > maxRotate) { 
+                target = Quaternion.Lerp(Quaternion.identity, target, maxRotate / Math.Abs(angle));
             }
+            _transform.rotation = target * _transform.rotation;
         }
         /// <summary>
         /// Attempt to rotate the entity by the specified degree. If the specified angle is larger than the max rotation speed,
@@ -387,12 +372,33 @@ namespace LobsterFramework.EntitySystem
                 steering = Vector2.zero;
                 return;
             }
-            if (acceleration <= 0) {
+            if (acceleration <= 0 || acceleration > maxAcceleration) {
                 acceleration = maxAcceleration;
             }
             steering = direction.normalized * acceleration;
         }
+
+        public void SetVelocity(Vector2 velocity)
+        {
+            Vector2 force = (velocity - _rigidBody.velocity) * _rigidBody.mass;
+            float mag = force.magnitude;
+            if (mag > maxAcceleration) { 
+                mag = maxAcceleration;
+            }
+            _rigidBody.AddForce(force.normalized * mag, ForceMode2D.Impulse);
+            steering = Vector2.zero;
+        }
         #endregion
+        private void OnDrawGizmos()
+        {
+            Vector3 v3 = new(_rigidBody.velocity.x, _rigidBody.velocity.y, 0);
+            Vector3 v32 = new(steering.x, steering.y, 0);
+            if (_transform != null) {
+                Draw.Gizmos.Line(_transform.position, _transform.position + v3, Color.cyan);
+                Draw.Gizmos.Line(_transform.position, _transform.position + v32, Color.red);
+            }
+            
+        }
 
         [System.Serializable]
         private class DamageTracker

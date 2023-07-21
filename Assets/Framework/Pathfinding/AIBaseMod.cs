@@ -630,25 +630,14 @@ namespace LobsterFramework.ModifiedPathfinding {
 			Vector3 currentPosition = simulatedPosition;
 			bool positionDirty1 = false;
 
-			if (controller != null && controller.enabled && updatePosition) {
-				// Use CharacterController
-				// The Transform may not be at #position if it was outside the navmesh and had to be moved to the closest valid position
-				tr.position = currentPosition;
-				controller.Move((nextPosition - currentPosition) + accumulatedMovementDelta);
-				// Grab the position after the movement to be able to take physics into account
-				// TODO: Add this into the clampedPosition calculation below to make RVO better respond to physics
-				currentPosition = tr.position;
-				if (controller.isGrounded) verticalVelocity = 0;
-			} else {
-				// Use Transform, Rigidbody, Rigidbody2D or nothing at all (if updatePosition = false)
-				float lastElevation;
-				movementPlane.ToPlane(currentPosition, out lastElevation);
-				currentPosition = nextPosition + accumulatedMovementDelta;
+			// Use Transform, Rigidbody, Rigidbody2D or nothing at all (if updatePosition = false)
+			float lastElevation;
+			movementPlane.ToPlane(currentPosition, out lastElevation);
+			currentPosition = nextPosition + accumulatedMovementDelta;
 
-				// Position the character on the ground
-				if (usingGravity) currentPosition = RaycastPosition(currentPosition, lastElevation);
-				positionDirty1 = true;
-			}
+			// Position the character on the ground
+			if (usingGravity) currentPosition = RaycastPosition(currentPosition, lastElevation);
+			positionDirty1 = true;
 
 			// Clamp the position to the navmesh after movement is done
 			bool positionDirty2 = false;
@@ -659,7 +648,7 @@ namespace LobsterFramework.ModifiedPathfinding {
 				// Note that rigid.MovePosition may or may not move the character immediately.
 				// Check the Unity documentation for the special cases.
 				if (rigid != null) rigid.MovePosition(currentPosition);
-				else if (entity != null) { entity.Move(currentPosition - transform.position); }
+				else if (entity != null) { entity.SetVelocity(desiredVelocity); }
 				else if (rigid2D != null) rigid2D.MovePosition(currentPosition);
 				else tr.position = currentPosition;
 			}
@@ -742,7 +731,7 @@ namespace LobsterFramework.ModifiedPathfinding {
 			}
 
 			if (!float.IsPositiveInfinity(destination.x) && Application.isPlaying) Draw.Gizmos.CircleXZ(destination, 0.2f, Color.blue);
-
+			Draw.Gizmos.Line(position, position + desiredVelocity, Color.red);
 			autoRepath.DrawGizmos((IAstarAI)this);
 		}
 

@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 1732882758105445142}
   - component: {fileID: 4606582382752763514}
   - component: {fileID: 4865980876583483958}
+  - component: {fileID: 7369149581377869301}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -229,8 +230,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 4606582382752763514}
-  target: {fileID: 0}
+  transTime: 2
   entity: {fileID: 4248079580029518340}
+  duration: 2
+--- !u!225 &7369149581377869301
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894578991954927730}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1904381420976761666
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,8 +291,9 @@ GameObject:
   - component: {fileID: 3782535039549790817}
   - component: {fileID: 4248079580029518340}
   - component: {fileID: 2844054770431452009}
-  - component: {fileID: 7707026669855141052}
   - component: {fileID: 3335249248206268259}
+  - component: {fileID: 5812476126268518629}
+  - component: {fileID: 4018277996915828120}
   m_Layer: 0
   m_Name: enemy-stick
   m_TagString: Untagged
@@ -317,10 +332,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_LinearDrag: 5
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: 7081e3d423413bf409d27f82c82d1bcb, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -410,16 +425,16 @@ MonoBehaviour:
     useSharedValue: 0
     sharedValue: {fileID: 0}
   _rigidBody: {fileID: 3372728191681421123}
-  moveSpeed:
-    value: 0
+  maxSpeed:
+    value: 2
     useSharedValue: 0
     sharedValue: {fileID: 0}
   rotateSpeed:
     value: 360
     useSharedValue: 0
     sharedValue: {fileID: 0}
-  acceleration:
-    value: 25
+  maxAcceleration:
+    value: 50
     useSharedValue: 0
     sharedValue: {fileID: 0}
   damageHistory: []
@@ -451,29 +466,6 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &7707026669855141052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2490316291772389325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b090bec917bbe4c3bbc612ef13f7c4a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  useRaycasting: 1
-  mask:
-    serializedVersion: 2
-    m_Bits: 1024
-  thickRaycast: 1
-  thickRaycastRadius: 0.4
-  use2DPhysics: 1
-  raycastOffset: {x: 0, y: 0, z: 0}
-  useGraphRaycasting: 0
-  quality: 1
 --- !u!114 &3335249248206268259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,6 +484,43 @@ MonoBehaviour:
   abilityRunner: {fileID: 2585220681520976840}
   stateMachine: {fileID: 6827095745158944888}
   target: {fileID: 0}
+--- !u!114 &5812476126268518629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490316291772389325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d97e8ec45b4bd84caf31d4ee8c72b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  nextWaypointDistance: 0.5
+  repathInterval: 0.3
+--- !u!114 &4018277996915828120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490316291772389325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6a34d769a1e4ac7b0b30e433aa443c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  smoothType: 0
+  subdivisions: 2
+  iterations: 2
+  strength: 0.5
+  uniformLength: 1
+  maxSegmentLength: 0.5
+  bezierTangentLength: 0.4
+  offset: 0.2
+  factor: 0.1
 --- !u!1 &2674311648587745369
 GameObject:
   m_ObjectHideFlags: 0

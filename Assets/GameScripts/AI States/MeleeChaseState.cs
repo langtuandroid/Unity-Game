@@ -5,6 +5,7 @@ using LobsterFramework.EntitySystem;
 using LobsterFramework.AI;
 using GameScripts.Abilities;
 using UnityEngine.InputSystem.Android;
+using UnityEngine.InputSystem.XR;
 
 namespace GameScripts.AI
 {
@@ -24,11 +25,13 @@ namespace GameScripts.AI
 
         public override void OnEnter()
         {
+            Debug.Log("Chase");
+            controller.ChaseTarget();
         }
 
         public override void OnExit()
         {
-            controller.target = null;
+            controller.ResetTarget();
         }
 
         public override Type Tick()
@@ -37,14 +40,12 @@ namespace GameScripts.AI
             {
                 return typeof(WanderState);
             }
+            controller.LookTowards();
             if (controller.TargetInRange(trackData.chaseDistance.Value))
             {
                 if (controller.TargetInRange(attackRange) )
                 {
                     abilityRunner.EnqueueAbility<LightWeaponAttack>();
-                }
-                else {
-                    controller.ChaseTarget();
                 }
                 return null;
             }
