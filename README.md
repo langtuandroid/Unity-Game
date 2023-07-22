@@ -5,5 +5,5 @@ Video Clips:
 - Dialogue System: https://streamable.com/qhdf28  
 - Interaction Prompt: https://streamable.com/1qaqpa  
 - Inventory & Collectable Items: https://streamable.com/6l7nem  
-- Melee Enemy AI: https://streamable.com/miaxay   
-- Ranged Enemy AI: https://streamable.com/xh07vk  
+- Melee Enemy AI: https://streamable.com/miaxay (Deprecated, the combat system has been overhauled)  
+- Ranged Enemy AI: https://streamable.com/xh07vk  (Deprecated, the combat system has been overhauled)
