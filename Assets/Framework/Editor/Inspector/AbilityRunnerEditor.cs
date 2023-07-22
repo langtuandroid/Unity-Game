@@ -35,7 +35,7 @@ namespace LobsterFramework.Editor
                 GUILayout.FlexibleSpace();
                 EditorGUILayout.EndHorizontal();
             }
-
+            EditorGUILayout.LabelField("Is Blocked", abilityRunner.ActionBlocked + "");
             if (abilityRunner.executing.Count > 0) {
                 foreach (AbilityConfigPair pair in abilityRunner.executing) {
                     EditorGUILayout.LabelField(pair.ability.GetType().Name, pair.config);
@@ -70,6 +70,8 @@ namespace LobsterFramework.Editor
                 }
                 GUILayout.FlexibleSpace();
                 EditorGUILayout.EndHorizontal();
+
+                
             }
             if (EditorGUI.EndChangeCheck())
             {

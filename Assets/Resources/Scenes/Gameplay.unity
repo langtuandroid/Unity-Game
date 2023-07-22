@@ -23379,6 +23379,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy-warrior
       objectReference: {fileID: 0}
+    - target: {fileID: 3372728191681421123, guid: 7307a907ad1804f4ab3b40994c86bce4, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248079580029518340, guid: 7307a907ad1804f4ab3b40994c86bce4, type: 3}
+      propertyPath: maxSpeed.value
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248079580029518340, guid: 7307a907ad1804f4ab3b40994c86bce4, type: 3}
+      propertyPath: maxHealth.value
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248079580029518340, guid: 7307a907ad1804f4ab3b40994c86bce4, type: 3}
+      propertyPath: maxPosture.value
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827095745158944888, guid: 7307a907ad1804f4ab3b40994c86bce4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: 7307a907ad1804f4ab3b40994c86bce4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -25706,37 +25726,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!1 &978105564
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 978105565}
-  m_Layer: 0
-  m_Name: dummy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &978105565
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 978105564}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.65, y: 0.67, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1001045626
 GameObject:
   m_ObjectHideFlags: 0
@@ -30174,10 +30163,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy-stick
       objectReference: {fileID: 0}
+    - target: {fileID: 2490316291772389325, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372728191681421123, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248079580029518340, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
+      propertyPath: maxSpeed.value
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248079580029518340, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
+      propertyPath: maxHealth.value
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248079580029518340, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
+      propertyPath: maxPosture.value
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 5812476126268518629, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 978105565}
+      objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: 94756f4ab9a29d644a1f8380c713d9f5, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -30782,6 +30791,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1478059220}
     m_Modifications:
+    - target: {fileID: 350301468169635429, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 420447108288381905, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.99358726
@@ -30880,11 +30893,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7068496779910381666, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
       propertyPath: maxSpeed.value
-      value: 2
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7068496779910381666, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
+      propertyPath: maxHealth.value
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7068496779910381666, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
       propertyPath: moveSpeed.value
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7068496779910381666, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
+      propertyPath: maxPosture.value
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7068496779910381666, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
       propertyPath: maxAcceleration.value

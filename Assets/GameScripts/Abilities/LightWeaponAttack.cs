@@ -3,6 +3,7 @@ using LobsterFramework.EntitySystem;
 using LobsterFramework.Utility;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 namespace GameScripts.Abilities
 {
@@ -78,6 +79,7 @@ namespace GameScripts.Abilities
                 float health = 0.7f * weaponWielder.Mainhand.Sharpness + 0.3f * weaponWielder.Mainhand.Weight;
                 float posture = 0.3f * weaponWielder.Mainhand.Sharpness + 0.7f * weaponWielder.Mainhand.Weight;
                 entity.Damage(health, posture, attacker);
+                entity.ApplyForce(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight);
             }
         }
 
@@ -89,7 +91,9 @@ namespace GameScripts.Abilities
                 float posture = 0.3f * weapon.Sharpness + 0.7f * weapon.Weight;
                 float hp = (100 - weapon.HealthDamageReduction) / 100;
                 float pp = (100 - weapon.PostureDamageReduction) / 100;
-                weapon.Entity.Damage(health * hp, posture * pp, attacker);
+                Entity entity = weapon.Entity;
+                entity.Damage(health * hp, posture * pp, attacker);
+                entity.ApplyForce(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight);
                 Debug.Log("Guarded:" + Time.time);
             }
         }
@@ -110,6 +114,7 @@ namespace GameScripts.Abilities
         }
 
         protected override void OnCoroutineFinish(AbilityCoroutineConfig config){
+            weaponWielder.Mainhand.Pause();
         }
 
         protected override void OnAnimationInterrupt(AbilityConfig config)

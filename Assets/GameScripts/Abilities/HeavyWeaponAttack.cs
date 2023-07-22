@@ -113,6 +113,7 @@ namespace GameScripts.Abilities
         {
             HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)config;
             h.animationSignaled = false;
+            weaponWielder.Mainhand.Pause();
         }
 
         protected override void Signal(AbilityConfig config, bool isAnimation)
@@ -151,6 +152,7 @@ namespace GameScripts.Abilities
                 float posture = (0.3f * weaponWielder.Mainhand.Sharpness + 0.7f * weaponWielder.Mainhand.Weight) * 
                     modifier * ((100 - postureDamageReduction) / 100);
                 entity.Damage(health, posture, attacker);
+                entity.ApplyForce(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight * modifier);
             }
         }
 

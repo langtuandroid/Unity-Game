@@ -19,6 +19,7 @@ namespace LobsterFramework.EntitySystem
         [Header("Group Setting")]
         [SerializeField] private List<EntityGroup> groups;
 
+        #region Health/PostureFields
         [Header("Character Stats")]
         [SerializeField] private RefFloat maxHealth;
         [SerializeField] private RefFloat baseHealthRegen;
@@ -33,46 +34,12 @@ namespace LobsterFramework.EntitySystem
 
         public float MaxHealth { get { return maxHealth.Value; } }
         public float MaxPosture { get { return maxPosture.Value; } }
-
-        [Header("Movement")]
-        [SerializeField] private Rigidbody2D _rigidBody;
-        [SerializeField] private RefFloat maxSpeed;
-        [SerializeField] private RefFloat rotateSpeed;
-        [SerializeField] private RefFloat maxAcceleration;
-        private Vector2 steering;
-        private BaseOr movementBlock = new(false);
-        public float MoveSpeed { get { return maxSpeed.Value; } }
-        public float RotateSpeed { get { return rotateSpeed.Value; } }
-
-        public Rigidbody2D RigidBody { get { return _rigidBody; } }
-        public bool MovementBlocked { get { return movementBlock.Stat; } }
-
-        [Header("Status")]
-        [SerializeField] private List<DamageTracker> damageHistory = new();
-        [SerializeField] public Dictionary<Type, Effect> activeEffects = new();
-        
-
-        // Buffers
-        private RegenBuffer regenBuffer = new(true);
-        private DamageBuffer damageBuffer = new(true);
-
-        // Listeners
-        public UnityAction<bool> onMovementBlocked;
-        public UnityAction<Damage> onDamaged;
-
-        // time markers
-        private float damagedSince;
-
-        // Caches
-        private Transform _transform;
-        
-
         public bool RegenSuppressed { get { return (Time.time - damagedSince) < GameManager.Instance.SUPPRESS_REGEN_DURATION; } }
 
         public float Health
         {
             get { return health; }
-            private set { if (value > MaxHealth) { health = MaxHealth; }else{health = value;  } }
+            private set { if (value > MaxHealth) { health = MaxHealth; } else { health = value; } }
         }
 
         public float Posture
@@ -81,6 +48,8 @@ namespace LobsterFramework.EntitySystem
             private set { if (value > MaxPosture) { posture = MaxPosture; } else { posture = value; } }
         }
 
+        public UnityAction<Damage> onDamaged;
+
         private int posture_b_moveKey;
         private int posture_b_damageKey;
 
@@ -88,7 +57,32 @@ namespace LobsterFramework.EntitySystem
         public bool PostureBroken { get; private set; }
 
         private float postureBroken_counter;
+        #endregion
 
+        #region MovementFields
+        [Header("Movement")]
+        [SerializeField] private Rigidbody2D _rigidBody;
+        [SerializeField] private RefFloat maxSpeed;
+        [SerializeField] private RefFloat rotateSpeed;
+
+        public UnityAction<bool> onMovementBlocked;
+
+        private BaseOr movementBlock = new(false);
+        private Vector2 steering;
+       
+        public float MoveSpeed { get { return maxSpeed.Value; } }
+        public float RotateSpeed { get { return rotateSpeed.Value; } }
+
+        public Rigidbody2D RigidBody { get { return _rigidBody; } }
+        public bool MovementBlocked { get { return movementBlock.Stat; } }
+        #endregion
+
+        #region StatusFields
+        [Header("Status")]
+        [SerializeField] private List<DamageTracker> damageHistory = new();
+        [SerializeField] public Dictionary<Type, Effect> activeEffects = new();
+
+        private float damagedSince;
         public Damage LatestDamageInfo
         {
             get
@@ -98,7 +92,14 @@ namespace LobsterFramework.EntitySystem
             }
         }
         #endregion
+        // Buffers
+        private RegenBuffer regenBuffer = new(true);
+        private DamageBuffer damageBuffer = new(true);
 
+        // Caches
+        private Transform _transform; 
+        #endregion
+        
         #region StatusUpdate
         private void Start()
         {
@@ -118,6 +119,13 @@ namespace LobsterFramework.EntitySystem
             regenBuffer.AddPosture(basePostureRegen.Value);
 
             _transform = GetComponent<Transform>();
+        }
+        private void FixedUpdate()
+        {
+            if (steering != Vector2.zero)
+            {
+                _rigidBody.AddForce(_transform.rotation * steering);
+            }
         }
 
         private void Update()
@@ -240,6 +248,7 @@ namespace LobsterFramework.EntitySystem
         }
         #endregion
 
+        #region ApplicationMethods
         /// <summary>
         /// Apply an effect to the entity
         /// </summary>
@@ -283,19 +292,10 @@ namespace LobsterFramework.EntitySystem
             damageBuffer.AddDefense(healthDefense, postureDefense);
         }
 
-        #region Movement
-        private void FixedUpdate()
-        {
-            if (steering != Vector2.zero)
-            {
-                _rigidBody.AddForce(_transform.rotation * steering);
-            }
+        #endregion
 
-            float brakeMagnitude = _rigidBody.velocity.magnitude - maxSpeed;
-            if (brakeMagnitude > 0) {
-                _rigidBody.AddForce(-_rigidBody.velocity.normalized * brakeMagnitude / Time.fixedDeltaTime * _rigidBody.mass, ForceMode2D.Force);
-            }
-        }
+        #region MovementMethods
+        
 
         /// <summary>
         /// Add an effector to block movement of this entity. The movement of the entity will be blocked if there's at least 1 effector.
@@ -372,8 +372,8 @@ namespace LobsterFramework.EntitySystem
                 steering = Vector2.zero;
                 return;
             }
-            if (acceleration <= 0 || acceleration > maxAcceleration) {
-                acceleration = maxAcceleration;
+            if (acceleration <= 0 || acceleration > maxSpeed) {
+                acceleration = maxSpeed;
             }
             steering = direction.normalized * acceleration;
         }
@@ -382,11 +382,16 @@ namespace LobsterFramework.EntitySystem
         {
             Vector2 force = (velocity - _rigidBody.velocity) * _rigidBody.mass;
             float mag = force.magnitude;
-            if (mag > maxAcceleration) { 
-                mag = maxAcceleration;
+            float max = maxSpeed * Time.deltaTime;
+            if (mag > max) { 
+                mag = max;
             }
             _rigidBody.AddForce(force.normalized * mag, ForceMode2D.Impulse);
             steering = Vector2.zero;
+        }
+
+        public void ApplyForce(Vector2 direction, float magnitude) {
+            _rigidBody.AddForce(direction.normalized * magnitude, ForceMode2D.Impulse);
         }
         #endregion
         private void OnDrawGizmos()
