@@ -30880,9 +30880,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 974773030}
     - target: {fileID: 6372606751347597144, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372606751347597144, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1377438054}
+    - target: {fileID: 6372606751347597144, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7880835017032065979}
+    - target: {fileID: 6372606751347597144, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372606751347597144, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameScripts.InputControl.PlayerController, GameScripts
+      objectReference: {fileID: 0}
     - target: {fileID: 6690232307987273184, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.706086
@@ -30893,7 +30909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7068496779910381666, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
       propertyPath: maxSpeed.value
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7068496779910381666, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
       propertyPath: maxHealth.value
@@ -30933,3 +30949,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 960644489560204539, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
   m_PrefabInstance: {fileID: 7377006228987806280}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7880835017032065979 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7904142114192959457, guid: dfee117945605ed4cac3c9eaad8b55bd, type: 3}
+  m_PrefabInstance: {fileID: 7377006228987806280}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d007dd9246cfba429d089046f387f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
