@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1067484646109687668
 Transform:
   m_ObjectHideFlags: 0
@@ -96,8 +96,11 @@ GameObject:
   - component: {fileID: 770555523144453587}
   - component: {fileID: 4458722263269912701}
   - component: {fileID: 5353377617828249592}
+  - component: {fileID: 3579077811780646521}
+  - component: {fileID: 5554808194822948820}
+  - component: {fileID: 3826623040206066821}
   m_Layer: 0
-  m_Name: warrior-example
+  m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,8 +119,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 948921428966523799}
+  - {fileID: 6037136822917060687}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &770555523144453587
 Rigidbody2D:
@@ -131,11 +135,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Mass: 10
+  m_LinearDrag: 3
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: 7081e3d423413bf409d27f82c82d1bcb, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -193,45 +197,349 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802007f2b09a21e4da00d71bc0d82c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groups: []
+  groups:
+  - {fileID: 11400000, guid: bedff8bc66ebeab45996c2806021c2ae, type: 2}
+  - {fileID: 11400000, guid: 4f8f16cf72b4f07469b075ddf31d9ebe, type: 2}
   maxHealth:
-    value: 0
+    value: 150
     useSharedValue: 0
-    sharedValue: {fileID: 0}
+    sharedValue: {fileID: 11400000, guid: 8c94823de2fa10f499ba7d4b29e4118b, type: 2}
   baseHealthRegen:
-    value: 0
+    value: 1
     useSharedValue: 0
     sharedValue: {fileID: 0}
   lowHealthRegen:
-    value: 0
+    value: 6
     useSharedValue: 0
     sharedValue: {fileID: 0}
   lowHealthThreshold:
-    value: 0
+    value: 30
     useSharedValue: 0
     sharedValue: {fileID: 0}
   startHealth:
-    value: 0
+    value: 100
     useSharedValue: 0
     sharedValue: {fileID: 0}
   maxPosture:
-    value: 0
+    value: 300
     useSharedValue: 0
     sharedValue: {fileID: 0}
   basePostureRegen:
-    value: 0
+    value: 5
     useSharedValue: 0
     sharedValue: {fileID: 0}
   _rigidBody: {fileID: 770555523144453587}
   maxSpeed:
-    value: 0
+    value: 60
     useSharedValue: 0
     sharedValue: {fileID: 0}
   rotateSpeed:
-    value: 0
+    value: 330
     useSharedValue: 0
     sharedValue: {fileID: 0}
   damageHistory: []
+--- !u!114 &3579077811780646521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490316291772389325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 5f13414ae2f8d094d89473ba9b163d7b, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1221389a-153d-4aba-87cf-603377a2605d
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3826623040206066821}
+        m_TargetAssemblyTypeName: GameScripts.InputControl.PlayerController, GameScripts
+        m_MethodName: WeaponLightAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: beda39d2-0776-427a-ba1a-2b40a178d6cf
+    m_ActionName: Player/Attack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameStateManager, LobsterFramework
+        m_MethodName: Pause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8e76cc6e-dc7e-42f6-aa70-02b297d66c30
+    m_ActionName: Player/Pause/Resume[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3826623040206066821}
+        m_TargetAssemblyTypeName: GameScripts.InputControl.PlayerController, GameScripts
+        m_MethodName: PrimaryInteraction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bf56d179-25cd-439e-8843-625a403f793a
+    m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3826623040206066821}
+        m_TargetAssemblyTypeName: GameScripts.InputControl.PlayerController, GameScripts
+        m_MethodName: SecondaryInteraction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4707ddf1-9e7e-4859-8145-8e971e0fd629
+    m_ActionName: Player/SecondaryInteraction[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3826623040206066821}
+        m_TargetAssemblyTypeName: GameScripts.InputControl.PlayerController, GameScripts
+        m_MethodName: NextInteractable
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fa744c36-197b-4951-a90e-13f496b3bf56
+    m_ActionName: Player/SwitchInteraction[/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3826623040206066821}
+        m_TargetAssemblyTypeName: GameScripts.InputControl.PlayerController, GameScripts
+        m_MethodName: PreviousInteractable
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f41da5e5-cc4a-411b-a6dc-a3f727a2b14a
+    m_ActionName: Player/PreviousInteractable[/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f1a29f0a-57f0-46fb-88bf-235392f12f91
+    m_ActionName: Player/Aim[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3826623040206066821}
+        m_TargetAssemblyTypeName: GameScripts.InputControl.PlayerController, GameScripts
+        m_MethodName: Guard
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6864dc9a-806b-4c14-a571-75cca0ee8a0c
+    m_ActionName: Player/Shoot[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3826623040206066821}
+        m_TargetAssemblyTypeName: GameScripts.InputControl.PlayerController, GameScripts
+        m_MethodName: WeaponHeavyAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fcceabac-55b8-475a-a56f-bbfa39c01db4
+    m_ActionName: Player/ChargeAttack[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3826623040206066821}
+        m_TargetAssemblyTypeName: GameScripts.InputControl.PlayerController, GameScripts
+        m_MethodName: SwitchWeapon
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f2ad83b8-d27f-41f1-9732-70cfe71f75f6
+    m_ActionName: Player/SwitchWeapon[/Keyboard/1]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &5554808194822948820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490316291772389325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7eeadc1f78a4574eb2b7fac0e53f398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3826623040206066821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490316291772389325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d007dd9246cfba429d089046f387f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  cameraDistance: 10
+  gamePause: {fileID: 11400000, guid: ba8a7dac9859d024d8b1a085d02c7031, type: 2}
+  gameEndChannel: {fileID: 11400000, guid: 84fd18b4375a0ce44852aeaa561d65d9, type: 2}
+  playerDeathChannel: {fileID: 11400000, guid: b77c1a7e01e0bb448b8b4cd522b26a43, type: 2}
+  playerRespawnChennel: {fileID: 11400000, guid: c00fd75e694766e4aa1dd7cfde954a90, type: 2}
+  player: {fileID: 5353377617828249592}
+  abilityRunner: {fileID: 9072161404192331858}
+  interactor: {fileID: 5554808194822948820}
+  weaponWielder: {fileID: 6676339780788435558}
+  rotate: {fileID: -1975324386804856178, guid: 5f13414ae2f8d094d89473ba9b163d7b, type: 3}
+  move: {fileID: -2194820454274590405, guid: 5f13414ae2f8d094d89473ba9b163d7b, type: 3}
+  rotateAcceleration: 70
+  mouseSensitivity: 50
+--- !u!1 &8831391230036856060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6037136822917060687}
+  - component: {fileID: 5752298683565596422}
+  m_Layer: 0
+  m_Name: Torch (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6037136822917060687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8831391230036856060}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7880835017238648108}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5752298683565596422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8831391230036856060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.518
+  m_Color: {r: 1, g: 0.71460176, b: 0.4481132, a: 1}
+  m_Intensity: 1.19
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 00000000619269eaf938ba77a970ba388b0ce7006122b33e0d567ed0
+  m_LightCookieSprite: {fileID: -8917494276948081965, guid: 498d6c33c89360e43b56b0934609c613, type: 3}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 2.65
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1001 &1874879565652539977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -346,7 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityData: {fileID: 0}
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 94cf967eb3fca474ab4e4e7b44a1dce0, type: 2}
   animator: {fileID: 223299123248344314}
   weaponWielder: {fileID: 6676339780788435558}
 --- !u!95 &223299123248344314
@@ -382,12 +690,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21d7712cfaae2ab4cb1cd62dc9916ee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainhandWeapon1: {fileID: 0}
+  mainhandWeapon1: {fileID: 5619198934622560290, guid: 4e63230358c59ee4cb029ee29dae2118, type: 3}
   mainhandWeapon2: {fileID: 0}
   offhandWeapon1: {fileID: 0}
   offhandWeapon2: {fileID: 0}
   mainhandWeaponPosition: {fileID: 1725867647180271157}
   offhandWeaponPosition: {fileID: 1044826474029167307}
   entity: {fileID: 5353377617828249592}
-  animator: {fileID: 0}
+  animator: {fileID: 223299123248344314}
   abilityRunner: {fileID: 9072161404192331858}

@@ -24,7 +24,7 @@ namespace GameScripts.Abilities
         protected override void Initialize()
         {
             weaponWielder = abilityRunner.GetComponent<WeaponWielder>();
-            attacker = GameUtility.FindEntity(abilityRunner.gameObject);
+            attacker = weaponWielder.Wielder;
         }
 
         protected override bool ConditionSatisfied(AbilityConfig config)

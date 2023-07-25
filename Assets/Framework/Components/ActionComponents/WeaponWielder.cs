@@ -37,6 +37,8 @@ namespace LobsterFramework.AbilitySystem
         public Weapon Offhand { get; private set; }
         public Weapon Offhand2 { get; private set; }
 
+        public Entity Wielder { get { return entity; } }
+
         private void Start()
         {
             if(mainhandWeapon1 != null) { 

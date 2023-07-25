@@ -756,7 +756,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 3
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -1008,10 +1008,10 @@ MonoBehaviour:
     m_ActionName: Player/ChargeAttack[/Mouse/rightButton]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2550395651689946785}
-        m_TargetAssemblyTypeName: LobsterFramework.AbilitySystem.WeaponWielder, LobsterFramework
-        m_MethodName: SwitchMainHand
-        m_Mode: 1
+      - m_Target: {fileID: 7904142114192959457}
+        m_TargetAssemblyTypeName: GameScripts.InputControl.PlayerController, GameScripts
+        m_MethodName: SwitchWeapon
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1043,7 +1043,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bedff8bc66ebeab45996c2806021c2ae, type: 2}
   - {fileID: 11400000, guid: 4f8f16cf72b4f07469b075ddf31d9ebe, type: 2}
   maxHealth:
-    value: 100
+    value: 150
     useSharedValue: 0
     sharedValue: {fileID: 11400000, guid: 8c94823de2fa10f499ba7d4b29e4118b, type: 2}
   baseHealthRegen:
@@ -1063,7 +1063,7 @@ MonoBehaviour:
     useSharedValue: 0
     sharedValue: {fileID: 0}
   maxPosture:
-    value: 60
+    value: 300
     useSharedValue: 0
     sharedValue: {fileID: 0}
   basePostureRegen:
@@ -1071,16 +1071,12 @@ MonoBehaviour:
     useSharedValue: 0
     sharedValue: {fileID: 0}
   _rigidBody: {fileID: 350301468169635429}
-  moveSpeed:
-    value: 1
+  maxSpeed:
+    value: 60
     useSharedValue: 0
     sharedValue: {fileID: 0}
   rotateSpeed:
     value: 330
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  acceleration:
-    value: 100
     useSharedValue: 0
     sharedValue: {fileID: 0}
   damageHistory: []

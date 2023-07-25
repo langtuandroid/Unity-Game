@@ -20,10 +20,10 @@ namespace GameScripts.InputControl
         [SerializeField] private VoidEventChannel playerDeathChannel;
         [SerializeField] private VoidEventChannel playerRespawnChennel;
 
+        [Header("Components")]
         [SerializeField] private Entity player;
         [SerializeField] private AbilityRunner abilityRunner;
         [SerializeField] private GeneralInteractor interactor;
-        [SerializeField] private Transform _transform;
         [SerializeField] private WeaponWielder weaponWielder;
 
 
@@ -34,9 +34,12 @@ namespace GameScripts.InputControl
         [SerializeField] private float mouseSensitivity;
         private float rotateVelocity;
 
+        private Transform _transform;
+
         public void Start()
         {
             playerRespawnChennel.OnEventRaised += RespawnPlayer;
+            _transform = GetComponent<Transform>();
         }
 
         private void FixedUpdate()

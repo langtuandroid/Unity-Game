@@ -49,7 +49,7 @@ namespace GameScripts.Abilities
         {
             animator = abilityRunner.Animator;
             weaponWielder = abilityRunner.GetComponent<WeaponWielder>();
-            attacker = GameUtility.FindEntity(abilityRunner.gameObject);
+            attacker = weaponWielder.Wielder;
         }
 
         protected override bool ConditionSatisfied(AbilityConfig config)
