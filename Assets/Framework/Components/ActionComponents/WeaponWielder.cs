@@ -32,6 +32,8 @@ namespace LobsterFramework.AbilitySystem
         private GameObject offWeapon1Inst;
         private GameObject offWeapon2Inst;
 
+        private Dictionary<Weapon, GameObject> objLookup = new();
+
         public Weapon Mainhand { get; private set; }
         public Weapon Mainhand2 { get; private set; }
         public Weapon Offhand { get; private set; }
@@ -50,6 +52,7 @@ namespace LobsterFramework.AbilitySystem
                 mainWeapon1Inst.transform.SetParent(mainhandWeaponPosition);
                 Mainhand = mainWeapon1;
                 mainWeapon1.weaponWielder = this;
+                objLookup[mainWeapon1] = mainWeapon1Inst;
             }
             if(mainhandWeapon2 != null) {
                 mainWeapon2Inst = Instantiate(mainhandWeapon2);
@@ -63,10 +66,11 @@ namespace LobsterFramework.AbilitySystem
                     Mainhand = mainWeapon2;
                 }
                 else { 
-                    mainWeapon2.gameObject.SetActive(false);
+                    mainWeapon2Inst.SetActive(false);
                     Mainhand2 = mainWeapon2;
                 }
                 mainWeapon2.weaponWielder = this;
+                objLookup[mainWeapon2] = mainWeapon2Inst;
             }
             
             if(offhandWeapon1 != null) {
@@ -77,6 +81,7 @@ namespace LobsterFramework.AbilitySystem
                 offWeapon1Inst.transform.rotation = offhandWeaponPosition.rotation; 
                 offWeapon1Inst.transform.SetParent(offhandWeaponPosition);
                 Offhand = offWeapon1;
+                objLookup[offWeapon1] = offWeapon1Inst;
             }
             
             if(offhandWeapon2 != null) {
@@ -91,14 +96,15 @@ namespace LobsterFramework.AbilitySystem
                     Offhand = offWeapon2;
                 }
                 else { 
-                    offWeapon2.gameObject.SetActive(false);
+                    offWeapon2Inst.SetActive(false);
                     Offhand2 = offWeapon2;
                 }
+                objLookup[offWeapon2] = offWeapon2Inst;
             }
             if (Mainhand != null && Mainhand.DoubleHanded) {
                 if (Offhand != null)
                 {
-                    Offhand.gameObject.SetActive(false);
+                    objLookup[Offhand].SetActive(false);
                 }
             }
 
@@ -114,8 +120,8 @@ namespace LobsterFramework.AbilitySystem
                     Weapon w = Mainhand;
                     Mainhand = Mainhand2;
                     Mainhand2 = w;
-                    w.gameObject.SetActive(false);
-                    Mainhand.gameObject.SetActive(true);
+                    objLookup[w].SetActive(false);
+                    objLookup[Mainhand].SetActive(true);
                     PlayDefaultWeaponAnimation();
                 }
             }
@@ -123,7 +129,7 @@ namespace LobsterFramework.AbilitySystem
             {
                 if (Mainhand != null && Mainhand.DoubleHanded)
                 {
-                    Offhand.gameObject.SetActive(false);
+                    objLookup[Offhand].SetActive(false);
                 }
                 else {
                     Offhand.gameObject.SetActive(true);
@@ -139,11 +145,11 @@ namespace LobsterFramework.AbilitySystem
                 {
                     Offhand.Pause();
                     Weapon w = Offhand;
-                    Offhand.gameObject.SetActive(false);
+                    objLookup[Offhand].SetActive(false);
                     Offhand = Offhand2;
                     Offhand2 = w;
                     if (Mainhand != null && !Mainhand.DoubleHanded) {
-                        Offhand.gameObject.SetActive(true);
+                        objLookup[Offhand].SetActive(true);
                     }
                 }
             }

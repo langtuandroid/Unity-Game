@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946362375998860840}
   m_LocalRotation: {x: 0.0008764224, y: 0.0021158708, z: -0.38268247, w: 0.9238771}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.116, y: -0.037, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -93,8 +93,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 439540938011825576}
-  - component: {fileID: -8928187720345013717}
-  - component: {fileID: 1766288035062998633}
   m_Layer: 0
   m_Name: Stick
   m_TagString: Untagged
@@ -115,16 +113,50 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3362887764940563738}
+  - {fileID: 2674099525223666920}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &-8928187720345013717
+--- !u!1 &6754967439785399562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2674099525223666920}
+  - component: {fileID: 637243510620664013}
+  - component: {fileID: 8815311030110520603}
+  m_Layer: 0
+  m_Name: collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2674099525223666920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6754967439785399562}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.118, y: -0.034, z: 0}
+  m_LocalScale: {x: 0.33333334, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 439540938011825576}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &637243510620664013
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1569198619848997945}
+  m_GameObject: {fileID: 6754967439785399562}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -150,23 +182,23 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05814494, y: 0.03347661}
-  m_Size: {x: 0.80322355, y: 0.077154264}
+  m_Offset: {x: 0.17384449, y: 0.060177386}
+  m_Size: {x: 2.3803718, y: 0.13055603}
   m_Direction: 1
---- !u!114 &1766288035062998633
+--- !u!114 &8815311030110520603
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1569198619848997945}
+  m_GameObject: {fileID: 6754967439785399562}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e73fdb35b1ad4544af3f25e2364b7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: stick
-  weight: 120
+  weight: 90
   sharpness: 3
   attackSpeed: 1.5
   doubleHanded: 0

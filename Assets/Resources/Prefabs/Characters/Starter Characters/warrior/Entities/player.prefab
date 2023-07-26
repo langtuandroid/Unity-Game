@@ -121,7 +121,7 @@ Transform:
   - {fileID: 948921428966523799}
   - {fileID: 6037136822917060687}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &770555523144453587
 Rigidbody2D:
@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityData: {fileID: 0}
-  data: {fileID: 11400000, guid: 94cf967eb3fca474ab4e4e7b44a1dce0, type: 2}
+  data: {fileID: 11400000, guid: 8d246552b9732c041a34ef1dd70f66de, type: 2}
   animator: {fileID: 223299123248344314}
   weaponWielder: {fileID: 6676339780788435558}
 --- !u!95 &223299123248344314
@@ -691,7 +691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainhandWeapon1: {fileID: 5619198934622560290, guid: 4e63230358c59ee4cb029ee29dae2118, type: 3}
-  mainhandWeapon2: {fileID: 0}
+  mainhandWeapon2: {fileID: 1569198619848997945, guid: ce596d27f0ab3ec4b83b94e1dafc5e9f, type: 3}
   offhandWeapon1: {fileID: 0}
   offhandWeapon2: {fileID: 0}
   mainhandWeaponPosition: {fileID: 1725867647180271157}
