@@ -59,24 +59,6 @@ namespace LobsterFramework.EntitySystem
         private float postureBroken_counter;
         #endregion
 
-        #region MovementFields
-        [Header("Movement")]
-        [SerializeField] private Rigidbody2D _rigidBody;
-        [SerializeField] private RefFloat maxSpeed;
-        [SerializeField] private RefFloat rotateSpeed;
-
-        public UnityAction<bool> onMovementBlocked;
-
-        private BaseOr movementBlock = new(false);
-        private Vector2 steering;
-       
-        public float MoveSpeed { get { return maxSpeed.Value; } }
-        public float RotateSpeed { get { return rotateSpeed.Value; } }
-
-        public Rigidbody2D RigidBody { get { return _rigidBody; } }
-        public bool MovementBlocked { get { return movementBlock.Stat; } }
-        #endregion
-
         #region StatusFields
         [Header("Status")]
         [SerializeField] private List<DamageTracker> damageHistory = new();
@@ -96,17 +78,14 @@ namespace LobsterFramework.EntitySystem
         private RegenBuffer regenBuffer = new(true);
         private DamageBuffer damageBuffer = new(true);
 
-        // Caches
-        private Transform _transform; 
+        // Cache
+        private MovementController moveControl;
         #endregion
         
         #region StatusUpdate
         private void Start()
         {
-            foreach (EntityGroup group in groups)
-            {
-                group.Add(this);
-            }
+            
 
             Health = startHealth.Value;
             gameObject.tag = GameManager.Instance.TAG_ENTITY;
@@ -117,16 +96,9 @@ namespace LobsterFramework.EntitySystem
 
             regenBuffer.AddHealth(baseHealthRegen.Value);
             regenBuffer.AddPosture(basePostureRegen.Value);
-
-            _transform = GetComponent<Transform>();
+            moveControl = GetComponent<MovementController>();
         }
-        private void FixedUpdate()
-        {
-            if (steering != Vector2.zero)
-            {
-                _rigidBody.AddForce(_transform.rotation * steering);
-            }
-        }
+        
 
         private void Update()
         {
@@ -212,14 +184,22 @@ namespace LobsterFramework.EntitySystem
         }
 
         private void PostureBreak() {
-            posture_b_moveKey = BlockMovement();
+            if(moveControl != null)
+            {
+                posture_b_moveKey = moveControl.BlockMovement();
+            }
+           
             posture_b_damageKey = damageBuffer.AddHealthModifier(GameManager.Instance.POSTURE_BROKEN_DAMAGE_MODIFIER);
             postureBroken_counter = 0;
             PostureBroken = true;
         }
 
         private void PostureRecover() {
-            UnblockMovement(posture_b_moveKey);
+            if(moveControl != null)
+            {
+                moveControl.UnblockMovement(posture_b_moveKey);
+            }
+            
             damageBuffer.RemoveHealthModifier(posture_b_damageKey);
             Posture = 0.7f * MaxPosture;
             PostureBroken = false;
@@ -293,118 +273,7 @@ namespace LobsterFramework.EntitySystem
         }
 
         #endregion
-
-        #region MovementMethods
         
-
-        /// <summary>
-        /// Add an effector to block movement of this entity. The movement of the entity will be blocked if there's at least 1 effector.
-        /// </summary>
-        /// <returns>The id of the newly added effector</returns>
-        public int BlockMovement()
-        {
-            bool before = MovementBlocked;
-            int key = movementBlock.AddEffector(true);
-            if (onMovementBlocked != null && !before)
-            {
-                onMovementBlocked.Invoke(true);
-            }
-            return key;
-        }
-
-        public bool UnblockMovement(int key) {
-            if (movementBlock.RemoveEffector(key)) {
-                if (!MovementBlocked && onMovementBlocked != null) {
-                    onMovementBlocked.Invoke(false);
-                }
-                return true;
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// Attempt to rotate the entity towards the specified direction. If the specified angle is larger than the max rotation speed,
-        /// the entity will rotate towards target angle will max speed. Will fail if Movement blocked. 
-        /// </summary>
-        /// <param name="direction">The target direction to rotate towards</param>
-        public void RotateTowards(Vector2 direction) {
-            if (MovementBlocked) {
-                return;
-            }
-            float angle = Vector2.SignedAngle(transform.up, direction);
-            Quaternion target = Quaternion.Euler(0, 0, angle);
-            float maxRotate = rotateSpeed * Time.deltaTime;
-            if (Math.Abs(angle) > maxRotate) { 
-                target = Quaternion.Lerp(Quaternion.identity, target, maxRotate / Math.Abs(angle));
-            }
-            _transform.rotation = target * _transform.rotation;
-        }
-        /// <summary>
-        /// Attempt to rotate the entity by the specified degree. If the specified angle is larger than the max rotation speed,
-        /// the entity will rotate towards target angle will max speed. Will fail if Movement blocked. 
-        /// </summary>
-        /// <param name="degree">The degree to rotate the entity by</param>
-        public void RotateByDegrees(float degree) {
-            if (MovementBlocked) {
-                return;
-            }
-            float maxDegree = rotateSpeed * Time.deltaTime;
-            if (Math.Abs(degree) > maxDegree) {
-                if (degree < 0) {
-                    degree = -maxDegree;
-                }
-                else
-                {
-                    degree = maxDegree;
-                }
-            }
-            _transform.rotation = Quaternion.AngleAxis(degree, _transform.forward) * _transform.rotation;
-        }
-
-        /// <summary>
-        /// Start moving the entity towards the specified direction, will fail if Movement is blocked on this entity
-        /// </summary>
-        /// <param name="direction"></param>
-        public void Move(Vector2 direction, float acceleration = -1)
-        {
-            if (MovementBlocked)
-            {
-                steering = Vector2.zero;
-                return;
-            }
-            if (acceleration <= 0 || acceleration > maxSpeed) {
-                acceleration = maxSpeed;
-            }
-            steering = direction.normalized * acceleration;
-        }
-
-        public void SetVelocity(Vector2 velocity)
-        {
-            Vector2 force = (velocity - _rigidBody.velocity) * _rigidBody.mass;
-            float mag = force.magnitude;
-            float max = maxSpeed * Time.deltaTime;
-            if (mag > max) { 
-                mag = max;
-            }
-            _rigidBody.AddForce(force.normalized * mag, ForceMode2D.Impulse);
-            steering = Vector2.zero;
-        }
-
-        public void ApplyForce(Vector2 direction, float magnitude) {
-            _rigidBody.AddForce(direction.normalized * magnitude, ForceMode2D.Impulse);
-        }
-        #endregion
-        private void OnDrawGizmos()
-        {
-            Vector3 v3 = new(_rigidBody.velocity.x, _rigidBody.velocity.y, 0);
-            Vector3 v32 = new(steering.x, steering.y, 0);
-            if (_transform != null) {
-                Draw.Gizmos.Line(_transform.position, _transform.position + v3, Color.cyan);
-                Draw.Gizmos.Line(_transform.position, _transform.position + v32, Color.red);
-            }
-            
-        }
-
         [System.Serializable]
         private class DamageTracker
         {

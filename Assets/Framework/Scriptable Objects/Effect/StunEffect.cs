@@ -10,24 +10,34 @@ namespace LobsterFramework.EntitySystem
     {
         private int effector_id = -1;
         private int move_id = -1;
-        private AbilityRunner ar;
+        private AbilityRunner abilityRunner;
+        private MovementController moveControl;
+
         protected override void OnApply()
         {
-            move_id = entity.BlockMovement();
-            ar = entity.GetComponent<AbilityRunner>();
-            if (ar != null) {
-                effector_id = ar.BlockAction();
+            moveControl = entity.GetComponent<MovementController>(); 
+            if (moveControl != null)
+            {
+                move_id = moveControl.BlockMovement();
+            }
+            
+            abilityRunner = entity.GetComponent<AbilityRunner>();
+            if (abilityRunner != null) {
+                effector_id = abilityRunner.BlockAction();
             }
         }
 
         protected override void OnEffectOver()
         {
             if (effector_id != -1) {
-                ar.UnblockAction(effector_id);
+                abilityRunner.UnblockAction(effector_id);
                 effector_id = -1;
             }
-            entity.UnblockMovement(move_id);
-            move_id = -1;
+            if(move_id != -1)
+            {
+                moveControl.UnblockMovement(move_id);
+                move_id = -1;
+            }
         }
     }
 }

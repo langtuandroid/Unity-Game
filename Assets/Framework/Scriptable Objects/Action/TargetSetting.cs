@@ -25,16 +25,33 @@ namespace LobsterFramework.AbilitySystem
             foreach (EntityGroup group in targetGroups)
             {
                 targets.UnionWith(group);
-                group.OnEntityAdded.AddListener((Entity entity) => { targets.Add(entity); });
-                group.OnEntityRemoved.AddListener((Entity entity) => { targets.Remove(entity); });
+                group.OnEntityAdded.AddListener(Add);
+                group.OnEntityRemoved.AddListener(Remove);
             }
             foreach (EntityGroup group in ignoreGroups)
             {
                 ignores.UnionWith(group);
-                group.OnEntityAdded.AddListener((Entity entity) => { ignores.Add(entity); });
-                group.OnEntityRemoved.AddListener((Entity entity) => { ignores.Remove(entity); });
+                group.OnEntityAdded.AddListener(AddIgnore);
+                group.OnEntityRemoved.AddListener(RemoveIgnore);
             }
         }
+
+        private void Add(Entity entity)
+        {
+            targets.Add(entity);
+        }
+
+        private void Remove(Entity entity) {
+            targets.Remove(entity);
+        }
+
+        private void AddIgnore(Entity entity) {
+            ignores.Add(entity);
+        }
+        private void RemoveIgnore(Entity entity) {
+            ignores.Remove(entity);
+        }
+
 
         private void OnDisable()
         {

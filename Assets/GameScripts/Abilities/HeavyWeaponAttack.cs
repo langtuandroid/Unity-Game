@@ -4,6 +4,7 @@ using System.Collections;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.Utility;
 using System.Collections.Generic;
+using LobsterFramework;
 
 namespace GameScripts.Abilities
 {
@@ -16,6 +17,7 @@ namespace GameScripts.Abilities
         private Animator animator;
         private WeaponWielder weaponWielder;
         private Entity attacker;
+
         public class HeavyWeaponAttackConfig : AbilityCoroutineConfig {
             [HideInInspector] public bool animationSignaled;
             [HideInInspector] public bool inputSignaled;
@@ -152,7 +154,11 @@ namespace GameScripts.Abilities
                 float posture = (0.3f * weaponWielder.Mainhand.Sharpness + 0.7f * weaponWielder.Mainhand.Weight) * 
                     modifier * ((100 - postureDamageReduction) / 100);
                 entity.Damage(health, posture, attacker);
-                entity.ApplyForce(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight * modifier);
+                MovementController moveControl = entity.GetComponent<MovementController>();
+                if (moveControl != null)
+                {
+                    moveControl.ApplyForce(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight * modifier);
+                }
             }
         }
 

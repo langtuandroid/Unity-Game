@@ -1,0 +1,153 @@
+using LobsterFramework.Utility.BufferedStats;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+
+namespace LobsterFramework
+{
+    [RequireComponent (typeof(Rigidbody2D))]
+    public class MovementController : MonoBehaviour
+    {
+        [Header("Movement")]
+        [SerializeField] private RefFloat maxSpeed;
+        [SerializeField] private RefFloat rotateSpeed;
+
+        public UnityAction<bool> onMovementBlocked;
+
+        private Rigidbody2D _rigidBody;
+        new private Transform transform;
+        private BaseOr movementBlock = new(false);
+        private Vector2 steering;
+
+        public float MoveSpeed { get { return maxSpeed.Value; } }
+        public float RotateSpeed { get { return rotateSpeed.Value; } }
+
+        public Rigidbody2D RigidBody { get { return _rigidBody; } }
+        public bool MovementBlocked { get { return movementBlock.Stat; } }
+
+        private void Start() { 
+            transform = GetComponent<Transform>();
+            _rigidBody = GetComponent<Rigidbody2D>();
+        }
+
+        private void FixedUpdate()
+        {
+            if (steering != Vector2.zero)
+            {
+                _rigidBody.AddForce(transform.rotation * steering);
+            }
+        }
+
+        /// <summary>
+        /// Add an effector to block movement of this entity. The movement of the entity will be blocked if there's at least 1 effector.
+        /// </summary>
+        /// <returns>The id of the newly added effector</returns>
+        public int BlockMovement()
+        {
+            bool before = MovementBlocked;
+            int key = movementBlock.AddEffector(true);
+            if (onMovementBlocked != null && !before)
+            {
+                onMovementBlocked.Invoke(true);
+            }
+            return key;
+        }
+
+        public bool UnblockMovement(int key)
+        {
+            if (movementBlock.RemoveEffector(key))
+            {
+                if (!MovementBlocked && onMovementBlocked != null)
+                {
+                    onMovementBlocked.Invoke(false);
+                }
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Attempt to rotate the entity towards the specified direction. If the specified angle is larger than the max rotation speed,
+        /// the entity will rotate towards target angle will max speed. Will fail if Movement blocked. 
+        /// </summary>
+        /// <param name="direction">The target direction to rotate towards</param>
+        public void RotateTowards(Vector2 direction)
+        {
+            if (MovementBlocked)
+            {
+                return;
+            }
+            float angle = Vector2.SignedAngle(transform.up, direction);
+            Quaternion target = Quaternion.Euler(0, 0, angle);
+            float maxRotate = rotateSpeed * Time.deltaTime;
+            if (Math.Abs(angle) > maxRotate)
+            {
+                target = Quaternion.Lerp(Quaternion.identity, target, maxRotate / Math.Abs(angle));
+            }
+            transform.rotation = target * transform.rotation;
+        }
+        /// <summary>
+        /// Attempt to rotate the entity by the specified degree. If the specified angle is larger than the max rotation speed,
+        /// the entity will rotate towards target angle will max speed. Will fail if Movement blocked. 
+        /// </summary>
+        /// <param name="degree">The degree to rotate the entity by</param>
+        public void RotateByDegrees(float degree)
+        {
+            if (MovementBlocked)
+            {
+                return;
+            }
+            float maxDegree = rotateSpeed * Time.deltaTime;
+            if (Math.Abs(degree) > maxDegree)
+            {
+                if (degree < 0)
+                {
+                    degree = -maxDegree;
+                }
+                else
+                {
+                    degree = maxDegree;
+                }
+            }
+            transform.rotation = Quaternion.AngleAxis(degree, transform.forward) * transform.rotation;
+        }
+
+        /// <summary>
+        /// Start moving the entity towards the specified direction, will fail if Movement is blocked on this entity
+        /// </summary>
+        /// <param name="direction"></param>
+        public void Move(Vector2 direction, float acceleration = -1)
+        {
+            if (MovementBlocked)
+            {
+                steering = Vector2.zero;
+                return;
+            }
+            if (acceleration <= 0 || acceleration > maxSpeed)
+            {
+                acceleration = maxSpeed;
+            }
+            steering = direction.normalized * acceleration;
+        }
+
+        public void SetVelocity(Vector2 velocity)
+        {
+            Vector2 force = (velocity - _rigidBody.velocity) * _rigidBody.mass;
+            float mag = force.magnitude;
+            float max = maxSpeed * Time.deltaTime;
+            if (mag > max)
+            {
+                mag = max;
+            }
+            _rigidBody.AddForce(force.normalized * mag, ForceMode2D.Impulse);
+            steering = Vector2.zero;
+        }
+
+        public void ApplyForce(Vector2 direction, float magnitude)
+        {
+            _rigidBody.AddForce(direction.normalized * magnitude, ForceMode2D.Impulse);
+        }
+    }
+}

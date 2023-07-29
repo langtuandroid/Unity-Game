@@ -7,9 +7,9 @@ using LobsterFramework.EntitySystem;
 namespace LobsterFramework.Utility.Groups
 {
     [CreateAssetMenu(menuName = "Groups/Entity Group")]
-    public class EntityGroup : ScriptableObject, IEnumerable<Entity>, IList<Entity>
+    public class EntityGroup : ScriptableObject, IEnumerable<Entity>, ISet<Entity>
     {
-        [SerializeField] private List<Entity> group = new();
+        private HashSet<Entity> group = new();
         public UnityEvent<Entity> OnEntityAdded = new();
         public UnityEvent<Entity> OnEntityRemoved = new();
 
@@ -17,51 +17,86 @@ namespace LobsterFramework.Utility.Groups
 
         public bool IsReadOnly => ((ICollection<Entity>)group).IsReadOnly;
 
-        public Entity this[int index] { get => ((IList<Entity>)group)[index]; set => ((IList<Entity>)group)[index] = value; }
-
-        public void Add(Entity entity)
-        {
-            OnEntityAdded.Invoke(entity);
-            group.Add(entity);
-        }
-
         public IEnumerator<Entity> GetEnumerator()
         {
             return ((IEnumerable<Entity>)group).GetEnumerator();
         }
 
-        public bool Remove(Entity entity)
+        IEnumerator IEnumerable.GetEnumerator()
         {
-            if (group.Remove(entity))
-            {
-                OnEntityRemoved.Invoke(entity);
+            return ((IEnumerable)group).GetEnumerator();
+        }
+
+        public bool Add(Entity item)
+        {
+            if (((ISet<Entity>)group).Add(item)) { 
+                OnEntityAdded.Invoke(item);
                 return true;
             }
             return false;
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
+        public void ExceptWith(IEnumerable<Entity> other)
         {
-            return group.GetEnumerator();
+            ((ISet<Entity>)group).ExceptWith(other);
         }
 
-        public int IndexOf(Entity item)
+        public void IntersectWith(IEnumerable<Entity> other)
         {
-            return ((IList<Entity>)group).IndexOf(item);
+            ((ISet<Entity>)group).IntersectWith(other);
         }
 
-        public void Insert(int index, Entity item)
+        public bool IsProperSubsetOf(IEnumerable<Entity> other)
         {
-            ((IList<Entity>)group).Insert(index, item);
+            return ((ISet<Entity>)group).IsProperSubsetOf(other);
         }
 
-        public void RemoveAt(int index)
+        public bool IsProperSupersetOf(IEnumerable<Entity> other)
         {
-            ((IList<Entity>)group).RemoveAt(index);
+            return ((ISet<Entity>)group).IsProperSupersetOf(other);
+        }
+
+        public bool IsSubsetOf(IEnumerable<Entity> other)
+        {
+            return ((ISet<Entity>)group).IsSubsetOf(other);
+        }
+
+        public bool IsSupersetOf(IEnumerable<Entity> other)
+        {
+            return ((ISet<Entity>)group).IsSupersetOf(other);
+        }
+
+        public bool Overlaps(IEnumerable<Entity> other)
+        {
+            return ((ISet<Entity>)group).Overlaps(other);
+        }
+
+        public bool SetEquals(IEnumerable<Entity> other)
+        {
+            return ((ISet<Entity>)group).SetEquals(other);
+        }
+
+        public void SymmetricExceptWith(IEnumerable<Entity> other)
+        {
+            ((ISet<Entity>)group).SymmetricExceptWith(other);
+        }
+
+        public void UnionWith(IEnumerable<Entity> other)
+        {
+            ((ISet<Entity>)group).UnionWith(other);
+        }
+
+        void ICollection<Entity>.Add(Entity item)
+        {
+            ((ICollection<Entity>)group).Add(item);
         }
 
         public void Clear()
         {
+            foreach(Entity entity in group)
+            {
+                OnEntityRemoved.Invoke(entity);
+            }
             ((ICollection<Entity>)group).Clear();
         }
 
@@ -73,6 +108,14 @@ namespace LobsterFramework.Utility.Groups
         public void CopyTo(Entity[] array, int arrayIndex)
         {
             ((ICollection<Entity>)group).CopyTo(array, arrayIndex);
+        }
+
+        public bool Remove(Entity item)
+        {
+            if (((ICollection<Entity>)group).Remove(item)) { 
+                OnEntityRemoved.Invoke(item); return true;
+            }
+            return false;
         }
     }
 }

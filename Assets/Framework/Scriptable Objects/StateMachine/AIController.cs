@@ -28,16 +28,13 @@ namespace LobsterFramework.AI
 
         private Dictionary<Type, ControllerData> controllerData;
         private Entity entityComponent;
+        private MovementController moveControl;
 
 
         public AbilityRunner AbilityRunner { get { return abilityRunner; }}
 
         private void Awake()
         {
-            _transform = transform;
-            _collider = GetComponent<Collider2D>();
-            pathFinder = GetComponent<AIPathFinder>();
-
             gridGraph = AstarPath.active.data.gridGraph;
             controllerData = new();
             foreach (ControllerData data in controllerDatas)
@@ -45,16 +42,20 @@ namespace LobsterFramework.AI
                 controllerData[data.GetType()] = data;
             }
             entityComponent = GetComponent<Entity>();
+            moveControl = GetComponent<MovementController>();
+            _transform = GetComponent<Transform>();
+            _collider = GetComponent<Collider2D>();
+            pathFinder = GetComponent<AIPathFinder>();
         }
 
         private void OnEnable()
         {
-            entityComponent.onMovementBlocked += BlockMovement;
+            moveControl.onMovementBlocked += BlockMovement;
         }
 
         private void OnDisable()
         {
-            entityComponent.onMovementBlocked -= BlockMovement;
+            moveControl.onMovementBlocked -= BlockMovement;
         }
 
         private void OnDrawGizmos()
@@ -68,11 +69,11 @@ namespace LobsterFramework.AI
 
         private void BlockMovement(bool value)
         {
-            if (stateMachine)
+            if (stateMachine != null)
             {
                 stateMachine.enabled = !value;
             }
-            if (pathFinder)
+            if (pathFinder != null)
             {
                 pathFinder.enabled = !value;
             }
@@ -165,12 +166,12 @@ namespace LobsterFramework.AI
 
         public void LookTowards()
         {
-            entityComponent.RotateTowards(target.transform.position - _transform.position);
+            moveControl.RotateTowards(target.transform.position - _transform.position);
         }
 
         public void MoveInDirection(Vector3 direction, float distance)
         {
-            if (entityComponent.MovementBlocked)
+            if (moveControl.MovementBlocked)
             {
                 return;
             }

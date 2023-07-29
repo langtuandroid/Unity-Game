@@ -5,6 +5,7 @@ using LobsterFramework.Interaction;
 using LobsterFramework.EntitySystem;
 using GameScripts.Abilities;
 using GameScripts.Interaction;
+using LobsterFramework;
 
 namespace GameScripts.InputControl
 {
@@ -21,10 +22,11 @@ namespace GameScripts.InputControl
         [SerializeField] private VoidEventChannel playerRespawnChennel;
 
         [Header("Components")]
-        [SerializeField] private Entity player;
         [SerializeField] private AbilityRunner abilityRunner;
         [SerializeField] private GeneralInteractor interactor;
         [SerializeField] private WeaponWielder weaponWielder;
+        private Entity player;
+        private MovementController moveControl;
 
 
         [Header("Inputs")]
@@ -40,6 +42,8 @@ namespace GameScripts.InputControl
         {
             playerRespawnChennel.OnEventRaised += RespawnPlayer;
             _transform = GetComponent<Transform>();
+            moveControl = GetComponent<MovementController>();
+            player = GetComponent<Entity>();
         }
 
         private void FixedUpdate()
@@ -51,18 +55,18 @@ namespace GameScripts.InputControl
                 {
                     float delta = input.x * Time.deltaTime * mouseSensitivity; 
                     rotateVelocity = Mathf.MoveTowards(rotateVelocity, -delta, rotateAcceleration * Time.deltaTime);
-                    rotateVelocity = Mathf.Clamp(rotateVelocity, -player.RotateSpeed, player.RotateSpeed);
+                    rotateVelocity = Mathf.Clamp(rotateVelocity, -moveControl.RotateSpeed, moveControl.RotateSpeed);
                 }
                 else { 
                     rotateVelocity = Mathf.MoveTowards(rotateVelocity, 0, rotateAcceleration * Time.deltaTime);
                 }
-                player.RotateByDegrees(rotateVelocity);
+                moveControl.RotateByDegrees(rotateVelocity);
             }
         }
 
         private void Update()
         {
-            player.Move(move.action.ReadValue<Vector2>());
+            moveControl.Move(move.action.ReadValue<Vector2>());
         }
 
         private void OnDisable()

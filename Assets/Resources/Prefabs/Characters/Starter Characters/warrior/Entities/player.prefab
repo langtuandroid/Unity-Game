@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 3579077811780646521}
   - component: {fileID: 5554808194822948820}
   - component: {fileID: 3826623040206066821}
+  - component: {fileID: 4981024116806816665}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -217,7 +218,7 @@ MonoBehaviour:
     useSharedValue: 0
     sharedValue: {fileID: 0}
   startHealth:
-    value: 100
+    value: 150
     useSharedValue: 0
     sharedValue: {fileID: 0}
   maxPosture:
@@ -226,15 +227,6 @@ MonoBehaviour:
     sharedValue: {fileID: 0}
   basePostureRegen:
     value: 5
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  _rigidBody: {fileID: 770555523144453587}
-  maxSpeed:
-    value: 60
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  rotateSpeed:
-    value: 330
     useSharedValue: 0
     sharedValue: {fileID: 0}
   damageHistory: []
@@ -450,7 +442,6 @@ MonoBehaviour:
   gameEndChannel: {fileID: 11400000, guid: 84fd18b4375a0ce44852aeaa561d65d9, type: 2}
   playerDeathChannel: {fileID: 11400000, guid: b77c1a7e01e0bb448b8b4cd522b26a43, type: 2}
   playerRespawnChennel: {fileID: 11400000, guid: c00fd75e694766e4aa1dd7cfde954a90, type: 2}
-  player: {fileID: 5353377617828249592}
   abilityRunner: {fileID: 9072161404192331858}
   interactor: {fileID: 5554808194822948820}
   weaponWielder: {fileID: 6676339780788435558}
@@ -458,6 +449,26 @@ MonoBehaviour:
   move: {fileID: -2194820454274590405, guid: 5f13414ae2f8d094d89473ba9b163d7b, type: 3}
   rotateAcceleration: 70
   mouseSensitivity: 50
+--- !u!114 &4981024116806816665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490316291772389325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e268f6387e840440ae5353a1bb88188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed:
+    value: 75
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  rotateSpeed:
+    value: 360
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
 --- !u!1 &8831391230036856060
 GameObject:
   m_ObjectHideFlags: 0

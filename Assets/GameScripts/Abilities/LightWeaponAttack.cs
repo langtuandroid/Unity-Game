@@ -1,3 +1,4 @@
+using LobsterFramework;
 using LobsterFramework.AbilitySystem;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.Utility;
@@ -15,6 +16,7 @@ namespace GameScripts.Abilities
         
         private WeaponWielder weaponWielder;
         private Entity attacker;
+
 
         public class LightWeaponAttackConfig : AbilityCoroutineConfig {
             [HideInInspector]
@@ -79,7 +81,11 @@ namespace GameScripts.Abilities
                 float health = 0.7f * weaponWielder.Mainhand.Sharpness + 0.3f * weaponWielder.Mainhand.Weight;
                 float posture = 0.3f * weaponWielder.Mainhand.Sharpness + 0.7f * weaponWielder.Mainhand.Weight;
                 entity.Damage(health, posture, attacker);
-                entity.ApplyForce(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight);
+                MovementController moveControl = entity.GetComponent<MovementController>();
+                if(moveControl != null)
+                {
+                    moveControl.ApplyForce(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight);
+                }
             }
         }
 
@@ -93,7 +99,11 @@ namespace GameScripts.Abilities
                 float pp = (100 - weapon.PostureDamageReduction) / 100;
                 Entity entity = weapon.Entity;
                 entity.Damage(health * hp, posture * pp, attacker);
-                entity.ApplyForce(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight);
+                MovementController moveControl = entity.GetComponent<MovementController>();
+                if (moveControl != null)
+                {
+                    moveControl.ApplyForce(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight);
+                }
                 Debug.Log("Guarded:" + Time.time);
             }
         }

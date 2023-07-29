@@ -10,9 +10,13 @@ namespace LobsterFramework.ModifiedPathfinding
     {
         [SerializeField] private Transform target;
         private Vector3 targetPosition;
-        private Entity entity;
+
+        #region Components
         private Seeker seeker;
         private new Transform transform;
+        private MovementController moveControl;
+        #endregion
+
         private Path path;
 
         public float nextWaypointDistance = 0.5f;
@@ -31,8 +35,8 @@ namespace LobsterFramework.ModifiedPathfinding
         public void Start()
         {
             seeker = GetComponent<Seeker>();
-            entity = GetComponent<Entity>();
             transform = GetComponent<Transform>();
+            moveControl = GetComponent<MovementController>();
             // If you are writing a 2D game you should remove this line
             // and use the alternative way to move sugggested further below.
         }
@@ -127,11 +131,11 @@ namespace LobsterFramework.ModifiedPathfinding
             // Normalize it so that it has a length of 1 world unit
             Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
             // Multiply the direction by our desired speed to get a velocity
-            Vector3 velocity = entity.MoveSpeed * speedFactor * dir;
+            Vector3 velocity = moveControl.MoveSpeed * speedFactor * dir;
 
             // Move the agent using the CharacterController component
             // Note that SimpleMove takes a velocity in meters/second, so we should not multiply by Time.deltaTime
-            entity.SetVelocity(velocity);
+            moveControl.SetVelocity(velocity);
         }
     }
 }

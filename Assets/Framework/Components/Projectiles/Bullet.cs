@@ -82,7 +82,7 @@ namespace LobsterFramework.Pool
                 {
                     entity.Damage(power, power / 2, attacker);
                     AIPath ai = entity.GetComponent<AIPath>();
-                    Rigidbody2D rb = entity.RigidBody;
+                    Rigidbody2D rb = entity.GetComponent<Rigidbody2D>();
                     if (ai != null)
                     {
                         ai.canMove = false;
