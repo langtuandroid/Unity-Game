@@ -47,7 +47,8 @@ namespace LobsterFramework.AbilitySystem
 
         public Entity Entity { get; set; }
 
-        private HashSet<Entity> hit;
+        private HashSet<Entity> hitted;
+        private HashSet<Entity> newHit;
 
         public WeaponState state { get; set; }
         // Start is called before the first frame update
@@ -58,7 +59,8 @@ namespace LobsterFramework.AbilitySystem
             momentumMultiplier = 1;
             oppressingForce = 0;
             state = WeaponState.Idle;
-            hit = new();
+            newHit = new();
+            hitted = new();
         }
 
         /// <summary>
@@ -73,17 +75,21 @@ namespace LobsterFramework.AbilitySystem
         private void OnTriggerEnter2D(Collider2D collision)
         {
             Entity entity = collision.GetComponent<Entity>();
-            if (entity != null && onEntityHit != null && !hit.Contains(entity)) {
-                onEntityHit.Invoke(entity);
-                hit.Add(entity);
+            if (entity != null && !hitted.Contains(entity)) {
+                newHit.Add(entity);
+                hitted.Add(entity);
                 return;
             }
 
             Weapon weapon = collision.GetComponent<Weapon>();
-            if(weapon != null && weapon.state == WeaponState.Guarding && onWeaponHit != null && !hit.Contains(weapon.Entity))
+            if(weapon != null && weapon.state == WeaponState.Guarding && onWeaponHit != null && (!hitted.Contains(weapon.Entity) || newHit.Contains(weapon.Entity)))
             {
                 onWeaponHit.Invoke(weapon);
-                hit.Add(weapon.Entity);
+                if (newHit.Contains(weapon.Entity))
+                {
+                    newHit.Remove(weapon.Entity);
+                }
+                hitted.Add(weapon.Entity);
             }
         }
 
@@ -92,6 +98,15 @@ namespace LobsterFramework.AbilitySystem
             if(state == WeaponState.Attacking) {
                 momentumMultiplier += (attackSpeed / Time.deltaTime);
             }
+            if(onEntityHit != null)
+            {
+                foreach (Entity entity in newHit)
+                {
+                    onEntityHit.Invoke(entity);
+                }
+            }
+            
+            newHit.Clear();
         }
 
         private void OnValidate()
@@ -109,7 +124,7 @@ namespace LobsterFramework.AbilitySystem
             collider.enabled=false;
             momentumMultiplier = 1;
             state = WeaponState.Idle;
-            hit.Clear();
+            hitted.Clear();
         }
     }
 
