@@ -24,7 +24,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5482235366053718452
 Transform:
   m_ObjectHideFlags: 0
@@ -39,7 +39,7 @@ Transform:
   m_Children:
   - {fileID: 6106901317594816109}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5482235366053718476
 Rigidbody2D:
@@ -146,19 +146,6 @@ MonoBehaviour:
     value: 0
     useSharedValue: 0
     sharedValue: {fileID: 0}
-  _rigidBody: {fileID: 0}
-  moveSpeed:
-    value: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  rotateSpeed:
-    value: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  acceleration:
-    value: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
   damageHistory: []
 --- !u!114 &5482235366053718464
 MonoBehaviour:
@@ -175,10 +162,8 @@ MonoBehaviour:
   controllerDatas:
   - {fileID: 11400000, guid: 85822c2166855c940b3396c93afe628c, type: 2}
   targetGroup: {fileID: 11400000, guid: 4f8f16cf72b4f07469b075ddf31d9ebe, type: 2}
-  rotateSpeed:
-    value: 0
-    useSharedValue: 1
-    sharedValue: {fileID: 11400000, guid: 2526ffbb1c3c38447acc973806822195, type: 2}
+  abilityRunner: {fileID: 0}
+  stateMachine: {fileID: 0}
   target: {fileID: 0}
 --- !u!114 &8492195539783792894
 MonoBehaviour:
@@ -194,6 +179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityData: {fileID: 0}
   data: {fileID: 11400000, guid: feba942da02ab7e4fb23653ddf3c1fe4, type: 2}
+  animator: {fileID: 0}
+  weaponWielder: {fileID: 0}
 --- !u!114 &5482235366053718478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3559c7dd0cc5e4aa8b3ac1ff8f20d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
   allStates:
   - {fileID: 11400000, guid: d2e5e190341bcd849980b1793b589a9c, type: 2}
   - {fileID: 11400000, guid: b39eec5f158acfa4fa7d19005db727a9, type: 2}

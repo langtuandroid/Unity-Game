@@ -157,7 +157,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &2226228188914644134
+--- !u!1 &2280187347301764142
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1352533932925262411}
+  - component: {fileID: 8638136379272720249}
   m_Layer: 0
   m_Name: l_weapon
   m_TagString: Untagged
@@ -173,13 +173,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1352533932925262411
+--- !u!4 &8638136379272720249
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2226228188914644134}
+  m_GameObject: {fileID: 2280187347301764142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -238,12 +238,12 @@ GameObject:
   - component: {fileID: 8856439436288999091}
   - component: {fileID: 7677172382704198607}
   m_Layer: 0
-  m_Name: swordsman
+  m_Name: daggerman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7880835017238648108
 Transform:
   m_ObjectHideFlags: 0
@@ -593,7 +593,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -0.2599945, y: -0.69000006}
   m_SizeDelta: {x: 10.17, y: 1.37}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -847,15 +847,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8250169266279454816, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 0.116220176
       objectReference: {fileID: 0}
     - target: {fileID: -8250169266279454816, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
       propertyPath: m_Color.g
-      value: 0.5226316
+      value: 0.07075471
       objectReference: {fileID: 0}
     - target: {fileID: -8250169266279454816, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
       propertyPath: m_Color.r
-      value: 0.8207547
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7747579851150391166, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -914,7 +914,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -7747579851150391166, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1352533932925262411}
+      addedObject: {fileID: 8638136379272720249}
     - targetCorrespondingSourceObject: {fileID: 1006390084647212156, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1067484646109687668}
@@ -1001,12 +1001,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21d7712cfaae2ab4cb1cd62dc9916ee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainhandWeapon1: {fileID: 5619198934622560290, guid: 4e63230358c59ee4cb029ee29dae2118, type: 3}
+  mainhandWeapon1: {fileID: 1569198619848997945, guid: c28fdba294e68ec4fa0d49d88230efed, type: 3}
   mainhandWeapon2: {fileID: 0}
   offhandWeapon1: {fileID: 0}
   offhandWeapon2: {fileID: 0}
   mainhandWeaponPosition: {fileID: 1067484646109687668}
-  offhandWeaponPosition: {fileID: 1352533932925262411}
+  offhandWeaponPosition: {fileID: 8638136379272720249}
   entity: {fileID: 5353377617828249592}
   animator: {fileID: 223299123248344314}
   abilityRunner: {fileID: 9072161404192331858}

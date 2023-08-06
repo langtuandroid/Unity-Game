@@ -44,22 +44,16 @@ AnimatorStateMachine:
     m_Position: {x: 65, y: 425, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7441545489352641450}
-    m_Position: {x: 100, y: 490, z: 0}
+    m_Position: {x: 210, y: 640, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8328930750561646064}
-    m_Position: {x: 135, y: 555, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 919608099153013318}
-    m_Position: {x: 170, y: 620, z: 0}
+    m_Position: {x: 210, y: 690, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2692032923709650646}
-    m_Position: {x: 205, y: 685, z: 0}
+    m_Position: {x: 0, y: 640, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4268625620350678785}
-    m_Position: {x: 240, y: 750, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 3670993489089261321}
-    m_Position: {x: -58.237915, y: 622.4277, z: 0}
+    m_Position: {x: 0, y: 690, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -248,32 +242,6 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &919608099153013318
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: dagger_heavy_attack2
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 612ef9ed1ea6b3b48b709b093ddbe264, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &3077751647851058342
 AnimatorState:
   serializedVersion: 6
@@ -295,32 +263,6 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 759b13fc2cbd2a74d90140a07e871d61, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &3670993489089261321
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: dagger_heavy_attack 0
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: f1ccd0b2955bfc34586d5e2af1d37ea9, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
