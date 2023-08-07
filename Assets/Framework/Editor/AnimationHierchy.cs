@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace LobsterFramework.Editor
+namespace LobsterFramework.Editors
 {
 
 	public class AnimationHierarchyEditor : EditorWindow

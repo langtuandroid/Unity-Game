@@ -131,7 +131,7 @@ namespace LobsterFramework.ModifiedPathfinding
             // Normalize it so that it has a length of 1 world unit
             Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
             // Multiply the direction by our desired speed to get a velocity
-            Vector3 velocity = moveControl.MoveSpeed * speedFactor * dir;
+            Vector3 velocity = moveControl.Speed * speedFactor * dir;
 
             // Move the agent using the CharacterController component
             // Note that SimpleMove takes a velocity in meters/second, so we should not multiply by Time.deltaTime

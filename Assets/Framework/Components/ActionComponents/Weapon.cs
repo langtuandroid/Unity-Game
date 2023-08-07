@@ -17,11 +17,30 @@ namespace LobsterFramework.AbilitySystem
         [SerializeField] private float weight;
         [SerializeField] private float sharpness;
         [SerializeField] private float attackSpeed;
+        [SerializeField] private float defenseSpeed;
         [SerializeField] private bool doubleHanded;
-        [Range(0, 100)]
+
+        [Header("Guard")]
+        [Range(0, 1)]
         [SerializeField] private float healthDamageReduction;
-        [Range(0, 100)]
+        [Range(0, 1)]
         [SerializeField] private float postureDamageReduction;
+        [Range(0, 1)]
+        [SerializeField] private float gRotationSpeedModifier;
+        [Range(0, 1)]
+        [SerializeField] private float gMoveSpeedModifier;
+
+        [Header("Light Attack")]
+        [Range(0, 1)]
+        [SerializeField] private float lRotationSpeedModifier;
+        [Range(0, 1)]
+        [SerializeField] private float lMoveSpeedModifier;
+
+        [Header("Heavy Attack")]
+        [Range(0, 1)]
+        [SerializeField] private float hRotationSpeedModifier;
+        [Range(0, 1)]
+        [SerializeField] private float hMoveSpeedModifier;
 
         private float momentumMultiplier;
         private float oppressingForce;
@@ -38,12 +57,28 @@ namespace LobsterFramework.AbilitySystem
         public float Sharpness { get { return sharpness; } }
         public float AttackSpeed { get {  return attackSpeed; } }
 
+        public float DefenseSpeed { get { return defenseSpeed; } }
+
         public bool DoubleHanded { get { return doubleHanded; } }
 
         public float Momentum { get { return momentumMultiplier * weight; } }
 
+        #region Guard
         public float HealthDamageReduction { get { return healthDamageReduction; } }
         public float PostureDamageReduction { get { return postureDamageReduction; } }
+        public float GMoveSpeedModifier { get { return gMoveSpeedModifier; } }
+        public float GRotationSpeedModifier { get { return gRotationSpeedModifier; } }
+        #endregion
+
+        #region LightAttack
+        public float LMoveSpeedModifier { get { return lMoveSpeedModifier; } }
+        public float LRotationSpeedModifier { get { return lRotationSpeedModifier; } }
+        #endregion
+
+        #region HeavyAttack
+        public float HMoveSpeedModifier { get { return hMoveSpeedModifier; } }
+        public float HRotationSpeedModifier { get { return hRotationSpeedModifier; } }
+        #endregion
 
         public Entity Entity { get; set; }
 
@@ -114,6 +149,10 @@ namespace LobsterFramework.AbilitySystem
             if (attackSpeed <= 0) {
                 attackSpeed = 1;
                 Debug.LogWarning("Attack Speed Can't be non-positive");
+            }
+            if(defenseSpeed <= 0) {  
+                defenseSpeed = 1;
+                Debug.LogWarning("Guard Speed Can't be non-positive");
             }
         }
 

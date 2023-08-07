@@ -21,8 +21,11 @@ namespace LobsterFramework
         private BaseOr movementBlock = new(false);
         private Vector2 steering;
 
-        public float MoveSpeed { get { return maxSpeed.Value; } }
-        public float RotateSpeed { get { return rotateSpeed.Value; } }
+        private FloatProduct moveSpeedMultiplier = new(1, true);
+        private FloatProduct rotateSpeedMultiplier = new(1, true);
+
+        public float Speed { get; private set; }
+        public float RotateSpeed { get; private set; }
 
         public Rigidbody2D RigidBody { get { return _rigidBody; } }
         public bool MovementBlocked { get { return movementBlock.Stat; } }
@@ -30,6 +33,8 @@ namespace LobsterFramework
         private void Start() { 
             transform = GetComponent<Transform>();
             _rigidBody = GetComponent<Rigidbody2D>();
+            Speed = maxSpeed.Value * moveSpeedMultiplier.Stat;
+            RotateSpeed = rotateSpeed.Value * rotateSpeedMultiplier.Stat;
         }
 
         private void FixedUpdate()
@@ -39,7 +44,7 @@ namespace LobsterFramework
                 _rigidBody.AddForce(transform.rotation * steering);
             }
         }
-
+        #region MovementModifiers
         /// <summary>
         /// Add an effector to block movement of this entity. The movement of the entity will be blocked if there's at least 1 effector.
         /// </summary>
@@ -55,6 +60,12 @@ namespace LobsterFramework
             return key;
         }
 
+        /// <summary>
+        /// Remove the effector that blocks movement with specified key. The movement of the entity will be unblocked if there's 0 effector left. 
+        /// Will fail if the effector with specified key does not exist.
+        /// </summary>
+        /// <param name="key">The key of the effector to be remvoed</param>
+        /// <returns> The status of this operation </returns>
         public bool UnblockMovement(int key)
         {
             if (movementBlock.RemoveEffector(key))
@@ -68,6 +79,40 @@ namespace LobsterFramework
             return false;
         }
 
+        public int ModifyMoveSpeed(float speedMultiplier)
+        {
+            int key = moveSpeedMultiplier.AddEffector(speedMultiplier);
+            Speed = maxSpeed.Value * moveSpeedMultiplier.Stat;
+            return key;
+        }
+
+        public bool UnmodifyMoveSpeed(int key)
+        {
+            if (moveSpeedMultiplier.RemoveEffector(key)) {
+                Speed = maxSpeed.Value * moveSpeedMultiplier.Stat;
+                return true;
+            }
+            return false;
+        }
+
+        public int ModifyRotationSpeed(float speedMultiplier)
+        {
+            int key = rotateSpeedMultiplier.AddEffector(speedMultiplier);
+            RotateSpeed = rotateSpeed.Value * rotateSpeedMultiplier.Stat;
+            return key;
+        }
+
+        public bool UnmodifyRotationSpeed(int key)
+        {
+            if (rotateSpeedMultiplier.RemoveEffector(key)) {
+                RotateSpeed = rotateSpeed.Value * rotateSpeedMultiplier.Stat;
+                return true;
+            }
+            return false;
+        }
+        #endregion
+
+        #region MovementMethods
         /// <summary>
         /// Attempt to rotate the entity towards the specified direction. If the specified angle is larger than the max rotation speed,
         /// the entity will rotate towards target angle will max speed. Will fail if Movement blocked. 
@@ -81,7 +126,7 @@ namespace LobsterFramework
             }
             float angle = Vector2.SignedAngle(transform.up, direction);
             Quaternion target = Quaternion.Euler(0, 0, angle);
-            float maxRotate = rotateSpeed * Time.deltaTime;
+            float maxRotate = RotateSpeed * Time.deltaTime;
             if (Math.Abs(angle) > maxRotate)
             {
                 target = Quaternion.Lerp(Quaternion.identity, target, maxRotate / Math.Abs(angle));
@@ -99,7 +144,7 @@ namespace LobsterFramework
             {
                 return;
             }
-            float maxDegree = rotateSpeed * Time.deltaTime;
+            float maxDegree = RotateSpeed * Time.deltaTime;
             if (Math.Abs(degree) > maxDegree)
             {
                 if (degree < 0)
@@ -125,9 +170,9 @@ namespace LobsterFramework
                 steering = Vector2.zero;
                 return;
             }
-            if (acceleration <= 0 || acceleration > maxSpeed)
+            if (acceleration <= 0 || acceleration > Speed)
             {
-                acceleration = maxSpeed;
+                acceleration = Speed;
             }
             steering = direction.normalized * acceleration;
         }
@@ -136,7 +181,7 @@ namespace LobsterFramework
         {
             Vector2 force = (velocity - _rigidBody.velocity) * _rigidBody.mass;
             float mag = force.magnitude;
-            float max = maxSpeed * Time.deltaTime;
+            float max = Speed * Time.deltaTime;
             if (mag > max)
             {
                 mag = max;
@@ -149,5 +194,6 @@ namespace LobsterFramework
         {
             _rigidBody.AddForce(direction.normalized * magnitude, ForceMode2D.Impulse);
         }
+        #endregion
     }
 }

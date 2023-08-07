@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using LobsterFramework.EntitySystem;
 
-namespace LobsterFramework.Editor
+namespace LobsterFramework.Editors
 {
     [CustomEditor(typeof(Entity))]
     public class EntityEditor : UnityEditor.Editor

@@ -454,6 +454,11 @@ namespace LobsterFramework.AbilitySystem {
             if(animating == default) { return; }
             animating.Item1.Signal(animating.Item2, true);
         }
+
+        public void AnimationEnd() {
+            if (animating == default) { return; }
+            animating.Item1.HaltAbilityExecution(animating.Item2);
+        }
     }
 
 }

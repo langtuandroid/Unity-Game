@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946362375998860840}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0.0773, y: 0.0267, z: 0}
   m_LocalScale: {x: -0.28437525, y: 0.29586282, z: 0.26605225}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 439540938011825576}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &2580355744909735740
 SpriteRenderer:
@@ -107,6 +107,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569198619848997945}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 2, z: 1}
@@ -115,7 +116,6 @@ Transform:
   - {fileID: 3362887764940563738}
   - {fileID: 2674099525223666920}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6754967439785399562
 GameObject:
@@ -142,13 +142,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6754967439785399562}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.255, y: -0.015, z: 0}
   m_LocalScale: {x: 0.33333334, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 439540938011825576}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &637243510620664013
 CapsuleCollider2D:
@@ -201,6 +201,13 @@ MonoBehaviour:
   weight: 5
   sharpness: 3
   attackSpeed: 1.5
+  defenseSpeed: 2.5
   doubleHanded: 0
-  healthDamageReduction: 100
-  postureDamageReduction: 100
+  healthDamageReduction: 0.7
+  postureDamageReduction: 0.4
+  gRotationSpeedModifier: 0.7
+  gMoveSpeedModifier: 0.6
+  lRotationSpeedModifier: 1
+  lMoveSpeedModifier: 1
+  hRotationSpeedModifier: 0.8
+  hMoveSpeedModifier: 0.8

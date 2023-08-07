@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using LobsterFramework.AbilitySystem;
 
-namespace LobsterFramework.Editor
+namespace LobsterFramework.Editors
 {
     [CustomEditor(typeof(Ability.AbilityConfig), true)]
     public class AbilityConfigEditor : UnityEditor.Editor

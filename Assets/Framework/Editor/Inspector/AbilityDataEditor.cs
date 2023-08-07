@@ -6,7 +6,7 @@ using System;
 using System.Reflection;
 using LobsterFramework.AbilitySystem;
 
-namespace LobsterFramework.Editor
+namespace LobsterFramework.Editors
 {
     [CustomEditor(typeof(AbilityData))]
     public class AbilityDataEditor : UnityEditor.Editor

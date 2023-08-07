@@ -16,17 +16,23 @@ namespace GameScripts.Abilities
         
         private WeaponWielder weaponWielder;
         private Entity attacker;
-
+        private MovementController moveControl;
 
         public class LightWeaponAttackConfig : AbilityCoroutineConfig {
             [HideInInspector]
             public bool signaled;
+
+            [HideInInspector]
+            public int m_key;
+            [HideInInspector]
+            public int r_key;
         }
 
         protected override void Initialize()
         {
             weaponWielder = abilityRunner.GetComponent<WeaponWielder>();
             attacker = weaponWielder.Wielder;
+            moveControl = attacker.GetComponent<MovementController>();
         }
 
         protected override bool ConditionSatisfied(AbilityConfig config)
@@ -38,30 +44,6 @@ namespace GameScripts.Abilities
                 return abilityRunner.Animator.HasState(index, animation) && weaponWielder.Mainhand.state != WeaponState.Attacking;
             }
             return false;
-        }
-
-        protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config)
-        {
-            LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
-            // Wait for signal to attack
-            while (!c.signaled) { 
-                yield return null;
-            }
-            c.signaled = false;
-            SubscribeWeaponEvent();
-
-            // Wait for signal of recovery
-            while (!c.signaled)
-            {
-                yield return null;
-            }
-            c.signaled = false;
-            UnSubscribeWeaponEvent();
-
-            while (!c.signaled) {
-                yield return null;
-            }
-            c.signaled = false;
         }
 
         private void SubscribeWeaponEvent() {
@@ -113,18 +95,51 @@ namespace GameScripts.Abilities
             LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
             c.signaled = false;
             abilityRunner.StartAnimation<LightWeaponAttack>(config.Name, weaponWielder.Mainhand.Name + "_light_attack", weaponWielder.Mainhand.AttackSpeed);
+            c.m_key = moveControl.ModifyMoveSpeed(weaponWielder.Mainhand.LMoveSpeedModifier);
+            c.r_key = moveControl.ModifyRotationSpeed(weaponWielder.Mainhand.LRotationSpeedModifier);
         }
 
-        protected override void Signal(AbilityConfig config, bool isAnimation)
+        protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config)
         {
-            if (isAnimation) {
-                LightWeaponAttackConfig c = (LightWeaponAttackConfig)config; 
-                c.signaled = true;
+            LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
+            // Wait for signal to attack
+            while (!c.signaled)
+            {
+                yield return null;
+            }
+            c.signaled = false;
+            SubscribeWeaponEvent();
+
+            // Wait for signal of recovery
+            while (!c.signaled)
+            {
+                yield return null;
+            }
+            c.signaled = false;
+            UnSubscribeWeaponEvent();
+
+            moveControl.UnmodifyMoveSpeed(c.m_key);
+            moveControl.UnmodifyRotationSpeed(c.r_key);
+            c.m_key = -1;
+            c.r_key = -1;
+
+            // Wait for animation to finish
+            while (true)
+            {
+                yield return null;
             }
         }
 
         protected override void OnCoroutineFinish(AbilityCoroutineConfig config){
             weaponWielder.Mainhand.Pause();
+            LightWeaponAttackConfig l = (LightWeaponAttackConfig)config;
+            if(l.m_key != -1)
+            {
+                moveControl.UnmodifyMoveSpeed(l.m_key);
+            }
+            if(l.r_key != -1) {
+                moveControl.UnmodifyRotationSpeed(l.r_key);
+            }
         }
 
         protected override void OnAnimationInterrupt(AbilityConfig config)
@@ -135,6 +150,15 @@ namespace GameScripts.Abilities
         protected override void OnCoroutineReset(AbilityCoroutineConfig config)
         {
             throw new System.NotImplementedException();
+        }
+
+        protected override void Signal(AbilityConfig config, bool isAnimation)
+        {
+            if (isAnimation)
+            {
+                LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
+                c.signaled = true;
+            }
         }
     }
 }

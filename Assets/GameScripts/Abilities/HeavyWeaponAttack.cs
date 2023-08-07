@@ -17,6 +17,7 @@ namespace GameScripts.Abilities
         private Animator animator;
         private WeaponWielder weaponWielder;
         private Entity attacker;
+        private MovementController moveControl;
 
         public class HeavyWeaponAttackConfig : AbilityCoroutineConfig {
             [HideInInspector] public bool animationSignaled;
@@ -24,6 +25,10 @@ namespace GameScripts.Abilities
             public RefFloat baseDamageModifier;
             public RefFloat maxChargeDamageIncrease;
             public RefFloat chargeMaxTime;
+
+            [HideInInspector]
+            public int m_key = -1;
+            public int r_key = -1;
 
             [HideInInspector]
             public float chargeTimer;
@@ -52,6 +57,7 @@ namespace GameScripts.Abilities
             animator = abilityRunner.Animator;
             weaponWielder = abilityRunner.GetComponent<WeaponWielder>();
             attacker = weaponWielder.Wielder;
+            moveControl = attacker.GetComponent<MovementController>();
         }
 
         protected override bool ConditionSatisfied(AbilityConfig config)
@@ -93,12 +99,16 @@ namespace GameScripts.Abilities
             }
             c.animationSignaled = false;
             UnSubscribeWeaponEvent(c);
+            moveControl.UnmodifyMoveSpeed(c.m_key);
+            moveControl.UnmodifyRotationSpeed(c.r_key);
+            c.m_key = -1;
+            c.r_key = -1;
 
-            while (!c.animationSignaled)
+            // Wait for animation to finish
+            while (true)
             {
                 yield return null;
             }
-            c.animationSignaled = false;
         }
 
         protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config)
@@ -109,6 +119,8 @@ namespace GameScripts.Abilities
             h.inputSignaled = false;
             h.chargeTimer = 0;
             h.ability = this;
+            h.m_key = moveControl.ModifyMoveSpeed(weaponWielder.Mainhand.HMoveSpeedModifier);
+            h.r_key = moveControl.ModifyRotationSpeed(weaponWielder.Mainhand.HRotationSpeedModifier);
         }
 
         protected override void OnCoroutineFinish(AbilityCoroutineConfig config)
@@ -116,6 +128,12 @@ namespace GameScripts.Abilities
             HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)config;
             h.animationSignaled = false;
             weaponWielder.Mainhand.Pause();
+            if (h.m_key != -1) {
+                moveControl.UnmodifyMoveSpeed(h.m_key);
+            }
+            if (h.r_key != -1) {
+                moveControl.UnmodifyRotationSpeed(h.r_key);
+            }
         }
 
         protected override void Signal(AbilityConfig config, bool isAnimation)
