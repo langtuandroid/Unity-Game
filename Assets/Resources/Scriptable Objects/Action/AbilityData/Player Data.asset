@@ -19,6 +19,43 @@ MonoBehaviour:
   isSuspended: 0
   awakeTime: 0
   signaled: 0
+  m_key: 0
+  r_key: 0
+--- !u!114 &-7692319105530511437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Shoot/ShootConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 1
+  cooldown: 1
+  isSuspended: 0
+  bulletPoolTag: {fileID: 11400000, guid: ea9bbdaa32301cd4e85df6669405a790, type: 2}
+  manaCost:
+    value: 15
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  bulletSpeed:
+    value: 10
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  piercePower:
+    value: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  travelDuration:
+    value: 3
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  targetSetting: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
 --- !u!114 &-7166719170525038890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,6 +131,51 @@ MonoBehaviour:
     sharedValue: {fileID: 0}
   targetSetting: {fileID: 0}
   effects: []
+--- !u!114 &-6804146520753120717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f70b9a967a96d4abc6cf3b83a774bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 1
+    sharedValue: {fileID: 11400000, guid: b193983ee42c6494da4e9b812145dab9, type: 2}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: -7692319105530511437}
+--- !u!114 &-5631721021899722946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23cafed77cafc444eb80658fa3b67136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMana:
+    value: 100
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  manaRegen:
+    value: 100
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  mana: 0
 --- !u!114 &-4864273072688861833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,17 +258,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: 0
   stats:
-    keys: []
-    values: []
+    keys:
+    - GameScripts.Abilities.CombatStat
+    - GameScripts.Abilities.Mana
+    values:
+    - {fileID: 6586068598668264301}
+    - {fileID: -5631721021899722946}
   allAbilities:
     keys:
     - GameScripts.Abilities.HeavyWeaponAttack
     - GameScripts.Abilities.LightWeaponAttack
     - GameScripts.Abilities.Guard
+    - GameScripts.Abilities.Shoot
     values:
     - {fileID: -3364154961568045242}
     - {fileID: -7166719170525038890}
     - {fileID: -932192168941962590}
+    - {fileID: -6804146520753120717}
 --- !u!114 &1176693244868032109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,8 +307,34 @@ MonoBehaviour:
     value: 0.35
     useSharedValue: 0
     sharedValue: {fileID: 0}
+  m_key: -1
+  r_key: -1
   chargeTimer: 0
   ability: {fileID: 0}
+--- !u!114 &6586068598668264301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bddb4d3b04c96644598c218b6d67a82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage:
+    value: 50
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  attackRange:
+    value: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  defense:
+    value: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
 --- !u!114 &8861982682064017795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,3 +355,5 @@ MonoBehaviour:
   awakeTime: 0
   animationSignaled: 0
   inputSignaled: 0
+  m_key: 0
+  r_key: 0

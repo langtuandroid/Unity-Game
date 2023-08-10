@@ -28,6 +28,7 @@ namespace GameScripts.Abilities
 
             [HideInInspector]
             public int m_key = -1;
+            [HideInInspector]
             public int r_key = -1;
 
             [HideInInspector]
