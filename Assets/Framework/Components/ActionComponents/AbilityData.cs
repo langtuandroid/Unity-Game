@@ -91,8 +91,9 @@ namespace LobsterFramework.AbilitySystem
                 }
                 foreach ((string name, Ability.AbilityConfig config) in cfs)
                 {
-                    ai.configs[name] = config;
-                }
+                    ai.configs[name] = config; 
+                    config.pipe = Instantiate(config.pipe);
+                } 
             }
 
             List<AbilityStat> acs = new();

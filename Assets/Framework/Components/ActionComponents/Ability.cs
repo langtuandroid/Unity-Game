@@ -49,7 +49,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <param name="name">The name of the config to be added</param>
         internal bool AddConfig(string name)
         {
-            if (HasConfigDefined())
+            if (HasConfigPipeDefined())
             {
                 if (configs.ContainsKey(name))
                 {
@@ -59,16 +59,18 @@ namespace LobsterFramework.AbilitySystem {
                 Type type = GetType();
                 var m = (typeof(Ability)).GetMethod("AddConfigGeneric", BindingFlags.NonPublic | BindingFlags.Instance);
                 Type configType = type.GetNestedType(type.Name + "Config");
-                MethodInfo method = m.MakeGenericMethod(configType);
+                Type pipeType = type.GetNestedType(type.Name + "Pipe");
+                MethodInfo method = m.MakeGenericMethod(configType, pipeType);
                 method.Invoke(this, new[] { name });
                 return true;
             }
             Type t = GetBaseConfigType();
-            Debug.LogError("The ability config for '" + GetType().Name + "' is not declared, inheriting from " + t.Name + " or made public!");
+            Type t2 = GetBasePipeType();
+            Debug.LogError("The ability config or pipe for '" + GetType().Name + "' is not declared, inheriting from " + t.Name + " / " + t2.Name + " or made public!");
             return false;
         }
 
-        private void AddConfigGeneric<T>(string name) where T : AbilityConfig
+        private void AddConfigGeneric<T, V>(string name) where T : AbilityConfig where V : AbilityPipe
         {
             Type type = GetType();
             if (typeof(T).Name != (type.Name + "Config"))
@@ -78,9 +80,11 @@ namespace LobsterFramework.AbilitySystem {
             }
             T config = CreateInstance<T>();
             configs.Add(name, config);
+            config.pipe = CreateInstance<V>();
             if (AssetDatabase.Contains(this))
             {
                 AssetDatabase.AddObjectToAsset(config, this);
+                AssetDatabase.AddObjectToAsset(config.pipe, config);
                 AssetDatabase.SaveAssets();
             }
         }
@@ -244,9 +248,9 @@ namespace LobsterFramework.AbilitySystem {
         // Called when the parent component is being initialized
         public void OnStartUp()
         {
-            if (!HasConfigDefined())
+            if (!HasConfigPipeDefined())
             {
-                Debug.LogError("The action config for '" + GetType().ToString() + "' is not declared!");
+                Debug.LogError("The ability config or pipe for '" + GetType().ToString() + "' is not declared!");
             }
             Initialize();
             foreach (AbilityConfig config in configs.Values)
@@ -335,16 +339,41 @@ namespace LobsterFramework.AbilitySystem {
             return typeof(AbilityConfig);
         }
 
-        private bool HasConfigDefined()
+        private Type GetBasePipeType()
+        {
+            Type type = GetType().BaseType;
+            while (type != typeof(Ability))
+            {
+                Type t = type.GetNestedType(type.Name + "Pipe");
+                if (t != null && t.IsSubclassOf(typeof(AbilityPipe)))
+                {
+                    return t;
+                }
+                type = type.BaseType;
+            }
+            return typeof(AbilityPipe);
+        }
+
+        private bool HasConfigPipeDefined()
         {
             Type type = GetType();
             string typeName = type.Name + "Config";
+            string pipeName = type.Name + "Pipe";
             Type configType = GetBaseConfigType();
+            Type pipeType = GetBasePipeType();
+            bool config = false;
+            bool pipe = false;
+
             foreach (Type innerType in type.GetNestedTypes())
             {
                 string inner = innerType.Name;
                 if (inner.Equals(typeName) && innerType.IsSubclassOf(configType))
                 {
+                    config = true;
+                } else if (inner.Equals(pipeName) && innerType.IsSubclassOf(pipeType)) {
+                    pipe = true;
+                }
+                if (config && pipe) {
                     return true;
                 }
             }
@@ -367,6 +396,14 @@ namespace LobsterFramework.AbilitySystem {
         /// <param name="config">Config to be signaled</param>
         protected virtual void Signal(AbilityConfig config, bool isAnimation) { }
 
+        public AbilityPipe GetAbilityPipe(string configName)
+        {
+            if (configs.ContainsKey(configName)) {
+                return configs[configName].pipe;
+            }
+            return default;
+        }
+
         /// <summary>
         ///  A configuration of the Ability, each configuration has its own settings that affects the execution of the Ability.
         ///  This class should be subclassed inside subclasses of Ability with name 'Ability_Subclass_Name'Config.
@@ -379,6 +416,8 @@ namespace LobsterFramework.AbilitySystem {
             public int accessKey = -1;
             [HideInInspector]
             public float endTime = 0;
+            [HideInInspector]
+            public AbilityPipe pipe;
 
             [SerializeField] private bool useCooldown = true;
             [SerializeField] private float cooldown = 0;
@@ -415,6 +454,13 @@ namespace LobsterFramework.AbilitySystem {
                 }
                 Validate();
             }
+        }
+
+        [Serializable]
+        public class AbilityPipe : ScriptableObject {
+            protected AbilityConfig config;
+            public void Construct(AbilityConfig config) { this.config = config; Construct(); }
+            public virtual void Construct() { }
         }
     }
 }

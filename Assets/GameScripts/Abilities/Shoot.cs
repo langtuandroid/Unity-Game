@@ -19,6 +19,8 @@ namespace GameScripts.Abilities
             public TargetSetting targetSetting;
         }
 
+        public class ShootPipe : AbilityPipe { }
+
         private Mana manaComponent;
         private Entity attacker;
 

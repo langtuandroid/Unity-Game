@@ -52,6 +52,8 @@ namespace GameScripts.Abilities
                     weapon.HealthDamageReduction, weapon.PostureDamageReduction);
             }
         }
+        public class HeavyWeaponAttackPipe : AbilityPipe { 
+        }
 
         protected override void Initialize()
         {

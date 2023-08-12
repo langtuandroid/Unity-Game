@@ -33,6 +33,8 @@ namespace LobsterFramework.AbilitySystem {
         // Animation
         [SerializeField] private Animator animator;
         [SerializeField] private WeaponWielder weaponWielder;
+        [SerializeField] private MovementController movementController;
+        [SerializeField] private Transform topLevelTransform;
         private (Ability, string) animating;
 
         // Status
@@ -47,6 +49,8 @@ namespace LobsterFramework.AbilitySystem {
         public bool HyperArmored { 
             get { return hyperArmored.Stat; }
         }
+
+        public Transform TopLevelTransform { get { return topLevelTransform; } }    
 
         /// <summary>
         /// Add the action with specified type (T) and config (name) to the executing queue, return the status of this operation. <br/>
@@ -137,19 +141,33 @@ namespace LobsterFramework.AbilitySystem {
             return EnqueueAbilitiesInJoint<T, V>("default", "default");
         }
 
-            /// <summary>
-            /// Get the ability stat of type T attached to this Component if it is present.
-            /// </summary>
-            /// <typeparam name="T">Type of the AbilityStat being requested</typeparam>
-            /// <returns>Return the ability stat if it is present, otherwise null</returns>
-            public T GetAbilityStat<T>() where T : AbilityStat
+        /// <summary>
+        /// Get the ability stat of type T attached to this Component if it is present.
+        /// </summary>
+        /// <typeparam name="T">Type of the AbilityStat being requested</typeparam>
+        /// <returns>Return the ability stat if it is present, otherwise null</returns>
+        public T GetAbilityStat<T>() where T : AbilityStat
         {
             string type = typeof(T).ToString();
             if (stats.ContainsKey(type))
             {
                 return (T)stats[type];
             }
-            return default(T);
+            return default(T); 
+        }
+
+        /// <summary>
+        /// Get the ability pipe of specified ability and configuration
+        /// </summary>
+        /// <typeparam name="T">The type of Ability to pipe to.</typeparam>
+        /// <param name="configName">The name of the ability configuration to pipe to</param>
+        /// <returns> The pipe that connects to the specified ability and configuration if it exists, otherwise return null. </returns>
+        public Ability.AbilityPipe GetAbilityPipe<T>(string configName="default") where T : Ability {
+            T ability = GetAbility<T>();
+            if (ability != null) {
+                return ability.GetAbilityPipe(configName);
+            }
+            return default;
         }
 
         /// <summary>
@@ -396,6 +414,7 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         public Animator Animator { get { return animator; } }
+        public MovementController MovementController { get {  return movementController; } }
 
         /// <summary>
         /// Used by abilities to initiate animations, will override any currently running animations by other abilities

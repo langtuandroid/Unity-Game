@@ -173,12 +173,15 @@ namespace GameScripts.InputControl
             }
         }
 
-        public void SwitchWeapon(InputAction.CallbackContext context)
+        public void Dash(InputAction.CallbackContext context)
         {
             if (!gamePause.Value && context.started)
             {
-                weaponWielder.SwitchMainHand();
-            }
+                Ability.AbilityPipe raw = abilityRunner.GetAbilityPipe<Dash>();
+                Dash.DashPipe pipe = (Dash.DashPipe)raw;
+                pipe.DashDirection = move.action.ReadValue<Vector2>();
+                abilityRunner.EnqueueAbility<Dash>();
+            }   
         }
 
         public void LateUpdate()

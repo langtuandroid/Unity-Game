@@ -26,6 +26,7 @@ namespace GameScripts.Abilities
                 inputSignaled = false;
             }
         }
+        public class GuardPipe : AbilityPipe { }
 
         protected override void Initialize()
         {

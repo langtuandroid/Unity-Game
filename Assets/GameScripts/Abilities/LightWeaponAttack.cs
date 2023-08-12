@@ -28,6 +28,8 @@ namespace GameScripts.Abilities
             public int r_key;
         }
 
+        public class LightWeaponAttackPipe : AbilityPipe { }
+
         protected override void Initialize()
         {
             weaponWielder = abilityRunner.GetComponent<WeaponWielder>();
