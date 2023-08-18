@@ -8,18 +8,21 @@ namespace GameScripts.Abilities
     [AddAbilityMenu]
     public class Dash : Ability
     {
-        public class DashConfig : AbilityConfig {
+        public class DashConfig : AbilityConfig
+        {
             public float dashStrength;
         }
 
-        public class DashPipe : AbilityPipe {
+        public class DashPipe : AbilityPipe
+        {
             private DashConfig dashConfig;
-            public override void Construct() {
+            public override void Construct()
+            {
                 dashConfig = (DashConfig)config;
             }
 
             public float DashStrength { get { return dashConfig.dashStrength; } }
-            public Vector2 DashDirection { get; set; } 
+            public Vector2 DashDirection { get; set; }
         }
 
         protected override bool ConditionSatisfied(AbilityConfig config)

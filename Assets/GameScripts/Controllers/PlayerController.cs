@@ -88,14 +88,6 @@ namespace GameScripts.InputControl
             abilityRunner.Reset();
         }
 
-        public void CircleAttack(InputAction.CallbackContext context)
-        {
-            if (!gamePause.Value && context.started)
-            {
-                abilityRunner.EnqueueAbility<CircleAttack>();
-            }
-        }
-
         public void WeaponLightAttack(InputAction.CallbackContext context)
         {
             if (!gamePause.Value && context.started)
