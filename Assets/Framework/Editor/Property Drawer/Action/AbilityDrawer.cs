@@ -6,12 +6,11 @@ using LobsterFramework.AbilitySystem;
 
 namespace LobsterFramework.Editors
 {
-    [CustomPropertyDrawer(typeof(Ability))]
-    public class ActionInstanceDrawer : PropertyDrawer
+    public class AbilityDrawer : PropertyDrawer
     {
         private static Dictionary<System.Type, PropertyDrawer> drawers;
 
-        public ActionInstanceDrawer()
+        public AbilityDrawer()
         {
             drawers = new Dictionary<System.Type, PropertyDrawer>();
         }

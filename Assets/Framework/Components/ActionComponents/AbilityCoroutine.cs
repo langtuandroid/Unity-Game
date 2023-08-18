@@ -22,7 +22,7 @@ namespace LobsterFramework.AbilitySystem
             [HideInInspector]
             public bool CoroutineRunning { get; set; }
             [HideInInspector]
-            public string Name { get; set; }
+            public string Key { get; set; }
 
             [HideInInspector]
             public float awakeTime = 0;
@@ -31,7 +31,7 @@ namespace LobsterFramework.AbilitySystem
         protected sealed override void OnEnqueue(AbilityConfig config, string configName)
         {
             AbilityCoroutineConfig c = (AbilityCoroutineConfig)config;
-            c.Name = configName;
+            c.Key = configName;
             c.CoroutineRunning = true;
             c.Coroutine = Coroutine(c);
             OnCoroutineEnqueue(c);

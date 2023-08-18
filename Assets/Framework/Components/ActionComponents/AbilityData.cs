@@ -10,7 +10,6 @@ namespace LobsterFramework.AbilitySystem
     [CreateAssetMenu(menuName = "Ability/AbilityData")]
     public class AbilityData : ScriptableObject
     {
-        public int identifier;
         public TypeAbilityStatDictionary stats = new();
         public TypeAbilityDictionary allAbilities = new();
         public Dictionary<string, Ability> availableAbilities = new();
@@ -18,15 +17,15 @@ namespace LobsterFramework.AbilitySystem
         /// <summary>
         /// Initialize the data containers, called by AbilityRunner on Start to initialize the Abilities.
         /// </summary>
-        /// <param name="actionable">The Actionable component that operates on this data</param>
-        internal void Initialize(AbilityRunner actionable)
+        /// <param name="abilityRunner">The component that operates on this data</param>
+        internal void Initialize(AbilityRunner abilityRunner)
         {
             availableAbilities.Clear();
             foreach (Ability ai in allAbilities.Values)
             {
-                if (ComponentRequiredAttribute.ComponentCheck(ai.GetType(), actionable.gameObject))
+                if (ComponentRequiredAttribute.ComponentCheck(ai.GetType(), abilityRunner.gameObject))
                 {
-                    ai.abilityRunner = actionable;
+                    ai.abilityRunner = abilityRunner;
                     ai.OnStartUp();
                     availableAbilities[ai.GetType().ToString()] = ai;
                 }
@@ -70,15 +69,17 @@ namespace LobsterFramework.AbilitySystem
         }
         
         /// <summary>
-        /// Deep copy of action datas. Call this method after duplicate the ActionableData to ensure all of its contents are properly duplicated.
+        /// Deep copy of action datas. Call this method after duplicate the AbilityData to ensure all of its contents are properly duplicated.
         /// </summary>
         public void CopyActionAsset()
         {
             List<Ability> ais = new();
+            int id = GetInstanceID();
             foreach (var kwp in allAbilities)
             {
                 Ability ai = Instantiate(kwp.Value);
                 ais.Add(ai);
+                ai.abilityDataId = id;
             }
             foreach (var ai in ais)
             {
@@ -205,6 +206,8 @@ namespace LobsterFramework.AbilitySystem
                 T ai = CreateInstance<T>();
                 allAbilities.Add(typeof(T).ToString(), ai);
                 ai.configs = new();
+                ai.name = typeof(T).ToString();
+                ai.abilityDataId = GetInstanceID();
                 if (AssetDatabase.Contains(this))
                 {
                     AssetDatabase.AddObjectToAsset(ai, this);
@@ -237,7 +240,7 @@ namespace LobsterFramework.AbilitySystem
                 if (RequireAbilityStatsAttribute.rev_requirement.ContainsKey(typeof(T)))
                 {
                     StringBuilder sb = new();
-                    sb.Append("Cannot remove action component: " + typeof(T).ToString() + ", since the following action instances requires it: ");
+                    sb.Append("Cannot remove AbilityStat: " + typeof(T).ToString() + ", since the following abilities requires it: ");
                     bool flag = false;
                     foreach (Type t in RequireAbilityStatsAttribute.rev_requirement[typeof(T)])
                     {

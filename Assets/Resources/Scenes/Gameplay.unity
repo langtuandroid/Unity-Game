@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 109608808}
   - component: {fileID: 109608807}
   m_Layer: 5
-  m_Name: ManaBar
+  m_Name: PostureBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23553,7 +23553,7 @@ GameObject:
   - component: {fileID: 340635122}
   - component: {fileID: 340635123}
   m_Layer: 5
-  m_Name: PlayerMana
+  m_Name: PlayerPosture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31649,7 +31649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2052722227}
   healthSlider: {fileID: 1095861245}
-  manaSlider: {fileID: 340635123}
+  postureSlider: {fileID: 340635123}
   actionComponent: {fileID: 255199789}
 --- !u!1 &1220203656
 GameObject:
@@ -32913,7 +32913,7 @@ GameObject:
   - component: {fileID: 1261938277}
   - component: {fileID: 1261938276}
   m_Layer: 5
-  m_Name: ManaFiller
+  m_Name: PostureFiller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34110,7 +34110,7 @@ GameObject:
   - component: {fileID: 1613146434}
   - component: {fileID: 1613146433}
   m_Layer: 5
-  m_Name: ManaBar Text
+  m_Name: PostureBar Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

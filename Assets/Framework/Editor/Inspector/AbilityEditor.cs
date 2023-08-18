@@ -2,6 +2,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEditor;
 using LobsterFramework.AbilitySystem;
+using System.Reflection;
 
 namespace LobsterFramework.Editors
 {
@@ -19,8 +20,11 @@ namespace LobsterFramework.Editors
             Ability ability = (Ability)target;
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("Config Name");
+            GUILayout.FlexibleSpace();
             addConfigName = EditorGUILayout.TextField(addConfigName);
-            if (GUILayout.Button("Add"))
+            
+
+            if (GUILayout.Button("Add", GUILayout.Width(100)))
             {
                 if (addConfigName == null)
                 {
@@ -39,7 +43,7 @@ namespace LobsterFramework.Editors
                 GUIStyle style = new();
                 style.fontStyle = FontStyle.Bold;
                 EditorGUILayout.LabelField(selectedConfig, style);
-                if (GUILayout.Button("Select Config"))
+                if (GUILayout.Button("Select Config", GUILayout.Width(100)))
                 {
                     GenericMenu menu = new GenericMenu();
                     foreach (string configName in ability.configs.Keys)
@@ -65,7 +69,8 @@ namespace LobsterFramework.Editors
 
                 editor.OnInspectorGUI();
                 GUILayout.BeginHorizontal();
-                if (GUILayout.Button("Remove Config", GUILayout.Width(150)))
+                GUILayout.FlexibleSpace();
+                if (EditorUtils.Button(Color.red, "Remove Config", EditorUtils.BoldButtonStyle(), GUILayout.Width(100)))
                 {
                     ability.RemoveConfig(selectedConfig);
                     selectedConfig = null;
@@ -81,6 +86,7 @@ namespace LobsterFramework.Editors
             {
                 EditorGUILayout.LabelField("No configs available");
             }
+
             if (EditorGUI.EndChangeCheck())
             {
                 serializedObject.ApplyModifiedProperties();

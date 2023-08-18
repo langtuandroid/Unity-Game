@@ -320,13 +320,6 @@ namespace LobsterFramework.AbilitySystem {
                 abilityData.CopyActionAsset();
             }
         }
-
-        private void Awake()
-        {
-            abilityData = Instantiate(data);
-            abilityData.CopyActionAsset();
-            abilityData.identifier = GetInstanceID();
-        }
          
         private T GetAbility<T>() where T : Ability
         {
@@ -352,20 +345,18 @@ namespace LobsterFramework.AbilitySystem {
             abilityData.Initialize(this);
         }
 
+        /// <summary>
+        /// The Start Method of AbilityRunner needs to be runned at high priority as it needs to duplicate the ability data asset for other script refer to in their Start() method
+        /// </summary>
         private void Start()
         {
-            if (abilityData == null)
+            if (data == null)
             {
                 Debug.LogWarning("Ability Data is not set!", gameObject);
                 return;
             }
-            int id = GetInstanceID();
-            if (abilityData.identifier != id)
-            {
-                abilityData = Instantiate(abilityData);
-                abilityData.identifier = id;
-                abilityData.CopyActionAsset();
-            }
+            abilityData = Instantiate(data); 
+            abilityData.CopyActionAsset();
             stats = abilityData.stats;
             abilityData.Initialize(this);
             availableAbilities = abilityData.availableAbilities;

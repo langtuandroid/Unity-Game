@@ -32,10 +32,11 @@ namespace LobsterFramework.AbilitySystem {
     /// </summary>
     public abstract class Ability : ScriptableObject
     {
-        /* 
-         */
         [HideInInspector]
         public AbilityRunner abilityRunner;
+        [HideInInspector]
+        protected internal int abilityDataId;
+
         public RefAbilityPriority abilityPriority;
 
         [HideInInspector]
@@ -81,6 +82,8 @@ namespace LobsterFramework.AbilitySystem {
             T config = CreateInstance<T>();
             configs.Add(name, config);
             config.pipe = CreateInstance<V>();
+            config.name = this.name + "-" + name;
+            config.pipe.name = this.name + "<->" + name;
             if (AssetDatabase.Contains(this))
             {
                 AssetDatabase.AddObjectToAsset(config, this);
@@ -102,6 +105,7 @@ namespace LobsterFramework.AbilitySystem {
             }
             AbilityConfig config = configs[name];
             configs.Remove(name);
+            DestroyImmediate(config.pipe, true);
             DestroyImmediate(config, true);
             AssetDatabase.SaveAssets();
             return true;

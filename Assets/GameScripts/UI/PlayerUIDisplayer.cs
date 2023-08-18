@@ -10,7 +10,7 @@ namespace GameScripts.UI
     {
         public Entity player;
         public Slider healthSlider;
-        public Slider manaSlider;
+        public Slider postureSlider;
         public AbilityRunner actionComponent;
         private Mana manaComponent;
 
@@ -29,8 +29,8 @@ namespace GameScripts.UI
             healthSlider.maxValue = player.MaxHealth;
             healthSlider.value = player.Health;
 
-            manaSlider.maxValue = player.MaxPosture;
-            manaSlider.value = player.Posture;
+            postureSlider.maxValue = player.MaxPosture;
+            postureSlider.value = player.Posture;
         }
     }
 }

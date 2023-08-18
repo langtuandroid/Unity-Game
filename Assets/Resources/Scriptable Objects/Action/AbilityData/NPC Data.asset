@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8588135764263487508
+--- !u!114 &-4929975033437833768
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,28 +10,65 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Guard/GuardPipe
---- !u!114 &-6831365750688216534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
+  m_Name: GameScripts.Abilities.Dash-default
   m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Dash/DashConfig
   accessKey: -1
   endTime: 0
-  pipe: {fileID: 7831449244510254298}
+  pipe: {fileID: -1651024167339110079}
   useCooldown: 1
   cooldown: 1
   isSuspended: 0
-  dashStrength: 50
---- !u!114 &-6233311067593466927
+  dashStrength: 60
+--- !u!114 &-3033420413629850298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec3510c1573a0445aa238c4e906624d, type: 3}
+  m_Name: GameScripts.Abilities.LightWeaponAttack
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: 3206568900704019314}
+  targets: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
+--- !u!114 &-1651024167339110079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: GameScripts.Abilities.Dash<->default
+  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Dash/DashPipe
+--- !u!114 &-730066763461030660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: GameScripts.Abilities.LightWeaponAttack<->default
+  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:LightWeaponAttack/LightWeaponAttackPipe
+--- !u!114 &-167731353480532932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,44 +78,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66ec3624525b82d4caf74927a4665d2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
-  abilityPriority:
-    value:
-      executionPriority: 0
-      enqueuePriority: 0
-    useSharedValue: 1
-    sharedValue: {fileID: 0}
-  configs:
-    keys:
-    - default
-    values:
-    - {fileID: 6282849169013706401}
-  targets: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
---- !u!114 &-5222139183557949521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:LightWeaponAttack/LightWeaponAttackPipe
---- !u!114 &-5057788176024321263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee0f315229b442b459f33b50ab403f04, type: 3}
-  m_Name: 
+  m_Name: GameScripts.Abilities.HeavyWeaponAttack
   m_EditorClassIdentifier: 
   abilityRunner: {fileID: 0}
   abilityPriority:
@@ -86,24 +86,13 @@ MonoBehaviour:
       executionPriority: 0
       enqueuePriority: 0
     useSharedValue: 0
-    sharedValue: {fileID: 11400000, guid: b193983ee42c6494da4e9b812145dab9, type: 2}
+    sharedValue: {fileID: 0}
   configs:
     keys:
     - default
     values:
-    - {fileID: 9072928764214850618}
---- !u!114 &-2094119291028995096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Dash/DashPipe
+    - {fileID: 1025700307219990248}
+  targets: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5cd7a81edede6f4c9921cd097a98b3c, type: 3}
   m_Name: NPC Data
   m_EditorClassIdentifier: 
-  identifier: 0
   stats:
     keys: []
     values: []
@@ -127,35 +115,11 @@ MonoBehaviour:
     - GameScripts.Abilities.LightWeaponAttack
     - GameScripts.Abilities.HeavyWeaponAttack
     values:
-    - {fileID: 4137945692782375877}
-    - {fileID: -5057788176024321263}
-    - {fileID: 5408941068313772469}
-    - {fileID: -6233311067593466927}
---- !u!114 &924657810656839649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Dash/DashPipe
---- !u!114 &956967068689400798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Dash/DashPipe
---- !u!114 &4137945692782375877
+    - {fileID: 971024941800119243}
+    - {fileID: 5655281886855931256}
+    - {fileID: -3033420413629850298}
+    - {fileID: -167731353480532932}
+--- !u!114 &971024941800119243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,7 +129,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 442e984e87abfe54ba2099894e9c665f, type: 3}
-  m_Name: 
+  m_Name: GameScripts.Abilities.Dash
   m_EditorClassIdentifier: 
   abilityRunner: {fileID: 0}
   abilityPriority:
@@ -178,33 +142,8 @@ MonoBehaviour:
     keys:
     - default
     values:
-    - {fileID: -6831365750688216534}
---- !u!114 &5408941068313772469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ec3510c1573a0445aa238c4e906624d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
-  abilityPriority:
-    value:
-      executionPriority: 0
-      enqueuePriority: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  configs:
-    keys:
-    - default
-    values:
-    - {fileID: 7505295958076924959}
-  targets: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
---- !u!114 &6282849169013706401
+    - {fileID: -4929975033437833768}
+--- !u!114 &1025700307219990248
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,11 +153,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: 
+  m_Name: GameScripts.Abilities.HeavyWeaponAttack-default
   m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:HeavyWeaponAttack/HeavyWeaponAttackConfig
   accessKey: -1
   endTime: 0
-  pipe: {fileID: 8228134849740563136}
+  pipe: {fileID: 8645313229636112052}
   useCooldown: 0
   cooldown: 0
   isSuspended: 0
@@ -241,7 +180,7 @@ MonoBehaviour:
   r_key: -1
   chargeTimer: 0
   ability: {fileID: 0}
---- !u!114 &7390847129355816993
+--- !u!114 &3206568900704019314
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -251,23 +190,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:LightWeaponAttack/LightWeaponAttackPipe
---- !u!114 &7505295958076924959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
+  m_Name: GameScripts.Abilities.LightWeaponAttack-default
   m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:LightWeaponAttack/LightWeaponAttackConfig
   accessKey: -1
   endTime: 0
-  pipe: {fileID: -5222139183557949521}
+  pipe: {fileID: -730066763461030660}
   useCooldown: 0
   cooldown: 0
   isSuspended: 0
@@ -275,7 +202,31 @@ MonoBehaviour:
   signaled: 0
   m_key: 0
   r_key: 0
---- !u!114 &7831449244510254298
+--- !u!114 &5655281886855931256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee0f315229b442b459f33b50ab403f04, type: 3}
+  m_Name: GameScripts.Abilities.Guard
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: 5761227989058907891}
+--- !u!114 &5761227989058907891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -285,35 +236,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Dash/DashPipe
---- !u!114 &8228134849740563136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:HeavyWeaponAttack/HeavyWeaponAttackPipe
---- !u!114 &9072928764214850618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
+  m_Name: GameScripts.Abilities.Guard-default
   m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Guard/GuardConfig
   accessKey: -1
   endTime: 0
-  pipe: {fileID: -8588135764263487508}
+  pipe: {fileID: 7770821731632066235}
   useCooldown: 0
   cooldown: 0
   isSuspended: 0
@@ -322,3 +249,27 @@ MonoBehaviour:
   inputSignaled: 0
   m_key: 0
   r_key: 0
+--- !u!114 &7770821731632066235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: GameScripts.Abilities.Guard<->default
+  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Guard/GuardPipe
+--- !u!114 &8645313229636112052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: GameScripts.Abilities.HeavyWeaponAttack<->default
+  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:HeavyWeaponAttack/HeavyWeaponAttackPipe

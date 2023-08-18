@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
+using UnityEditor;
 using UnityEngine;
 
 namespace LobsterFramework.AbilitySystem {
@@ -11,12 +13,20 @@ namespace LobsterFramework.AbilitySystem {
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public class AddAbilityMenuAttribute : Attribute
     {
-        public static HashSet<Type> actions = new HashSet<Type>();
+        public static HashSet<Type> abilities = new HashSet<Type>();
+        public static Dictionary<Type, Texture2D> abilityIcons = new Dictionary<Type, Texture2D>();
 
         public void AddAbility(Type type) {
             if (type.IsSubclassOf(typeof(Ability)))
             {
-                actions.Add(type);
+                abilities.Add(type);
+                MonoScript script = MonoScript.FromScriptableObject(ScriptableObject.CreateInstance(type));
+                SerializedObject scriptObj = new(script);
+                SerializedProperty iconProperty = scriptObj.FindProperty("m_Icon");
+                Texture2D texture = (Texture2D)iconProperty.objectReferenceValue;
+                if (texture != null) {
+                    abilityIcons[type] = texture;
+                }
             }
             else {
                 Debug.LogError("The type specified for ability menu is not an ability:" + type.Name);
