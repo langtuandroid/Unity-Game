@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 namespace LobsterFramework.AbilitySystem
 {
@@ -12,17 +14,26 @@ namespace LobsterFramework.AbilitySystem
         public static HashSet<Type> types = new HashSet<Type>();
         public static Dictionary<Type, Texture2D> icons = new();
         public void Init(Type type) {
-            if (type.IsSubclassOf(typeof(AbilityStat)))
+            if (type.IsSubclassOf(typeof(AbilityStat))) 
             {
                 types.Add(type);
+#if UNITY_EDITOR
                 MonoScript script = MonoScript.FromScriptableObject(ScriptableObject.CreateInstance(type));
-                SerializedObject scriptObj = new(script);
-                SerializedProperty iconProperty = scriptObj.FindProperty("m_Icon");
-                Texture2D texture = (Texture2D)iconProperty.objectReferenceValue;
-                if (texture != null)
+                try
                 {
-                    icons[type] = texture;
+                    SerializedObject scriptObj = new(script);
+                    SerializedProperty iconProperty = scriptObj.FindProperty("m_Icon");
+                    Texture2D texture = (Texture2D)iconProperty.objectReferenceValue;
+                    if (texture != null)
+                    {
+                        icons[type] = texture;
+                    }
                 }
+                catch (NullReferenceException e)
+                {
+                    Debug.LogError("Null pointer exception when setting icon for script: " + type.FullName);
+                }
+#endif
             }
             else
             {

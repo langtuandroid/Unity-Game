@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Dynamic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace LobsterFramework.AbilitySystem {
@@ -20,13 +22,22 @@ namespace LobsterFramework.AbilitySystem {
             if (type.IsSubclassOf(typeof(Ability)))
             {
                 abilities.Add(type);
+#if UNITY_EDITOR
                 MonoScript script = MonoScript.FromScriptableObject(ScriptableObject.CreateInstance(type));
-                SerializedObject scriptObj = new(script);
-                SerializedProperty iconProperty = scriptObj.FindProperty("m_Icon");
-                Texture2D texture = (Texture2D)iconProperty.objectReferenceValue;
-                if (texture != null) {
-                    abilityIcons[type] = texture;
+                try
+                {
+                    SerializedObject scriptObj = new(script);
+                    SerializedProperty iconProperty = scriptObj.FindProperty("m_Icon");
+                    Texture2D texture = (Texture2D)iconProperty.objectReferenceValue;
+                    if (texture != null)
+                    {
+                        abilityIcons[type] = texture;
+                    }
+                }catch(NullReferenceException e)
+                {
+                    Debug.LogError("Null pointer exception when setting icon for script: " + type.FullName);
                 }
+#endif
             }
             else {
                 Debug.LogError("The type specified for ability menu is not an ability:" + type.Name);
