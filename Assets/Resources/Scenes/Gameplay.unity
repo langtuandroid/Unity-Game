@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 109608808}
   - component: {fileID: 109608807}
   m_Layer: 5
-  m_Name: PostureBar
+  m_Name: ManaBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23553,7 +23553,7 @@ GameObject:
   - component: {fileID: 340635122}
   - component: {fileID: 340635123}
   m_Layer: 5
-  m_Name: PlayerPosture
+  m_Name: PlayerMana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23749,14 +23749,6 @@ PrefabInstance:
     - target: {fileID: 2490316291772389325, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
       propertyPath: m_Name
       value: daggerman
-      objectReference: {fileID: 0}
-    - target: {fileID: 2490316291772389325, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7880835017238648108, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24604,13 +24596,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1478059220}
     m_Modifications:
+    - target: {fileID: 2153607754923973620, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_Name
       value: stickman
       objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_RootOrder
@@ -24658,12 +24654,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9072161404192331858, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: f6df62c3c38ea204d82e8c0e5652fb7e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32913,7 +32913,7 @@ GameObject:
   - component: {fileID: 1261938277}
   - component: {fileID: 1261938276}
   m_Layer: 5
-  m_Name: PostureFiller
+  m_Name: ManaFiller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34110,7 +34110,7 @@ GameObject:
   - component: {fileID: 1613146434}
   - component: {fileID: 1613146433}
   m_Layer: 5
-  m_Name: PostureBar Text
+  m_Name: ManaBar Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35165,7 +35165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_RootOrder
@@ -35213,12 +35213,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9072161404192331858, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: f6df62c3c38ea204d82e8c0e5652fb7e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

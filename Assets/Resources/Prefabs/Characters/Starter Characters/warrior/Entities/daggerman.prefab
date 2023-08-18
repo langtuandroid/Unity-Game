@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 8672926210768430681}
   - component: {fileID: 8856439436288999091}
   - component: {fileID: 7677172382704198607}
+  - component: {fileID: 2749982517850432838}
   m_Layer: 0
   m_Name: daggerman
   m_TagString: Untagged
@@ -481,6 +482,22 @@ MonoBehaviour:
   bezierTangentLength: 0.4
   offset: 0.2
   factor: 0.1
+--- !u!114 &2749982517850432838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490316291772389325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61ea3b86592d924b97e76f51c3b5d2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parts:
+  - {fileID: 1694879356306513385}
+  - {fileID: 8869538448915801100}
+  - {fileID: 2491541357484926356}
 --- !u!1 &6054749000110548289
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +954,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -7747579851150391166, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
   m_PrefabInstance: {fileID: 1874879565652539977}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &1694879356306513385 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: -8250169266279454816, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+  m_PrefabInstance: {fileID: 1874879565652539977}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1725867647180271157 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1006390084647212156, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
@@ -960,7 +982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityData: {fileID: 0}
-  data: {fileID: 11400000, guid: 03ed7c74c1a724246a6a6ce661c2353f, type: 2}
+  data: {fileID: 11400000, guid: f6df62c3c38ea204d82e8c0e5652fb7e, type: 2}
   animator: {fileID: 223299123248344314}
   weaponWielder: {fileID: 6676339780788435558}
   movementController: {fileID: 0}
@@ -1021,7 +1043,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 2878624368540976578}
   allStates:
-  - {fileID: 11400000, guid: 63ac88c740cf887419339bb002481c85, type: 2}
-  - {fileID: 11400000, guid: 0f96154b23dd6bd46a51d69c95e8742c, type: 2}
-  initialState: {fileID: 11400000, guid: 63ac88c740cf887419339bb002481c85, type: 2}
+  - {fileID: 11400000, guid: 8a2be4c3790210a48a022d109ce7927b, type: 2}
+  - {fileID: 11400000, guid: d819b50f9d48a794aa72f245161dc69a, type: 2}
+  initialState: {fileID: 11400000, guid: 8a2be4c3790210a48a022d109ce7927b, type: 2}
   currentState: {fileID: 0}
+--- !u!212 &2491541357484926356 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4077818843333844957, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+  m_PrefabInstance: {fileID: 1874879565652539977}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &8869538448915801100 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: -2228710954499039675, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+  m_PrefabInstance: {fileID: 1874879565652539977}
+  m_PrefabAsset: {fileID: 0}

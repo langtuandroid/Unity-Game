@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LobsterFramework.AI;
+using LobsterFramework;
 
 namespace GameScripts.AI
 {
@@ -13,7 +14,8 @@ namespace GameScripts.AI
         [SerializeField] private RefInt wanderRadius;
         [SerializeField] private RefFloat idleTime;
         [SerializeField] private bool isRanged = false;
-
+        private Rigidbody2D daggerRigid;
+        private MovementController moveControl;
         private float wanderTimeCounter;
         private float idleTimeCounter;
         private Transform transform;
@@ -32,6 +34,8 @@ namespace GameScripts.AI
         public override void InitializeFields(GameObject obj)
         {
             transform = controller.transform;
+            moveControl = controller.GetComponent<MovementController>();
+            daggerRigid = controller.GetComponent<Rigidbody2D>();
             trackingData = controller.GetControllerData<AITrackData>();
         }
 
@@ -75,6 +79,7 @@ namespace GameScripts.AI
                     break;
                 case WanderInternalState.Wandering:
                     wanderTimeCounter += Time.deltaTime;
+                    moveControl.RotateTowards(daggerRigid.velocity);
                     if (controller.ReachedDestination() || wanderTimeCounter >= wanderTime.Value)
                     {
                         wanderTimeCounter = 0;

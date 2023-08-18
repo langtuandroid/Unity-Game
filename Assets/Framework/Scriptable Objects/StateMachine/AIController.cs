@@ -22,7 +22,6 @@ namespace LobsterFramework.AI
         public Entity target;
         private Transform _transform;
         private Collider2D _collider;
-
         private AIPathFinder pathFinder;
         private GridGraph gridGraph;
 

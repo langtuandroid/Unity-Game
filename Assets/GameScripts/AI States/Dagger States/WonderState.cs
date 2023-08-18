@@ -1,23 +1,28 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using LobsterFramework.AI;
+using System.Security.Cryptography;
+using LobsterFramework;
 
-namespace GameScripts.AI
+namespace GameScripts.AI.DaggerEnemy
 {
-    [CreateAssetMenu(menuName = "StateMachine/States/AI/WanderState2")]
-    public class Wander2 : State
+    [CreateAssetMenu(menuName = "StateMachine/States/AI/DaggerEnemy/DaggerWanderState")]
+    public class WanderState : State
     {
-        private AIController controller;
         [SerializeField] private RefFloat wanderTime;
         [SerializeField] private RefInt wanderRadius;
         [SerializeField] private RefFloat idleTime;
-
+        private StealthController trans;
         private float wanderTimeCounter;
         private float idleTimeCounter;
+        private Rigidbody2D daggerRigid;
+        private MovementController moveControl;
         private Transform transform;
         private AITrackData trackingData;
-
         private WanderInternalState wanderState;
+        
 
         private enum WanderInternalState
         {
@@ -29,9 +34,13 @@ namespace GameScripts.AI
 
         public override void InitializeFields(GameObject obj)
         {
-            controller = obj.GetComponent<AIController>();
-            transform = obj.transform;
+            transform = controller.transform;
+            trans = controller.GetComponent<StealthController>();
+            moveControl = controller.GetComponent<MovementController>();
+            daggerRigid = controller.GetComponent<Rigidbody2D>();
             trackingData = controller.GetControllerData<AITrackData>();
+            
+           
         }
 
         public override void OnEnter()
@@ -52,11 +61,34 @@ namespace GameScripts.AI
             Debug.DrawLine(transform.position, transform.position + transform.up * sight, Color.yellow);
             if (controller.SearchTarget(sight))
             {
-                return typeof(MeleeChaseState2);
+                trans.Changetrans(1f);
+                /*float enemyHealth = controller.target.Health / controller.target.MaxHealth;
+                if (enemyHealth>0.4)
+                {
+                    Debug.Log("fuck u");
+                    return typeof(MeleeChaseState);
+                    //return typeof(RangedChaseState);
+                }
+                else
+                {
+                    float meleeDesire = 0.3f;
+                    float diffinHealth = 0.4f - enemyHealth;
+                    meleeDesire += diffinHealth / 0.4f * 0.7f;
+                    float randomNumber = UnityEngine.Random.Range(0f, 1f);
+                    if(randomNumber > meleeDesire)
+                    {
+                        Debug.Log("fuck u");
+                        //return typeof(RangedChaseState);
+                    }
+                    return typeof(MeleeChaseState);
+                }*/
+                return typeof(ChaseState);
+
             }
             switch (wanderState)
             {
                 case WanderInternalState.Idle:
+                    trans.Changetrans(0.3f);
                     idleTimeCounter += Time.deltaTime;
                     if (idleTimeCounter >= idleTime.Value)
                     {
@@ -65,11 +97,18 @@ namespace GameScripts.AI
                     }
                     break;
                 case WanderInternalState.PathFinding:
+                    trans.Changetrans(0.3f);
                     controller.Wander(wanderRadius.Value);
                     wanderState = WanderInternalState.Wandering;
                     break;
                 case WanderInternalState.Wandering:
+                    trans.Changetrans(0.3f);
                     wanderTimeCounter += Time.deltaTime;
+                    if(daggerRigid.velocity!=Vector2.zero)
+                    {
+                        moveControl.RotateTowards(daggerRigid.velocity);
+                    }
+
                     if (controller.ReachedDestination() || wanderTimeCounter >= wanderTime.Value)
                     {
                         wanderTimeCounter = 0;
