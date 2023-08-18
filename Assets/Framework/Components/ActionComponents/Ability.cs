@@ -84,6 +84,7 @@ namespace LobsterFramework.AbilitySystem {
             config.pipe = CreateInstance<V>();
             config.name = this.name + "-" + name;
             config.pipe.name = this.name + "<->" + name;
+            config.pipe.Construct(config);
             if (AssetDatabase.Contains(this))
             {
                 AssetDatabase.AddObjectToAsset(config, this);

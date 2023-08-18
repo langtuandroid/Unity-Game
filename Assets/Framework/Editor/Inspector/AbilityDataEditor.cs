@@ -65,7 +65,6 @@ namespace LobsterFramework.Editors
             if (EditorGUI.EndChangeCheck())
             {
                 serializedObject.ApplyModifiedProperties();
-                Repaint();
             }
         }
 

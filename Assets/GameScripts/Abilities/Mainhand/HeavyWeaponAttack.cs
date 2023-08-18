@@ -52,7 +52,16 @@ namespace GameScripts.Abilities
                     weapon.HealthDamageReduction, weapon.PostureDamageReduction);
             }
         }
-        public class HeavyWeaponAttackPipe : AbilityPipe { 
+        public class HeavyWeaponAttackPipe : AbilityPipe {
+            private HeavyWeaponAttackConfig conf;
+            public float MaxChargeTime { get { return conf.chargeMaxTime; } }
+            public float MaxChargeDamageIncrease { get { return conf.maxChargeDamageIncrease; } }
+            public float BaseDamageModifier { get { return conf.baseDamageModifier; } }
+
+            public override void Construct()
+            {
+                conf = (HeavyWeaponAttackConfig)config;
+            }
         }
 
         protected override void Initialize()
