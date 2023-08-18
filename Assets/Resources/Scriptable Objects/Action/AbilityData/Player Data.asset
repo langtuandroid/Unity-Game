@@ -98,6 +98,28 @@ MonoBehaviour:
     values:
     - {fileID: 3517917895955845550}
   targets: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
+--- !u!114 &-2409705567423651697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6fa1d59ea1fb847b02f30b421b1445, type: 3}
+  m_Name: GameScripts.Abilities.Endure
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  configs:
+    keys: []
+    values: []
 --- !u!114 &-2305764295286957202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,11 +201,13 @@ MonoBehaviour:
     - GameScripts.Abilities.LightWeaponAttack
     - GameScripts.Abilities.HeavyWeaponAttack
     - GameScripts.Abilities.Guard
+    - GameScripts.Abilities.Endure
     values:
     - {fileID: -1047808486690312034}
     - {fileID: -2805690735788064414}
     - {fileID: 7305945888532828352}
     - {fileID: -8984929025934783359}
+    - {fileID: -2409705567423651697}
 --- !u!114 &676825530786554955
 MonoBehaviour:
   m_ObjectHideFlags: 0
