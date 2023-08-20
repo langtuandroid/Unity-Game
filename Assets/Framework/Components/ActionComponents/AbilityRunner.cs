@@ -348,7 +348,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <summary>
         /// The Start Method of AbilityRunner needs to be runned at high priority as it needs to duplicate the ability data asset for other script refer to in their Start() method
         /// </summary>
-        private void Start()
+        private void Awake()
         {
             if (data == null)
             {
@@ -357,8 +357,12 @@ namespace LobsterFramework.AbilitySystem {
             }
             abilityData = Instantiate(data); 
             abilityData.CopyActionAsset();
+
+            // stats need to be set before Initializing abilities since Abilities that requires fetching AbilityStats can only get it through AbilityRunner
             stats = abilityData.stats;
             abilityData.Initialize(this);
+
+            // availableAbilities is only determined after running through the initialization check of AbilityData
             availableAbilities = abilityData.availableAbilities;
         }
         private void Update()

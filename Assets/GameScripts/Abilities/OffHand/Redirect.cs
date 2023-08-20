@@ -19,11 +19,11 @@ namespace GameScripts.Abilities
 
         }
 
-        protected override void OnEnqueue(AbilityConfig config, string configName)
+        protected override void OnEnqueue(AbilityConfig config, AbilityPipe pipe, string configName)
         {
         }
 
-        protected override bool Action(AbilityConfig config)
+        protected override bool Action(AbilityConfig config, AbilityPipe pipe)
         {
             return false;
         }

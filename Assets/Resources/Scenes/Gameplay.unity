@@ -23336,6 +23336,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 2490316291772389325, guid: 4816e38646558964d841661aa9ae451c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3579077811780646521, guid: 4816e38646558964d841661aa9ae451c, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 13
@@ -23479,7 +23483,7 @@ PrefabInstance:
     - target: {fileID: 9072161404192331858, guid: 4816e38646558964d841661aa9ae451c, type: 3}
       propertyPath: data
       value: 
-      objectReference: {fileID: 11400000, guid: 8d246552b9732c041a34ef1dd70f66de, type: 2}
+      objectReference: {fileID: 11400000, guid: 0e3ce2687ac6b754f8c580c2ed4620ae, type: 2}
     - target: {fileID: 9072161404192331858, guid: 4816e38646558964d841661aa9ae451c, type: 3}
       propertyPath: topLevelTransform
       value: 
@@ -23746,9 +23750,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1478059220}
     m_Modifications:
+    - target: {fileID: 2153607754923973620, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
       propertyPath: m_Name
       value: daggerman
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490316291772389325, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23798,6 +23810,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9072161404192331858, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 70db1731e72ae0041a21bb41c2fe4035, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

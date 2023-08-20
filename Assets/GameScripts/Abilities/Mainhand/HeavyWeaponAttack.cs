@@ -83,7 +83,7 @@ namespace GameScripts.Abilities
             return false;
         }
 
-        protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config)
+        protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe)
         {
             HeavyWeaponAttackConfig c = (HeavyWeaponAttackConfig)config;
             // Wait for signal to charge

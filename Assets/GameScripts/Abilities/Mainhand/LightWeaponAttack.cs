@@ -101,7 +101,7 @@ namespace GameScripts.Abilities
             c.r_key = moveControl.ModifyRotationSpeed(weaponWielder.Mainhand.LRotationSpeedModifier);
         }
 
-        protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config)
+        protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe)
         {
             LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
             // Wait for signal to attack

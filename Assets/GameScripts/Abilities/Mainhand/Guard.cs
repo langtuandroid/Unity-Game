@@ -72,7 +72,7 @@ namespace GameScripts.Abilities
             }
         }
 
-        protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config)
+        protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe)
         {
             GuardConfig guardConfig = (GuardConfig)config; 
 

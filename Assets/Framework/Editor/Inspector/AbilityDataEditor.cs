@@ -120,7 +120,7 @@ namespace LobsterFramework.Editors
                     else
                     {
                         selected = GUILayout.Button(content, selectAbilityStatStyle);
-                    }
+                    } 
 
                     if (selected)
                     {
@@ -213,7 +213,6 @@ namespace LobsterFramework.Editors
                     {
                         selected = GUILayout.Button(content, selectAbilityStyle);
                     }
-
                     if (selected)
                     {
                         SelectAbilityPopup popup = new SelectAbilityPopup();
@@ -247,6 +246,9 @@ namespace LobsterFramework.Editors
                 }
                 #endregion
             }
+        }
+
+        private void Update() { 
         }
     }
 }

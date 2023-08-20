@@ -9,7 +9,7 @@ namespace LobsterFramework.AbilitySystem
     {
         public class TestCoroutineConfig : AbilityCoroutineConfig { }
 
-        protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config)
+        protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe)
         {
             Debug.Log("1: " + Time.time);
             yield return null;

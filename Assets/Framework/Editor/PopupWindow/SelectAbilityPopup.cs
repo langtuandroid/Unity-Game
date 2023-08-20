@@ -33,7 +33,7 @@ namespace LobsterFramework.Editors
                 }
                 GUIContent content = new();
                 content.text = type.Name;
-                if (AddAbilityMenuAttribute.abilityIcons.ContainsKey(type))
+                if (AddAbilityMenuAttribute.abilityIcons.ContainsKey(type)) 
                 {
                     content.image = AddAbilityMenuAttribute.abilityIcons[type];
                 }

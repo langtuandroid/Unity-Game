@@ -30,10 +30,10 @@ namespace GameScripts.Abilities
             return abilityRunner.MovementController != null;
         }
 
-        protected override bool Action(AbilityConfig config)
+        protected override bool Action(AbilityConfig config, AbilityPipe pipe)
         {
             DashConfig c = (DashConfig)config;
-            Vector2 direction = abilityRunner.TopLevelTransform.rotation * ((DashPipe)c.pipe).DashDirection;
+            Vector2 direction = abilityRunner.TopLevelTransform.rotation * ((DashPipe)pipe).DashDirection;
             if (direction == Vector2.zero) {
                 Vector3 back = -abilityRunner.TopLevelTransform.up;
                 direction = new Vector2(back.x, back.y);

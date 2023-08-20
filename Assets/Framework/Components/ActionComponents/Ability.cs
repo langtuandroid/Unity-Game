@@ -34,13 +34,13 @@ namespace LobsterFramework.AbilitySystem {
     {
         [HideInInspector]
         public AbilityRunner abilityRunner;
-        [HideInInspector]
-        protected internal int abilityDataId;
 
         public RefAbilityPriority abilityPriority;
 
         [HideInInspector]
         [SerializeField] internal StringAbilityConfigDictionary configs = new();
+        [HideInInspector]
+        [SerializeField] internal StringAbilityPipeDictionary pipes = new();
 
         private HashSet<string> executing = new();
 
@@ -81,14 +81,15 @@ namespace LobsterFramework.AbilitySystem {
             }
             T config = CreateInstance<T>();
             configs.Add(name, config);
-            config.pipe = CreateInstance<V>();
+            AbilityPipe pipe = CreateInstance<V>();
             config.name = this.name + "-" + name;
-            config.pipe.name = this.name + "<->" + name;
-            config.pipe.Construct(config);
+            pipe.name = this.name + "=" + name;
+            pipe.Construct(config);
+            pipes.Add(name, pipe);
             if (AssetDatabase.Contains(this))
             {
                 AssetDatabase.AddObjectToAsset(config, this);
-                AssetDatabase.AddObjectToAsset(config.pipe, config);
+                AssetDatabase.AddObjectToAsset(pipe, this);
                 AssetDatabase.SaveAssets();
             }
         }
@@ -105,8 +106,10 @@ namespace LobsterFramework.AbilitySystem {
                 return false;
             }
             AbilityConfig config = configs[name];
+            AbilityPipe pipe = pipes[name];
             configs.Remove(name);
-            DestroyImmediate(config.pipe, true);
+            pipes.Remove(name);
+            DestroyImmediate(pipe, true);
             DestroyImmediate(config, true);
             AssetDatabase.SaveAssets();
             return true;
@@ -140,16 +143,17 @@ namespace LobsterFramework.AbilitySystem {
         /// This method should not be directly called by external modules such as play input or AI. <br/> 
         /// AbilityRunner.EnqueueAbility&lt;T&gt;(string configName) shoud be used instead.
         /// </summary>
-        /// <param name="config">Name of the config being enqueued</param>
+        /// <param name="configName">Name of the config being enqueued</param>
         /// <returns>The result of this operation</returns>
-        internal bool EnqueueAbility(string config)
+        internal bool EnqueueAbility(string configName)
         {
-            if (IsReady(config))
+            if (IsReady(configName))
             {
-                configs[config].accessKey = ActionOverseer.EnqueueAction(new AbilityConfigPair(this, config));
-                executing.Add(config);
-                AbilityConfig c = configs[config];
-                OnEnqueue(c, config);
+                configs[configName].accessKey = ActionOverseer.EnqueueAction(new AbilityConfigPair(this, configName));
+                executing.Add(configName);
+                AbilityConfig config = configs[configName];
+                AbilityPipe pipe = pipes[configName];
+                OnEnqueue(config, pipe, configName);
                 return true;
             }
             return false;
@@ -165,7 +169,8 @@ namespace LobsterFramework.AbilitySystem {
             try
             {
                 AbilityConfig config = configs[name];
-                bool result = Action(config);
+                AbilityPipe pipe = pipes[name];
+                bool result = Action(config, pipe);
                 if (!result || config.isSuspended)
                 {
                     config.accessKey = -1;
@@ -302,7 +307,7 @@ namespace LobsterFramework.AbilitySystem {
         /// </summary>
         /// <param name="config">The config being executed with</param>
         /// <returns>False if the ability has finished, otherwise true</returns>
-        protected abstract bool Action(AbilityConfig config);
+        protected abstract bool Action(AbilityConfig config, AbilityPipe pipe);
 
         /// <summary>
         /// Callback when the action is finished or halted, override this to clean up temporary data generated during the action.
@@ -330,7 +335,7 @@ namespace LobsterFramework.AbilitySystem {
         /// </summary>
         /// <param name="config"></param>
         /// <param name="configName"></param>
-        protected virtual void OnEnqueue(AbilityConfig config, string configName) { }
+        protected virtual void OnEnqueue(AbilityConfig config, AbilityPipe pipe, string configName) { }
 
         private Type GetBaseConfigType() {
             Type type = GetType().BaseType;
@@ -404,7 +409,7 @@ namespace LobsterFramework.AbilitySystem {
         public AbilityPipe GetAbilityPipe(string configName)
         {
             if (configs.ContainsKey(configName)) {
-                return configs[configName].pipe;
+                return pipes[configName];
             }
             return default;
         }
@@ -421,8 +426,6 @@ namespace LobsterFramework.AbilitySystem {
             public int accessKey = -1;
             [HideInInspector]
             public float endTime = 0;
-            [HideInInspector]
-            public AbilityPipe pipe;
 
             [SerializeField] private bool useCooldown = true;
             [SerializeField] private float cooldown = 0;
@@ -450,7 +453,6 @@ namespace LobsterFramework.AbilitySystem {
             /// </summary>
             protected virtual void Validate() { }
 
-            
             protected void OnValidate()
             {
                 if (cooldown < 0) {

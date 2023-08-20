@@ -109,4 +109,7 @@ namespace LobsterFramework.Utility {
 
     [Serializable]
     public class StringAbilityConfigDictionary : SerializableDictionary<string, Ability.AbilityConfig> { }
+
+    [Serializable]
+    public class StringAbilityPipeDictionary : SerializableDictionary<string, Ability.AbilityPipe> { }
 }

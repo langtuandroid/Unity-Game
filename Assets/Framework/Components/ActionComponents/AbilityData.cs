@@ -73,39 +73,53 @@ namespace LobsterFramework.AbilitySystem
         /// </summary>
         public void CopyActionAsset()
         {
-            List<Ability> ais = new();
-            int id = GetInstanceID();
+            List<Ability> abilities = new();
             foreach (var kwp in allAbilities)
             {
-                Ability ai = Instantiate(kwp.Value);
-                ais.Add(ai);
-                ai.abilityDataId = id;
+                // Duplicate Abilities first
+                Ability ability = Instantiate(kwp.Value);
+                abilities.Add(ability);
             }
-            foreach (var ai in ais)
+
+            // Duplicate AbilityConfig and AbilityPipe assiciated with each Ability
+            foreach (var ability in abilities)
             {
-                allAbilities[ai.GetType().ToString()] = ai;
-                List<(string, Ability.AbilityConfig)> cfs = new();
-                foreach (var kwp in ai.configs)
+                allAbilities[ability.GetType().ToString()] = ability;
+
+                // AbilityConfig
+                List<(string, Ability.AbilityConfig)> configs = new();
+                foreach (var kwp in ability.configs)
                 {
 
-                    cfs.Add((kwp.Key, Instantiate(kwp.Value)));  
+                    configs.Add((kwp.Key, Instantiate(kwp.Value)));  
                 }
-                foreach ((string name, Ability.AbilityConfig config) in cfs)
+                foreach ((string name, Ability.AbilityConfig config) in configs)
                 {
-                    ai.configs[name] = config; 
-                    config.pipe = Instantiate(config.pipe);
-                } 
+                    ability.configs[name] = config; 
+                }
+
+                // AbilityPipe
+                List<(string, Ability.AbilityPipe)> pipes = new();
+                foreach (var kwp in ability.pipes)
+                {
+
+                    pipes.Add((kwp.Key, Instantiate(kwp.Value)));
+                }
+                foreach ((string name, Ability.AbilityPipe pipe) in pipes)
+                {
+                    ability.pipes[name] = pipe;
+                }
             }
 
-            List<AbilityStat> acs = new();
+            List<AbilityStat> abilityStats = new();
             foreach (var kwp in stats)
             {
-                AbilityStat ac = Instantiate(kwp.Value);
-                acs.Add(ac);
+                AbilityStat abilityStat = Instantiate(kwp.Value);
+                abilityStats.Add(abilityStat);
             }
-            foreach (var ac in acs)
+            foreach (var abilityStat in abilityStats)
             {
-                stats[ac.GetType().ToString()] = ac;
+                stats[abilityStat.GetType().ToString()] = abilityStat;
             }
         }
 
@@ -207,7 +221,6 @@ namespace LobsterFramework.AbilitySystem
                 allAbilities.Add(typeof(T).ToString(), ai);
                 ai.configs = new();
                 ai.name = typeof(T).ToString();
-                ai.abilityDataId = GetInstanceID();
                 if (AssetDatabase.Contains(this))
                 {
                     AssetDatabase.AddObjectToAsset(ai, this);

@@ -29,7 +29,7 @@ MonoBehaviour:
     - default
     values:
     - {fileID: -3330471235373624362}
-  targets: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
+  targets: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
 --- !u!114 &-8047052581863115676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,30 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: GameScripts.Abilities.LightWeaponAttack=default
   m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:LightWeaponAttack/LightWeaponAttackPipe
---- !u!114 &-6875093474699505247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bddb4d3b04c96644598c218b6d67a82a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackDamage:
-    value: 20
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  attackRange:
-    value: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  defense:
-    value: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
 --- !u!114 &-6852387031388621125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,42 +157,7 @@ MonoBehaviour:
     - default
     values:
     - {fileID: -7321627287417493129}
-  targets: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
---- !u!114 &-5922490638922797019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: GameScripts.Abilities.Shoot-default
-  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Shoot/ShootConfig
-  accessKey: -1
-  endTime: 0
-  useCooldown: 1
-  cooldown: 1
-  isSuspended: 0
-  bulletPoolTag: {fileID: 11400000, guid: ea9bbdaa32301cd4e85df6669405a790, type: 2}
-  manaCost:
-    value: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  bulletSpeed:
-    value: 5
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  piercePower:
-    value: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  travelDuration:
-    value: 3
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  targetSetting: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
+  targets: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
 --- !u!114 &-4783557288147053901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,35 +188,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: GameScripts.Abilities.HeavyWeaponAttack=default
   m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:HeavyWeaponAttack/HeavyWeaponAttackPipe
---- !u!114 &-2907032945396431793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48f70b9a967a96d4abc6cf3b83a774bf, type: 3}
-  m_Name: GameScripts.Abilities.Shoot
-  m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
-  abilityPriority:
-    value:
-      executionPriority: 0
-      enqueuePriority: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  configs:
-    keys:
-    - default
-    values:
-    - {fileID: -5922490638922797019}
-  pipes:
-    keys:
-    - default
-    values:
-    - {fileID: 4430539431702096720}
 --- !u!114 &-2863786019049507380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,28 +239,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5cd7a81edede6f4c9921cd097a98b3c, type: 3}
-  m_Name: NPC Data
+  m_Name: PlayerData
   m_EditorClassIdentifier: 
   stats:
-    keys:
-    - GameScripts.Abilities.Mana
-    - GameScripts.Abilities.CombatStat
-    values:
-    - {fileID: 2479901697325764881}
-    - {fileID: -6875093474699505247}
+    keys: []
+    values: []
   allAbilities:
     keys:
     - GameScripts.Abilities.LightWeaponAttack
     - GameScripts.Abilities.HeavyWeaponAttack
     - GameScripts.Abilities.Dash
     - GameScripts.Abilities.Guard
-    - GameScripts.Abilities.Shoot
     values:
     - {fileID: -6397955577623777837}
     - {fileID: -9100461701771667213}
     - {fileID: -6852387031388621125}
     - {fileID: -2863786019049507380}
-    - {fileID: -2907032945396431793}
 --- !u!114 &2354990972005100125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,27 +267,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: GameScripts.Abilities.Dash=default
   m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Dash/DashPipe
---- !u!114 &2479901697325764881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23cafed77cafc444eb80658fa3b67136, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxMana:
-    value: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  manaRegen:
-    value: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  mana: 0
 --- !u!114 &2848114839958184868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,15 +289,3 @@ MonoBehaviour:
   inputSignaled: 0
   m_key: 0
   r_key: 0
---- !u!114 &4430539431702096720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: GameScripts.Abilities.Shoot=default
-  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Shoot/ShootPipe

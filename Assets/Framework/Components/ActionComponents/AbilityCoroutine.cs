@@ -28,12 +28,12 @@ namespace LobsterFramework.AbilitySystem
             public float awakeTime = 0;
         }
 
-        protected sealed override void OnEnqueue(AbilityConfig config, string configName)
+        protected sealed override void OnEnqueue(AbilityConfig config, AbilityPipe pipe, string configName)
         {
             AbilityCoroutineConfig c = (AbilityCoroutineConfig)config;
             c.Key = configName;
             c.CoroutineRunning = true;
-            c.Coroutine = Coroutine(c);
+            c.Coroutine = Coroutine(c, pipe);
             OnCoroutineEnqueue(c);
         }
 
@@ -43,7 +43,7 @@ namespace LobsterFramework.AbilitySystem
         /// <param name="config">The config being enqueued with</param>
         protected abstract void OnCoroutineEnqueue(AbilityCoroutineConfig config);
 
-        protected override sealed bool Action(AbilityConfig config)
+        protected override sealed bool Action(AbilityConfig config, AbilityPipe pipe)
         {
             AbilityCoroutineConfig c = (AbilityCoroutineConfig)config;
             if (c.awakeTime > Time.time) {
@@ -92,7 +92,7 @@ namespace LobsterFramework.AbilitySystem
         /// </summary>
         /// <param name="config">The ability configuration to execute on</param>
         /// <returns></returns>
-        protected abstract IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config);
+        protected abstract IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe);
     }
 
     public class CoroutineOption {

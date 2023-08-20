@@ -11,7 +11,7 @@ namespace LobsterFramework.Editors
     {
         private string selectedConfig;
         private string addConfigName;
-        private UnityEditor.Editor editor;
+        private Editor editor;
 
         public override void OnInspectorGUI()
         {
