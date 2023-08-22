@@ -17,17 +17,18 @@ namespace GameScripts.AI.DaggerEnemy
         float meleeOn = 0;
         private Transform transform;
         private Mana manaComponent;
-        private AbilityRunner actionComponent;
         private Entity chaseTarget;
         private Transform targetTransform;
+        private HeavyWeaponAttack.HeavyWeaponAttackPipe heavyAttackPipe;
+        private float maxChargeTime;
 
         public override void InitializeFields(GameObject obj)
         {
             abilityRunner = controller.AbilityRunner;
             trackData = controller.GetControllerData<AITrackData>();
-            actionComponent = obj.GetComponent<AbilityRunner>();
-            manaComponent = actionComponent.GetAbilityStat<Mana>();
+            manaComponent = abilityRunner.GetAbilityStat<Mana>();
             transform = obj.transform;
+            heavyAttackPipe = (HeavyWeaponAttack.HeavyWeaponAttackPipe)abilityRunner.GetAbilityPipe<HeavyWeaponAttack>();
         }
 
         public override void OnEnter()
@@ -49,20 +50,24 @@ namespace GameScripts.AI.DaggerEnemy
             {
                 return typeof(WanderState);
             }
-            controller.LookTowards();
+            //controller.LookTowards();
             if (controller.TargetInRange(trackData.chaseDistance.Value))
             {
                 if (controller.TargetInRange(attackRange))
                 {
                     float randomNumber = UnityEngine.Random.Range(0f, 1f);
                     Debug.Log(randomNumber);
-                    if (randomNumber > 0.7)
+                    if (randomNumber > 0.5)
                     {
                         abilityRunner.EnqueueAbility<LightWeaponAttack>();
                     }
                     else
                     {
                         abilityRunner.EnqueueAbility<HeavyWeaponAttack>();
+                        float randomChargeTime = UnityEngine.Random.Range(0f, 1f);
+                        maxChargeTime = Time.time;
+                        maxChargeTime += randomChargeTime * heavyAttackPipe.MaxChargeTime;
+
                     }
                 }
                 return typeof(ChaseState);
@@ -77,7 +82,7 @@ namespace GameScripts.AI.DaggerEnemy
                 controller.target = null;
                 return typeof(WanderState);
             }
-            controller.LookTowards();
+            //controller.LookTowards();
             Debug.DrawLine(transform.position, (controller.target.transform.position - transform.position).normalized * trackData.engageDistance.Value + transform.position, Color.red);
             if (controller.TargetVisible(controller.transform.position, trackData.engageDistance.Value))
             {
@@ -86,7 +91,7 @@ namespace GameScripts.AI.DaggerEnemy
                 {
                     controller.MoveInDirection(transform.position - targetTransform.position, trackData.keepDistance.Value - Vector3.Distance(transform.position, targetTransform.position));
                 }
-                actionComponent.EnqueueAbility<Shoot>();
+                abilityRunner.EnqueueAbility<Shoot>();
                 return typeof(ChaseState);
             }
             controller.ChaseTarget();
@@ -95,14 +100,19 @@ namespace GameScripts.AI.DaggerEnemy
 
         public override Type Tick()
         {
-            if(!abilityRunner.IsAbilityReady<HeavyWeaponAttack>()|| !abilityRunner.IsAbilityReady<LightWeaponAttack>())
-            {
-                return null;
-            }
-            if (!controller.target.gameObject.activeInHierarchy|| !controller.TargetInRange(trackData.chaseDistance.Value))
+            if (!controller.target.gameObject.activeInHierarchy || !controller.TargetInRange(trackData.chaseDistance.Value))
             {
                 controller.ResetTarget();
                 return typeof(WanderState);
+            }
+            controller.LookTowards();
+            if (!abilityRunner.IsAbilityReady<HeavyWeaponAttack>()|| !abilityRunner.IsAbilityReady<LightWeaponAttack>())
+            {
+                if(!abilityRunner.IsAbilityReady<HeavyWeaponAttack>() && maxChargeTime>Time.time )
+                {
+                    abilityRunner.Signal<HeavyWeaponAttack>();
+                }
+                return null;
             }
             float enemyHealth = controller.target.Health / controller.target.MaxHealth;
             if (enemyHealth > 0.4 && meleeOn!=1)
