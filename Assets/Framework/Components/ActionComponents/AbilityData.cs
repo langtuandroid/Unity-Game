@@ -81,7 +81,7 @@ namespace LobsterFramework.AbilitySystem
                 abilities.Add(ability);
             }
 
-            // Duplicate AbilityConfig and AbilityPipe assiciated with each Ability
+            // Duplicate AbilityConfig assiciated with each Ability
             foreach (var ability in abilities)
             {
                 allAbilities[ability.GetType().ToString()] = ability;
@@ -96,18 +96,6 @@ namespace LobsterFramework.AbilitySystem
                 foreach ((string name, Ability.AbilityConfig config) in configs)
                 {
                     ability.configs[name] = config; 
-                }
-
-                // AbilityPipe
-                List<(string, Ability.AbilityPipe)> pipes = new();
-                foreach (var kwp in ability.pipes)
-                {
-
-                    pipes.Add((kwp.Key, Instantiate(kwp.Value)));
-                }
-                foreach ((string name, Ability.AbilityPipe pipe) in pipes)
-                {
-                    ability.pipes[name] = pipe;
                 }
             }
 

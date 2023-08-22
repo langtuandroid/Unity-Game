@@ -50,7 +50,6 @@ namespace GameScripts.AI.DaggerEnemy
             {
                 return typeof(WanderState);
             }
-            //controller.LookTowards();
             if (controller.TargetInRange(trackData.chaseDistance.Value))
             {
                 if (controller.TargetInRange(attackRange))
@@ -82,8 +81,6 @@ namespace GameScripts.AI.DaggerEnemy
                 controller.target = null;
                 return typeof(WanderState);
             }
-            //controller.LookTowards();
-            Debug.DrawLine(transform.position, (controller.target.transform.position - transform.position).normalized * trackData.engageDistance.Value + transform.position, Color.red);
             if (controller.TargetVisible(controller.transform.position, trackData.engageDistance.Value))
             {
 
@@ -92,10 +89,10 @@ namespace GameScripts.AI.DaggerEnemy
                     controller.MoveInDirection(transform.position - targetTransform.position, trackData.keepDistance.Value - Vector3.Distance(transform.position, targetTransform.position));
                 }
                 abilityRunner.EnqueueAbility<Shoot>();
-                return typeof(ChaseState);
+                return null;
             }
             controller.ChaseTarget();
-            return typeof(ChaseState);
+            return null;
         }
 
         public override Type Tick()
@@ -117,8 +114,6 @@ namespace GameScripts.AI.DaggerEnemy
             float enemyHealth = controller.target.Health / controller.target.MaxHealth;
             if (enemyHealth > 0.4 && meleeOn!=1)
             {
-                Debug.Log("shoot");
-
                 RangeAttack();
             }
             else
@@ -130,13 +125,10 @@ namespace GameScripts.AI.DaggerEnemy
                 float randomNumber = UnityEngine.Random.Range(0f, 1f);
                 if (randomNumber > meleeDesire && meleeOn != 1)
                 {
-                    Debug.Log("aaaaa");
                     RangeAttack();
                 }
                 meleeOn = 1;
-                Debug.Log("melee");
                 MeleeAttack();
-                
             }
             return null;
         }

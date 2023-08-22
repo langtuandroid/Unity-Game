@@ -79,8 +79,8 @@ namespace GameScripts.Abilities
             { 
                 float health = 0.7f * weapon.Sharpness + 0.3f * weapon.Weight;
                 float posture = 0.3f * weapon.Sharpness + 0.7f * weapon.Weight;
-                float hp = (100 - weapon.HealthDamageReduction) / 100;
-                float pp = (100 - weapon.PostureDamageReduction) / 100;
+                float hp = (1 - weapon.HealthDamageReduction);
+                float pp = (1 - weapon.PostureDamageReduction);
                 Entity entity = weapon.Entity;
                 entity.Damage(health * hp, posture * pp, attacker);
                 MovementController moveControl = entity.GetComponent<MovementController>();
@@ -88,7 +88,6 @@ namespace GameScripts.Abilities
                 {
                     moveControl.ApplyForce(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight);
                 }
-                Debug.Log("Guarded:" + Time.time);
             }
         }
 

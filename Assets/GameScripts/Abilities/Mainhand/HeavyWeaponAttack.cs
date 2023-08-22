@@ -179,10 +179,11 @@ namespace GameScripts.Abilities
         {
             if (targets.IsTarget(entity))
             {
+                Debug.Log(healthDamageReduction);
                 float health = (0.7f * weaponWielder.Mainhand.Sharpness + 0.3f * weaponWielder.Mainhand.Weight) * 
-                    modifier * ((100 - healthDamageReduction) / 100);
+                    modifier * (1 - healthDamageReduction);
                 float posture = (0.3f * weaponWielder.Mainhand.Sharpness + 0.7f * weaponWielder.Mainhand.Weight) * 
-                    modifier * ((100 - postureDamageReduction) / 100);
+                    modifier * (1- postureDamageReduction);
                 entity.Damage(health, posture, attacker);
                 MovementController moveControl = entity.GetComponent<MovementController>();
                 if (moveControl != null)

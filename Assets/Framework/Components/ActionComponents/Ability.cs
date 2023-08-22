@@ -40,7 +40,7 @@ namespace LobsterFramework.AbilitySystem {
         [HideInInspector]
         [SerializeField] internal StringAbilityConfigDictionary configs = new();
         [HideInInspector]
-        [SerializeField] internal StringAbilityPipeDictionary pipes = new();
+        internal Dictionary<string, AbilityPipe> pipes = new();
 
         private HashSet<string> executing = new();
 
@@ -60,8 +60,7 @@ namespace LobsterFramework.AbilitySystem {
                 Type type = GetType();
                 var m = (typeof(Ability)).GetMethod("AddConfigGeneric", BindingFlags.NonPublic | BindingFlags.Instance);
                 Type configType = type.GetNestedType(type.Name + "Config");
-                Type pipeType = type.GetNestedType(type.Name + "Pipe");
-                MethodInfo method = m.MakeGenericMethod(configType, pipeType);
+                MethodInfo method = m.MakeGenericMethod(configType);
                 method.Invoke(this, new[] { name });
                 return true;
             }
@@ -71,7 +70,7 @@ namespace LobsterFramework.AbilitySystem {
             return false;
         }
 
-        private void AddConfigGeneric<T, V>(string name) where T : AbilityConfig where V : AbilityPipe
+        private void AddConfigGeneric<T>(string name) where T : AbilityConfig
         {
             Type type = GetType();
             if (typeof(T).Name != (type.Name + "Config"))
@@ -81,15 +80,10 @@ namespace LobsterFramework.AbilitySystem {
             }
             T config = CreateInstance<T>();
             configs.Add(name, config);
-            AbilityPipe pipe = CreateInstance<V>();
             config.name = this.name + "-" + name;
-            pipe.name = this.name + "=" + name;
-            pipe.Construct(config);
-            pipes.Add(name, pipe);
             if (AssetDatabase.Contains(this))
             {
                 AssetDatabase.AddObjectToAsset(config, this);
-                AssetDatabase.AddObjectToAsset(pipe, this);
                 AssetDatabase.SaveAssets();
             }
         }
@@ -106,10 +100,7 @@ namespace LobsterFramework.AbilitySystem {
                 return false;
             }
             AbilityConfig config = configs[name];
-            AbilityPipe pipe = pipes[name];
             configs.Remove(name);
-            pipes.Remove(name);
-            DestroyImmediate(pipe, true);
             DestroyImmediate(config, true);
             AssetDatabase.SaveAssets();
             return true;
@@ -263,9 +254,16 @@ namespace LobsterFramework.AbilitySystem {
                 Debug.LogError("The ability config or pipe for '" + GetType().ToString() + "' is not declared!");
             }
             Initialize();
-            foreach (AbilityConfig config in configs.Values)
+            Type type = GetType();
+            Type pipeType = type.GetNestedType(type.Name + "Pipe");
+
+            foreach (KeyValuePair<string, AbilityConfig>pair in configs)
             {
+                AbilityConfig config = pair.Value;
+                string name = pair.Key;
                 config.Initialize();
+                pipes[name] = (AbilityPipe)Activator.CreateInstance(pipeType);
+                pipes[name].Construct(config);
             }
         }
 
@@ -454,19 +452,21 @@ namespace LobsterFramework.AbilitySystem {
             protected virtual void Validate() { }
 
             protected void OnValidate()
-            {
+            { 
                 if (cooldown < 0) {
                     Debug.LogWarning("Cooldown cannot be less than 0!", this);
                     cooldown = 0;
-                }
+                } 
                 Validate();
             }
         }
 
-        [Serializable]
-        public class AbilityPipe : ScriptableObject {
+        public class AbilityPipe {
             protected AbilityConfig config;
-            public void Construct(AbilityConfig config) { this.config = config; Construct(); }
+            public void Construct(AbilityConfig config){
+                this.config = config;
+                Construct();
+            }
             public virtual void Construct() { }
         }
     }
