@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading;
 using GluonGui.Dialog;
 using static LobsterFramework.AbilitySystem.Ability;
+using UnityEditor.Rendering;
 
 namespace LobsterFramework.Editors
 {
@@ -50,18 +51,22 @@ namespace LobsterFramework.Editors
         public override void OnInspectorGUI()
         {
             AbilityData abilityData = (AbilityData)target;
-
             EditorGUILayout.HelpBox("Note: The configurations for abilities will not be available before " +
                 "the first run of the game! Please verify the integrity of data " +
                 "by running the game first before moving on to remove corrupted configs.", MessageType.Info);
             EditorGUI.BeginChangeCheck();
 
-            DrawAbilityStats(abilityData);
-            EditorGUILayout.Space();
-            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
-            EditorGUILayout.Space();
-            DrawAbilities(abilityData);
-            
+            try
+            {
+                DrawAbilityStats(abilityData);
+                EditorGUILayout.Space();
+                EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+                EditorGUILayout.Space();
+                DrawAbilities(abilityData);
+            }catch(ArgumentException e)
+            {
+                // Ignore this error
+            }
             if (EditorGUI.EndChangeCheck())
             {
                 serializedObject.ApplyModifiedProperties();
@@ -187,6 +192,7 @@ namespace LobsterFramework.Editors
                     {
                         selectedAbility = abilityData.allAbilities.First().Value;
                     }
+
                     Type abilityType = selectedAbility.GetType();
                     if (!abilityEditors.ContainsKey(abilityType))
                     {
@@ -230,12 +236,8 @@ namespace LobsterFramework.Editors
                     EditorGUILayout.EndVertical();
 
                     EditorGUILayout.EndHorizontal();
-
-                    if (!clicked)
-                    {
-                        editor.OnInspectorGUI();
-                    }
-                    else
+                    editor.OnInspectorGUI();
+                    if(clicked)
                     {
                         var m = typeof(AbilityData).GetMethod("RemoveAbility", BindingFlags.Instance | BindingFlags.NonPublic);
                         MethodInfo removed = m.MakeGenericMethod(abilityType);
@@ -246,9 +248,6 @@ namespace LobsterFramework.Editors
                 }
                 #endregion
             }
-        }
-
-        private void Update() { 
         }
     }
 }

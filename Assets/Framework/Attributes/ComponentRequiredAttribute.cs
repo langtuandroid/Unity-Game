@@ -9,10 +9,10 @@ namespace LobsterFramework.AbilitySystem
     /// <summary>
     /// Mark this ability as requiring the specified components on the parent gameobject to run
     /// </summary>
-    [AttributeUsage(AttributeTargets.Class, AllowMultiple =false, Inherited = false)] 
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = true)] 
     public class ComponentRequiredAttribute : Attribute
     {
-        private static Dictionary<Type, ClassNode> requirement = new();
+        private static Dictionary<Type, List<Type>> requirement = new();
 
         private Type[] components;
 
@@ -21,131 +21,53 @@ namespace LobsterFramework.AbilitySystem
             components = requiredComponents;
         }
 
-        public void Init(Type type) { 
-            InsertNode(type, components);
-        }
-
-        private static void InsertNode(Type abilityType, params Type[] requiredComponents) {
-            if (!abilityType.IsSubclassOf(typeof(Ability)))
+        public void Init(Type type) {
+            if (!requirement.ContainsKey(type)) {
+                requirement[type] = new List<Type>();
+            }
+            foreach(Type component in components)
             {
-                Debug.LogError("Type:" + abilityType.ToString() + " is not an Ability!");
-                return;
+                requirement[type].Add(component);
             }
-            if (requirement.ContainsKey(abilityType))
-            {
-                Debug.LogWarning("Ability:" + abilityType.ToString() + " is requiring components from multiple sources!");
-                return;
-            }
-            ClassNode node = new ClassNode(abilityType);
-            if (requiredComponents != null) {
-                foreach (Type t in requiredComponents)
-                {
-                    if (!t.IsSubclassOf(typeof(Component)))
-                    {
-                        Debug.LogError("Cannot apply require Component of type:" + t.ToString() + " to " + abilityType.ToString()); 
-                        return;
-                    }
-                    node.requirements.Add(t);
-                }
-            }
-            
-            foreach (Type t in requirement.Keys)
-            {
-                if (t.IsSubclassOf(abilityType))
-                {
-                    ClassNode child = requirement[t];
-                    while (true)
-                    {
-                        if (child.type.IsSubclassOf(abilityType))
-                        {
-                            if (child.parent != null)
-                            {
-                                child = child.parent;
-                            }
-                            else
-                            {
-                                child.parent = node;
-                                node.children.Add(child);
-                                break;
-                            }
-                        }
-                        else
-                        {
-                            child.children.Add(node);
-                            node.parent = child;
-                            break;
-                        }
-                    }
-                }
-                if (abilityType.IsSubclassOf(t))
-                {
-                    ClassNode parent = FindParent(node, requirement[t]);
-                    parent.children.Add(node);
-                    node.parent = parent;
-                }
-            }
-            requirement[abilityType] = node;
-        }
-
-        private static ClassNode FindParent(ClassNode node, ClassNode parent) {
-            if (node.type.IsSubclassOf(parent.type)) {
-                foreach (ClassNode child in parent.children) { 
-                    ClassNode p = FindParent(child, node);
-                    if (p != null) {
-                        return p;
-                    }
-                }
-                return parent;
-            }
-            return null;
         }
 
         /// <summary>
         /// Check if the action component and the gameobject satisfies the requirements of the ActionInstance defined by its attributes.
         /// </summary>
         /// <param name="type">The type of the ability to examine for requirements</param>
-        /// <param name="obj"> The gameobject for examination </param>
+        /// <param name="objects"> The gameobject for examination </param>
         /// <returns>Whether the gameobject satisfied the component requirements. If there's no requirement, return true. If obj is null, return false.</returns>
-        public static bool ComponentCheck(Type type, GameObject obj) {
+        public static bool ComponentCheck(Type type, params GameObject[] objects) {
             if (!requirement.ContainsKey(type)) {
-                InsertNode(type, default);
+                return true;
             }
-            if (obj == null) {
+            List<Type> missing = new List<Type>();
+            foreach (Type component in requirement[type])
+            {
+                bool result = false;
+                foreach(GameObject obj in objects)
+                {
+                    if (obj.GetComponent(component) != null) {
+                        result = true; break;
+                    }
+                }
+                if (!result) {
+                    missing.Add(component);
+                }
+            }
+
+            if(missing.Count > 0) {
+                string debugString = "Missing Components: ";
+                foreach (Type component in missing)
+                {
+                    debugString += component.ToString() + ", ";
+                }
+                debugString = debugString.Remove(debugString.Length - 2);
+                Debug.LogError(debugString);
                 return false;
             }
-
-            ClassNode node = requirement[type];
-            List<Type> missing = new List<Type>();
-            bool flag = true;
-            while (node != null) {
-                foreach (Type comType in node.requirements) {
-                    if (obj.GetComponent(comType) == null) { flag = false; missing.Add(comType); }
-                }
-                node = node.parent;
-            }
-            if (!flag)
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.Append("Missing Component: ");
-                foreach (Type t in missing)
-                {
-                    sb.Append(t.Name);
-                    sb.Append(", ");
-                }
-                sb.Remove(sb.Length - 2, 2);
-                Debug.LogError(sb.ToString(), obj);
-            }
-            return flag;
+            
+            return true;
         }
-    }
-
-    public class ClassNode
-    {
-        public Type type;
-        public ClassNode parent = default;
-        public List<ClassNode> children = new();
-        public HashSet<Type> requirements = new();
-
-        public ClassNode(Type type) { this.type = type; }
     }
 }

@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LobsterFramework.AbilitySystem;
+using LobsterFramework;
 
 namespace GameScripts.Abilities
 {
+    [ComponentRequired(typeof(MovementController))]
     [AddAbilityMenu]
     public class Dash : Ability
     {
@@ -25,9 +27,11 @@ namespace GameScripts.Abilities
             public Vector2 DashDirection { get; set; }
         }
 
-        protected override bool ConditionSatisfied(AbilityConfig config)
+        private MovementController controller;
+
+        protected override void Initialize()
         {
-            return abilityRunner.MovementController != null;
+            controller = abilityRunner.GetComponentInBoth<MovementController>();
         }
 
         protected override bool Action(AbilityConfig config, AbilityPipe pipe)
@@ -38,7 +42,7 @@ namespace GameScripts.Abilities
                 Vector3 back = -abilityRunner.TopLevelTransform.up;
                 direction = new Vector2(back.x, back.y);
             }
-            abilityRunner.MovementController.ApplyForce(direction, c.dashStrength);
+            controller.ApplyForce(direction, c.dashStrength);
             return false;
         }
     }

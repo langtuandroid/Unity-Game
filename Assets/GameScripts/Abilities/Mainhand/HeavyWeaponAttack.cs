@@ -179,7 +179,6 @@ namespace GameScripts.Abilities
         {
             if (targets.IsTarget(entity))
             {
-                Debug.Log(healthDamageReduction);
                 float health = (0.7f * weaponWielder.Mainhand.Sharpness + 0.3f * weaponWielder.Mainhand.Weight) * 
                     modifier * (1 - healthDamageReduction);
                 float posture = (0.3f * weaponWielder.Mainhand.Sharpness + 0.7f * weaponWielder.Mainhand.Weight) * 
