@@ -18,7 +18,7 @@ namespace LobsterFramework.AI
         [SerializeField] private EntityGroup targetGroup;
         [SerializeField] private AbilityRunner abilityRunner;
         [SerializeField] private StateMachine stateMachine;
-
+        [SerializeField] private AbilityRunner playerAbilityRunner;
         public Entity target;
         private Transform _transform;
         private Collider2D _collider;
@@ -31,7 +31,7 @@ namespace LobsterFramework.AI
 
 
         public AbilityRunner AbilityRunner { get { return abilityRunner; }}
-
+        public AbilityRunner PlayerAbilityRunner { get { return playerAbilityRunner; } }
         private void Awake()
         {
             gridGraph = AstarPath.active.data.gridGraph;
