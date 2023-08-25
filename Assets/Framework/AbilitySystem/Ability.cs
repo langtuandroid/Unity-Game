@@ -11,18 +11,18 @@ namespace LobsterFramework.AbilitySystem {
     /// <summary>
     /// struct used by ActionOverseer to process action queue
     /// </summary>
-    internal struct AbilityConfigPair
+    public struct AbilityConfigPair
     {
-        public string config;
+        public string configName;
         public Ability ability;
         public AbilityConfigPair(Ability ability, string config)
         {
             this.ability = ability;
-            this.config = config;
+            this.configName = config;
         }
 
         public bool HaltAbility() { 
-            return ability.HaltAbilityExecution(config);
+            return ability.HaltAbilityExecution(configName);
         }
     }
 

@@ -36,7 +36,7 @@ namespace LobsterFramework.AbilitySystem{
             foreach (int key in keys)
             {
                 AbilityConfigPair ap = abilityQueue[key];
-                if (!ap.ability.Execute(ap.config))
+                if (!ap.ability.Execute(ap.configName))
                 {
                     removed.Add(key);
                 }

@@ -38,7 +38,7 @@ namespace LobsterFramework.Editors
             EditorGUILayout.LabelField("Is Blocked", abilityRunner.ActionBlocked + "");
             if (abilityRunner.executing.Count > 0) {
                 foreach (AbilityConfigPair pair in abilityRunner.executing) {
-                    EditorGUILayout.LabelField(pair.ability.GetType().Name, pair.config);
+                    EditorGUILayout.LabelField(pair.ability.GetType().Name, pair.configName);
                 }
             }
 

@@ -191,6 +191,12 @@ namespace LobsterFramework.AbilitySystem {
             return default;
         }
 
+        public void GetRunningAbility(ref List<AbilityConfigPair> runningAbilities) {
+            foreach (AbilityConfigPair pair in executing) {
+                runningAbilities.Add(pair);
+            }
+        }
+
         /// <summary>
         /// Stops the execution of the action and returns the status of this operation
         /// </summary>
@@ -406,7 +412,7 @@ namespace LobsterFramework.AbilitySystem {
                 {
                     ac.HaltAbilities();
                 }
-                if (!ac.IsExecuting(ap.config))
+                if (!ac.IsExecuting(ap.configName))
                 {
                     removed.Add(ap);
                     if (jointlyRunning.ContainsKey(ap)) { 
@@ -418,7 +424,7 @@ namespace LobsterFramework.AbilitySystem {
             foreach (AbilityConfigPair ap in removed)
             {
                 executing.Remove(ap);
-                if (IsAnimating(ap.ability, ap.config)) { FinishAnimation(); }
+                if (IsAnimating(ap.ability, ap.configName)) { FinishAnimation(); }
             }
         }
 
