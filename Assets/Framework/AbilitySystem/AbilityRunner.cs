@@ -243,6 +243,20 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         /// <summary>
+        /// Check if the ability with specified config is running
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="configName"></param>
+        /// <returns></returns>
+        public bool IsAbilityRunning<T>(string configName="default") where T : Ability {
+            T ability = GetAbility<T>();
+            if (ability == null) {
+                return false;
+            }
+            return executing.Contains(new AbilityConfigPair(ability, configName));
+        }
+
+        /// <summary>
         /// Add an effector to block actions, actions will be blocked if there's at least 1 effector.
         /// An event will be sent to all subscribers on action blocked.
         /// </summary>
