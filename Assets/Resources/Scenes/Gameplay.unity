@@ -23469,8 +23469,16 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5353377617828249592, guid: 4816e38646558964d841661aa9ae451c, type: 3}
+      propertyPath: maxHealth.value
+      value: 150000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353377617828249592, guid: 4816e38646558964d841661aa9ae451c, type: 3}
       propertyPath: maxPosture.value
-      value: 100
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353377617828249592, guid: 4816e38646558964d841661aa9ae451c, type: 3}
+      propertyPath: startHealth.value
+      value: 150000
       objectReference: {fileID: 0}
     - target: {fileID: 5353377617828249592, guid: 4816e38646558964d841661aa9ae451c, type: 3}
       propertyPath: basePostureRegen.value
@@ -24681,7 +24689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4458722263269912701, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_Radius
@@ -24745,11 +24753,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9072161404192331858, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: data
@@ -30535,8 +30543,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 96449d68094c79b41b49c5882263ffe8, type: 2}
     - target: {fileID: 5353377617828249592, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
+      propertyPath: maxHealth.value
+      value: 150000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353377617828249592, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: maxPosture.value
-      value: 80
+      value: 800000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353377617828249592, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
+      propertyPath: startHealth.value
+      value: 150000
       objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_RootOrder

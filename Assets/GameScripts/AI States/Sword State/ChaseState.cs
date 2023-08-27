@@ -60,19 +60,28 @@ namespace GameScripts.AI.SwordEnemy
                 if (controller.TargetInRange(attackRange))
                 {
                     float attackType = UnityEngine.Random.Range(0f, 1f);
-                    if (playerAbilityRunner.IsAbilityReady<Boost>())
+                    float endureChance = UnityEngine.Random.Range(0f, 1f);
+                    if (endureChance > 0.7f - endureChanceIncrease) //if boost
                     {
-                        float endureChance = UnityEngine.Random.Range(0f, 1f);
-                        if (endureChance > 0.7f - endureChanceIncrease)
+                        endureChanceIncrease = 0;
+                        if (attackType > 0.4)
                         {
-                            endureChanceIncrease = 0;
-                            if (attackType > 0.4)
+                            if(!abilityRunner.EnqueueAbilitiesInJoint<LightWeaponAttack, Boost>())
                             {
-                                abilityRunner.EnqueueAbilitiesInJoint<LightWeaponAttack, Boost>();
+                                abilityRunner.EnqueueAbility<LightWeaponAttack>();
+                            }
+                        }
+                        else
+                        {
+                            if (abilityRunner.EnqueueAbilitiesInJoint<HeavyWeaponAttack, Boost>())
+                            {
+                                float randomChargeTime = UnityEngine.Random.Range(0f, 1f);
+                                maxChargeTime = Time.time;
+                                maxChargeTime += randomChargeTime * heavyAttackPipe.MaxChargeTime;
                             }
                             else
                             {
-                                abilityRunner.EnqueueAbilitiesInJoint<HeavyWeaponAttack, Boost>();
+                                abilityRunner.EnqueueAbility<HeavyWeaponAttack>();
                                 float randomChargeTime = UnityEngine.Random.Range(0f, 1f);
                                 maxChargeTime = Time.time;
                                 maxChargeTime += randomChargeTime * heavyAttackPipe.MaxChargeTime;
@@ -98,7 +107,7 @@ namespace GameScripts.AI.SwordEnemy
                 }
                 return typeof(ChaseState);
             }
-            return typeof(WanderState);
+            return typeof(ChaseState);
         }
 
         public Type GuardCheck()
@@ -111,7 +120,7 @@ namespace GameScripts.AI.SwordEnemy
                     if (GuardChance > 0.5)
                     {
                         abilityRunner.EnqueueAbility<Guard>();
-                        float randomGuardChargeTime = UnityEngine.Random.Range(0f, 0.5f);
+                        float randomGuardChargeTime = UnityEngine.Random.Range(0.5f, 1f);
                         maxGuardChargeTime = Time.time;
                         maxGuardChargeTime += randomGuardChargeTime;
                     }
@@ -125,7 +134,7 @@ namespace GameScripts.AI.SwordEnemy
                         abilityRunner.EnqueueAbility<Guard>();
                         abilityRunner.Signal<HeavyWeaponAttack>();
                         abilityRunner.Signal<LightWeaponAttack>();
-                        float randomGuardChargeTime = UnityEngine.Random.Range(0f, 0.5f);
+                        float randomGuardChargeTime = UnityEngine.Random.Range(0.5f, 1f);
                         maxGuardChargeTime = Time.time;
                         maxGuardChargeTime += randomGuardChargeTime;
                     }
@@ -155,10 +164,10 @@ namespace GameScripts.AI.SwordEnemy
                 {
                     abilityRunner.Signal<HeavyWeaponAttack>();
                 }
-                return null;
+                return typeof(ChaseState);
             }
             MeleeAttack();
-            return null;
+            return typeof(ChaseState);
         }
     }
 }   
