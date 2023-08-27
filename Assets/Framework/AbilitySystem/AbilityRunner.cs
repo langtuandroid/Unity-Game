@@ -62,9 +62,9 @@ namespace LobsterFramework.AbilitySystem {
         /// Note that this method should only be called inside Update(), calling it elsewhere will have unpredictable results.
         /// </summary>
         /// <typeparam name="T">Type of the Action to be enqueued</typeparam>
-        /// <param name="name">Name of the configuration to be enqueued</param>
+        /// <param name="configName">Name of the configuration to be enqueued</param>
         /// <returns></returns>
-        public bool EnqueueAbility<T>(string name) where T : Ability
+        public bool EnqueueAbility<T>(string configName="default") where T : Ability
         {
             if (ActionBlocked)
             {
@@ -75,26 +75,15 @@ namespace LobsterFramework.AbilitySystem {
             {
                 return false;
             }
-            if (action.EnqueueAbility(name))
-            { 
-                executing.Add(new AbilityConfigPair(action, name));
+            if (action.EnqueueAbility(configName))
+            {
+                executing.Add(new AbilityConfigPair(action, configName));
                 return true;
             }
             return false;
         }
 
-
-        /// <summary>
-        /// A shortcut for enqueuing the action with default config, see EnqueueAction&lt;T&gt;(string name) for more details 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public bool EnqueueAbility<T>() where T : Ability
-        {
-            return EnqueueAbility<T>("default");
-        }
-
-        public bool EnqueueAbility(Type abilityType, string configName) {
+        public bool EnqueueAbility(Type abilityType, string configName="default") {
             if (ActionBlocked)
             {
                 return false;
@@ -112,20 +101,16 @@ namespace LobsterFramework.AbilitySystem {
             return false;
         }
 
-        public bool EnqueueAbility(Type abilityType) {
-            return EnqueueAbility(abilityType, "default");
-        }
-
         /// <summary>
         /// Enqueue two abilities of different types together with the second one being guaranteed to <br/>
         /// terminate no later than the first one.
         /// </summary>
         /// <typeparam name="T"> The type of the first ability </typeparam>
         /// <typeparam name="V"> The type of the second ability </typeparam>
-        /// <param name="config1"> Configuration for the first ability </param>
-        /// <param name="config2"> Configuration for the second ability </param>
+        /// <param name="configName1"> Name of the configuration for the first ability </param>
+        /// <param name="configName2"> Name of the configuration for the second ability </param>
         /// <returns></returns>
-        public bool EnqueueAbilitiesInJoint<T, V>(string config1, string config2) 
+        public bool EnqueueAbilitiesInJoint<T, V>(string configName1="default", string configName2="default") 
             where T : Ability 
             where V : Ability
         {
@@ -137,28 +122,15 @@ namespace LobsterFramework.AbilitySystem {
                 return false; 
             }
 
-            if (a1.IsReady(config1) && a2.IsReady(config2)) {
-                EnqueueAbility<T>(config1);
-                EnqueueAbility<V>(config2);
-                AbilityConfigPair p1 = new AbilityConfigPair(a1, config1);
-                AbilityConfigPair p2 = new AbilityConfigPair(a2, config2);
+            if (a1.IsReady(configName1) && a2.IsReady(configName2)) {
+                EnqueueAbility<T>(configName1);
+                EnqueueAbility<V>(configName2);
+                AbilityConfigPair p1 = new AbilityConfigPair(a1, configName1);
+                AbilityConfigPair p2 = new AbilityConfigPair(a2, configName2);
                 jointlyRunning[p1] = p2;
                 return true;
             }
             return false;
-        }
-
-        /// <summary>
-        /// Shorthand for EnqueueAbilitiesInJoint&lt;T, V&gt;("default", "default")
-        /// </summary>
-        /// <typeparam name="T"> The type of the first ability </typeparam>
-        /// <typeparam name="V"> The type of the second ability </typeparam>
-        /// <returns></returns>
-        public bool EnqueueAbilitiesInJoint<T, V>()
-           where T : Ability
-           where V : Ability
-        {
-            return EnqueueAbilitiesInJoint<T, V>("default", "default");
         }
         #endregion
 

@@ -92,7 +92,13 @@ namespace GameScripts.InputControl
         {
             if (!gamePause.Value && context.started)
             {
-                abilityRunner.EnqueueAbility<LightWeaponAttack>();
+                if (abilityRunner.IsAbilityReady<Boost>())
+                {
+                    abilityRunner.EnqueueAbilitiesInJoint<LightWeaponAttack, Boost>();
+                }
+                else {
+                    abilityRunner.EnqueueAbility<LightWeaponAttack>();
+                }
             }
         }
 
@@ -102,7 +108,13 @@ namespace GameScripts.InputControl
             }
             if (context.started)
             {
-                abilityRunner.EnqueueAbility<HeavyWeaponAttack>();
+                if (abilityRunner.IsAbilityReady<Boost>())
+                {
+                    abilityRunner.EnqueueAbilitiesInJoint<HeavyWeaponAttack, Boost>();
+                }
+                else {
+                    abilityRunner.EnqueueAbility<HeavyWeaponAttack>();
+                }
             }
             else if (context.canceled) {
                 abilityRunner.Signal<HeavyWeaponAttack>();

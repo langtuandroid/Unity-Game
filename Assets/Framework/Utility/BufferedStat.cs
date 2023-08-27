@@ -20,7 +20,7 @@ namespace LobsterFramework.Utility.BufferedStats
         protected T baseValue;
         private T value;
 
-        public BufferedStat(T value) { baseValue = value; }
+        public BufferedStat(T baseValue) { this.baseValue = baseValue; }
 
         public T Stat { 
             get { return stats.Count == 0 ? baseValue : value; }
@@ -86,10 +86,10 @@ namespace LobsterFramework.Utility.BufferedStats
     {
         private bool addNonNegative;
         private bool nonNegative;
-        public FloatSum(int value, bool nonNegative=false, bool addNonNegative=true) : base(value)
+        public FloatSum(int value, bool nonNegative=false, bool addNegative=true) : base(value)
         {
             this.nonNegative = nonNegative;
-            this.addNonNegative = addNonNegative;
+            this.addNonNegative = addNegative;
         }
 
         public override bool Compatible(float obj)

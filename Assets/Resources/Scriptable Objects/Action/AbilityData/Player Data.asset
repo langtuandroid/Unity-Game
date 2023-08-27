@@ -18,6 +18,18 @@ MonoBehaviour:
   cooldown: 1
   isSuspended: 0
   dashStrength: 60
+--- !u!114 &-5972907977419224648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c30f390439f0447b9bcfacfb625b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-5011376488129006925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,19 +171,47 @@ MonoBehaviour:
   m_Name: Player Data
   m_EditorClassIdentifier: 
   stats:
-    keys: []
-    values: []
+    keys:
+    - GameScripts.Abilities.DamageModifier
+    values:
+    - {fileID: -5972907977419224648}
   allAbilities:
     keys:
     - GameScripts.Abilities.Dash
     - GameScripts.Abilities.Guard
     - GameScripts.Abilities.LightWeaponAttack
     - GameScripts.Abilities.HeavyWeaponAttack
+    - GameScripts.Abilities.Boost
     values:
     - {fileID: -2601072381371397144}
     - {fileID: 5091205749858718886}
     - {fileID: -1695875987046859044}
     - {fileID: 1962757808347332723}
+    - {fileID: 884986228528851409}
+--- !u!114 &884986228528851409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c60acad315015046b8038c2d776c6e6, type: 3}
+  m_Name: GameScripts.Abilities.Boost
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: 4853307204983726805}
 --- !u!114 &1962757808347332723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,6 +237,28 @@ MonoBehaviour:
     values:
     - {fileID: -4636324792933334831}
   targets: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
+--- !u!114 &4853307204983726805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: GameScripts.Abilities.Boost-default
+  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Boost/BoostConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 1
+  cooldown: 3
+  isSuspended: 0
+  damageModifier: 2
+  duration: 0
+  damageKey: 0
+  hyperArmorKey: 0
+  timeEnd: 0
 --- !u!114 &5091205749858718886
 MonoBehaviour:
   m_ObjectHideFlags: 0

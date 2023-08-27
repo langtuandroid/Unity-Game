@@ -9,6 +9,7 @@ using LobsterFramework;
 namespace GameScripts.Abilities
 {
     [AddAbilityMenu]
+    [RequireAbilityStats(typeof(DamageModifier))]
     [ComponentRequired(typeof(WeaponWielder))]
     public class HeavyWeaponAttack : AbilityCoroutine
     {
@@ -18,6 +19,7 @@ namespace GameScripts.Abilities
         private WeaponWielder weaponWielder;
         private Entity attacker;
         private MovementController moveControl;
+        private DamageModifier damageModifier;
 
         public class HeavyWeaponAttackConfig : AbilityCoroutineConfig {
             [HideInInspector] public bool animationSignaled;
@@ -36,14 +38,14 @@ namespace GameScripts.Abilities
             [HideInInspector]
             public HeavyWeaponAttack ability;
 
-            public void DealDamage(Entity entity) {
+            public void OnEntityHit(Entity entity) {
                 if (chargeTimer > chargeMaxTime) { 
                     chargeTimer = chargeMaxTime;
                 }
                 ability.DealDamage(entity, baseDamageModifier + maxChargeDamageIncrease *  (chargeTimer / chargeMaxTime));
             }
 
-            public void DealGuardedDamage(Weapon weapon) {
+            public void OnWeaponHit(Weapon weapon) {
                 if (chargeTimer > chargeMaxTime)
                 {
                     chargeTimer = chargeMaxTime;
@@ -69,7 +71,8 @@ namespace GameScripts.Abilities
             animator = abilityRunner.Animator;
             weaponWielder = abilityRunner.GetComponent<WeaponWielder>();
             attacker = weaponWielder.Wielder;
-            moveControl = attacker.GetComponent<MovementController>();
+            moveControl = abilityRunner.GetComponentInBoth<MovementController>();
+            damageModifier = abilityRunner.GetAbilityStat<DamageModifier>();
         }
 
         protected override bool ConditionSatisfied(AbilityConfig config)
@@ -164,15 +167,15 @@ namespace GameScripts.Abilities
         private void SubscribeWeaponEvent(HeavyWeaponAttackConfig config)
         {
             weaponWielder.Mainhand.Action();
-            weaponWielder.Mainhand.onEntityHit += config.DealDamage;
-            weaponWielder.Mainhand.onWeaponHit += config.DealGuardedDamage;
+            weaponWielder.Mainhand.onEntityHit += config.OnEntityHit;
+            weaponWielder.Mainhand.onWeaponHit += config.OnWeaponHit;
         }
 
         private void UnSubscribeWeaponEvent(HeavyWeaponAttackConfig config)
         {
             weaponWielder.Mainhand.Pause();
-            weaponWielder.Mainhand.onEntityHit -= config.DealDamage;
-            weaponWielder.Mainhand.onWeaponHit -= config.DealGuardedDamage;
+            weaponWielder.Mainhand.onEntityHit -= config.OnEntityHit;
+            weaponWielder.Mainhand.onWeaponHit -= config.OnWeaponHit;
         }
 
         private void DealDamage(Entity entity, float modifier, float healthDamageReduction=0, float postureDamageReduction=0)
@@ -183,7 +186,8 @@ namespace GameScripts.Abilities
                     modifier * (1 - healthDamageReduction);
                 float posture = (0.3f * weaponWielder.Mainhand.Sharpness + 0.7f * weaponWielder.Mainhand.Weight) * 
                     modifier * (1- postureDamageReduction);
-                entity.Damage(health, posture, attacker);
+                Damage damage = new() { health=health, posture=posture, source=attacker};
+                entity.Damage(damageModifier.ModifyDamage(damage));
                 MovementController moveControl = entity.GetComponent<MovementController>();
                 if (moveControl != null)
                 {

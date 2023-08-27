@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(menuName = "EventChannel/SceneEventChannel")]
-public class SceneEventChannel : DescriptionBaseSO
+namespace LobsterFramework
 {
-	public UnityAction<Scene> OnEventRaised;
-	public void RaiseEvent(Scene scene)
+	[CreateAssetMenu(menuName = "EventChannel/SceneEventChannel")]
+	public class SceneEventChannel : DescriptionBaseSO
 	{
-		OnEventRaised.Invoke(scene);
+		public UnityAction<Scene> OnEventRaised;
+		public void RaiseEvent(Scene scene)
+		{
+			OnEventRaised.Invoke(scene);
+		}
 	}
 }

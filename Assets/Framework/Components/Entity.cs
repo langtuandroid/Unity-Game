@@ -254,10 +254,21 @@ namespace LobsterFramework.EntitySystem
         /// <param name="type">The type of the damage</param>
         public void Damage(float health, float posture, Entity source = null, DamageType type = DamageType.General)
         {
-            Damage damage = new Damage() { health = health, posture = posture, source = source };
+            Damage damage = new Damage() { health = health, posture = posture, source = source, type = type};
             damageBuffer.AddDamage(damage);
             damageHistory.Add(new DamageTracker(damage));
             if (onDamaged != null) {
+                onDamaged.Invoke(damage);
+            }
+            damagedSince = Time.time;
+        }
+
+        public void Damage(Damage damage)
+        {
+            damageBuffer.AddDamage(damage);
+            damageHistory.Add(new DamageTracker(damage));
+            if (onDamaged != null)
+            {
                 onDamaged.Invoke(damage);
             }
             damagedSince = Time.time;
@@ -313,8 +324,6 @@ namespace LobsterFramework.EntitySystem
         public static Damage none = new() { health = 0, posture = 0, source = null, type = DamageType.General };
     };
 
-    
-    [System.Serializable]
     public struct DamageBuffer {
         private FloatSum healthDamage;
         private FloatSum postureDamage;
@@ -419,8 +428,6 @@ namespace LobsterFramework.EntitySystem
         #endregion
     }
 
-    
-    [System.Serializable]
     public struct RegenBuffer
     {
         private FloatSum healthRegen;

@@ -9,6 +9,7 @@ using static UnityEngine.EventSystems.EventTrigger;
 namespace GameScripts.Abilities
 {
     [AddAbilityMenu]
+    [RequireAbilityStats(typeof(DamageModifier))]
     [ComponentRequired(typeof(WeaponWielder))]
     public class LightWeaponAttack : AbilityCoroutine
     {
@@ -17,6 +18,7 @@ namespace GameScripts.Abilities
         private WeaponWielder weaponWielder;
         private Entity attacker;
         private MovementController moveControl;
+        private DamageModifier damageModifier;
 
         public class LightWeaponAttackConfig : AbilityCoroutineConfig {
             [HideInInspector]
@@ -35,6 +37,7 @@ namespace GameScripts.Abilities
             weaponWielder = abilityRunner.GetComponent<WeaponWielder>();
             attacker = weaponWielder.Wielder;
             moveControl = attacker.GetComponent<MovementController>();
+            damageModifier = abilityRunner.GetAbilityStat<DamageModifier>();
         }
 
         protected override bool ConditionSatisfied(AbilityConfig config)
@@ -50,41 +53,36 @@ namespace GameScripts.Abilities
 
         private void SubscribeWeaponEvent() {
             weaponWielder.Mainhand.Action();
-            weaponWielder.Mainhand.onEntityHit += DealDamage;
-            weaponWielder.Mainhand.onWeaponHit += DealGuardedDamage;
+            weaponWielder.Mainhand.onEntityHit += OnEntityHit;
+            weaponWielder.Mainhand.onWeaponHit += OnWeaponHit;
         }
 
         private void UnSubscribeWeaponEvent() {
             weaponWielder.Mainhand.Pause();
-            weaponWielder.Mainhand.onEntityHit -= DealDamage;
-            weaponWielder.Mainhand.onWeaponHit -= DealGuardedDamage;
+            weaponWielder.Mainhand.onEntityHit -= OnEntityHit;
+            weaponWielder.Mainhand.onWeaponHit -= OnWeaponHit;
         }
 
-        private void DealDamage(Entity entity) {
+        private void OnEntityHit(Entity entity)
+        {
+            DealDamage(entity);
+        }
+
+        private void OnWeaponHit(Weapon weapon)
+        {
+            DealDamage(weapon.Entity, weapon.HealthDamageReduction, weapon.PostureDamageReduction);
+        }
+
+        private void DealDamage(Entity entity, float hdReduction=0, float pdReduction=0) {
             if (targets.IsTarget(entity)) {
                 float health = 0.7f * weaponWielder.Mainhand.Sharpness + 0.3f * weaponWielder.Mainhand.Weight;
                 float posture = 0.3f * weaponWielder.Mainhand.Sharpness + 0.7f * weaponWielder.Mainhand.Weight;
-                entity.Damage(health, posture, attacker);
+                health *= (1 - hdReduction);
+                posture *= (1 - pdReduction);
+                Damage damage = new() { health = health, posture = posture, source = attacker };
+                entity.Damage(damageModifier.ModifyDamage(damage));
                 MovementController moveControl = entity.GetComponent<MovementController>();
                 if(moveControl != null)
-                {
-                    moveControl.ApplyForce(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight);
-                }
-            }
-        }
-
-        public void DealGuardedDamage(Weapon weapon)
-        {
-            if (targets.IsTarget(weapon.Entity))
-            { 
-                float health = 0.7f * weapon.Sharpness + 0.3f * weapon.Weight;
-                float posture = 0.3f * weapon.Sharpness + 0.7f * weapon.Weight;
-                float hp = (1 - weapon.HealthDamageReduction);
-                float pp = (1 - weapon.PostureDamageReduction);
-                Entity entity = weapon.Entity;
-                entity.Damage(health * hp, posture * pp, attacker);
-                MovementController moveControl = entity.GetComponent<MovementController>();
-                if (moveControl != null)
                 {
                     moveControl.ApplyForce(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight);
                 }
