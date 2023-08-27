@@ -20,6 +20,7 @@ namespace LobsterFramework.AbilitySystem {
         // Callbacks
         public UnityAction<bool> onActionBlocked;
         public UnityAction<bool> onHyperArmored;
+        public UnityAction<Type> onAbilityEnqueued;
 
         // Execution Info
         internal HashSet<AbilityConfigPair> executing = new();
@@ -82,6 +83,9 @@ namespace LobsterFramework.AbilitySystem {
             if (action.EnqueueAbility(configName))
             {
                 executing.Add(new AbilityConfigPair(action, configName));
+                if (onAbilityEnqueued != null) {
+                    onAbilityEnqueued.Invoke(typeof(T));
+                }
                 return true;
             }
             return false;
@@ -100,6 +104,9 @@ namespace LobsterFramework.AbilitySystem {
             if (action.EnqueueAbility(configName))
             {
                 executing.Add(new AbilityConfigPair(action, configName));
+                if (onAbilityEnqueued != null) {
+                    onAbilityEnqueued.Invoke(abilityType);
+                }
                 return true;
             }
             return false;
