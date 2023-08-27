@@ -8,7 +8,7 @@ namespace LobsterFramework.AbilitySystem
     {
         public void Reset()
         {
-            CleanUp();
+            OnClose();
             Initialize();
         }
 
@@ -20,7 +20,7 @@ namespace LobsterFramework.AbilitySystem
         /// <summary>
         /// Callback before the parent operator is disabled
         /// </summary>
-        public virtual void CleanUp() { }
+        public virtual void OnClose() { }
 
         /// <summary>
         /// Callback to update internal data on each frame

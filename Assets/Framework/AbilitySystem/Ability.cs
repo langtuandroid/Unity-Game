@@ -268,7 +268,7 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         // Called when the parent object is destroyed, this 
-        public void OnTermination()
+        public void OnClose()
         {
             CleanUp();
             foreach (AbilityConfig config in configs.Values)

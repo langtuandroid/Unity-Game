@@ -6,6 +6,7 @@ using UnityEngine.Events;
 using UnityEditor;
 using LobsterFramework.Utility;
 using LobsterFramework.Utility.BufferedStats;
+using LobsterFramework.EntitySystem;
 
 namespace LobsterFramework.AbilitySystem {
     /// <summary>
@@ -14,7 +15,7 @@ namespace LobsterFramework.AbilitySystem {
     /// Requires actionable data to be supplied. 
     /// </summary>
     [AddComponentMenu("AbilityRunner")]
-    public class AbilityRunner : FlexibleComponent
+    public class AbilityRunner : SubLevelComponent
     {
         // Callbacks
         public UnityAction<bool> onActionBlocked;
@@ -40,7 +41,11 @@ namespace LobsterFramework.AbilitySystem {
         private BaseOr actionBlocked = new(false);
         private BaseOr hyperArmored = new(false);
         private bool initialized = false;
-        
+
+        // Entity
+        private Entity entity;
+        private int postureBrokenKey;
+
         public bool ActionBlocked {
             get { return actionBlocked.Stat && !HyperArmored; }
         }
@@ -194,7 +199,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <typeparam name="T">Type of the Ability to be queried</typeparam>
         /// <param name="config">Name of the config to be queried</param>
         /// <returns>The result of the query</returns>
-        public bool IsAbilityReady<T>(string config) where T : Ability
+        public bool IsAbilityReady<T>(string config="default") where T : Ability
         {
             string type = typeof(T).ToString();
             if (availableAbilities.ContainsKey(type))
@@ -205,21 +210,11 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         /// <summary>
-        /// A shortcut for IsInstanceReady&lt;T&gt;("default").
-        /// </summary>
-        /// <typeparam name="T">Type of the Ability to be queried</typeparam>
-        /// <returns> The result of the query </returns>
-        public bool IsAbilityReady<T>() where T : Ability
-        {
-            return IsAbilityReady<T>("default");
-        }
-
-        /// <summary>
         /// Check if the ability with specified config is running
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="configName"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">The type of the ability being queried</typeparam>
+        /// <param name="configName">The name of the config being queried</param>
+        /// <returns> true if the ability exists and is running, otherwise false </returns>
         public bool IsAbilityRunning<T>(string configName="default") where T : Ability {
             T ability = GetAbility<T>();
             if (ability == null) {
@@ -358,13 +353,20 @@ namespace LobsterFramework.AbilitySystem {
             foreach (AbilityConfigPair pair in executing) {
                 pair.HaltAbility();
             }
-            abilityData.Terminate();
+            abilityData.Close();
+            if (entity != null)
+            {
+                entity.onPostureStatusChange -= OnPostureStatusChange;
+            }
         }
 
         private void OnEnable()
         {
             if (!initialized) { return; }
-            abilityData.Initialize(this);
+            abilityData.Open(this);
+            if (entity != null) {
+                entity.onPostureStatusChange += OnPostureStatusChange;
+            }
         }
 
         /// <summary>
@@ -382,10 +384,11 @@ namespace LobsterFramework.AbilitySystem {
 
             // stats need to be set before Initializing abilities since Abilities that requires fetching AbilityStats can only get it through AbilityRunner
             stats = abilityData.stats;
-            abilityData.Initialize(this);
+            abilityData.Open(this);
 
             // availableAbilities is only determined after running through the initialization check of AbilityData
             availableAbilities = abilityData.availableAbilities;
+            entity = GetComponentInBoth<Entity>();
         }
         private void Update()
         {
@@ -411,6 +414,16 @@ namespace LobsterFramework.AbilitySystem {
             {
                 executing.Remove(ap);
                 if (IsAnimating(ap.ability, ap.configName)) { FinishAnimation(); }
+            }
+        }
+
+        private void OnPostureStatusChange(bool postureBroken) {
+            if (postureBroken)
+            {
+                postureBrokenKey = BlockAction();
+            }
+            else {
+                UnblockAction(postureBrokenKey);
             }
         }
 

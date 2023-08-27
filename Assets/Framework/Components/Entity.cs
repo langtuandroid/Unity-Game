@@ -49,14 +49,14 @@ namespace LobsterFramework.EntitySystem
         }
 
         public UnityAction<Damage> onDamaged;
+        public UnityAction<bool> onPostureStatusChange;
 
-        private int posture_b_moveKey;
-        private int posture_b_damageKey;
+        private int pbMoveBlockKey;
+        private int pbHealthDamageModifierKey;
 
         public bool IsDead { get; private set; }
         public bool PostureBroken { get; private set; }
-
-        private float postureBroken_counter;
+        private float pbCounter;
         #endregion
 
         #region StatusFields
@@ -84,9 +84,7 @@ namespace LobsterFramework.EntitySystem
         
         #region StatusUpdate
         private void Start()
-        {
-            
-
+        { 
             Health = startHealth.Value;
             gameObject.tag = GameManager.Instance.TAG_ENTITY;
             IsDead = false;
@@ -110,8 +108,8 @@ namespace LobsterFramework.EntitySystem
             if (!PostureBroken && Posture <= 0) { PostureBreak(); }
 
             if (PostureBroken) {
-                postureBroken_counter += Time.deltaTime;
-                if (postureBroken_counter >= GameManager.Instance.POSTURE_BROKEN_DURATION) { 
+                pbCounter += Time.deltaTime;
+                if (pbCounter >= GameManager.Instance.POSTURE_BROKEN_DURATION) { 
                     PostureRecover();
                 }
             }
@@ -184,25 +182,32 @@ namespace LobsterFramework.EntitySystem
         }
 
         private void PostureBreak() {
-            if(moveControl != null)
+            if (moveControl != null)
             {
-                posture_b_moveKey = moveControl.BlockMovement();
+                pbMoveBlockKey = moveControl.BlockMovement();
             }
-           
-            posture_b_damageKey = damageBuffer.AddHealthModifier(GameManager.Instance.POSTURE_BROKEN_DAMAGE_MODIFIER);
-            postureBroken_counter = 0;
+
+            pbHealthDamageModifierKey = damageBuffer.AddHealthModifier(GameManager.Instance.POSTURE_BROKEN_DAMAGE_MODIFIER);
+            pbCounter = 0;
             PostureBroken = true;
+            if (onPostureStatusChange != null) { 
+                onPostureStatusChange.Invoke(true);
+            }
         }
 
         private void PostureRecover() {
             if(moveControl != null)
             {
-                moveControl.UnblockMovement(posture_b_moveKey);
+                moveControl.UnblockMovement(pbMoveBlockKey);
             }
             
-            damageBuffer.RemoveHealthModifier(posture_b_damageKey);
+            damageBuffer.RemoveHealthModifier(pbHealthDamageModifierKey);
             Posture = 0.7f * MaxPosture;
             PostureBroken = false;
+            if (onPostureStatusChange != null)
+            {
+                onPostureStatusChange.Invoke(false);
+            }
         }
 
         private void OnDisable()

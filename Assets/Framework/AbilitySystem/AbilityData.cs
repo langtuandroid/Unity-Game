@@ -18,7 +18,7 @@ namespace LobsterFramework.AbilitySystem
         /// Initialize the data containers, called by AbilityRunner on Start to initialize the Abilities.
         /// </summary>
         /// <param name="abilityRunner">The component that operates on this data</param>
-        internal void Initialize(AbilityRunner abilityRunner)
+        internal void Open(AbilityRunner abilityRunner)
         {
             availableAbilities.Clear();
             GameObject topLevel = default;
@@ -48,15 +48,15 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
-        internal void Terminate() {
+        internal void Close() {
             foreach (Ability ai in availableAbilities.Values)
             {
-                ai.OnTermination();
+                ai.OnClose();
             }
 
             foreach (AbilityStat cmp in stats.Values)
             {
-                cmp.CleanUp();
+                cmp.OnClose();
             }
         }
 

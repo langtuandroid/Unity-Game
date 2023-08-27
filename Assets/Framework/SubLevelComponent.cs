@@ -4,7 +4,10 @@ using UnityEngine;
 
 namespace LobsterFramework
 {
-    public class FlexibleComponent : MonoBehaviour
+    /// <summary>
+    /// Child object's components may inherit this to get access to the parent object 
+    /// </summary>
+    public class SubLevelComponent : MonoBehaviour
     {
         [SerializeField] private Transform topLevelTransform;
 
