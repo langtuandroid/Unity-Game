@@ -30514,10 +30514,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2878624368540976578, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
+      propertyPath: playerAbilityRunner
+      value: 
+      objectReference: {fileID: 255199789}
     - target: {fileID: 3549211335366594172, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3549211335366594172, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
+      propertyPath: initialState
+      value: 
+      objectReference: {fileID: 11400000, guid: 96449d68094c79b41b49c5882263ffe8, type: 2}
+    - target: {fileID: 3549211335366594172, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
+      propertyPath: allStates.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7ef969ccc237c194793b07eecde5d344, type: 2}
+    - target: {fileID: 3549211335366594172, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
+      propertyPath: allStates.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 96449d68094c79b41b49c5882263ffe8, type: 2}
     - target: {fileID: 5353377617828249592, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: maxPosture.value
       value: 80
