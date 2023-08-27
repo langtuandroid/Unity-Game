@@ -118,7 +118,7 @@ namespace GameScripts.Abilities
         protected override void OnAnimationInterrupt(AbilityConfig config)
         {
             animationInterrupted = true;
-            HaltAbilities();
+            HaltOnAllConfigs();
         }
 
         protected override void OnCoroutineReset(AbilityCoroutineConfig config)

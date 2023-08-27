@@ -40,7 +40,6 @@ namespace LobsterFramework.AbilitySystem {
         // Status
         private BaseOr actionBlocked = new(false);
         private BaseOr hyperArmored = new(false);
-        private bool initialized = false;
 
         // Entity
         private Entity entity;
@@ -180,16 +179,38 @@ namespace LobsterFramework.AbilitySystem {
         /// <typeparam name="T">Type of the action to be halted</typeparam>
         /// <param name="name">Name of the config of T to be halted</param>
         /// <returns>Return the status of this operation</returns>
-        public bool HaltAbility<T>(string name) where T : Ability
+        public bool HaltAbility<T>(string name="default") where T : Ability
         {
             Ability ac = GetAbility<T>();
             AbilityConfigPair pair = new(ac, name);
             if (executing.Contains(pair))
             {
-                ac.HaltAbilityExecution(name);
-                return true;
+                return ac.HaltAbilityExecution(name);
             }
             return false;
+        }
+
+        /// <summary>
+        /// Stop the execution of the specified ability on all of its configs
+        /// </summary>
+        /// <typeparam name="T">The type of the ability to be stopped</typeparam>
+        /// <returns>true if the ability exists, otherwise false</returns>
+        public bool HaltAbilityComplete<T>() where T:Ability { 
+            Ability ability = GetAbility<T>();
+            if (ability == null) {
+                return false;
+            }
+            ability.HaltOnAllConfigs();
+            return true;
+        }
+
+        /// <summary>
+        /// Stops execution of all active abilities
+        /// </summary>
+        public void HaltAbilities() {
+            foreach (Ability ability in availableAbilities.Values) {
+                ability.HaltOnAllConfigs();
+            }
         }
 
         /// <summary>
@@ -232,9 +253,12 @@ namespace LobsterFramework.AbilitySystem {
         {
             bool before = ActionBlocked;
             int id = actionBlocked.AddEffector(true);
-            if (onActionBlocked != null && before != ActionBlocked)
-            {
-                onActionBlocked.Invoke(true);
+            if (before != ActionBlocked) {
+                HaltAbilities();
+                if (onActionBlocked != null)
+                {
+                    onActionBlocked.Invoke(true);
+                }
             }
             return id;
         }
@@ -242,7 +266,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <summary>
         /// Remvoe the specified effector that blocks the action if it exists.
         /// An event will be sent to subscribers on action unblocked.
-        /// </summary>
+        /// </summary> 
         /// <param name="id">The id of the effector to be removed</param>
         /// <returns>On successfully removal return true, otherwise false</returns>
         public bool UnblockAction(int id) {
@@ -294,7 +318,7 @@ namespace LobsterFramework.AbilitySystem {
         /// Reset the status of all abilities and their configs to their initial state
         /// </summary>
 
-        public void Reset()
+        public void ResetStatus()
         {
             if (stats == null || availableAbilities == null) {
                 return;
@@ -362,8 +386,13 @@ namespace LobsterFramework.AbilitySystem {
 
         private void OnEnable()
         {
-            if (!initialized) { return; }
             abilityData.Open(this);
+            actionBlocked.ClearEffectors();
+            hyperArmored.ClearEffectors();
+            
+            // availableAbilities is only determined after running through the initialization check of AbilityData
+            availableAbilities = abilityData.availableAbilities;
+
             if (entity != null) {
                 entity.onPostureStatusChange += OnPostureStatusChange;
             }
@@ -384,10 +413,7 @@ namespace LobsterFramework.AbilitySystem {
 
             // stats need to be set before Initializing abilities since Abilities that requires fetching AbilityStats can only get it through AbilityRunner
             stats = abilityData.stats;
-            abilityData.Open(this);
-
-            // availableAbilities is only determined after running through the initialization check of AbilityData
-            availableAbilities = abilityData.availableAbilities;
+            
             entity = GetComponentInBoth<Entity>();
         }
         private void Update()
@@ -399,7 +425,7 @@ namespace LobsterFramework.AbilitySystem {
                 Ability ac = ap.ability;
                 if (ActionBlocked)
                 {
-                    ac.HaltAbilities();
+                    ac.HaltOnAllConfigs();
                 }
                 if (!ac.IsExecuting(ap.configName))
                 {

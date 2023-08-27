@@ -187,7 +187,7 @@ namespace LobsterFramework.AbilitySystem {
         /// Suspend the execution of provided action and force it to finish at the current frame
         /// </summary>
         /// <param name="name"> Name of the configuration to terminate </param>
-        /// <returns> The status of this operation </returns>
+        /// <returns> true if the config exists and is halted, otherwise false </returns>
         public bool HaltAbilityExecution(string name)
         {
             if (!configs.ContainsKey(name))
@@ -197,7 +197,7 @@ namespace LobsterFramework.AbilitySystem {
             AbilityConfig config = configs[name];
             if (config.accessKey == -1)
             {
-                return false;
+                return true;
             }
             ActionOverseer.RemoveAction(config.accessKey);
             config.accessKey = -1;
@@ -211,7 +211,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <summary>
         /// Halt the execution of all configs
         /// </summary>
-        public void HaltAbilities()
+        public void HaltOnAllConfigs()
         {
             foreach (string name in configs.Keys)
             {

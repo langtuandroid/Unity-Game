@@ -159,9 +159,13 @@ namespace LobsterFramework.EntitySystem
         /// <summary>
         /// Reset the entity to its full health and posture and clear all of the damage and effects
         /// </summary>
-        public void Reset()
+        public void ResetStatus()
         {
             damageBuffer.Reset();
+            if (PostureBroken)
+            {
+                PostureRecover();
+            }
             Health = startHealth.Value;
             Posture = MaxPosture;
 

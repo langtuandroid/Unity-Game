@@ -205,7 +205,7 @@ namespace GameScripts.Abilities
 
         protected override void OnAnimationInterrupt(AbilityConfig config)
         {
-            HaltAbilities();
+            HaltOnAllConfigs();
         }
 
 

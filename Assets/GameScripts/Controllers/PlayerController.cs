@@ -84,8 +84,7 @@ namespace GameScripts.InputControl
 
         private void RespawnPlayer()
         {
-            player.Reset();
-            abilityRunner.Reset();
+            player.ResetStatus();
         }
 
         public void WeaponLightAttack(InputAction.CallbackContext context)
