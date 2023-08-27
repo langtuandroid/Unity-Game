@@ -23,5 +23,11 @@ namespace LobsterFramework.Utility {
             }
             return entity;
         }
+
+        public static void CrossFade(Animator animator, string animation, float transitionDuration, float normalizedTime) {
+            AnimatorStateInfo info = animator.GetCurrentAnimatorStateInfo(0);
+            animator.Play(info.fullPathHash, 0, info.normalizedTime);
+            animator.CrossFadeInFixedTime(animation, transitionDuration, 0, normalizedTime);
+        }
     }
 }

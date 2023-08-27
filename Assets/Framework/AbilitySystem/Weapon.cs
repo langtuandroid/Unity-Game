@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.Utility;
+using static Codice.Client.Common.Connection.AskCredentialsToUser;
 
 namespace LobsterFramework.AbilitySystem
 {
@@ -53,9 +54,10 @@ namespace LobsterFramework.AbilitySystem
         internal WeaponWielder weaponWielder;
 
         public UnityAction<Entity> onEntityHit;
-        public UnityAction<Weapon> onWeaponHit;
+        public UnityAction<Weapon, Vector3> onWeaponHit;
 
-        new private Collider2D collider;
+        private Collider2D thisCollider;
+        new private Transform transform;
 
         public string Name { get { return weaponName; } }
         public WeaponType WeaponType { get { return weaponType; } }
@@ -93,10 +95,11 @@ namespace LobsterFramework.AbilitySystem
 
         public WeaponState state { get; set; }
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
-            collider = GetComponent<Collider2D>();
-            collider.enabled = false;
+            thisCollider = GetComponent<Collider2D>();
+            thisCollider.enabled = false;
+            transform = GetComponent<Transform>();
             momentumMultiplier = 1;
             oppressingForce = 0;
             state = WeaponState.Idle;
@@ -109,23 +112,29 @@ namespace LobsterFramework.AbilitySystem
         /// </summary>
         /// <param name="state">The weapon state to set the weapon to be</param>
         public void Action(WeaponState state = WeaponState.Attacking) {
-            collider.enabled = true;
+            thisCollider.enabled = true;
             this.state = state;
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void OnTriggerEnter2D(Collider2D collider)
         {
-            Entity entity = collision.GetComponent<Entity>();
+            if (state == WeaponState.Guarding) {
+                return;
+            }
+            // Debug.Log("Hit");
+            Entity entity = collider.GetComponent<Entity>();
             if (entity != null && !hitted.Contains(entity)) {
                 newHit.Add(entity);
                 hitted.Add(entity);
                 return;
             }
 
-            Weapon weapon = collision.GetComponent<Weapon>();
+            Weapon weapon = collider.GetComponent<Weapon>();
+            
             if(weapon != null && weapon.state == WeaponState.Guarding && onWeaponHit != null && (!hitted.Contains(weapon.Entity) || newHit.Contains(weapon.Entity)))
             {
-                onWeaponHit.Invoke(weapon);
+                Vector2 point = Physics2D.ClosestPoint(transform.position, collider);
+                onWeaponHit.Invoke(weapon, point);
                 if (newHit.Contains(weapon.Entity))
                 {
                     newHit.Remove(weapon.Entity);
@@ -166,7 +175,7 @@ namespace LobsterFramework.AbilitySystem
         /// Disable the weapon collider and reset momentum
         /// </summary>
         public void Pause() { 
-            collider.enabled=false;
+            thisCollider.enabled=false;
             momentumMultiplier = 1;
             state = WeaponState.Idle;
             hitted.Clear();

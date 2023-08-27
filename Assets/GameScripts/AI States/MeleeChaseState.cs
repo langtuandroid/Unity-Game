@@ -25,7 +25,6 @@ namespace GameScripts.AI
 
         public override void OnEnter()
         {
-            Debug.Log("Chase");
             controller.ChaseTarget();
         }
 

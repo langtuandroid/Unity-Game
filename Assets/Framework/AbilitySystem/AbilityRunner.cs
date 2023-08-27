@@ -444,6 +444,7 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         public Animator Animator { get { return animator; } }
+        private string currentAnimation;
 
         /// <summary>
         /// Used by abilities to initiate animations, will override any currently running animations by other abilities
@@ -460,12 +461,13 @@ namespace LobsterFramework.AbilitySystem {
             if (!ability.HasConfig(configName)) {
                 return;
             }
+            currentAnimation = animation;
             if (animating != default) {
                 animating.Item1.InterruptAnimation(animating.Item2);
             }
             animator.speed = speed;
             animating = (ability, configName);
-            animator.CrossFade(animation, 0.1f, -1, 0.1f);
+            GameUtility.CrossFade(animator, animation, 0.3f, 0);
         }
 
         /// <summary>
@@ -498,14 +500,19 @@ namespace LobsterFramework.AbilitySystem {
         /// <summary>
         /// Used by animation events to send signals
         /// </summary>
-        public void AnimationSignal() { 
+        public void AnimationSignal(AnimationEvent animationEvent) { 
             if(animating == default) { return; }
-            animating.Item1.Signal(animating.Item2, true);
+            if (animationEvent.animatorStateInfo.IsName(currentAnimation)) {
+                animating.Item1.Signal(animating.Item2, true);
+            }
         }
 
-        public void AnimationEnd() {
+        public void AnimationEnd(AnimationEvent animationEvent) {
             if (animating == default) { return; }
-            animating.Item1.HaltAbilityExecution(animating.Item2);
+            if (animationEvent.animatorStateInfo.IsName(currentAnimation))
+            {
+                animating.Item1.HaltAbilityExecution(animating.Item2);
+            }
         }
     }
 

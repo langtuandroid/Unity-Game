@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LobsterFramework.EntitySystem;
+using LobsterFramework.Utility;
 
 namespace LobsterFramework.AbilitySystem
 {
@@ -159,7 +160,7 @@ namespace LobsterFramework.AbilitySystem
             {
                 animator.speed = 1;
                 if (abilityRunner != null && !abilityRunner.IsAnimating()) {
-                    animator.CrossFade(Mainhand.Name + "_move", 0.1f, -1, 0.1f);
+                    GameUtility.CrossFade(animator, Mainhand.Name + "_move", 0.3f, 0.3f);
                 }
             }
         }

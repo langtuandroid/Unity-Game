@@ -84,6 +84,7 @@ MonoBehaviour:
     value: 0.35
     useSharedValue: 0
     sharedValue: {fileID: 0}
+  clashSparkTag: {fileID: 11400000, guid: b93850f361ea97e40a35c219b934d9fb, type: 2}
   m_key: -1
   r_key: -1
   chargeTimer: 0
@@ -158,6 +159,7 @@ MonoBehaviour:
     values:
     - {fileID: -3033120727020129541}
   targets: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
+  clashSparkTag: {fileID: 11400000, guid: b93850f361ea97e40a35c219b934d9fb, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +258,7 @@ MonoBehaviour:
   isSuspended: 0
   damageModifier: 2
   duration: 0
+  vfxTag: {fileID: 11400000, guid: 408bedc1d876c6d4cbe310c9795a3300, type: 2}
   damageKey: 0
   hyperArmorKey: 0
   timeEnd: 0

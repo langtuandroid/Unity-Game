@@ -3,6 +3,7 @@ using LobsterFramework.AbilitySystem;
 using System.Collections;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.Utility;
+using LobsterFramework.Pool;
 using System.Collections.Generic;
 using LobsterFramework;
 
@@ -14,6 +15,7 @@ namespace GameScripts.Abilities
     public class HeavyWeaponAttack : AbilityCoroutine
     {
         [SerializeField] private TargetSetting targets;
+        
 
         private Animator animator;
         private WeaponWielder weaponWielder;
@@ -27,6 +29,7 @@ namespace GameScripts.Abilities
             public RefFloat baseDamageModifier;
             public RefFloat maxChargeDamageIncrease;
             public RefFloat chargeMaxTime;
+            public VarString clashSparkTag;
 
             [HideInInspector]
             public int m_key = -1;
@@ -45,11 +48,15 @@ namespace GameScripts.Abilities
                 ability.DealDamage(entity, baseDamageModifier + maxChargeDamageIncrease *  (chargeTimer / chargeMaxTime));
             }
 
-            public void OnWeaponHit(Weapon weapon) {
+            public void OnWeaponHit(Weapon weapon, Vector3 contactPoint) {
                 if (chargeTimer > chargeMaxTime)
                 {
                     chargeTimer = chargeMaxTime;
                 }
+                if (clashSparkTag != null) {
+                    ObjectPool.Instance.GetObject(clashSparkTag.Value, contactPoint, Quaternion.identity);
+                }
+
                 ability.DealDamage(weapon.Entity, baseDamageModifier + maxChargeDamageIncrease * (chargeTimer / chargeMaxTime), 
                     weapon.HealthDamageReduction, weapon.PostureDamageReduction);
             }

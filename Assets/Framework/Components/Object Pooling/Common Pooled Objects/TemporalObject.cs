@@ -33,5 +33,10 @@ namespace LobsterFramework.Pool
         {
             gameObject.SetActive(false);
         }
+
+        public void OnEnable()
+        {
+            counter = 0;
+        }
     }
 }

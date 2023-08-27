@@ -1,10 +1,10 @@
 using LobsterFramework;
 using LobsterFramework.AbilitySystem;
 using LobsterFramework.EntitySystem;
+using LobsterFramework.Pool;
 using LobsterFramework.Utility;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.EventSystems.EventTrigger;
 
 namespace GameScripts.Abilities
 {
@@ -14,7 +14,7 @@ namespace GameScripts.Abilities
     public class LightWeaponAttack : AbilityCoroutine
     {
         [SerializeField] private TargetSetting targets;
-        
+        [SerializeField] private VarString clashSparkTag;
         private WeaponWielder weaponWielder;
         private Entity attacker;
         private MovementController moveControl;
@@ -23,11 +23,11 @@ namespace GameScripts.Abilities
         public class LightWeaponAttackConfig : AbilityCoroutineConfig {
             [HideInInspector]
             public bool signaled;
-
             [HideInInspector]
             public int m_key;
             [HideInInspector]
             public int r_key;
+            
         }
 
         public class LightWeaponAttackPipe : AbilityPipe { }
@@ -68,8 +68,11 @@ namespace GameScripts.Abilities
             DealDamage(entity);
         }
 
-        private void OnWeaponHit(Weapon weapon)
+        private void OnWeaponHit(Weapon weapon, Vector3 contactPoint)
         {
+            if (clashSparkTag != null) {
+                ObjectPool.Instance.GetObject(clashSparkTag.Value, contactPoint, Quaternion.identity);
+            }
             DealDamage(weapon.Entity, weapon.HealthDamageReduction, weapon.PostureDamageReduction);
         }
 
