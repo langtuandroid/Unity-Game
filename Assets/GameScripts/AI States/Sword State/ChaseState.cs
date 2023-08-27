@@ -60,40 +60,40 @@ namespace GameScripts.AI.SwordEnemy
                 if (controller.TargetInRange(attackRange))
                 {
                     float attackType = UnityEngine.Random.Range(0f, 1f);
-                    /*                    if (playerAbilityRunner.IsAbilityReady<Endure>())
-                                        {
-                                            float endureChance = UnityEngine.Random.Range(0f, 1f);
-                                            if (endureChance > 0.7f - endureChanceIncrease)
-                                            {
-                                                endureChanceIncrease = 0;
-                                                if (attackType > 0.4)
-                                                {
-                                                    abilityRunner.EnqueueAbilitiesInJoint<LightWeaponAttack,Endure >();
-                                                }
-                                                else
-                                                {
-                                                    abilityRunner.EnqueueAbilitiesInJoint<HeavyWeaponAttack,Endure>();
-                                                    float randomChargeTime = UnityEngine.Random.Range(0f, 1f);
-                                                    maxChargeTime = Time.time;
-                                                    maxChargeTime += randomChargeTime * heavyAttackPipe.MaxChargeTime;
-                                                }
-                                            }
-                                        }
-                                        else
-                                        {
-                                            endureChanceIncrease += 0.2f;*/
-                    if (attackType > 0.4)
+                    if (playerAbilityRunner.IsAbilityReady<Boost>())
                     {
-                        abilityRunner.EnqueueAbility<LightWeaponAttack>();
+                        float endureChance = UnityEngine.Random.Range(0f, 1f);
+                        if (endureChance > 0.7f - endureChanceIncrease)
+                        {
+                            endureChanceIncrease = 0;
+                            if (attackType > 0.4)
+                            {
+                                abilityRunner.EnqueueAbilitiesInJoint<LightWeaponAttack, Boost>();
+                            }
+                            else
+                            {
+                                abilityRunner.EnqueueAbilitiesInJoint<HeavyWeaponAttack, Boost>();
+                                float randomChargeTime = UnityEngine.Random.Range(0f, 1f);
+                                maxChargeTime = Time.time;
+                                maxChargeTime += randomChargeTime * heavyAttackPipe.MaxChargeTime;
+                            }
+                        }
                     }
                     else
                     {
-                        abilityRunner.EnqueueAbility<HeavyWeaponAttack>();
-                        float randomChargeTime = UnityEngine.Random.Range(0f, 1f);
-                        maxChargeTime = Time.time;
-                        maxChargeTime += randomChargeTime * heavyAttackPipe.MaxChargeTime;
+                        endureChanceIncrease += 0.2f;
+                        if (attackType > 0.4)
+                        {
+                            abilityRunner.EnqueueAbility<LightWeaponAttack>();
+                        }
+                        else
+                        {
+                            abilityRunner.EnqueueAbility<HeavyWeaponAttack>();
+                            float randomChargeTime = UnityEngine.Random.Range(0f, 1f);
+                            maxChargeTime = Time.time;
+                            maxChargeTime += randomChargeTime * heavyAttackPipe.MaxChargeTime;
+                        }
                     }
-                    // }
 
                 }
                 return typeof(ChaseState);
