@@ -4,6 +4,7 @@ using LobsterFramework.AbilitySystem;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.AI;
 using GameScripts.Abilities;
+using static UnityEngine.EventSystems.EventTrigger;
 
 namespace GameScripts.AI.SwordEnemy
 {
@@ -15,7 +16,7 @@ namespace GameScripts.AI.SwordEnemy
         private AITrackData trackData;
         private AbilityRunner abilityRunner;
         private AbilityRunner playerAbilityRunner;
-        float meleeOn = 0;
+        private bool isNextMoveStart;
         private Transform transform;
         private Mana manaComponent;
         private Entity chaseTarget;
@@ -24,6 +25,8 @@ namespace GameScripts.AI.SwordEnemy
         private float maxChargeTime;
         private float maxGuardChargeTime;
         private float endureChanceIncrease;
+
+
 
         public override void InitializeFields(GameObject obj)
         {
@@ -41,13 +44,19 @@ namespace GameScripts.AI.SwordEnemy
             controller.ChaseTarget();
             chaseTarget = controller.target;
             targetTransform = controller.target.transform;
-            meleeOn = 0;
+            isNextMoveStart = false;
             endureChanceIncrease = 0;
+            playerAbilityRunner.onAbilityEnqueued += OnPlayerAction;
+
         }
 
         public override void OnExit()
         {
-
+            playerAbilityRunner.onAbilityEnqueued -= OnPlayerAction;
+        }
+        private void OnPlayerAction(Type abilityType)
+        {
+            isNextMoveStart = true;
         }
         public Type MeleeAttack()
         {
@@ -59,7 +68,8 @@ namespace GameScripts.AI.SwordEnemy
             {
                 if (controller.TargetInRange(attackRange))
                 {
-                    float attackType = UnityEngine.Random.Range(0f, 1f);
+                    float attackType = 0.3f; 
+                        //UnityEngine.Random.Range(0f, 1f);
                     float endureChance = UnityEngine.Random.Range(0f, 1f);
                     if (endureChance > 0.7f - endureChanceIncrease) //if boost
                     {
@@ -73,16 +83,15 @@ namespace GameScripts.AI.SwordEnemy
                         }
                         else
                         {
+                            float randomChargeTime = UnityEngine.Random.Range(0.5f, 1.5f);
                             if (abilityRunner.EnqueueAbilitiesInJoint<HeavyWeaponAttack, Boost>())
                             {
-                                float randomChargeTime = UnityEngine.Random.Range(0f, 1f);
                                 maxChargeTime = Time.time;
                                 maxChargeTime += randomChargeTime * heavyAttackPipe.MaxChargeTime;
                             }
                             else
                             {
                                 abilityRunner.EnqueueAbility<HeavyWeaponAttack>();
-                                float randomChargeTime = UnityEngine.Random.Range(0f, 1f);
                                 maxChargeTime = Time.time;
                                 maxChargeTime += randomChargeTime * heavyAttackPipe.MaxChargeTime;
                             }
@@ -98,7 +107,7 @@ namespace GameScripts.AI.SwordEnemy
                         else
                         {
                             abilityRunner.EnqueueAbility<HeavyWeaponAttack>();
-                            float randomChargeTime = UnityEngine.Random.Range(0f, 1f);
+                            float randomChargeTime = UnityEngine.Random.Range(0.5f, 1.5f);
                             maxChargeTime = Time.time;
                             maxChargeTime += randomChargeTime * heavyAttackPipe.MaxChargeTime;
                         }
@@ -112,6 +121,7 @@ namespace GameScripts.AI.SwordEnemy
 
         public Type GuardCheck()
         {
+            isNextMoveStart = false;
             if (playerAbilityRunner.IsAbilityRunning<HeavyWeaponAttack>() || playerAbilityRunner.IsAbilityRunning<LightWeaponAttack>())//if player is attacking
             {
                 if (!abilityRunner.IsAbilityRunning<HeavyWeaponAttack>() && !abilityRunner.IsAbilityRunning<LightWeaponAttack>())//ai is not attacking
@@ -129,7 +139,7 @@ namespace GameScripts.AI.SwordEnemy
                 else
                 {
                     float GuardChance = UnityEngine.Random.Range(0f, 1f);
-                    if (GuardChance > 0.7)
+                    if (GuardChance > 0.2)
                     {
                         abilityRunner.EnqueueAbility<Guard>();
                         abilityRunner.Signal<HeavyWeaponAttack>();
@@ -150,17 +160,17 @@ namespace GameScripts.AI.SwordEnemy
                 return typeof(WanderState);
             }
             controller.LookTowards();
-            if (abilityRunner.IsAbilityRunning<Guard>() && maxGuardChargeTime > Time.time)
+            if (abilityRunner.IsAbilityRunning<Guard>() && maxGuardChargeTime < Time.time)
             {
                 abilityRunner.Signal<Guard>();
             }
-            if (controller.TargetInRange(attackRange))
+            if (controller.TargetInRange(attackRange) && isNextMoveStart==true)
             {
                 GuardCheck();
             }
             if (abilityRunner.IsAbilityRunning<HeavyWeaponAttack>() || abilityRunner.IsAbilityRunning<LightWeaponAttack>()|| abilityRunner.IsAbilityRunning<Guard>())
             {
-                if(abilityRunner.IsAbilityRunning<HeavyWeaponAttack>() && maxChargeTime>Time.time )
+                if(abilityRunner.IsAbilityRunning<HeavyWeaponAttack>() && maxChargeTime<Time.time )
                 {
                     abilityRunner.Signal<HeavyWeaponAttack>();
                 }

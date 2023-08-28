@@ -63,7 +63,7 @@ namespace GameScripts.AI.DaggerEnemy
                     else
                     {
                         abilityRunner.EnqueueAbility<HeavyWeaponAttack>();
-                        float randomChargeTime = UnityEngine.Random.Range(0f, 1f);
+                        float randomChargeTime = UnityEngine.Random.Range(0.5f, 1.5f);
                         maxChargeTime = Time.time;
                         maxChargeTime += randomChargeTime * heavyAttackPipe.MaxChargeTime;
 
@@ -105,7 +105,7 @@ namespace GameScripts.AI.DaggerEnemy
             controller.LookTowards();
             if (!abilityRunner.IsAbilityReady<HeavyWeaponAttack>()|| !abilityRunner.IsAbilityReady<LightWeaponAttack>())
             {
-                if(!abilityRunner.IsAbilityReady<HeavyWeaponAttack>() && maxChargeTime>Time.time )
+                if(!abilityRunner.IsAbilityReady<HeavyWeaponAttack>() && maxChargeTime< Time.time )
                 {
                     abilityRunner.Signal<HeavyWeaponAttack>();
                 }
