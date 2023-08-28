@@ -248,7 +248,7 @@ namespace LobsterFramework.AbilitySystem {
             if (ability == null) {
                 return false;
             }
-            return executing.Contains(new AbilityConfigPair(ability, configName));
+            return ability.IsExecuting(configName);
         }
 
         /// <summary>
