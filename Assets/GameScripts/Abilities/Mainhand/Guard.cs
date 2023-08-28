@@ -117,6 +117,7 @@ namespace GameScripts.Abilities
 
         protected override void OnAnimationInterrupt(AbilityConfig config)
         {
+            weaponWielder.Mainhand.Pause();
             animationInterrupted = true;
             HaltOnAllConfigs();
         }
