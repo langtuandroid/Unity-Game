@@ -24689,8 +24689,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2878624368540976578, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
+      propertyPath: playerAbilityRunner
+      value: 
+      objectReference: {fileID: 255199789}
+    - target: {fileID: 3549211335366594172, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
+      propertyPath: initialState
+      value: 
+      objectReference: {fileID: 11400000, guid: a0ce6cf1d2e10a64087f0bad074c8153, type: 2}
+    - target: {fileID: 3549211335366594172, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
+      propertyPath: allStates.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: b4cd74b03ddfc7649ba3d098c8431fa9, type: 2}
+    - target: {fileID: 3549211335366594172, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
+      propertyPath: allStates.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: a0ce6cf1d2e10a64087f0bad074c8153, type: 2}
     - target: {fileID: 4458722263269912701, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_Radius
       value: 0.39175737
@@ -24704,8 +24720,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5353377617828249592, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
+      propertyPath: maxHealth.value
+      value: 150000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353377617828249592, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: maxPosture.value
-      value: 100
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353377617828249592, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
+      propertyPath: startHealth.value
+      value: 150000
       objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_RootOrder
@@ -24753,11 +24777,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9072161404192331858, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: data
@@ -30520,7 +30544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2878624368540976578, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: playerAbilityRunner
@@ -30600,11 +30624,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9072161404192331858, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: data
