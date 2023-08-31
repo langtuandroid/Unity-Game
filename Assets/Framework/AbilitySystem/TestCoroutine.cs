@@ -26,7 +26,7 @@ namespace LobsterFramework.AbilitySystem
             Debug.Log("5: " + Time.time);
         }
 
-        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config)
+        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe)
         {
             Debug.Log("Coroutining!");
         }

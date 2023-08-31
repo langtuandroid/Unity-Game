@@ -1,0 +1,150 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using LobsterFramework.AbilitySystem;
+using LobsterFramework;
+using LobsterFramework.EntitySystem;
+using LobsterFramework.Pool;
+
+
+namespace GameScripts.Abilities
+{
+    [AddAbilityMenu]
+    [ComponentRequired(typeof(WeaponWielder), typeof(MovementController))]
+    [AddWeaponArtMenu(false, WeaponType.Stick)]
+    public class Cyclone : AbilityCoroutine
+    {
+        [SerializeField] TargetSetting targets;
+        [SerializeField] private VarString clashSparkTag;
+        private WeaponWielder weaponWielder;
+        private MovementController moveControl;
+        private Entity attacker;
+
+        public class CycloneConfig : AbilityCoroutineConfig {
+            
+            [Range(0, 1)] public float moveSpeedModifier;
+            [Range(0, 1)] public float rotationSpeedModifier;
+
+            [HideInInspector] public bool stopped;
+            [HideInInspector] public bool repeatAttack;
+            [HideInInspector] public int m_key;
+            [HideInInspector] public int r_key;
+        }
+
+        public class CyclonePipe : AbilityPipe {  }
+
+        protected override bool ConditionSatisfied(AbilityConfig config)
+        {
+            if (weaponWielder.Mainhand != null)
+            {
+                int animation = Animator.StringToHash(weaponWielder.Mainhand.Name + "_cyclone");
+                int index = abilityRunner.Animator.GetLayerIndex("Base Layer");
+                return abilityRunner.Animator.HasState(index, animation) && weaponWielder.Mainhand.state != WeaponState.Attacking;
+            }
+            return false;
+        }
+
+        protected override void Initialize()
+        {
+            weaponWielder = abilityRunner.GetComponentInBoth<WeaponWielder>();
+            moveControl = abilityRunner.GetComponentInBoth<MovementController>();
+            attacker = abilityRunner.GetComponentInBoth<Entity>();
+        }
+
+        protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe)
+        {
+            CycloneConfig cycloneConfig = (CycloneConfig)config;
+            cycloneConfig.stopped = false;
+            cycloneConfig.repeatAttack = false;
+            SubscribeWeaponEvent();
+            while (!cycloneConfig.stopped) {
+                if (cycloneConfig.repeatAttack) {
+                    weaponWielder.Mainhand.Pause();
+                    weaponWielder.Mainhand.Action();
+                    cycloneConfig.repeatAttack = false;
+                }
+                yield return null;
+            }
+            UnSubscribeWeaponEvent();
+            while (true) {
+                yield return null;
+            }
+        }
+
+        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe)
+        {
+            abilityRunner.StartAnimation(this, config.Key, weaponWielder.Mainhand.Name + "_cyclone", weaponWielder.Mainhand.AttackSpeed);
+            CycloneConfig cycloneConfig = (CycloneConfig)config;
+            cycloneConfig.m_key = moveControl.ModifyMoveSpeed(cycloneConfig.moveSpeedModifier);
+            cycloneConfig.r_key = moveControl.ModifyRotationSpeed(cycloneConfig.rotationSpeedModifier);
+        }
+
+        protected override void OnCoroutineFinish(AbilityCoroutineConfig config)
+        {
+            weaponWielder.Mainhand.Pause();
+            CycloneConfig cycloneConfig = (CycloneConfig)config;
+            moveControl.UnmodifyMoveSpeed(cycloneConfig.m_key);
+            moveControl.UnmodifyRotationSpeed(cycloneConfig.r_key);
+        }
+
+        protected override void OnCoroutineReset(AbilityCoroutineConfig config)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        protected override void Signal(AbilityConfig config, AnimationEvent animationEvent)
+        {
+            CycloneConfig cycloneConfig = (CycloneConfig)config;
+            if (animationEvent.intParameter != 0)
+            {
+                cycloneConfig.stopped = true;
+            }
+            else { 
+                cycloneConfig.repeatAttack = true;
+            }
+        }
+        private void SubscribeWeaponEvent()
+        {
+            weaponWielder.Mainhand.onEntityHit += OnEntityHit;
+            weaponWielder.Mainhand.onWeaponHit += OnWeaponHit;
+        }
+
+        private void UnSubscribeWeaponEvent()
+        {
+            weaponWielder.Mainhand.onEntityHit -= OnEntityHit;
+            weaponWielder.Mainhand.onWeaponHit -= OnWeaponHit;
+        }
+
+        private void OnEntityHit(Entity entity)
+        {
+            DealDamage(entity);
+        }
+
+        private void OnWeaponHit(Weapon weapon, Vector3 contactPoint)
+        {
+            if (clashSparkTag != null)
+            {
+                ObjectPool.Instance.GetObject(clashSparkTag.Value, contactPoint, Quaternion.identity);
+            }
+            DealDamage(weapon.Entity, weapon.HealthDamageReduction, weapon.PostureDamageReduction);
+        }
+
+        private void DealDamage(Entity entity, float hdReduction = 0, float pdReduction = 0)
+        {
+            if (targets.IsTarget(entity))
+            {
+                float health = 0.7f * weaponWielder.Mainhand.Sharpness + 0.3f * weaponWielder.Mainhand.Weight;
+                float posture = 0.3f * weaponWielder.Mainhand.Sharpness + 0.7f * weaponWielder.Mainhand.Weight;
+                health *= (1 - hdReduction);
+                posture *= (1 - pdReduction);
+                Damage damage = new() { health = health, posture = posture, source = attacker };
+                entity.Damage(damage);
+                MovementController moveControl = entity.GetComponent<MovementController>();
+                if (moveControl != null)
+                {
+                    moveControl.ApplyForce(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight);
+                }
+            }
+        }
+    }
+}

@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: sword
-  weaponType: 0
+  weaponType: 3
   weight: 30
   sharpness: 30
   attackSpeed: 1.5
@@ -211,5 +211,8 @@ MonoBehaviour:
   lRotationSpeedModifier: 0.7
   lMoveSpeedModifier: 0.7
   hRotationSpeedModifier: 0.4
-  hMoveSpeedModifier: 0.4
-  test: 1
+  hMoveSpeedModifier: 0.326
+  abilitySelector:
+    qualifieldTypeName: None
+    weaponType: 3
+    configName: 

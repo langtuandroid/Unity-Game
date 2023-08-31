@@ -317,7 +317,7 @@ namespace LobsterFramework.AbilitySystem {
         /// Callback when the animation of the ability is interrupted by other abilities. Useful when abilities relies on animation events.
         /// </summary>
         /// <param name="config"></param>
-        protected virtual void OnAnimationInterrupt(AbilityConfig config) { }
+        protected virtual void OnAnimationInterrupt(AbilityConfig config) { HaltOnAllConfigs(); }
 
         /// <summary>
         /// Interrupt the animation of the currently animating AbilityConfig pair
@@ -392,9 +392,9 @@ namespace LobsterFramework.AbilitySystem {
             return configs.ContainsKey(configName);
         }
 
-        public void Signal(string configName, bool isAnimation) {
+        public void Signal(string configName, AnimationEvent animationEvent) {
             if (configs.ContainsKey(configName)) {
-                Signal(configs[configName], isAnimation);
+                Signal(configs[configName], animationEvent);
             }
         }
 
@@ -402,7 +402,7 @@ namespace LobsterFramework.AbilitySystem {
         /// Override this to implement signal event handler
         /// </summary>
         /// <param name="config">Config to be signaled</param>
-        protected virtual void Signal(AbilityConfig config, bool isAnimation) { }
+        protected virtual void Signal(AbilityConfig config, AnimationEvent animationEvent) { }
 
         public AbilityPipe GetAbilityPipe(string configName)
         {

@@ -1,12 +1,9 @@
-using LobsterFramework;
-using LobsterFramework.AbilitySystem;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.Pool;
-using LobsterFramework.Utility;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameScripts.Abilities
+namespace LobsterFramework.AbilitySystem
 {
     [AddAbilityMenu]
     [RequireAbilityStats(typeof(DamageModifier))]
@@ -92,11 +89,11 @@ namespace GameScripts.Abilities
             }
         }
 
-        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config)
+        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe)
         {
             LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
             c.signaled = false;
-            abilityRunner.StartAnimation<LightWeaponAttack>(config.Key, weaponWielder.Mainhand.Name + "_light_attack", weaponWielder.Mainhand.AttackSpeed);
+            abilityRunner.StartAnimation(this, config.Key, weaponWielder.Mainhand.Name + "_light_attack", weaponWielder.Mainhand.AttackSpeed);
             c.m_key = moveControl.ModifyMoveSpeed(weaponWielder.Mainhand.LMoveSpeedModifier);
             c.r_key = moveControl.ModifyRotationSpeed(weaponWielder.Mainhand.LRotationSpeedModifier);
         }
@@ -154,9 +151,9 @@ namespace GameScripts.Abilities
             throw new System.NotImplementedException();
         }
 
-        protected override void Signal(AbilityConfig config, bool isAnimation)
+        protected override void Signal(AbilityConfig config, AnimationEvent animationEvent)
         {
-            if (isAnimation)
+            if (animationEvent != null)
             {
                 LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
                 c.signaled = true;

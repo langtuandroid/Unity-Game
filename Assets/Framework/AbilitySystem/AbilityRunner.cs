@@ -237,6 +237,19 @@ namespace LobsterFramework.AbilitySystem {
             return false;
         }
 
+        public bool IsAbilityReady(Type abilityType, string config = "default")
+        {
+            if (abilityType == null) {
+                return false;
+            }
+            string type = abilityType.ToString();
+            if (availableAbilities.ContainsKey(type))
+            {
+                return availableAbilities[type].IsReady(config);
+            }
+            return false;
+        }
+
         /// <summary>
         /// Check if the ability with specified config is running
         /// </summary>
@@ -485,9 +498,8 @@ namespace LobsterFramework.AbilitySystem {
         /// <typeparam name="T"></typeparam>
         /// <param name="configName"></param>
         /// <param name="animation"></param>
-        public void StartAnimation<T>(string configName, string animation, float speed=1) where T : Ability
+        public void StartAnimation(Ability ability, string configName, string animation, float speed=1)
         {
-            Ability ability = GetAbility<T>();
             if (ability == null) {
                 return;
             }
@@ -527,7 +539,7 @@ namespace LobsterFramework.AbilitySystem {
             if (ability == null) {
                 return;
             }
-            ability.Signal(configName, false);
+            ability.Signal(configName, null);
         }
 
         /// <summary>
@@ -536,11 +548,12 @@ namespace LobsterFramework.AbilitySystem {
         public void AnimationSignal(AnimationEvent animationEvent) { 
             if(animating == default) { return; }
             if (animationEvent.animatorStateInfo.IsName(currentAnimation)) {
-                animating.Item1.Signal(animating.Item2, true);
+                animating.Item1.Signal(animating.Item2, animationEvent);
             }
         }
 
         public void AnimationEnd(AnimationEvent animationEvent) {
+            Debug.Log("End");
             if (animating == default) { return; }
             if (animationEvent.animatorStateInfo.IsName(currentAnimation))
             {

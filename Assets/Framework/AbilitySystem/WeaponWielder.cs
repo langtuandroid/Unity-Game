@@ -11,13 +11,23 @@ namespace LobsterFramework.AbilitySystem
     /// </summary>
     public class WeaponWielder : MonoBehaviour
     {
+        [Header("Weapon Prefabs")]
         [SerializeField] private GameObject mainhandWeapon1;
         [SerializeField] private GameObject mainhandWeapon2;
         [SerializeField] private GameObject offhandWeapon1;
         [SerializeField] private GameObject offhandWeapon2;
+        [SerializeField] private GameObject emptyHand;
 
+        [Header("Weapon Position")]
         [SerializeField] private Transform mainhandWeaponPosition;
         [SerializeField] private Transform offhandWeaponPosition;
+
+        [Header("Weapon Data")]
+        [SerializeField] private WeaponData weaponData;
+        private WeaponData data;
+        private TypeWeaponStatDictionary weaponStats;
+
+        [Header("Component Reference")]
         [SerializeField] private Entity entity;
         [SerializeField] private Animator animator;
         [SerializeField] private AbilityRunner abilityRunner;
@@ -41,7 +51,7 @@ namespace LobsterFramework.AbilitySystem
 
         public Entity Wielder { get { return entity; } }
 
-        private void Start()
+        private void Awake()
         {
             if(mainhandWeapon1 != null) { 
                 mainWeapon1Inst = Instantiate(mainhandWeapon1);
@@ -72,7 +82,6 @@ namespace LobsterFramework.AbilitySystem
                 mainWeapon2.weaponWielder = this;
                 objLookup[mainWeapon2] = mainWeapon2Inst;
             }
-            
             if(offhandWeapon1 != null) {
                 offWeapon1Inst = Instantiate(offhandWeapon1);
                 offWeapon1 = offWeapon1Inst.GetComponentInChildren<Weapon>();
@@ -83,7 +92,6 @@ namespace LobsterFramework.AbilitySystem
                 Offhand = offWeapon1;
                 objLookup[offWeapon1] = offWeapon1Inst;
             }
-            
             if(offhandWeapon2 != null) {
                 offWeapon2Inst = Instantiate(offhandWeapon2);
                 offWeapon2 = offWeapon2Inst.GetComponentInChildren<Weapon>();
@@ -108,7 +116,20 @@ namespace LobsterFramework.AbilitySystem
                 }
             }
 
+            if (weaponData != null) {
+                data = weaponData.Clone();
+                weaponStats = data.weaponStats;
+            }
+
             PlayDefaultWeaponAnimation();
+        }
+
+        public T GetWeaponStat<T>() where T : WeaponStat {
+            string key = typeof(T).AssemblyQualifiedName;
+            if (weaponStats != null && weaponStats.ContainsKey(key)) {
+                return (T)weaponStats[key];
+            }
+            return default;
         }
 
         public void SwitchMainHand() {

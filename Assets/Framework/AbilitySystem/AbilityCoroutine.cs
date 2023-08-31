@@ -34,14 +34,14 @@ namespace LobsterFramework.AbilitySystem
             c.Key = configName;
             c.CoroutineRunning = true;
             c.Coroutine = Coroutine(c, pipe);
-            OnCoroutineEnqueue(c);
+            OnCoroutineEnqueue(c, pipe);
         }
 
         /// <summary>
         /// Callback when the ability is enqueued, replaces OnEnqueue
         /// </summary>
         /// <param name="config">The config being enqueued with</param>
-        protected abstract void OnCoroutineEnqueue(AbilityCoroutineConfig config);
+        protected abstract void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe);
 
         protected override sealed bool Action(AbilityConfig config, AbilityPipe pipe)
         {

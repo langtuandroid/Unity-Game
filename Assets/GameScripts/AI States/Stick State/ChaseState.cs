@@ -40,7 +40,6 @@ namespace GameScripts.AI.StickEnemy
 
         public override void OnEnter()
         {
-            Debug.Log("Chase");
             controller.ChaseTarget();
             chaseTarget = controller.target;
             targetTransform = controller.target.transform;
@@ -60,12 +59,10 @@ namespace GameScripts.AI.StickEnemy
         }
         public Type MeleeAttack()
         {
-            Debug.Log("enrter attack");
             if (!controller.target.gameObject.activeInHierarchy)
             {
                 return typeof(WanderState);
             }
-            Debug.Log("1");
             if (controller.TargetInRange(trackData.chaseDistance.Value))
             {
                 if (controller.TargetInRange(attackRange))

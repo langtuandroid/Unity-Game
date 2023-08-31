@@ -5,6 +5,7 @@ using UnityEngine.Events;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.Utility;
 using static Codice.Client.Common.Connection.AskCredentialsToUser;
+using System;
 
 namespace LobsterFramework.AbilitySystem
 {
@@ -45,8 +46,7 @@ namespace LobsterFramework.AbilitySystem
         [SerializeField] private float hMoveSpeedModifier;
 
         [Header("Special Move")]
-        [ReadOnly]
-        public string test = "1";
+        [SerializeField] private WeaponArtSelector abilitySelector;
 
         private float momentumMultiplier;
         private float oppressingForce;
@@ -61,6 +61,8 @@ namespace LobsterFramework.AbilitySystem
 
         public string Name { get { return weaponName; } }
         public WeaponType WeaponType { get { return weaponType; } }
+
+        public ValueTuple<Type, string> AbilitySetting { get { return ValueTuple.Create(abilitySelector.Type, abilitySelector.ConfigName); } }
         public float Weight { get { return weight; } }
         public float Sharpness { get { return sharpness; } }
         public float AttackSpeed { get {  return attackSpeed; } }
@@ -169,6 +171,9 @@ namespace LobsterFramework.AbilitySystem
                 defenseSpeed = 1;
                 Debug.LogWarning("Guard Speed Can't be non-positive");
             }
+            if (abilitySelector.weaponType != weaponType) {
+                abilitySelector.weaponType = weaponType;
+            }
         }
 
         /// <summary>
@@ -186,7 +191,8 @@ namespace LobsterFramework.AbilitySystem
         Sword,
         Hammer,
         Dagger,
-        Stick
+        Stick,
+        EmptyHand
     }
 
     public enum WeaponState { 

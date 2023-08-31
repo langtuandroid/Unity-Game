@@ -111,5 +111,5 @@ namespace LobsterFramework.Utility {
     public class StringAbilityConfigDictionary : SerializableDictionary<string, Ability.AbilityConfig> { }
 
     [Serializable]
-    public class StringAbilityPipeDictionary : SerializableDictionary<string, Ability.AbilityPipe> { }
+    public class TypeWeaponStatDictionary : SerializableDictionary<string, WeaponStat> { }
 }

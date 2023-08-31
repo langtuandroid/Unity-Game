@@ -6,10 +6,6 @@ using System;
 using System.Reflection;
 using LobsterFramework.AbilitySystem;
 using System.Linq;
-using System.Threading;
-using GluonGui.Dialog;
-using static LobsterFramework.AbilitySystem.Ability;
-using UnityEditor.Rendering;
 
 namespace LobsterFramework.Editors
 {

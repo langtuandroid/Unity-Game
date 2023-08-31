@@ -120,6 +120,17 @@ namespace GameScripts.InputControl
             }
         }
 
+        public void WeaponArt(InputAction.CallbackContext context) {
+            if (gamePause.Value)
+            {
+                return;
+            }
+            if (context.started)
+            {
+                abilityRunner.EnqueueAbility<WeaponArt>();
+            }
+        }
+
         public void Guard(InputAction.CallbackContext context)
         {
             if (gamePause.Value)

@@ -1,13 +1,9 @@
 using UnityEngine;
-using LobsterFramework.AbilitySystem;
-using System.Collections;
 using LobsterFramework.EntitySystem;
-using LobsterFramework.Utility;
 using LobsterFramework.Pool;
 using System.Collections.Generic;
-using LobsterFramework;
 
-namespace GameScripts.Abilities
+namespace LobsterFramework.AbilitySystem
 {
     [AddAbilityMenu]
     [RequireAbilityStats(typeof(DamageModifier))]
@@ -133,10 +129,10 @@ namespace GameScripts.Abilities
             }
         }
 
-        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config)
+        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe)
         {
             HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)config;
-            abilityRunner.StartAnimation<HeavyWeaponAttack>(config.Key, weaponWielder.Mainhand.Name + "_heavy_attack", weaponWielder.Mainhand.AttackSpeed);
+            abilityRunner.StartAnimation(this, config.Key, weaponWielder.Mainhand.Name + "_heavy_attack", weaponWielder.Mainhand.AttackSpeed);
             h.animationSignaled = false;
             h.inputSignaled = false;
             h.chargeTimer = 0;
@@ -158,12 +154,11 @@ namespace GameScripts.Abilities
             }
         }
 
-        protected override void Signal(AbilityConfig config, bool isAnimation)
+        protected override void Signal(AbilityConfig config, AnimationEvent animationEvent)
         {
             HeavyWeaponAttackConfig c = (HeavyWeaponAttackConfig)config;
-            if (isAnimation)
+            if (animationEvent != null)
             {
-                
                 c.animationSignaled = true;
             }
             else {

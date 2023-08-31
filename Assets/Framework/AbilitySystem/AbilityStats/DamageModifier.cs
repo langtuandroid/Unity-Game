@@ -1,10 +1,9 @@
-using LobsterFramework.AbilitySystem;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.Utility;
 using LobsterFramework.Utility.BufferedStats;
 using System;
 
-namespace GameScripts.Abilities
+namespace LobsterFramework.AbilitySystem
 {
     [AddAbilityStatMenu]
     public class DamageModifier : AbilityStat

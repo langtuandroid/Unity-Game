@@ -1,9 +1,7 @@
 using UnityEngine;
-using LobsterFramework.AbilitySystem;
 using System.Collections.Generic;
-using LobsterFramework;
 
-namespace GameScripts.Abilities
+namespace LobsterFramework.AbilitySystem
 {
     [ComponentRequired(typeof(WeaponWielder))]
     [AddAbilityMenu]
@@ -20,7 +18,7 @@ namespace GameScripts.Abilities
             [HideInInspector] public int m_key;
             [HideInInspector] public int r_key;
 
-            protected override void Initialize()
+            protected internal override void Initialize()
             {
                 animationSignaled = false;
                 inputSignaled = false;
@@ -45,11 +43,11 @@ namespace GameScripts.Abilities
             return false;
         }
 
-        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config)
+        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe)
         {
             animationInterrupted = false;
             GuardConfig guardConfig = (GuardConfig)config;
-            abilityRunner.StartAnimation<Guard>(config.Key, weaponWielder.Mainhand.Name + "_guard", weaponWielder.Mainhand.DefenseSpeed);
+            abilityRunner.StartAnimation(this, config.Key, weaponWielder.Mainhand.Name + "_guard", weaponWielder.Mainhand.DefenseSpeed);
             guardConfig.animationSignaled = false;
             guardConfig.inputSignaled = false;
 
@@ -103,10 +101,10 @@ namespace GameScripts.Abilities
             }
         }
 
-        protected override void Signal(AbilityConfig config, bool isAnimation)
+        protected override void Signal(AbilityConfig config, AnimationEvent animationEvent)
         {
             GuardConfig guardConfig = (GuardConfig)config;
-            if (isAnimation)
+            if (animationEvent != null)
             {
                 guardConfig.animationSignaled = true;
             }

@@ -51,5 +51,15 @@ namespace LobsterFramework.Editors
             style.fontStyle = FontStyle.Bold;
             return style;
         }
+
+        public static bool SetPropertyPointer(SerializedProperty property, string name) {
+            property.Reset();
+            while (property.name != name) {
+                if (!property.Next(true)) {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }
