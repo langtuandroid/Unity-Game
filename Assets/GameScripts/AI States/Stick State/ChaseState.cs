@@ -81,13 +81,11 @@ namespace GameScripts.AI.StickEnemy
                         cycloneChanceIncrease += 0.2f;
                         float attackType = UnityEngine.Random.Range(0f, 1f);
                         if (attackType > 0.4)
-                        {
-                            Debug.Log("attack");
+                        { 
                             abilityRunner.EnqueueAbility<LightWeaponAttack>();
                         }
                         else
                         {
-                            Debug.Log("attack");
                             abilityRunner.EnqueueAbility<HeavyWeaponAttack>();
                             float randomChargeTime = UnityEngine.Random.Range(0.5f, 1.5f);
                             maxChargeTime = Time.time;

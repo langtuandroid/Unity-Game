@@ -553,7 +553,6 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         public void AnimationEnd(AnimationEvent animationEvent) {
-            Debug.Log("End");
             if (animating == default) { return; }
             if (animationEvent.animatorStateInfo.IsName(currentAnimation))
             {

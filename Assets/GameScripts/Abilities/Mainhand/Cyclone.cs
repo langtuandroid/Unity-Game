@@ -53,6 +53,7 @@ namespace GameScripts.Abilities
 
         protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe)
         {
+            Debug.Log("start");
             CycloneConfig cycloneConfig = (CycloneConfig)config;
             cycloneConfig.stopped = false;
             cycloneConfig.repeatAttack = false;
@@ -99,7 +100,8 @@ namespace GameScripts.Abilities
             {
                 cycloneConfig.stopped = true;
             }
-            else { 
+            else {
+                Debug.Log("Attack");
                 cycloneConfig.repeatAttack = true;
             }
         }
@@ -117,11 +119,13 @@ namespace GameScripts.Abilities
 
         private void OnEntityHit(Entity entity)
         {
+            Debug.Log("hit");
             DealDamage(entity);
         }
 
         private void OnWeaponHit(Weapon weapon, Vector3 contactPoint)
         {
+            Debug.Log("hit");
             if (clashSparkTag != null)
             {
                 ObjectPool.Instance.GetObject(clashSparkTag.Value, contactPoint, Quaternion.identity);

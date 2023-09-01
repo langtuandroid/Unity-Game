@@ -24888,7 +24888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2878624368540976578, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: playerAbilityRunner
@@ -24980,11 +24980,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9072161404192331858, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: data
@@ -26479,7 +26479,7 @@ RectTransform:
   m_Father: {fileID: 24032671}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.2599945, y: -0.69000006}
   m_SizeDelta: {x: 10.17, y: 1.37}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -30916,7 +30916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2878624368540976578, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: playerAbilityRunner
@@ -30996,16 +30996,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9072161404192331858, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: data
       value: 
-      objectReference: {fileID: 11400000, guid: 04532254cd1c2e54b98c6bc0ee0b2cf0, type: 2}
+      objectReference: {fileID: 11400000, guid: c25790faa6698994d80961b2a91afda0, type: 2}
     - target: {fileID: 9072161404192331858, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: topLevelTransform
       value: 

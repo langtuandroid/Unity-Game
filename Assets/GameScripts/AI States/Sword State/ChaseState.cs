@@ -40,7 +40,6 @@ namespace GameScripts.AI.SwordEnemy
 
         public override void OnEnter()
         {
-            Debug.Log("Chase");
             controller.ChaseTarget();
             chaseTarget = controller.target;
             targetTransform = controller.target.transform;
