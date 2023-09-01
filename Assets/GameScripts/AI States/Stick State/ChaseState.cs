@@ -67,31 +67,52 @@ namespace GameScripts.AI.StickEnemy
             {
                 if (controller.TargetInRange(attackRange))
                 {
-                    /*if (!abilityRunner.IsAbilityRunning<Cyclone>()) //if cyclone is ready
+                    if (!abilityRunner.IsAbilityRunning<Cyclone>()) //if cyclone is ready
                     {
                         float cycloneChance = UnityEngine.Random.Range(0f, 1f);
 
                         if (cycloneChance > 0.6f - cycloneChanceIncrease) //if cyclone
                         {
-                            abilityRunner.EnqueueAbility<Cyclone>();
+                            cycloneChanceIncrease = 0;
+                            abilityRunner.EnqueueAbility<WeaponArt>();
+                        }
+                        else
+                        {
+                            cycloneChanceIncrease += 0.2f;
+                            float attackType = UnityEngine.Random.Range(0f, 1f);
+                            if (attackType > 0.4)
+                            {
+                                Debug.Log("attack");
+                                abilityRunner.EnqueueAbility<LightWeaponAttack>();
+                            }
+                            else
+                            {
+                                Debug.Log("attack");
+                                abilityRunner.EnqueueAbility<HeavyWeaponAttack>();
+                                float randomChargeTime = UnityEngine.Random.Range(0.5f, 1.5f);
+                                maxChargeTime = Time.time;
+                                maxChargeTime += randomChargeTime * heavyAttackPipe.MaxChargeTime;
+                            }
                         }
                     }
                     else
-                    {*/
+                    {
                         cycloneChanceIncrease += 0.2f;
                         float attackType = UnityEngine.Random.Range(0f, 1f);
                         if (attackType > 0.4)
-                        { 
+                        {
+                            Debug.Log("attack");
                             abilityRunner.EnqueueAbility<LightWeaponAttack>();
                         }
                         else
                         {
+                            Debug.Log("attack");
                             abilityRunner.EnqueueAbility<HeavyWeaponAttack>();
                             float randomChargeTime = UnityEngine.Random.Range(0.5f, 1.5f);
                             maxChargeTime = Time.time;
                             maxChargeTime += randomChargeTime * heavyAttackPipe.MaxChargeTime;
                         }
-                    //}
+                    }
 
                 }
                 return typeof(ChaseState);
@@ -102,9 +123,9 @@ namespace GameScripts.AI.StickEnemy
         public Type GuardCheck()
         {
             isNextMoveStart = false;
-            if (playerAbilityRunner.IsAbilityRunning<HeavyWeaponAttack>() || playerAbilityRunner.IsAbilityRunning<LightWeaponAttack>())//if player is attacking playerAbilityRunner.IsAbilityRunning<Cyclone>()
+            if (playerAbilityRunner.IsAbilityRunning<HeavyWeaponAttack>() || playerAbilityRunner.IsAbilityRunning<LightWeaponAttack>()|| playerAbilityRunner.IsAbilityRunning<Cyclone>())//if player is attacking playerAbilityRunner.IsAbilityRunning<Cyclone>()
             {
-                if (!abilityRunner.IsAbilityRunning<HeavyWeaponAttack>() && !abilityRunner.IsAbilityRunning<LightWeaponAttack>())//ai is not attacking playerAbilityRunner.IsAbilityRunning<Cyclone>()
+                if (!abilityRunner.IsAbilityRunning<HeavyWeaponAttack>() && !abilityRunner.IsAbilityRunning<LightWeaponAttack>()&& !abilityRunner.IsAbilityRunning<Cyclone>())//ai is not attacking playerAbilityRunner.IsAbilityRunning<Cyclone>()
                 {
                     float GuardChance = UnityEngine.Random.Range(0f, 1f);
                     if (GuardChance > 0.2)
@@ -122,8 +143,6 @@ namespace GameScripts.AI.StickEnemy
                     if (GuardChance > 0.4)
                     {
                         abilityRunner.EnqueueAbility<Guard>();
-                        abilityRunner.Signal<HeavyWeaponAttack>();
-                        abilityRunner.Signal<LightWeaponAttack>();
                         float randomGuardChargeTime = UnityEngine.Random.Range(0.5f, 1f);
                         maxGuardChargeTime = Time.time;
                         maxGuardChargeTime += randomGuardChargeTime;
@@ -152,7 +171,7 @@ namespace GameScripts.AI.StickEnemy
             {
                 GuardCheck();
             }
-            if (abilityRunner.IsAbilityRunning<HeavyWeaponAttack>() || abilityRunner.IsAbilityRunning<LightWeaponAttack>()|| abilityRunner.IsAbilityRunning<Guard>()) 
+            if (abilityRunner.IsAbilityRunning<HeavyWeaponAttack>() || abilityRunner.IsAbilityRunning<LightWeaponAttack>()|| abilityRunner.IsAbilityRunning<Guard>()|| abilityRunner.IsAbilityRunning<Cyclone>()) 
             {
                 if(abilityRunner.IsAbilityRunning<HeavyWeaponAttack>() && maxChargeTime<Time.time )
                 {
