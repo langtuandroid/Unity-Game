@@ -47,7 +47,7 @@ namespace LobsterFramework.AbilitySystem
         {
             animationInterrupted = false;
             GuardConfig guardConfig = (GuardConfig)config;
-            abilityRunner.StartAnimation(this, config.Key, weaponWielder.Mainhand.Name + "_guard", weaponWielder.Mainhand.DefenseSpeed);
+            abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.Mainhand.Name + "_guard", weaponWielder.Mainhand.DefenseSpeed);
             guardConfig.animationSignaled = false;
             guardConfig.inputSignaled = false;
 

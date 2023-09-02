@@ -24,7 +24,8 @@ namespace LobsterFramework.AbilitySystem
             public int m_key;
             [HideInInspector]
             public int r_key;
-            
+            [HideInInspector]
+            public Weapon currentWeapon;
         }
 
         public class LightWeaponAttackPipe : AbilityPipe { }
@@ -48,16 +49,14 @@ namespace LobsterFramework.AbilitySystem
             return false;
         }
 
-        private void SubscribeWeaponEvent() {
-            weaponWielder.Mainhand.Action();
-            weaponWielder.Mainhand.onEntityHit += OnEntityHit;
-            weaponWielder.Mainhand.onWeaponHit += OnWeaponHit;
+        private void SubscribeWeaponEvent(Weapon weapon) {
+            weapon.onEntityHit += OnEntityHit;
+            weapon.onWeaponHit += OnWeaponHit;
         }
 
-        private void UnSubscribeWeaponEvent() {
-            weaponWielder.Mainhand.Pause();
-            weaponWielder.Mainhand.onEntityHit -= OnEntityHit;
-            weaponWielder.Mainhand.onWeaponHit -= OnWeaponHit;
+        private void UnSubscribeWeaponEvent(Weapon weapon) {
+            weapon.onEntityHit -= OnEntityHit;
+            weapon.onWeaponHit -= OnWeaponHit;
         }
 
         private void OnEntityHit(Entity entity)
@@ -92,8 +91,10 @@ namespace LobsterFramework.AbilitySystem
         protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe)
         {
             LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
+            c.currentWeapon = weaponWielder.Mainhand;
+            SubscribeWeaponEvent(c.currentWeapon);
             c.signaled = false;
-            abilityRunner.StartAnimation(this, config.Key, weaponWielder.Mainhand.Name + "_light_attack", weaponWielder.Mainhand.AttackSpeed);
+            abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.Mainhand.Name + "_light_attack", weaponWielder.Mainhand.AttackSpeed);
             c.m_key = moveControl.ModifyMoveSpeed(weaponWielder.Mainhand.LMoveSpeedModifier);
             c.r_key = moveControl.ModifyRotationSpeed(weaponWielder.Mainhand.LRotationSpeedModifier);
         }
@@ -107,15 +108,15 @@ namespace LobsterFramework.AbilitySystem
                 yield return null;
             }
             c.signaled = false;
-            SubscribeWeaponEvent();
 
+            c.currentWeapon.Action();
             // Wait for signal of recovery
             while (!c.signaled)
             {
                 yield return null;
             }
             c.signaled = false;
-            UnSubscribeWeaponEvent();
+            c.currentWeapon.Pause();
 
             moveControl.UnmodifyMoveSpeed(c.m_key);
             moveControl.UnmodifyRotationSpeed(c.r_key);
@@ -130,20 +131,16 @@ namespace LobsterFramework.AbilitySystem
         }
 
         protected override void OnCoroutineFinish(AbilityCoroutineConfig config){
-            weaponWielder.Mainhand.Pause();
             LightWeaponAttackConfig l = (LightWeaponAttackConfig)config;
-            if(l.m_key != -1)
+            UnSubscribeWeaponEvent(l.currentWeapon);
+            l.currentWeapon.Pause();
+            if (l.m_key != -1)
             {
                 moveControl.UnmodifyMoveSpeed(l.m_key);
             }
             if(l.r_key != -1) {
                 moveControl.UnmodifyRotationSpeed(l.r_key);
             }
-        }
-
-        protected override void OnAnimationInterrupt(AbilityConfig config)
-        {
-            HaltOnAllConfigs();
         }
 
         protected override void OnCoroutineReset(AbilityCoroutineConfig config)

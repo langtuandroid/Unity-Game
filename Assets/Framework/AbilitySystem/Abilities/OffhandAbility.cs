@@ -24,7 +24,7 @@ namespace LobsterFramework.AbilitySystem
             weaponWielder = abilityRunner.GetComponentInBoth<WeaponWielder>();
         }
 
-        protected override void OnEnqueue(AbilityConfig config, AbilityPipe pipe, string configName)
+        protected override void OnEnqueue(AbilityConfig config, AbilityPipe pipe)
         {
             ValueTuple<Type, string> pair = weaponWielder.Offhand.AbilitySetting;
             abilityRunner.EnqueueAbility(pair.Item1, pair.Item2);

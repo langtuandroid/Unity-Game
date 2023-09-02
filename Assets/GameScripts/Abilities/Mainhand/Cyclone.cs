@@ -25,6 +25,7 @@ namespace GameScripts.Abilities
             [Range(0, 1)] public float moveSpeedModifier;
             [Range(0, 1)] public float rotationSpeedModifier;
 
+            [HideInInspector] public Weapon currentWeapon;
             [HideInInspector] public bool stopped;
             [HideInInspector] public bool repeatAttack;
             [HideInInspector] public int m_key;
@@ -51,13 +52,23 @@ namespace GameScripts.Abilities
             attacker = abilityRunner.GetComponentInBoth<Entity>();
         }
 
+        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe)
+        {
+            abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.Mainhand.Name + "_cyclone", weaponWielder.Mainhand.AttackSpeed);
+            CycloneConfig cycloneConfig = (CycloneConfig)config;
+            cycloneConfig.currentWeapon = weaponWielder.Mainhand;
+            SubscribeWeaponEvent(cycloneConfig.currentWeapon);
+            cycloneConfig.m_key = moveControl.ModifyMoveSpeed(cycloneConfig.moveSpeedModifier);
+            cycloneConfig.r_key = moveControl.ModifyRotationSpeed(cycloneConfig.rotationSpeedModifier);
+        }
+
         protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe)
         {
-            Debug.Log("start");
+            Debug.Log("start"); 
             CycloneConfig cycloneConfig = (CycloneConfig)config;
             cycloneConfig.stopped = false;
             cycloneConfig.repeatAttack = false;
-            SubscribeWeaponEvent();
+            cycloneConfig.currentWeapon.Action();
             while (!cycloneConfig.stopped) {
                 if (cycloneConfig.repeatAttack) {
                     weaponWielder.Mainhand.Pause();
@@ -66,24 +77,17 @@ namespace GameScripts.Abilities
                 }
                 yield return null;
             }
-            UnSubscribeWeaponEvent();
+            cycloneConfig.currentWeapon.Pause();
             while (true) {
                 yield return null;
             }
         }
 
-        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe)
-        {
-            abilityRunner.StartAnimation(this, config.Key, weaponWielder.Mainhand.Name + "_cyclone", weaponWielder.Mainhand.AttackSpeed);
-            CycloneConfig cycloneConfig = (CycloneConfig)config;
-            cycloneConfig.m_key = moveControl.ModifyMoveSpeed(cycloneConfig.moveSpeedModifier);
-            cycloneConfig.r_key = moveControl.ModifyRotationSpeed(cycloneConfig.rotationSpeedModifier);
-        }
-
         protected override void OnCoroutineFinish(AbilityCoroutineConfig config)
         {
-            weaponWielder.Mainhand.Pause();
             CycloneConfig cycloneConfig = (CycloneConfig)config;
+            UnSubscribeWeaponEvent(cycloneConfig.currentWeapon);
+            cycloneConfig.currentWeapon.Pause();
             moveControl.UnmodifyMoveSpeed(cycloneConfig.m_key);
             moveControl.UnmodifyRotationSpeed(cycloneConfig.r_key);
         }
@@ -105,16 +109,16 @@ namespace GameScripts.Abilities
                 cycloneConfig.repeatAttack = true;
             }
         }
-        private void SubscribeWeaponEvent()
+        private void SubscribeWeaponEvent(Weapon weapon)
         {
-            weaponWielder.Mainhand.onEntityHit += OnEntityHit;
-            weaponWielder.Mainhand.onWeaponHit += OnWeaponHit;
+            weapon.onEntityHit += OnEntityHit;
+            weapon.onWeaponHit += OnWeaponHit;
         }
 
-        private void UnSubscribeWeaponEvent()
+        private void UnSubscribeWeaponEvent(Weapon weapon)
         {
-            weaponWielder.Mainhand.onEntityHit -= OnEntityHit;
-            weaponWielder.Mainhand.onWeaponHit -= OnWeaponHit;
+            weapon.onEntityHit -= OnEntityHit;
+            weapon.onWeaponHit -= OnWeaponHit;
         }
 
         private void OnEntityHit(Entity entity)

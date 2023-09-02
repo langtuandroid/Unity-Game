@@ -67,7 +67,7 @@ namespace GameScripts.AI.StickEnemy
             {
                 if (controller.TargetInRange(attackRange))
                 {
-                    if (!abilityRunner.IsAbilityRunning<Cyclone>()) //if cyclone is ready
+                    if (!abilityRunner.IsAbilityRunning<WeaponArt>()) //if cyclone is ready
                     {
                         float cycloneChance = UnityEngine.Random.Range(0f, 1f);
 
@@ -123,9 +123,9 @@ namespace GameScripts.AI.StickEnemy
         public Type GuardCheck()
         {
             isNextMoveStart = false;
-            if (playerAbilityRunner.IsAbilityRunning<HeavyWeaponAttack>() || playerAbilityRunner.IsAbilityRunning<LightWeaponAttack>()|| playerAbilityRunner.IsAbilityRunning<Cyclone>())//if player is attacking playerAbilityRunner.IsAbilityRunning<Cyclone>()
+            if (playerAbilityRunner.IsAbilityRunning<HeavyWeaponAttack>() || playerAbilityRunner.IsAbilityRunning<LightWeaponAttack>()|| playerAbilityRunner.IsAbilityRunning<WeaponArt>())//if player is attacking
             {
-                if (!abilityRunner.IsAbilityRunning<HeavyWeaponAttack>() && !abilityRunner.IsAbilityRunning<LightWeaponAttack>()&& !abilityRunner.IsAbilityRunning<Cyclone>())//ai is not attacking playerAbilityRunner.IsAbilityRunning<Cyclone>()
+                if (!abilityRunner.IsAbilityRunning<HeavyWeaponAttack>() && !abilityRunner.IsAbilityRunning<LightWeaponAttack>()&& !abilityRunner.IsAbilityRunning<WeaponArt>())//ai is not attacking player
                 {
                     float GuardChance = UnityEngine.Random.Range(0f, 1f);
                     if (GuardChance > 0.2)
@@ -163,7 +163,7 @@ namespace GameScripts.AI.StickEnemy
             {
                 abilityRunner.Signal<Guard>();
             }
-/*            if(abilityRunner.IsAbilityRunning<Cyclone>())
+/*            if(abilityRunner.IsAbilityRunning<WeaponArt>())
             {
                 return typeof(ChaseState);
             }*/
@@ -171,7 +171,7 @@ namespace GameScripts.AI.StickEnemy
             {
                 GuardCheck();
             }
-            if (abilityRunner.IsAbilityRunning<HeavyWeaponAttack>() || abilityRunner.IsAbilityRunning<LightWeaponAttack>()|| abilityRunner.IsAbilityRunning<Guard>()|| abilityRunner.IsAbilityRunning<Cyclone>()) 
+            if (abilityRunner.IsAbilityRunning<HeavyWeaponAttack>() || abilityRunner.IsAbilityRunning<LightWeaponAttack>()|| abilityRunner.IsAbilityRunning<Guard>()|| abilityRunner.IsAbilityRunning<WeaponArt>()) 
             {
                 if(abilityRunner.IsAbilityRunning<HeavyWeaponAttack>() && maxChargeTime<Time.time )
                 {

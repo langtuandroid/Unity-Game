@@ -29,7 +29,7 @@ namespace LobsterFramework.AbilitySystem
                         icons[type] = texture;
                     }
                 }
-                catch (NullReferenceException e)
+                catch (NullReferenceException)
                 {
                     Debug.LogError("Null pointer exception when setting icon for script: " + type.FullName);
                 }

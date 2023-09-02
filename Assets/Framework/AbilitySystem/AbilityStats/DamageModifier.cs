@@ -2,6 +2,7 @@ using LobsterFramework.EntitySystem;
 using LobsterFramework.Utility;
 using LobsterFramework.Utility.BufferedStats;
 using System;
+using UnityEngine;
 
 namespace LobsterFramework.AbilitySystem
 {
@@ -10,6 +11,13 @@ namespace LobsterFramework.AbilitySystem
     {
         [NonSerialized] public FloatSum flatDamageModification;
         [NonSerialized] public FloatProduct percentageDamageModifcation;
+        [SerializeField]
+        [ReadOnly] 
+        private float flatDamage;
+        [SerializeField]
+        [ReadOnly]
+        private float percentageDamage;
+        
         public override void Initialize() {
             flatDamageModification = new(0, false, true);
             percentageDamageModifcation = new(1, true);
@@ -23,6 +31,11 @@ namespace LobsterFramework.AbilitySystem
             damage.posture += flatDamageModification.Stat;
 
             return damage;
+        }
+
+        public override void Update() {
+            flatDamage = flatDamageModification.Stat;
+            percentageDamage = percentageDamageModifcation.Stat;
         }
     }
 }

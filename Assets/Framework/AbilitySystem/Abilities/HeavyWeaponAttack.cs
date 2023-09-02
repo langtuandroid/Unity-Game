@@ -22,6 +22,7 @@ namespace LobsterFramework.AbilitySystem
         public class HeavyWeaponAttackConfig : AbilityCoroutineConfig {
             [HideInInspector] public bool animationSignaled;
             [HideInInspector] public bool inputSignaled;
+            [HideInInspector] public Weapon currentWeapon;
             public RefFloat baseDamageModifier;
             public RefFloat maxChargeDamageIncrease;
             public RefFloat chargeMaxTime;
@@ -55,6 +56,18 @@ namespace LobsterFramework.AbilitySystem
 
                 ability.DealDamage(weapon.Entity, baseDamageModifier + maxChargeDamageIncrease * (chargeTimer / chargeMaxTime), 
                     weapon.HealthDamageReduction, weapon.PostureDamageReduction);
+            }
+
+            public void SubscribeWeaponEvent()
+            {
+                currentWeapon.onEntityHit += OnEntityHit;
+                currentWeapon.onWeaponHit += OnWeaponHit;
+            }
+
+            public void UnSubscribeWeaponEvent()
+            {
+                currentWeapon.onEntityHit -= OnEntityHit;
+                currentWeapon.onWeaponHit -= OnWeaponHit;
             }
         }
         public class HeavyWeaponAttackPipe : AbilityPipe {
@@ -108,7 +121,7 @@ namespace LobsterFramework.AbilitySystem
 
             c.inputSignaled = false;
             animator.speed = weaponWielder.Mainhand.AttackSpeed;
-            SubscribeWeaponEvent(c);
+            c.currentWeapon.Action();
 
             // Wait for signal of recovery
             while (!c.animationSignaled)
@@ -116,7 +129,7 @@ namespace LobsterFramework.AbilitySystem
                 yield return null;
             }
             c.animationSignaled = false;
-            UnSubscribeWeaponEvent(c);
+            c.currentWeapon.Pause();
             moveControl.UnmodifyMoveSpeed(c.m_key);
             moveControl.UnmodifyRotationSpeed(c.r_key);
             c.m_key = -1;
@@ -132,7 +145,9 @@ namespace LobsterFramework.AbilitySystem
         protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe)
         {
             HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)config;
-            abilityRunner.StartAnimation(this, config.Key, weaponWielder.Mainhand.Name + "_heavy_attack", weaponWielder.Mainhand.AttackSpeed);
+            h.currentWeapon = weaponWielder.Mainhand;
+            h.SubscribeWeaponEvent();
+            abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.Mainhand.Name + "_heavy_attack", weaponWielder.Mainhand.AttackSpeed);
             h.animationSignaled = false;
             h.inputSignaled = false;
             h.chargeTimer = 0;
@@ -144,6 +159,7 @@ namespace LobsterFramework.AbilitySystem
         protected override void OnCoroutineFinish(AbilityCoroutineConfig config)
         {
             HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)config;
+            h.UnSubscribeWeaponEvent();
             h.animationSignaled = false;
             weaponWielder.Mainhand.Pause();
             if (h.m_key != -1) {
@@ -166,19 +182,7 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
-        private void SubscribeWeaponEvent(HeavyWeaponAttackConfig config)
-        {
-            weaponWielder.Mainhand.Action();
-            weaponWielder.Mainhand.onEntityHit += config.OnEntityHit;
-            weaponWielder.Mainhand.onWeaponHit += config.OnWeaponHit;
-        }
-
-        private void UnSubscribeWeaponEvent(HeavyWeaponAttackConfig config)
-        {
-            weaponWielder.Mainhand.Pause();
-            weaponWielder.Mainhand.onEntityHit -= config.OnEntityHit;
-            weaponWielder.Mainhand.onWeaponHit -= config.OnWeaponHit;
-        }
+        
 
         private void DealDamage(Entity entity, float modifier, float healthDamageReduction=0, float postureDamageReduction=0)
         {
@@ -197,12 +201,6 @@ namespace LobsterFramework.AbilitySystem
                 }
             }
         }
-
-        protected override void OnAnimationInterrupt(AbilityConfig config)
-        {
-            HaltOnAllConfigs();
-        }
-
 
         protected override void OnCoroutineReset(AbilityCoroutineConfig config)
         {

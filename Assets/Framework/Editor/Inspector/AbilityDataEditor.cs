@@ -59,7 +59,7 @@ namespace LobsterFramework.Editors
                 EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
                 EditorGUILayout.Space();
                 DrawAbilities(abilityData);
-            }catch(ArgumentException e)
+            }catch(ArgumentException)
             {
                 // Ignore this error
             }

@@ -174,12 +174,6 @@ namespace LobsterFramework.AbilitySystem {
             return default;
         }
 
-        public void GetRunningAbility(ref List<AbilityConfigPair> runningAbilities) {
-            foreach (AbilityConfigPair pair in executing) {
-                runningAbilities.Add(pair);
-            }
-        }
-
         /// <summary>
         /// Stops the execution of the action and returns the status of this operation
         /// </summary>
@@ -262,6 +256,32 @@ namespace LobsterFramework.AbilitySystem {
                 return false;
             }
             return ability.IsExecuting(configName);
+        }
+
+        /// <summary>
+        /// Check if the ability with specified config is running
+        /// </summary>
+        /// <typeparam name="T">The type of the ability being queried</typeparam>
+        /// <param name="configName">The name of the config being queried</param>
+        /// <returns> true if the ability exists and is running, otherwise false </returns>
+        public bool IsAbilityRunning(Type abilityType, string configName = "default") 
+        {
+            Ability ability = GetAbility(abilityType);
+            if (ability == null)
+            {
+                return false;
+            }
+            return ability.IsExecuting(configName);
+        }
+
+        public bool JoinAbilities(Type primaryAbility, Type secondaryAbility, string config1, string config2) {
+            if (IsAbilityRunning(primaryAbility, config1) && IsAbilityRunning(secondaryAbility, config2)) {
+                AbilityConfigPair p1 = new() { ability = GetAbility(primaryAbility), configName = config1};
+                AbilityConfigPair p2 = new() { ability = GetAbility(secondaryAbility), configName = config2};
+                jointlyRunning[p1] = p2;
+                return true;
+            }
+            return false;
         }
 
         /// <summary>

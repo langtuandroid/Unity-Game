@@ -36,7 +36,7 @@ namespace GameScripts.Abilities
             return manaComponent.AvailableMana >= s_config.manaCost.Value;
         }
 
-        protected override void OnEnqueue(AbilityConfig config, AbilityPipe pipe, string configName)
+        protected override void OnEnqueue(AbilityConfig config, AbilityPipe pipe)
         {
             ShootConfig s_config = (ShootConfig)config;
             manaComponent.ReserveMana(s_config.manaCost.Value);

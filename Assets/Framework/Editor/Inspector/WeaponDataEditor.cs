@@ -36,7 +36,7 @@ namespace LobsterFramework.Editors
             {
                 DrawWeaponStats(weaponData);
             }
-            catch (ArgumentException e)
+            catch (ArgumentException)
             {
                 // Ignore this error
             }

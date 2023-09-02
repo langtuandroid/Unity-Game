@@ -17,7 +17,7 @@ namespace LobsterFramework.Editors
                 serializedObject.Update();
                 DrawPropertiesExcluding(serializedObject, "m_Script");
                 serializedObject.ApplyModifiedProperties();
-            }catch(ArgumentException e)
+            }catch(ArgumentException)
             {
                 // Ignore ArgumentException
             }

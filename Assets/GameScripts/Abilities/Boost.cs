@@ -55,7 +55,7 @@ namespace GameScripts.Abilities
             transform = abilityRunner.TopLevelTransform;
         }
 
-        protected override void OnEnqueue(AbilityConfig config, AbilityPipe pipe, string configName)
+        protected override void OnEnqueue(AbilityConfig config, AbilityPipe pipe)
         {
             BoostConfig bConfig = (BoostConfig)config;
             bConfig.hyperArmorKey = abilityRunner.HyperArmor();

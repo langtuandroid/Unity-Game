@@ -11,7 +11,7 @@ namespace LobsterFramework.AbilitySystem {
     /// <summary>
     /// struct used by ActionOverseer to process action queue
     /// </summary>
-    public struct AbilityConfigPair
+    internal struct AbilityConfigPair
     {
         public string configName;
         public Ability ability;
@@ -43,6 +43,9 @@ namespace LobsterFramework.AbilitySystem {
         internal Dictionary<string, AbilityPipe> pipes = new();
 
         private HashSet<string> executing = new();
+        private string currentRunningConfigName;
+
+        protected string CurrentConfigName { get { return currentRunningConfigName; } }
 
         /// <summary>
         /// Add the config with specified name to this Ability, this should only be called by editor scripts
@@ -140,11 +143,12 @@ namespace LobsterFramework.AbilitySystem {
         {
             if (IsReady(configName))
             {
+                currentRunningConfigName = configName;
                 configs[configName].accessKey = ActionOverseer.EnqueueAction(new AbilityConfigPair(this, configName));
                 executing.Add(configName);
                 AbilityConfig config = configs[configName];
                 AbilityPipe pipe = pipes[configName];
-                OnEnqueue(config, pipe, configName);
+                OnEnqueue(config, pipe);
                 return true;
             }
             return false;
@@ -159,6 +163,7 @@ namespace LobsterFramework.AbilitySystem {
         {
             try
             {
+                currentRunningConfigName = name;
                 AbilityConfig config = configs[name];
                 AbilityPipe pipe = pipes[name];
                 bool result = Action(config, pipe);
@@ -317,7 +322,7 @@ namespace LobsterFramework.AbilitySystem {
         /// Callback when the animation of the ability is interrupted by other abilities. Useful when abilities relies on animation events.
         /// </summary>
         /// <param name="config"></param>
-        protected virtual void OnAnimationInterrupt(AbilityConfig config) { HaltOnAllConfigs(); }
+        protected virtual void OnAnimationInterrupt(AbilityConfig config) { HaltAbilityExecution(CurrentConfigName); }
 
         /// <summary>
         /// Interrupt the animation of the currently animating AbilityConfig pair
@@ -325,6 +330,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <param name="configName"></param>
         internal void InterruptAnimation(string configName) {
             if (!configs.ContainsKey(configName)) { return; }
+            currentRunningConfigName = configName;
             AbilityConfig config = configs[configName];
             OnAnimationInterrupt(config);
         }
@@ -333,7 +339,24 @@ namespace LobsterFramework.AbilitySystem {
         /// </summary>
         /// <param name="config"></param>
         /// <param name="configName"></param>
-        protected virtual void OnEnqueue(AbilityConfig config, AbilityPipe pipe, string configName) { }
+        protected virtual void OnEnqueue(AbilityConfig config, AbilityPipe pipe) { }
+
+
+        /// <summary>
+        /// Attempt to join the current running ability with another ability that is running. 
+        /// On success, the current running ability will terminate no later than the joined ability.
+        /// </summary>
+        /// <typeparam name="T">The type of the ability to be joined with</typeparam>
+        /// <param name="configName">The name of the config of the running ability to be joined</param>
+        /// <returns> Return true on success, otherwise false </returns>
+        protected bool JoinAsSecondary<T>(string configName) where T : Ability {
+            return abilityRunner.JoinAbilities(typeof(T), GetType(), configName, CurrentConfigName);
+        }
+
+        protected bool JoinAsSecondary(Type abilityType, string configName)
+        {
+            return abilityRunner.JoinAbilities(abilityType, GetType(), configName, CurrentConfigName);
+        }
 
         private Type GetBaseConfigType() {
             Type type = GetType().BaseType;
@@ -394,6 +417,7 @@ namespace LobsterFramework.AbilitySystem {
 
         public void Signal(string configName, AnimationEvent animationEvent) {
             if (configs.ContainsKey(configName)) {
+                currentRunningConfigName = configName;
                 Signal(configs[configName], animationEvent);
             }
         }

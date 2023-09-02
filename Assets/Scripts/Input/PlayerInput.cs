@@ -152,6 +152,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""WeaponArt2"",
+                    ""type"": ""Button"",
+                    ""id"": ""19717e90-af35-49d1-abf2-66066898245b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -352,6 +361,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""WeaponArt"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1aa62be8-3d29-4b93-8bdf-7547824b3a8d"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WeaponArt2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -374,6 +394,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_WeaponArt = m_Player.FindAction("WeaponArt", throwIfNotFound: true);
+        m_Player_WeaponArt2 = m_Player.FindAction("WeaponArt2", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -449,6 +470,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Shoot;
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_WeaponArt;
+    private readonly InputAction m_Player_WeaponArt2;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -467,6 +489,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @WeaponArt => m_Wrapper.m_Player_WeaponArt;
+        public InputAction @WeaponArt2 => m_Wrapper.m_Player_WeaponArt2;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -518,6 +541,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @WeaponArt.started += instance.OnWeaponArt;
             @WeaponArt.performed += instance.OnWeaponArt;
             @WeaponArt.canceled += instance.OnWeaponArt;
+            @WeaponArt2.started += instance.OnWeaponArt2;
+            @WeaponArt2.performed += instance.OnWeaponArt2;
+            @WeaponArt2.canceled += instance.OnWeaponArt2;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -564,6 +590,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @WeaponArt.started -= instance.OnWeaponArt;
             @WeaponArt.performed -= instance.OnWeaponArt;
             @WeaponArt.canceled -= instance.OnWeaponArt;
+            @WeaponArt2.started -= instance.OnWeaponArt2;
+            @WeaponArt2.performed -= instance.OnWeaponArt2;
+            @WeaponArt2.canceled -= instance.OnWeaponArt2;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -597,5 +626,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnShoot(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnWeaponArt(InputAction.CallbackContext context);
+        void OnWeaponArt2(InputAction.CallbackContext context);
     }
 }

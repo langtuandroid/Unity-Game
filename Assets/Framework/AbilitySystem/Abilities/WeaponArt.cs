@@ -29,15 +29,17 @@ namespace LobsterFramework.AbilitySystem
             return false;
         }
 
-        protected override void OnEnqueue(AbilityConfig config, AbilityPipe pipe, string configName)
+        protected override void OnEnqueue(AbilityConfig config, AbilityPipe pipe)
         {
             ValueTuple<Type, string> setting = weaponWielder.Mainhand.AbilitySetting;
             abilityRunner.EnqueueAbility(setting.Item1, setting.Item2);
+            JoinAsSecondary(setting.Item1, setting.Item2);
         }
 
         protected override bool Action(AbilityConfig config, AbilityPipe pipe)
         {
-            return false;
+            // Wait until the ability finishes
+            return true;
         }
     }
 }

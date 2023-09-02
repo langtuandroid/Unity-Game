@@ -131,6 +131,18 @@ namespace GameScripts.InputControl
             }
         }
 
+        public void WeaponArt2(InputAction.CallbackContext context)
+        {
+            if (gamePause.Value)
+            {
+                return;
+            }
+            if (context.started)
+            {
+                abilityRunner.EnqueueAbility<LightWeaponAttack>("2");
+            }
+        }
+
         public void Guard(InputAction.CallbackContext context)
         {
             if (gamePause.Value)
