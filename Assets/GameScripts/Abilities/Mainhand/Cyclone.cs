@@ -54,25 +54,24 @@ namespace GameScripts.Abilities
 
         protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe)
         {
-            abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.Mainhand.Name + "_cyclone", weaponWielder.Mainhand.AttackSpeed);
             CycloneConfig cycloneConfig = (CycloneConfig)config;
             cycloneConfig.currentWeapon = weaponWielder.Mainhand;
             SubscribeWeaponEvent(cycloneConfig.currentWeapon);
             cycloneConfig.m_key = moveControl.ModifyMoveSpeed(cycloneConfig.moveSpeedModifier);
             cycloneConfig.r_key = moveControl.ModifyRotationSpeed(cycloneConfig.rotationSpeedModifier);
+            abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.Mainhand.Name + "_cyclone", weaponWielder.Mainhand.AttackSpeed);
         }
 
         protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe)
         {
-            Debug.Log("start"); 
             CycloneConfig cycloneConfig = (CycloneConfig)config;
             cycloneConfig.stopped = false;
             cycloneConfig.repeatAttack = false;
             cycloneConfig.currentWeapon.Action();
             while (!cycloneConfig.stopped) {
                 if (cycloneConfig.repeatAttack) {
-                    weaponWielder.Mainhand.Pause();
-                    weaponWielder.Mainhand.Action();
+                    cycloneConfig.currentWeapon.Pause();
+                    cycloneConfig.currentWeapon.Action();
                     cycloneConfig.repeatAttack = false;
                 }
                 yield return null;

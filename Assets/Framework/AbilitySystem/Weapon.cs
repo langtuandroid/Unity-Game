@@ -172,7 +172,7 @@ namespace LobsterFramework.AbilitySystem
             }
             if (abilitySelector.weaponType != weaponType) {
                 abilitySelector.weaponType = weaponType;
-            }
+            } 
         }
 
         /// <summary>

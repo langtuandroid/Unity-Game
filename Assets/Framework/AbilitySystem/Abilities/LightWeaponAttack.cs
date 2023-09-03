@@ -94,9 +94,9 @@ namespace LobsterFramework.AbilitySystem
             c.currentWeapon = weaponWielder.Mainhand;
             SubscribeWeaponEvent(c.currentWeapon);
             c.signaled = false;
-            abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.Mainhand.Name + "_light_attack", weaponWielder.Mainhand.AttackSpeed);
             c.m_key = moveControl.ModifyMoveSpeed(weaponWielder.Mainhand.LMoveSpeedModifier);
             c.r_key = moveControl.ModifyRotationSpeed(weaponWielder.Mainhand.LRotationSpeedModifier);
+            abilityRunner.StartAnimation(this, CurrentConfigName, c.currentWeapon.Name + "_light_attack", c.currentWeapon.AttackSpeed);
         }
 
         protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe)

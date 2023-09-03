@@ -147,13 +147,13 @@ namespace LobsterFramework.AbilitySystem
             HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)config;
             h.currentWeapon = weaponWielder.Mainhand;
             h.SubscribeWeaponEvent();
-            abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.Mainhand.Name + "_heavy_attack", weaponWielder.Mainhand.AttackSpeed);
             h.animationSignaled = false;
             h.inputSignaled = false;
             h.chargeTimer = 0;
             h.ability = this;
             h.m_key = moveControl.ModifyMoveSpeed(weaponWielder.Mainhand.HMoveSpeedModifier);
             h.r_key = moveControl.ModifyRotationSpeed(weaponWielder.Mainhand.HRotationSpeedModifier);
+            abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.Mainhand.Name + "_heavy_attack", weaponWielder.Mainhand.AttackSpeed);
         }
 
         protected override void OnCoroutineFinish(AbilityCoroutineConfig config)
@@ -161,7 +161,7 @@ namespace LobsterFramework.AbilitySystem
             HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)config;
             h.UnSubscribeWeaponEvent();
             h.animationSignaled = false;
-            weaponWielder.Mainhand.Pause();
+            h.currentWeapon.Pause();
             if (h.m_key != -1) {
                 moveControl.UnmodifyMoveSpeed(h.m_key);
             }

@@ -17,6 +17,7 @@ namespace LobsterFramework.AbilitySystem
             [HideInInspector] public bool inputSignaled;
             [HideInInspector] public int m_key;
             [HideInInspector] public int r_key;
+            [HideInInspector] public Weapon currentWeapon;
 
             protected internal override void Initialize()
             {
@@ -47,20 +48,19 @@ namespace LobsterFramework.AbilitySystem
         {
             animationInterrupted = false;
             GuardConfig guardConfig = (GuardConfig)config;
-            abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.Mainhand.Name + "_guard", weaponWielder.Mainhand.DefenseSpeed);
+            guardConfig.currentWeapon = weaponWielder.Mainhand;
             guardConfig.animationSignaled = false;
             guardConfig.inputSignaled = false;
 
-            guardConfig.m_key = moveControl.ModifyMoveSpeed(weaponWielder.Mainhand.GMoveSpeedModifier);
-            guardConfig.r_key = moveControl.ModifyRotationSpeed(weaponWielder.Mainhand.GRotationSpeedModifier);
+            guardConfig.m_key = moveControl.ModifyMoveSpeed(guardConfig.currentWeapon.GMoveSpeedModifier);
+            guardConfig.r_key = moveControl.ModifyRotationSpeed(guardConfig.currentWeapon.GRotationSpeedModifier);
+            abilityRunner.StartAnimation(this, CurrentConfigName, guardConfig.currentWeapon.Name + "_guard", guardConfig.currentWeapon.DefenseSpeed);
         }
 
         protected override void OnCoroutineFinish(AbilityCoroutineConfig config)
         {
-            if(!animationInterrupted) {
-                weaponWielder.PlayDefaultWeaponAnimation();
-            }
             GuardConfig g = (GuardConfig)config;
+            g.currentWeapon.Pause();
             if (g.m_key != -1) { 
                 moveControl.UnmodifyMoveSpeed(g.m_key);
             }
@@ -80,7 +80,7 @@ namespace LobsterFramework.AbilitySystem
             }
             guardConfig.animationSignaled = false;
             abilityRunner.Animator.speed = 0;
-            weaponWielder.Mainhand.Action(WeaponState.Guarding);
+            guardConfig.currentWeapon.Action(WeaponState.Guarding);
             
             while(!guardConfig.inputSignaled)
             {
@@ -88,7 +88,7 @@ namespace LobsterFramework.AbilitySystem
             }
             guardConfig.inputSignaled = false;
             abilityRunner.Animator.speed = weaponWielder.Mainhand.AttackSpeed;
-            weaponWielder.Mainhand.Pause();
+            guardConfig.currentWeapon.Pause();
             moveControl.UnmodifyMoveSpeed(guardConfig.m_key);
             moveControl.UnmodifyRotationSpeed(guardConfig.r_key);
             guardConfig.m_key = -1;
@@ -108,16 +108,10 @@ namespace LobsterFramework.AbilitySystem
             {
                 guardConfig.animationSignaled = true;
             }
-            else { 
+            else
+            {
                 guardConfig.inputSignaled = true;
             }
-        }
-
-        protected override void OnAnimationInterrupt(AbilityConfig config)
-        {
-            weaponWielder.Mainhand.Pause();
-            animationInterrupted = true;
-            HaltOnAllConfigs();
         }
 
         protected override void OnCoroutineReset(AbilityCoroutineConfig config)
