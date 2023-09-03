@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 946362375998860840}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0008764224, y: 0.0021158708, z: -0.38268247, w: 0.9238771}
-  m_LocalPosition: {x: 0.116, y: -0.037, z: 0}
+  m_LocalPosition: {x: 0.12900001, y: -0.033999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -110,7 +110,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 2, z: 1}
+  m_LocalScale: {x: 2.6, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3362887764940563738}
@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 6754967439785399562}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.118, y: -0.034, z: 0}
+  m_LocalPosition: {x: 0.127, y: -0.029, z: 0}
   m_LocalScale: {x: 0.33333334, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -201,11 +201,11 @@ MonoBehaviour:
   weaponType: 3
   weight: 40
   sharpness: 3
-  attackSpeed: 1.5
+  attackSpeed: 2
   defenseSpeed: 1.8
   doubleHanded: 0
   healthDamageReduction: 1
-  postureDamageReduction: 0.8
+  postureDamageReduction: 0.6
   gRotationSpeedModifier: 0.4
   gMoveSpeedModifier: 0.3
   lRotationSpeedModifier: 0.3

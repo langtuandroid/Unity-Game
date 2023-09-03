@@ -23,13 +23,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277114788434279753}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1044826474029167307}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2374738254491259576
 GameObject:
@@ -54,13 +54,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2374738254491259576}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1725867647180271157}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2490316291772389325
 GameObject:
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 2133346264930319670}
   - component: {fileID: 3826623040206066821}
   - component: {fileID: 4981024116806816665}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,6 +93,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2490316291772389325}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -101,7 +102,6 @@ Transform:
   - {fileID: 948921428966523799}
   - {fileID: 6037136822917060687}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &770555523144453587
 Rigidbody2D:
@@ -162,9 +162,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.014667869}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.36013365
+  m_Radius: 0.3865714
 --- !u!114 &5353377617828249592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bedff8bc66ebeab45996c2806021c2ae, type: 2}
   - {fileID: 11400000, guid: 4f8f16cf72b4f07469b075ddf31d9ebe, type: 2}
   maxHealth:
-    value: 150
+    value: 150000
     useSharedValue: 0
     sharedValue: {fileID: 11400000, guid: 8c94823de2fa10f499ba7d4b29e4118b, type: 2}
   baseHealthRegen:
@@ -197,15 +197,15 @@ MonoBehaviour:
     useSharedValue: 0
     sharedValue: {fileID: 0}
   startHealth:
-    value: 150
+    value: 150000
     useSharedValue: 0
     sharedValue: {fileID: 0}
   maxPosture:
-    value: 300
+    value: 100000
     useSharedValue: 0
     sharedValue: {fileID: 0}
   basePostureRegen:
-    value: 5
+    value: 10
     useSharedValue: 0
     sharedValue: {fileID: 0}
   damageHistory: []
@@ -386,6 +386,70 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f2ad83b8-d27f-41f1-9732-70cfe71f75f6
     m_ActionName: Player/SwitchWeapon[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3826623040206066821}
+        m_TargetAssemblyTypeName: GameScripts.InputControl.PlayerController, GameScripts
+        m_MethodName: Shoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 00616b6e-30df-45ca-a849-0fef22c79ab3
+    m_ActionName: Player/Shoot[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3826623040206066821}
+        m_TargetAssemblyTypeName: GameScripts.InputControl.PlayerController, GameScripts
+        m_MethodName: Dash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 19da8f25-1aeb-4213-b710-1e1f369a7d9a
+    m_ActionName: Player/Dash[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3826623040206066821}
+        m_TargetAssemblyTypeName: GameScripts.InputControl.PlayerController, GameScripts
+        m_MethodName: WeaponArt
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3f6c1294-69c4-429e-ab8d-981af9bbd806
+    m_ActionName: Player/WeaponArt[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3826623040206066821}
+        m_TargetAssemblyTypeName: GameScripts.InputControl.PlayerController, GameScripts
+        m_MethodName: WeaponArt2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 19717e90-af35-49d1-abf2-66066898245b
+    m_ActionName: Player/WeaponArt2[/Keyboard/2]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -458,7 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed:
-    value: 75
+    value: 100
     useSharedValue: 0
     sharedValue: {fileID: 0}
   rotateSpeed:
@@ -489,13 +553,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8831391230036856060}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7880835017238648108}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5752298683565596422
 MonoBehaviour:
@@ -560,12 +624,40 @@ PrefabInstance:
       value: skeleton
       objectReference: {fileID: 0}
     - target: {fileID: -7747579851150391166, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7747579851150391166, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7747579851150391166, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1691937
+      value: 0.273178
       objectReference: {fileID: 0}
     - target: {fileID: -7747579851150391166, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.45314658
+      value: -0.41275948
+      objectReference: {fileID: 0}
+    - target: {fileID: -7747579851150391166, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9807236
+      objectReference: {fileID: 0}
+    - target: {fileID: -7747579851150391166, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7747579851150391166, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7747579851150391166, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.19540036
+      objectReference: {fileID: 0}
+    - target: {fileID: -7747579851150391166, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 22.536
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
       propertyPath: m_RootOrder
@@ -610,6 +702,34 @@ PrefabInstance:
     - target: {fileID: -7552582706839291426, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1006390084647212156, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.11091604
+      objectReference: {fileID: 0}
+    - target: {fileID: 1006390084647212156, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.47154713
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231023618171091304, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70630586
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231023618171091304, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231023618171091304, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231023618171091304, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.70790684
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231023618171091304, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90.13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -663,8 +783,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cddaad69a76c9d2439165e61b3a387f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  topLevelTransform: {fileID: 7880835017238648108}
   abilityData: {fileID: 0}
-  data: {fileID: 11400000, guid: 8d246552b9732c041a34ef1dd70f66de, type: 2}
+  data: {fileID: 11400000, guid: 6775233eb28ab6742bc5354c9741e1f2, type: 2}
   animator: {fileID: 223299123248344314}
   weaponWielder: {fileID: 6676339780788435558}
 --- !u!95 &223299123248344314
@@ -700,12 +821,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21d7712cfaae2ab4cb1cd62dc9916ee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainhandWeapon1: {fileID: 5619198934622560290, guid: 4e63230358c59ee4cb029ee29dae2118, type: 3}
-  mainhandWeapon2: {fileID: 1569198619848997945, guid: ce596d27f0ab3ec4b83b94e1dafc5e9f, type: 3}
+  mainhandWeapon1: {fileID: 1569198619848997945, guid: ce596d27f0ab3ec4b83b94e1dafc5e9f, type: 3}
+  mainhandWeapon2: {fileID: 5619198934622560290, guid: 4e63230358c59ee4cb029ee29dae2118, type: 3}
   offhandWeapon1: {fileID: 0}
   offhandWeapon2: {fileID: 0}
+  emptyHand: {fileID: 0}
   mainhandWeaponPosition: {fileID: 1067484646109687668}
   offhandWeaponPosition: {fileID: 4802965641685046406}
+  weaponData: {fileID: 0}
   entity: {fileID: 5353377617828249592}
   animator: {fileID: 223299123248344314}
   abilityRunner: {fileID: 9072161404192331858}

@@ -181,7 +181,7 @@ namespace LobsterFramework.AbilitySystem
             {
                 animator.speed = 1;
                 if (abilityRunner != null && !abilityRunner.IsAnimating()) {
-                    GameUtility.CrossFade(animator, Mainhand.Name + "_move", 0.3f, 0.3f);
+                    GameUtility.CrossFade(animator, Mainhand.Name + "_move", 0.15f, 0.15f);
                 }
             }
         }

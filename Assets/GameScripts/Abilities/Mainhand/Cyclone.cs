@@ -105,7 +105,6 @@ namespace GameScripts.Abilities
                 cycloneConfig.stopped = true;
             }
             else {
-                Debug.Log("Attack");
                 cycloneConfig.repeatAttack = true;
             }
         }
@@ -123,13 +122,11 @@ namespace GameScripts.Abilities
 
         private void OnEntityHit(Entity entity)
         {
-            Debug.Log("hit");
             DealDamage(entity);
         }
 
         private void OnWeaponHit(Weapon weapon, Vector3 contactPoint)
         {
-            Debug.Log("hit");
             if (clashSparkTag != null)
             {
                 ObjectPool.Instance.GetObject(clashSparkTag.Value, contactPoint, Quaternion.identity);

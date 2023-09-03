@@ -13,6 +13,12 @@ namespace GameScripts.Abilities
         public class DashConfig : AbilityConfig
         {
             public float dashStrength;
+            [Range(0, 1)] public float maxDashTime;
+            [Range(0, 1)] public float moveSpeedModifier;
+            [Range(0, 1)] public float rotateSpeedModifier;
+
+            [HideInInspector] public int m_key;
+            [HideInInspector] public int r_key;
         }
 
         public class DashPipe : AbilityPipe

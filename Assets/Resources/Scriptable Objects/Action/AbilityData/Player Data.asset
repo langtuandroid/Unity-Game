@@ -21,6 +21,7 @@ MonoBehaviour:
   signaled: 0
   m_key: 0
   r_key: 0
+  currentWeapon: {fileID: 0}
 --- !u!114 &-7400554615456584093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33,6 +34,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9c30f390439f0447b9bcfacfb625b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flatDamage: 0
+  percentageDamage: 0
 --- !u!114 &-6729938308663559183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50,7 +53,12 @@ MonoBehaviour:
   useCooldown: 1
   cooldown: 1
   isSuspended: 0
-  dashStrength: 60
+  dashStrength: 300
+  maxDashTime: 0
+  moveSpeedModifier: 0
+  rotateSpeedModifier: 0
+  m_key: 0
+  r_key: 0
 --- !u!114 &-5774857593913478976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +154,7 @@ MonoBehaviour:
   awakeTime: 0
   animationSignaled: 0
   inputSignaled: 0
+  currentWeapon: {fileID: 0}
   baseDamageModifier:
     value: 1.2
     useSharedValue: 0
@@ -254,6 +263,7 @@ MonoBehaviour:
   awakeTime: 0
   moveSpeedModifier: 0.5
   rotationSpeedModifier: 0.5
+  currentWeapon: {fileID: 0}
   stopped: 0
   repeatAttack: 0
   m_key: 0
@@ -279,6 +289,7 @@ MonoBehaviour:
   signaled: 0
   m_key: 0
   r_key: 0
+  currentWeapon: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

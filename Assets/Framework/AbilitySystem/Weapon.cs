@@ -123,7 +123,6 @@ namespace LobsterFramework.AbilitySystem
             if (state == WeaponState.Guarding) {
                 return;
             }
-            // Debug.Log("Hit");
             Entity entity = collider.GetComponent<Entity>();
             if (entity != null && !hitted.Contains(entity)) {
                 newHit.Add(entity);
