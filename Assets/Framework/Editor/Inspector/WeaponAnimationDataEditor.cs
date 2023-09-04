@@ -19,17 +19,36 @@ namespace LobsterFramework.Editors
 
         public override void OnInspectorGUI()
         {
+            serializedObject.Update();
+            EditorGUI.BeginChangeCheck();
             selectedWeaponType = (WeaponType)EditorGUILayout.EnumPopup("Weapon Type", selectedWeaponType);
             WeaponAnimationData data = (WeaponAnimationData)target;
-            if (!data.setting.ContainsKey(selectedWeaponType)) {
-                data.setting[selectedWeaponType] = new();
+            Undo.RecordObject(data, "WeaponAnimationData");
+            Array enums = Enum.GetValues(typeof(WeaponType));
+            if (data.setting == null) {
+                data.setting = new();
+            }
+            if (data.moveSetting == null) {
+                data.moveSetting = new();
+            }
+            if (data.setting.Count < enums.Length) {
+                for (int i = data.setting.Count;i <= enums.Length;i++) {
+                    data.setting.Add(new());
+                }
+            }
+            if (data.moveSetting.Count < enums.Length) {
+                for (int i = data.setting.Count; i <= enums.Length; i++)
+                {
+                    data.moveSetting.Add(null);
+                }
             }
 
-            WeaponAbilityAnimationSetting setting = data.setting[selectedWeaponType];
+            WeaponAbilityAnimationSetting setting = data.setting[(int)selectedWeaponType];
             List<Type> displayEntries = new();
             if (selectedWeaponType != WeaponType.EmptyHand) {
                 displayEntries.Add(typeof(LightWeaponAttack));
                 displayEntries.Add(typeof(HeavyWeaponAttack));
+                displayEntries.Add(typeof(Guard));
             }
 
             if (AddWeaponArtMenuAttribute.compatibleAbilities.ContainsKey(selectedWeaponType)) {
@@ -37,15 +56,18 @@ namespace LobsterFramework.Editors
                 displayEntries.AddRange(collection);
             }
 
-            if (displayEntries.Count == 0) {
-                EditorGUILayout.LabelField("No ability animation available for this weapon!");
-                return;
-            }
             foreach (Type ability in displayEntries) {
                 if (!setting.ContainsKey(ability.AssemblyQualifiedName)) {
                     setting[ability.AssemblyQualifiedName] = null;
                 }
                 setting[ability.AssemblyQualifiedName] = (AnimationClip)EditorGUILayout.ObjectField(ability.Name, setting[ability.AssemblyQualifiedName], typeof(AnimationClip), false);
+            }
+
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+            int selected = (int)selectedWeaponType;
+            data.moveSetting[selected] = (AnimationClip)EditorGUILayout.ObjectField("Move", data.moveSetting[selected], typeof(AnimationClip), false);
+            if (EditorGUI.EndChangeCheck()) {
+                serializedObject.ApplyModifiedProperties();
             }
         }
     }

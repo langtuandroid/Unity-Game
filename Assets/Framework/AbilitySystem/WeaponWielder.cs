@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.Utility;
@@ -25,12 +26,13 @@ namespace LobsterFramework.AbilitySystem
 
         [Header("Weapon Data")]
         [SerializeField] private WeaponData weaponData;
+        [SerializeField] private WeaponAnimationData animationData;
         private WeaponData data;
         private TypeWeaponStatDictionary weaponStats;
 
         [Header("Component Reference")]
         [SerializeField] private Entity entity;
-        [SerializeField] private Animancer.AnimancerComponent animancer;
+        [SerializeField] private AnimancerComponent animancer;
         [SerializeField] private AbilityRunner abilityRunner;
 
         private Weapon mainWeapon1;
@@ -184,7 +186,7 @@ namespace LobsterFramework.AbilitySystem
                 if (abilityRunner != null)
                 {
                     abilityRunner.InterruptAbilityAnimation();
-                    AnimationClip clip = AnimationClipManager.Get(Mainhand.Name + "_move");
+                    AnimationClip clip = animationData.GetMoveClip(Mainhand.WeaponType);
                     animancer.Play(clip, 0.25f, FadeMode.FixedDuration).Speed = 1;
                 }
             }
@@ -195,10 +197,19 @@ namespace LobsterFramework.AbilitySystem
             {
                 if (abilityRunner != null && !abilityRunner.IsAnimating()) {
                     animancer.Stop();
-                    AnimationClip clip = AnimationClipManager.Get(Mainhand.Name + "_move");
+                    AnimationClip clip = animationData.GetMoveClip(Mainhand.WeaponType);
                     animancer.Play(clip).Speed = 1;
                 }
             }
+        }
+
+        public AnimationClip GetAbilityClip(Type abilityType, WeaponType weaponType) {
+            return animationData.GetAbilityClip(Mainhand.WeaponType, abilityType);
+        }
+
+        public AnimationClip GetMainHandMoveClip(WeaponType weaponType)
+        {
+            return animationData.GetMoveClip(weaponType);
         }
     }
 }

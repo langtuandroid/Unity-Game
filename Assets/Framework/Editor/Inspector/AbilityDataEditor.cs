@@ -46,6 +46,7 @@ namespace LobsterFramework.Editors
 
         public override void OnInspectorGUI()
         {
+            serializedObject.Update();
             AbilityData abilityData = (AbilityData)target;
             EditorGUILayout.HelpBox("Note: The configurations for abilities will not be available before " +
                 "the first run of the game! Please verify the integrity of data " +

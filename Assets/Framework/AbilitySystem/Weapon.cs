@@ -185,7 +185,7 @@ namespace LobsterFramework.AbilitySystem
             hitted.Clear();
         }
     }
-
+    [Serializable]
     public enum WeaponType { 
         Sword,
         Hammer,

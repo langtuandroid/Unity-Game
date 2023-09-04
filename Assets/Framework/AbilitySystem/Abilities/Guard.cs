@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using static LobsterFramework.AbilitySystem.Guard;
+using Animancer;
 
 namespace LobsterFramework.AbilitySystem
 {
@@ -8,7 +10,6 @@ namespace LobsterFramework.AbilitySystem
     public class Guard : AbilityCoroutine
     {
         private WeaponWielder weaponWielder;
-        private bool animationInterrupted;
         private MovementController moveControl;
 
         public class GuardConfig : AbilityCoroutineConfig
@@ -18,6 +19,7 @@ namespace LobsterFramework.AbilitySystem
             [HideInInspector] public int m_key;
             [HideInInspector] public int r_key;
             [HideInInspector] public Weapon currentWeapon;
+            [HideInInspector] public AnimancerState animancerState;
 
             protected internal override void Initialize()
             {
@@ -37,16 +39,13 @@ namespace LobsterFramework.AbilitySystem
         {
             if (weaponWielder.Mainhand != null)
             {
-                int animation = Animator.StringToHash(weaponWielder.Mainhand.Name + "_guard");
-                int index = abilityRunner.Animator.GetLayerIndex("Base Layer");
-                return abilityRunner.Animator.HasState(index, animation) && weaponWielder.Mainhand.state == WeaponState.Idle;
+                return weaponWielder.GetAbilityClip(GetType(), weaponWielder.Mainhand.WeaponType) != null && weaponWielder.Mainhand.state == WeaponState.Idle;
             }
             return false;
         }
 
         protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe)
         {
-            animationInterrupted = false;
             GuardConfig guardConfig = (GuardConfig)config;
             guardConfig.currentWeapon = weaponWielder.Mainhand;
             guardConfig.animationSignaled = false;
@@ -54,20 +53,15 @@ namespace LobsterFramework.AbilitySystem
 
             guardConfig.m_key = moveControl.ModifyMoveSpeed(guardConfig.currentWeapon.GMoveSpeedModifier);
             guardConfig.r_key = moveControl.ModifyRotationSpeed(guardConfig.currentWeapon.GRotationSpeedModifier);
-            abilityRunner.StartAnimation(this, CurrentConfigName, guardConfig.currentWeapon.Name + "_guard", guardConfig.currentWeapon.DefenseSpeed);
+            guardConfig.animancerState = abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.GetAbilityClip(GetType(), guardConfig.currentWeapon.WeaponType), guardConfig.currentWeapon.DefenseSpeed);
         }
 
         protected override void OnCoroutineFinish(AbilityCoroutineConfig config)
         {
             GuardConfig g = (GuardConfig)config;
             g.currentWeapon.Pause();
-            if (g.m_key != -1) { 
-                moveControl.UnmodifyMoveSpeed(g.m_key);
-            }
-            if(g.r_key != -1)
-            {
-                moveControl.UnmodifyRotationSpeed(g.r_key);
-            }
+            moveControl.UnmodifyMoveSpeed(g.m_key);
+            moveControl.UnmodifyRotationSpeed(g.r_key);
         }
 
         protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe)
@@ -79,7 +73,7 @@ namespace LobsterFramework.AbilitySystem
                 yield return null;
             }
             guardConfig.animationSignaled = false;
-            abilityRunner.Animator.speed = 0;
+            guardConfig.animancerState.IsPlaying = false;
             guardConfig.currentWeapon.Action(WeaponState.Guarding);
             
             while(!guardConfig.inputSignaled)
@@ -87,12 +81,8 @@ namespace LobsterFramework.AbilitySystem
                 yield return null;
             }
             guardConfig.inputSignaled = false;
-            abilityRunner.Animator.speed = weaponWielder.Mainhand.AttackSpeed;
+            guardConfig.animancerState.IsPlaying = true;
             guardConfig.currentWeapon.Pause();
-            moveControl.UnmodifyMoveSpeed(guardConfig.m_key);
-            moveControl.UnmodifyRotationSpeed(guardConfig.r_key);
-            guardConfig.m_key = -1;
-            guardConfig.r_key = -1;
 
             // Wait for animation to finish
             while (true)

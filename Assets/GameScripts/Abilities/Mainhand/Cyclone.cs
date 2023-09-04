@@ -38,9 +38,7 @@ namespace GameScripts.Abilities
         {
             if (weaponWielder.Mainhand != null)
             {
-                int animation = Animator.StringToHash(weaponWielder.Mainhand.Name + "_cyclone");
-                int index = abilityRunner.Animator.GetLayerIndex("Base Layer");
-                return abilityRunner.Animator.HasState(index, animation) && weaponWielder.Mainhand.state != WeaponState.Attacking;
+                return weaponWielder.GetAbilityClip(GetType(), weaponWielder.Mainhand.WeaponType) != null && weaponWielder.Mainhand.state != WeaponState.Attacking;
             }
             return false;
         }
@@ -59,7 +57,7 @@ namespace GameScripts.Abilities
             SubscribeWeaponEvent(cycloneConfig.currentWeapon);
             cycloneConfig.m_key = moveControl.ModifyMoveSpeed(cycloneConfig.moveSpeedModifier);
             cycloneConfig.r_key = moveControl.ModifyRotationSpeed(cycloneConfig.rotationSpeedModifier);
-            abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.Mainhand.Name + "_cyclone", weaponWielder.Mainhand.AttackSpeed);
+            abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.GetAbilityClip(GetType(), cycloneConfig.currentWeapon.WeaponType), weaponWielder.Mainhand.AttackSpeed);
         }
 
         protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe)

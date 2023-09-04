@@ -92,11 +92,23 @@ namespace LobsterFramework.AbilitySystem
         {
             if (weaponWielder.Mainhand != null)
             {
-                int animation = Animator.StringToHash(weaponWielder.Mainhand.Name + "_heavy_attack");
-                int index = abilityRunner.Animator.GetLayerIndex("Base Layer");
-                return abilityRunner.Animator.HasState(index, animation) && weaponWielder.Mainhand.state != WeaponState.Attacking;
+                return weaponWielder.GetAbilityClip(GetType(), weaponWielder.Mainhand.WeaponType) != null && weaponWielder.Mainhand.state != WeaponState.Attacking;
             }
             return false;
+        }
+
+        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe)
+        {
+            HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)config;
+            h.currentWeapon = weaponWielder.Mainhand;
+            h.SubscribeWeaponEvent();
+            h.animationSignaled = false;
+            h.inputSignaled = false;
+            h.chargeTimer = 0;
+            h.ability = this;
+            h.m_key = moveControl.ModifyMoveSpeed(h.currentWeapon.HMoveSpeedModifier);
+            h.r_key = moveControl.ModifyRotationSpeed(h.currentWeapon.HRotationSpeedModifier);
+            h.animationState = abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.GetAbilityClip(GetType(), h.currentWeapon.WeaponType), weaponWielder.Mainhand.AttackSpeed);
         }
 
         protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe)
@@ -127,10 +139,6 @@ namespace LobsterFramework.AbilitySystem
             }
             c.animationSignaled = false;
             c.currentWeapon.Pause();
-            moveControl.UnmodifyMoveSpeed(c.m_key);
-            moveControl.UnmodifyRotationSpeed(c.r_key);
-            c.m_key = -1;
-            c.r_key = -1;
 
             // Wait for animation to finish
             while (true)
@@ -139,32 +147,14 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
-        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe)
-        {
-            HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)config;
-            h.currentWeapon = weaponWielder.Mainhand;
-            h.SubscribeWeaponEvent();
-            h.animationSignaled = false;
-            h.inputSignaled = false;
-            h.chargeTimer = 0;
-            h.ability = this;
-            h.m_key = moveControl.ModifyMoveSpeed(weaponWielder.Mainhand.HMoveSpeedModifier);
-            h.r_key = moveControl.ModifyRotationSpeed(weaponWielder.Mainhand.HRotationSpeedModifier);
-            h.animationState = abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.Mainhand.Name + "_heavy_attack", weaponWielder.Mainhand.AttackSpeed);
-        }
-
         protected override void OnCoroutineFinish(AbilityCoroutineConfig config)
         {
             HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)config;
             h.UnSubscribeWeaponEvent();
             h.animationSignaled = false;
             h.currentWeapon.Pause();
-            if (h.m_key != -1) {
-                moveControl.UnmodifyMoveSpeed(h.m_key);
-            }
-            if (h.r_key != -1) {
-                moveControl.UnmodifyRotationSpeed(h.r_key);
-            }
+            moveControl.UnmodifyMoveSpeed(h.m_key);
+            moveControl.UnmodifyRotationSpeed(h.r_key);
         }
 
         protected override void Signal(AbilityConfig config, AnimationEvent animationEvent)

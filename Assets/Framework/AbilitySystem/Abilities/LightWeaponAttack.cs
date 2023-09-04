@@ -40,52 +40,11 @@ namespace LobsterFramework.AbilitySystem
 
         protected override bool ConditionSatisfied(AbilityConfig config)
         {
-            if(weaponWielder.Mainhand != null)
+            if (weaponWielder.Mainhand != null)
             {
-                int animation = Animator.StringToHash(weaponWielder.Mainhand.Name + "_light_attack");
-                int index = abilityRunner.Animator.GetLayerIndex("Base Layer");
-                return abilityRunner.Animator.HasState(index, animation) && weaponWielder.Mainhand.state != WeaponState.Attacking;
+                return weaponWielder.GetAbilityClip(GetType(), weaponWielder.Mainhand.WeaponType) != null && weaponWielder.Mainhand.state != WeaponState.Attacking;
             }
             return false;
-        }
-
-        private void SubscribeWeaponEvent(Weapon weapon) {
-            weapon.onEntityHit += OnEntityHit;
-            weapon.onWeaponHit += OnWeaponHit;
-        }
-
-        private void UnSubscribeWeaponEvent(Weapon weapon) {
-            weapon.onEntityHit -= OnEntityHit;
-            weapon.onWeaponHit -= OnWeaponHit;
-        }
-
-        private void OnEntityHit(Entity entity)
-        {
-            DealDamage(entity);
-        }
-
-        private void OnWeaponHit(Weapon weapon, Vector3 contactPoint)
-        {
-            if (clashSparkTag != null) {
-                ObjectPool.Instance.GetObject(clashSparkTag.Value, contactPoint, Quaternion.identity);
-            }
-            DealDamage(weapon.Entity, weapon.HealthDamageReduction, weapon.PostureDamageReduction);
-        }
-
-        private void DealDamage(Entity entity, float hdReduction=0, float pdReduction=0) {
-            if (targets.IsTarget(entity)) {
-                float health = 0.7f * weaponWielder.Mainhand.Sharpness + 0.3f * weaponWielder.Mainhand.Weight;
-                float posture = 0.3f * weaponWielder.Mainhand.Sharpness + 0.7f * weaponWielder.Mainhand.Weight;
-                health *= (1 - hdReduction);
-                posture *= (1 - pdReduction);
-                Damage damage = new() { health = health, posture = posture, source = attacker };
-                entity.Damage(damageModifier.ModifyDamage(damage));
-                MovementController moveControl = entity.GetComponent<MovementController>();
-                if(moveControl != null)
-                {
-                    moveControl.ApplyForce(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight);
-                }
-            }
         }
 
         protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe)
@@ -94,9 +53,9 @@ namespace LobsterFramework.AbilitySystem
             c.currentWeapon = weaponWielder.Mainhand;
             SubscribeWeaponEvent(c.currentWeapon);
             c.signaled = false;
-            c.m_key = moveControl.ModifyMoveSpeed(weaponWielder.Mainhand.LMoveSpeedModifier);
-            c.r_key = moveControl.ModifyRotationSpeed(weaponWielder.Mainhand.LRotationSpeedModifier);
-            abilityRunner.StartAnimation(this, CurrentConfigName, c.currentWeapon.Name + "_light_attack", c.currentWeapon.AttackSpeed);
+            c.m_key = moveControl.ModifyMoveSpeed(c.currentWeapon.LMoveSpeedModifier);
+            c.r_key = moveControl.ModifyRotationSpeed(c.currentWeapon.LRotationSpeedModifier);
+            abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.GetAbilityClip(GetType(), weaponWielder.Mainhand.WeaponType), c.currentWeapon.AttackSpeed);
         }
 
         protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe)
@@ -154,6 +113,50 @@ namespace LobsterFramework.AbilitySystem
             {
                 LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
                 c.signaled = true;
+            }
+        }
+
+        private void SubscribeWeaponEvent(Weapon weapon)
+        {
+            weapon.onEntityHit += OnEntityHit;
+            weapon.onWeaponHit += OnWeaponHit;
+        }
+
+        private void UnSubscribeWeaponEvent(Weapon weapon)
+        {
+            weapon.onEntityHit -= OnEntityHit;
+            weapon.onWeaponHit -= OnWeaponHit;
+        }
+
+        private void OnEntityHit(Entity entity)
+        {
+            DealDamage(entity);
+        }
+
+        private void OnWeaponHit(Weapon weapon, Vector3 contactPoint)
+        {
+            if (clashSparkTag != null)
+            {
+                ObjectPool.Instance.GetObject(clashSparkTag.Value, contactPoint, Quaternion.identity);
+            }
+            DealDamage(weapon.Entity, weapon.HealthDamageReduction, weapon.PostureDamageReduction);
+        }
+
+        private void DealDamage(Entity entity, float hdReduction = 0, float pdReduction = 0)
+        {
+            if (targets.IsTarget(entity))
+            {
+                float health = 0.7f * weaponWielder.Mainhand.Sharpness + 0.3f * weaponWielder.Mainhand.Weight;
+                float posture = 0.3f * weaponWielder.Mainhand.Sharpness + 0.7f * weaponWielder.Mainhand.Weight;
+                health *= (1 - hdReduction);
+                posture *= (1 - pdReduction);
+                Damage damage = new() { health = health, posture = posture, source = attacker };
+                entity.Damage(damageModifier.ModifyDamage(damage));
+                MovementController moveControl = entity.GetComponent<MovementController>();
+                if (moveControl != null)
+                {
+                    moveControl.ApplyForce(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight);
+                }
             }
         }
     }
