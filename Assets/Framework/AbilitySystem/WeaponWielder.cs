@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.Utility;
+using Animancer;
 
 namespace LobsterFramework.AbilitySystem
 {
@@ -29,7 +30,7 @@ namespace LobsterFramework.AbilitySystem
 
         [Header("Component Reference")]
         [SerializeField] private Entity entity;
-        [SerializeField] private Animator animator;
+        [SerializeField] private Animancer.AnimancerComponent animancer;
         [SerializeField] private AbilityRunner abilityRunner;
 
         private Weapon mainWeapon1;
@@ -143,7 +144,7 @@ namespace LobsterFramework.AbilitySystem
                     Mainhand2 = w;
                     objLookup[w].SetActive(false);
                     objLookup[Mainhand].SetActive(true);
-                    PlayDefaultWeaponAnimation();
+                    PlaySwitchWeaponAnimation();
                 }
             }
             if (Offhand != null)
@@ -176,12 +177,26 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
-        public void PlayDefaultWeaponAnimation() {
-            if(Mainhand != null && animator != null)
+        private void PlaySwitchWeaponAnimation() {
+            
+            if (Mainhand != null && animancer != null)
             {
-                animator.speed = 1;
+                if (abilityRunner != null)
+                {
+                    abilityRunner.InterruptAbilityAnimation();
+                    AnimationClip clip = AnimationClipManager.Get(Mainhand.Name + "_move");
+                    animancer.Play(clip, 0.25f, FadeMode.FixedDuration).Speed = 1;
+                }
+            }
+        }
+
+        public void PlayDefaultWeaponAnimation() {
+            if(Mainhand != null && animancer != null)
+            {
                 if (abilityRunner != null && !abilityRunner.IsAnimating()) {
-                    GameUtility.CrossFade(animator, Mainhand.Name + "_move", 0.15f, 0.15f);
+                    animancer.Stop();
+                    AnimationClip clip = AnimationClipManager.Get(Mainhand.Name + "_move");
+                    animancer.Play(clip).Speed = 1;
                 }
             }
         }

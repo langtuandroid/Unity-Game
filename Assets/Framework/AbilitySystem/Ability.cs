@@ -328,7 +328,7 @@ namespace LobsterFramework.AbilitySystem {
         /// Interrupt the animation of the currently animating AbilityConfig pair
         /// </summary>
         /// <param name="configName"></param>
-        internal void InterruptAnimation(string configName) {
+        internal void AnimationInterrupt(string configName) {
             if (!configs.ContainsKey(configName)) { return; }
             currentRunningConfigName = configName;
             AbilityConfig config = configs[configName];

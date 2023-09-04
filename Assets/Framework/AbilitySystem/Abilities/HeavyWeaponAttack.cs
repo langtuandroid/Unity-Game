@@ -2,6 +2,7 @@ using UnityEngine;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.Pool;
 using System.Collections.Generic;
+using Animancer;
 
 namespace LobsterFramework.AbilitySystem
 {
@@ -12,31 +13,28 @@ namespace LobsterFramework.AbilitySystem
     {
         [SerializeField] private TargetSetting targets;
         
-
-        private Animator animator;
         private WeaponWielder weaponWielder;
         private Entity attacker;
         private MovementController moveControl;
         private DamageModifier damageModifier;
 
         public class HeavyWeaponAttackConfig : AbilityCoroutineConfig {
-            [HideInInspector] public bool animationSignaled;
-            [HideInInspector] public bool inputSignaled;
-            [HideInInspector] public Weapon currentWeapon;
+            
             public RefFloat baseDamageModifier;
             public RefFloat maxChargeDamageIncrease;
             public RefFloat chargeMaxTime;
             public VarString clashSparkTag;
 
-            [HideInInspector]
-            public int m_key = -1;
-            [HideInInspector]
-            public int r_key = -1;
+            [HideInInspector] public bool animationSignaled;
+            [HideInInspector] public bool inputSignaled;
+            [HideInInspector] public Weapon currentWeapon;
+            [HideInInspector] public AnimancerState animationState;
 
-            [HideInInspector]
-            public float chargeTimer;
-            [HideInInspector]
-            public HeavyWeaponAttack ability;
+            [HideInInspector] public int m_key = -1;
+            [HideInInspector] public int r_key = -1;
+
+            [HideInInspector] public float chargeTimer;
+            [HideInInspector] public HeavyWeaponAttack ability;
 
             public void OnEntityHit(Entity entity) {
                 if (chargeTimer > chargeMaxTime) { 
@@ -51,7 +49,7 @@ namespace LobsterFramework.AbilitySystem
                     chargeTimer = chargeMaxTime;
                 }
                 if (clashSparkTag != null) {
-                    ObjectPool.Instance.GetObject(clashSparkTag.Value, contactPoint, Quaternion.identity);
+                    Pool.ObjectPool.Instance.GetObject(clashSparkTag.Value, contactPoint, Quaternion.identity);
                 }
 
                 ability.DealDamage(weapon.Entity, baseDamageModifier + maxChargeDamageIncrease * (chargeTimer / chargeMaxTime), 
@@ -84,7 +82,6 @@ namespace LobsterFramework.AbilitySystem
 
         protected override void Initialize()
         {
-            animator = abilityRunner.Animator;
             weaponWielder = abilityRunner.GetComponent<WeaponWielder>();
             attacker = weaponWielder.Wielder;
             moveControl = abilityRunner.GetComponentInBoth<MovementController>();
@@ -111,7 +108,7 @@ namespace LobsterFramework.AbilitySystem
                 yield return null;
             }
             c.animationSignaled = false;
-            animator.speed = 0;
+            c.animationState.IsPlaying = false;
             // Wait for signal to attack
             while (!c.inputSignaled && c.chargeTimer < c.chargeMaxTime)
             {
@@ -120,7 +117,7 @@ namespace LobsterFramework.AbilitySystem
             }
 
             c.inputSignaled = false;
-            animator.speed = weaponWielder.Mainhand.AttackSpeed;
+            c.animationState.IsPlaying = true;
             c.currentWeapon.Action();
 
             // Wait for signal of recovery
@@ -153,7 +150,7 @@ namespace LobsterFramework.AbilitySystem
             h.ability = this;
             h.m_key = moveControl.ModifyMoveSpeed(weaponWielder.Mainhand.HMoveSpeedModifier);
             h.r_key = moveControl.ModifyRotationSpeed(weaponWielder.Mainhand.HRotationSpeedModifier);
-            abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.Mainhand.Name + "_heavy_attack", weaponWielder.Mainhand.AttackSpeed);
+            h.animationState = abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.Mainhand.Name + "_heavy_attack", weaponWielder.Mainhand.AttackSpeed);
         }
 
         protected override void OnCoroutineFinish(AbilityCoroutineConfig config)

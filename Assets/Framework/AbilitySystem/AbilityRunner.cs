@@ -7,6 +7,7 @@ using UnityEditor;
 using LobsterFramework.Utility;
 using LobsterFramework.Utility.BufferedStats;
 using LobsterFramework.EntitySystem;
+using Animancer;
 
 namespace LobsterFramework.AbilitySystem {
     /// <summary>
@@ -37,6 +38,7 @@ namespace LobsterFramework.AbilitySystem {
         [SerializeField] private Animator animator;
         [SerializeField] private WeaponWielder weaponWielder;
         private (Ability, string) animating;
+        private Animancer.AnimancerComponent animancer;
 
         // Status
         private BaseOr actionBlocked = new(false);
@@ -52,6 +54,10 @@ namespace LobsterFramework.AbilitySystem {
 
         public bool HyperArmored { 
             get { return hyperArmored.Stat; }
+        }
+
+        public Animator Animator {
+            get { return animator; }
         }
 
         #region EnqueueAbility
@@ -455,6 +461,10 @@ namespace LobsterFramework.AbilitySystem {
             stats = abilityData.stats;
             
             entity = GetComponentInBoth<Entity>();
+            animancer = GetComponent<Animancer.AnimancerComponent>();
+            if (animator != null) {
+                AnimationClipManager.Add(animator.runtimeAnimatorController);
+            }
         }
         private void Update()
         {
@@ -509,7 +519,6 @@ namespace LobsterFramework.AbilitySystem {
             return animating != default;
         }
 
-        public Animator Animator { get { return animator; } }
         private string currentAnimation;
 
         /// <summary>
@@ -518,21 +527,28 @@ namespace LobsterFramework.AbilitySystem {
         /// <typeparam name="T"></typeparam>
         /// <param name="configName"></param>
         /// <param name="animation"></param>
-        public void StartAnimation(Ability ability, string configName, string animation, float speed=1)
+        public AnimancerState StartAnimation(Ability ability, string configName, string animation, float speed=1)
         {
             if (ability == null) {
-                return;
+                return null;
             }
             if (!ability.HasConfig(configName)) {
-                return;
+                return null;
+            }
+            AnimationClip clip = AnimationClipManager.Get(animation);
+            if (clip == null) {
+                Debug.Log("No animation named:" + animation + " can be played!");
+                return null;
+            }
+            
+            if (animating != default) {
+                animating.Item1.AnimationInterrupt(animating.Item2);
             }
             currentAnimation = animation;
-            if (animating != default) {
-                animating.Item1.InterruptAnimation(animating.Item2);
-            }
-            animator.speed = speed;
             animating = (ability, configName);
-            GameUtility.CrossFade(animator, animation, 0.3f, 0);
+            AnimancerState state = animancer.Play(clip, 0.25f, FadeMode.FromStart);
+            state.Speed = speed;
+            return state;
         }
 
         /// <summary>
@@ -550,6 +566,14 @@ namespace LobsterFramework.AbilitySystem {
             }
         }
 
+        public void InterruptAbilityAnimation() {
+            if (animating == default) {
+                return;
+            }
+            animating.Item1.AnimationInterrupt(animating.Item2);
+            animating = default;
+        }
+
         /// <summary>
         /// Send a signal to the specified ability. 
         /// </summary>
@@ -565,16 +589,16 @@ namespace LobsterFramework.AbilitySystem {
         /// <summary>
         /// Used by animation events to send signals
         /// </summary>
-        public void AnimationSignal(AnimationEvent animationEvent) { 
+        public void AnimationSignal(AnimationEvent animationEvent) {
             if(animating == default) { return; }
-            if (animationEvent.animatorStateInfo.IsName(currentAnimation)) {
+            if (animationEvent.animatorClipInfo.clip == AnimationClipManager.Get(currentAnimation)) {
                 animating.Item1.Signal(animating.Item2, animationEvent);
             }
         }
 
         public void AnimationEnd(AnimationEvent animationEvent) {
             if (animating == default) { return; }
-            if (animationEvent.animatorStateInfo.IsName(currentAnimation))
+            if (animationEvent.animatorClipInfo.clip == AnimationClipManager.Get(currentAnimation))
             {
                 animating.Item1.HaltAbilityExecution(animating.Item2);
             }
