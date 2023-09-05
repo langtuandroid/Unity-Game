@@ -34,26 +34,23 @@ namespace LobsterFramework.AbilitySystem {
         private Dictionary<string, Ability> availableAbilities;
         private TypeAbilityStatDictionary stats;
 
-        // Animation
-        [SerializeField] private WeaponWielder weaponWielder;
+        /// <summary>
+        /// Send true if starting ability animation, false if ending ability animation
+        /// </summary>
+        public UnityAction<bool> onAbilityAnimation;
         private AnimationClip currentAnimation;
         private (Ability, string) animating;
         private AnimancerComponent animancer;
 
         // Status
         private BaseOr actionBlocked = new(false);
-        private BaseOr hyperArmored = new(false);
 
         // Entity
         private Entity entity;
         private int postureBrokenKey;
 
         public bool ActionBlocked {
-            get { return actionBlocked.Stat && !HyperArmored; }
-        }
-
-        public bool HyperArmored { 
-            get { return hyperArmored.Stat; }
+            get { return actionBlocked.Stat; }
         }
 
         #region EnqueueAbility
@@ -131,7 +128,7 @@ namespace LobsterFramework.AbilitySystem {
             V a2 = GetAbility<V>();
 
             // The two abilities must both be present and not the same
-            if (a1 == default || a2 == default || a1 == a2) {
+            if (ActionBlocked || a1 == default || a2 == default || a1 == a2) {
                 return false; 
             }
 
@@ -323,40 +320,6 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         /// <summary>
-        /// Add an effector to provide hyperarmor for the object. While hyperarmored, abilities cannot be interrupted other than death.
-        /// Hyperarmor will exist if there's at least 1 effector.
-        /// An event will be sent to subscribers on hyperarmored.
-        /// </summary>
-        /// <returns>The id of the newly adde effector</returns>
-        public int HyperArmor() {
-            bool before = hyperArmored.Stat;
-            int id = hyperArmored.AddEffector(true);
-            if (onHyperArmored != null && before != hyperArmored.Stat)
-            {
-                onHyperArmored.Invoke(true);
-            }
-            return id;
-        }
-
-        /// <summary>
-        /// Remove the specified effector for hyperarmor if it exists
-        /// An event will be sent to subscribers on dishyperarmored
-        /// </summary>
-        /// <param name="id">The id of the effector to be removed</param>
-        /// <returns>On successfully removal return true, otherwise false</returns>
-        public bool DisArmor(int id) {
-            if (hyperArmored.RemoveEffector(id))
-            {
-                if (!hyperArmored.Stat && onHyperArmored != null)
-                {
-                    onHyperArmored.Invoke(false);
-                }
-                return true;
-            }
-            return false;
-        }
-
-        /// <summary>
         /// Reset the status of all abilities and their configs to their initial state
         /// </summary>
 
@@ -430,7 +393,6 @@ namespace LobsterFramework.AbilitySystem {
         {
             abilityData.Open(this);
             actionBlocked.ClearEffectors();
-            hyperArmored.ClearEffectors();
             
             // availableAbilities is only determined after running through the initialization check of AbilityData
             availableAbilities = abilityData.availableAbilities;
@@ -538,6 +500,9 @@ namespace LobsterFramework.AbilitySystem {
             animating = (ability, configName);
             AnimancerState state = animancer.Play(animation, 0.25f, FadeMode.FromStart);
             state.Speed = speed;
+            if (onAbilityAnimation != null) {
+                onAbilityAnimation.Invoke(true);
+            }
             return state;
         }
 
@@ -549,9 +514,9 @@ namespace LobsterFramework.AbilitySystem {
         {
             if(animating == default) { return; }
             animating = default;
-            if(weaponWielder != null)
+            if (onAbilityAnimation != null)
             {
-                weaponWielder.PlayDefaultWeaponAnimation();
+                onAbilityAnimation.Invoke(false);
             }
         }
 
@@ -561,6 +526,10 @@ namespace LobsterFramework.AbilitySystem {
             }
             animating.Item1.AnimationInterrupt(animating.Item2);
             animating = default;
+            if (onAbilityAnimation != null)
+            {
+                onAbilityAnimation.Invoke(false);
+            }
         }
 
         /// <summary>

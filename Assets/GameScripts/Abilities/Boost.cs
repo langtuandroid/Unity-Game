@@ -1,17 +1,15 @@
 using LobsterFramework.AbilitySystem;
 using LobsterFramework.Pool;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Specialized;
+using LobsterFramework.EntitySystem;
 using UnityEngine;
 
 namespace GameScripts.Abilities
 {
     [AddAbilityMenu]
     [RequireAbilityStats(typeof(DamageModifier))]
+    [ComponentRequired(typeof(Poise))]
     public class Boost : Ability
     {
-        private Transform transform;
         public class BoostConfig : AbilityConfig{
             public float damageModifier;
             public float duration;
@@ -48,17 +46,20 @@ namespace GameScripts.Abilities
         }
 
         private DamageModifier damageModifier;
+        private Transform transform;
+        private Poise poise;
 
         protected override void Initialize()
         {
             damageModifier = abilityRunner.GetAbilityStat<DamageModifier>();
             transform = abilityRunner.TopLevelTransform;
+            poise = abilityRunner.GetComponentInBoth<Poise>();
         }
 
         protected override void OnEnqueue(AbilityConfig config, AbilityPipe pipe)
         {
             BoostConfig bConfig = (BoostConfig)config;
-            bConfig.hyperArmorKey = abilityRunner.HyperArmor();
+            bConfig.hyperArmorKey = poise.HyperArmor();
             bConfig.timeEnd = Time.time + bConfig.duration;
             bConfig.damageKey = damageModifier.percentageDamageModifcation.AddEffector(bConfig.damageModifier);
             if (bConfig.vfxTag != null) {
@@ -75,11 +76,11 @@ namespace GameScripts.Abilities
             }
             return Time.time < bConfig.timeEnd;
         }
-
+         
         protected override void OnActionFinish(AbilityConfig config)
         {
             BoostConfig bConfig = (BoostConfig)config;
-            abilityRunner.DisArmor(bConfig.hyperArmorKey);
+            poise.DisArmor(bConfig.hyperArmorKey);
             damageModifier.percentageDamageModifcation.RemoveEffector(bConfig.damageKey);
         }
     }

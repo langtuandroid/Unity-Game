@@ -40,7 +40,7 @@ namespace GameScripts.Abilities
             {
                 return weaponWielder.GetAbilityClip(GetType(), weaponWielder.Mainhand.WeaponType) != null && weaponWielder.Mainhand.state != WeaponState.Attacking;
             }
-            return false;
+            return false; 
         }
 
         protected override void Initialize()

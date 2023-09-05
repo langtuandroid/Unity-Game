@@ -152,9 +152,6 @@ MonoBehaviour:
   cooldown: 0
   isSuspended: 0
   awakeTime: 0
-  animationSignaled: 0
-  inputSignaled: 0
-  currentWeapon: {fileID: 0}
   baseDamageModifier:
     value: 1.2
     useSharedValue: 0
@@ -168,6 +165,9 @@ MonoBehaviour:
     useSharedValue: 0
     sharedValue: {fileID: 0}
   clashSparkTag: {fileID: 11400000, guid: b93850f361ea97e40a35c219b934d9fb, type: 2}
+  animationSignaled: 0
+  inputSignaled: 0
+  currentWeapon: {fileID: 0}
   m_key: -1
   r_key: -1
   chargeTimer: 0
@@ -211,7 +211,7 @@ MonoBehaviour:
   accessKey: -1
   endTime: 0
   useCooldown: 1
-  cooldown: 5
+  cooldown: 3
   isSuspended: 0
   damageModifier: 2
   duration: 0
@@ -346,6 +346,7 @@ MonoBehaviour:
   inputSignaled: 0
   m_key: 0
   r_key: 0
+  currentWeapon: {fileID: 0}
 --- !u!114 &2186913587661858354
 MonoBehaviour:
   m_ObjectHideFlags: 0

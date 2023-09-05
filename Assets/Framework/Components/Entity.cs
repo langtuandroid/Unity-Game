@@ -51,7 +51,6 @@ namespace LobsterFramework.EntitySystem
         public UnityAction<Damage> onDamaged;
         public UnityAction<bool> onPostureStatusChange;
 
-        private int pbMoveBlockKey;
         private int pbHealthDamageModifierKey;
 
         public bool IsDead { get; private set; }
@@ -78,8 +77,6 @@ namespace LobsterFramework.EntitySystem
         private RegenBuffer regenBuffer = new(true);
         private DamageBuffer damageBuffer = new(true);
 
-        // Cache
-        private MovementController moveControl;
         #endregion
         
         #region StatusUpdate
@@ -94,7 +91,6 @@ namespace LobsterFramework.EntitySystem
 
             regenBuffer.AddHealth(baseHealthRegen.Value);
             regenBuffer.AddPosture(basePostureRegen.Value);
-            moveControl = GetComponent<MovementController>();
         }
         
 
@@ -186,11 +182,6 @@ namespace LobsterFramework.EntitySystem
         }
 
         private void PostureBreak() {
-            if (moveControl != null)
-            {
-                pbMoveBlockKey = moveControl.BlockMovement();
-            }
-
             pbHealthDamageModifierKey = damageBuffer.AddHealthModifier(GameManager.Instance.POSTURE_BROKEN_DAMAGE_MODIFIER);
             pbCounter = 0;
             PostureBroken = true;
@@ -200,11 +191,6 @@ namespace LobsterFramework.EntitySystem
         }
 
         private void PostureRecover() {
-            if(moveControl != null)
-            {
-                moveControl.UnblockMovement(pbMoveBlockKey);
-            }
-            
             damageBuffer.RemoveHealthModifier(pbHealthDamageModifierKey);
             Posture = 0.7f * MaxPosture;
             PostureBroken = false;
