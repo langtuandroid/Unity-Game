@@ -191,7 +191,7 @@ namespace LobsterFramework.AbilitySystem
         Hammer,
         Dagger,
         Stick,
-        EmptyHand
+        EmptyHand,
     }
 
     public enum WeaponState { 

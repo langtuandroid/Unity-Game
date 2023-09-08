@@ -36,15 +36,15 @@ namespace GameScripts.Abilities
             return manaComponent.AvailableMana >= s_config.manaCost.Value;
         }
 
-        protected override void OnEnqueue(AbilityConfig config, AbilityPipe pipe)
+        protected override void OnEnqueue(AbilityPipe pipe)
         {
-            ShootConfig s_config = (ShootConfig)config;
+            ShootConfig s_config = (ShootConfig)CurrentConfig;
             manaComponent.ReserveMana(s_config.manaCost.Value);
         }
 
-        protected override bool Action(AbilityConfig a_config, AbilityPipe pipe)
+        protected override bool Action(AbilityPipe pipe)
         {
-            ShootConfig config = (ShootConfig)a_config;
+            ShootConfig config = (ShootConfig)CurrentConfig;
             CombatStat combatComponent = abilityRunner.GetAbilityStat<CombatStat>();
             int firePower = combatComponent.attackDamage.Value;
 

@@ -25,8 +25,16 @@ namespace LobsterFramework.AbilitySystem
             if (abilityRunner.TopLevelTransform != null) {
                 topLevel = abilityRunner.TopLevelTransform.gameObject;
             }
-            foreach (Ability ai in allAbilities.Values)
+
+            List<string> removed = new();
+
+            foreach (string key in allAbilities.Keys)
             {
+                Ability ai = allAbilities[key];
+                if (ai == null) {
+                    removed.Add(key);
+                    continue;
+                }
                 bool result;
                 if (topLevel == null) {
                     result = ComponentRequiredAttribute.ComponentCheck(ai.GetType(), abilityRunner.gameObject);
@@ -41,11 +49,20 @@ namespace LobsterFramework.AbilitySystem
                     availableAbilities[ai.GetType().ToString()] = ai;
                 }
             }
-
-            foreach (AbilityStat cmp in stats.Values)
-            {
-                cmp.Initialize();
+            foreach (string n in removed) {
+                allAbilities.Remove(n);
             }
+            removed.Clear();
+
+            foreach (string key in stats.Keys)
+            {
+                AbilityStat stat = stats[key];
+                stat.Initialize();
+            }
+            foreach (string key in removed) {
+                stats.Remove(key);
+            }
+            AssetDatabase.SaveAssets();
         }
 
         internal void Close() {
@@ -101,9 +118,12 @@ namespace LobsterFramework.AbilitySystem
                 List<(string, Ability.AbilityConfig)> configs = new();
                 foreach (var kwp in ability.configs)
                 {
-
-                    configs.Add((kwp.Key, Instantiate(kwp.Value)));  
+                    if (kwp.Value != null)
+                    {
+                        configs.Add((kwp.Key, Instantiate(kwp.Value)));
+                    }
                 }
+
                 foreach ((string name, Ability.AbilityConfig config) in configs)
                 {
                     ability.configs[name] = config; 

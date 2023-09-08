@@ -56,9 +56,9 @@ namespace GameScripts.Abilities
             poise = abilityRunner.GetComponentInBoth<Poise>();
         }
 
-        protected override void OnEnqueue(AbilityConfig config, AbilityPipe pipe)
+        protected override void OnEnqueue(AbilityPipe pipe)
         {
-            BoostConfig bConfig = (BoostConfig)config;
+            BoostConfig bConfig = (BoostConfig)CurrentConfig;
             bConfig.hyperArmorKey = poise.HyperArmor();
             bConfig.timeEnd = Time.time + bConfig.duration;
             bConfig.damageKey = damageModifier.percentageDamageModifcation.AddEffector(bConfig.damageModifier);
@@ -67,9 +67,9 @@ namespace GameScripts.Abilities
             }
         }
 
-        protected override bool Action(AbilityConfig config, AbilityPipe pipe)
+        protected override bool Action(AbilityPipe pipe)
         {
-            BoostConfig bConfig = (BoostConfig)config;
+            BoostConfig bConfig = (BoostConfig)CurrentConfig;
             if (bConfig.duration == 0) 
             {
                 return true;
@@ -77,9 +77,9 @@ namespace GameScripts.Abilities
             return Time.time < bConfig.timeEnd;
         }
          
-        protected override void OnActionFinish(AbilityConfig config)
+        protected override void OnActionFinish()
         {
-            BoostConfig bConfig = (BoostConfig)config;
+            BoostConfig bConfig = (BoostConfig)CurrentConfig;
             poise.DisArmor(bConfig.hyperArmorKey);
             damageModifier.percentageDamageModifcation.RemoveEffector(bConfig.damageKey);
         }

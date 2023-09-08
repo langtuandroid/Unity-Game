@@ -9,7 +9,7 @@ using Pathfinding.Util;
 namespace LobsterFramework.EntitySystem
 {
     /// <summary>
-    /// Character class of the game. Provides an interface for character movement and health/damage system. Entities will be disabled
+    /// Character class of the game. Provides an interface for health/damage system. Entities will be disabled
     /// when their health goes down to or below 0.
     /// </summary>
     [AddComponentMenu("Entity")]

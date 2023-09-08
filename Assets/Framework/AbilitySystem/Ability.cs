@@ -43,9 +43,9 @@ namespace LobsterFramework.AbilitySystem {
         internal Dictionary<string, AbilityPipe> pipes = new();
 
         private HashSet<string> executing = new();
-        private string currentRunningConfigName;
 
-        protected string CurrentConfigName { get { return currentRunningConfigName; } }
+        protected string CurrentConfigName { get; private set; }
+        protected AbilityConfig CurrentConfig { get; private set; }
 
         /// <summary>
         /// Add the config with specified name to this Ability, this should only be called by editor scripts
@@ -143,12 +143,13 @@ namespace LobsterFramework.AbilitySystem {
         {
             if (IsReady(configName))
             {
-                currentRunningConfigName = configName;
+                CurrentConfigName = configName;
+                CurrentConfig = configs[configName];
                 configs[configName].accessKey = ActionOverseer.EnqueueAction(new AbilityConfigPair(this, configName));
                 executing.Add(configName);
                 AbilityConfig config = configs[configName];
                 AbilityPipe pipe = pipes[configName];
-                OnEnqueue(config, pipe);
+                OnEnqueue(pipe);
                 return true;
             }
             return false;
@@ -157,36 +158,37 @@ namespace LobsterFramework.AbilitySystem {
         /// <summary>
         /// Execute the config with the provided name. Assumes the action is already in action queue and is only being called by ActionOverseer.
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="configName"></param>
         /// <returns></returns>
-        internal bool Execute(string name)
+        internal bool Execute(string configName)
         {
             try
             {
-                currentRunningConfigName = name;
-                AbilityConfig config = configs[name];
-                AbilityPipe pipe = pipes[name];
-                bool result = Action(config, pipe);
+                CurrentConfigName = configName;
+                CurrentConfig = configs[configName];
+                AbilityConfig config = configs[configName];
+                AbilityPipe pipe = pipes[configName];
+                bool result = Action(pipe);
                 if (!result || config.isSuspended)
                 {
                     config.accessKey = -1;
                     config.isSuspended = false;
-                    executing.Remove(name);
+                    executing.Remove(configName);
                     config.endTime = Time.time;
-                    OnActionFinish(config);
+                    OnActionFinish();
                     return false;
                 }
                 return result;
             }
             catch (Exception ex)
             {
-                Debug.LogError("Action '" + GetType().ToString() + "' failed to execute with config + '" + name + "':\n " + ex.ToString());
+                Debug.LogError("Action '" + GetType().ToString() + "' failed to execute with config + '" + configName + "':\n " + ex.ToString());
             }
             return false;
         }
 
         // Get the number of configs currently running
-        public int RunningCount() { return executing.Count; }
+        public int RunningCount { get { return executing.Count; } }
 
         /// <summary>
         /// Suspend the execution of provided action and force it to finish at the current frame
@@ -209,7 +211,7 @@ namespace LobsterFramework.AbilitySystem {
             config.isSuspended = false;
             executing.Remove(name);
             config.endTime = Time.time;
-            OnActionFinish(config);
+            OnActionFinish();
             return true;
         }
 
@@ -262,13 +264,21 @@ namespace LobsterFramework.AbilitySystem {
             Type type = GetType();
             Type pipeType = type.GetNestedType(type.Name + "Pipe");
 
+            List<string> removed = new();
             foreach (KeyValuePair<string, AbilityConfig>pair in configs)
             {
                 AbilityConfig config = pair.Value;
                 string name = pair.Key;
+                if (config == null) {
+                    removed.Add(name);
+                    continue;
+                }
                 config.Initialize();
                 pipes[name] = (AbilityPipe)Activator.CreateInstance(pipeType);
                 pipes[name].Construct(config);
+            }
+            foreach (string key in removed) {
+                configs.Remove(key);
             }
         }
 
@@ -310,19 +320,19 @@ namespace LobsterFramework.AbilitySystem {
         /// </summary>
         /// <param name="config">The config being executed with</param>
         /// <returns>False if the ability has finished, otherwise true</returns>
-        protected abstract bool Action(AbilityConfig config, AbilityPipe pipe);
+        protected abstract bool Action(AbilityPipe pipe);
 
         /// <summary>
         /// Callback when the action is finished or halted, override this to clean up temporary data generated during the action.
         /// </summary>
         /// <param name="config">The config being processed</param>
-        protected virtual void OnActionFinish(AbilityConfig config) { }
+        protected virtual void OnActionFinish() { }
 
         /// <summary>
         /// Callback when the animation of the ability is interrupted by other abilities. Useful when abilities relies on animation events.
         /// </summary>
         /// <param name="config"></param>
-        protected virtual void OnAnimationInterrupt(AbilityConfig config) { HaltAbilityExecution(CurrentConfigName); }
+        protected virtual void OnAnimationInterrupt() { HaltAbilityExecution(CurrentConfigName); }
 
         /// <summary>
         /// Interrupt the animation of the currently animating AbilityConfig pair
@@ -330,16 +340,17 @@ namespace LobsterFramework.AbilitySystem {
         /// <param name="configName"></param>
         internal void AnimationInterrupt(string configName) {
             if (!configs.ContainsKey(configName)) { return; }
-            currentRunningConfigName = configName;
+            CurrentConfigName = configName;
+            CurrentConfig = configs[configName];
             AbilityConfig config = configs[configName];
-            OnAnimationInterrupt(config);
+            OnAnimationInterrupt();
         }
         /// <summary>
         /// Callback when the ability is added to the action executing queue
         /// </summary>
         /// <param name="config"></param>
         /// <param name="configName"></param>
-        protected virtual void OnEnqueue(AbilityConfig config, AbilityPipe pipe) { }
+        protected virtual void OnEnqueue(AbilityPipe pipe) { }
 
 
         /// <summary>
@@ -417,8 +428,9 @@ namespace LobsterFramework.AbilitySystem {
 
         public void Signal(string configName, AnimationEvent animationEvent) {
             if (configs.ContainsKey(configName)) {
-                currentRunningConfigName = configName;
-                Signal(configs[configName], animationEvent);
+                CurrentConfigName = configName;
+                CurrentConfig = configs[configName];
+                Signal(animationEvent);
             }
         }
 
@@ -426,7 +438,7 @@ namespace LobsterFramework.AbilitySystem {
         /// Override this to implement signal event handler
         /// </summary>
         /// <param name="config">Config to be signaled</param>
-        protected virtual void Signal(AbilityConfig config, AnimationEvent animationEvent) { }
+        protected virtual void Signal(AnimationEvent animationEvent) { }
 
         public AbilityPipe GetAbilityPipe(string configName)
         {

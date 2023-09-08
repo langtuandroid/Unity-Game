@@ -47,9 +47,9 @@ namespace LobsterFramework.AbilitySystem
             return false;
         }
 
-        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe)
+        protected override void OnCoroutineEnqueue(AbilityPipe pipe)
         {
-            LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
+            LightWeaponAttackConfig c = (LightWeaponAttackConfig)CurrentConfig;
             c.currentWeapon = weaponWielder.Mainhand;
             SubscribeWeaponEvent(c.currentWeapon);
             c.signaled = false;
@@ -58,9 +58,9 @@ namespace LobsterFramework.AbilitySystem
             abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.GetAbilityClip(GetType(), weaponWielder.Mainhand.WeaponType), c.currentWeapon.AttackSpeed);
         }
 
-        protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe)
+        protected override IEnumerator<CoroutineOption> Coroutine(AbilityPipe pipe)
         {
-            LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
+            LightWeaponAttackConfig c = (LightWeaponAttackConfig)CurrentConfig;
             // Wait for signal to attack
             while (!c.signaled)
             {
@@ -89,8 +89,8 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
-        protected override void OnCoroutineFinish(AbilityCoroutineConfig config){
-            LightWeaponAttackConfig l = (LightWeaponAttackConfig)config;
+        protected override void OnCoroutineFinish(){
+            LightWeaponAttackConfig l = (LightWeaponAttackConfig)CurrentConfig;
             UnSubscribeWeaponEvent(l.currentWeapon);
             l.currentWeapon.Pause();
             if (l.m_key != -1)
@@ -102,16 +102,16 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
-        protected override void OnCoroutineReset(AbilityCoroutineConfig config)
+        protected override void OnCoroutineReset()
         {
             throw new System.NotImplementedException();
         }
 
-        protected override void Signal(AbilityConfig config, AnimationEvent animationEvent)
+        protected override void Signal(AnimationEvent animationEvent)
         {
             if (animationEvent != null)
             {
-                LightWeaponAttackConfig c = (LightWeaponAttackConfig)config;
+                LightWeaponAttackConfig c = (LightWeaponAttackConfig)CurrentConfig;
                 c.signaled = true;
             }
         }

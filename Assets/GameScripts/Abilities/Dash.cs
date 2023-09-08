@@ -40,9 +40,9 @@ namespace GameScripts.Abilities
             controller = abilityRunner.GetComponentInBoth<MovementController>();
         }
 
-        protected override bool Action(AbilityConfig config, AbilityPipe pipe)
+        protected override bool Action(AbilityPipe pipe)
         {
-            DashConfig c = (DashConfig)config;
+            DashConfig c = (DashConfig)CurrentConfig;
             Vector2 direction = abilityRunner.TopLevelTransform.rotation * ((DashPipe)pipe).DashDirection;
             if (direction == Vector2.zero) {
                 Vector3 back = -abilityRunner.TopLevelTransform.up;

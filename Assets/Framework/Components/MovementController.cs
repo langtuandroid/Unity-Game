@@ -17,6 +17,7 @@ namespace LobsterFramework
         public UnityAction<bool> onMovementBlocked;
 
         private Rigidbody2D _rigidBody;
+        private Collider2D _collider;
         new private Transform transform;
         private BaseOr movementBlock = new(false);
         private Vector2 steering;
@@ -33,6 +34,7 @@ namespace LobsterFramework
         private void Start() { 
             transform = GetComponent<Transform>();
             _rigidBody = GetComponent<Rigidbody2D>();
+            _collider = GetComponent<Collider2D>();
             Speed = maxSpeed.Value * moveSpeedMultiplier.Stat;
             RotateSpeed = rotateSpeed.Value * rotateSpeedMultiplier.Stat;
         }
@@ -109,6 +111,18 @@ namespace LobsterFramework
                 return true;
             }
             return false;
+        }
+
+        public void DisableCollider() {
+            _collider.enabled = false;
+        }
+
+        public void EnableCollider() { 
+            _collider.enabled = true;
+        }
+
+        public void KinematicBody(bool isKinematic) {
+             _rigidBody.isKinematic = isKinematic;
         }
         #endregion
 

@@ -25,24 +25,24 @@ namespace LobsterFramework.AbilitySystem
             public float awakeTime = 0;
         }
 
-        protected sealed override void OnEnqueue(AbilityConfig config, AbilityPipe pipe)
+        protected sealed override void OnEnqueue(AbilityPipe pipe)
         {
-            AbilityCoroutineConfig c = (AbilityCoroutineConfig)config;
+            AbilityCoroutineConfig c = (AbilityCoroutineConfig)CurrentConfig;
             c.CoroutineRunning = true;
-            c.Coroutine = Coroutine(c, pipe);
-            OnCoroutineEnqueue(c, pipe);
+            c.Coroutine = Coroutine(pipe);
+            OnCoroutineEnqueue(pipe);
         }
 
         /// <summary>
         /// Callback when the ability is enqueued, replaces OnEnqueue
         /// </summary>
         /// <param name="config">The config being enqueued with</param>
-        protected abstract void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe);
+        protected abstract void OnCoroutineEnqueue(AbilityPipe pipe);
 
-        protected override sealed bool Action(AbilityConfig config, AbilityPipe pipe)
+        protected override sealed bool Action(AbilityPipe pipe)
         {
-            AbilityCoroutineConfig c = (AbilityCoroutineConfig)config;
-            if (c.awakeTime > Time.time) {
+            AbilityCoroutineConfig c = (AbilityCoroutineConfig)CurrentConfig;
+            if (Time.time < c.awakeTime) {
                 return true;
             }
 
@@ -59,7 +59,7 @@ namespace LobsterFramework.AbilitySystem
                 }
                 if (option.reset) {
                     c.Coroutine.Reset();
-                    OnCoroutineReset(c);
+                    OnCoroutineReset();
                     return true;
                 }
                 if (option.waitTime > 0) {
@@ -69,26 +69,26 @@ namespace LobsterFramework.AbilitySystem
             return true;
         }
 
-        protected sealed override void OnActionFinish(AbilityConfig config)
+        protected sealed override void OnActionFinish()
         {
-            AbilityCoroutineConfig c = (AbilityCoroutineConfig)config;
+            AbilityCoroutineConfig c = (AbilityCoroutineConfig)CurrentConfig;
             c.CoroutineRunning = false;
-            OnCoroutineFinish(c);
+            OnCoroutineFinish();
         }
         /// <summary>
         /// Callback on ability finished, replaces OnActionFinish
         /// </summary>
         /// <param name="config"></param>
-        protected abstract void OnCoroutineFinish(AbilityCoroutineConfig config);
+        protected abstract void OnCoroutineFinish();
 
-        protected abstract void OnCoroutineReset(AbilityCoroutineConfig config);
+        protected abstract void OnCoroutineReset();
 
         /// <summary>
         /// The body of the ability execution, replaces Action method
         /// </summary>
         /// <param name="config">The ability configuration to execute on</param>
         /// <returns></returns>
-        protected abstract IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe);
+        protected abstract IEnumerator<CoroutineOption> Coroutine(AbilityPipe pipe);
     }
 
     public class CoroutineOption {

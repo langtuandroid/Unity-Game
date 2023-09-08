@@ -97,9 +97,9 @@ namespace LobsterFramework.AbilitySystem
             return false;
         }
 
-        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe)
+        protected override void OnCoroutineEnqueue(AbilityPipe pipe)
         {
-            HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)config;
+            HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)CurrentConfig;
             h.currentWeapon = weaponWielder.Mainhand;
             h.SubscribeWeaponEvent();
             h.animationSignaled = false;
@@ -111,9 +111,9 @@ namespace LobsterFramework.AbilitySystem
             h.animationState = abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.GetAbilityClip(GetType(), h.currentWeapon.WeaponType), weaponWielder.Mainhand.AttackSpeed);
         }
 
-        protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe)
+        protected override IEnumerator<CoroutineOption> Coroutine(AbilityPipe pipe)
         {
-            HeavyWeaponAttackConfig c = (HeavyWeaponAttackConfig)config;
+            HeavyWeaponAttackConfig c = (HeavyWeaponAttackConfig)CurrentConfig;
             // Wait for signal to charge
             while (!c.animationSignaled)
             {
@@ -147,9 +147,9 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
-        protected override void OnCoroutineFinish(AbilityCoroutineConfig config)
+        protected override void OnCoroutineFinish()
         {
-            HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)config;
+            HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)CurrentConfig;
             h.UnSubscribeWeaponEvent();
             h.animationSignaled = false;
             h.currentWeapon.Pause();
@@ -157,9 +157,9 @@ namespace LobsterFramework.AbilitySystem
             moveControl.UnmodifyRotationSpeed(h.r_key);
         }
 
-        protected override void Signal(AbilityConfig config, AnimationEvent animationEvent)
+        protected override void Signal(AnimationEvent animationEvent)
         {
-            HeavyWeaponAttackConfig c = (HeavyWeaponAttackConfig)config;
+            HeavyWeaponAttackConfig c = (HeavyWeaponAttackConfig)CurrentConfig;
             if (animationEvent != null)
             {
                 c.animationSignaled = true;
@@ -189,7 +189,7 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
-        protected override void OnCoroutineReset(AbilityCoroutineConfig config)
+        protected override void OnCoroutineReset()
         {
             throw new System.NotImplementedException();
         }

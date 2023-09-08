@@ -50,9 +50,9 @@ namespace GameScripts.Abilities
             attacker = abilityRunner.GetComponentInBoth<Entity>();
         }
 
-        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe)
+        protected override void OnCoroutineEnqueue(AbilityPipe pipe)
         {
-            CycloneConfig cycloneConfig = (CycloneConfig)config;
+            CycloneConfig cycloneConfig = (CycloneConfig)CurrentConfig;
             cycloneConfig.currentWeapon = weaponWielder.Mainhand;
             SubscribeWeaponEvent(cycloneConfig.currentWeapon);
             cycloneConfig.m_key = moveControl.ModifyMoveSpeed(cycloneConfig.moveSpeedModifier);
@@ -60,9 +60,9 @@ namespace GameScripts.Abilities
             abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.GetAbilityClip(GetType(), cycloneConfig.currentWeapon.WeaponType), weaponWielder.Mainhand.AttackSpeed);
         }
 
-        protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe)
+        protected override IEnumerator<CoroutineOption> Coroutine( AbilityPipe pipe)
         {
-            CycloneConfig cycloneConfig = (CycloneConfig)config;
+            CycloneConfig cycloneConfig = (CycloneConfig)CurrentConfig;
             cycloneConfig.stopped = false;
             cycloneConfig.repeatAttack = false;
             cycloneConfig.currentWeapon.Action();
@@ -80,23 +80,23 @@ namespace GameScripts.Abilities
             }
         }
 
-        protected override void OnCoroutineFinish(AbilityCoroutineConfig config)
+        protected override void OnCoroutineFinish()
         {
-            CycloneConfig cycloneConfig = (CycloneConfig)config;
+            CycloneConfig cycloneConfig = (CycloneConfig)CurrentConfig;
             UnSubscribeWeaponEvent(cycloneConfig.currentWeapon);
             cycloneConfig.currentWeapon.Pause();
             moveControl.UnmodifyMoveSpeed(cycloneConfig.m_key);
             moveControl.UnmodifyRotationSpeed(cycloneConfig.r_key);
         }
 
-        protected override void OnCoroutineReset(AbilityCoroutineConfig config)
+        protected override void OnCoroutineReset()
         {
             throw new System.NotImplementedException();
         }
 
-        protected override void Signal(AbilityConfig config, AnimationEvent animationEvent)
+        protected override void Signal(AnimationEvent animationEvent)
         {
-            CycloneConfig cycloneConfig = (CycloneConfig)config;
+            CycloneConfig cycloneConfig = (CycloneConfig)CurrentConfig;
             if (animationEvent.intParameter != 0)
             {
                 cycloneConfig.stopped = true;

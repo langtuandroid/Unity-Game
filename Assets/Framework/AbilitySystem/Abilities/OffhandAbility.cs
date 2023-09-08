@@ -11,28 +11,35 @@ namespace LobsterFramework.AbilitySystem
     {
         private WeaponWielder weaponWielder;
 
-        public class RedirectConfig : AbilityConfig { }
-        public class RedirectPipe : AbilityPipe { }
-
-        protected override bool ConditionSatisfied(AbilityConfig config)
-        {
-            return weaponWielder.Offhand != null;
-        }
+        public class OffhandAbilityConfig : AbilityConfig { }
+        public class OffhandAbilityPipe : AbilityPipe { }
 
         protected override void Initialize()
         {
             weaponWielder = abilityRunner.GetComponentInBoth<WeaponWielder>();
         }
 
-        protected override void OnEnqueue(AbilityConfig config, AbilityPipe pipe)
+        protected override bool ConditionSatisfied(AbilityConfig config)
         {
-            ValueTuple<Type, string> pair = weaponWielder.Offhand.AbilitySetting;
-            abilityRunner.EnqueueAbility(pair.Item1, pair.Item2);
+            if (weaponWielder.Offhand != null)
+            {
+                ValueTuple<Type, string> setting = weaponWielder.Offhand.AbilitySetting;
+                return abilityRunner.IsAbilityReady(setting.Item1, setting.Item2);
+            }
+            return false;
         }
 
-        protected override bool Action(AbilityConfig config, AbilityPipe pipe)
+        protected override void OnEnqueue(AbilityPipe pipe)
         {
-            return false;
+            ValueTuple<Type, string> setting = weaponWielder.Offhand.AbilitySetting;
+            abilityRunner.EnqueueAbility(setting.Item1, setting.Item2);
+            JoinAsSecondary(setting.Item1, setting.Item2);
+        }
+
+        protected override bool Action(AbilityPipe pipe)
+        {
+            // Wait until the ability finishes
+            return true;
         }
     }
 }

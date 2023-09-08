@@ -44,9 +44,9 @@ namespace LobsterFramework.AbilitySystem
             return false;
         }
 
-        protected override void OnCoroutineEnqueue(AbilityCoroutineConfig config, AbilityPipe pipe)
+        protected override void OnCoroutineEnqueue(AbilityPipe pipe)
         {
-            GuardConfig guardConfig = (GuardConfig)config;
+            GuardConfig guardConfig = (GuardConfig)CurrentConfig;
             guardConfig.currentWeapon = weaponWielder.Mainhand;
             guardConfig.animationSignaled = false;
             guardConfig.inputSignaled = false;
@@ -56,17 +56,17 @@ namespace LobsterFramework.AbilitySystem
             guardConfig.animancerState = abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.GetAbilityClip(GetType(), guardConfig.currentWeapon.WeaponType), guardConfig.currentWeapon.DefenseSpeed);
         }
 
-        protected override void OnCoroutineFinish(AbilityCoroutineConfig config)
+        protected override void OnCoroutineFinish()
         {
-            GuardConfig g = (GuardConfig)config;
+            GuardConfig g = (GuardConfig)CurrentConfig;
             g.currentWeapon.Pause();
             moveControl.UnmodifyMoveSpeed(g.m_key);
             moveControl.UnmodifyRotationSpeed(g.r_key);
         }
 
-        protected override IEnumerator<CoroutineOption> Coroutine(AbilityCoroutineConfig config, AbilityPipe pipe)
+        protected override IEnumerator<CoroutineOption> Coroutine(AbilityPipe pipe)
         {
-            GuardConfig guardConfig = (GuardConfig)config; 
+            GuardConfig guardConfig = (GuardConfig)CurrentConfig; 
 
             while(!guardConfig.animationSignaled)
             {
@@ -91,9 +91,9 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
-        protected override void Signal(AbilityConfig config, AnimationEvent animationEvent)
+        protected override void Signal(AnimationEvent animationEvent)
         {
-            GuardConfig guardConfig = (GuardConfig)config;
+            GuardConfig guardConfig = (GuardConfig)CurrentConfig;
             if (animationEvent != null)
             {
                 guardConfig.animationSignaled = true;
@@ -104,7 +104,7 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
-        protected override void OnCoroutineReset(AbilityCoroutineConfig config)
+        protected override void OnCoroutineReset()
         {
             throw new System.NotImplementedException();
         }

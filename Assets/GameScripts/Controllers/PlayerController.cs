@@ -159,11 +159,11 @@ namespace GameScripts.InputControl
             }
         }
 
-        public void Shoot(InputAction.CallbackContext context)
+        public void OffhandAbility(InputAction.CallbackContext context)
         {
             if (!gamePause.Value && context.started)
             {
-                abilityRunner.EnqueueAbility<Shoot>();
+                abilityRunner.EnqueueAbility<OffhandAbility>();
             }
         }
 

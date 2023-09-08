@@ -61,6 +61,8 @@ namespace LobsterFramework.Utility.BufferedStats
             stats.Clear();
         }
 
+        public int EffectorCount { get { return stats.Count; } }
+
         protected abstract T Value();
     }
 

@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "PrimaryInteraction",
+                    "name": "Primary Interaction",
                     "type": "Button",
                     "id": "bf56d179-25cd-439e-8843-625a403f793a",
                     "expectedControlType": "Button",
@@ -51,7 +51,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SecondaryInteraction",
+                    "name": "Secondary Interaction",
                     "type": "Button",
                     "id": "4707ddf1-9e7e-4859-8145-8e971e0fd629",
                     "expectedControlType": "Button",
@@ -60,7 +60,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "NextInteractable",
+                    "name": "Next Interactable",
                     "type": "Button",
                     "id": "fa744c36-197b-4951-a90e-13f496b3bf56",
                     "expectedControlType": "Button",
@@ -69,7 +69,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "PreviousInteractable",
+                    "name": "Previous Interactable",
                     "type": "Button",
                     "id": "f41da5e5-cc4a-411b-a6dc-a3f727a2b14a",
                     "expectedControlType": "Button",
@@ -96,7 +96,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SwitchWeapon",
+                    "name": "Switch Weapon",
                     "type": "Button",
                     "id": "f2ad83b8-d27f-41f1-9732-70cfe71f75f6",
                     "expectedControlType": "Button",
@@ -105,7 +105,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Shoot",
+                    "name": "Offhand Ability",
                     "type": "Button",
                     "id": "00616b6e-30df-45ca-a849-0fef22c79ab3",
                     "expectedControlType": "Button",
@@ -123,18 +123,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "WeaponArt",
+                    "name": "Weapon Art",
                     "type": "Button",
                     "id": "3f6c1294-69c4-429e-ab8d-981af9bbd806",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "WeaponArt2",
-                    "type": "Button",
-                    "id": "19717e90-af35-49d1-abf2-66066898245b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -226,7 +217,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PrimaryInteraction",
+                    "action": "Primary Interaction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -237,7 +228,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SecondaryInteraction",
+                    "action": "Secondary Interaction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -248,7 +239,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "NextInteractable",
+                    "action": "Next Interactable",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -259,7 +250,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PreviousInteractable",
+                    "action": "Previous Interactable",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -303,18 +294,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SwitchWeapon",
+                    "action": "Switch Weapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "aa9b8a90-42a8-4856-b823-32e429514ef3",
-                    "path": "<Keyboard>/#(R)",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shoot",
+                    "action": "Offhand Ability",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -336,18 +327,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "WeaponArt",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1aa62be8-3d29-4b93-8bdf-7547824b3a8d",
-                    "path": "<Keyboard>/2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "WeaponArt2",
+                    "action": "Weapon Art",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

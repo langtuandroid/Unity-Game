@@ -1,5 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8702984538046557617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e58c854662727834482aa86c17ef835d, type: 3}
+  m_Name: LobsterFramework.AbilitySystem.OffhandAbility
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: 2711515943225798181}
 --- !u!114 &-7719986284122826489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36,6 +60,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flatDamage: 0
   percentageDamage: 0
+--- !u!114 &-7328879095627385509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a31266b013b6ce6489233e846909b86e, type: 3}
+  m_Name: GameScripts.Abilities.Grab
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  configs:
+    keys: []
+    values: []
 --- !u!114 &-6729938308663559183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +265,31 @@ MonoBehaviour:
   damageKey: 0
   hyperArmorKey: 0
   timeEnd: 0
+--- !u!114 &-1930372617690971835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: GameScripts.Abilities.Grab-default
+  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Grab/GrabConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 1
+  cooldown: 0
+  isSuspended: 0
+  <CoroutineRunning>k__BackingField: 0
+  awakeTime: 0
+  targetSetting: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
+  healthDamage: 50
+  postureDamage: 50
+  throwStrength: 70
+  suppressTime: 0
+  signaled: 0
 --- !u!114 &-1747225586503827564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,6 +387,9 @@ MonoBehaviour:
     - GameScripts.Abilities.Boost
     - GameScripts.Abilities.Cyclone
     - LobsterFramework.AbilitySystem.WeaponArt
+    - LobsterFramework.AbilitySystem.OffhandAbility
+    - GameScripts.Abilities.Grab
+    - GameScripts.Abilities.OffhandGrab
     values:
     - {fileID: -4329963379142507920}
     - {fileID: -1747225586503827564}
@@ -324,6 +398,9 @@ MonoBehaviour:
     - {fileID: 5731256669973731595}
     - {fileID: -3602871430966535152}
     - {fileID: -5774857593913478976}
+    - {fileID: -8702984538046557617}
+    - {fileID: -7328879095627385509}
+    - {fileID: 5430447883114821002}
 --- !u!114 &1456359089391967879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,6 +441,47 @@ MonoBehaviour:
   useCooldown: 0
   cooldown: 0
   isSuspended: 0
+--- !u!114 &2711515943225798181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: LobsterFramework.AbilitySystem.OffhandAbility-default
+  m_EditorClassIdentifier: LobsterFramework:LobsterFramework.AbilitySystem:OffhandAbility/OffhandAbilityConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 0
+  cooldown: 0
+  isSuspended: 0
+--- !u!114 &5430447883114821002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a31266b013b6ce6489233e846909b86e, type: 3}
+  m_Name: GameScripts.Abilities.OffhandGrab
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: 6814591029162389487}
 --- !u!114 &5731256669973731595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,6 +506,30 @@ MonoBehaviour:
     - default
     values:
     - {fileID: -2295283863920816248}
+--- !u!114 &6814591029162389487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: GameScripts.Abilities.OffhandGrab-default
+  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:OffhandGrab/OffhandGrabConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 0
+  cooldown: 0
+  isSuspended: 0
+  awakeTime: 0
+  targetSetting: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
+  healthDamage: 60
+  postureDamage: 60
+  throwStrength: 70
+  suppressTime: 0.3
+  signaled: 0
 --- !u!114 &7780250248026374360
 MonoBehaviour:
   m_ObjectHideFlags: 0
