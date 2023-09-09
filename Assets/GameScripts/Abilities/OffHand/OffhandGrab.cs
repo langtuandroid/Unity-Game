@@ -82,7 +82,7 @@ namespace GameScripts.Abilities
             targetMoveControl.KinematicBody(false);
             targetMoveControl.SetVelocityImmediate(rigidBody.velocity);
             targetMoveControl.EnableCollider();
-            targetMoveControl.ApplyForceQueued(currentWeapon.transform.up, gc.throwStrength);
+            targetMoveControl.ApplyForce(currentWeapon.transform.up, gc.throwStrength);
             holdingEntity.Damage(gc.healthDamage, gc.postureDamage, currentWeapon.Entity);
 
             // Wait for the end of suppression
@@ -102,8 +102,8 @@ namespace GameScripts.Abilities
                 holdingEntity.transform.parent = oldParentTransform;
                 holdingEntity = null;
                 targetStateManager.Release(suppressKey);
-                targetMoveControl.EnableCollider();
                 targetMoveControl.KinematicBody(false);
+                targetMoveControl.EnableCollider();
                 targetMoveControl.SetVelocityImmediate(rigidBody.velocity);
             }
         }

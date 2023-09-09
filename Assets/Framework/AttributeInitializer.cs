@@ -7,26 +7,26 @@ using LobsterFramework.Interaction;
 namespace LobsterFramework.Utility
 {
     /// <summary>
-    /// Initializes all of the custom attributes of namespace LobsterFramework
+    /// Initializes all of the custom attributes of LobsterFramework for all assemblies
     /// </summary>
     public class AttributeInitializer
     {
-       
         public static void Initialize(Assembly assembly)
         {
-            AddAbilityMenu(assembly);
-            AddAbilityStatMenu(assembly);
-            AddComponentRequirement(assembly); 
-            AddAbilityStatRequirement(assembly);
-            AddInteractions(assembly);
-            AddWeaponStatMenu(assembly);
-            AddWeaponArtMenu(assembly);
-            AddWeaponStatRequirement(assembly);
+            Type[] types = assembly.GetTypes();
+            AddAbilityMenu(types);
+            AddAbilityStatMenu(types);
+            AddComponentRequirement(types); 
+            AddAbilityStatRequirement(types);
+            AddInteractions(types);
+            AddWeaponStatMenu(types);
+            AddWeaponArtMenu(types);
+            AddWeaponStatRequirement(types);
         }
 
-        private static void AddAbilityMenu(Assembly assembly)
+        private static void AddAbilityMenu(Type[] types)
         {
-            foreach (Type type in assembly.GetTypes())
+            foreach (Type type in types)
             {
                 AddAbilityMenuAttribute info = type.GetCustomAttribute<AddAbilityMenuAttribute>();
                 if (info != null) {
@@ -35,8 +35,8 @@ namespace LobsterFramework.Utility
             }
         }
 
-        private static void AddAbilityStatMenu(Assembly assembly) {
-            foreach (Type type in assembly.GetTypes())
+        private static void AddAbilityStatMenu(Type[] types) {
+            foreach (Type type in types)
             {
                 AddAbilityStatMenuAttribute info = type.GetCustomAttribute<AddAbilityStatMenuAttribute>();
                 if (info != null)
@@ -46,8 +46,8 @@ namespace LobsterFramework.Utility
             }
         }
 
-        private static void AddComponentRequirement(Assembly assembly) {
-            foreach (Type type in assembly.GetTypes())
+        private static void AddComponentRequirement(Type[] types) {
+            foreach (Type type in types)
             {
                 ComponentRequiredAttribute info = type.GetCustomAttribute<ComponentRequiredAttribute>(true);
                 if (info != null)
@@ -56,8 +56,8 @@ namespace LobsterFramework.Utility
                 }
             }
         }
-        private static void AddAbilityStatRequirement(Assembly assembly) {
-            foreach (Type type in assembly.GetTypes())
+        private static void AddAbilityStatRequirement(Type[] types) {
+            foreach (Type type in types)
             {
                 foreach (RequireAbilityStatsAttribute info in type.GetCustomAttributes<RequireAbilityStatsAttribute>(true)) {
                     info.Init(type);
@@ -65,8 +65,8 @@ namespace LobsterFramework.Utility
             }
         }
 
-        private static void AddWeaponStatMenu(Assembly assembly) {
-            foreach (Type type in assembly.GetTypes())
+        private static void AddWeaponStatMenu(Type[] types) {
+            foreach (Type type in types)
             {
                 foreach (AddWeaponStatMenuAttribute info in type.GetCustomAttributes<AddWeaponStatMenuAttribute>())
                 {
@@ -75,8 +75,8 @@ namespace LobsterFramework.Utility
             }
         }
 
-        private static void AddWeaponArtMenu(Assembly assembly) {
-            foreach (Type type in assembly.GetTypes())
+        private static void AddWeaponArtMenu(Type[] types) {
+            foreach (Type type in types)
             {
                 foreach (AddWeaponArtMenuAttribute info in type.GetCustomAttributes<AddWeaponArtMenuAttribute>())
                 {
@@ -85,8 +85,8 @@ namespace LobsterFramework.Utility
             }
         }
 
-        private static void AddWeaponStatRequirement(Assembly assembly) {
-            foreach (Type type in assembly.GetTypes())
+        private static void AddWeaponStatRequirement(Type[] types) {
+            foreach (Type type in types)
             {
                 foreach (RequireWeaponStatAttribute info in type.GetCustomAttributes<RequireWeaponStatAttribute>())
                 {
@@ -95,8 +95,8 @@ namespace LobsterFramework.Utility
             }
         }
 
-        private static void AddInteractions(Assembly assembly) {
-            foreach (Type type in assembly.GetTypes())
+        private static void AddInteractions(Type[] types) {
+            foreach (Type type in types)
             {
                 InteractionAttribute info = type.GetCustomAttribute<InteractionAttribute>();
                 if (info != null)

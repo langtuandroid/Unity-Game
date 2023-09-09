@@ -45,8 +45,11 @@ namespace LobsterFramework.AbilitySystem
         [Range(0, 1)]
         [SerializeField] private float hMoveSpeedModifier;
 
-        [Header("Special Move")]
+        [Header("Special Move")] 
+        [SerializeField] private WeaponData weaponData;
         [SerializeField] private WeaponArtSelector abilitySelector;
+        private WeaponData data;
+        private TypeWeaponStatDictionary weaponStats;
 
         private float momentumMultiplier;
         private float oppressingForce;
@@ -107,8 +110,14 @@ namespace LobsterFramework.AbilitySystem
             state = WeaponState.Idle;
             newHit = new();
             hitted = new();
+            if (weaponData != null)
+            {
+                data = weaponData.Clone();
+                weaponStats = data.weaponStats;
+            }
         }
 
+        #region WeaponAction
         /// <summary>
         /// Enable the collider of the weapon and set its weapon state. Momentum will start to accumulate after this. Can only be used after calling On().
         /// </summary>
@@ -117,6 +126,55 @@ namespace LobsterFramework.AbilitySystem
             thisCollider.enabled = true;
             this.state = state;
         }
+        /// <summary>
+        /// Disable the weapon collider and reset momentum
+        /// </summary>
+        public void Pause()
+        {
+            thisCollider.enabled = false;
+            momentumMultiplier = 1;
+            state = WeaponState.Idle;
+            hitted.Clear();
+        }
+        #endregion
+
+        #region WeaponStat
+        /// <summary>
+        /// Get the weapon stat of specified type if exists
+        /// </summary>
+        /// <typeparam name="T">The type of the weapon stat to be fetched</typeparam>
+        /// <returns>The target weapon stat if exists, otherwise null</returns>
+        public T GetWeaponStat<T>() where T : WeaponStat
+        {
+            string key = typeof(T).AssemblyQualifiedName;
+            if (weaponStats != null && weaponStats.ContainsKey(key))
+            {
+                return (T)weaponStats[key];
+            }
+            return default;
+        }
+
+        /// <summary>
+        /// Check if the WeaponStat is present on this weapon
+        /// </summary>
+        /// <typeparam name="T">The type of WeaponStat being queried</typeparam>
+        /// <returns>True if exists, otherwise false</returns>
+        public bool HasWeaponStat<T>() where T : WeaponStat {
+            string key = typeof(T).AssemblyQualifiedName;
+            return weaponStats != null && weaponStats.ContainsKey(key);
+        }
+
+        /// <summary>
+        /// Check if the WeaponStat is present on this weapon
+        /// </summary>
+        /// <param name="type"> The type of the WeaponStat being queried </param>
+        /// <returns>True if exists, otherwise false</returns>
+        public bool HasWeaponStat(Type type)
+        {
+            string key = type.AssemblyQualifiedName;
+            return weaponStats != null && weaponStats.ContainsKey(key);
+        }
+        #endregion
 
         private void OnTriggerEnter2D(Collider2D collider)
         {
@@ -174,24 +232,22 @@ namespace LobsterFramework.AbilitySystem
                 abilitySelector.weaponType = weaponType;
             } 
         }
-
-        /// <summary>
-        /// Disable the weapon collider and reset momentum
-        /// </summary>
-        public void Pause() { 
-            thisCollider.enabled=false;
-            momentumMultiplier = 1;
-            state = WeaponState.Idle;
-            hitted.Clear();
-        }
     }
+
+    #region Weapon Enums
     [Serializable]
     public enum WeaponType { 
+        // Mainhand
         Sword,
         Hammer,
         Dagger,
         Stick,
-        EmptyHand,
+
+        // Empty
+        EmptyHand, 
+        
+        // Offhand
+        FireArm 
     }
 
     public enum WeaponState { 
@@ -199,4 +255,5 @@ namespace LobsterFramework.AbilitySystem
         Guarding,
         Idle
     }
+    #endregion
 }

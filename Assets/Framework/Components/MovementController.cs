@@ -21,7 +21,6 @@ namespace LobsterFramework
         private BaseOr movementBlock = new(false);
         private Vector2 steering;
         private Vector2 targetVelocity;
-        private List<Vector2> queuedForces = new();
 
         private FloatProduct moveSpeedMultiplier = new(1, true);
         private FloatProduct rotateSpeedMultiplier = new(1, true);
@@ -47,10 +46,6 @@ namespace LobsterFramework
                 targetVelocity = Vector2.zero;
             }
 
-            foreach (Vector2 force in queuedForces) {
-                _rigidBody.AddForce(force, ForceMode2D.Impulse);
-            }
-            queuedForces.Clear();
             if (steering != Vector2.zero)
             {
                 _rigidBody.AddForce(transform.rotation * steering);
@@ -205,19 +200,6 @@ namespace LobsterFramework
             steering = direction.normalized * acceleration;
         }
 
-        public void SetVelocityQueued(Vector2 velocity)
-        {
-            Vector2 force = (velocity - _rigidBody.velocity) * _rigidBody.mass;
-            float mag = force.magnitude;
-            float max = Speed * Time.deltaTime;
-            if (mag > max)
-            {
-                mag = max;
-            }
-            queuedForces.Add(force.normalized * mag);
-            steering = Vector2.zero;
-        }
-
         public void SetVelocityImmediate(Vector2 velocity)
         {
             _rigidBody.velocity = velocity;
@@ -239,9 +221,9 @@ namespace LobsterFramework
             return force.normalized * mag;
         }
 
-        public void ApplyForceQueued(Vector2 direction, float magnitude)
+        public void ApplyForce(Vector2 direction, float magnitude)
         {
-            queuedForces.Add(direction.normalized * magnitude);
+            _rigidBody.AddForce(direction.normalized * magnitude, ForceMode2D.Impulse);
         }
         #endregion
     }

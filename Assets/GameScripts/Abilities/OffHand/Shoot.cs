@@ -6,7 +6,7 @@ using LobsterFramework.AbilitySystem;
 namespace GameScripts.Abilities
 {
     [AddAbilityMenu]
-    [RequireAbilityStats(typeof(CombatStat), typeof(Mana))]
+    [AddWeaponArtMenu(false, WeaponType.FireArm)]
     public class Shoot : Ability
     {
         public class ShootConfig : AbilityConfig

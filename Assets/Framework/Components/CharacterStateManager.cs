@@ -68,7 +68,7 @@ namespace LobsterFramework.EntitySystem
             if (suppression.EffectorCount == 1) {
                 suppressAbilityBlockKey = abilityRunner.BlockAction();
                 suppressBlockKey = moveControl.BlockMovement();
-                moveControl.SetVelocityQueued(Vector2.zero);
+                moveControl.SetVelocityImmediate(Vector2.zero);
             }
             ComputeStateAndPlayAnimation();
             return key;

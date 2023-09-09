@@ -48,7 +48,7 @@ namespace GameScripts.Abilities
                 Vector3 back = -abilityRunner.TopLevelTransform.up;
                 direction = new Vector2(back.x, back.y);
             }
-            controller.ApplyForceQueued(direction, c.dashStrength);
+            controller.ApplyForce(direction, c.dashStrength);
             return false;
         }
     }

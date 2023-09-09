@@ -24,11 +24,8 @@ namespace LobsterFramework.AbilitySystem
         [SerializeField] private Transform mainhandWeaponPosition;
         [SerializeField] private Transform offhandWeaponPosition;
 
-        [Header("Weapon Data")]
-        [SerializeField] private WeaponData weaponData;
+        [Header("Animation Data")]
         [SerializeField] private WeaponAnimationData animationData;
-        private WeaponData data;
-        private TypeWeaponStatDictionary weaponStats;
 
         [Header("Component Reference")]
         [SerializeField] private Entity entity;
@@ -69,11 +66,6 @@ namespace LobsterFramework.AbilitySystem
                 {
                     objLookup[Offhand].SetActive(false);
                 }
-            }
-
-            if (weaponData != null) {
-                data = weaponData.Clone();
-                weaponStats = data.weaponStats;
             }
         }
 
@@ -188,14 +180,6 @@ namespace LobsterFramework.AbilitySystem
                     emptyOHandInst.SetActive(true);
                 }
             }
-        }
-
-        public T GetWeaponStat<T>() where T : WeaponStat {
-            string key = typeof(T).AssemblyQualifiedName;
-            if (weaponStats != null && weaponStats.ContainsKey(key)) {
-                return (T)weaponStats[key];
-            }
-            return default;
         }
 
         public void SwitchMainHand() {
