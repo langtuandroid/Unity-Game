@@ -23382,7 +23382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5353377617828249592, guid: 4816e38646558964d841661aa9ae451c, type: 3}
       propertyPath: maxHealth.value
-      value: 300
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 5353377617828249592, guid: 4816e38646558964d841661aa9ae451c, type: 3}
       propertyPath: maxPosture.value
@@ -23390,7 +23390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5353377617828249592, guid: 4816e38646558964d841661aa9ae451c, type: 3}
       propertyPath: startHealth.value
-      value: 300
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 6676339780788435558, guid: 4816e38646558964d841661aa9ae451c, type: 3}
       propertyPath: animancer
@@ -24596,6 +24596,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1478059220}
     m_Modifications:
+    - target: {fileID: 770555523144453587, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
+      propertyPath: m_LinearDrag
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_Name
       value: stickman
@@ -30455,6 +30459,26 @@ PrefabInstance:
       propertyPath: playerAbilityRunner
       value: 
       objectReference: {fileID: 255199789}
+    - target: {fileID: 5353377617828249592, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
+      propertyPath: maxHealth.value
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353377617828249592, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
+      propertyPath: startHealth.value
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353377617828249592, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
+      propertyPath: lowHealthRegen.value
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353377617828249592, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
+      propertyPath: baseHealthRegen.value
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353377617828249592, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
+      propertyPath: lowHealthThreshold.value
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.06

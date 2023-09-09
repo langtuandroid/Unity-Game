@@ -8,12 +8,14 @@ using UnityEngine;
 
 namespace GameScripts.Abilities
 {
-    [ComponentRequired(typeof(WeaponWielder))]
+    [ComponentRequired(typeof(WeaponWielder), typeof(Rigidbody2D), typeof(Collider2D))]
     [AddWeaponArtMenu(false, WeaponType.EmptyHand)]
     [AddAbilityMenu]
     public class OffhandGrab : AbilityCoroutine
     {
         private WeaponWielder weaponWielder;
+        private Rigidbody2D rigidBody;
+        private Collider2D collider;
         private Weapon currentWeapon;
         private AnimationClip clip;
         private Transform oldParentTransform = null;
@@ -26,7 +28,9 @@ namespace GameScripts.Abilities
         protected override void Initialize()
         {
             weaponWielder = abilityRunner.GetComponentInBoth<WeaponWielder>();
+            rigidBody = abilityRunner.GetComponentInBoth<Rigidbody2D>();
             clip = weaponWielder.GetAbilityClip(GetType(), WeaponType.EmptyHand);
+            collider = abilityRunner.GetComponentInBoth<Collider2D>();
         }
 
         protected override bool ConditionSatisfied(AbilityConfig config)
@@ -76,15 +80,15 @@ namespace GameScripts.Abilities
 
             holdingEntity.transform.parent = oldParentTransform;
             targetMoveControl.KinematicBody(false);
-            targetMoveControl.ApplyForce(currentWeapon.transform.up, gc.throwStrength);
-            holdingEntity.Damage(gc.healthDamage, gc.postureDamage, currentWeapon.Entity);
+            targetMoveControl.SetVelocityImmediate(rigidBody.velocity);
             targetMoveControl.EnableCollider();
+            targetMoveControl.ApplyForceQueued(currentWeapon.transform.up, gc.throwStrength);
+            holdingEntity.Damage(gc.healthDamage, gc.postureDamage, currentWeapon.Entity);
 
             // Wait for the end of suppression
             yield return CoroutineOption.Wait(gc.suppressTime);
             targetStateManager.Release(suppressKey);
             holdingEntity = null;
-
             // Wait for animation to finish
             while (!gc.signaled) { 
                 yield return null;
@@ -100,6 +104,7 @@ namespace GameScripts.Abilities
                 targetStateManager.Release(suppressKey);
                 targetMoveControl.EnableCollider();
                 targetMoveControl.KinematicBody(false);
+                targetMoveControl.SetVelocityImmediate(rigidBody.velocity);
             }
         }
 

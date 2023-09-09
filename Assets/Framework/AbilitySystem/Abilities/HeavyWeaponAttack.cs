@@ -184,7 +184,7 @@ namespace LobsterFramework.AbilitySystem
                 MovementController moveControl = entity.GetComponent<MovementController>();
                 if (moveControl != null)
                 {
-                    moveControl.ApplyForce(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight * modifier);
+                    moveControl.ApplyForceQueued(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight * modifier);
                 }
             }
         }

@@ -1,6 +1,5 @@
 using LobsterFramework.Utility.BufferedStats;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -21,6 +20,8 @@ namespace LobsterFramework
         new private Transform transform;
         private BaseOr movementBlock = new(false);
         private Vector2 steering;
+        private Vector2 targetVelocity;
+        private List<Vector2> queuedForces = new();
 
         private FloatProduct moveSpeedMultiplier = new(1, true);
         private FloatProduct rotateSpeedMultiplier = new(1, true);
@@ -41,6 +42,15 @@ namespace LobsterFramework
 
         private void FixedUpdate()
         {
+            if (targetVelocity != Vector2.zero) {
+                _rigidBody.AddForce(ComputeVelocityForce(), ForceMode2D.Impulse);
+                targetVelocity = Vector2.zero;
+            }
+
+            foreach (Vector2 force in queuedForces) {
+                _rigidBody.AddForce(force, ForceMode2D.Impulse);
+            }
+            queuedForces.Clear();
             if (steering != Vector2.zero)
             {
                 _rigidBody.AddForce(transform.rotation * steering);
@@ -121,6 +131,10 @@ namespace LobsterFramework
             _collider.enabled = true;
         }
 
+        public void IgnoreCollision(Collider2D collider, bool ignore=true) { 
+            Physics2D.IgnoreCollision(_collider, collider, ignore);
+        }
+
         public void KinematicBody(bool isKinematic) {
              _rigidBody.isKinematic = isKinematic;
         }
@@ -191,7 +205,7 @@ namespace LobsterFramework
             steering = direction.normalized * acceleration;
         }
 
-        public void SetVelocity(Vector2 velocity)
+        public void SetVelocityQueued(Vector2 velocity)
         {
             Vector2 force = (velocity - _rigidBody.velocity) * _rigidBody.mass;
             float mag = force.magnitude;
@@ -200,13 +214,34 @@ namespace LobsterFramework
             {
                 mag = max;
             }
-            _rigidBody.AddForce(force.normalized * mag, ForceMode2D.Impulse);
+            queuedForces.Add(force.normalized * mag);
             steering = Vector2.zero;
         }
 
-        public void ApplyForce(Vector2 direction, float magnitude)
+        public void SetVelocityImmediate(Vector2 velocity)
         {
-            _rigidBody.AddForce(direction.normalized * magnitude, ForceMode2D.Impulse);
+            _rigidBody.velocity = velocity;
+        }
+
+        public void SetVelocity(Vector2 velocity) {
+            targetVelocity = velocity;
+            steering = Vector2.zero;
+        }
+
+        private Vector2 ComputeVelocityForce() {
+            Vector2 force = (targetVelocity - _rigidBody.velocity) * _rigidBody.mass;
+            float mag = force.magnitude;
+            float max = Speed * Time.deltaTime;
+            if (mag > max)
+            {
+                mag = max;
+            }
+            return force.normalized * mag;
+        }
+
+        public void ApplyForceQueued(Vector2 direction, float magnitude)
+        {
+            queuedForces.Add(direction.normalized * magnitude);
         }
         #endregion
     }

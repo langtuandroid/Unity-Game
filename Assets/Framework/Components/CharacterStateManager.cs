@@ -68,7 +68,7 @@ namespace LobsterFramework.EntitySystem
             if (suppression.EffectorCount == 1) {
                 suppressAbilityBlockKey = abilityRunner.BlockAction();
                 suppressBlockKey = moveControl.BlockMovement();
-                moveControl.SetVelocity(Vector2.zero);
+                moveControl.SetVelocityQueued(Vector2.zero);
             }
             ComputeStateAndPlayAnimation();
             return key;
@@ -173,7 +173,7 @@ namespace LobsterFramework.EntitySystem
                 case CharacterState.Dashing:
                     break;
                 case CharacterState.PoiseBroken:
-                    animancer.Play(onPostureBroken, 0.4f, FadeMode.FromStart);
+                    animancer.Play(onPostureBroken, 0.5f, FadeMode.FromStart);
                     break;
                 case CharacterState.Suppressed:
                     animancer.Play(onPostureBroken, 0.2f, FadeMode.FromStart);
