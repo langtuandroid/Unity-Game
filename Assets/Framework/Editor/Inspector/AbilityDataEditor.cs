@@ -246,5 +246,15 @@ namespace LobsterFramework.Editors
                 #endregion
             }
         }
+
+        private void OnDestroy()
+        {
+            foreach (Editor editor in abilityEditors.Values) {
+                DestroyImmediate(editor);
+            }
+            foreach (Editor editor in abilityStatsEditors.Values) {
+                DestroyImmediate(editor);
+            }
+        }
     }
 }

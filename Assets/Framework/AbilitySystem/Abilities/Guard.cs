@@ -15,17 +15,10 @@ namespace LobsterFramework.AbilitySystem
         public class GuardConfig : AbilityCoroutineConfig
         {
             [HideInInspector] public bool animationSignaled;
-            [HideInInspector] public bool inputSignaled;
             [HideInInspector] public int m_key;
             [HideInInspector] public int r_key;
             [HideInInspector] public Weapon currentWeapon;
             [HideInInspector] public AnimancerState animancerState;
-
-            protected internal override void Initialize()
-            {
-                animationSignaled = false;
-                inputSignaled = false;
-            }
         }
         public class GuardPipe : AbilityPipe{ }
 
@@ -49,7 +42,6 @@ namespace LobsterFramework.AbilitySystem
             GuardConfig guardConfig = (GuardConfig)CurrentConfig;
             guardConfig.currentWeapon = weaponWielder.Mainhand;
             guardConfig.animationSignaled = false;
-            guardConfig.inputSignaled = false;
 
             guardConfig.m_key = moveControl.ModifyMoveSpeed(guardConfig.currentWeapon.GMoveSpeedModifier);
             guardConfig.r_key = moveControl.ModifyRotationSpeed(guardConfig.currentWeapon.GRotationSpeedModifier);
@@ -72,17 +64,8 @@ namespace LobsterFramework.AbilitySystem
             {
                 yield return null;
             }
-            guardConfig.animationSignaled = false;
             guardConfig.animancerState.IsPlaying = false;
             guardConfig.currentWeapon.Action(WeaponState.Guarding);
-            
-            while(!guardConfig.inputSignaled)
-            {
-                yield return null;
-            }
-            guardConfig.inputSignaled = false;
-            guardConfig.animancerState.IsPlaying = true;
-            guardConfig.currentWeapon.Pause();
 
             // Wait for animation to finish
             while (true)
@@ -100,7 +83,7 @@ namespace LobsterFramework.AbilitySystem
             }
             else
             {
-                guardConfig.inputSignaled = true;
+                HaltAbilityExecution(CurrentConfigName);
             }
         }
 

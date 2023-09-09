@@ -164,7 +164,7 @@ namespace LobsterFramework.EntitySystem
                         weaponWielder.PlayWeaponAnimation();
                     }
                     else {
-                        weaponWielder.PlayWeaponAnimation(true);
+                        weaponWielder.PlayTransitionAnimation();
                     }
                      break;
                 case CharacterState.PostureBroken:

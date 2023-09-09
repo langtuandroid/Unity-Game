@@ -36,6 +36,9 @@ namespace GameScripts.InputControl
         [SerializeField] private float mouseSensitivity;
         private float rotateVelocity;
 
+        // Guard
+        private bool isGuarding = false;
+
         private Transform _transform;
 
         public void Start()
@@ -67,6 +70,7 @@ namespace GameScripts.InputControl
         private void Update()
         {
             moveControl.Move(move.action.ReadValue<Vector2>());
+            GuardAction();
         }
 
         private void OnDisable()
@@ -74,6 +78,12 @@ namespace GameScripts.InputControl
             if (player.IsDead)
             {
                 playerDeathChannel.RaiseEvent();
+            }
+        }
+
+        private void GuardAction() {
+            if (isGuarding) {
+                abilityRunner.EnqueueAbility<Guard>();
             }
         }
 
@@ -151,10 +161,11 @@ namespace GameScripts.InputControl
             }
             if (context.started)
             {
-                abilityRunner.EnqueueAbility<Guard>();
+                isGuarding = true;
             }
             else if (context.canceled)
             {
+                isGuarding = false;
                 abilityRunner.Signal<Guard>();
             }
         }

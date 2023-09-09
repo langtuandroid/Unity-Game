@@ -1,3 +1,4 @@
+using Animancer;
 using LobsterFramework;
 using LobsterFramework.AbilitySystem;
 using LobsterFramework.EntitySystem;
@@ -61,6 +62,11 @@ namespace GameScripts.Abilities
             gc.signaled = false;
             currentWeapon.Pause();
 
+            // If no entities are grabbed, terminate ability immediately
+            if (holdingEntity == null) {
+                yield return CoroutineOption.Exit;
+            }
+
             // Wait for signal to throw
             while (!gc.signaled)
             {
@@ -68,17 +74,11 @@ namespace GameScripts.Abilities
             }
             gc.signaled = false;
 
-            if (holdingEntity != null) {
-                holdingEntity.transform.parent = oldParentTransform;
-                targetMoveControl.KinematicBody(false);
-                targetMoveControl.ApplyForce(currentWeapon.transform.up, gc.throwStrength);
-                holdingEntity.Damage(gc.healthDamage, gc.postureDamage, currentWeapon.Entity);
-                targetMoveControl.EnableCollider();
-            }
-            else {
-                // Exit if no entities are grabbed
-                yield return CoroutineOption.Exit;
-            }
+            holdingEntity.transform.parent = oldParentTransform;
+            targetMoveControl.KinematicBody(false);
+            targetMoveControl.ApplyForce(currentWeapon.transform.up, gc.throwStrength);
+            holdingEntity.Damage(gc.healthDamage, gc.postureDamage, currentWeapon.Entity);
+            targetMoveControl.EnableCollider();
 
             // Wait for the end of suppression
             yield return CoroutineOption.Wait(gc.suppressTime);

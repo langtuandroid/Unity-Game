@@ -50,14 +50,13 @@ namespace LobsterFramework.AbilitySystem
         private GameObject emptyOHandInst;
 
         private Dictionary<Weapon, GameObject> objLookup = new();
-        private bool weaponSwitching;
 
         public Weapon Mainhand { get; private set; }
         public Weapon Mainhand2 { get; private set; }
         public Weapon Offhand { get; private set; }
         public Weapon Offhand2 { get; private set; }
 
-        public Entity Wielder { get { return entity; } }
+        public Entity Wielder { get { return entity; } } 
 
         private void Awake()
         {
@@ -76,7 +75,6 @@ namespace LobsterFramework.AbilitySystem
                 data = weaponData.Clone();
                 weaponStats = data.weaponStats;
             }
-            weaponSwitching = false;
         }
 
         private void SetUpEmptyHand() {
@@ -213,13 +211,9 @@ namespace LobsterFramework.AbilitySystem
                     objLookup[Mainhand].SetActive(true);
                     if (abilityRunner.IsAnimating())
                     {
-                        // Let the character state manager decide which animation to play
-                        weaponSwitching = true;
                         abilityRunner.InterruptAbilityAnimation();
                     }
-                    else { 
-                        PlaySmoothAnimation();
-                    }
+                    PlayTransitionAnimation();
                 }
             }
             if (Offhand != null)
@@ -252,33 +246,27 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
-        private void PlaySmoothAnimation() {
+        public void PlayWeaponAnimation() {
             if (Mainhand != null && animancer != null)
             {
                 AnimationClip clip = animationData.GetMoveClip(Mainhand.WeaponType);
+                AnimancerState state = animancer.States.Current;
+               
+                if (state != null)
+                {
+                    state.IsPlaying = false;
+                }
                 animancer.Play(clip, 0.25f, FadeMode.FixedDuration).Speed = 1;
             }
         }
 
-        private void PlayInstantAnimation() {
+        public void PlayTransitionAnimation() {
             if(Mainhand != null && animancer != null)
             {
                 if (abilityRunner != null && !abilityRunner.IsAnimating()) {
-                    animancer.Stop();
                     AnimationClip clip = animationData.GetMoveClip(Mainhand.WeaponType);
-                    animancer.Play(clip).Speed = 1;
+                    animancer.Play(clip, 0.25f, FadeMode.FixedDuration).Speed = 1;
                 }
-            }
-        }
-
-        public void PlayWeaponAnimation(bool smooth=false) {
-            if (weaponSwitching || smooth)
-            {
-                weaponSwitching = false;
-                PlaySmoothAnimation();
-            }
-            else { 
-                PlayInstantAnimation();
             }
         }
 
