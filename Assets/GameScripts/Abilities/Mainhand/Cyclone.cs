@@ -12,13 +12,11 @@ namespace GameScripts.Abilities
     [AddAbilityMenu]
     [ComponentRequired(typeof(WeaponWielder), typeof(MovementController))]
     [AddWeaponArtMenu(false, WeaponType.Stick)]
-    public class Cyclone : AbilityCoroutine
+    public class Cyclone : WeaponAbility
     {
         [SerializeField] TargetSetting targets;
         [SerializeField] private VarString clashSparkTag;
-        private WeaponWielder weaponWielder;
         private MovementController moveControl;
-        private Entity attacker;
 
         public class CycloneConfig : AbilityCoroutineConfig {
             
@@ -34,30 +32,24 @@ namespace GameScripts.Abilities
 
         public class CyclonePipe : AbilityPipe {  }
 
-        protected override bool ConditionSatisfied(AbilityConfig config)
+        protected override bool WConditionSatisfied(AbilityConfig config)
         {
-            if (weaponWielder.Mainhand != null)
-            {
-                return weaponWielder.GetAbilityClip(GetType(), weaponWielder.Mainhand.WeaponType) != null && weaponWielder.Mainhand.state != WeaponState.Attacking;
-            }
-            return false; 
+            return WeaponWielder.GetAbilityClip(GetType(), WeaponWielder.Mainhand.WeaponType) != null && WeaponWielder.Mainhand.state != WeaponState.Attacking;
         }
 
-        protected override void Initialize()
+        protected override void Init()
         {
-            weaponWielder = abilityRunner.GetComponentInBoth<WeaponWielder>();
             moveControl = abilityRunner.GetComponentInBoth<MovementController>();
-            attacker = abilityRunner.GetComponentInBoth<Entity>();
         }
 
         protected override void OnCoroutineEnqueue(AbilityPipe pipe)
-        {
+        { 
             CycloneConfig cycloneConfig = (CycloneConfig)CurrentConfig;
-            cycloneConfig.currentWeapon = weaponWielder.Mainhand;
+            cycloneConfig.currentWeapon = WeaponWielder.Mainhand;
             SubscribeWeaponEvent(cycloneConfig.currentWeapon);
             cycloneConfig.m_key = moveControl.ModifyMoveSpeed(cycloneConfig.moveSpeedModifier);
             cycloneConfig.r_key = moveControl.ModifyRotationSpeed(cycloneConfig.rotationSpeedModifier);
-            abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.GetAbilityClip(GetType(), cycloneConfig.currentWeapon.WeaponType), weaponWielder.Mainhand.AttackSpeed);
+            abilityRunner.StartAnimation(this, CurrentConfigName, WeaponWielder.GetAbilityClip(GetType(), cycloneConfig.currentWeapon.WeaponType), WeaponWielder.Mainhand.AttackSpeed);
         }
 
         protected override IEnumerator<CoroutineOption> Coroutine( AbilityPipe pipe)
@@ -119,33 +111,22 @@ namespace GameScripts.Abilities
 
         private void OnEntityHit(Entity entity)
         {
-            DealDamage(entity);
+            if (targets.IsTarget(entity))
+            {
+                WeaponUtility.WeaponDamage(WeaponWielder.Mainhand, entity);
+            }
         }
 
         private void OnWeaponHit(Weapon weapon, Vector3 contactPoint)
         {
             if (clashSparkTag != null)
             {
-                ObjectPool.Instance.GetObject(clashSparkTag.Value, contactPoint, Quaternion.identity);
+                LobsterFramework.Pool.ObjectPool.Instance.GetObject(clashSparkTag.Value, contactPoint, Quaternion.identity);
             }
-            DealDamage(weapon.Entity, weapon.HealthDamageReduction, weapon.PostureDamageReduction);
-        }
-
-        private void DealDamage(Entity entity, float hdReduction = 0, float pdReduction = 0)
-        {
+            Entity entity = weapon.Entity;
             if (targets.IsTarget(entity))
             {
-                float health = 0.7f * weaponWielder.Mainhand.Sharpness + 0.3f * weaponWielder.Mainhand.Weight;
-                float posture = 0.3f * weaponWielder.Mainhand.Sharpness + 0.7f * weaponWielder.Mainhand.Weight;
-                health *= (1 - hdReduction);
-                posture *= (1 - pdReduction);
-                Damage damage = new() { health = health, posture = posture, source = attacker };
-                entity.Damage(damage);
-                MovementController moveControl = entity.GetComponent<MovementController>();
-                if (moveControl != null)
-                {
-                    moveControl.ApplyForce(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight);
-                }
+                WeaponUtility.GuardDamage(WeaponWielder.Mainhand, weapon);
             }
         }
     }

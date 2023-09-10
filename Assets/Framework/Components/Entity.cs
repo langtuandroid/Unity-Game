@@ -317,6 +317,20 @@ namespace LobsterFramework.EntitySystem
         public DamageType type;
 
         public static Damage none = new() { health = 0, posture = 0, source = null, type = DamageType.General };
+
+        public static Damage operator +(Damage a, Damage b)
+        {
+            return new() { posture = a.posture + b.posture, health = a.health + b.health, source = a.source };
+        }
+
+        public static Damage operator *(Damage a, Damage b)
+        {
+            return new() { posture = a.posture * b.posture, health = a.health * b.health, source = a.source };
+        }
+
+        public static Damage operator *(Damage a, float b) {
+            return new() { posture = a.posture * b, health = a.health * b, source = a.source };
+        }
     };
 
     public struct DamageBuffer {

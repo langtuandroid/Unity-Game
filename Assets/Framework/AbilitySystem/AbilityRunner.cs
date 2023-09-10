@@ -25,7 +25,7 @@ namespace LobsterFramework.AbilitySystem {
 
         // Execution Info
         internal HashSet<AbilityConfigPair> executing = new();
-        private Dictionary<AbilityConfigPair, AbilityConfigPair> jointlyRunning = new();
+        private readonly Dictionary<AbilityConfigPair, AbilityConfigPair> jointlyRunning = new();
 
         // Data
         [HideInInspector] 
@@ -38,12 +38,12 @@ namespace LobsterFramework.AbilitySystem {
         /// Send true if starting ability animation, false if ending ability animation
         /// </summary>
         public UnityAction<bool> onAbilityAnimation;
-        private AnimationClip currentAnimation;
+        private AnimancerState currentState;
         private (Ability, string) animating;
         private AnimancerComponent animancer;
 
         // Status
-        private BaseOr actionBlocked = new(false);
+        private readonly BaseOr actionBlocked = new(false);
 
         // Entity
         private Entity entity;
@@ -82,9 +82,7 @@ namespace LobsterFramework.AbilitySystem {
             if (action.EnqueueAbility(configName))
             {
                 executing.Add(new AbilityConfigPair(action, configName));
-                if (onAbilityEnqueued != null) {
-                    onAbilityEnqueued.Invoke(typeof(T));
-                }
+                onAbilityEnqueued?.Invoke(typeof(T));
                 return true;
             }
             return false;
@@ -103,9 +101,7 @@ namespace LobsterFramework.AbilitySystem {
             if (action.EnqueueAbility(configName))
             {
                 executing.Add(new AbilityConfigPair(action, configName));
-                if (onAbilityEnqueued != null) {
-                    onAbilityEnqueued.Invoke(abilityType);
-                }
+                onAbilityEnqueued?.Invoke(abilityType);
                 return true;
             }
             return false;
@@ -135,8 +131,8 @@ namespace LobsterFramework.AbilitySystem {
             if (a1.IsReady(configName1) && a2.IsReady(configName2)) {
                 EnqueueAbility<T>(configName1);
                 EnqueueAbility<V>(configName2);
-                AbilityConfigPair p1 = new AbilityConfigPair(a1, configName1);
-                AbilityConfigPair p2 = new AbilityConfigPair(a2, configName2);
+                AbilityConfigPair p1 = new(a1, configName1);
+                AbilityConfigPair p2 = new(a2, configName2);
                 jointlyRunning[p1] = p2;
                 return true;
             }
@@ -156,7 +152,7 @@ namespace LobsterFramework.AbilitySystem {
             {
                 return (T)stats[type];
             }
-            return default(T); 
+            return default; 
         }
 
         /// <summary>
@@ -294,10 +290,7 @@ namespace LobsterFramework.AbilitySystem {
             int id = actionBlocked.AddEffector(true);
             if (before != ActionBlocked) {
                 HaltAbilities();
-                if (onActionBlocked != null)
-                {
-                    onActionBlocked.Invoke(true);
-                }
+                onActionBlocked?.Invoke(true);
             }
             return id;
         }
@@ -492,18 +485,16 @@ namespace LobsterFramework.AbilitySystem {
                 Debug.Log("Cannot play null animation!");
                 return null;
             }
-            
+
+            currentState = animancer.Play(animation, 0.3f, FadeMode.FromStart);
             if (animating != default) {
-                animating.Item1.AnimationInterrupt(animating.Item2);
+                animating.Item1.AnimationInterrupt(animating.Item2, currentState);
             }
-            currentAnimation = animation;
             animating = (ability, configName);
-            AnimancerState state = animancer.Play(animation, 0.25f, FadeMode.FromStart);
-            state.Speed = speed;
-            if (onAbilityAnimation != null) {
-                onAbilityAnimation.Invoke(true);
-            }
-            return state;
+            
+            currentState.Speed = speed;
+            onAbilityAnimation?.Invoke(true);
+            return currentState;
         }
 
         /// <summary>
@@ -514,22 +505,16 @@ namespace LobsterFramework.AbilitySystem {
         {
             if(animating == default) { return; }
             animating = default;
-            if (onAbilityAnimation != null)
-            {
-                onAbilityAnimation.Invoke(false);
-            }
+            onAbilityAnimation?.Invoke(false);
         }
 
         public void InterruptAbilityAnimation() {
             if (animating == default) {
                 return;
             }
-            animating.Item1.AnimationInterrupt(animating.Item2);
+            animating.Item1.AnimationInterrupt(animating.Item2, currentState);
             animating = default;
-            if (onAbilityAnimation != null)
-            {
-                onAbilityAnimation.Invoke(false);
-            }
+            onAbilityAnimation?.Invoke(false);
         }
 
         /// <summary>
@@ -549,14 +534,14 @@ namespace LobsterFramework.AbilitySystem {
         /// </summary>
         public void AnimationSignal(AnimationEvent animationEvent) {
             if(animating == default) { return; }
-            if (animationEvent.animatorClipInfo.clip == currentAnimation) {
+            if (animationEvent.animatorClipInfo.clip == currentState.Clip) {
                 animating.Item1.Signal(animating.Item2, animationEvent);
             }
         }
 
         public void AnimationEnd(AnimationEvent animationEvent) {
             if (animating == default) { return; }
-            if (animationEvent.animatorClipInfo.clip == currentAnimation)
+            if (animationEvent.animatorClipInfo.clip == currentState.Clip)
             {
                 animating.Item1.HaltAbilityExecution(animating.Item2);
             }

@@ -9,11 +9,10 @@ namespace LobsterFramework.AbilitySystem
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
     public class RequireWeaponStatAttribute : Attribute
     {
-        private static Dictionary<Type, Tuple<bool, HashSet<Type>>> typeRequirements = new();
+        private static Dictionary<Type, HashSet<Type>> typeRequirements = new();
         private List<Type> weaponStatTypes;
-        private bool isMainhand;
 
-        public RequireWeaponStatAttribute(bool isMainhand, params Type[] weaponStats) {
+        public RequireWeaponStatAttribute(params Type[] weaponStats) {
             weaponStatTypes = new();
             foreach (Type type in weaponStats) {
                 if (type.IsSubclassOf(typeof(WeaponStat)))
@@ -24,15 +23,14 @@ namespace LobsterFramework.AbilitySystem
                     Debug.LogWarning("Attempting to add " + type.FullName + " to weapon stat requirement which is not a valid weapon stat type.");
                 }
             }
-            this.isMainhand = isMainhand;
         }
 
         public void Init(Type type) {
-            if (!typeRequirements.ContainsKey(type)) {
-                typeRequirements.Add(type, new(isMainhand, new()));
+            if (!typeRequirements.ContainsKey(type)) { 
+                typeRequirements.Add(type, new());
             }
             foreach (Type t in weaponStatTypes) {
-                typeRequirements[t].Item2.Add(type);
+                typeRequirements[type].Add(t);
             }
         }
 
@@ -52,13 +50,13 @@ namespace LobsterFramework.AbilitySystem
             }
 
             if (typeRequirements.ContainsKey(abilityType)) {
-                (bool isMainhand, HashSet<Type> requirements) = typeRequirements[abilityType];
+                HashSet<Type> requirements = typeRequirements[abilityType];
                 Weapon querying;
-                if (isMainhand) {
-                    querying = weaponWielder.Mainhand;
+                if (OffhandWeaponAbilityAttribute.IsOffhand(abilityType)) {
+                    querying = weaponWielder.Offhand;
                 }
                 else {
-                    querying = weaponWielder.Offhand;
+                    querying = weaponWielder.Mainhand;
                 }
                 if (querying == null)
                 {

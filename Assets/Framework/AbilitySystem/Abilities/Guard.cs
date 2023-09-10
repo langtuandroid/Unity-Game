@@ -7,9 +7,8 @@ namespace LobsterFramework.AbilitySystem
 {
     [ComponentRequired(typeof(WeaponWielder))]
     [AddAbilityMenu]
-    public class Guard : AbilityCoroutine
+    public class Guard : WeaponAbility
     {
-        private WeaponWielder weaponWielder;
         private MovementController moveControl;
 
         public class GuardConfig : AbilityCoroutineConfig
@@ -22,30 +21,25 @@ namespace LobsterFramework.AbilitySystem
         }
         public class GuardPipe : AbilityPipe{ }
 
-        protected override void Initialize()
+        protected override void Init()
         {
-            weaponWielder = abilityRunner.GetComponent<WeaponWielder>();
-            moveControl = weaponWielder.Wielder.GetComponent<MovementController>();
+            moveControl = WeaponWielder.Wielder.GetComponent<MovementController>();
         }
 
-        protected override bool ConditionSatisfied(AbilityConfig config)
+        protected override bool WConditionSatisfied(AbilityConfig config)
         {
-            if (weaponWielder.Mainhand != null)
-            {
-                return weaponWielder.GetAbilityClip(GetType(), weaponWielder.Mainhand.WeaponType) != null && weaponWielder.Mainhand.state == WeaponState.Idle;
-            }
-            return false;
+            return WeaponWielder.GetAbilityClip(GetType(), WeaponWielder.Mainhand.WeaponType) != null && WeaponWielder.Mainhand.state == WeaponState.Idle;
         }
 
         protected override void OnCoroutineEnqueue(AbilityPipe pipe)
         {
             GuardConfig guardConfig = (GuardConfig)CurrentConfig;
-            guardConfig.currentWeapon = weaponWielder.Mainhand;
+            guardConfig.currentWeapon = WeaponWielder.Mainhand;
             guardConfig.animationSignaled = false;
 
             guardConfig.m_key = moveControl.ModifyMoveSpeed(guardConfig.currentWeapon.GMoveSpeedModifier);
             guardConfig.r_key = moveControl.ModifyRotationSpeed(guardConfig.currentWeapon.GRotationSpeedModifier);
-            guardConfig.animancerState = abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.GetAbilityClip(GetType(), guardConfig.currentWeapon.WeaponType), guardConfig.currentWeapon.DefenseSpeed);
+            guardConfig.animancerState = abilityRunner.StartAnimation(this, CurrentConfigName, WeaponWielder.GetAbilityClip(GetType(), guardConfig.currentWeapon.WeaponType), guardConfig.currentWeapon.DefenseSpeed);
         }
 
         protected override void OnCoroutineFinish()

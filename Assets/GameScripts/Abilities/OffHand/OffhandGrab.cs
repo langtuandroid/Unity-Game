@@ -8,14 +8,13 @@ using UnityEngine;
 
 namespace GameScripts.Abilities
 {
-    [ComponentRequired(typeof(WeaponWielder), typeof(Rigidbody2D), typeof(Collider2D))]
+    [ComponentRequired(typeof(WeaponWielder), typeof(Rigidbody2D))]
     [AddWeaponArtMenu(false, WeaponType.EmptyHand)]
+    [OffhandWeaponAbility]
     [AddAbilityMenu]
-    public class OffhandGrab : AbilityCoroutine
+    public class OffhandGrab : WeaponAbility
     {
-        private WeaponWielder weaponWielder;
         private Rigidbody2D rigidBody;
-        private Collider2D collider;
         private Weapon currentWeapon;
         private AnimationClip clip;
         private Transform oldParentTransform = null;
@@ -25,25 +24,22 @@ namespace GameScripts.Abilities
         private int suppressKey = -1;
 
 
-        protected override void Initialize()
+        protected override void Init()
         {
-            weaponWielder = abilityRunner.GetComponentInBoth<WeaponWielder>();
             rigidBody = abilityRunner.GetComponentInBoth<Rigidbody2D>();
-            clip = weaponWielder.GetAbilityClip(GetType(), WeaponType.EmptyHand);
-            collider = abilityRunner.GetComponentInBoth<Collider2D>();
+            clip = WeaponWielder.GetAbilityClip(GetType(), WeaponType.EmptyHand);
         }
 
-        protected override bool ConditionSatisfied(AbilityConfig config)
+        protected override bool WConditionSatisfied(AbilityConfig config)
         {
-            return RunningCount == 0 && weaponWielder.Offhand != null && weaponWielder.Offhand.WeaponType == WeaponType.EmptyHand;
+            return RunningCount == 0 && WeaponWielder.Offhand.WeaponType == WeaponType.EmptyHand;
         }
-
 
         protected override void OnCoroutineEnqueue(AbilityPipe pipe)
         {
             OffhandGrabConfig config = (OffhandGrabConfig)CurrentConfig;
             config.signaled = false;
-            currentWeapon = weaponWielder.Offhand;
+            currentWeapon = WeaponWielder.Offhand;
             abilityRunner.StartAnimation(this, CurrentConfigName, clip);
             SubscribeWeaponEvent();
         }

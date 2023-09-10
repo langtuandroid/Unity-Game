@@ -10,7 +10,7 @@ using UnityEngine.UIElements;
 namespace LobsterFramework.EntitySystem
 {
     [RequireComponent(typeof(Entity))]
-    [RequireComponent (typeof(Poise))]
+    [RequireComponent(typeof(Poise))]
     [RequireComponent(typeof(MovementController))]
     public class CharacterStateManager : MonoBehaviour
     {
@@ -23,8 +23,8 @@ namespace LobsterFramework.EntitySystem
         [SerializeField] private AnimationClip onPostureBroken;
 
         [Header("Status")]
-        [ReadOnly] [SerializeField] private CharacterState characterState;
-        private readonly static Array enumStates = Enum.GetValues (typeof (CharacterState));
+        [ReadOnly][SerializeField] private CharacterState characterState;
+        private readonly static Array enumStates = Enum.GetValues(typeof(CharacterState));
         private bool[] stateMap;
 
         // Requried Components
@@ -49,7 +49,7 @@ namespace LobsterFramework.EntitySystem
             poise = GetComponent<Poise>();
             entity = GetComponent<Entity>();
             moveControl = GetComponent<MovementController>();
-            poiseBlockKey = -1; 
+            poiseBlockKey = -1;
             postureBlockKey = -1;
             poiseAbilityBlockKey = -1;
 
@@ -62,10 +62,12 @@ namespace LobsterFramework.EntitySystem
             stateMap = new bool[enumStates.Length];
         }
 
-        public int Suppress() {
+        public int Suppress()
+        {
             int key = suppression.AddEffector(true);
             stateMap[(int)CharacterState.Suppressed] = true;
-            if (suppression.EffectorCount == 1) {
+            if (suppression.EffectorCount == 1)
+            {
                 suppressAbilityBlockKey = abilityRunner.BlockAction();
                 suppressBlockKey = moveControl.BlockMovement();
                 moveControl.SetVelocityImmediate(Vector2.zero);
@@ -74,9 +76,12 @@ namespace LobsterFramework.EntitySystem
             return key;
         }
 
-        public bool Release(int key) {
-            if (suppression.RemoveEffector(key)) {
-                if (suppression.EffectorCount == 0) {
+        public bool Release(int key)
+        {
+            if (suppression.RemoveEffector(key))
+            {
+                if (suppression.EffectorCount == 0)
+                {
                     stateMap[(int)CharacterState.Suppressed] = false;
                     abilityRunner.UnblockAction(suppressAbilityBlockKey);
                     moveControl.UnblockMovement(suppressBlockKey);
@@ -86,23 +91,29 @@ namespace LobsterFramework.EntitySystem
             return false;
         }
 
-        private void OnPoiseChange(bool poiseBroken) {
+        private void OnPoiseChange(bool poiseBroken)
+        {
             stateMap[(int)CharacterState.PoiseBroken] = poiseBroken;
             if (poiseBroken)
             {
-                if (poiseBlockKey == -1) {
+                if (poiseBlockKey == -1)
+                {
                     poiseBlockKey = moveControl.BlockMovement();
                 }
-                if (poiseAbilityBlockKey == -1) {
+                if (poiseAbilityBlockKey == -1)
+                {
                     poiseAbilityBlockKey = abilityRunner.BlockAction();
                 }
             }
-            else {
-                if (poiseBlockKey != -1) {
+            else
+            {
+                if (poiseBlockKey != -1)
+                {
                     moveControl.UnblockMovement(poiseBlockKey);
                     poiseBlockKey = -1;
                 }
-                if (poiseAbilityBlockKey != -1) {
+                if (poiseAbilityBlockKey != -1)
+                {
                     abilityRunner.UnblockAction(poiseAbilityBlockKey);
                     poiseAbilityBlockKey = -1;
                 }
@@ -110,7 +121,8 @@ namespace LobsterFramework.EntitySystem
             ComputeStateAndPlayAnimation();
         }
 
-        private void OnPostureChange(bool postureBroken) {
+        private void OnPostureChange(bool postureBroken)
+        {
             stateMap[(int)CharacterState.PostureBroken] = postureBroken;
             if (postureBroken)
             {
@@ -130,12 +142,14 @@ namespace LobsterFramework.EntitySystem
             ComputeStateAndPlayAnimation();
         }
 
-        private void OnAbilityAnimation(bool casting) {
+        private void OnAbilityAnimation(bool casting)
+        {
             stateMap[(int)CharacterState.AbilityCasting] = casting;
             ComputeStateAndPlayAnimation();
         }
 
-        private void ComputeStateAndPlayAnimation() {
+        private void ComputeStateAndPlayAnimation()
+        {
             CharacterState prev = characterState;
             ComputeState();
             if (prev != characterState)
@@ -144,9 +158,11 @@ namespace LobsterFramework.EntitySystem
             }
         }
 
-        private void ComputeState() {
-            foreach (CharacterState state in enumStates) {
-                if (stateMap[(int)state]) 
+        private void ComputeState()
+        {
+            foreach (CharacterState state in enumStates)
+            {
+                if (stateMap[(int)state])
                 {
                     characterState = state;
                     return;
@@ -155,44 +171,55 @@ namespace LobsterFramework.EntitySystem
             characterState = CharacterState.Normal;
         }
 
-        private void PlayAnimation(CharacterState prevState) { 
-            switch(characterState)
+        private void PlayAnimation(CharacterState prevState)
+        {
+            switch (characterState)
             {
                 case CharacterState.Normal:
                     if (prevState == CharacterState.AbilityCasting)
                     {
                         weaponWielder.PlayWeaponAnimation();
                     }
-                    else {
+                    else
+                    {
                         weaponWielder.PlayTransitionAnimation();
                     }
-                     break;
+                    break;
                 case CharacterState.PostureBroken:
-                    animancer.Play(onPostureBroken, 0.25f, FadeMode.FromStart);
+                    PlayPostureBrokenClip();
                     break;
                 case CharacterState.Dashing:
                     break;
                 case CharacterState.PoiseBroken:
-                    animancer.Play(onPostureBroken, 0.5f, FadeMode.FromStart);
+                    PlayPostureBrokenClip();
                     break;
                 case CharacterState.Suppressed:
-                    animancer.Play(onPostureBroken, 0.2f, FadeMode.FromStart);
+                    PlayPostureBrokenClip();
                     break;
                 default: break;
             }
         }
-    }
+        private void PlayPostureBrokenClip(float fadeTime = 0.25f)
+        {
+            foreach (AnimancerState state in animancer.States)
+            {
+                state.IsPlaying = false;
+            }
+            animancer.Play(onPostureBroken, fadeTime, FadeMode.FromStart);
+        }
 
-    /// <summary>
-    /// The state of the character, ordered by their priorities. If the conditions for multiple character states are met, only the one with the highest
-    /// priority will take place.
-    /// </summary>
-    public enum CharacterState {
-        PostureBroken,
-        PoiseBroken,
-        Suppressed,
-        Dashing,
-        AbilityCasting,
-        Normal,
+        /// <summary>
+        /// The state of the character, ordered by their priorities. If the conditions for multiple character states are met, only the one with the highest
+        /// priority will take place.
+        /// </summary>
+        public enum CharacterState
+        {
+            PostureBroken,
+            PoiseBroken,
+            Suppressed,
+            Dashing,
+            AbilityCasting,
+            Normal,
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace LobsterFramework.AI
         [SerializeField] private State initialState;
         [SerializeField] private State currentState;
         
-        private Dictionary<Type, State> states = new();
+        private readonly Dictionary<Type, State> states = new();
 
         public State CurrentState
         {
@@ -46,7 +46,7 @@ namespace LobsterFramework.AI
             }
         }
 
-        public void Update()
+        public void FixedUpdate()
         {
             Type target = currentState.Tick();
             if (target != null)

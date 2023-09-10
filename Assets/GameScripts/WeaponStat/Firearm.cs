@@ -9,15 +9,22 @@ namespace GameScripts.Abilities
     public class Firearm : WeaponStat
     {
         [SerializeField] private float power;
+        [SerializeField] private float weight;
         [SerializeField] private int pelletsPerShot;
-        [SerializeField] private float spreadAngle;
+        [SerializeField] private float spreadAngle; 
         [SerializeField] private int penetration;
         [SerializeField] private float speed;
+        [SerializeField] private float travelTime;
+        [SerializeField] private VarString bulletPrefab;
 
         public float Power { get { return power; } }
+        public float Weight { get { return weight; } }
         public int Penetration { get {  return penetration; } }
         public float Speed { get { return speed;} }
         public int PelletsPerShot { get { return pelletsPerShot; } }
         public float SpreadAngle { get {  return spreadAngle; } }
+        public float TravelTime { get { return travelTime;} }
+        public string Bullet { get { return bulletPrefab.Value; } }
+
     }
 }

@@ -3,17 +3,17 @@ using LobsterFramework.EntitySystem;
 using LobsterFramework.Pool;
 using System.Collections.Generic;
 using Animancer;
+using static UnityEngine.EventSystems.EventTrigger;
 
 namespace LobsterFramework.AbilitySystem
 {
     [AddAbilityMenu]
     [RequireAbilityStats(typeof(DamageModifier))]
     [ComponentRequired(typeof(WeaponWielder))]
-    public class HeavyWeaponAttack : AbilityCoroutine
+    public class HeavyWeaponAttack : WeaponAbility
     {
         [SerializeField] private TargetSetting targets;
         
-        private WeaponWielder weaponWielder;
         private Entity attacker;
         private MovementController moveControl;
         private DamageModifier damageModifier;
@@ -52,8 +52,7 @@ namespace LobsterFramework.AbilitySystem
                     Pool.ObjectPool.Instance.GetObject(clashSparkTag.Value, contactPoint, Quaternion.identity);
                 }
 
-                ability.DealDamage(weapon.Entity, baseDamageModifier + maxChargeDamageIncrease * (chargeTimer / chargeMaxTime), 
-                    weapon.HealthDamageReduction, weapon.PostureDamageReduction);
+                ability.DealGuardDamage(weapon, baseDamageModifier + maxChargeDamageIncrease * (chargeTimer / chargeMaxTime));
             }
 
             public void SubscribeWeaponEvent()
@@ -80,27 +79,22 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
-        protected override void Initialize()
+        protected override void Init()
         {
-            weaponWielder = abilityRunner.GetComponent<WeaponWielder>();
-            attacker = weaponWielder.Wielder;
+            attacker = WeaponWielder.Wielder;
             moveControl = abilityRunner.GetComponentInBoth<MovementController>();
             damageModifier = abilityRunner.GetAbilityStat<DamageModifier>();
         }
 
-        protected override bool ConditionSatisfied(AbilityConfig config)
+        protected override bool WConditionSatisfied(AbilityConfig config)
         {
-            if (weaponWielder.Mainhand != null)
-            {
-                return weaponWielder.GetAbilityClip(GetType(), weaponWielder.Mainhand.WeaponType) != null && weaponWielder.Mainhand.state != WeaponState.Attacking;
-            }
-            return false;
+            return WeaponWielder.GetAbilityClip(GetType(), WeaponWielder.Mainhand.WeaponType) != null && WeaponWielder.Mainhand.state != WeaponState.Attacking;
         }
 
         protected override void OnCoroutineEnqueue(AbilityPipe pipe)
         {
             HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)CurrentConfig;
-            h.currentWeapon = weaponWielder.Mainhand;
+            h.currentWeapon = WeaponWielder.Mainhand;
             h.SubscribeWeaponEvent();
             h.animationSignaled = false;
             h.inputSignaled = false;
@@ -108,7 +102,7 @@ namespace LobsterFramework.AbilitySystem
             h.ability = this;
             h.m_key = moveControl.ModifyMoveSpeed(h.currentWeapon.HMoveSpeedModifier);
             h.r_key = moveControl.ModifyRotationSpeed(h.currentWeapon.HRotationSpeedModifier);
-            h.animationState = abilityRunner.StartAnimation(this, CurrentConfigName, weaponWielder.GetAbilityClip(GetType(), h.currentWeapon.WeaponType), weaponWielder.Mainhand.AttackSpeed);
+            h.animationState = abilityRunner.StartAnimation(this, CurrentConfigName, WeaponWielder.GetAbilityClip(GetType(), h.currentWeapon.WeaponType), WeaponWielder.Mainhand.AttackSpeed);
         }
 
         protected override IEnumerator<CoroutineOption> Coroutine(AbilityPipe pipe)
@@ -169,23 +163,19 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
-        
-
-        private void DealDamage(Entity entity, float modifier, float healthDamageReduction=0, float postureDamageReduction=0)
+        private void DealDamage(Entity entity, float modifier)
         {
             if (targets.IsTarget(entity))
             {
-                float health = (0.7f * weaponWielder.Mainhand.Sharpness + 0.3f * weaponWielder.Mainhand.Weight) * 
-                    modifier * (1 - healthDamageReduction);
-                float posture = (0.3f * weaponWielder.Mainhand.Sharpness + 0.7f * weaponWielder.Mainhand.Weight) * 
-                    modifier * (1- postureDamageReduction);
-                Damage damage = new() { health=health, posture=posture, source=attacker};
-                entity.Damage(damageModifier.ModifyDamage(damage));
-                MovementController moveControl = entity.GetComponent<MovementController>();
-                if (moveControl != null)
-                {
-                    moveControl.ApplyForce(entity.transform.position - abilityRunner.transform.position, weaponWielder.Mainhand.Weight * modifier);
-                }
+                WeaponUtility.WeaponDamage(WeaponWielder.Mainhand, entity, damageModifier, modifier);
+            }
+        }
+
+        private void DealGuardDamage(Weapon guardWeapon, float modifier) {
+            Entity entity = guardWeapon.Entity;
+            if (targets.IsTarget(entity))
+            {
+                WeaponUtility.GuardDamage(WeaponWielder.Mainhand, guardWeapon, damageModifier, modifier);
             }
         }
 

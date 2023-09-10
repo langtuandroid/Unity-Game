@@ -20,7 +20,7 @@ namespace LobsterFramework.AbilitySystem
             weaponWielder = abilityRunner.GetComponentInBoth<WeaponWielder>();
         }
 
-        protected override bool ConditionSatisfied(AbilityConfig config)
+        protected override bool ConditionSatisfied(AbilityConfig config) 
         {
             if (weaponWielder.Mainhand != null) {
                 ValueTuple<Type, string> setting = weaponWielder.Mainhand.AbilitySetting;

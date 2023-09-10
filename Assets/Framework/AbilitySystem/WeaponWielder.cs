@@ -46,7 +46,7 @@ namespace LobsterFramework.AbilitySystem
         private GameObject emptyMHandInst;
         private GameObject emptyOHandInst;
 
-        private Dictionary<Weapon, GameObject> objLookup = new();
+        private readonly Dictionary<Weapon, GameObject> objLookup = new();
 
         public Weapon Mainhand { get; private set; }
         public Weapon Mainhand2 { get; private set; }
@@ -100,8 +100,7 @@ namespace LobsterFramework.AbilitySystem
                 mainWeapon1Inst = Instantiate(mainhandWeapon1);
                 mainWeapon1 = mainWeapon1Inst.GetComponentInChildren<Weapon>();
                 mainWeapon1.Entity = entity;
-                mainWeapon1Inst.transform.position = mainhandWeaponPosition.position;
-                mainWeapon1Inst.transform.rotation = mainhandWeaponPosition.rotation;
+                mainWeapon1Inst.transform.SetPositionAndRotation(mainhandWeaponPosition.position, mainhandWeaponPosition.rotation);
                 mainWeapon1Inst.transform.SetParent(mainhandWeaponPosition);
                 Mainhand = mainWeapon1;
                 mainWeapon1.weaponWielder = this;
@@ -112,8 +111,7 @@ namespace LobsterFramework.AbilitySystem
                 mainWeapon2Inst = Instantiate(mainhandWeapon2);
                 mainWeapon2 = mainWeapon2Inst.GetComponentInChildren<Weapon>();
                 mainWeapon2.Entity = entity;
-                mainWeapon2Inst.transform.position = mainhandWeaponPosition.position;
-                mainWeapon2Inst.transform.rotation = mainhandWeaponPosition.rotation;
+                mainWeapon2Inst.transform.SetPositionAndRotation(mainhandWeaponPosition.position, mainhandWeaponPosition.rotation);
                 mainWeapon2Inst.transform.SetParent(mainhandWeaponPosition);
                 if (mainhandWeapon1 == null)
                 {
@@ -145,8 +143,7 @@ namespace LobsterFramework.AbilitySystem
                 offWeapon1Inst = Instantiate(offhandWeapon1);
                 offWeapon1 = offWeapon1Inst.GetComponentInChildren<Weapon>();
                 offWeapon1.Entity = entity;
-                offWeapon1Inst.transform.position = offhandWeaponPosition.position;
-                offWeapon1Inst.transform.rotation = offhandWeaponPosition.rotation;
+                offWeapon1Inst.transform.SetPositionAndRotation(offhandWeaponPosition.position, offhandWeaponPosition.rotation);
                 offWeapon1Inst.transform.SetParent(offhandWeaponPosition);
                 Offhand = offWeapon1;
                 objLookup[offWeapon1] = offWeapon1Inst;
@@ -156,8 +153,7 @@ namespace LobsterFramework.AbilitySystem
                 offWeapon2Inst = Instantiate(offhandWeapon2);
                 offWeapon2 = offWeapon2Inst.GetComponentInChildren<Weapon>();
                 offWeapon2.Entity = entity;
-                offWeapon2Inst.transform.position = offhandWeaponPosition.position;
-                offWeapon2Inst.transform.rotation = offhandWeaponPosition.rotation;
+                offWeapon2Inst.transform.SetPositionAndRotation(offhandWeaponPosition.position, offhandWeaponPosition.rotation);
                 offWeapon2Inst.transform.SetParent(offhandWeaponPosition);
                 if (offhandWeapon1 == null)
                 {
@@ -188,10 +184,8 @@ namespace LobsterFramework.AbilitySystem
                 if (Mainhand2 != null)
                 {
                     Mainhand.Pause();
-                    Weapon w = Mainhand;
-                    Mainhand = Mainhand2;
-                    Mainhand2 = w;
-                    objLookup[w].SetActive(false);
+                    (Mainhand2, Mainhand) = (Mainhand, Mainhand2);
+                    objLookup[Mainhand2].SetActive(false);
                     objLookup[Mainhand].SetActive(true);
                     if (abilityRunner.IsAnimating())
                     {

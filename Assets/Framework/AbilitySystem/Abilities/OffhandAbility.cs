@@ -11,7 +11,7 @@ namespace LobsterFramework.AbilitySystem
     {
         private WeaponWielder weaponWielder;
 
-        public class OffhandAbilityConfig : AbilityConfig { }
+        public class OffhandAbilityConfig : AbilityConfig { } 
         public class OffhandAbilityPipe : AbilityPipe { }
 
         protected override void Initialize()

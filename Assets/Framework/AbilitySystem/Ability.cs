@@ -6,6 +6,7 @@ using System;
 using System.Reflection;
 using System.Linq;
 using LobsterFramework.Utility;
+using Animancer;
 
 namespace LobsterFramework.AbilitySystem {
     /// <summary>
@@ -332,18 +333,17 @@ namespace LobsterFramework.AbilitySystem {
         /// Callback when the animation of the ability is interrupted by other abilities. Useful when abilities relies on animation events.
         /// </summary>
         /// <param name="config"></param>
-        protected virtual void OnAnimationInterrupt() { HaltAbilityExecution(CurrentConfigName); }
+        protected virtual void OnAnimationInterrupt(AnimancerState state) { state.Speed = 1; HaltAbilityExecution(CurrentConfigName); }
 
         /// <summary>
         /// Interrupt the animation of the currently animating AbilityConfig pair
         /// </summary>
         /// <param name="configName"></param>
-        internal void AnimationInterrupt(string configName) {
+        internal void AnimationInterrupt(string configName, AnimancerState state) {
             if (!configs.ContainsKey(configName)) { return; }
             CurrentConfigName = configName;
             CurrentConfig = configs[configName];
-            AbilityConfig config = configs[configName];
-            OnAnimationInterrupt();
+            OnAnimationInterrupt(state);
         }
         /// <summary>
         /// Callback when the ability is added to the action executing queue

@@ -1,69 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7400554615456584093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9c30f390439f0447b9bcfacfb625b07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-6800404585208095947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01a972001ebfd3b4ba8b945ff2570222, type: 3}
-  m_Name: GameScripts.Abilities.Cyclone
-  m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
-  abilityPriority:
-    value:
-      executionPriority: 0
-      enqueuePriority: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  configs:
-    keys:
-    - default
-    values:
-    - {fileID: -220257264206057270}
-  targets: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
-  clashSparkTag: {fileID: 11400000, guid: b93850f361ea97e40a35c219b934d9fb, type: 2}
---- !u!114 &-4329963379142507920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66ec3624525b82d4caf74927a4665d2b, type: 3}
-  m_Name: LobsterFramework.AbilitySystem.HeavyWeaponAttack
-  m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
-  abilityPriority:
-    value:
-      executionPriority: 0
-      enqueuePriority: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  configs:
-    keys:
-    - default
-    values:
-    - {fileID: -3016392103336694464}
-  targets: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
---- !u!114 &-3016392103336694464
+--- !u!114 &-9032874286416966784
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: LobsterFramework.AbilitySystem.HeavyWeaponAttack-default
-  m_EditorClassIdentifier: LobsterFramework:LobsterFramework.AbilitySystem:HeavyWeaponAttack/HeavyWeaponAttackConfig
+  m_Name: LobsterFramework.AbilitySystem.Guard-default
+  m_EditorClassIdentifier: LobsterFramework:LobsterFramework.AbilitySystem:Guard/GuardConfig
   accessKey: -1
   endTime: 0
   useCooldown: 0
@@ -82,25 +19,27 @@ MonoBehaviour:
   isSuspended: 0
   awakeTime: 0
   animationSignaled: 0
-  inputSignaled: 0
-  baseDamageModifier:
-    value: 1.2
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  maxChargeDamageIncrease:
-    value: 0.8
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  chargeMaxTime:
-    value: 0.35
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  clashSparkTag: {fileID: 11400000, guid: b93850f361ea97e40a35c219b934d9fb, type: 2}
-  m_key: -1
-  r_key: -1
-  chargeTimer: 0
-  ability: {fileID: 0}
---- !u!114 &-2295283863920816248
+  m_key: 0
+  r_key: 0
+  currentWeapon: {fileID: 0}
+--- !u!114 &-8655094065794611035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: LobsterFramework.AbilitySystem.OffhandAbility-default
+  m_EditorClassIdentifier: LobsterFramework:LobsterFramework.AbilitySystem:OffhandAbility/OffhandAbilityConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 0
+  cooldown: 0
+  isSuspended: 0
+--- !u!114 &-7756696283119846634
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,7 +54,7 @@ MonoBehaviour:
   accessKey: -1
   endTime: 0
   useCooldown: 1
-  cooldown: 8
+  cooldown: 5
   isSuspended: 0
   damageModifier: 2
   duration: 0
@@ -123,7 +62,7 @@ MonoBehaviour:
   damageKey: 0
   hyperArmorKey: 0
   timeEnd: 0
---- !u!114 &-1747225586503827564
+--- !u!114 &-6495964935659663549
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,8 +85,8 @@ MonoBehaviour:
     keys:
     - default
     values:
-    - {fileID: 1456359089391967879}
---- !u!114 &-287537639171580614
+    - {fileID: -9032874286416966784}
+--- !u!114 &-6197384238747898517
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,96 +96,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: LobsterFramework.AbilitySystem.LightWeaponAttack-default
-  m_EditorClassIdentifier: LobsterFramework:LobsterFramework.AbilitySystem:LightWeaponAttack/LightWeaponAttackConfig
-  accessKey: -1
-  endTime: 0
-  useCooldown: 0
-  cooldown: 0
-  isSuspended: 0
-  awakeTime: 0
-  signaled: 0
-  m_key: 0
-  r_key: 0
---- !u!114 &-220257264206057270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: GameScripts.Abilities.Cyclone-default
-  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Cyclone/CycloneConfig
+  m_Name: GameScripts.Abilities.Dash-default
+  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Dash/DashConfig
   accessKey: -1
   endTime: 0
   useCooldown: 1
-  cooldown: 5
+  cooldown: 1
   isSuspended: 0
-  awakeTime: 0
-  moveSpeedModifier: 0.5
-  rotationSpeedModifier: 0.5
-  stopped: 0
-  repeatAttack: 0
+  dashStrength: 150
+  maxDashTime: 0
+  moveSpeedModifier: 0
+  rotateSpeedModifier: 0
   m_key: 0
   r_key: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5cd7a81edede6f4c9921cd097a98b3c, type: 3}
-  m_Name: NPC Data
-  m_EditorClassIdentifier: 
-  stats:
-    keys:
-    - LobsterFramework.AbilitySystem.DamageModifier
-    values:
-    - {fileID: -7400554615456584093}
-  allAbilities:
-    keys:
-    - LobsterFramework.AbilitySystem.HeavyWeaponAttack
-    - LobsterFramework.AbilitySystem.Guard
-    - LobsterFramework.AbilitySystem.LightWeaponAttack
-    - GameScripts.Abilities.Cyclone
-    - GameScripts.Abilities.Boost
-    - LobsterFramework.AbilitySystem.WeaponArt
-    values:
-    - {fileID: -4329963379142507920}
-    - {fileID: -1747225586503827564}
-    - {fileID: 7780250248026374360}
-    - {fileID: -6800404585208095947}
-    - {fileID: 5731256669973731595}
-    - {fileID: 7716406480437946650}
---- !u!114 &1456359089391967879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: LobsterFramework.AbilitySystem.Guard-default
-  m_EditorClassIdentifier: LobsterFramework:LobsterFramework.AbilitySystem:Guard/GuardConfig
-  accessKey: -1
-  endTime: 0
-  useCooldown: 0
-  cooldown: 0
-  isSuspended: 0
-  awakeTime: 0
-  animationSignaled: 0
-  inputSignaled: 0
-  m_key: 0
-  r_key: 0
---- !u!114 &3900789774661904210
+--- !u!114 &-6027256006402016586
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,7 +126,7 @@ MonoBehaviour:
   useCooldown: 0
   cooldown: 0
   isSuspended: 0
---- !u!114 &5731256669973731595
+--- !u!114 &-5072531079493620865
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -272,8 +135,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c60acad315015046b8038c2d776c6e6, type: 3}
-  m_Name: GameScripts.Abilities.Boost
+  m_Script: {fileID: 11500000, guid: e58c854662727834482aa86c17ef835d, type: 3}
+  m_Name: LobsterFramework.AbilitySystem.OffhandAbility
   m_EditorClassIdentifier: 
   abilityRunner: {fileID: 0}
   abilityPriority:
@@ -286,8 +149,8 @@ MonoBehaviour:
     keys:
     - default
     values:
-    - {fileID: -2295283863920816248}
---- !u!114 &7716406480437946650
+    - {fileID: -8655094065794611035}
+--- !u!114 &-4594170663379544790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,22 +159,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f608d2369255c5d469cc6a680ec7d3f3, type: 3}
-  m_Name: LobsterFramework.AbilitySystem.WeaponArt
-  m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
-  abilityPriority:
-    value:
-      executionPriority: 0
-      enqueuePriority: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  configs:
-    keys:
-    - default
-    values:
-    - {fileID: 3900789774661904210}
---- !u!114 &7780250248026374360
+  m_Script: {fileID: 0}
+  m_Name: GameScripts.Abilities.Cyclone-default
+  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Cyclone/CycloneConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 0
+  cooldown: 0
+  isSuspended: 0
+  awakeTime: 0
+  moveSpeedModifier: 0.5
+  rotationSpeedModifier: 0.5
+  currentWeapon: {fileID: 0}
+  stopped: 0
+  repeatAttack: 0
+  m_key: 0
+  r_key: 0
+--- !u!114 &-2968132334227958496
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -334,6 +198,263 @@ MonoBehaviour:
     keys:
     - default
     values:
-    - {fileID: -287537639171580614}
+    - {fileID: 7529919648218079856}
   targets: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
   clashSparkTag: {fileID: 11400000, guid: b93850f361ea97e40a35c219b934d9fb, type: 2}
+--- !u!114 &-1526935557768226422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442e984e87abfe54ba2099894e9c665f, type: 3}
+  m_Name: GameScripts.Abilities.Dash
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: -6197384238747898517}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5cd7a81edede6f4c9921cd097a98b3c, type: 3}
+  m_Name: NPC Data
+  m_EditorClassIdentifier: 
+  stats:
+    keys:
+    - LobsterFramework.AbilitySystem.DamageModifier
+    values:
+    - {fileID: 1461317040647077686}
+  allAbilities:
+    keys:
+    - LobsterFramework.AbilitySystem.Guard
+    - LobsterFramework.AbilitySystem.HeavyWeaponAttack
+    - LobsterFramework.AbilitySystem.LightWeaponAttack
+    - LobsterFramework.AbilitySystem.OffhandAbility
+    - LobsterFramework.AbilitySystem.WeaponArt
+    - GameScripts.Abilities.Boost
+    - GameScripts.Abilities.Dash
+    - GameScripts.Abilities.Cyclone
+    values:
+    - {fileID: -6495964935659663549}
+    - {fileID: 7017493660075160967}
+    - {fileID: -2968132334227958496}
+    - {fileID: -5072531079493620865}
+    - {fileID: 7681251418908050277}
+    - {fileID: 728800782443913048}
+    - {fileID: -1526935557768226422}
+    - {fileID: 4431685197730112623}
+--- !u!114 &728800782443913048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c60acad315015046b8038c2d776c6e6, type: 3}
+  m_Name: GameScripts.Abilities.Boost
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: -7756696283119846634}
+--- !u!114 &1461317040647077686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c30f390439f0447b9bcfacfb625b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flatDamage: 0
+  percentageDamage: 0
+--- !u!114 &4431685197730112623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01a972001ebfd3b4ba8b945ff2570222, type: 3}
+  m_Name: GameScripts.Abilities.Cyclone
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: -4594170663379544790}
+  targets: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
+  clashSparkTag: {fileID: 11400000, guid: b93850f361ea97e40a35c219b934d9fb, type: 2}
+--- !u!114 &7017493660075160967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ec3624525b82d4caf74927a4665d2b, type: 3}
+  m_Name: LobsterFramework.AbilitySystem.HeavyWeaponAttack
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: 8907012904961785543}
+  targets: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
+--- !u!114 &7529919648218079856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: LobsterFramework.AbilitySystem.LightWeaponAttack-default
+  m_EditorClassIdentifier: LobsterFramework:LobsterFramework.AbilitySystem:LightWeaponAttack/LightWeaponAttackConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 0
+  cooldown: 0
+  isSuspended: 0
+  awakeTime: 0
+  signaled: 0
+  m_key: 0
+  r_key: 0
+  currentWeapon: {fileID: 0}
+--- !u!114 &7681251418908050277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608d2369255c5d469cc6a680ec7d3f3, type: 3}
+  m_Name: LobsterFramework.AbilitySystem.WeaponArt
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: -6027256006402016586}
+--- !u!114 &8168015058177042410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: GameScripts.Abilities.OffhandGrab-default
+  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:OffhandGrab/OffhandGrabConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 0
+  cooldown: 0
+  isSuspended: 0
+  awakeTime: 0
+  targetSetting: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
+  healthDamage: 60
+  postureDamage: 60
+  throwStrength: 80
+  suppressTime: 0.3
+  signaled: 0
+--- !u!114 &8907012904961785543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: LobsterFramework.AbilitySystem.HeavyWeaponAttack-default
+  m_EditorClassIdentifier: LobsterFramework:LobsterFramework.AbilitySystem:HeavyWeaponAttack/HeavyWeaponAttackConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 0
+  cooldown: 0
+  isSuspended: 0
+  awakeTime: 0
+  baseDamageModifier:
+    value: 1.2
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  maxChargeDamageIncrease:
+    value: 0.8
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  chargeMaxTime:
+    value: 0.3
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  clashSparkTag: {fileID: 11400000, guid: b93850f361ea97e40a35c219b934d9fb, type: 2}
+  animationSignaled: 0
+  inputSignaled: 0
+  currentWeapon: {fileID: 0}
+  m_key: -1
+  r_key: -1
+  chargeTimer: 0
+  ability: {fileID: 0}
