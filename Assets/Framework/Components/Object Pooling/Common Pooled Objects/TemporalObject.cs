@@ -15,7 +15,7 @@ namespace LobsterFramework.Pool
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             if (duration < 0)
             {
@@ -27,11 +27,6 @@ namespace LobsterFramework.Pool
                 return;
             }
             counter += Time.deltaTime;
-        }
-
-        public void DisableObject()
-        {
-            gameObject.SetActive(false);
         }
 
         public void OnEnable()

@@ -4875,8 +4875,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 536481151
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_RenderMode: 1
   m_MeshDistribution: 0
@@ -5208,7 +5208,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.51
+      scalar: 0.25
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9786,8 +9786,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 536481151
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -14705,8 +14705,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 536481151
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -19604,8 +19604,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 536481151
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -24523,8 +24523,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 536481151
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_RenderMode: 1
   m_MeshDistribution: 0
@@ -24567,6 +24567,7 @@ GameObject:
   - component: {fileID: 3291244538761517947}
   - component: {fileID: 3291244538761517945}
   - component: {fileID: 3291244538761517944}
+  - component: {fileID: 7988255091238403817}
   m_Layer: 0
   m_Name: FadeLight
   m_TagString: Untagged
@@ -24665,6 +24666,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeDuration: 0.2
   destroyWhenFaded: 1
+--- !u!114 &7988255091238403817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3291244538761517946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &3291244538907713110
 GameObject:
   m_ObjectHideFlags: 0
@@ -24676,6 +24700,7 @@ GameObject:
   - component: {fileID: 3291244538907713109}
   - component: {fileID: 3291244538907713108}
   - component: {fileID: 3291244538907713111}
+  - component: {fileID: 5426956027404547477}
   m_Layer: 0
   m_Name: Gun Impact
   m_TagString: Untagged
@@ -29512,6 +29537,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &5426956027404547477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3291244538907713110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d406e22a5ffccc4bbebdb93c69d8244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.7
 --- !u!1 &3291244538924899582
 GameObject:
   m_ObjectHideFlags: 0
@@ -34378,8 +34416,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 536481151
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_RenderMode: 4
   m_MeshDistribution: 0

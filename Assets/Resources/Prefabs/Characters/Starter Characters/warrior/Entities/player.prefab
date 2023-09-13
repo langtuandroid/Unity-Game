@@ -74,6 +74,8 @@ GameObject:
   - component: {fileID: 770555523144453587}
   - component: {fileID: 4458722263269912701}
   - component: {fileID: 5353377617828249592}
+  - component: {fileID: 701833122833344944}
+  - component: {fileID: 5273089249580786548}
   - component: {fileID: 3579077811780646521}
   - component: {fileID: 5554808194822948820}
   - component: {fileID: 2133346264930319670}
@@ -81,7 +83,7 @@ GameObject:
   - component: {fileID: 4981024116806816665}
   m_Layer: 6
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,8 +117,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
-  m_LinearDrag: 3
+  m_Mass: 20
+  m_LinearDrag: 10
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 7081e3d423413bf409d27f82c82d1bcb, type: 2}
@@ -181,7 +183,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bedff8bc66ebeab45996c2806021c2ae, type: 2}
   - {fileID: 11400000, guid: 4f8f16cf72b4f07469b075ddf31d9ebe, type: 2}
   maxHealth:
-    value: 150000
+    value: 15000
     useSharedValue: 0
     sharedValue: {fileID: 11400000, guid: 8c94823de2fa10f499ba7d4b29e4118b, type: 2}
   baseHealthRegen:
@@ -197,11 +199,11 @@ MonoBehaviour:
     useSharedValue: 0
     sharedValue: {fileID: 0}
   startHealth:
-    value: 150000
+    value: 15000
     useSharedValue: 0
     sharedValue: {fileID: 0}
   maxPosture:
-    value: 100000
+    value: 150
     useSharedValue: 0
     sharedValue: {fileID: 0}
   basePostureRegen:
@@ -209,6 +211,38 @@ MonoBehaviour:
     useSharedValue: 0
     sharedValue: {fileID: 0}
   damageHistory: []
+--- !u!114 &701833122833344944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490316291772389325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49cd32ba3fe22f4b9647cee180779d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPoise: 60
+  timeToRegenerate: 3
+  timeToRecover: 0.3
+--- !u!114 &5273089249580786548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490316291772389325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54961f43095bb704bb399708633c2a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animancer: {fileID: 7251414779245186655}
+  weaponWielder: {fileID: 6676339780788435558}
+  abilityRunner: {fileID: 9072161404192331858}
+  onPostureBroken: {fileID: 7400000, guid: 30b6612b316ff6a40bb8b35b4d68f14b, type: 2}
+  characterState: 0
 --- !u!114 &3579077811780646521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,7 +424,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3826623040206066821}
         m_TargetAssemblyTypeName: GameScripts.InputControl.PlayerController, GameScripts
-        m_MethodName: Shoot
+        m_MethodName: OffhandAbility
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -438,7 +472,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3826623040206066821}
         m_TargetAssemblyTypeName: GameScripts.InputControl.PlayerController, GameScripts
-        m_MethodName: WeaponArt2
+        m_MethodName: SwitchOffhandWeapon
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -448,8 +482,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 19717e90-af35-49d1-abf2-66066898245b
-    m_ActionName: Player/WeaponArt2[/Keyboard/2]
+    m_ActionId: f3cf8cc0-8d07-435a-a2e2-196b0af97762
+    m_ActionName: Player/Switch Offhand Weapon[/Keyboard/2]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -522,7 +556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed:
-    value: 100
+    value: 800
     useSharedValue: 0
     sharedValue: {fileID: 0}
   rotateSpeed:
@@ -623,6 +657,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: skeleton
       objectReference: {fileID: 0}
+    - target: {fileID: -8250169266279454816, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8250169266279454816, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -797026803
+      objectReference: {fileID: 0}
     - target: {fileID: -7747579851150391166, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -633,11 +675,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7747579851150391166, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.273178
+      value: 0.13264355
       objectReference: {fileID: 0}
     - target: {fileID: -7747579851150391166, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.41275948
+      value: 0.45201427
       objectReference: {fileID: 0}
     - target: {fileID: -7747579851150391166, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -703,13 +745,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2228710954499039675, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -2228710954499039675, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -797026803
+      objectReference: {fileID: 0}
     - target: {fileID: 1006390084647212156, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.11091604
+      value: 0.30846977
       objectReference: {fileID: 0}
     - target: {fileID: 1006390084647212156, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.47154713
+      value: -0.38385716
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077818843333844957, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077818843333844957, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -797026803
       objectReference: {fileID: 0}
     - target: {fileID: 4231023618171091304, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -750,6 +808,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6676339780788435558}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7251414779245186655}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 59d0100dad97b2b499fd1031d2c94dfe, type: 3}
 --- !u!4 &948921428966523799 stripped
 Transform:
@@ -786,8 +847,6 @@ MonoBehaviour:
   topLevelTransform: {fileID: 7880835017238648108}
   abilityData: {fileID: 0}
   data: {fileID: 11400000, guid: 6775233eb28ab6742bc5354c9741e1f2, type: 2}
-  animator: {fileID: 223299123248344314}
-  weaponWielder: {fileID: 6676339780788435558}
 --- !u!95 &223299123248344314
 Animator:
   serializedVersion: 5
@@ -821,14 +880,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21d7712cfaae2ab4cb1cd62dc9916ee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainhandWeapon1: {fileID: 1569198619848997945, guid: ce596d27f0ab3ec4b83b94e1dafc5e9f, type: 3}
-  mainhandWeapon2: {fileID: 5619198934622560290, guid: 4e63230358c59ee4cb029ee29dae2118, type: 3}
-  offhandWeapon1: {fileID: 0}
+  mainhandWeapon1: {fileID: 5619198934622560290, guid: 4e63230358c59ee4cb029ee29dae2118, type: 3}
+  mainhandWeapon2: {fileID: 1569198619848997945, guid: ce596d27f0ab3ec4b83b94e1dafc5e9f, type: 3}
+  offhandWeapon1: {fileID: 5619198934622560290, guid: 74a5e3eb02eec3747b3cc81cb0028c77, type: 3}
   offhandWeapon2: {fileID: 0}
-  emptyHand: {fileID: 0}
+  emptyHand: {fileID: 5619198934622560290, guid: 416d440731b4503438303e2b84860b22, type: 3}
   mainhandWeaponPosition: {fileID: 1067484646109687668}
   offhandWeaponPosition: {fileID: 4802965641685046406}
-  weaponData: {fileID: 0}
+  animationData: {fileID: 11400000, guid: 80f244b8a7119d644b44f189957d1498, type: 2}
   entity: {fileID: 5353377617828249592}
-  animator: {fileID: 223299123248344314}
+  animancer: {fileID: 7251414779245186655}
   abilityRunner: {fileID: 9072161404192331858}
+--- !u!114 &7251414779245186655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2153607754923973620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad50f81b1d25c441943c37a89ba23f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Animator: {fileID: 223299123248344314}
+  _ActionOnDisable: 0

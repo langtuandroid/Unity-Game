@@ -24,7 +24,11 @@ namespace LobsterFramework.AbilitySystem
         [SerializeField] private bool doubleHanded;
 
         [Header("VFX")]
-        [SerializeField] private VarString clashSpark; 
+        [SerializeField] private VarString clashSpark;
+
+        [Header("Positions")]
+        [SerializeField] private Transform head;
+        [SerializeField] private Transform tail;
 
         [Header("Guard")]
         [Range(0, 1)]
@@ -78,6 +82,9 @@ namespace LobsterFramework.AbilitySystem
         public bool DoubleHanded { get { return doubleHanded; } }
 
         public string ClashSpark { get { return clashSpark.Value; } }
+
+        public Transform Head { get { return head; } }
+        public Transform Tail { get { return tail; } }  
 
         public float Momentum { get { return momentumMultiplier * weight; } }
 

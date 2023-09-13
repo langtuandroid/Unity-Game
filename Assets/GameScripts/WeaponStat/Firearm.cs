@@ -16,6 +16,7 @@ namespace GameScripts.Abilities
         [SerializeField] private float speed;
         [SerializeField] private float travelTime;
         [SerializeField] private VarString bulletPrefab;
+        [SerializeField] private VarString muzzleVFX;
 
         public float Power { get { return power; } }
         public float Weight { get { return weight; } } 
@@ -25,6 +26,6 @@ namespace GameScripts.Abilities
         public float SpreadAngle { get {  return spreadAngle; } }
         public float TravelTime { get { return travelTime;} }
         public string Bullet { get { return bulletPrefab.Value; } }
-
+        public string MuzzleVFX { get { return muzzleVFX.Value; } }
     }
 }

@@ -16,6 +16,7 @@ namespace LobsterFramework.Pool
         private float weight;
         [SerializeField] private int pierceCount;
         [SerializeField] private float timeActive;
+        [SerializeField] private VarString impact;
         private float expireTime;
 
         private TargetSetting targetSetting;
@@ -41,7 +42,7 @@ namespace LobsterFramework.Pool
         {
             if (Time.time >= expireTime)
             {
-                gameObject.SetActive(false);
+                Explode();
             }
         }
 
@@ -68,7 +69,14 @@ namespace LobsterFramework.Pool
 
             if (pierceCount < 0)
             {
-                gameObject.SetActive(false);
+                Explode();
+            }
+        }
+
+        private void Explode() {
+            gameObject.SetActive(false);
+            if (impact != null) {
+                ObjectPool.GetObject(impact.Value, transform.position, Quaternion.identity);
             }
         }
     }

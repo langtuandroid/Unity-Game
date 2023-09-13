@@ -17,9 +17,10 @@ MonoBehaviour:
   pelletsPerShot: 1
   spreadAngle: 0
   penetration: 0
-  speed: 10
+  speed: 20
   travelTime: 2
   bulletPrefab: {fileID: 11400000, guid: ea9bbdaa32301cd4e85df6669405a790, type: 2}
+  muzzleVFX: {fileID: 11400000, guid: 0c603371804f376409eeecec5bd966e9, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

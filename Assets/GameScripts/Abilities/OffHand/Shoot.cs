@@ -59,6 +59,7 @@ namespace GameScripts.Abilities
                 obj.SetActive(false);
                 yield return CoroutineOption.Exit; 
             }
+            ObjectPool.GetObject(firearm.MuzzleVFX, currentWeapon.Head.position, currentWeapon.transform.rotation, currentWeapon.transform);
 
             Transform bulletTransform = bullet.transform;
             bullet.Initialize(config.targetSetting, firearm.TravelTime, WeaponWielder.Offhand.Entity, firearm.Power, firearm.Penetration, firearm.Weight);
