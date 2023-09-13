@@ -13,7 +13,6 @@ namespace LobsterFramework.AbilitySystem
     public class LightWeaponAttack : WeaponAbility
     {
         [SerializeField] private TargetSetting targets;
-        [SerializeField] private VarString clashSparkTag;
         private Entity attacker;
         private MovementController moveControl;
         private DamageModifier damageModifier;
@@ -134,9 +133,9 @@ namespace LobsterFramework.AbilitySystem
 
         private void OnWeaponHit(Weapon weapon, Vector3 contactPoint)
         {
-            if (clashSparkTag != null)
+            if (weapon.ClashSpark != null)
             {
-                ObjectPool.Instance.GetObject(clashSparkTag.Value, contactPoint, Quaternion.identity);
+                ObjectPool.GetObject(weapon.ClashSpark, contactPoint, Quaternion.identity);
             }
             Entity entity = weapon.Entity;
             if (targets.IsTarget(entity))

@@ -24,7 +24,7 @@ namespace LobsterFramework.EntitySystem
             // Display effect icon
             if (icon && spritePoolTag)
             {
-                GameObject g = ObjectPool.Instance.GetObject(spritePoolTag.Value, Vector3.zero, Quaternion.identity);
+                GameObject g = ObjectPool.GetObject(spritePoolTag.Value, Vector3.zero, Quaternion.identity);
                 Transform gTransform = g.transform;
                 Transform pTransform = entity.transform;
                 gTransform.SetParent(pTransform);

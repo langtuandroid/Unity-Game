@@ -83,7 +83,6 @@ namespace LobsterFramework.EntitySystem
         private void Start()
         { 
             Health = startHealth.Value;
-            gameObject.tag = GameManager.Instance.TAG_ENTITY;
             IsDead = false;
             PostureBroken = false;
             Posture = MaxPosture;

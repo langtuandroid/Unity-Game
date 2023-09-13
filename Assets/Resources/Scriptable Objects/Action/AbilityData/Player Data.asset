@@ -86,6 +86,30 @@ MonoBehaviour:
   damageKey: 0
   hyperArmorKey: 0
   timeEnd: 0
+--- !u!114 &-7383703362220855186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: GameScripts.Abilities.Shoot-default
+  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Shoot/ShootConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 0
+  cooldown: 0
+  isSuspended: 0
+  awakeTime: 0
+  targetSetting: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
+  moveSpeedModifier: 0.3
+  rotateSpeedModifier: 0.3
+  moveKey: 0
+  rotateKey: 0
+  signaled: 0
 --- !u!114 &-6495964935659663549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,7 +248,6 @@ MonoBehaviour:
     values:
     - {fileID: 7529919648218079856}
   targets: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
-  clashSparkTag: {fileID: 11400000, guid: b93850f361ea97e40a35c219b934d9fb, type: 2}
 --- !u!114 &-1526935557768226422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +300,7 @@ MonoBehaviour:
     - GameScripts.Abilities.Dash
     - GameScripts.Abilities.Cyclone
     - GameScripts.Abilities.OffhandGrab
+    - GameScripts.Abilities.Shoot
     values:
     - {fileID: -6495964935659663549}
     - {fileID: 7017493660075160967}
@@ -287,6 +311,7 @@ MonoBehaviour:
     - {fileID: -1526935557768226422}
     - {fileID: 4431685197730112623}
     - {fileID: -8844175516141804856}
+    - {fileID: 4585549910305619769}
 --- !u!114 &728800782443913048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +375,30 @@ MonoBehaviour:
     values:
     - {fileID: -4594170663379544790}
   targets: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
-  clashSparkTag: {fileID: 11400000, guid: b93850f361ea97e40a35c219b934d9fb, type: 2}
+--- !u!114 &4585549910305619769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f70b9a967a96d4abc6cf3b83a774bf, type: 3}
+  m_Name: GameScripts.Abilities.Shoot
+  m_EditorClassIdentifier: 
+  abilityRunner: {fileID: 0}
+  abilityPriority:
+    value:
+      executionPriority: 0
+      enqueuePriority: 0
+    useSharedValue: 0
+    sharedValue: {fileID: 0}
+  configs:
+    keys:
+    - default
+    values:
+    - {fileID: -7383703362220855186}
 --- !u!114 &7017493660075160967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,7 +524,6 @@ MonoBehaviour:
     value: 0.3
     useSharedValue: 0
     sharedValue: {fileID: 0}
-  clashSparkTag: {fileID: 11400000, guid: b93850f361ea97e40a35c219b934d9fb, type: 2}
   animationSignaled: 0
   inputSignaled: 0
   currentWeapon: {fileID: 0}

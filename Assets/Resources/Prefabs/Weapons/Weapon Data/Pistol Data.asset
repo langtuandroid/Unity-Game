@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7879996043076752552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfab954ba30d4e641aae47a9883a2117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 45
+  weight: 30
+  pelletsPerShot: 1
+  spreadAngle: 0
+  penetration: 0
+  speed: 10
+  travelTime: 2
+  bulletPrefab: {fileID: 11400000, guid: ea9bbdaa32301cd4e85df6669405a790, type: 2}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d05e6fa70eb754a945112198939269, type: 3}
+  m_Name: Pistol Data
+  m_EditorClassIdentifier: 
+  weaponStats:
+    keys:
+    - GameScripts.Abilities.Firearm, GameScripts, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    values:
+    - {fileID: -7879996043076752552}

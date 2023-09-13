@@ -63,7 +63,7 @@ namespace GameScripts.Abilities
             bConfig.timeEnd = Time.time + bConfig.duration;
             bConfig.damageKey = damageModifier.percentageDamageModifcation.AddEffector(bConfig.damageModifier);
             if (bConfig.vfxTag != null) {
-                ObjectPool.Instance.GetObject(bConfig.vfxTag.Value, transform.position, Quaternion.identity, transform);
+                ObjectPool.GetObject(bConfig.vfxTag.Value, transform.position, Quaternion.identity, transform);
             }
         }
 

@@ -23,6 +23,9 @@ namespace LobsterFramework.AbilitySystem
         [SerializeField] private float defenseSpeed;
         [SerializeField] private bool doubleHanded;
 
+        [Header("VFX")]
+        [SerializeField] private VarString clashSpark; 
+
         [Header("Guard")]
         [Range(0, 1)]
         [SerializeField] private float healthDamageReduction;
@@ -45,7 +48,7 @@ namespace LobsterFramework.AbilitySystem
         [Range(0, 1)]
         [SerializeField] private float hMoveSpeedModifier;
 
-        [Header("Special Move")] 
+        [Header("Special Move")]  
         [SerializeField] private WeaponData weaponData;
         [SerializeField] private WeaponArtSelector abilitySelector;
         private WeaponData data;
@@ -74,6 +77,8 @@ namespace LobsterFramework.AbilitySystem
 
         public bool DoubleHanded { get { return doubleHanded; } }
 
+        public string ClashSpark { get { return clashSpark.Value; } }
+
         public float Momentum { get { return momentumMultiplier * weight; } }
 
         #region Guard
@@ -100,7 +105,7 @@ namespace LobsterFramework.AbilitySystem
 
         public WeaponState state { get; set; }
         // Start is called before the first frame update
-        void Awake()
+        private void Awake()
         {
             thisCollider = GetComponent<Collider2D>();
             thisCollider.enabled = false;
@@ -247,7 +252,7 @@ namespace LobsterFramework.AbilitySystem
         EmptyHand, 
         
         // Offhand
-        FireArm 
+        Firearm 
     }
 
     public enum WeaponState { 

@@ -14,74 +14,11 @@ namespace LobsterFramework.AbilitySystem
     {
         [SerializeField] private TargetSetting targets;
         
-        private Entity attacker;
         private MovementController moveControl;
         private DamageModifier damageModifier;
 
-        public class HeavyWeaponAttackConfig : AbilityCoroutineConfig {
-            
-            public RefFloat baseDamageModifier;
-            public RefFloat maxChargeDamageIncrease;
-            public RefFloat chargeMaxTime;
-            public VarString clashSparkTag;
-
-            [HideInInspector] public bool animationSignaled;
-            [HideInInspector] public bool inputSignaled;
-            [HideInInspector] public Weapon currentWeapon;
-            [HideInInspector] public AnimancerState animationState;
-
-            [HideInInspector] public int m_key = -1;
-            [HideInInspector] public int r_key = -1;
-
-            [HideInInspector] public float chargeTimer;
-            [HideInInspector] public HeavyWeaponAttack ability;
-
-            public void OnEntityHit(Entity entity) {
-                if (chargeTimer > chargeMaxTime) { 
-                    chargeTimer = chargeMaxTime;
-                }
-                ability.DealDamage(entity, baseDamageModifier + maxChargeDamageIncrease *  (chargeTimer / chargeMaxTime));
-            }
-
-            public void OnWeaponHit(Weapon weapon, Vector3 contactPoint) {
-                if (chargeTimer > chargeMaxTime)
-                {
-                    chargeTimer = chargeMaxTime;
-                }
-                if (clashSparkTag != null) {
-                    Pool.ObjectPool.Instance.GetObject(clashSparkTag.Value, contactPoint, Quaternion.identity);
-                }
-
-                ability.DealGuardDamage(weapon, baseDamageModifier + maxChargeDamageIncrease * (chargeTimer / chargeMaxTime));
-            }
-
-            public void SubscribeWeaponEvent()
-            {
-                currentWeapon.onEntityHit += OnEntityHit;
-                currentWeapon.onWeaponHit += OnWeaponHit;
-            }
-
-            public void UnSubscribeWeaponEvent()
-            {
-                currentWeapon.onEntityHit -= OnEntityHit;
-                currentWeapon.onWeaponHit -= OnWeaponHit;
-            }
-        }
-        public class HeavyWeaponAttackPipe : AbilityPipe {
-            private HeavyWeaponAttackConfig conf;
-            public float MaxChargeTime { get { return conf.chargeMaxTime; } }
-            public float MaxChargeDamageIncrease { get { return conf.maxChargeDamageIncrease; } }
-            public float BaseDamageModifier { get { return conf.baseDamageModifier; } }
-
-            public override void Construct()
-            {
-                conf = (HeavyWeaponAttackConfig)config;
-            }
-        }
-
         protected override void Init()
         {
-            attacker = WeaponWielder.Wielder;
             moveControl = abilityRunner.GetComponentInBoth<MovementController>();
             damageModifier = abilityRunner.GetAbilityStat<DamageModifier>();
         }
@@ -182,6 +119,71 @@ namespace LobsterFramework.AbilitySystem
         protected override void OnCoroutineReset()
         {
             throw new System.NotImplementedException();
+        }
+        public class HeavyWeaponAttackConfig : AbilityCoroutineConfig
+        {
+
+            public RefFloat baseDamageModifier;
+            public RefFloat maxChargeDamageIncrease;
+            public RefFloat chargeMaxTime;
+
+            [HideInInspector] public bool animationSignaled;
+            [HideInInspector] public bool inputSignaled;
+            [HideInInspector] public Weapon currentWeapon;
+            [HideInInspector] public AnimancerState animationState;
+
+            [HideInInspector] public int m_key = -1;
+            [HideInInspector] public int r_key = -1;
+
+            [HideInInspector] public float chargeTimer;
+            [HideInInspector] public HeavyWeaponAttack ability;
+
+            public void OnEntityHit(Entity entity)
+            {
+                if (chargeTimer > chargeMaxTime)
+                {
+                    chargeTimer = chargeMaxTime;
+                }
+                ability.DealDamage(entity, baseDamageModifier + maxChargeDamageIncrease * (chargeTimer / chargeMaxTime));
+            }
+
+            public void OnWeaponHit(Weapon weapon, Vector3 contactPoint)
+            {
+                if (chargeTimer > chargeMaxTime)
+                {
+                    chargeTimer = chargeMaxTime;
+                }
+                if (weapon.ClashSpark != null)
+                {
+                    Pool.ObjectPool.GetObject(weapon.ClashSpark, contactPoint, Quaternion.identity);
+                }
+
+                ability.DealGuardDamage(weapon, baseDamageModifier + maxChargeDamageIncrease * (chargeTimer / chargeMaxTime));
+            }
+
+            public void SubscribeWeaponEvent()
+            {
+                currentWeapon.onEntityHit += OnEntityHit;
+                currentWeapon.onWeaponHit += OnWeaponHit;
+            }
+
+            public void UnSubscribeWeaponEvent()
+            {
+                currentWeapon.onEntityHit -= OnEntityHit;
+                currentWeapon.onWeaponHit -= OnWeaponHit;
+            }
+        }
+        public class HeavyWeaponAttackPipe : AbilityPipe
+        {
+            private HeavyWeaponAttackConfig conf;
+            public float MaxChargeTime { get { return conf.chargeMaxTime; } }
+            public float MaxChargeDamageIncrease { get { return conf.maxChargeDamageIncrease; } }
+            public float BaseDamageModifier { get { return conf.baseDamageModifier; } }
+
+            public override void Construct()
+            {
+                conf = (HeavyWeaponAttackConfig)config;
+            }
         }
     }
 }

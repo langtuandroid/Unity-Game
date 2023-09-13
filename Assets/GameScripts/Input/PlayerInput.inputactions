@@ -105,6 +105,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Switch Offhand Weapon",
+                    "type": "Button",
+                    "id": "f3cf8cc0-8d07-435a-a2e2-196b0af97762",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Offhand Ability",
                     "type": "Button",
                     "id": "00616b6e-30df-45ca-a849-0fef22c79ab3",
@@ -328,6 +337,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Weapon Art",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1d51977d-a629-4d56-96b6-c1bbae29b6a8",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch Offhand Weapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

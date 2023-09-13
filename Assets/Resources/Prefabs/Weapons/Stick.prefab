@@ -204,6 +204,7 @@ MonoBehaviour:
   attackSpeed: 2
   defenseSpeed: 3
   doubleHanded: 0
+  clashSpark: {fileID: 11400000, guid: b93850f361ea97e40a35c219b934d9fb, type: 2}
   healthDamageReduction: 1
   postureDamageReduction: 0.6
   gRotationSpeedModifier: 0.4
@@ -212,6 +213,7 @@ MonoBehaviour:
   lMoveSpeedModifier: 0.7
   hRotationSpeedModifier: 0.5
   hMoveSpeedModifier: 0.3
+  weaponData: {fileID: 0}
   abilitySelector:
     qualifieldTypeName: GameScripts.Abilities.Cyclone, GameScripts, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null

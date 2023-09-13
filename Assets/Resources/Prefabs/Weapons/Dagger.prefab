@@ -198,12 +198,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: dagger
-  weaponType: 0
+  weaponType: 2
   weight: 5
   sharpness: 3
   attackSpeed: 3
   defenseSpeed: 3
   doubleHanded: 0
+  clashSpark: {fileID: 11400000, guid: b93850f361ea97e40a35c219b934d9fb, type: 2}
   healthDamageReduction: 0.7
   postureDamageReduction: 0.4
   gRotationSpeedModifier: 0.7
@@ -212,7 +213,8 @@ MonoBehaviour:
   lMoveSpeedModifier: 1
   hRotationSpeedModifier: 0.8
   hMoveSpeedModifier: 0.8
+  weaponData: {fileID: 0}
   abilitySelector:
     qualifieldTypeName: None
-    weaponType: 0
+    weaponType: 2
     configName: 

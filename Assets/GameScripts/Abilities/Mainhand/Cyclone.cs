@@ -15,7 +15,6 @@ namespace GameScripts.Abilities
     public class Cyclone : WeaponAbility
     {
         [SerializeField] TargetSetting targets;
-        [SerializeField] private VarString clashSparkTag;
         private MovementController moveControl;
 
         public class CycloneConfig : AbilityCoroutineConfig {
@@ -119,9 +118,9 @@ namespace GameScripts.Abilities
 
         private void OnWeaponHit(Weapon weapon, Vector3 contactPoint)
         {
-            if (clashSparkTag != null)
+            if (weapon.ClashSpark != null)
             {
-                LobsterFramework.Pool.ObjectPool.Instance.GetObject(clashSparkTag.Value, contactPoint, Quaternion.identity);
+                ObjectPool.GetObject(weapon.ClashSpark, contactPoint, Quaternion.identity);
             }
             Entity entity = weapon.Entity;
             if (targets.IsTarget(entity))

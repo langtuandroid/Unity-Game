@@ -485,8 +485,10 @@ namespace LobsterFramework.AbilitySystem {
                 Debug.Log("Cannot play null animation!");
                 return null;
             }
-
-            currentState = animancer.Play(animation, 0.3f, FadeMode.FromStart);
+            if (speed <= 0) {
+                speed = 1;
+            }
+            currentState = animancer.Play(animation, 0.3f / speed, FadeMode.FromStart);
             if (animating != default) {
                 animating.Item1.AnimationInterrupt(animating.Item2, currentState);
             }

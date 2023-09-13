@@ -18,7 +18,7 @@ namespace GameScripts.Abilities
         [SerializeField] private VarString bulletPrefab;
 
         public float Power { get { return power; } }
-        public float Weight { get { return weight; } }
+        public float Weight { get { return weight; } } 
         public int Penetration { get {  return penetration; } }
         public float Speed { get { return speed;} }
         public int PelletsPerShot { get { return pelletsPerShot; } }

@@ -46,7 +46,7 @@ namespace LobsterFramework.AI
             }
         }
 
-        public void FixedUpdate()
+        public void Update()
         {
             Type target = currentState.Tick();
             if (target != null)

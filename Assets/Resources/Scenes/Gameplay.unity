@@ -23360,17 +23360,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 2490316291772389325, guid: 4816e38646558964d841661aa9ae451c, type: 3}
+      propertyPath: m_TagString
+      value: Entity
+      objectReference: {fileID: 0}
     - target: {fileID: 3579077811780646521, guid: 4816e38646558964d841661aa9ae451c, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 14
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579077811780646521, guid: 4816e38646558964d841661aa9ae451c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
+      value: f3cf8cc0-8d07-435a-a2e2-196b0af97762
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579077811780646521, guid: 4816e38646558964d841661aa9ae451c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
+      value: Player/Switch Offhand Weapon[/Keyboard/2]
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579077811780646521, guid: 4816e38646558964d841661aa9ae451c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3579077811780646521, guid: 4816e38646558964d841661aa9ae451c, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1377438054}
     - target: {fileID: 3579077811780646521, guid: 4816e38646558964d841661aa9ae451c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2052722233}
+    - target: {fileID: 3579077811780646521, guid: 4816e38646558964d841661aa9ae451c, type: 3}
       propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OffhandAbility
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579077811780646521, guid: 4816e38646558964d841661aa9ae451c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchOffhandWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579077811780646521, guid: 4816e38646558964d841661aa9ae451c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameScripts.InputControl.PlayerController, GameScripts
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579077811780646521, guid: 4816e38646558964d841661aa9ae451c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3826623040206066821, guid: 4816e38646558964d841661aa9ae451c, type: 3}
       propertyPath: camera
@@ -23404,6 +23436,10 @@ PrefabInstance:
       propertyPath: animationData
       value: 
       objectReference: {fileID: 11400000, guid: 80f244b8a7119d644b44f189957d1498, type: 2}
+    - target: {fileID: 6676339780788435558, guid: 4816e38646558964d841661aa9ae451c, type: 3}
+      propertyPath: offhandWeapon1
+      value: 
+      objectReference: {fileID: 5619198934622560290, guid: 74a5e3eb02eec3747b3cc81cb0028c77, type: 3}
     - target: {fileID: 6676339780788435558, guid: 4816e38646558964d841661aa9ae451c, type: 3}
       propertyPath: mainhandWeapon1
       value: 
@@ -23798,6 +23834,10 @@ PrefabInstance:
     - target: {fileID: 2490316291772389325, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490316291772389325, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
+      propertyPath: m_TagString
+      value: Entity
       objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24664,6 +24704,10 @@ PrefabInstance:
     - target: {fileID: 2490316291772389325, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490316291772389325, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
+      propertyPath: m_TagString
+      value: Entity
       objectReference: {fileID: 0}
     - target: {fileID: 2878624368540976578, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: playerAbilityRunner
@@ -26037,7 +26081,7 @@ GameObject:
   - component: {fileID: 1002726326}
   - component: {fileID: 1002726325}
   - component: {fileID: 1002726324}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27032,9 +27076,9 @@ GameObject:
   - component: {fileID: 1225749543}
   - component: {fileID: 1225749542}
   - component: {fileID: 1225749544}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30516,6 +30560,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2490316291772389325, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
+      propertyPath: m_TagString
+      value: Entity
+      objectReference: {fileID: 0}
     - target: {fileID: 2878624368540976578, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: playerAbilityRunner
       value: 
@@ -30864,6 +30912,17 @@ MonoBehaviour:
   maxPoise: 60
   timeToRegenerate: 3
   timeToRecover: 0.3
+--- !u!114 &2052722233 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3826623040206066821, guid: 4816e38646558964d841661aa9ae451c, type: 3}
+  m_PrefabInstance: {fileID: 255199783}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255199785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d007dd9246cfba429d089046f387f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2060416363
 GameObject:
   m_ObjectHideFlags: 0

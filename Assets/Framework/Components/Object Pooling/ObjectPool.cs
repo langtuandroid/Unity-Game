@@ -65,7 +65,12 @@ namespace LobsterFramework.Pool
         [SerializeField] private Pool[] pools;
         private Dictionary<string, Pool> poolz = new();
 
-        public static ObjectPool Instance
+        public static GameObject GetObject(string tag, Vector3 position, Quaternion rotation, Transform parentTransform = null, bool keepWorldPosition = false)
+        {
+            return instance.Get(tag, position, rotation, parentTransform, keepWorldPosition);
+        }
+
+        private static ObjectPool Instance
         {
             get { return instance; }
         }
@@ -88,7 +93,7 @@ namespace LobsterFramework.Pool
             }
         }
 
-        public GameObject GetObject(string tag, Vector3 position, Quaternion rotation, Transform parentTransform = null, bool keepWorldPosition = false)
+        private GameObject Get(string tag, Vector3 position, Quaternion rotation, Transform parentTransform = null, bool keepWorldPosition = false)
         {
             if (poolz.ContainsKey(tag))
             {

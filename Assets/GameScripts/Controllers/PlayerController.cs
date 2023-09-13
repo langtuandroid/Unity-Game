@@ -186,6 +186,14 @@ namespace GameScripts.InputControl
             }
         }
 
+        public void SwitchOffhandWeapon(InputAction.CallbackContext context)
+        {
+            if (!gamePause.Value && context.started)
+            {
+                weaponWielder.SwitchOffHand();
+            }
+        }
+
         public void PrimaryInteraction(InputAction.CallbackContext context)
         {
             if (!gamePause.Value && context.started)

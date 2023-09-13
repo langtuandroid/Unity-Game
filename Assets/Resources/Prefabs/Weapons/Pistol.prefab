@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 3127356868731642949}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.301, y: 0.0022, z: 0}
-  m_LocalScale: {x: 1.0538, y: 1.0538, z: 1.0538}
+  m_LocalPosition: {x: 0.157, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7073455948713008841}
@@ -143,13 +143,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6222736435661235244}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21100001, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.15699999, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7073455948713008841}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!70 &2125054459989882050
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -182,9 +182,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03451826, y: -0.0039856327}
-  m_Size: {x: 0.81942946, y: 0.24403858}
-  m_Direction: 1
+  m_Offset: {x: 0.010142854, y: -0.03180653}
+  m_Size: {x: 0.22070421, y: 0.5871733}
+  m_Direction: 0
 --- !u!114 &5158664400469286800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,9 +201,10 @@ MonoBehaviour:
   weaponType: 5
   weight: 30
   sharpness: 30
-  attackSpeed: 1.5
+  attackSpeed: 4
   defenseSpeed: 4
   doubleHanded: 0
+  clashSpark: {fileID: 0}
   healthDamageReduction: 0
   postureDamageReduction: 0
   gRotationSpeedModifier: 0
@@ -212,7 +213,7 @@ MonoBehaviour:
   lMoveSpeedModifier: 0
   hRotationSpeedModifier: 0
   hMoveSpeedModifier: 0
-  weaponData: {fileID: 0}
+  weaponData: {fileID: 11400000, guid: c864bb4d5e8e3e34fab9cf64b17302d4, type: 2}
   abilitySelector:
     qualifieldTypeName: GameScripts.Abilities.Shoot, GameScripts, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null

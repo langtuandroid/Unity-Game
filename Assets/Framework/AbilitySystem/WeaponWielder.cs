@@ -173,7 +173,6 @@ namespace LobsterFramework.AbilitySystem
                 }
                 else if (Offhand2 == null) {
                     Offhand2 = emptyOHandWeapon;
-                    emptyOHandInst.SetActive(true);
                 }
             }
         }

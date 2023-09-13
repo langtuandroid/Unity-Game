@@ -10,22 +10,29 @@ public class VarStringDrawer : PropertyDrawer
     {
         if (property.objectReferenceValue == null || !property.isExpanded)
         {
-            return EditorGUIUtility.singleLineHeight;
+            return base.GetPropertyHeight(property, label);
         }
-        return EditorGUIUtility.singleLineHeight * 2;
+        return base.GetPropertyHeight(property, label) * 2;
 
     }
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        EditorGUI.BeginProperty(position, label, property);
-
         // Foldout
         Rect foldOutRect = new(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
-        property.isExpanded = EditorGUI.Foldout(foldOutRect, property.isExpanded, label);
+        if (property.objectReferenceValue == null)
+        {
+            property.isExpanded = false;
+            property.objectReferenceValue = (VarString)EditorGUI.ObjectField(position, label.text, property.objectReferenceValue, typeof(VarString), true);
+            property.serializedObject.ApplyModifiedProperties();
+            return;
+        }
+        else {
+            property.isExpanded = EditorGUI.Foldout(foldOutRect, property.isExpanded, label);
+        }
 
         Rect rect = new(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
-        property.objectReferenceValue = (VarString)EditorGUI.ObjectField(rect, label.text, property.objectReferenceValue, typeof(VarString), true);
+        property.objectReferenceValue = (VarString)EditorGUI.ObjectField(rect, " ", property.objectReferenceValue, typeof(VarString), true);
         if (property.isExpanded && property.objectReferenceValue != null)
         {
             EditorGUI.indentLevel++;
@@ -36,7 +43,6 @@ public class VarStringDrawer : PropertyDrawer
             obj.ApplyModifiedProperties();
             EditorGUI.indentLevel--;
         }
-        EditorGUI.EndProperty();
         property.serializedObject.ApplyModifiedProperties();
     }
 }
