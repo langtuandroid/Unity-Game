@@ -24685,29 +24685,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1478059220}
     m_Modifications:
-    - target: {fileID: 770555523144453587, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
-      propertyPath: m_LinearDrag
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2425916213654096013, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
-      propertyPath: maxPoise
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 2425916213654096013, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
-      propertyPath: timeToRecover
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_Name
       value: stickman
-      objectReference: {fileID: 0}
-    - target: {fileID: 2490316291772389325, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2490316291772389325, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
-      propertyPath: m_TagString
-      value: Entity
       objectReference: {fileID: 0}
     - target: {fileID: 2878624368540976578, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: playerAbilityRunner
@@ -24720,18 +24700,6 @@ PrefabInstance:
     - target: {fileID: 3947493889715706064, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353377617828249592, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
-      propertyPath: maxHealth.value
-      value: 15000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353377617828249592, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
-      propertyPath: maxPosture.value
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353377617828249592, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
-      propertyPath: startHealth.value
-      value: 15000
       objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24781,10 +24749,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9072161404192331858, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
-      propertyPath: data
-      value: 
-      objectReference: {fileID: 11400000, guid: f58fe3c9db833534a993626f0bcbc97a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25907,7 +25871,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0}
+  m_BackGroundColor: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -30558,7 +30522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_TagString
@@ -30630,19 +30594,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8695003769663209437, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8695003769663209437, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9072161404192331858, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: data

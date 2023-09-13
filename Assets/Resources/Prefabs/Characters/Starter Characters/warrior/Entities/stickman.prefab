@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 7677172382704198607}
   m_Layer: 6
   m_Name: stickman
-  m_TagString: Untagged
+  m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -420,7 +420,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bedff8bc66ebeab45996c2806021c2ae, type: 2}
   - {fileID: 11400000, guid: 88417c86a09bbd4438fce976a5cb5306, type: 2}
   maxHealth:
-    value: 200
+    value: 15000
     useSharedValue: 0
     sharedValue: {fileID: 11400000, guid: 8c94823de2fa10f499ba7d4b29e4118b, type: 2}
   baseHealthRegen:
@@ -436,11 +436,11 @@ MonoBehaviour:
     useSharedValue: 0
     sharedValue: {fileID: 0}
   startHealth:
-    value: 200
+    value: 15000
     useSharedValue: 0
     sharedValue: {fileID: 0}
   maxPosture:
-    value: 150
+    value: 250
     useSharedValue: 0
     sharedValue: {fileID: 0}
   basePostureRegen:
@@ -460,9 +460,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49cd32ba3fe22f4b9647cee180779d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPoise: 0
+  maxPoise: 60
   timeToRegenerate: 3
-  timeToRecover: 0.2
+  timeToRecover: 0.3
 --- !u!114 &3114379854460070708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1305,7 +1305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topLevelTransform: {fileID: 7880835017238648108}
   abilityData: {fileID: 0}
-  data: {fileID: 11400000, guid: c25790faa6698994d80961b2a91afda0, type: 2}
+  data: {fileID: 11400000, guid: f58fe3c9db833534a993626f0bcbc97a, type: 2}
 --- !u!95 &223299123248344314
 Animator:
   serializedVersion: 5
@@ -1346,7 +1346,6 @@ MonoBehaviour:
   emptyHand: {fileID: 0}
   mainhandWeaponPosition: {fileID: 1067484646109687668}
   offhandWeaponPosition: {fileID: 1074893402953805516}
-  weaponData: {fileID: 0}
   animationData: {fileID: 11400000, guid: 80f244b8a7119d644b44f189957d1498, type: 2}
   entity: {fileID: 5353377617828249592}
   animancer: {fileID: 7911048626258226971}
