@@ -1,51 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9032874286416966784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: LobsterFramework.AbilitySystem.Guard-default
-  m_EditorClassIdentifier: LobsterFramework:LobsterFramework.AbilitySystem:Guard/GuardConfig
-  accessKey: -1
-  endTime: 0
-  useCooldown: 0
-  cooldown: 0
-  isSuspended: 0
-  awakeTime: 0
-  animationSignaled: 0
-  m_key: 0
-  r_key: 0
-  currentWeapon: {fileID: 0}
---- !u!114 &-8844175516141804856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a31266b013b6ce6489233e846909b86e, type: 3}
-  m_Name: GameScripts.Abilities.OffhandGrab
-  m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
-  abilityPriority:
-    value:
-      executionPriority: 0
-      enqueuePriority: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  configs:
-    keys:
-    - default
-    values:
-    - {fileID: 8168015058177042410}
 --- !u!114 &-8655094065794611035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,77 +17,6 @@ MonoBehaviour:
   useCooldown: 0
   cooldown: 0
   isSuspended: 0
---- !u!114 &-7756696283119846634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: GameScripts.Abilities.Boost-default
-  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Boost/BoostConfig
-  accessKey: -1
-  endTime: 0
-  useCooldown: 1
-  cooldown: 5
-  isSuspended: 0
-  damageModifier: 2
-  duration: 0
-  vfxTag: {fileID: 11400000, guid: 408bedc1d876c6d4cbe310c9795a3300, type: 2}
-  damageKey: 0
-  hyperArmorKey: 0
-  timeEnd: 0
---- !u!114 &-7383703362220855186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: GameScripts.Abilities.Shoot-default
-  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Shoot/ShootConfig
-  accessKey: -1
-  endTime: 0
-  useCooldown: 0
-  cooldown: 0
-  isSuspended: 0
-  awakeTime: 0
-  targetSetting: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
-  moveSpeedModifier: 0.1
-  rotateSpeedModifier: 0.1
-  moveKey: 0
-  rotateKey: 0
-  signaled: 0
---- !u!114 &-6495964935659663549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee0f315229b442b459f33b50ab403f04, type: 3}
-  m_Name: LobsterFramework.AbilitySystem.Guard
-  m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
-  abilityPriority:
-    value:
-      executionPriority: 0
-      enqueuePriority: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  configs:
-    keys:
-    - default
-    values:
-    - {fileID: -9032874286416966784}
 --- !u!114 &-6197384238747898517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,23 +40,6 @@ MonoBehaviour:
   rotateSpeedModifier: 0
   m_key: 0
   r_key: 0
---- !u!114 &-6027256006402016586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: LobsterFramework.AbilitySystem.WeaponArt-default
-  m_EditorClassIdentifier: LobsterFramework:LobsterFramework.AbilitySystem:WeaponArt/WeaponArtConfig
-  accessKey: -1
-  endTime: 0
-  useCooldown: 0
-  cooldown: 0
-  isSuspended: 0
 --- !u!114 &-5072531079493620865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,31 +64,6 @@ MonoBehaviour:
     - default
     values:
     - {fileID: -8655094065794611035}
---- !u!114 &-4594170663379544790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: GameScripts.Abilities.Cyclone-default
-  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Cyclone/CycloneConfig
-  accessKey: -1
-  endTime: 0
-  useCooldown: 0
-  cooldown: 0
-  isSuspended: 0
-  awakeTime: 0
-  moveSpeedModifier: 0.5
-  rotationSpeedModifier: 0.5
-  currentWeapon: {fileID: 0}
-  stopped: 0
-  repeatAttack: 0
-  m_key: 0
-  r_key: 0
 --- !u!114 &-2968132334227958496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +88,7 @@ MonoBehaviour:
     - default
     values:
     - {fileID: 7529919648218079856}
-  targets: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
+  targets: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
 --- !u!114 &-1526935557768226422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,7 +123,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5cd7a81edede6f4c9921cd097a98b3c, type: 3}
-  m_Name: Player Data
+  m_Name: DaggerMan
   m_EditorClassIdentifier: 
   stats:
     keys:
@@ -291,51 +132,17 @@ MonoBehaviour:
     - {fileID: 1461317040647077686}
   allAbilities:
     keys:
-    - LobsterFramework.AbilitySystem.Guard
     - LobsterFramework.AbilitySystem.HeavyWeaponAttack
     - LobsterFramework.AbilitySystem.LightWeaponAttack
     - LobsterFramework.AbilitySystem.OffhandAbility
-    - LobsterFramework.AbilitySystem.WeaponArt
-    - GameScripts.Abilities.Boost
-    - GameScripts.Abilities.Dash
-    - GameScripts.Abilities.Cyclone
-    - GameScripts.Abilities.OffhandGrab
     - GameScripts.Abilities.Shoot
+    - GameScripts.Abilities.Dash
     values:
-    - {fileID: -6495964935659663549}
     - {fileID: 7017493660075160967}
     - {fileID: -2968132334227958496}
     - {fileID: -5072531079493620865}
-    - {fileID: 7681251418908050277}
-    - {fileID: 728800782443913048}
+    - {fileID: 2556276634827557280}
     - {fileID: -1526935557768226422}
-    - {fileID: 4431685197730112623}
-    - {fileID: -8844175516141804856}
-    - {fileID: 4585549910305619769}
---- !u!114 &728800782443913048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c60acad315015046b8038c2d776c6e6, type: 3}
-  m_Name: GameScripts.Abilities.Boost
-  m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
-  abilityPriority:
-    value:
-      executionPriority: 0
-      enqueuePriority: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  configs:
-    keys:
-    - default
-    values:
-    - {fileID: -7756696283119846634}
 --- !u!114 &1461317040647077686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,32 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flatDamage: 0
   percentageDamage: 0
---- !u!114 &4431685197730112623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01a972001ebfd3b4ba8b945ff2570222, type: 3}
-  m_Name: GameScripts.Abilities.Cyclone
-  m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
-  abilityPriority:
-    value:
-      executionPriority: 0
-      enqueuePriority: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  configs:
-    keys:
-    - default
-    values:
-    - {fileID: -4594170663379544790}
-  targets: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
---- !u!114 &4585549910305619769
+--- !u!114 &2556276634827557280
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -398,7 +180,7 @@ MonoBehaviour:
     keys:
     - default
     values:
-    - {fileID: -7383703362220855186}
+    - {fileID: 7029661124490421176}
 --- !u!114 &7017493660075160967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,7 +205,31 @@ MonoBehaviour:
     - default
     values:
     - {fileID: 8907012904961785543}
-  targets: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
+  targets: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
+--- !u!114 &7029661124490421176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: GameScripts.Abilities.Shoot-default
+  m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Shoot/ShootConfig
+  accessKey: -1
+  endTime: 0
+  useCooldown: 0
+  cooldown: 0
+  isSuspended: 0
+  awakeTime: 0
+  targetSetting: {fileID: 11400000, guid: 19c3b06cf9ac310459a88156b0481d35, type: 2}
+  moveSpeedModifier: 0.1
+  rotateSpeedModifier: 0.1
+  moveKey: 0
+  rotateKey: 0
+  signaled: 0
 --- !u!114 &7529919648218079856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,30 +252,6 @@ MonoBehaviour:
   m_key: 0
   r_key: 0
   currentWeapon: {fileID: 0}
---- !u!114 &7681251418908050277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f608d2369255c5d469cc6a680ec7d3f3, type: 3}
-  m_Name: LobsterFramework.AbilitySystem.WeaponArt
-  m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
-  abilityPriority:
-    value:
-      executionPriority: 0
-      enqueuePriority: 0
-    useSharedValue: 0
-    sharedValue: {fileID: 0}
-  configs:
-    keys:
-    - default
-    values:
-    - {fileID: -6027256006402016586}
 --- !u!114 &8168015058177042410
 MonoBehaviour:
   m_ObjectHideFlags: 0
