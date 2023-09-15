@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LobsterFramework.EntitySystem;
+using UnityEngine.UIElements;
 
 namespace LobsterFramework.ModifiedPathfinding
 {
@@ -57,6 +58,19 @@ namespace LobsterFramework.ModifiedPathfinding
                 path.Release(this);
                 path = null;
             }
+            target = null;
+            seeker.StartPath(transform.position, position, OnPathComplete);
+            lastPathed = Time.time;
+            targetPosition = position;
+        }
+
+        private void MoveTowardsTarget() {
+            if (path != null)
+            {
+                path.Release(this);
+                path = null;
+            }
+            Vector3 position = target.transform.position;
             seeker.StartPath(transform.position, position, OnPathComplete);
             lastPathed = Time.time;
             targetPosition = position;
@@ -81,7 +95,7 @@ namespace LobsterFramework.ModifiedPathfinding
         {
             if (lastPathed + repathInterval <= Time.time && target != null)
             {
-                MoveTowards(target.transform.position);
+                MoveTowardsTarget();
                 return;
             }
             if (path == null)

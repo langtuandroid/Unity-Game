@@ -100,8 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Shoot/ShootConfig
   accessKey: -1
   endTime: 0
-  useCooldown: 0
-  cooldown: 0
+  useCooldown: 1
+  cooldown: 0.3
   isSuspended: 0
   awakeTime: 0
   targetSetting: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
@@ -491,7 +491,7 @@ MonoBehaviour:
   targetSetting: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
   healthDamage: 60
   postureDamage: 60
-  throwStrength: 80
+  throwStrength: 120
   suppressTime: 0.3
   signaled: 0
 --- !u!114 &8907012904961785543
