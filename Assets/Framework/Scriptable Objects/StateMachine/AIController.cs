@@ -19,12 +19,13 @@ namespace LobsterFramework.AI
         [SerializeField] private AbilityRunner abilityRunner;
         [SerializeField] private StateMachine stateMachine;
         [SerializeField] private AbilityRunner playerAbilityRunner;
+        [SerializeField] private float visableDegree;
         public Entity target;
         private Transform _transform;
         private Collider2D _collider;
         private AIPathFinder pathFinder;
         private GridGraph gridGraph;
-
+        private float movedistance;
         private Dictionary<Type, ControllerData> controllerData;
         private Entity entityComponent;
         private MovementController moveControl;
@@ -114,7 +115,13 @@ namespace LobsterFramework.AI
             }
             target = null;
         }
-
+        public void stopChaseTarget()
+        {
+            if (target != null)
+            {
+                pathFinder.Stop();
+            }
+        }
         public bool SearchTarget(float sightRange)
         {
             Damage info = entityComponent.LatestDamageInfo;
@@ -137,9 +144,13 @@ namespace LobsterFramework.AI
             }
             return false;
         }
-
         public bool TargetVisible(Vector3 position, float range)
         {
+            float angle = Vector3.Angle(position, target.transform.position);
+            if(angle > visableDegree || angle < -visableDegree)
+            {
+                return false;
+            }
             RaycastHit2D hit = Physics2D.Raycast(position, target.transform.position - position, range);
             if (hit.collider != null)
             {
@@ -151,7 +162,16 @@ namespace LobsterFramework.AI
             }
             return false;
         }
-
+        public void KeepDistanceFromTarget(Vector3 position, float distanceNeeded , float movedistance)
+        {
+            /*float positionX  = position.x+ UnityEngine.Random.Range(-0.3f, 0.4f);
+            float positionY = (float)(Math.Sqrt(Math.Pow(distanceNeeded, 2) -Math.Pow(positionX - target.transform.position.x, 2)) - target.transform.position.y);
+            Vector3 ans = new Vector3(positionX, positionY, 0);*/
+            Quaternion rotation = Quaternion.AngleAxis(90, Vector3.forward);
+            Vector3 vector = (position - target.transform.position).normalized* distanceNeeded;
+            Vector3 tangengvector = rotation * vector;
+            pathFinder.MoveTowards(tangengvector.normalized * movedistance + target.transform.position +vector);
+        }
         public void Wander(int wanderRadius)
         {
             GraphNode startNode = gridGraph.GetNearest(_transform.position, NNConstraint.Default).node;

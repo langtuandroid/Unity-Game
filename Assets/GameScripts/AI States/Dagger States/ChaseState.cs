@@ -12,6 +12,11 @@ namespace GameScripts.AI.DaggerEnemy
     public class ChaseState : State
     {
         [SerializeField] private float attackRange;
+        [Header("Behaviour Stats")]
+        [Range(0,1)][SerializeField] private float healthThreshold;
+        [Range(0, 1)][SerializeField] private float meleeAttackProbability;
+        [Range(0, 1)][SerializeField] private float walkInterval;
+        [SerializeField] private float keepDistance;
         private AITrackData trackData;
         private AbilityRunner abilityRunner;
         float meleeOn = 0;
@@ -21,6 +26,9 @@ namespace GameScripts.AI.DaggerEnemy
         private Transform targetTransform;
         private HeavyWeaponAttack.HeavyWeaponAttackPipe heavyAttackPipe;
         private float maxChargeTime;
+        private float maxWalkTime;
+        private float maxdirectionTime;
+        private float moveDistance;
 
         public override void InitializeFields(GameObject obj)
         {
@@ -38,6 +46,9 @@ namespace GameScripts.AI.DaggerEnemy
             chaseTarget = controller.target;
             targetTransform = controller.target.transform;
             meleeOn = 0;
+            maxWalkTime=Time.time;
+            maxdirectionTime = Time.time;
+            moveDistance = 0;
         }
 
         public override void OnExit()
@@ -54,6 +65,7 @@ namespace GameScripts.AI.DaggerEnemy
             {
                 if (controller.TargetInRange(attackRange))
                 {
+                    controller.stopChaseTarget();
                     float randomNumber = UnityEngine.Random.Range(0f, 1f);
                     Debug.Log(randomNumber);
                     if (randomNumber > 0.5)
@@ -81,20 +93,37 @@ namespace GameScripts.AI.DaggerEnemy
                 controller.target = null;
                 return typeof(WanderState);
             }
-            if (controller.TargetVisible(controller.transform.position, trackData.engageDistance.Value))
+            if (maxWalkTime < Time.time)
             {
-
-                if (controller.TargetInRange(trackData.keepDistance.Value))
+                if(maxdirectionTime < Time.time)
+                {
+                    moveDistance = UnityEngine.Random.Range(-1f, 1f);
+                    maxdirectionTime = Time.time + UnityEngine.Random.Range(0.5f, 1f);
+                }
+                controller.KeepDistanceFromTarget(transform.position, keepDistance, moveDistance);
+                maxWalkTime = Time.time + walkInterval;
+            }
+            if (controller.TargetVisible(controller.transform.position, trackData.engageDistance.Value)) //if in visible area
+            {
+                
+                /*if (controller.TargetInRange(trackData.keepDistance.Value))
                 {
                     controller.MoveInDirection(transform.position - targetTransform.position, trackData.keepDistance.Value - Vector3.Distance(transform.position, targetTransform.position));
-                }
+                }*/
                 abilityRunner.EnqueueAbility<Shoot>();
                 return null;
             }
-            controller.ChaseTarget();
+            /*controller.ChaseTarget();*/
             return null;
         }
+/*        public Type conditionCheck(float health, float posture)
+        {
+            if(posture<0.4 && health>0.5)
+            {
 
+            }
+            return null;
+        }*/
         public override Type Tick()
         {
             if (!controller.target.gameObject.activeInHierarchy || !controller.TargetInRange(trackData.chaseDistance.Value))
@@ -111,23 +140,27 @@ namespace GameScripts.AI.DaggerEnemy
                 }
                 return null;
             }
+            
             float enemyHealth = controller.target.Health / controller.target.MaxHealth;
-            if (enemyHealth > 0.4 && meleeOn!=1)
+            float enemyPosture = controller.target.Posture / controller.target.MaxPosture;
+            //conditionCheck(enemyHealth, enemyPosture);
+            if (enemyHealth > healthThreshold && meleeOn!=1)
             {
                 RangeAttack();
             }
             else
             {
                 
-                float meleeDesire = 0.3f;
-                float diffinHealth = 0.4f - enemyHealth;
-                meleeDesire += diffinHealth / 0.4f * 0.7f;
+                float meleeDesire = meleeAttackProbability;
+                float diffinHealth = healthThreshold - enemyHealth;
+                meleeDesire += diffinHealth / healthThreshold * (1f- meleeDesire);
                 float randomNumber = UnityEngine.Random.Range(0f, 1f);
                 if (randomNumber > meleeDesire && meleeOn != 1)
                 {
                     RangeAttack();
                 }
                 meleeOn = 1;
+                controller.ChaseTarget();
                 MeleeAttack();
             }
             return null;
