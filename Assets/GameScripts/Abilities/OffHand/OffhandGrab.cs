@@ -53,14 +53,14 @@ namespace GameScripts.Abilities
                 yield return null;
             }
             gc.signaled = false;
-            currentWeapon.Action();
+            currentWeapon.Enable();
 
             // Wait for signal to retract arm
             while (!gc.signaled) {
                 yield return null;
             }
             gc.signaled = false;
-            currentWeapon.Pause();
+            currentWeapon.Disable();
 
             // If no entities are grabbed, terminate ability immediately
             if (holdingEntity == null) {
@@ -126,13 +126,13 @@ namespace GameScripts.Abilities
         private void UnsubscribeWeaponEvent()
         {
             currentWeapon.onEntityHit -= OnEntityHit;
-            currentWeapon.Pause();
+            currentWeapon.Disable();
         }
 
         private void OnEntityHit(Entity entity) {
             OffhandGrabConfig config = (OffhandGrabConfig)CurrentConfig;
             if (config.targetSetting.IsTarget(entity)) {
-                currentWeapon.Pause();
+                currentWeapon.Disable();
                 oldParentTransform = entity.transform.parent;
                 holdingEntity = entity;
                 targetStateManager = entity.GetComponent<CharacterStateManager>();

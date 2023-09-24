@@ -301,9 +301,11 @@ namespace LobsterFramework.EntitySystem
 
     #region Utility Structs
     public enum DamageType { 
-        Hit,
+        WeaponHit,
+        WeaponDeflect,
         StatusEffect,
-        General
+        General,
+        None
     }
 
     [System.Serializable]
@@ -314,8 +316,18 @@ namespace LobsterFramework.EntitySystem
         public float posture;
         public Entity source;
         public DamageType type;
+         
+        public static Damage none = new() { health = 0, posture = 0, source = null, type = DamageType.None };
 
-        public static Damage none = new() { health = 0, posture = 0, source = null, type = DamageType.General };
+        public override bool Equals(object obj)
+        {
+            return obj is Damage && (Damage)obj == this;
+        } 
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
 
         public static Damage operator +(Damage a, Damage b)
         {
@@ -330,8 +342,15 @@ namespace LobsterFramework.EntitySystem
         public static Damage operator *(Damage a, float b) {
             return new() { posture = a.posture * b, health = a.health * b, source = a.source };
         }
-    };
 
+        public static bool operator ==(Damage a, Damage b) { 
+            return a.health == b.health && a.posture == b.posture && a.source == b.source && a.type == b.type;
+        }
+        public static bool operator !=(Damage a, Damage b)
+        {
+            return a.health != b.health || a.posture != b.posture || a.source != b.source || a.type != b.type;
+        }
+    }
     public struct DamageBuffer {
         private FloatSum healthDamage;
         private FloatSum postureDamage;

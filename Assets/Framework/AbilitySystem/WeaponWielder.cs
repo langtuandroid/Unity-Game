@@ -182,7 +182,7 @@ namespace LobsterFramework.AbilitySystem
             {
                 if (Mainhand2 != null)
                 {
-                    Mainhand.Pause();
+                    Mainhand.Disable();
                     (Mainhand2, Mainhand) = (Mainhand, Mainhand2);
                     objLookup[Mainhand2].SetActive(false);
                     objLookup[Mainhand].SetActive(true);
@@ -200,7 +200,7 @@ namespace LobsterFramework.AbilitySystem
                     objLookup[Offhand].SetActive(false);
                 }
                 else {
-                    Offhand.gameObject.SetActive(true);
+                    objLookup[Offhand].SetActive(true);
                 }
             }
         }
@@ -211,7 +211,7 @@ namespace LobsterFramework.AbilitySystem
             {
                 if (Offhand2 != null)
                 {
-                    Offhand.Pause();
+                    Offhand.Disable();
                     Weapon w = Offhand;
                     objLookup[Offhand].SetActive(false);
                     Offhand = Offhand2;

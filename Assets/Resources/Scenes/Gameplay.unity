@@ -23465,6 +23465,9 @@ MonoBehaviour:
   hdWeight: 0.3
   pdSharpness: 0.3
   pdWeight: 0.7
+  postureDeflect: 0.3
+  pDamageOnDeflect: 0.5
+  knockbackAdjustment: 2
 --- !u!1 &274171151
 GameObject:
   m_ObjectHideFlags: 0
@@ -23704,15 +23707,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1648145732692006019, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1648145732692006019, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
       propertyPath: m_Name
       value: daggerman
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490316291772389325, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2878624368540976578, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
       propertyPath: visableDegree
@@ -23772,11 +23779,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24008,7 +24015,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.06
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: f938ba77a970ba388b0ce7000d567ed000000000619269ea6122b33e7f0dfa1f6b0135b8f9439832
@@ -24870,8 +24877,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.5020142, y: -9.4}
-  m_SizeDelta: {x: -1050.4, y: -687.0649}
+  m_AnchoredPosition: {x: -2.5020142, y: -86.2}
+  m_SizeDelta: {x: -1050.4, y: -813.6727}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &804018719
 MonoBehaviour:
@@ -30413,7 +30420,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571774558004744452, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
+      propertyPath: timeToRecover
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2878624368540976578, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: playerAbilityRunner
@@ -30465,19 +30476,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8695003769663209437, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8695003769663209437, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30519,8 +30530,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.5020142, y: 81.3}
-  m_SizeDelta: {x: -1050.4, y: -696.28}
+  m_AnchoredPosition: {x: -2.5020142, y: 42}
+  m_SizeDelta: {x: -1050.4, y: -810.3977}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2026231383
 MonoBehaviour:

@@ -199,7 +199,7 @@ namespace LobsterFramework.EntitySystem
                 default: break;
             }
         }
-        private void PlayPostureBrokenClip(float fadeTime = 0.25f)
+        private void PlayPostureBrokenClip(float fadeTime = 0.15f)
         {
             foreach (AnimancerState state in animancer.States)
             {

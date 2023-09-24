@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.Utility;
-using static Codice.Client.Common.Connection.AskCredentialsToUser;
+using LobsterFramework.Pool;
 using System;
+using static UnityEngine.GraphicsBuffer;
+using static Codice.Client.Common.Connection.AskCredentialsToUser;
 
 namespace LobsterFramework.AbilitySystem
 {
@@ -58,13 +60,11 @@ namespace LobsterFramework.AbilitySystem
         private WeaponData data;
         private TypeWeaponStatDictionary weaponStats;
 
-        private float momentumMultiplier;
-        private float oppressingForce;
-
         internal WeaponWielder weaponWielder;
 
         public UnityAction<Entity> onEntityHit;
-        public UnityAction<Weapon, Vector3> onWeaponHit;
+        public UnityAction<Weapon> onWeaponHit;
+        public UnityAction onWeaponDeflect;
 
         private Collider2D thisCollider;
         new private Transform transform;
@@ -83,10 +83,10 @@ namespace LobsterFramework.AbilitySystem
 
         public string ClashSpark { get { return clashSpark.Value; } }
 
+        public Damage OnHitDamage { get; private set; }
+
         public Transform Head { get { return head; } }
         public Transform Tail { get { return tail; } }  
-
-        public float Momentum { get { return momentumMultiplier * weight; } }
 
         #region Guard
         public float HealthDamageReduction { get { return healthDamageReduction; } }
@@ -117,8 +117,6 @@ namespace LobsterFramework.AbilitySystem
             thisCollider = GetComponent<Collider2D>();
             thisCollider.enabled = false;
             transform = GetComponent<Transform>();
-            momentumMultiplier = 1;
-            oppressingForce = 0;
             state = WeaponState.Idle;
             newHit = new();
             hitted = new();
@@ -130,22 +128,36 @@ namespace LobsterFramework.AbilitySystem
         }
 
         #region WeaponAction
+        public void SetOnHitDamage(float health, float posture) {
+            OnHitDamage = new Damage { health=health, posture=posture, source=Entity, type=DamageType.WeaponHit};
+        }
+        public void SetOnHitDamage(Damage damage)
+        {
+            OnHitDamage = new Damage { health = damage.health, posture = damage.posture, source = Entity, type = DamageType.WeaponHit };
+        }
+
         /// <summary>
         /// Enable the collider of the weapon and set its weapon state. Momentum will start to accumulate after this. Can only be used after calling On().
         /// </summary>
         /// <param name="state">The weapon state to set the weapon to be</param>
-        public void Action(WeaponState state = WeaponState.Attacking) {
+        public void Enable(WeaponState state = WeaponState.Attacking) {
             thisCollider.enabled = true;
             this.state = state;
         }
         /// <summary>
         /// Disable the weapon collider and reset momentum
         /// </summary>
+        public void Disable()
+        {
+            thisCollider.enabled = false;
+            state = WeaponState.Idle;
+            hitted.Clear();
+        }
+
         public void Pause()
         {
             thisCollider.enabled = false;
-            momentumMultiplier = 1;
-            state = WeaponState.Idle;
+            state = WeaponState.Occupied;
             hitted.Clear();
         }
         #endregion
@@ -190,9 +202,12 @@ namespace LobsterFramework.AbilitySystem
 
         private void OnTriggerEnter2D(Collider2D collider)
         {
-            if (state == WeaponState.Guarding) {
+            // Do nothing if weapon is not attacking
+            if (state != WeaponState.Attacking) {
                 return;
             }
+
+            // Add entity to the list for processing in Update()
             Entity entity = collider.GetComponent<Entity>();
             if (entity != null && !hitted.Contains(entity)) {
                 newHit.Add(entity);
@@ -200,30 +215,68 @@ namespace LobsterFramework.AbilitySystem
                 return;
             }
 
+            // Attack guarded entity
             Weapon weapon = collider.GetComponent<Weapon>();
-            
-            if(weapon != null && weapon.state == WeaponState.Guarding && onWeaponHit != null && (!hitted.Contains(weapon.Entity) || newHit.Contains(weapon.Entity)))
+            if(weapon != null && (weapon.state == WeaponState.Guarding || weapon.state == WeaponState.Deflecting) && onWeaponHit != null && (!hitted.Contains(weapon.Entity) || newHit.Contains(weapon.Entity)))
             {
-                Vector2 point = Physics2D.ClosestPoint(transform.position, collider);
-                onWeaponHit.Invoke(weapon, point);
+                onWeaponHit.Invoke(weapon);
                 if (newHit.Contains(weapon.Entity))
                 {
                     newHit.Remove(weapon.Entity);
                 }
                 hitted.Add(weapon.Entity);
+                // OnHitDamage will be set to none if the entity is not a target
+                if (OnHitDamage != Damage.none) {
+                    Damage damage = WeaponUtility.ComputeGuardDamage(weapon, OnHitDamage);
+                    if (weapon.state == WeaponState.Deflecting)
+                    {
+                        Damage deflectDamage = new Damage { health = 0, posture = damage.posture * WeaponUtility.PostureDeflect, source = weapon.Entity, type=DamageType.WeaponDeflect };
+                        Entity.Damage(deflectDamage);
+                        if (weapon.onWeaponDeflect != null) {
+                            weapon.onWeaponDeflect.Invoke();
+                        }
+
+                        damage.health = 0;
+                        damage.posture *= WeaponUtility.PDamageOnDeflect;
+                        weapon.Entity.Damage(damage);
+                    }
+                    else
+                    {
+                        weapon.Entity.Damage(damage);
+                    }
+
+                    // Apply knockback to entity
+                    MovementController moveControl = weapon.Entity.GetComponent<MovementController>();
+                    if (moveControl != null)
+                    {
+                        moveControl.ApplyForce(weapon.Entity.transform.position - Entity.transform.position, damage.posture * WeaponUtility.KnockbackAdjustment);
+                    }
+
+                    // Spawn firespark 
+                    if (weapon.ClashSpark != null)
+                    {
+                        Vector2 point = Physics2D.ClosestPoint(transform.position, collider);
+                        ObjectPool.GetObject(weapon.ClashSpark, point, Quaternion.identity);
+                    }
+                }
             }
         }
 
         private void Update()
         {
-            if(state == WeaponState.Attacking) {
-                momentumMultiplier += (attackSpeed / Time.deltaTime);
-            }
             if(onEntityHit != null)
             {
                 foreach (Entity entity in newHit)
                 {
                     onEntityHit.Invoke(entity);
+                    if (OnHitDamage != Damage.none) { 
+                        entity.Damage(OnHitDamage);
+                        MovementController moveControl = entity.GetComponent<MovementController>();
+                        if (moveControl != null)
+                        {
+                            moveControl.ApplyForce(entity.transform.position - Entity.transform.position, OnHitDamage.posture * WeaponUtility.KnockbackAdjustment);
+                        }
+                    }
                 }
             }
             
@@ -265,6 +318,8 @@ namespace LobsterFramework.AbilitySystem
     public enum WeaponState { 
         Attacking,
         Guarding,
+        Deflecting,
+        Occupied,
         Idle
     }
     #endregion

@@ -49,7 +49,10 @@ namespace LobsterFramework.EntitySystem
             }
             regenTime = Time.time + timeToRegenerate;
             poise -= damage.health;
-            if (poise <= 0 && damage.health > 0) {
+            if (damage.type == DamageType.WeaponDeflect) {
+                poise -= damage.posture;
+            }
+            if (poise < 0) {
                 PoiseBreak();
             }
         }

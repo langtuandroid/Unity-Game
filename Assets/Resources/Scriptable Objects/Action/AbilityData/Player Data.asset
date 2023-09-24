@@ -18,10 +18,13 @@ MonoBehaviour:
   cooldown: 0
   isSuspended: 0
   awakeTime: 0
+  delfectTime: 0.5
   animationSignaled: 0
   m_key: 0
   r_key: 0
   currentWeapon: {fileID: 0}
+  deflected: 0
+  deflectOver: 0
 --- !u!114 &-8844175516141804856
 MonoBehaviour:
   m_ObjectHideFlags: 0

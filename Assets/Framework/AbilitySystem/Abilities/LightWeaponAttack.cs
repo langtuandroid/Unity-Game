@@ -63,14 +63,14 @@ namespace LobsterFramework.AbilitySystem
             }
             c.signaled = false;
 
-            c.currentWeapon.Action();
+            c.currentWeapon.Enable();
             // Wait for signal of recovery
             while (!c.signaled)
             {
                 yield return null;
             }
             c.signaled = false;
-            c.currentWeapon.Pause();
+            c.currentWeapon.Disable();
 
             moveControl.UnmodifyMoveSpeed(c.m_key);
             moveControl.UnmodifyRotationSpeed(c.r_key);
@@ -87,7 +87,7 @@ namespace LobsterFramework.AbilitySystem
         protected override void OnCoroutineFinish(){
             LightWeaponAttackConfig l = (LightWeaponAttackConfig)CurrentConfig;
             UnSubscribeWeaponEvent(l.currentWeapon);
-            l.currentWeapon.Pause();
+            l.currentWeapon.Disable();
             if (l.m_key != -1)
             {
                 moveControl.UnmodifyMoveSpeed(l.m_key);
@@ -125,22 +125,27 @@ namespace LobsterFramework.AbilitySystem
 
         private void OnEntityHit(Entity entity)
         {
+            LightWeaponAttackConfig config = (LightWeaponAttackConfig)CurrentConfig;
             if (targets.IsTarget(entity))
             {
-                WeaponUtility.WeaponDamage(WeaponWielder.Mainhand, entity, damageModifier);
+                config.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponWielder.Mainhand, damageModifier));
+            }
+            else {
+                config.currentWeapon.SetOnHitDamage(Damage.none);
             }
         }
 
-        private void OnWeaponHit(Weapon weapon, Vector3 contactPoint)
+        private void OnWeaponHit(Weapon weapon)
         {
-            if (weapon.ClashSpark != null)
+            LightWeaponAttackConfig config = (LightWeaponAttackConfig)CurrentConfig;
+            
+            if (targets.IsTarget(weapon.Entity))
             {
-                ObjectPool.GetObject(weapon.ClashSpark, contactPoint, Quaternion.identity);
+                config.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponWielder.Mainhand, damageModifier));
             }
-            Entity entity = weapon.Entity;
-            if (targets.IsTarget(entity))
+            else
             {
-                WeaponUtility.GuardDamage(WeaponWielder.Mainhand, weapon, damageModifier);
+                config.currentWeapon.SetOnHitDamage(Damage.none);
             }
         }
     }

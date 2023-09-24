@@ -4,6 +4,8 @@ using LobsterFramework.Pool;
 using System.Collections.Generic;
 using Animancer;
 using static UnityEngine.EventSystems.EventTrigger;
+using static LobsterFramework.AbilitySystem.LightWeaponAttack;
+using UnityEditor.Playables;
 
 namespace LobsterFramework.AbilitySystem
 {
@@ -32,7 +34,7 @@ namespace LobsterFramework.AbilitySystem
         {
             HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)CurrentConfig;
             h.currentWeapon = WeaponWielder.Mainhand;
-            h.SubscribeWeaponEvent();
+            SubscribeWeaponEvent();
             h.animationSignaled = false;
             h.inputSignaled = false;
             h.chargeTimer = 0;
@@ -61,7 +63,7 @@ namespace LobsterFramework.AbilitySystem
 
             c.inputSignaled = false;
             c.animationState.IsPlaying = true;
-            c.currentWeapon.Action();
+            c.currentWeapon.Enable();
 
             // Wait for signal of recovery
             while (!c.animationSignaled)
@@ -69,7 +71,7 @@ namespace LobsterFramework.AbilitySystem
                 yield return null;
             }
             c.animationSignaled = false;
-            c.currentWeapon.Pause();
+            c.currentWeapon.Disable();
 
             // Wait for animation to finish
             while (true)
@@ -81,9 +83,9 @@ namespace LobsterFramework.AbilitySystem
         protected override void OnCoroutineFinish()
         {
             HeavyWeaponAttackConfig h = (HeavyWeaponAttackConfig)CurrentConfig;
-            h.UnSubscribeWeaponEvent();
+            UnSubscribeWeaponEvent();
             h.animationSignaled = false;
-            h.currentWeapon.Pause();
+            h.currentWeapon.Disable();
             moveControl.UnmodifyMoveSpeed(h.m_key);
             moveControl.UnmodifyRotationSpeed(h.r_key);
         }
@@ -108,18 +110,58 @@ namespace LobsterFramework.AbilitySystem
             }
         }
 
-        private void DealGuardDamage(Weapon guardWeapon, float modifier) {
-            Entity entity = guardWeapon.Entity;
-            if (targets.IsTarget(entity))
-            {
-                WeaponUtility.GuardDamage(WeaponWielder.Mainhand, guardWeapon, damageModifier, modifier);
-            }
-        }
-
         protected override void OnCoroutineReset()
         {
             throw new System.NotImplementedException();
         }
+
+        public void OnEntityHit(Entity entity)
+        {
+            HeavyWeaponAttackConfig config = (HeavyWeaponAttackConfig)CurrentConfig;
+            if (targets.IsTarget(entity))
+            {
+                if (config.chargeTimer > config.chargeMaxTime)
+                {
+                    config.chargeTimer = config.chargeMaxTime;
+                }
+                config.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponWielder.Mainhand, damageModifier));
+            }
+            else {
+                config.currentWeapon.SetOnHitDamage(Damage.none);
+            }
+        }
+
+        public void OnWeaponHit(Weapon weapon)
+        {
+            HeavyWeaponAttackConfig config = (HeavyWeaponAttackConfig)CurrentConfig;
+            if (targets.IsTarget(weapon.Entity))
+            {
+                if (config.chargeTimer > config.chargeMaxTime)
+                {
+                    config.chargeTimer = config.chargeMaxTime;
+                }
+                config.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(WeaponWielder.Mainhand, damageModifier));
+            }
+            else
+            {
+                config.currentWeapon.SetOnHitDamage(Damage.none);
+            }
+        }
+
+        public void SubscribeWeaponEvent()
+        {
+            HeavyWeaponAttackConfig config = (HeavyWeaponAttackConfig)CurrentConfig;
+            config.currentWeapon.onEntityHit += OnEntityHit;
+            config.currentWeapon.onWeaponHit += OnWeaponHit;
+        }
+
+        public void UnSubscribeWeaponEvent()
+        {
+            HeavyWeaponAttackConfig config = (HeavyWeaponAttackConfig)CurrentConfig;
+            config.currentWeapon.onEntityHit -= OnEntityHit;
+            config.currentWeapon.onWeaponHit -= OnWeaponHit;
+        }
+
         public class HeavyWeaponAttackConfig : AbilityCoroutineConfig
         {
 
@@ -137,41 +179,6 @@ namespace LobsterFramework.AbilitySystem
 
             [HideInInspector] public float chargeTimer;
             [HideInInspector] public HeavyWeaponAttack ability;
-
-            public void OnEntityHit(Entity entity)
-            {
-                if (chargeTimer > chargeMaxTime)
-                {
-                    chargeTimer = chargeMaxTime;
-                }
-                ability.DealDamage(entity, baseDamageModifier + maxChargeDamageIncrease * (chargeTimer / chargeMaxTime));
-            }
-
-            public void OnWeaponHit(Weapon weapon, Vector3 contactPoint)
-            {
-                if (chargeTimer > chargeMaxTime)
-                {
-                    chargeTimer = chargeMaxTime;
-                }
-                if (weapon.ClashSpark != null)
-                {
-                    Pool.ObjectPool.GetObject(weapon.ClashSpark, contactPoint, Quaternion.identity);
-                }
-
-                ability.DealGuardDamage(weapon, baseDamageModifier + maxChargeDamageIncrease * (chargeTimer / chargeMaxTime));
-            }
-
-            public void SubscribeWeaponEvent()
-            {
-                currentWeapon.onEntityHit += OnEntityHit;
-                currentWeapon.onWeaponHit += OnWeaponHit;
-            }
-
-            public void UnSubscribeWeaponEvent()
-            {
-                currentWeapon.onEntityHit -= OnEntityHit;
-                currentWeapon.onWeaponHit -= OnWeaponHit;
-            }
         }
         public class HeavyWeaponAttackPipe : AbilityPipe
         {

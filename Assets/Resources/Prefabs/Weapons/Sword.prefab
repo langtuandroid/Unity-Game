@@ -202,11 +202,13 @@ MonoBehaviour:
   weight: 30
   sharpness: 30
   attackSpeed: 1.5
-  defenseSpeed: 4
+  defenseSpeed: 2
   doubleHanded: 0
   clashSpark: {fileID: 11400000, guid: b93850f361ea97e40a35c219b934d9fb, type: 2}
+  head: {fileID: 0}
+  tail: {fileID: 0}
   healthDamageReduction: 1
-  postureDamageReduction: 0.8
+  postureDamageReduction: 0.5
   gRotationSpeedModifier: 0.5
   gMoveSpeedModifier: 0.5
   lRotationSpeedModifier: 0.7

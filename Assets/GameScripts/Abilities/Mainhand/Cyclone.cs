@@ -56,16 +56,16 @@ namespace GameScripts.Abilities
             CycloneConfig cycloneConfig = (CycloneConfig)CurrentConfig;
             cycloneConfig.stopped = false;
             cycloneConfig.repeatAttack = false;
-            cycloneConfig.currentWeapon.Action();
+            cycloneConfig.currentWeapon.Enable();
             while (!cycloneConfig.stopped) {
                 if (cycloneConfig.repeatAttack) {
                     cycloneConfig.currentWeapon.Pause();
-                    cycloneConfig.currentWeapon.Action();
+                    cycloneConfig.currentWeapon.Enable();
                     cycloneConfig.repeatAttack = false;
                 }
                 yield return null;
             }
-            cycloneConfig.currentWeapon.Pause();
+            cycloneConfig.currentWeapon.Disable();
             while (true) {
                 yield return null;
             }
@@ -75,7 +75,7 @@ namespace GameScripts.Abilities
         {
             CycloneConfig cycloneConfig = (CycloneConfig)CurrentConfig;
             UnSubscribeWeaponEvent(cycloneConfig.currentWeapon);
-            cycloneConfig.currentWeapon.Pause();
+            cycloneConfig.currentWeapon.Disable();
             moveControl.UnmodifyMoveSpeed(cycloneConfig.m_key);
             moveControl.UnmodifyRotationSpeed(cycloneConfig.r_key);
         }
@@ -110,22 +110,27 @@ namespace GameScripts.Abilities
 
         private void OnEntityHit(Entity entity)
         {
+            CycloneConfig config = (CycloneConfig)CurrentConfig;
             if (targets.IsTarget(entity))
             {
-                WeaponUtility.WeaponDamage(WeaponWielder.Mainhand, entity);
+                config.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(config.currentWeapon));
+            }
+            else {
+                config.currentWeapon.SetOnHitDamage(Damage.none);
             }
         }
 
-        private void OnWeaponHit(Weapon weapon, Vector3 contactPoint)
+        private void OnWeaponHit(Weapon weapon)
         {
-            if (weapon.ClashSpark != null)
-            {
-                ObjectPool.GetObject(weapon.ClashSpark, contactPoint, Quaternion.identity);
-            }
             Entity entity = weapon.Entity;
+            CycloneConfig config = (CycloneConfig)CurrentConfig;
             if (targets.IsTarget(entity))
             {
-                WeaponUtility.GuardDamage(WeaponWielder.Mainhand, weapon);
+                config.currentWeapon.SetOnHitDamage(WeaponUtility.ComputeDamage(config.currentWeapon));
+            }
+            else
+            {
+                config.currentWeapon.SetOnHitDamage(Damage.none);
             }
         }
     }
