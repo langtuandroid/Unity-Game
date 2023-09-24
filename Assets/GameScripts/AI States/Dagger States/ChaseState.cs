@@ -4,6 +4,7 @@ using LobsterFramework.AbilitySystem;
 using LobsterFramework.EntitySystem;
 using LobsterFramework.AI;
 using GameScripts.Abilities;
+using UnityEngine.InputSystem;
 
 namespace GameScripts.AI.DaggerEnemy
 {
@@ -28,6 +29,7 @@ namespace GameScripts.AI.DaggerEnemy
         private float maxChargeTime;
         private float maxWalkTime;
         private float maxdirectionTime;
+        private float meleeHoldTime;
         private float moveDistance;
 
         public override void InitializeFields(GameObject obj)
@@ -49,6 +51,7 @@ namespace GameScripts.AI.DaggerEnemy
             maxWalkTime=Time.time;
             maxdirectionTime = Time.time;
             moveDistance = 0;
+            meleeHoldTime = 0;
         }
 
         public override void OnExit()
@@ -86,12 +89,16 @@ namespace GameScripts.AI.DaggerEnemy
             return typeof(WanderState);
         }
 
-        public Type RangeAttack()
+        public Type RangeAttack(float keepDistance)
         {
             if (!controller.target.gameObject.activeInHierarchy || !controller.TargetInRange(trackData.chaseDistance.Value))
             {
                 controller.target = null;
                 return typeof(WanderState);
+            }
+            if (abilityRunner.IsAbilityReady<Dash>())
+            {
+                Dash(false);
             }
             if (maxWalkTime < Time.time)
             {
@@ -105,25 +112,27 @@ namespace GameScripts.AI.DaggerEnemy
             }
             if (controller.TargetVisible(controller.transform.position, trackData.engageDistance.Value)) //if in visible area
             {
-                
-                /*if (controller.TargetInRange(trackData.keepDistance.Value))
-                {
-                    controller.MoveInDirection(transform.position - targetTransform.position, trackData.keepDistance.Value - Vector3.Distance(transform.position, targetTransform.position));
-                }*/
                 abilityRunner.EnqueueAbility<Shoot>();
                 return null;
             }
-            /*controller.ChaseTarget();*/
             return null;
         }
-/*        public Type conditionCheck(float health, float posture)
+        public void Dash(bool foward)
         {
-            if(posture<0.4 && health>0.5)
+            Ability.AbilityPipe raw = abilityRunner.GetAbilityPipe<Dash>();
+            Dash.DashPipe pipe = (Dash.DashPipe)raw;
+            Vector3 x = targetTransform.position - transform.position;
+            if (foward)
             {
-
+               
+                pipe.DashDirection = new Vector2(x.x, x.y);
             }
-            return null;
-        }*/
+            else {
+                pipe.DashDirection = new Vector2(-x.x, -x.y);
+            }
+                
+                abilityRunner.EnqueueAbility<Dash>();
+        }
         public override Type Tick()
         {
             if (!controller.target.gameObject.activeInHierarchy || !controller.TargetInRange(trackData.chaseDistance.Value))
@@ -132,7 +141,7 @@ namespace GameScripts.AI.DaggerEnemy
                 return typeof(WanderState);
             }
             controller.LookTowards();
-            if (!abilityRunner.IsAbilityReady<HeavyWeaponAttack>()|| !abilityRunner.IsAbilityReady<LightWeaponAttack>())
+                if (!abilityRunner.IsAbilityReady<HeavyWeaponAttack>()|| !abilityRunner.IsAbilityReady<LightWeaponAttack>())
             {
                 if(!abilityRunner.IsAbilityReady<HeavyWeaponAttack>() && maxChargeTime< Time.time )
                 {
@@ -144,24 +153,38 @@ namespace GameScripts.AI.DaggerEnemy
             float enemyHealth = controller.target.Health / controller.target.MaxHealth;
             float enemyPosture = controller.target.Posture / controller.target.MaxPosture;
             //conditionCheck(enemyHealth, enemyPosture);
-            if (enemyHealth > healthThreshold && meleeOn!=1)
+            if (enemyHealth > healthThreshold)
             {
-                RangeAttack();
+                RangeAttack(keepDistance);
             }
             else
             {
-                
-                float meleeDesire = meleeAttackProbability;
+                /*float meleeDesire = meleeAttackProbability;
                 float diffinHealth = healthThreshold - enemyHealth;
-                meleeDesire += diffinHealth / healthThreshold * (1f- meleeDesire);
+                meleeDesire += diffinHealth / healthThreshold * (1f- meleeDesire);*/
                 float randomNumber = UnityEngine.Random.Range(0f, 1f);
-                if (randomNumber > meleeDesire && meleeOn != 1)
+                
+                if (meleeHoldTime < Time.time)
                 {
-                    RangeAttack();
+                    meleeHoldTime = Time.time;
+                    meleeHoldTime += 0.5f;
+                    if (randomNumber < meleeAttackProbability)
+                    {
+                        /*RangeAttack();*/
+                        RangeAttack(2);
+                    }
+                    /*meleeOn = 1;*/
+                    else
+                    {
+                        if (abilityRunner.IsAbilityReady<Dash>())
+                        {
+                            Dash(true);
+                        }
+                        controller.ChaseTarget();
+                        MeleeAttack();
+                    }
+                    
                 }
-                meleeOn = 1;
-                controller.ChaseTarget();
-                MeleeAttack();
             }
             return null;
         }

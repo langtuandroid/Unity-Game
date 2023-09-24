@@ -12,6 +12,16 @@ namespace GameScripts.AI.StickEnemy
     [CreateAssetMenu(menuName = "StateMachine/States/AI/StickEnemy/ChaseState")]
     public class ChaseState : State
     {
+        [Header("Behaviour Stats")]
+        [Range(0, 1)][SerializeField] private float healthThreshold;
+        [Range(0, 1)][SerializeField] private float meleeAttackProbability;
+        [Range(0, 1)][SerializeField] private float walkInterval;
+        [Range(0, 1)][SerializeField] private float backKeepDistance;
+/*        %postureThreshold - 30
+%backKeepDistance - 3
+%lightAttackProb - 60%
+%guardProb - 50%
+%cycloneProb - 60%*/
         [SerializeField] private float attackRange;
         private AITrackData trackData;
         private AbilityRunner abilityRunner;
@@ -119,7 +129,7 @@ namespace GameScripts.AI.StickEnemy
         public Type GuardCheck()
         {
             isNextMoveStart = false;
-            if (playerAbilityRunner.IsAbilityRunning<HeavyWeaponAttack>() || playerAbilityRunner.IsAbilityRunning<LightWeaponAttack>()|| playerAbilityRunner.IsAbilityRunning<WeaponArt>())//if player is attacking
+            if (playerAbilityRunner.IsAbilityRunning<HeavyWeaponAttack>() || playerAbilityRunner.IsAbilityRunning<LightWeaponAttack>()|| playerAbilityRunner.IsAbilityRunning<WeaponArt>()|| playerAbilityRunner.IsAbilityRunning<Shoot>())//if player is attacking
             {
                 if (!abilityRunner.IsAbilityRunning<HeavyWeaponAttack>() && !abilityRunner.IsAbilityRunning<LightWeaponAttack>()&& !abilityRunner.IsAbilityRunning<WeaponArt>())//ai is not attacking player
                 {
@@ -159,10 +169,6 @@ namespace GameScripts.AI.StickEnemy
             {
                 abilityRunner.Signal<Guard>();
             }
-/*            if(abilityRunner.IsAbilityRunning<WeaponArt>())
-            {
-                return typeof(ChaseState);
-            }*/
             if (controller.TargetInRange(attackRange) && isNextMoveStart==true)
             {
                 GuardCheck();
