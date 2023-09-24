@@ -232,7 +232,7 @@ namespace GameScripts.InputControl
             {
                 Ability.AbilityPipe raw = abilityRunner.GetAbilityPipe<Dash>();
                 Dash.DashPipe pipe = (Dash.DashPipe)raw;
-                pipe.DashDirection = move.action.ReadValue<Vector2>();
+                pipe.DashDirection = abilityRunner.TopLevelTransform.rotation * move.action.ReadValue<Vector2>();
                 abilityRunner.EnqueueAbility<Dash>();
             }   
         }
