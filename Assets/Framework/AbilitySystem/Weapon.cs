@@ -227,10 +227,11 @@ namespace LobsterFramework.AbilitySystem
                 hitted.Add(weapon.Entity);
                 // OnHitDamage will be set to none if the entity is not a target
                 if (OnHitDamage != Damage.none) {
+                    Damage original = OnHitDamage;
                     Damage damage = WeaponUtility.ComputeGuardDamage(weapon, OnHitDamage);
                     if (weapon.state == WeaponState.Deflecting)
                     {
-                        Damage deflectDamage = new Damage { health = 0, posture = damage.posture * WeaponUtility.PostureDeflect, source = weapon.Entity, type=DamageType.WeaponDeflect };
+                        Damage deflectDamage = new Damage { health = 0, posture = original.posture * WeaponUtility.PostureDeflect, source = weapon.Entity, type=DamageType.WeaponDeflect };
                         Entity.Damage(deflectDamage);
                         if (weapon.onWeaponDeflect != null) {
                             weapon.onWeaponDeflect.Invoke();
