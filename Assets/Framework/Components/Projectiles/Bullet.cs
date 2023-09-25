@@ -9,11 +9,11 @@ using LobsterFramework.Utility;
 namespace LobsterFramework.Pool
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    [RequireComponent(typeof(Collider2D))]
     public class Bullet : MonoBehaviour
     {
         private float power;
         private float weight;
+        [SerializeField] private LayerMask collisionLayer;
         [SerializeField] private int pierceCount;
         [SerializeField] private float timeActive;
         [SerializeField] private VarString impact;
@@ -23,9 +23,18 @@ namespace LobsterFramework.Pool
         private HashSet<Entity> hitted = new();
         private Entity attacker;
 
+        private ContinousCollision2D continousTrigger;
+        private SimpleCollision2D currentCollision;
+
+        private void Awake()
+        {
+            continousTrigger = new(transform, collisionLayer);
+        }
+
         private void OnEnable()
         {
             hitted.Clear();
+            continousTrigger.Reset();
         }
 
         public void Initialize(TargetSetting target, float duration, Entity attacker, float attackPower, int piercePower, float weight)
@@ -38,6 +47,14 @@ namespace LobsterFramework.Pool
             this.weight = weight;
         }
 
+        private void FixedUpdate()
+        {
+            currentCollision = continousTrigger.HasCollision();
+            if (currentCollision.collider != null) {
+                OnCollision(currentCollision.collider);
+            }
+        }
+
         private void Update()
         {
             if (Time.time >= expireTime)
@@ -46,7 +63,7 @@ namespace LobsterFramework.Pool
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void OnCollision(Collider2D collision)
         {
             Entity entity = collision.GetComponent<Entity>();
             Weapon weapon = collision.GetComponent<Weapon>();
@@ -74,10 +91,19 @@ namespace LobsterFramework.Pool
         }
 
         private void Explode() {
-            gameObject.SetActive(false);
-            if (impact != null) {
+            if (currentCollision.collider != null) {
+                transform.position = currentCollision.contactPoint;
+            }
+            if (impact != null)
+            {
                 ObjectPool.GetObject(impact.Value, transform.position, Quaternion.identity);
             }
+            gameObject.SetActive(false);
+        }
+
+        private void OnDrawGizmos()
+        {
+            continousTrigger.Draw();
         }
     }
 }
