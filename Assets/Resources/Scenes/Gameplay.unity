@@ -23332,10 +23332,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1478059220}
     m_Modifications:
-    - target: {fileID: 770555523144453587, guid: 4816e38646558964d841661aa9ae451c, type: 3}
-      propertyPath: m_Mass
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 4816e38646558964d841661aa9ae451c, type: 3}
       propertyPath: m_Name
       value: player
@@ -23348,14 +23344,6 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 974773030}
-    - target: {fileID: 4981024116806816665, guid: 4816e38646558964d841661aa9ae451c, type: 3}
-      propertyPath: maxSpeed.value
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353377617828249592, guid: 4816e38646558964d841661aa9ae451c, type: 3}
-      propertyPath: maxHealth.value
-      value: 150
-      objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: 4816e38646558964d841661aa9ae451c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.83
@@ -23499,6 +23487,7 @@ Transform:
   m_Children:
   - {fileID: 1144245424}
   - {fileID: 256727635}
+  - {fileID: 343052805}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &340635121
@@ -23591,6 +23580,54 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &343052804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 343052805}
+  - component: {fileID: 343052806}
+  m_Layer: 0
+  m_Name: AILayerMask
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &343052805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343052804}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 274171152}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &343052806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343052804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283e66ca50122f043bebfb22f6424cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visibilityMask:
+    serializedVersion: 2
+    m_Bits: 1088
+  noCollisionLayer: 31
 --- !u!1 &358342833
 GameObject:
   m_ObjectHideFlags: 0
@@ -23717,26 +23754,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: daggerman
       objectReference: {fileID: 0}
-    - target: {fileID: 2490316291772389325, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2878624368540976578, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
-      propertyPath: visableDegree
-      value: 45
-      objectReference: {fileID: 0}
     - target: {fileID: 2878624368540976578, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
       propertyPath: playerAbilityRunner
       value: 
       objectReference: {fileID: 255199789}
-    - target: {fileID: 4981024116806816665, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
-      propertyPath: maxSpeed.value
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 4981024116806816665, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
-      propertyPath: rotateSpeed.value
-      value: 400
-      objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.83
@@ -30410,30 +30431,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1478059220}
     m_Modifications:
-    - target: {fileID: 770555523144453587, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
-      propertyPath: m_Mass
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_Name
       value: swordsman
-      objectReference: {fileID: 0}
-    - target: {fileID: 2490316291772389325, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2571774558004744452, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
-      propertyPath: timeToRecover
-      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2878624368540976578, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: playerAbilityRunner
       value: 
       objectReference: {fileID: 255199789}
-    - target: {fileID: 4981024116806816665, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
-      propertyPath: maxSpeed.value
-      value: 320
-      objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.06

@@ -131,7 +131,7 @@ namespace LobsterFramework.AI
                 Debug.Log("Received attack from target");
                 return true;
             }
-            RaycastHit2D hit = Physics2D.Raycast(_transform.position, _transform.up, sightRange);
+            RaycastHit2D hit = AIUtility.Raycast2D(gameObject,  _transform.position, _transform.up, sightRange, AIUtility.VisibilityMask);
             if (hit.collider != null)
             {
                 Entity t = GameUtility.FindEntity(hit.collider.gameObject);
@@ -151,10 +151,10 @@ namespace LobsterFramework.AI
             {
                 return false;
             }
-            RaycastHit2D hit = Physics2D.Raycast(position, target.transform.position - position, range);
+            RaycastHit2D hit = AIUtility.Raycast2D(gameObject, position, target.transform.position - position, range, AIUtility.VisibilityMask);
             if (hit.collider != null)
             {
-                Entity t = GameUtility.FindEntity(hit.collider.gameObject);
+                Entity t = hit.collider.GetComponent<Entity>();
                 if (t != null && t == target)
                 {
                     return true;

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Entity
   - Wall
+  - entity
   layers:
   - Default
   - TransparentFX
@@ -38,7 +39,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - NoCollision
   m_SortingLayers:
   - name: Default
     uniqueID: 0

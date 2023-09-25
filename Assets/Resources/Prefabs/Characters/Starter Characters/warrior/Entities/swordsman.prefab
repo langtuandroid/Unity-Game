@@ -385,7 +385,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 15
+  m_Mass: 12
   m_LinearDrag: 10
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -432,9 +432,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.014667869}
+  m_Offset: {x: 0, y: -0.008112282}
   serializedVersion: 2
-  m_Radius: 0.36013365
+  m_Radius: 0.3829138
 --- !u!114 &5353377617828249592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,7 +536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed:
-    value: 400
+    value: 320
     useSharedValue: 0
     sharedValue: {fileID: 0}
   rotateSpeed:
@@ -561,6 +561,7 @@ MonoBehaviour:
   abilityRunner: {fileID: 9072161404192331858}
   stateMachine: {fileID: 3549211335366594172}
   playerAbilityRunner: {fileID: 0}
+  visableDegree: 0
   target: {fileID: 0}
 --- !u!114 &8672926210768430681
 MonoBehaviour:

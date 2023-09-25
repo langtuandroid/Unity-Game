@@ -322,9 +322,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.014667869}
+  m_Offset: {x: 0, y: -0.010525525}
   serializedVersion: 2
-  m_Radius: 0.36013365
+  m_Radius: 0.38532704
 --- !u!114 &5353377617828249592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,11 +426,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed:
-    value: 550
+    value: 400
     useSharedValue: 0
     sharedValue: {fileID: 0}
   rotateSpeed:
-    value: 450
+    value: 400
     useSharedValue: 0
     sharedValue: {fileID: 0}
 --- !u!114 &2878624368540976578
@@ -451,6 +451,7 @@ MonoBehaviour:
   abilityRunner: {fileID: 9072161404192331858}
   stateMachine: {fileID: 3549211335366594172}
   playerAbilityRunner: {fileID: 0}
+  visableDegree: 45
   target: {fileID: 0}
 --- !u!114 &8672926210768430681
 MonoBehaviour:
