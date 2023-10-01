@@ -162,6 +162,10 @@ namespace LobsterFramework.AI
             }
             return false;
         }
+        public void patrolLine(Vector3 postion)
+        {
+            pathFinder.MoveTowards(postion);
+        }
         public void KeepDistanceFromTarget(Vector3 position, float distanceNeeded , float movedistance)
         {
             /*float positionX  = position.x+ UnityEngine.Random.Range(-0.3f, 0.4f);

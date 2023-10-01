@@ -5,6 +5,7 @@ using UnityEngine;
 using LobsterFramework.AI;
 using System.Security.Cryptography;
 using LobsterFramework;
+using UnityEngine.InputSystem.XR;
 
 namespace GameScripts.AI.DaggerEnemy
 {
@@ -14,6 +15,7 @@ namespace GameScripts.AI.DaggerEnemy
         [SerializeField] private RefFloat wanderTime;
         [SerializeField] private RefInt wanderRadius;
         [SerializeField] private RefFloat idleTime;
+        [SerializeField] private List<Vector3> PatrolPoint;
         private StealthController trans;
         private float wanderTimeCounter;
         private float idleTimeCounter;
@@ -22,13 +24,14 @@ namespace GameScripts.AI.DaggerEnemy
         private Transform transform;
         private AITrackData trackingData;
         private WanderInternalState wanderState;
-        
+        private int PatrolNum;
+        private int currentPatrolNum;
 
         private enum WanderInternalState
         {
             Idle,
             PathFinding,
-            Wandering
+            Wandering,
         }
 
 
@@ -39,8 +42,9 @@ namespace GameScripts.AI.DaggerEnemy
             moveControl = controller.GetComponent<MovementController>();
             daggerRigid = controller.GetComponent<Rigidbody2D>();
             trackingData = controller.GetControllerData<AITrackData>();
-            
-           
+            currentPatrolNum = 0;
+            PatrolNum = PatrolPoint.Count;
+
         }
 
         public override void OnEnter()
@@ -62,26 +66,6 @@ namespace GameScripts.AI.DaggerEnemy
             if (controller.SearchTarget(sight))
             {
                 trans.Changetrans(1f);
-                /*float enemyHealth = controller.target.Health / controller.target.MaxHealth;
-                if (enemyHealth>0.4)
-                {
-                    Debug.Log("fuck u");
-                    return typeof(MeleeChaseState);
-                    //return typeof(RangedChaseState);
-                }
-                else
-                {
-                    float meleeDesire = 0.3f;
-                    float diffinHealth = 0.4f - enemyHealth;
-                    meleeDesire += diffinHealth / 0.4f * 0.7f;
-                    float randomNumber = UnityEngine.Random.Range(0f, 1f);
-                    if(randomNumber > meleeDesire)
-                    {
-                        Debug.Log("fuck u");
-                        //return typeof(RangedChaseState);
-                    }
-                    return typeof(MeleeChaseState);
-                }*/
                 return typeof(ChaseState);
 
             }
@@ -93,12 +77,21 @@ namespace GameScripts.AI.DaggerEnemy
                     if (idleTimeCounter >= idleTime.Value)
                     {
                         idleTimeCounter = 0;
+                        if(currentPatrolNum< PatrolNum-1)
+                        {
+                            currentPatrolNum += 1;
+                        }
+                        else
+                        {
+                            currentPatrolNum = 0;
+                        }
+                        
                         wanderState = WanderInternalState.PathFinding;
                     }
                     break;
                 case WanderInternalState.PathFinding:
                     trans.Changetrans(0.3f);
-                    controller.Wander(wanderRadius.Value);
+                    controller.patrolLine(PatrolPoint[currentPatrolNum]);
                     wanderState = WanderInternalState.Wandering;
                     break;
                 case WanderInternalState.Wandering:

@@ -840,7 +840,7 @@ PrefabInstance:
       objectReference: {fileID: 974773030}
     - target: {fileID: 7880835017238648108, guid: 4816e38646558964d841661aa9ae451c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.79
+      value: 17.68
       objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: 4816e38646558964d841661aa9ae451c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -951,9 +951,9 @@ MonoBehaviour:
   hdWeight: 0.3
   pdSharpness: 0.3
   pdWeight: 0.7
-  postureDeflect: 0.3
-  pDamageOnDeflect: 0.5
-  knockbackAdjustment: 2
+  postureDeflect: 0
+  pDamageOnDeflect: 0
+  knockbackAdjustment: 0
 --- !u!1 &274171151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,7 +1392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.32
+      value: 4.74
       objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: a00935eb9a7e5fa4f94bf259e5bf2305, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2242,7 +2242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2878624368540976578, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: playerAbilityRunner
@@ -2250,11 +2250,11 @@ PrefabInstance:
       objectReference: {fileID: 255199789}
     - target: {fileID: 3947493889715706064, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3947493889715706064, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4981024116806816665, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: maxSpeed.value
@@ -2302,11 +2302,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30849,6 +30849,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: swordsman
       objectReference: {fileID: 0}
+    - target: {fileID: 2490316291772389325, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2878624368540976578, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: playerAbilityRunner
       value: 
@@ -30895,19 +30899,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8695003769663209437, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8695003769663209437, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

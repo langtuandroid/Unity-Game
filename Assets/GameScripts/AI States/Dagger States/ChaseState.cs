@@ -20,7 +20,6 @@ namespace GameScripts.AI.DaggerEnemy
         [SerializeField] private float keepDistance;
         private AITrackData trackData;
         private AbilityRunner abilityRunner;
-        float meleeOn = 0;
         private Transform transform;
         private Mana manaComponent;
         private Entity chaseTarget;
@@ -47,7 +46,6 @@ namespace GameScripts.AI.DaggerEnemy
             controller.ChaseTarget();
             chaseTarget = controller.target;
             targetTransform = controller.target.transform;
-            meleeOn = 0;
             maxWalkTime=Time.time;
             maxdirectionTime = Time.time;
             moveDistance = 0;
@@ -173,7 +171,6 @@ namespace GameScripts.AI.DaggerEnemy
                         /*RangeAttack();*/
                         RangeAttack(2);
                     }
-                    /*meleeOn = 1;*/
                     else
                     {
                         if (abilityRunner.IsAbilityReady<Dash>())
