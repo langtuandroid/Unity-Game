@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using LobsterFramework.EntitySystem;
-using System;
+using LobsterFramework;
 
 namespace GameScripts.UI
 {

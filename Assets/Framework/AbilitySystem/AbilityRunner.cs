@@ -6,7 +6,6 @@ using UnityEngine.Events;
 using UnityEditor;
 using LobsterFramework.Utility;
 using LobsterFramework.Utility.BufferedStats;
-using LobsterFramework.EntitySystem;
 using Animancer;
 
 namespace LobsterFramework.AbilitySystem {

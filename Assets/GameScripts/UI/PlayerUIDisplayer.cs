@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using LobsterFramework.EntitySystem;
+using LobsterFramework;
 using LobsterFramework.AbilitySystem;
 using GameScripts.Abilities;
 
@@ -11,16 +11,7 @@ namespace GameScripts.UI
         public Entity player;
         public Slider healthSlider;
         public Slider postureSlider;
-        public AbilityRunner actionComponent;
-        private Mana manaComponent;
-
-
-
-        // Start is called before the first frame update
-        void Start()
-        {
-            manaComponent = actionComponent.GetAbilityStat<Mana>();
-        }
+        public AbilityRunner abilityRunner;
 
         // Update is called once per frame
         void Update()

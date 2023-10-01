@@ -24,16 +24,6 @@ namespace LobsterFramework.Editors
             }
             GUILayout.Space(18);
             EditorGUILayout.EndVertical();
-            if (entity.activeEffects != null && entity.activeEffects.Count > 0)
-            {
-                EditorGUILayout.LabelField("Effects:");
-                EditorGUI.indentLevel++;
-                foreach (Effect effect in entity.activeEffects.Values)
-                {
-                    EditorGUILayout.LabelField(effect.name + ": " + effect.Counter_t + "/" + effect.Duration);
-                }
-                EditorGUI.indentLevel--;
-            }
         }
     }
 }

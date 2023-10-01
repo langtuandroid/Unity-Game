@@ -1,10 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
-using LobsterFramework.EntitySystem;
 using LobsterFramework.AbilitySystem;
-using LobsterFramework.Utility;
 
 namespace LobsterFramework.Pool
 {
@@ -82,6 +78,8 @@ namespace LobsterFramework.Pool
             }
             if (weapon != null && weapon.ClashSpark != null && targetSetting.IsTarget(weapon.Entity)) {
                 ObjectPool.GetObject(weapon.ClashSpark, transform.position, transform.rotation);
+                MovementController moveControl = weapon.Entity.GetComponent<MovementController>();
+                moveControl.ApplyForce(weapon.Entity.transform.position - transform.position, weight);
             }
 
             if (pierceCount < 0)

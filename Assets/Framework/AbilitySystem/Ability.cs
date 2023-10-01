@@ -34,7 +34,7 @@ namespace LobsterFramework.AbilitySystem {
     public abstract class Ability : ScriptableObject
     {
         [HideInInspector]
-        public AbilityRunner abilityRunner;
+        protected internal AbilityRunner abilityRunner;
 
         public RefAbilityPriority abilityPriority;
 

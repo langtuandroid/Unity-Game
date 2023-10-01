@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using LobsterFramework.EntitySystem;
 
-namespace LobsterFramework.Utility.Groups
+namespace LobsterFramework
 {
     [CreateAssetMenu(menuName = "Groups/Entity Group")]
     public class EntityGroup : ScriptableObject, IEnumerable<Entity>, ISet<Entity>

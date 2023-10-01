@@ -1,10 +1,8 @@
 using System;
 using UnityEngine;
 using LobsterFramework.AbilitySystem;
-using LobsterFramework.EntitySystem;
 using LobsterFramework.AI;
 using GameScripts.Abilities;
-using static UnityEngine.EventSystems.EventTrigger;
 
 namespace GameScripts.AI.StickEnemy
 {
@@ -27,10 +25,6 @@ namespace GameScripts.AI.StickEnemy
         private AbilityRunner abilityRunner;
         private AbilityRunner playerAbilityRunner;
         private bool isNextMoveStart;
-        private Transform transform;
-        private Mana manaComponent;
-        private Entity chaseTarget;
-        private Transform targetTransform;
         private HeavyWeaponAttack.HeavyWeaponAttackPipe heavyAttackPipe;
         private float maxChargeTime;
         private float maxGuardChargeTime;
@@ -43,16 +37,12 @@ namespace GameScripts.AI.StickEnemy
             abilityRunner = controller.AbilityRunner;
             playerAbilityRunner = controller.PlayerAbilityRunner;
             trackData = controller.GetControllerData<AITrackData>();
-            manaComponent = abilityRunner.GetAbilityStat<Mana>();
-            transform = obj.transform;
             heavyAttackPipe = (HeavyWeaponAttack.HeavyWeaponAttackPipe)abilityRunner.GetAbilityPipe<HeavyWeaponAttack>();
         }
 
         public override void OnEnter()
         {
             controller.ChaseTarget();
-            chaseTarget = controller.target;
-            targetTransform = controller.target.transform;
             isNextMoveStart = false;
             cycloneChanceIncrease = 0;
             playerAbilityRunner.onAbilityEnqueued += OnPlayerAction;

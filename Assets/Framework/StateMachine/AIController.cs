@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using LobsterFramework.Utility.Groups;
-using LobsterFramework.EntitySystem;
 using LobsterFramework.Utility;
 using LobsterFramework.AbilitySystem;
 using Pathfinding;
@@ -25,7 +23,6 @@ namespace LobsterFramework.AI
         private Collider2D _collider;
         private AIPathFinder pathFinder;
         private GridGraph gridGraph;
-        private float movedistance;
         private Dictionary<Type, ControllerData> controllerData;
         private Entity entityComponent;
         private MovementController moveControl;
@@ -162,15 +159,12 @@ namespace LobsterFramework.AI
             }
             return false;
         }
-        public void patrolLine(Vector3 postion)
+        public void PatrolLine(Vector3 postion)
         {
             pathFinder.MoveTowards(postion);
         }
         public void KeepDistanceFromTarget(Vector3 position, float distanceNeeded , float movedistance)
         {
-            /*float positionX  = position.x+ UnityEngine.Random.Range(-0.3f, 0.4f);
-            float positionY = (float)(Math.Sqrt(Math.Pow(distanceNeeded, 2) -Math.Pow(positionX - target.transform.position.x, 2)) - target.transform.position.y);
-            Vector3 ans = new Vector3(positionX, positionY, 0);*/
             Quaternion rotation = Quaternion.AngleAxis(90, Vector3.forward);
             Vector3 vector = (position - target.transform.position).normalized* distanceNeeded;
             Vector3 tangengvector = rotation * vector;

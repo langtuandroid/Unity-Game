@@ -91,7 +91,7 @@ namespace GameScripts.AI.DaggerEnemy
                     break;
                 case WanderInternalState.PathFinding:
                     trans.Changetrans(0.3f);
-                    controller.patrolLine(PatrolPoint[currentPatrolNum]);
+                    controller.PatrolLine(PatrolPoint[currentPatrolNum]);
                     wanderState = WanderInternalState.Wandering;
                     break;
                 case WanderInternalState.Wandering:

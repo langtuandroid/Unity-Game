@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
+using LobsterFramework;
 using LobsterFramework.AbilitySystem;
-using LobsterFramework.EntitySystem;
 using LobsterFramework.AI;
 using GameScripts.Abilities;
 

@@ -21,8 +21,6 @@ namespace GameScripts.AI.DaggerEnemy
         private AITrackData trackData;
         private AbilityRunner abilityRunner;
         private Transform transform;
-        private Mana manaComponent;
-        private Entity chaseTarget;
         private Transform targetTransform;
         private HeavyWeaponAttack.HeavyWeaponAttackPipe heavyAttackPipe;
         private float maxChargeTime;
@@ -35,7 +33,6 @@ namespace GameScripts.AI.DaggerEnemy
         {
             abilityRunner = controller.AbilityRunner;
             trackData = controller.GetControllerData<AITrackData>();
-            manaComponent = abilityRunner.GetAbilityStat<Mana>();
             transform = obj.transform;
             heavyAttackPipe = (HeavyWeaponAttack.HeavyWeaponAttackPipe)abilityRunner.GetAbilityPipe<HeavyWeaponAttack>();
         }
@@ -44,7 +41,6 @@ namespace GameScripts.AI.DaggerEnemy
         {
             Debug.Log("Chase");
             controller.ChaseTarget();
-            chaseTarget = controller.target;
             targetTransform = controller.target.transform;
             maxWalkTime=Time.time;
             maxdirectionTime = Time.time;

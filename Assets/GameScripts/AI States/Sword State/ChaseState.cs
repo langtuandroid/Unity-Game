@@ -1,10 +1,8 @@
 using System;
 using UnityEngine;
 using LobsterFramework.AbilitySystem;
-using LobsterFramework.EntitySystem;
 using LobsterFramework.AI;
 using GameScripts.Abilities;
-using static UnityEngine.EventSystems.EventTrigger;
 
 namespace GameScripts.AI.SwordEnemy
 {
@@ -17,10 +15,6 @@ namespace GameScripts.AI.SwordEnemy
         private AbilityRunner abilityRunner;
         private AbilityRunner playerAbilityRunner;
         private bool isNextMoveStart;
-        private Transform transform;
-        private Mana manaComponent;
-        private Entity chaseTarget;
-        private Transform targetTransform;
         private HeavyWeaponAttack.HeavyWeaponAttackPipe heavyAttackPipe;
         private float maxChargeTime;
         private float maxGuardChargeTime;
@@ -33,16 +27,12 @@ namespace GameScripts.AI.SwordEnemy
             abilityRunner = controller.AbilityRunner;
             playerAbilityRunner = controller.PlayerAbilityRunner;
             trackData = controller.GetControllerData<AITrackData>();
-            manaComponent = abilityRunner.GetAbilityStat<Mana>();
-            transform = obj.transform;
             heavyAttackPipe = (HeavyWeaponAttack.HeavyWeaponAttackPipe)abilityRunner.GetAbilityPipe<HeavyWeaponAttack>();
         }
 
         public override void OnEnter()
         {
             controller.ChaseTarget();
-            chaseTarget = controller.target;
-            targetTransform = controller.target.transform;
             isNextMoveStart = false;
             endureChanceIncrease = 0;
             playerAbilityRunner.onAbilityEnqueued += OnPlayerAction;
@@ -68,7 +58,6 @@ namespace GameScripts.AI.SwordEnemy
                 if (controller.TargetInRange(attackRange))
                 {
                     float attackType = 0.3f; 
-                        //UnityEngine.Random.Range(0f, 1f);
                     float endureChance = UnityEngine.Random.Range(0f, 1f);
                     if (endureChance > 0.7f - endureChanceIncrease) //if boost
                     {
@@ -113,9 +102,9 @@ namespace GameScripts.AI.SwordEnemy
                     }
 
                 }
-                return typeof(ChaseState);
+                return null;
             }
-            return typeof(ChaseState);
+            return null;
         }
 
         public Type GuardCheck()
@@ -173,10 +162,10 @@ namespace GameScripts.AI.SwordEnemy
                 {
                     abilityRunner.Signal<HeavyWeaponAttack>();
                 }
-                return typeof(ChaseState);
+                return null;
             }
             MeleeAttack();
-            return typeof(ChaseState);
+            return null;
         }
     }
 }   

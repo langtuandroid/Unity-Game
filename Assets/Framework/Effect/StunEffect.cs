@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using LobsterFramework.AbilitySystem;
 
-namespace LobsterFramework.EntitySystem
+namespace LobsterFramework.Effects
 {
     [CreateAssetMenu(menuName = "Effect/Stun")]
     public class StunEffect : Effect
@@ -15,13 +15,13 @@ namespace LobsterFramework.EntitySystem
 
         protected override void OnApply()
         {
-            moveControl = entity.GetComponent<MovementController>(); 
+            moveControl = processor.GetComponentInBoth<MovementController>(); 
             if (moveControl != null)
             {
                 move_id = moveControl.BlockMovement();
             }
             
-            abilityRunner = entity.GetComponent<AbilityRunner>();
+            abilityRunner = processor.GetComponentInBoth<AbilityRunner>();
             if (abilityRunner != null) {
                 effector_id = abilityRunner.BlockAction();
             }

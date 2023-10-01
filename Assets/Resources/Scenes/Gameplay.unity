@@ -951,9 +951,9 @@ MonoBehaviour:
   hdWeight: 0.3
   pdSharpness: 0.3
   pdWeight: 0.7
-  postureDeflect: 0
-  pDamageOnDeflect: 0
-  knockbackAdjustment: 0
+  postureDeflect: 0.3
+  pDamageOnDeflect: 0.5
+  knockbackAdjustment: 2
 --- !u!1 &274171151
 GameObject:
   m_ObjectHideFlags: 0
@@ -2242,7 +2242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2878624368540976578, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: playerAbilityRunner
@@ -2250,15 +2250,23 @@ PrefabInstance:
       objectReference: {fileID: 255199789}
     - target: {fileID: 3947493889715706064, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3947493889715706064, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4981024116806816665, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: maxSpeed.value
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353377617828249592, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
+      propertyPath: maxHealth.value
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353377617828249592, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
+      propertyPath: startHealth.value
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 7880835017238648108, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2302,11 +2310,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 9138ceaf909e290449f69cfa6ee13ea7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4909,7 +4917,7 @@ MonoBehaviour:
   player: {fileID: 2052722227}
   healthSlider: {fileID: 1095861245}
   postureSlider: {fileID: 340635123}
-  actionComponent: {fileID: 255199789}
+  abilityRunner: {fileID: 0}
 --- !u!1 &1220203656
 GameObject:
   m_ObjectHideFlags: 0
@@ -30851,7 +30859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490316291772389325, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2878624368540976578, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: playerAbilityRunner
@@ -30899,19 +30907,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8377992766269215939, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8695003769663209437, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8695003769663209437, guid: 121f8addf153f4844948b401fecfa93c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

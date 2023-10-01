@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using LobsterFramework.AbilitySystem;
 
-namespace LobsterFramework.EntitySystem
+namespace LobsterFramework.Effects
 {
     [CreateAssetMenu(menuName = "Effect/Silent Effect")]
     public class SilentEffect : Effect
@@ -13,7 +11,7 @@ namespace LobsterFramework.EntitySystem
 
         protected override void OnApply()
         {
-            ar = entity.GetComponent<AbilityRunner>();
+            ar = processor.GetComponentInBoth<AbilityRunner>();
             if (ar != null) {
                 effect_id = ar.BlockAction();
             }

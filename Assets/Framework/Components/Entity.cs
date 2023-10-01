@@ -2,11 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.Events;
-using LobsterFramework.Utility.Groups;
 using LobsterFramework.Utility.BufferedStats;
-using Pathfinding.Util;
 
-namespace LobsterFramework.EntitySystem
+namespace LobsterFramework
 {
     /// <summary>
     /// Character class of the game. Provides an interface for health/damage system. Entities will be disabled
@@ -61,7 +59,7 @@ namespace LobsterFramework.EntitySystem
         #region StatusFields
         [Header("Status")]
         [SerializeField] private List<DamageTracker> damageHistory = new();
-        [SerializeField] public Dictionary<Type, Effect> activeEffects = new();
+        
 
         private float damagedSince;
         public Damage LatestDamageInfo
@@ -69,7 +67,7 @@ namespace LobsterFramework.EntitySystem
             get
             {
                 if (damageHistory.Count > 0) { return damageHistory[damageHistory.Count - 1].info; }
-                return EntitySystem.Damage.none;
+                return LobsterFramework.Damage.none;
             }
         }
         #endregion
@@ -116,19 +114,7 @@ namespace LobsterFramework.EntitySystem
                     damageHistory.RemoveAt(i);
                 }
             }
-            List<Effect> removed = new();
-            foreach (Effect effect in activeEffects.Values)
-            {
-                if (!effect.Update())
-                {
-                    removed.Add(effect);
-                }
-            }
-            foreach (Effect effect in removed)
-            {
-                activeEffects.Remove(effect.GetType());
-                Destroy(effect);
-            }
+            
             Regen();
         }
 
@@ -163,12 +149,6 @@ namespace LobsterFramework.EntitySystem
             }
             Health = startHealth.Value;
             Posture = MaxPosture;
-
-            foreach (Effect effect in activeEffects.Values) {
-                effect.TerminateEffect();
-                Destroy(effect);
-            }
-            activeEffects.Clear();
             
             IsDead = false;
             gameObject.SetActive(true);
@@ -206,11 +186,6 @@ namespace LobsterFramework.EntitySystem
                 group.Remove(this);
             }
             damageHistory.Clear();
-            foreach (Effect effect in activeEffects.Values)
-            {
-                Destroy(effect);
-            }
-            activeEffects.Clear();
         }
 
         private void OnEnable()
@@ -223,22 +198,6 @@ namespace LobsterFramework.EntitySystem
         #endregion
 
         #region ApplicationMethods
-        /// <summary>
-        /// Apply an effect to the entity
-        /// </summary>
-        /// <param name="effect"></param>
-        public void AddEffect(Effect effect)
-        {
-            Type t = effect.GetType();
-            if (activeEffects.ContainsKey(t))
-            {
-                return;
-            }
-            Effect eft = Instantiate(effect);
-            activeEffects.Add(t, eft);
-            eft.ActivateEffect(this);
-        }
-
         /// <summary>
         /// Add damage to the entity, the damage will be dealt on update of next frame
         /// </summary>
