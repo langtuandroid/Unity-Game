@@ -46,6 +46,7 @@ namespace LobsterFramework.AI
                 State state = Instantiate(s);
                 states[state.GetType()] = state;
                 state.controller = controller;
+                state.stateMachine = this;
                 state.InitializeFields(gameObject);
             }
             if (initialState == null)
