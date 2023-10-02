@@ -54,13 +54,12 @@ namespace LobsterFramework.AbilitySystem {
 
         #region EnqueueAbility
         /// <summary>
-        /// Add the action with specified type (T) and config (name) to the executing queue, return the status of this operation. <br/>
+        /// Add the ability with specified type (T) and config (name) to the executing queue, return the status of this operation. <br/>
         /// For this operation to be successful, the following must be satisfied: <br/>
         /// 1. The entity must not be action blocked. (i.e Not affected by stun effect) <br/>
-        /// 2. The specified action of Type (T) as well as the config (name) must be present in the actionable data.<br/>
-        /// 3. The precondition of the specified action must be satisfied as well as the cooldown of the config if the action uses cooldowns. <br/>
-        /// 4. The specified action must not be currently running or enqueued. <br/>
-        /// 5. There must be no other actions with higher enqueue priority in the same action group executing by the entity. <br/>
+        /// 2. The specified ability of Type (T) as well as the config (name) must be present in the ability data.<br/>
+        /// 3. The precondition of the specified ability must be satisfied as well as the cooldown of the config if the ability uses cooldowns. <br/>
+        /// 4. The specified ability must not be currently running or enqueued. <br/>
         /// <br/>
         /// Note that this method should only be called inside Update(), calling it elsewhere will have unpredictable results.
         /// </summary>

@@ -10,24 +10,6 @@ using Animancer;
 
 namespace LobsterFramework.AbilitySystem {
     /// <summary>
-    /// struct used by ActionOverseer to process action queue
-    /// </summary>
-    internal struct AbilityConfigPair
-    {
-        public string configName;
-        public Ability ability;
-        public AbilityConfigPair(Ability ability, string config)
-        {
-            this.ability = ability;
-            this.configName = config;
-        }
-
-        public bool HaltAbility() { 
-            return ability.HaltAbilityExecution(configName);
-        }
-    }
-
-    /// <summary>
     /// Abilities defines the kind of actions the parent object can make. <br/>
     /// Each subclass of Ability defines its own AbilityConfig and can be runned on multiple instances of its AbilityConfigs.
     /// </summary>
@@ -504,6 +486,24 @@ namespace LobsterFramework.AbilitySystem {
                 Construct();
             }
             public virtual void Construct() { }
+        }
+    }
+    /// <summary>
+    /// struct used by ActionOverseer to process action queue
+    /// </summary>
+    internal struct AbilityConfigPair
+    {
+        public string configName;
+        public Ability ability;
+        public AbilityConfigPair(Ability ability, string config)
+        {
+            this.ability = ability;
+            this.configName = config;
+        }
+
+        public bool HaltAbility()
+        {
+            return ability.HaltAbilityExecution(configName);
         }
     }
 }
