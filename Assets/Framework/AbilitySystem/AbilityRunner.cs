@@ -21,6 +21,7 @@ namespace LobsterFramework.AbilitySystem {
         public UnityAction<bool> onActionBlocked;
         public UnityAction<bool> onHyperArmored;
         public UnityAction<Type> onAbilityEnqueued;
+        public UnityAction<Type> onAbilityFinished;
 
         // Execution Info
         internal HashSet<AbilityConfigPair> executing = new();
@@ -426,6 +427,9 @@ namespace LobsterFramework.AbilitySystem {
                 if (!ac.IsExecuting(ap.configName))
                 {
                     removed.Add(ap);
+                    if (onAbilityFinished != null) {
+                        onAbilityFinished.Invoke(ac.GetType());
+                    }
                     if (jointlyRunning.ContainsKey(ap)) { 
                         jointlyRunning[ap].HaltAbility();
                         jointlyRunning.Remove(ap);

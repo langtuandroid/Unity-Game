@@ -99,8 +99,8 @@ namespace LobsterFramework.AI
                         {
                             awakeTime = Time.time + option.waitTime;
                         }
-                        return;
                     }
+                    return;
                 }
                 // Return to normal state ticking when coroutine is finished
                 Coroutine = default;
@@ -110,7 +110,6 @@ namespace LobsterFramework.AI
                     currentState.OnEnter();
                     switchingTo = null;
                 }
-                
                 return;
             }
 

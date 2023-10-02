@@ -9,7 +9,7 @@ namespace LobsterFramework.AI
         [HideInInspector]
         public AIController controller;
         [HideInInspector]
-        internal StateMachine stateMachine;
+        internal protected StateMachine stateMachine;
 
         public abstract void InitializeFields(GameObject obj);
         public abstract void OnExit();
