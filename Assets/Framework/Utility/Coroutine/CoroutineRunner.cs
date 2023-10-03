@@ -33,6 +33,7 @@ namespace LobsterFramework.Utility
                 if (!coroutines[i].Advance()) {
                     removed.Add(coroutines[i]);
                 }
+                i++;
             }
             foreach (Coroutine c in removed) {
                 coroutines.Remove(c);
