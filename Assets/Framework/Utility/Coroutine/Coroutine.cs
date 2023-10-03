@@ -4,13 +4,19 @@ using UnityEngine;
 
 namespace LobsterFramework.Utility
 {
+    /// <summary>
+    /// Represents the state of Coroutine, can be used to query if the coroutine has finished.
+    /// </summary>
     public class Coroutine
     {
         private CoroutineRunner runner;
         private IEnumerator<CoroutineOption> coroutine;
-        private Coroutine waitFor;
-        private float awakeTime;
+        private Coroutine waitFor; // The child coroutine to wait for
+        private float awakeTime; // The time this coroutine should continue executing
 
+        /// <summary>
+        /// True if the coroutine is finished, false otherwise
+        /// </summary>
         public bool IsFinished { get; private set; }
 
         public Coroutine(CoroutineRunner runner, IEnumerator<CoroutineOption> coroutine) { 
@@ -23,7 +29,7 @@ namespace LobsterFramework.Utility
         /// Execute Coroutine until it yields
         /// </summary>
         /// <returns> False if coroutine has finished executing, otherwise true </returns>
-        public bool Advance() {
+        internal bool Advance() {
             if (Time.time < awakeTime)
             {
                 return true;
@@ -43,12 +49,14 @@ namespace LobsterFramework.Utility
             CoroutineOption option = coroutine.Current;
             if (!next)
             {
+                IsFinished = true;
                 return false;
             }
             if (option != null)
             {
                 if (option.exit)
                 {
+                    IsFinished = true;
                     return false;
                 }
                 if (option.reset)
