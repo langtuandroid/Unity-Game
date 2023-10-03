@@ -6,8 +6,8 @@ namespace LobsterFramework.AbilitySystem
     [CreateAssetMenu(menuName = "Ability/TargetSetting")]
     public class TargetSetting : ScriptableObject
     {
-        public EntityGroup[] targetGroups;
-        public EntityGroup[] ignoreGroups;
+        public List<EntityGroup> targetGroups;
+        public List<EntityGroup> ignoreGroups;
         private HashSet<Entity> targets;
         private HashSet<Entity> ignores;
 
@@ -19,6 +19,14 @@ namespace LobsterFramework.AbilitySystem
         {
             targets = new();
             ignores = new();
+            if(targetGroups == null)
+            {
+                targetGroups = new();
+            }
+            if (ignoreGroups == null)
+            {
+                ignoreGroups = new();
+            }
             foreach (EntityGroup group in targetGroups)
             {
                 targets.UnionWith(group);

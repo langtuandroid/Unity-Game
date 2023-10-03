@@ -13,4 +13,11 @@ MonoBehaviour:
   m_Name: Stick Chase State
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
+  backKeepDistance: 3
+  postureThreshold: 0.504
+  cycloneProb: 0.6
+  lightAttackProb: 0.6
+  guardProb: 0.5
+  cycloneChanceIncrease: 0
+  guardChanceDecrease: 0.2
   attackRange: 1.7

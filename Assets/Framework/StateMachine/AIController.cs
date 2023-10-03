@@ -30,6 +30,7 @@ namespace LobsterFramework.AI
 
         public AbilityRunner AbilityRunner { get { return abilityRunner; }}
         public AbilityRunner PlayerAbilityRunner { get { return playerAbilityRunner; } }
+        public Entity GetEntity { get { return entityComponent; } }
         private void Awake()
         {
             gridGraph = AstarPath.active.data.gridGraph;

@@ -3,6 +3,11 @@ using UnityEngine;
 using LobsterFramework.AbilitySystem;
 using LobsterFramework.AI;
 using GameScripts.Abilities;
+using LobsterFramework;
+using static UnityEngine.EventSystems.EventTrigger;
+using static LobsterFramework.AbilitySystem.Ability;
+using System.Collections.Generic;
+using Codice.CM.Client.Differences.Merge;
 
 namespace GameScripts.AI.StickEnemy
 {
@@ -11,32 +16,30 @@ namespace GameScripts.AI.StickEnemy
     public class ChaseState : State
     {
         [Header("Behaviour Stats")]
-        [Range(0, 1)][SerializeField] private float healthThreshold;
-        [Range(0, 1)][SerializeField] private float meleeAttackProbability;
-        [Range(0, 1)][SerializeField] private float walkInterval;
-        [Range(0, 1)][SerializeField] private float backKeepDistance;
-/*        %postureThreshold - 30
-%backKeepDistance - 3
-%lightAttackProb - 60%
-%guardProb - 50%
-%cycloneProb - 60%*/
+        [Range(0, 10)][SerializeField] private float backKeepDistance;
+        [Range(0, 1)][SerializeField] private float postureThreshold;
+        [Range(0, 1)][SerializeField] private float cycloneProb;
+        [Range(0, 1)][SerializeField] private float lightAttackProb;
+        [Range(0, 1)][SerializeField] private float guardProb;
+        [Range(0, 1)][SerializeField] private float cycloneChanceIncrease;
+        [Range(0, 1)][SerializeField] private float guardChanceDecrease;
         [SerializeField] private float attackRange;
         private AITrackData trackData;
         private AbilityRunner abilityRunner;
         private AbilityRunner playerAbilityRunner;
         private bool isNextMoveStart;
+        private Transform transform;
         private HeavyWeaponAttack.HeavyWeaponAttackPipe heavyAttackPipe;
-        private float maxChargeTime;
-        private float maxGuardChargeTime;
-        private float cycloneChanceIncrease;
-
-
-
+        
+        private float posture;
+        private float moveDistance;
+        private bool isResting;
         public override void InitializeFields(GameObject obj)
         {
             abilityRunner = controller.AbilityRunner;
             playerAbilityRunner = controller.PlayerAbilityRunner;
             trackData = controller.GetControllerData<AITrackData>();
+            transform = obj.transform;
             heavyAttackPipe = (HeavyWeaponAttack.HeavyWeaponAttackPipe)abilityRunner.GetAbilityPipe<HeavyWeaponAttack>();
         }
 
@@ -44,9 +47,10 @@ namespace GameScripts.AI.StickEnemy
         {
             controller.ChaseTarget();
             isNextMoveStart = false;
-            cycloneChanceIncrease = 0;
             playerAbilityRunner.onAbilityEnqueued += OnPlayerAction;
-
+            posture = controller.target.Posture / controller.target.MaxPosture;
+            moveDistance = 0;
+            isResting = false;
         }
 
         public override void OnExit()
@@ -57,6 +61,7 @@ namespace GameScripts.AI.StickEnemy
         {
             isNextMoveStart = true;
         }
+
         public Type MeleeAttack()
         {
             if (!controller.target.gameObject.activeInHierarchy)
@@ -71,7 +76,7 @@ namespace GameScripts.AI.StickEnemy
                     {
                         float cycloneChance = UnityEngine.Random.Range(0f, 1f);
 
-                        if (cycloneChance > 0.6f - cycloneChanceIncrease) //if cyclone
+                        if (cycloneChance > cycloneProb - cycloneChanceIncrease) //if cyclone
                         {
                             cycloneChanceIncrease = 0;
                             abilityRunner.EnqueueAbility<WeaponArt>();
@@ -80,16 +85,14 @@ namespace GameScripts.AI.StickEnemy
                         {
                             cycloneChanceIncrease += 0.2f;
                             float attackType = UnityEngine.Random.Range(0f, 1f);
-                            if (attackType > 0.4)
+                            if (attackType > lightAttackProb)
                             {
                                 abilityRunner.EnqueueAbility<LightWeaponAttack>();
                             }
                             else
                             {
-                                abilityRunner.EnqueueAbility<HeavyWeaponAttack>();
-                                float randomChargeTime = UnityEngine.Random.Range(0.5f, 1.5f);
-                                maxChargeTime = Time.time;
-                                maxChargeTime += randomChargeTime * heavyAttackPipe.MaxChargeTime;
+                                stateMachine.RunCoroutine(HeavyAttackTime());
+                                return null;
                             }
                         }
                     }
@@ -97,25 +100,36 @@ namespace GameScripts.AI.StickEnemy
                     {
                         cycloneChanceIncrease += 0.2f;
                         float attackType = UnityEngine.Random.Range(0f, 1f);
-                        if (attackType > 0.4)
+                        if (attackType > lightAttackProb)
                         {
                             abilityRunner.EnqueueAbility<LightWeaponAttack>();
                         }
                         else
                         {
-                            abilityRunner.EnqueueAbility<HeavyWeaponAttack>();
-                            float randomChargeTime = UnityEngine.Random.Range(0.5f, 1.5f);
-                            maxChargeTime = Time.time;
-                            maxChargeTime += randomChargeTime * heavyAttackPipe.MaxChargeTime;
+                            stateMachine.RunCoroutine(HeavyAttackTime());
+                            return null;
                         }
                     }
 
                 }
-                return typeof(ChaseState);
+                return null;
             }
-            return typeof(ChaseState);
+            return null;
         }
-
+        protected IEnumerator<CoroutineOption> HeavyAttackTime()
+        {
+            abilityRunner.EnqueueAbility<HeavyWeaponAttack>();
+            float randomChargeTime = UnityEngine.Random.Range(0.5f, 1.5f);
+            yield return CoroutineOption.Wait(randomChargeTime * heavyAttackPipe.MaxChargeTime);
+            abilityRunner.Signal<HeavyWeaponAttack>();
+        }
+        protected IEnumerator<CoroutineOption> GuardTime()
+        {
+            abilityRunner.EnqueueAbility<Guard>();
+            float randomGuardChargeTime = UnityEngine.Random.Range(0.5f, 1f);
+            yield return CoroutineOption.Wait(randomGuardChargeTime);
+            abilityRunner.Signal<Guard>();
+        }
         public Type GuardCheck()
         {
             isNextMoveStart = false;
@@ -124,28 +138,52 @@ namespace GameScripts.AI.StickEnemy
                 if (!abilityRunner.IsAbilityRunning<HeavyWeaponAttack>() && !abilityRunner.IsAbilityRunning<LightWeaponAttack>()&& !abilityRunner.IsAbilityRunning<WeaponArt>())//ai is not attacking player
                 {
                     float GuardChance = UnityEngine.Random.Range(0f, 1f);
-                    if (GuardChance > 0.2)
+                    if (GuardChance < guardProb)
                     {
-                        abilityRunner.EnqueueAbility<Guard>();
-                        float randomGuardChargeTime = UnityEngine.Random.Range(0.5f, 1f);
-                        maxGuardChargeTime = Time.time;
-                        maxGuardChargeTime += randomGuardChargeTime;
+                        stateMachine.RunCoroutine(GuardTime());
                     }
-
                 }
                 else
                 {
                     float GuardChance = UnityEngine.Random.Range(0f, 1f);
-                    if (GuardChance > 0.4)
+                    if (GuardChance < guardProb- guardChanceDecrease)
                     {
-                        abilityRunner.EnqueueAbility<Guard>();
-                        float randomGuardChargeTime = UnityEngine.Random.Range(0.5f, 1f);
-                        maxGuardChargeTime = Time.time;
-                        maxGuardChargeTime += randomGuardChargeTime;
+                        stateMachine.RunCoroutine(GuardTime());
                     }
                 }
             }
             return null;
+        }
+        protected IEnumerator<CoroutineOption> RestTime()
+        {
+            float maxRestTime = Time.time + UnityEngine.Random.Range(3f, 5f);
+            while(Time.time < maxRestTime)
+            {
+                moveDistance = UnityEngine.Random.Range(-1f, 1f);
+                controller.KeepDistanceFromTarget(transform.position, backKeepDistance, moveDistance);
+                float walkFinishTime = UnityEngine.Random.Range(0.5f, 1f) + Time.time;
+                while (Time.time < walkFinishTime)
+                {
+                    controller.LookTowards();
+                    if (isNextMoveStart == true)
+                    {
+                        isNextMoveStart = false;
+                        if (playerAbilityRunner.IsAbilityRunning<HeavyWeaponAttack>() || playerAbilityRunner.IsAbilityRunning<LightWeaponAttack>() || playerAbilityRunner.IsAbilityRunning<WeaponArt>() || playerAbilityRunner.IsAbilityRunning<Shoot>())//if player is attacking
+                        {
+                            float GuardChance = UnityEngine.Random.Range(0f, 1f);
+                            if (GuardChance < guardProb + guardChanceDecrease)
+                            {
+                                abilityRunner.EnqueueAbility<Guard>();
+                            }
+                        }
+                    }
+                    yield return null;
+
+                }
+                abilityRunner.Signal<Guard>();
+                yield return null;
+            }
+            controller.ChaseTarget();
         }
         public override Type Tick()
         {
@@ -155,9 +193,11 @@ namespace GameScripts.AI.StickEnemy
                 return typeof(WanderState);
             }
             controller.LookTowards();
-            if (abilityRunner.IsAbilityRunning<Guard>() && maxGuardChargeTime < Time.time)
+            posture = controller.GetEntity.Posture / controller.GetEntity.MaxPosture;
+            if (posture< postureThreshold)
             {
-                abilityRunner.Signal<Guard>();
+                stateMachine.RunCoroutine(RestTime());
+                
             }
             if (controller.TargetInRange(attackRange) && isNextMoveStart==true)
             {
@@ -165,14 +205,10 @@ namespace GameScripts.AI.StickEnemy
             }
             if (abilityRunner.IsAbilityRunning<HeavyWeaponAttack>() || abilityRunner.IsAbilityRunning<LightWeaponAttack>()|| abilityRunner.IsAbilityRunning<Guard>()|| abilityRunner.IsAbilityRunning<WeaponArt>()) 
             {
-                if(abilityRunner.IsAbilityRunning<HeavyWeaponAttack>() && maxChargeTime<Time.time )
-                {
-                    abilityRunner.Signal<HeavyWeaponAttack>();
-                }
-                return typeof(ChaseState);
+                return null;
             }
             MeleeAttack();
-            return typeof(ChaseState);
+            return null;
         }
     }
 }   

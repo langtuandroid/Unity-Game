@@ -145,7 +145,6 @@ namespace GameScripts.AI.DaggerEnemy
             }
             
             float enemyHealth = controller.target.Health / controller.target.MaxHealth;
-            float enemyPosture = controller.target.Posture / controller.target.MaxPosture;
             //conditionCheck(enemyHealth, enemyPosture);
             if (enemyHealth > healthThreshold)
             {

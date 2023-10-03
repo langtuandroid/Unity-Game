@@ -99,6 +99,7 @@ namespace LobsterFramework.AI
                         {
                             awakeTime = Time.time + option.waitTime;
                         }
+                        
                     }
                     return;
                 }
@@ -110,6 +111,7 @@ namespace LobsterFramework.AI
                     currentState.OnEnter();
                     switchingTo = null;
                 }
+                
                 return;
             }
 
