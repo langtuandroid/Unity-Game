@@ -120,14 +120,14 @@ namespace GameScripts.AI.StickEnemy
         {
             abilityRunner.EnqueueAbility<HeavyWeaponAttack>();
             float randomChargeTime = UnityEngine.Random.Range(0.5f, 1.5f);
-            yield return CoroutineOption.Wait(randomChargeTime * heavyAttackPipe.MaxChargeTime);
+            yield return CoroutineOption.WaitForSeconds(randomChargeTime * heavyAttackPipe.MaxChargeTime);
             abilityRunner.Signal<HeavyWeaponAttack>();
         }
         protected IEnumerator<CoroutineOption> GuardTime()
         {
             abilityRunner.EnqueueAbility<Guard>();
             float randomGuardChargeTime = UnityEngine.Random.Range(0.5f, 1f);
-            yield return CoroutineOption.Wait(randomGuardChargeTime);
+            yield return CoroutineOption.WaitForSeconds(randomGuardChargeTime);
             abilityRunner.Signal<Guard>();
         }
         public Type GuardCheck()

@@ -47,7 +47,7 @@ namespace GameScripts.Abilities
         protected override IEnumerator<CoroutineOption> Coroutine(AbilityPipe pipe)
         {
             OffhandGrabConfig gc = (OffhandGrabConfig)CurrentConfig;
-            yield return CoroutineOption.Wait(0);
+            yield return CoroutineOption.WaitForSeconds(0);
             // Wait for signal to start attack
             while (!gc.signaled) {
                 yield return null;
@@ -82,7 +82,7 @@ namespace GameScripts.Abilities
             holdingEntity.Damage(gc.healthDamage, gc.postureDamage, currentWeapon.Entity);
 
             // Wait for the end of suppression
-            yield return CoroutineOption.Wait(gc.suppressTime);
+            yield return CoroutineOption.WaitForSeconds(gc.suppressTime);
             targetStateManager.Release(suppressKey);
             holdingEntity = null;
             // Wait for animation to finish

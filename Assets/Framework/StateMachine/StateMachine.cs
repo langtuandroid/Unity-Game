@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using LobsterFramework.Utility;
 
 namespace LobsterFramework.AI
 {
@@ -13,21 +14,14 @@ namespace LobsterFramework.AI
         [SerializeField] private State currentState;
 
         private readonly Dictionary<Type, State> states = new();
+        
 
         #region Coroutine
-        [HideInInspector]
-        public IEnumerator<CoroutineOption> Coroutine { get; set; }
-        [HideInInspector]
-        public float awakeTime = 0; // Coroutine will only execute if Time.time >= awakeTime
-
+        public readonly CoroutineRunner coroutineRunner = new(); 
         private Type switchingTo = null;
 
-        /// <summary>
-        /// Set the coroutine to be executed starting next frame, normal ticking and state switching will not occur until the coroutine has finished executing
-        /// </summary>
-        /// <param name="coroutine">The coroutine to be executed</param>
-        public void RunCoroutine(IEnumerator<CoroutineOption> coroutine) {
-            Coroutine = coroutine;
+        public Utility.Coroutine RunCoroutine(IEnumerator<CoroutineOption> coroutine) {
+            return coroutineRunner.AddCoroutine(coroutine);
         }
         #endregion
 
@@ -67,51 +61,14 @@ namespace LobsterFramework.AI
         public void Update()
         {
             // Execute Coroutine
-            if (Coroutine != default) {
-                if (Time.time < awakeTime) // CoroutineOption.Wait(x) is called by coroutine to halt execution until x seconds has passed
-                {
-                    return;
-                }
-                bool hasNext = Coroutine.MoveNext();
-                if (hasNext)
-                {
-                    CoroutineOption option = Coroutine.Current;
-                    if (option != null)
-                    {
-                        if (option.exit)
-                        {
-                            Coroutine = default;
-                            if (switchingTo != null)
-                            {
-                                currentState.OnExit();
-                                currentState = states[switchingTo];
-                                currentState.OnEnter();
-                                switchingTo = null;
-                            }
-                            return;
-                        }
-                        if (option.reset)
-                        {
-                            Coroutine.Reset();
-                            return;
-                        }
-                        if (option.waitTime > 0)
-                        {
-                            awakeTime = Time.time + option.waitTime;
-                        }
-                        
-                    }
-                    return;
-                }
-                // Return to normal state ticking when coroutine is finished
-                Coroutine = default;
-                if (switchingTo != null) {
+            if (coroutineRunner.Size > 0) {
+                coroutineRunner.Run();
+                if (switchingTo != null && coroutineRunner.Size == 0) {
                     currentState.OnExit();
                     currentState = states[switchingTo];
                     currentState.OnEnter();
                     switchingTo = null;
                 }
-                
                 return;
             }
 
@@ -120,7 +77,7 @@ namespace LobsterFramework.AI
 
             if (target != null)
             {
-                if (Coroutine == default)
+                if (coroutineRunner.Size == 0)
                 {
                     currentState.OnExit();
                     currentState = states[target];
