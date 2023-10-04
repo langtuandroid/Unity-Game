@@ -1,13 +1,10 @@
 using LobsterFramework.AbilitySystem;
-using System.Collections;
-using System.Collections.Generic;
+using LobsterFramework.Utility;
 using UnityEngine;
 using Animancer;
 using System;
-using LobsterFramework.Utility.BufferedStats;
-using UnityEngine.UIElements;
 
-namespace LobsterFramework.EntitySystem
+namespace LobsterFramework
 {
     [RequireComponent(typeof(Entity))]
     [RequireComponent(typeof(Poise))]
@@ -33,111 +30,90 @@ namespace LobsterFramework.EntitySystem
         private MovementController moveControl;
 
         // Suppression
-        private BaseOr suppression;
+        public readonly BaseOr suppression = new(false);
 
         // Movement block keys
-        private int postureBlockKey;
-        private int poiseBlockKey;
-        private int poiseAbilityBlockKey;
-        private int suppressBlockKey;
-        private int suppressAbilityBlockKey;
+        private BufferedValueAccessor<bool> postureMoveLock;
+        private BufferedValueAccessor<bool> poiseMoveLock;
+        private BufferedValueAccessor<bool> poiseAbilityLock;
+        private BufferedValueAccessor<bool> suppressMoveLock;
+        private BufferedValueAccessor<bool> suppressAbilityLock;
 
         void Start()
         {
-            suppression = new(false);
-
             poise = GetComponent<Poise>();
             entity = GetComponent<Entity>();
             moveControl = GetComponent<MovementController>();
-            poiseBlockKey = -1;
-            postureBlockKey = -1;
-            poiseAbilityBlockKey = -1;
+
+            postureMoveLock = moveControl.movementLock.GetAccessor();
+            poiseMoveLock = moveControl.movementLock.GetAccessor();
+            suppressMoveLock = moveControl.movementLock.GetAccessor();
+
+            suppressAbilityLock = abilityRunner.actionLock.GetAccessor();
+            poiseAbilityLock = abilityRunner.actionLock.GetAccessor();
 
             characterState = CharacterState.Normal;
-            poise.onPoiseStatusChange += OnPoiseChange;
-            entity.onPostureStatusChange += OnPostureChange;
+            poise.onPoiseStatusChange += OnPoiseStatusChanged;
+            entity.onPostureStatusChange += OnPostureStatusChanged;
             abilityRunner.onAbilityAnimation += OnAbilityAnimation;
-            PlayAnimation(CharacterState.Normal);
 
+            PlayAnimation(CharacterState.Normal);
             stateMap = new bool[enumStates.Length];
         }
 
-        public int Suppress()
+        private void OnEnable()
         {
-            int key = suppression.AddEffector(true);
-            stateMap[(int)CharacterState.Suppressed] = true;
-            if (suppression.EffectorCount == 1)
+            suppression.onValueChanged += OnSuppressionStatusChanged;
+        }
+
+        private void OnDisable()
+        {
+            suppression.onValueChanged -= OnSuppressionStatusChanged;
+        }
+
+        #region StatusListeners
+        private void OnSuppressionStatusChanged(bool suppressed) {
+            if (suppressed)
             {
-                suppressAbilityBlockKey = abilityRunner.BlockAction();
-                suppressBlockKey = moveControl.BlockMovement();
+                suppressMoveLock.Acquire(true);
+                suppressAbilityLock.Acquire(true);
                 moveControl.SetVelocityImmediate(Vector2.zero);
             }
-            ComputeStateAndPlayAnimation();
-            return key;
-        }
-
-        public bool Release(int key)
-        {
-            if (suppression.RemoveEffector(key))
-            {
-                if (suppression.EffectorCount == 0)
-                {
-                    stateMap[(int)CharacterState.Suppressed] = false;
-                    abilityRunner.UnblockAction(suppressAbilityBlockKey);
-                    moveControl.UnblockMovement(suppressBlockKey);
-                    ComputeStateAndPlayAnimation();
-                }
+            else {
+                stateMap[(int)CharacterState.Suppressed] = false;
+                suppressMoveLock.Release();
+                suppressAbilityLock.Release();
+                ComputeStateAndPlayAnimation();
             }
-            return false;
         }
+        
 
-        private void OnPoiseChange(bool poiseBroken)
+        private void OnPoiseStatusChanged(bool poiseBroken)
         {
             stateMap[(int)CharacterState.PoiseBroken] = poiseBroken;
             if (poiseBroken)
             {
-                if (poiseBlockKey == -1)
-                {
-                    poiseBlockKey = moveControl.BlockMovement();
-                }
-                if (poiseAbilityBlockKey == -1)
-                {
-                    poiseAbilityBlockKey = abilityRunner.BlockAction();
-                }
+                poiseMoveLock.Acquire(true);
+                poiseAbilityLock.Acquire(true);
             }
             else
             {
-                if (poiseBlockKey != -1)
-                {
-                    moveControl.UnblockMovement(poiseBlockKey);
-                    poiseBlockKey = -1;
-                }
-                if (poiseAbilityBlockKey != -1)
-                {
-                    abilityRunner.UnblockAction(poiseAbilityBlockKey);
-                    poiseAbilityBlockKey = -1;
-                }
+                poiseMoveLock.Release();
+                poiseAbilityLock.Release();
             }
             ComputeStateAndPlayAnimation();
         }
 
-        private void OnPostureChange(bool postureBroken)
+        private void OnPostureStatusChanged(bool postureBroken)
         {
             stateMap[(int)CharacterState.PostureBroken] = postureBroken;
             if (postureBroken)
             {
-                if (postureBlockKey == -1)
-                {
-                    postureBlockKey = moveControl.BlockMovement();
-                }
+                postureMoveLock.Acquire(true);
             }
             else
             {
-                if (postureBlockKey != -1)
-                {
-                    moveControl.UnblockMovement(postureBlockKey);
-                    postureBlockKey = -1;
-                }
+                postureMoveLock.Release();
             }
             ComputeStateAndPlayAnimation();
         }
@@ -147,6 +123,7 @@ namespace LobsterFramework.EntitySystem
             stateMap[(int)CharacterState.AbilityCasting] = casting;
             ComputeStateAndPlayAnimation();
         }
+        #endregion
 
         private void ComputeStateAndPlayAnimation()
         {

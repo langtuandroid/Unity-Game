@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LobsterFramework.AbilitySystem;
+using LobsterFramework.Utility;
 
 namespace LobsterFramework.Effects
 {
     [CreateAssetMenu(menuName = "Effect/Stun")]
     public class StunEffect : Effect
     {
-        private int effector_id = -1;
-        private int move_id = -1;
+        private BufferedValueAccessor<bool> abilityLock;
+        private BufferedValueAccessor<bool> moveLock;
         private AbilityRunner abilityRunner;
         private MovementController moveControl;
 
@@ -18,25 +19,27 @@ namespace LobsterFramework.Effects
             moveControl = processor.GetComponentInBoth<MovementController>(); 
             if (moveControl != null)
             {
-                move_id = moveControl.BlockMovement();
+                moveLock = moveControl.movementLock.GetAccessor();
+                moveLock.Acquire(true);
             }
             
             abilityRunner = processor.GetComponentInBoth<AbilityRunner>();
             if (abilityRunner != null) {
-                effector_id = abilityRunner.BlockAction();
+                abilityLock = abilityRunner.actionLock.GetAccessor();
+                abilityLock.Acquire(true);
             }
         }
 
         protected override void OnEffectOver()
         {
-            if (effector_id != -1) {
-                abilityRunner.UnblockAction(effector_id);
-                effector_id = -1;
-            }
-            if(move_id != -1)
+            if (moveControl != null)
             {
-                moveControl.UnblockMovement(move_id);
-                move_id = -1;
+                moveLock.Release();
+            }
+
+            if (abilityRunner != null)
+            {
+                abilityLock.Release();
             }
         }
     }

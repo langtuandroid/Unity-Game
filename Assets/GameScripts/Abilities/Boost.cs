@@ -1,7 +1,8 @@
 using LobsterFramework.AbilitySystem;
 using LobsterFramework.Pool;
-using LobsterFramework.EntitySystem;
+using LobsterFramework;
 using UnityEngine;
+using LobsterFramework.Utility;
 
 namespace GameScripts.Abilities
 {
@@ -15,10 +16,17 @@ namespace GameScripts.Abilities
             public float duration;
             public VarString vfxTag;
 
-            [HideInInspector] public int damageKey;
-            [HideInInspector] public int hyperArmorKey;
-            [HideInInspector] public float timeEnd; 
-           
+            [HideInInspector] public BufferedValueAccessor<bool> hyperArmor;
+            [HideInInspector] public BufferedValueAccessor<float> damageMod;
+            [HideInInspector] public float timeEnd;
+
+            protected override void Initialize()
+            {
+                Boost boost = (Boost)ability;
+                hyperArmor = boost.poise.hyperarmor.GetAccessor();
+                damageMod = boost.damageModifier.percentageDamageModifcation.GetAccessor();
+            }
+
             protected override void Validate()
             {
                 if (damageModifier < 0)
@@ -48,6 +56,8 @@ namespace GameScripts.Abilities
         private DamageModifier damageModifier;
         private Transform transform;
         private Poise poise;
+       
+        
 
         protected override void Initialize()
         {
@@ -59,9 +69,9 @@ namespace GameScripts.Abilities
         protected override void OnEnqueue(AbilityPipe pipe)
         {
             BoostConfig bConfig = (BoostConfig)CurrentConfig;
-            bConfig.hyperArmorKey = poise.HyperArmor();
+            bConfig.hyperArmor.Acquire(true);
             bConfig.timeEnd = Time.time + bConfig.duration;
-            bConfig.damageKey = damageModifier.percentageDamageModifcation.AddEffector(bConfig.damageModifier);
+            bConfig.damageMod.Acquire(bConfig.damageModifier);
             if (bConfig.vfxTag != null) {
                 ObjectPool.GetObject(bConfig.vfxTag.Value, transform.position, Quaternion.identity, transform);
             }
@@ -80,8 +90,8 @@ namespace GameScripts.Abilities
         protected override void OnActionFinish()
         {
             BoostConfig bConfig = (BoostConfig)CurrentConfig;
-            poise.DisArmor(bConfig.hyperArmorKey);
-            damageModifier.percentageDamageModifcation.RemoveEffector(bConfig.damageKey);
+            bConfig.damageMod.Release();
+            bConfig.hyperArmor.Release();
         }
     }
 }

@@ -1,11 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LobsterFramework.AbilitySystem;
 using LobsterFramework;
-using LobsterFramework.EntitySystem;
-using LobsterFramework.Pool;
-
+using LobsterFramework.Utility;
 
 namespace GameScripts.Abilities
 {
@@ -16,6 +13,8 @@ namespace GameScripts.Abilities
     {
         [SerializeField] TargetSetting targets;
         private MovementController moveControl;
+        private BufferedValueAccessor<float> moveModifier;
+        private BufferedValueAccessor<float> rotateModifier;
 
         public class CycloneConfig : AbilityCoroutineConfig {
             
@@ -25,8 +24,6 @@ namespace GameScripts.Abilities
             [HideInInspector] public Weapon currentWeapon;
             [HideInInspector] public bool stopped;
             [HideInInspector] public bool repeatAttack;
-            [HideInInspector] public int m_key;
-            [HideInInspector] public int r_key;
         }
 
         public class CyclonePipe : AbilityPipe {  }
@@ -39,6 +36,8 @@ namespace GameScripts.Abilities
         protected override void Init()
         {
             moveControl = abilityRunner.GetComponentInBoth<MovementController>();
+            moveModifier = moveControl.moveSpeedModifier.GetAccessor();
+            rotateModifier = moveControl.rotateSpeedModifier.GetAccessor();
         }
 
         protected override void OnCoroutineEnqueue(AbilityPipe pipe)
@@ -46,8 +45,8 @@ namespace GameScripts.Abilities
             CycloneConfig cycloneConfig = (CycloneConfig)CurrentConfig;
             cycloneConfig.currentWeapon = WeaponWielder.Mainhand;
             SubscribeWeaponEvent(cycloneConfig.currentWeapon);
-            cycloneConfig.m_key = moveControl.ModifyMoveSpeed(cycloneConfig.moveSpeedModifier);
-            cycloneConfig.r_key = moveControl.ModifyRotationSpeed(cycloneConfig.rotationSpeedModifier);
+            moveModifier.Acquire(cycloneConfig.moveSpeedModifier);
+            rotateModifier.Acquire(cycloneConfig.rotationSpeedModifier);
             abilityRunner.StartAnimation(this, CurrentConfigName, WeaponWielder.GetAbilityClip(GetType(), cycloneConfig.currentWeapon.WeaponType), WeaponWielder.Mainhand.AttackSpeed);
         }
 
@@ -76,8 +75,8 @@ namespace GameScripts.Abilities
             CycloneConfig cycloneConfig = (CycloneConfig)CurrentConfig;
             UnSubscribeWeaponEvent(cycloneConfig.currentWeapon);
             cycloneConfig.currentWeapon.Disable();
-            moveControl.UnmodifyMoveSpeed(cycloneConfig.m_key);
-            moveControl.UnmodifyRotationSpeed(cycloneConfig.r_key);
+            moveModifier.Release();
+            rotateModifier.Release();
         }
 
         protected override void OnCoroutineReset()

@@ -58,9 +58,9 @@ namespace LobsterFramework.AbilitySystem
 
         internal WeaponWielder weaponWielder;
 
-        public UnityAction<Entity> onEntityHit;
-        public UnityAction<Weapon> onWeaponHit;
-        public UnityAction onWeaponDeflect;
+        public Action<Entity> onEntityHit;
+        public Action<Weapon> onWeaponHit;
+        public Action onWeaponDeflect;
 
         private Collider2D thisCollider;
         new private Transform transform;
@@ -129,7 +129,13 @@ namespace LobsterFramework.AbilitySystem
         }
         public void SetOnHitDamage(Damage damage)
         {
-            OnHitDamage = new Damage { health = damage.health, posture = damage.posture, source = Entity, type = DamageType.WeaponHit };
+            if (damage == Damage.none)
+            {
+                OnHitDamage = Damage.none;
+            }
+            else {
+                OnHitDamage = new Damage { health = damage.health, posture = damage.posture, source = Entity, type = DamageType.WeaponHit };
+            }
         }
 
         /// <summary>

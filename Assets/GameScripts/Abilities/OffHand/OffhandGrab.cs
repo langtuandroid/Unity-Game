@@ -1,8 +1,7 @@
 using Animancer;
 using LobsterFramework;
 using LobsterFramework.AbilitySystem;
-using LobsterFramework.EntitySystem;
-using System.Collections;
+using LobsterFramework.Utility;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,7 +20,8 @@ namespace GameScripts.Abilities
         private Entity holdingEntity = null;
         private MovementController targetMoveControl;
         private CharacterStateManager targetStateManager = null;
-        private int suppressKey = -1;
+
+        private BufferedValueAccessor<bool> suppression;
 
 
         protected override void Init()
@@ -83,7 +83,7 @@ namespace GameScripts.Abilities
 
             // Wait for the end of suppression
             yield return CoroutineOption.WaitForSeconds(gc.suppressTime);
-            targetStateManager.Release(suppressKey);
+            suppression.Release();
             holdingEntity = null;
             // Wait for animation to finish
             while (!gc.signaled) { 
@@ -97,7 +97,7 @@ namespace GameScripts.Abilities
             if (holdingEntity != null) {
                 holdingEntity.transform.parent = oldParentTransform;
                 holdingEntity = null;
-                targetStateManager.Release(suppressKey);
+                suppression.Release();
                 targetMoveControl.KinematicBody(false);
                 targetMoveControl.EnableCollider();
                 targetMoveControl.SetVelocityImmediate(rigidBody.velocity);
@@ -136,7 +136,8 @@ namespace GameScripts.Abilities
                 oldParentTransform = entity.transform.parent;
                 holdingEntity = entity;
                 targetStateManager = entity.GetComponent<CharacterStateManager>();
-                suppressKey = targetStateManager.Suppress();
+                suppression = targetStateManager.suppression.GetAccessor();
+                suppression.Acquire(true);
                 entity.transform.parent = currentWeapon.transform;
                 targetMoveControl = entity.GetComponent<MovementController>();
                 targetMoveControl.DisableCollider();

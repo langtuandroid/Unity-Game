@@ -237,7 +237,7 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         // Called when the parent component is being initialized
-        public void OnStartUp()
+        internal void OnStartUp()
         {
             if (!HasConfigPipeDefined())
             {
@@ -256,6 +256,7 @@ namespace LobsterFramework.AbilitySystem {
                     removed.Add(name);
                     continue;
                 }
+                config.ability = this;
                 config.Initialize();
                 pipes[name] = (AbilityPipe)Activator.CreateInstance(pipeType);
                 pipes[name].Construct(config);
@@ -266,7 +267,7 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         // Called when the parent object is destroyed, this 
-        public void OnClose()
+        internal void OnClose()
         {
             CleanUp();
             foreach (AbilityConfig config in configs.Values)
@@ -276,7 +277,7 @@ namespace LobsterFramework.AbilitySystem {
         }
 
         // Reset, called when the parent component is resetted
-        public void ResetStatus()
+        internal void ResetStatus()
         {
             CleanUp();
             Initialize();
@@ -438,12 +439,13 @@ namespace LobsterFramework.AbilitySystem {
         [Serializable]
         public class AbilityConfig : ScriptableObject
         {
+            [HideInInspector] internal protected Ability ability;
             [HideInInspector]
-            public int accessKey = -1;
+            internal int accessKey = -1;
             [HideInInspector]
-            public float endTime = 0;
+            internal float endTime = 0;
 
-            [SerializeField] private bool useCooldown = true;
+            [SerializeField] private bool useCooldown = true; 
             [SerializeField] private float cooldown = 0;
             public bool IsExecuting { get { return accessKey != -1; } }
             public bool OnCooldown { get { return Time.time - endTime < cooldown;}}
@@ -452,7 +454,7 @@ namespace LobsterFramework.AbilitySystem {
             /// <summary>
             /// Whether this ability has been halted, set this to true while the ability is running will terminate it
             /// </summary>
-            public bool isSuspended = false;
+            internal bool isSuspended = false;
 
             /// <summary>
             /// Override this to perform any additional setups on destruction of parent object (i.e Remove links to unity action/events)

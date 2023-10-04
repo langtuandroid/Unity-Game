@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.Events;
-using LobsterFramework.Utility.BufferedStats;
+using LobsterFramework.Utility;
 
 namespace LobsterFramework
 {
@@ -338,8 +338,8 @@ namespace LobsterFramework
         public float PostureDamage {get;private set; }
 
         private void ComputeDamage() {
-            HealthDamage = Math.Max(healthDamage.Stat - healthDefense.Stat, 0) * hdModifier.Stat;
-            PostureDamage = Math.Max(postureDamage.Stat - postureDefense.Stat, 0) * pdModifier.Stat;
+            HealthDamage = Math.Max(healthDamage.Value - healthDefense.Value, 0) * hdModifier.Value;
+            PostureDamage = Math.Max(postureDamage.Value - postureDefense.Value, 0) * pdModifier.Value;
         }
 
         public void AddDamage(Damage damage) { 
@@ -443,10 +443,10 @@ namespace LobsterFramework
 
         private void ComputeRegen()
         {
-            HealthRegen = healthRegen.Stat * hrModifier.Stat;
-            PostureRegen = postureRegen.Stat * prModifier.Stat;
-            PostureModifier = prModifier.Stat;
-            HealthModifier = hrModifier.Stat;
+            HealthRegen = healthRegen.Value * hrModifier.Value;
+            PostureRegen = postureRegen.Value * prModifier.Value;
+            PostureModifier = prModifier.Value;
+            HealthModifier = hrModifier.Value;
         }
 
         public void AddHealth(float health)

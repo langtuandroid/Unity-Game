@@ -1,11 +1,7 @@
 using System;
 using UnityEngine;
 using LobsterFramework.AbilitySystem;
-using LobsterFramework.EntitySystem;
 using LobsterFramework.AI;
-using GameScripts.Abilities;
-using UnityEngine.InputSystem.Android;
-using UnityEngine.InputSystem.XR;
 
 namespace GameScripts.AI
 {

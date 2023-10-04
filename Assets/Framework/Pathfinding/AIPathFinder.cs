@@ -1,9 +1,5 @@
 using Pathfinding;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using LobsterFramework.EntitySystem;
-using UnityEngine.UIElements;
 
 namespace LobsterFramework.ModifiedPathfinding
 {

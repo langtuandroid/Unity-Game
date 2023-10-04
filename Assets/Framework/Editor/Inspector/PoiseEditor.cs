@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEditor.TerrainTools;
 using UnityEngine;
 using UnityEditor;
-using LobsterFramework.EntitySystem;
 
 
 namespace LobsterFramework.Editors

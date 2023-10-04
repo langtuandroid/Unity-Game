@@ -1,11 +1,7 @@
 using UnityEngine;
-using LobsterFramework.EntitySystem;
-using LobsterFramework.Pool;
 using System.Collections.Generic;
 using Animancer;
-using static UnityEngine.EventSystems.EventTrigger;
-using static LobsterFramework.AbilitySystem.LightWeaponAttack;
-using UnityEditor.Playables;
+using LobsterFramework.Utility;
 
 namespace LobsterFramework.AbilitySystem
 {
@@ -18,11 +14,15 @@ namespace LobsterFramework.AbilitySystem
         
         private MovementController moveControl;
         private DamageModifier damageModifier;
+        private BufferedValueAccessor<float> move;
+        private BufferedValueAccessor<float> rotate;
 
         protected override void Init()
         {
             moveControl = abilityRunner.GetComponentInBoth<MovementController>();
             damageModifier = abilityRunner.GetAbilityStat<DamageModifier>();
+            move = moveControl.moveSpeedModifier.GetAccessor();
+            rotate = moveControl.rotateSpeedModifier.GetAccessor();
         }
 
         protected override bool WConditionSatisfied(AbilityConfig config)
@@ -39,8 +39,8 @@ namespace LobsterFramework.AbilitySystem
             h.inputSignaled = false;
             h.chargeTimer = 0;
             h.ability = this;
-            h.m_key = moveControl.ModifyMoveSpeed(h.currentWeapon.HMoveSpeedModifier);
-            h.r_key = moveControl.ModifyRotationSpeed(h.currentWeapon.HRotationSpeedModifier);
+            move.Acquire(h.currentWeapon.HMoveSpeedModifier);
+            rotate.Acquire(h.currentWeapon.HRotationSpeedModifier);
             h.animationState = abilityRunner.StartAnimation(this, CurrentConfigName, WeaponWielder.GetAbilityClip(GetType(), h.currentWeapon.WeaponType), WeaponWielder.Mainhand.AttackSpeed);
         }
 
@@ -86,8 +86,8 @@ namespace LobsterFramework.AbilitySystem
             UnSubscribeWeaponEvent();
             h.animationSignaled = false;
             h.currentWeapon.Disable();
-            moveControl.UnmodifyMoveSpeed(h.m_key);
-            moveControl.UnmodifyRotationSpeed(h.r_key);
+            move.Release();
+            rotate.Release();
         }
 
         protected override void Signal(AnimationEvent animationEvent)
@@ -174,11 +174,7 @@ namespace LobsterFramework.AbilitySystem
             [HideInInspector] public Weapon currentWeapon;
             [HideInInspector] public AnimancerState animationState;
 
-            [HideInInspector] public int m_key = -1;
-            [HideInInspector] public int r_key = -1;
-
             [HideInInspector] public float chargeTimer;
-            [HideInInspector] public HeavyWeaponAttack ability;
         }
         public class HeavyWeaponAttackPipe : AbilityPipe
         {

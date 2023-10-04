@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using LobsterFramework.AbilitySystem;
 using LobsterFramework.Interaction;
-using LobsterFramework.EntitySystem;
 using GameScripts.Abilities;
 using GameScripts.Interaction;
 using LobsterFramework;

@@ -1,10 +1,9 @@
 using UnityEngine;
-using LobsterFramework.EntitySystem;
 using LobsterFramework.Pool;
 using LobsterFramework.AbilitySystem;
 using LobsterFramework;
-using System.Collections;
 using System.Collections.Generic;
+using LobsterFramework.Utility;
 
 namespace GameScripts.Abilities
 {
@@ -18,11 +17,15 @@ namespace GameScripts.Abilities
         private MovementController moveControl;
         private AnimationClip clip;
         private Weapon currentWeapon;
+        private BufferedValueAccessor<float> moveModifier;
+        private BufferedValueAccessor<float> rotateModifier;
 
         protected override void Init()
         {
             clip = WeaponWielder.GetAbilityClip(GetType(), WeaponType.Firearm);
             moveControl = abilityRunner.GetComponentInBoth<MovementController>();
+            moveModifier = moveControl.moveSpeedModifier.GetAccessor();
+            rotateModifier = moveControl.moveSpeedModifier.GetAccessor();
         }
 
         protected override bool WConditionSatisfied(AbilityConfig config) 
@@ -39,8 +42,8 @@ namespace GameScripts.Abilities
             ShootConfig config = (ShootConfig)CurrentConfig;
             config.signaled = false;
             abilityRunner.StartAnimation(this, CurrentConfigName, clip, currentWeapon.AttackSpeed);
-            config.moveKey = moveControl.ModifyMoveSpeed(config.moveSpeedModifier);
-            config.rotateKey = moveControl.ModifyRotationSpeed(config.rotateSpeedModifier);
+            moveModifier.Acquire(config.moveSpeedModifier);
+            rotateModifier.Acquire(config.rotateSpeedModifier);
             
         }
 
@@ -70,8 +73,8 @@ namespace GameScripts.Abilities
         protected override void OnCoroutineFinish()
         {
             ShootConfig config = (ShootConfig)CurrentConfig;
-            moveControl.UnmodifyMoveSpeed(config.moveKey);
-            moveControl.UnmodifyRotationSpeed(config.rotateKey);
+            moveModifier.Release();
+            rotateModifier.Release();
         }
 
         protected override void OnCoroutineReset()
@@ -94,9 +97,6 @@ namespace GameScripts.Abilities
             [Range(0, 1)] public float moveSpeedModifier;
             [Range(0, 1)] public float rotateSpeedModifier;
 
-            // Keys used to unconstrain move speed and rotation speed
-            [HideInInspector] public int moveKey;
-            [HideInInspector] public int rotateKey;
             [HideInInspector] public bool signaled;
         }
 

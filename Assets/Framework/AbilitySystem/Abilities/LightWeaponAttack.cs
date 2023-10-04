@@ -1,5 +1,5 @@
-using LobsterFramework.EntitySystem;
-using LobsterFramework.Pool;
+
+using LobsterFramework.Utility;
 using System.Collections.Generic;
 using UnityEngine;
 using static Codice.Client.Common.Connection.AskCredentialsToUser;
@@ -16,6 +16,8 @@ namespace LobsterFramework.AbilitySystem
         private Entity attacker;
         private MovementController moveControl;
         private DamageModifier damageModifier;
+        private BufferedValueAccessor<float> move;
+        private BufferedValueAccessor<float> rotate;
 
         public class LightWeaponAttackConfig : AbilityCoroutineConfig {
             [HideInInspector]
@@ -35,6 +37,8 @@ namespace LobsterFramework.AbilitySystem
             attacker = WeaponWielder.Wielder;
             moveControl = attacker.GetComponent<MovementController>();
             damageModifier = abilityRunner.GetAbilityStat<DamageModifier>();
+            move = moveControl.moveSpeedModifier.GetAccessor();
+            rotate = moveControl.rotateSpeedModifier.GetAccessor();
         }
 
         protected override bool WConditionSatisfied(AbilityConfig config)
@@ -48,8 +52,8 @@ namespace LobsterFramework.AbilitySystem
             c.currentWeapon = WeaponWielder.Mainhand;
             SubscribeWeaponEvent(c.currentWeapon);
             c.signaled = false;
-            c.m_key = moveControl.ModifyMoveSpeed(c.currentWeapon.LMoveSpeedModifier);
-            c.r_key = moveControl.ModifyRotationSpeed(c.currentWeapon.LRotationSpeedModifier);
+            move.Acquire(c.currentWeapon.LMoveSpeedModifier);
+            rotate.Acquire(c.currentWeapon.LRotationSpeedModifier);
             abilityRunner.StartAnimation(this, CurrentConfigName, WeaponWielder.GetAbilityClip(GetType(), WeaponWielder.Mainhand.WeaponType), c.currentWeapon.AttackSpeed);
         }
 
@@ -72,8 +76,8 @@ namespace LobsterFramework.AbilitySystem
             c.signaled = false;
             c.currentWeapon.Disable();
 
-            moveControl.UnmodifyMoveSpeed(c.m_key);
-            moveControl.UnmodifyRotationSpeed(c.r_key);
+            move.Release();
+            rotate.Release();
             c.m_key = -1;
             c.r_key = -1;
 
@@ -88,13 +92,8 @@ namespace LobsterFramework.AbilitySystem
             LightWeaponAttackConfig l = (LightWeaponAttackConfig)CurrentConfig;
             UnSubscribeWeaponEvent(l.currentWeapon);
             l.currentWeapon.Disable();
-            if (l.m_key != -1)
-            {
-                moveControl.UnmodifyMoveSpeed(l.m_key);
-            }
-            if(l.r_key != -1) {
-                moveControl.UnmodifyRotationSpeed(l.r_key);
-            }
+            move.Release();
+            rotate.Release();
         }
 
         protected override void OnCoroutineReset()

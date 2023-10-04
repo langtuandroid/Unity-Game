@@ -1,6 +1,5 @@
-using LobsterFramework.Utility.BufferedStats;
+using LobsterFramework.Utility;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,30 +12,45 @@ namespace LobsterFramework
         [SerializeField] private RefFloat maxSpeed;
         [SerializeField] private RefFloat rotateSpeed;
 
-        public UnityAction<bool> onMovementBlocked;
+        /// <summary>
+        /// Event that occurs when movement status is changed
+        /// </summary>
+        public Action<bool> onMovementBlocked;
+        /// <summary>
+        /// Manages movement blocking & unblocking. Add true values to block movement, remove all true values to unblock.
+        /// </summary>
+        public readonly BaseOr movementLock = new(false);
+        /// <summary>
+        /// Modifies movespeed, base value is 1
+        /// </summary>
+        public readonly FloatProduct moveSpeedModifier = new(1, true);
+        /// <summary>
+        /// Modifies rotate speed, base value is 1
+        /// </summary>
+        public readonly FloatProduct rotateSpeedModifier = new(1, true);
 
         private Rigidbody2D _rigidBody;
         private Collider2D _collider;
         new private Transform transform;
-        private BaseOr movementBlock = new(false);
+        
         private Vector2 steering;
         private Vector2 targetVelocity;
-
-        private FloatProduct moveSpeedMultiplier = new(1, true);
-        private FloatProduct rotateSpeedMultiplier = new(1, true);
 
         public float Speed { get; private set; }
         public float RotateSpeed { get; private set; }
 
         public Rigidbody2D RigidBody { get { return _rigidBody; } }
-        public bool MovementBlocked { get { return movementBlock.Stat; } }
+        public bool MovementBlocked { get { return movementLock.Value; } }
 
         private void Start() { 
             transform = GetComponent<Transform>();
             _rigidBody = GetComponent<Rigidbody2D>();
             _collider = GetComponent<Collider2D>();
-            Speed = maxSpeed.Value * moveSpeedMultiplier.Stat;
-            RotateSpeed = rotateSpeed.Value * rotateSpeedMultiplier.Stat;
+            Speed = maxSpeed.Value * moveSpeedModifier.Value;
+            RotateSpeed = rotateSpeed.Value * rotateSpeedModifier.Value;
+            movementLock.onValueChanged += OnMovementStatusChanged;
+            moveSpeedModifier.onValueChanged += OnMoveSpeedChanged;
+            rotateSpeedModifier.onValueChanged += OnRotateSpeedChanged;
         }
 
         private void FixedUpdate()
@@ -51,71 +65,23 @@ namespace LobsterFramework
                 _rigidBody.AddForce(transform.rotation * steering);
             }
         }
-        #region MovementModifiers
-        /// <summary>
-        /// Add an effector to block movement of this entity. The movement of the entity will be blocked if there's at least 1 effector.
-        /// </summary>
-        /// <returns>The id of the newly added effector</returns>
-        public int BlockMovement()
+        #region MovementUtils
+        private void OnMovementStatusChanged(bool blocked)
         {
-            bool before = MovementBlocked;
-            int key = movementBlock.AddEffector(true);
-            if (onMovementBlocked != null && !before)
+            if (blocked)
             {
-                onMovementBlocked.Invoke(true);
+                onMovementBlocked?.Invoke(true);
             }
-            return key;
-        }
-
-        /// <summary>
-        /// Remove the effector that blocks movement with specified key. The movement of the entity will be unblocked if there's 0 effector left. 
-        /// Will fail if the effector with specified key does not exist.
-        /// </summary>
-        /// <param name="key">The key of the effector to be remvoed</param>
-        /// <returns> The status of this operation </returns>
-        public bool UnblockMovement(int key)
-        {
-            if (movementBlock.RemoveEffector(key))
-            {
-                if (!MovementBlocked && onMovementBlocked != null)
-                {
-                    onMovementBlocked.Invoke(false);
-                }
-                return true;
+            else {
+                onMovementBlocked?.Invoke(false);
             }
-            return false;
+        }
+        private void OnMoveSpeedChanged(float modifier) {
+            Speed = maxSpeed * modifier;
         }
 
-        public int ModifyMoveSpeed(float speedMultiplier)
-        {
-            int key = moveSpeedMultiplier.AddEffector(speedMultiplier);
-            Speed = maxSpeed.Value * moveSpeedMultiplier.Stat;
-            return key;
-        }
-
-        public bool UnmodifyMoveSpeed(int key)
-        {
-            if (moveSpeedMultiplier.RemoveEffector(key)) {
-                Speed = maxSpeed.Value * moveSpeedMultiplier.Stat;
-                return true;
-            }
-            return false;
-        }
-
-        public int ModifyRotationSpeed(float speedMultiplier)
-        {
-            int key = rotateSpeedMultiplier.AddEffector(speedMultiplier);
-            RotateSpeed = rotateSpeed.Value * rotateSpeedMultiplier.Stat;
-            return key;
-        }
-
-        public bool UnmodifyRotationSpeed(int key)
-        {
-            if (rotateSpeedMultiplier.RemoveEffector(key)) {
-                RotateSpeed = rotateSpeed.Value * rotateSpeedMultiplier.Stat;
-                return true;
-            }
-            return false;
+        private void OnRotateSpeedChanged(float modifier) {
+            RotateSpeed = rotateSpeed * modifier;
         }
 
         public void DisableCollider() {

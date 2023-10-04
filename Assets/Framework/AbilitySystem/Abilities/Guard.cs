@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using Animancer;
+using LobsterFramework.Utility;
 
 namespace LobsterFramework.AbilitySystem
 {
@@ -9,6 +10,8 @@ namespace LobsterFramework.AbilitySystem
     public class Guard : WeaponAbility
     {
         private MovementController moveControl;
+        private BufferedValueAccessor<float> moveModifier;
+        private BufferedValueAccessor<float> rotateModifier;
 
         public class GuardConfig : AbilityCoroutineConfig
         {
@@ -29,6 +32,8 @@ namespace LobsterFramework.AbilitySystem
         protected override void Init()
         {
             moveControl = WeaponWielder.Wielder.GetComponent<MovementController>();
+            moveModifier = moveControl.moveSpeedModifier.GetAccessor();
+            rotateModifier = moveControl.rotateSpeedModifier.GetAccessor();
         }
 
         protected override bool WConditionSatisfied(AbilityConfig config)
@@ -43,8 +48,8 @@ namespace LobsterFramework.AbilitySystem
             guardConfig.animationSignaled = false;
             guardConfig.deflected = false;
 
-            guardConfig.m_key = moveControl.ModifyMoveSpeed(guardConfig.currentWeapon.GMoveSpeedModifier);
-            guardConfig.r_key = moveControl.ModifyRotationSpeed(guardConfig.currentWeapon.GRotationSpeedModifier);
+            moveModifier.Acquire(guardConfig.currentWeapon.GMoveSpeedModifier);
+            rotateModifier.Acquire(guardConfig.currentWeapon.GRotationSpeedModifier);
             guardConfig.animancerState = abilityRunner.StartAnimation(this, CurrentConfigName, WeaponWielder.GetAbilityClip(GetType(), guardConfig.currentWeapon.WeaponType), guardConfig.currentWeapon.DefenseSpeed);
 
             guardConfig.currentWeapon.onWeaponDeflect += OnDeflect;
@@ -54,8 +59,8 @@ namespace LobsterFramework.AbilitySystem
         {
             GuardConfig g = (GuardConfig)CurrentConfig;
             g.currentWeapon.Disable();
-            moveControl.UnmodifyMoveSpeed(g.m_key);
-            moveControl.UnmodifyRotationSpeed(g.r_key);
+            moveModifier.Release();
+            rotateModifier.Release();
         }
 
         protected override IEnumerator<CoroutineOption> Coroutine(AbilityPipe pipe)

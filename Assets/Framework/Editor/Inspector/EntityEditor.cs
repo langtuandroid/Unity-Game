@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using LobsterFramework.EntitySystem;
 
 namespace LobsterFramework.Editors
 {
     [CustomEditor(typeof(Entity))]
-    public class EntityEditor : UnityEditor.Editor
+    public class EntityEditor : Editor
     {
         public void OnInspectorUpdate()
         {

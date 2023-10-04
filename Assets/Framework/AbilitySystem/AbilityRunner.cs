@@ -2,10 +2,8 @@ using System.Linq;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEditor;
 using LobsterFramework.Utility;
-using LobsterFramework.Utility.BufferedStats;
 using Animancer;
 
 namespace LobsterFramework.AbilitySystem {
@@ -18,10 +16,10 @@ namespace LobsterFramework.AbilitySystem {
     public class AbilityRunner : SubLevelComponent
     {
         // Callbacks
-        public UnityAction<bool> onActionBlocked;
-        public UnityAction<bool> onHyperArmored;
-        public UnityAction<Type> onAbilityEnqueued;
-        public UnityAction<Type> onAbilityFinished;
+        public Action<bool> onActionBlocked;
+        public Action<bool> onHyperArmored;
+        public Action<Type> onAbilityEnqueued;
+        public Action<Type> onAbilityFinished;
 
         // Execution Info
         internal HashSet<AbilityConfigPair> executing = new();
@@ -37,20 +35,20 @@ namespace LobsterFramework.AbilitySystem {
         /// <summary>
         /// Send true if starting ability animation, false if ending ability animation
         /// </summary>
-        public UnityAction<bool> onAbilityAnimation;
+        public Action<bool> onAbilityAnimation;
         private AnimancerState currentState;
         private (Ability, string) animating;
         private AnimancerComponent animancer;
 
         // Status
-        private readonly BaseOr actionBlocked = new(false);
+        public readonly BaseOr actionLock = new(false);
 
         // Entity
         private Entity entity;
-        private int postureBrokenKey;
+        private BufferedValueAccessor<bool> postureBrokenActionBlock;
 
         public bool ActionBlocked {
-            get { return actionBlocked.Stat; }
+            get { return actionLock.Value; }
         }
 
         #region EnqueueAbility
@@ -286,7 +284,7 @@ namespace LobsterFramework.AbilitySystem {
         public int BlockAction()
         {
             bool before = ActionBlocked;
-            int id = actionBlocked.AddEffector(true);
+            int id = actionLock.AddEffector(true);
             if (before != ActionBlocked) {
                 HaltAbilities();
                 onActionBlocked?.Invoke(true);
@@ -302,7 +300,7 @@ namespace LobsterFramework.AbilitySystem {
         /// <returns>On successfully removal return true, otherwise false</returns>
         public bool UnblockAction(int id) {
             bool before = ActionBlocked;
-            if (actionBlocked.RemoveEffector(id)) {
+            if (actionLock.RemoveEffector(id)) {
                 if (ActionBlocked != before && onActionBlocked != null) {
                     onActionBlocked.Invoke(false);
                 }
@@ -384,7 +382,7 @@ namespace LobsterFramework.AbilitySystem {
         private void OnEnable()
         {
             abilityData.Open(this);
-            actionBlocked.ClearEffectors();
+            actionLock.ClearEffectors();
             
             // availableAbilities is only determined after running through the initialization check of AbilityData
             availableAbilities = abilityData.availableAbilities;
@@ -412,6 +410,7 @@ namespace LobsterFramework.AbilitySystem {
             
             entity = GetComponentInBoth<Entity>();
             animancer = GetComponent<AnimancerComponent>();
+            postureBrokenActionBlock = actionLock.GetAccessor();
         }
         private void Update()
         {
@@ -443,13 +442,17 @@ namespace LobsterFramework.AbilitySystem {
             }
         }
 
+        /// <summary>
+        /// Block Action if posture broken, unblock if posture recovered
+        /// </summary>
+        /// <param name="postureBroken"></param>
         private void OnPostureStatusChange(bool postureBroken) {
             if (postureBroken)
             {
-                postureBrokenKey = BlockAction();
+                postureBrokenActionBlock.Acquire(true);
             }
             else {
-                UnblockAction(postureBrokenKey);
+                postureBrokenActionBlock.Release();
             }
         }
 
@@ -551,6 +554,5 @@ namespace LobsterFramework.AbilitySystem {
             }
         }
     }
-
 }
 
