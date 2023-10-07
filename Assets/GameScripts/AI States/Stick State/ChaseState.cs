@@ -125,6 +125,7 @@ namespace GameScripts.AI.StickEnemy
         }
         protected IEnumerator<CoroutineOption> GuardTime()
         {
+            Debug.Log("guard");
             abilityRunner.EnqueueAbility<Guard>();
             float randomGuardChargeTime = UnityEngine.Random.Range(0.5f, 1f);
             yield return CoroutineOption.WaitForSeconds(randomGuardChargeTime);
@@ -146,7 +147,7 @@ namespace GameScripts.AI.StickEnemy
                 else
                 {
                     float GuardChance = UnityEngine.Random.Range(0f, 1f);
-                    if (GuardChance < guardProb- guardChanceDecrease)
+                    if (GuardChance < guardProb - guardChanceDecrease)
                     {
                         stateMachine.RunCoroutine(GuardTime());
                     }
@@ -171,9 +172,9 @@ namespace GameScripts.AI.StickEnemy
                         if (playerAbilityRunner.IsAbilityRunning<HeavyWeaponAttack>() || playerAbilityRunner.IsAbilityRunning<LightWeaponAttack>() || playerAbilityRunner.IsAbilityRunning<WeaponArt>() || playerAbilityRunner.IsAbilityRunning<Shoot>())//if player is attacking
                         {
                             float GuardChance = UnityEngine.Random.Range(0f, 1f);
-                            if (GuardChance < guardProb + guardChanceDecrease)
+                            if (GuardChance < 1f)
                             {
-                                abilityRunner.EnqueueAbility<Guard>();
+                                yield return CoroutineOption.WaitForCoroutine(GuardTime());
                             }
                         }
                     }
