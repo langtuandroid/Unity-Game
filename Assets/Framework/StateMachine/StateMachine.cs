@@ -9,11 +9,11 @@ namespace LobsterFramework.AI
     public class StateMachine : MonoBehaviour
     {
         [SerializeField] private AIController controller;
-        [SerializeField] private List<State> allStates;
+        [SerializeField] internal List<State> allStates;
         [SerializeField] private State initialState;
         [SerializeField] private State currentState;
 
-        private readonly Dictionary<Type, State> states = new();
+        internal readonly Dictionary<Type, State> states = new();
         
 
         #region Coroutine

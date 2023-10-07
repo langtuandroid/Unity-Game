@@ -171,11 +171,7 @@ namespace GameScripts.AI.StickEnemy
                         isNextMoveStart = false;
                         if (playerAbilityRunner.IsAbilityRunning<HeavyWeaponAttack>() || playerAbilityRunner.IsAbilityRunning<LightWeaponAttack>() || playerAbilityRunner.IsAbilityRunning<WeaponArt>() || playerAbilityRunner.IsAbilityRunning<Shoot>())//if player is attacking
                         {
-                            float GuardChance = UnityEngine.Random.Range(0f, 1f);
-                            if (GuardChance < 1f)
-                            {
-                                yield return CoroutineOption.WaitForCoroutine(GuardTime());
-                            }
+                            yield return CoroutineOption.WaitForCoroutine(GuardTime());
                         }
                     }
                     yield return null;

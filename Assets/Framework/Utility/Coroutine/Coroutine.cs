@@ -69,10 +69,17 @@ namespace LobsterFramework.Utility
                     awakeTime = Time.time + option.waitTime;
                 }
                 else if (option.waitFor != null) {
-                    waitFor = runner.AddCoroutine(coroutine);
+                    waitFor = runner.AddCoroutine(option.waitFor);
                 }
             }
             return true;
+        }
+
+        /// <summary>
+        /// Mark coroutine as stopped, it will not be executed further
+        /// </summary>
+        public void Stop() {
+            IsFinished = true;
         }
     }
 }
