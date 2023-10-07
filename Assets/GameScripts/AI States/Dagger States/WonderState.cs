@@ -6,6 +6,8 @@ using LobsterFramework.AI;
 using System.Security.Cryptography;
 using LobsterFramework;
 using UnityEngine.InputSystem.XR;
+using LobsterFramework.AbilitySystem;
+using GameScripts.Abilities;
 
 namespace GameScripts.AI.DaggerEnemy
 {
@@ -16,6 +18,7 @@ namespace GameScripts.AI.DaggerEnemy
         [SerializeField] private RefInt wanderRadius;
         [SerializeField] private RefFloat idleTime;
         [SerializeField] private List<Vector3> PatrolPoint;
+        [SerializeField] private List<Vector3> holdTime;
         private StealthController trans;
         private float wanderTimeCounter;
         private float idleTimeCounter;
@@ -58,14 +61,22 @@ namespace GameScripts.AI.DaggerEnemy
         {
 
         }
-
+        protected IEnumerator<CoroutineOption> HoldPostion()
+        {
+            float maxholdTime = Time.time + 10f;
+            while (Time.time < maxholdTime)
+            {
+                
+                yield return null;
+            }
+        }
         public override Type Tick()
         {
             float sight = trackingData.sightRange.Value;
             Debug.DrawLine(transform.position, transform.position + transform.up * sight, Color.yellow);
             if (controller.SearchTarget(sight))
             {
-                trans.Changetrans(1f);
+                stateMachine.RunCoroutine(HoldPostion());
                 return typeof(ChaseState);
 
             }

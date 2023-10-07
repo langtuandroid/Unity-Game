@@ -14,6 +14,7 @@ namespace GameScripts.AI.StickEnemy
         [SerializeField] private RefFloat wanderTime;
         [SerializeField] private RefInt wanderRadius;
         [SerializeField] private RefFloat idleTime;
+        [SerializeField] private List<Vector3> PatrolPoint;
         private StealthController trans;
         private float wanderTimeCounter;
         private float idleTimeCounter;
@@ -22,7 +23,8 @@ namespace GameScripts.AI.StickEnemy
         private Transform transform;
         private AITrackData trackingData;
         private WanderInternalState wanderState;
-        
+        private int PatrolNum;
+        private int currentPatrolNum;
 
         private enum WanderInternalState
         {
@@ -61,28 +63,7 @@ namespace GameScripts.AI.StickEnemy
             Debug.DrawLine(transform.position, transform.position + transform.up * sight, Color.yellow);
             if (controller.SearchTarget(sight))
             {
-                /*float enemyHealth = controller.target.Health / controller.target.MaxHealth;
-                if (enemyHealth>0.4)
-                {
-                    Debug.Log("fuck u");
-                    return typeof(MeleeChaseState);
-                    //return typeof(RangedChaseState);
-                }
-                else
-                {
-                    float meleeDesire = 0.3f;
-                    float diffinHealth = 0.4f - enemyHealth;
-                    meleeDesire += diffinHealth / 0.4f * 0.7f;
-                    float randomNumber = UnityEngine.Random.Range(0f, 1f);
-                    if(randomNumber > meleeDesire)
-                    {
-                        Debug.Log("fuck u");
-                        //return typeof(RangedChaseState);
-                    }
-                    return typeof(MeleeChaseState);
-                }*/
                 return typeof(ChaseState);
-
             }
             switch (wanderState)
             {
@@ -91,11 +72,21 @@ namespace GameScripts.AI.StickEnemy
                     if (idleTimeCounter >= idleTime.Value)
                     {
                         idleTimeCounter = 0;
+                        if (currentPatrolNum < PatrolNum - 1)
+                        {
+                            currentPatrolNum += 1;
+                        }
+                        else
+                        {
+                            currentPatrolNum = 0;
+                        }
+
                         wanderState = WanderInternalState.PathFinding;
                     }
                     break;
                 case WanderInternalState.PathFinding:
                     controller.Wander(wanderRadius.Value);
+                    controller.PatrolLine(PatrolPoint[currentPatrolNum]);
                     wanderState = WanderInternalState.Wandering;
                     break;
                 case WanderInternalState.Wandering:
