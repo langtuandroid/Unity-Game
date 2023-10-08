@@ -86,7 +86,10 @@ namespace GameScripts.AI.StickEnemy
                     break;
                 case WanderInternalState.PathFinding:
                     controller.Wander(wanderRadius.Value);
-                    controller.PatrolLine(PatrolPoint[currentPatrolNum]);
+                    if(PatrolPoint[currentPatrolNum]!=null)
+                    {
+                        controller.PatrolLine(PatrolPoint[currentPatrolNum]);
+                    }
                     wanderState = WanderInternalState.Wandering;
                     break;
                 case WanderInternalState.Wandering:
