@@ -41,8 +41,9 @@ namespace GameScripts.AI.StickEnemy
             moveControl = controller.GetComponent<MovementController>();
             daggerRigid = controller.GetComponent<Rigidbody2D>();
             trackingData = controller.GetControllerData<AITrackData>();
-            
-           
+            currentPatrolNum = 0;
+            PatrolNum = PatrolPoint.Count;
+
         }
 
         public override void OnEnter()
@@ -86,7 +87,7 @@ namespace GameScripts.AI.StickEnemy
                     break;
                 case WanderInternalState.PathFinding:
                     controller.Wander(wanderRadius.Value);
-                    if(PatrolPoint[currentPatrolNum]!=null)
+                    if(currentPatrolNum < PatrolNum - 1)
                     {
                         controller.PatrolLine(PatrolPoint[currentPatrolNum]);
                     }
