@@ -5,6 +5,7 @@ using UnityEditor;
 using LobsterFramework.AbilitySystem;
 using LobsterFramework.Utility;
 using System;
+using UnityEditor.Playables;
 
 namespace LobsterFramework.Editors
 {
@@ -41,7 +42,7 @@ namespace LobsterFramework.Editors
                 }
             }
 
-            WeaponAbilityAnimationSetting setting = data.setting[(int)selectedWeaponType];
+            AbilityAnimationConfig setting = data.setting[(int)selectedWeaponType];
             List<Type> displayEntries = new();
             displayEntries.Add(typeof(LightWeaponAttack));
             displayEntries.Add(typeof(HeavyWeaponAttack));
@@ -53,16 +54,43 @@ namespace LobsterFramework.Editors
             }
 
             foreach (Type ability in displayEntries) {
-                if (!setting.ContainsKey(ability.AssemblyQualifiedName)) {
+                if (!setting.ContainsKey(ability.AssemblyQualifiedName)) { 
                     setting[ability.AssemblyQualifiedName] = null;
                 }
-                setting[ability.AssemblyQualifiedName] = (AnimationClip)EditorGUILayout.ObjectField(ability.Name, setting[ability.AssemblyQualifiedName], typeof(AnimationClip), false);
+                DisplayAbilityAnimationEntries(setting, ability);
             }
 
             EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
             int selected = (int)selectedWeaponType;
             data.moveSetting[selected] = (AnimationClip)EditorGUILayout.ObjectField("Move", data.moveSetting[selected], typeof(AnimationClip), false);
             EditorUtility.SetDirty(target);
+            serializedObject.ApplyModifiedProperties();
+        }
+
+        private void DisplayAbilityAnimationEntries(AbilityAnimationConfig setting, Type abilityType) {
+            AnimationClip[] clips = setting[abilityType.AssemblyQualifiedName];
+            if (!WeaponAnimationAttribute.abilityAnimationEntry.ContainsKey(abilityType))
+            {
+                if (clips == null) {
+                    setting[abilityType.AssemblyQualifiedName] = new AnimationClip[1];
+                    clips = setting[abilityType.AssemblyQualifiedName];
+                }
+                clips[0] = (AnimationClip)EditorGUILayout.ObjectField(abilityType.Name, clips[0], typeof(AnimationClip), false);
+            }
+            else {
+                EditorGUILayout.LabelField(abilityType.Name);
+                EditorGUI.indentLevel++;
+                string[] enums = Enum.GetNames(WeaponAnimationAttribute.abilityAnimationEntry[abilityType]);
+                if (clips == null)
+                {
+                    setting[abilityType.AssemblyQualifiedName] = new AnimationClip[enums.Length];
+                    clips = setting[abilityType.AssemblyQualifiedName];
+                }
+                for (int i = 0;i < enums.Length;i++) {
+                    clips[i] = (AnimationClip)EditorGUILayout.ObjectField(enums[i], clips[i], typeof(AnimationClip), false);
+                }
+                EditorGUI.indentLevel--;
+            }
         }
     }
 }

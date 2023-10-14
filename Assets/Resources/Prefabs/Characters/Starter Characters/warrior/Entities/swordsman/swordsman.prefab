@@ -1371,7 +1371,7 @@ MonoBehaviour:
   emptyHand: {fileID: 0}
   mainhandWeaponPosition: {fileID: 1067484646109687668}
   offhandWeaponPosition: {fileID: 1352533932925262411}
-  animationData: {fileID: 11400000, guid: 80f244b8a7119d644b44f189957d1498, type: 2}
+  animationData: {fileID: 11400000, guid: 71dc05025c459d144808f381417e5015, type: 2}
   entity: {fileID: 5353377617828249592}
   animancer: {fileID: 2274318948510103887}
   abilityRunner: {fileID: 9072161404192331858}
@@ -1389,10 +1389,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 2878624368540976578}
   allStates:
-  - {fileID: 11400000, guid: 7ef969ccc237c194793b07eecde5d344, type: 2}
-  - {fileID: 11400000, guid: 96449d68094c79b41b49c5882263ffe8, type: 2}
+    lst:
+    - {fileID: 11400000, guid: 7ef969ccc237c194793b07eecde5d344, type: 2}
+    - {fileID: 11400000, guid: 96449d68094c79b41b49c5882263ffe8, type: 2}
   initialState: {fileID: 11400000, guid: 96449d68094c79b41b49c5882263ffe8, type: 2}
   currentState: {fileID: 0}
+  statePath: H:/Stuff/BallField/Assets/Resources/Prefabs/Characters/Starter Characters/warrior/Entities/swordsman
 --- !u!114 &2274318948510103887
 MonoBehaviour:
   m_ObjectHideFlags: 0

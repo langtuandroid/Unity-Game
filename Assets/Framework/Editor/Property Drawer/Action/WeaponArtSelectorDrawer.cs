@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEditor;
 using LobsterFramework.AbilitySystem;
 using System;
-using UnityEditor.UIElements;
 
 namespace LobsterFramework.Editors
 {

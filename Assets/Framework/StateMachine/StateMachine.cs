@@ -14,6 +14,7 @@ namespace LobsterFramework.AI
         [SerializeField] private State initialState;
         [ReadOnly]
         [SerializeField] private State currentState;
+        [HideInInspector]
         [SerializeField] internal string statePath;    
 
         internal readonly Dictionary<Type, State> states = new();

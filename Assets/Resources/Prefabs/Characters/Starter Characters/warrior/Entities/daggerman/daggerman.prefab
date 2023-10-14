@@ -1393,7 +1393,7 @@ MonoBehaviour:
   emptyHand: {fileID: 0}
   mainhandWeaponPosition: {fileID: 1067484646109687668}
   offhandWeaponPosition: {fileID: 8638136379272720249}
-  animationData: {fileID: 11400000, guid: 80f244b8a7119d644b44f189957d1498, type: 2}
+  animationData: {fileID: 11400000, guid: 71dc05025c459d144808f381417e5015, type: 2}
   entity: {fileID: 5353377617828249592}
   animancer: {fileID: 2857422239416211813}
   abilityRunner: {fileID: 9072161404192331858}
@@ -1411,10 +1411,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 2878624368540976578}
   allStates:
-  - {fileID: 11400000, guid: 8a2be4c3790210a48a022d109ce7927b, type: 2}
-  - {fileID: 11400000, guid: d819b50f9d48a794aa72f245161dc69a, type: 2}
+    lst:
+    - {fileID: 11400000, guid: d819b50f9d48a794aa72f245161dc69a, type: 2}
+    - {fileID: 11400000, guid: 8a2be4c3790210a48a022d109ce7927b, type: 2}
   initialState: {fileID: 11400000, guid: 8a2be4c3790210a48a022d109ce7927b, type: 2}
   currentState: {fileID: 0}
+  statePath: 
 --- !u!114 &2857422239416211813
 MonoBehaviour:
   m_ObjectHideFlags: 0

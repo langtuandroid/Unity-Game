@@ -12,11 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: LobsterFramework.AbilitySystem.Guard-default
   m_EditorClassIdentifier: LobsterFramework:LobsterFramework.AbilitySystem:Guard/GuardConfig
-  accessKey: -1
-  endTime: 0
   useCooldown: 0
   cooldown: 0
-  isSuspended: 0
   awakeTime: 0
   delfectTime: 0.5
   animationSignaled: 0
@@ -37,7 +34,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a31266b013b6ce6489233e846909b86e, type: 3}
   m_Name: GameScripts.Abilities.OffhandGrab
   m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
   abilityPriority:
     value:
       executionPriority: 0
@@ -61,11 +57,8 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: LobsterFramework.AbilitySystem.OffhandAbility-default
   m_EditorClassIdentifier: LobsterFramework:LobsterFramework.AbilitySystem:OffhandAbility/OffhandAbilityConfig
-  accessKey: -1
-  endTime: 0
   useCooldown: 0
   cooldown: 0
-  isSuspended: 0
 --- !u!114 &-7756696283119846634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,16 +71,11 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: GameScripts.Abilities.Boost-default
   m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Boost/BoostConfig
-  accessKey: -1
-  endTime: 0
   useCooldown: 1
   cooldown: 5
-  isSuspended: 0
   damageModifier: 2
   duration: 0
   vfxTag: {fileID: 11400000, guid: 408bedc1d876c6d4cbe310c9795a3300, type: 2}
-  damageKey: 0
-  hyperArmorKey: 0
   timeEnd: 0
 --- !u!114 &-7383703362220855186
 MonoBehaviour:
@@ -101,17 +89,12 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: GameScripts.Abilities.Shoot-default
   m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Shoot/ShootConfig
-  accessKey: -1
-  endTime: 0
   useCooldown: 1
   cooldown: 0.3
-  isSuspended: 0
   awakeTime: 0
   targetSetting: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
   moveSpeedModifier: 0.1
   rotateSpeedModifier: 0.1
-  moveKey: 0
-  rotateKey: 0
   signaled: 0
 --- !u!114 &-6495964935659663549
 MonoBehaviour:
@@ -125,7 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0f315229b442b459f33b50ab403f04, type: 3}
   m_Name: LobsterFramework.AbilitySystem.Guard
   m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
   abilityPriority:
     value:
       executionPriority: 0
@@ -149,11 +131,8 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: GameScripts.Abilities.Dash-default
   m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Dash/DashConfig
-  accessKey: -1
-  endTime: 0
   useCooldown: 1
   cooldown: 1
-  isSuspended: 0
   dashStrength: 150
   maxDashTime: 0
   moveSpeedModifier: 0
@@ -172,11 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: LobsterFramework.AbilitySystem.WeaponArt-default
   m_EditorClassIdentifier: LobsterFramework:LobsterFramework.AbilitySystem:WeaponArt/WeaponArtConfig
-  accessKey: -1
-  endTime: 0
   useCooldown: 0
   cooldown: 0
-  isSuspended: 0
 --- !u!114 &-5072531079493620865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58c854662727834482aa86c17ef835d, type: 3}
   m_Name: LobsterFramework.AbilitySystem.OffhandAbility
   m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
   abilityPriority:
     value:
       executionPriority: 0
@@ -213,19 +188,14 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: GameScripts.Abilities.Cyclone-default
   m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:Cyclone/CycloneConfig
-  accessKey: -1
-  endTime: 0
   useCooldown: 0
   cooldown: 0
-  isSuspended: 0
   awakeTime: 0
   moveSpeedModifier: 0.5
   rotationSpeedModifier: 0.5
   currentWeapon: {fileID: 0}
   stopped: 0
   repeatAttack: 0
-  m_key: 0
-  r_key: 0
 --- !u!114 &-2968132334227958496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec3510c1573a0445aa238c4e906624d, type: 3}
   m_Name: LobsterFramework.AbilitySystem.LightWeaponAttack
   m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
   abilityPriority:
     value:
       executionPriority: 0
@@ -263,7 +232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 442e984e87abfe54ba2099894e9c665f, type: 3}
   m_Name: GameScripts.Abilities.Dash
   m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
   abilityPriority:
     value:
       executionPriority: 0
@@ -327,7 +295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c60acad315015046b8038c2d776c6e6, type: 3}
   m_Name: GameScripts.Abilities.Boost
   m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
   abilityPriority:
     value:
       executionPriority: 0
@@ -365,7 +332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01a972001ebfd3b4ba8b945ff2570222, type: 3}
   m_Name: GameScripts.Abilities.Cyclone
   m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
   abilityPriority:
     value:
       executionPriority: 0
@@ -390,7 +356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f70b9a967a96d4abc6cf3b83a774bf, type: 3}
   m_Name: GameScripts.Abilities.Shoot
   m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
   abilityPriority:
     value:
       executionPriority: 0
@@ -414,7 +379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ec3624525b82d4caf74927a4665d2b, type: 3}
   m_Name: LobsterFramework.AbilitySystem.HeavyWeaponAttack
   m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
   abilityPriority:
     value:
       executionPriority: 0
@@ -439,11 +403,8 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: LobsterFramework.AbilitySystem.LightWeaponAttack-default
   m_EditorClassIdentifier: LobsterFramework:LobsterFramework.AbilitySystem:LightWeaponAttack/LightWeaponAttackConfig
-  accessKey: -1
-  endTime: 0
   useCooldown: 0
   cooldown: 0
-  isSuspended: 0
   awakeTime: 0
   signaled: 0
   m_key: 0
@@ -461,7 +422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f608d2369255c5d469cc6a680ec7d3f3, type: 3}
   m_Name: LobsterFramework.AbilitySystem.WeaponArt
   m_EditorClassIdentifier: 
-  abilityRunner: {fileID: 0}
   abilityPriority:
     value:
       executionPriority: 0
@@ -485,11 +445,8 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: GameScripts.Abilities.OffhandGrab-default
   m_EditorClassIdentifier: GameScripts:GameScripts.Abilities:OffhandGrab/OffhandGrabConfig
-  accessKey: -1
-  endTime: 0
   useCooldown: 0
   cooldown: 0
-  isSuspended: 0
   awakeTime: 0
   targetSetting: {fileID: 11400000, guid: 849ccb81d78a8d94685d00081c2e0fee, type: 2}
   healthDamage: 60
@@ -509,11 +466,8 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: LobsterFramework.AbilitySystem.HeavyWeaponAttack-default
   m_EditorClassIdentifier: LobsterFramework:LobsterFramework.AbilitySystem:HeavyWeaponAttack/HeavyWeaponAttackConfig
-  accessKey: -1
-  endTime: 0
   useCooldown: 0
   cooldown: 0
-  isSuspended: 0
   awakeTime: 0
   baseDamageModifier:
     value: 1.2
@@ -530,7 +484,4 @@ MonoBehaviour:
   animationSignaled: 0
   inputSignaled: 0
   currentWeapon: {fileID: 0}
-  m_key: -1
-  r_key: -1
   chargeTimer: 0
-  ability: {fileID: 0}

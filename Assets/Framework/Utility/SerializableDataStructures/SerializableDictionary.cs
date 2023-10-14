@@ -112,6 +112,7 @@ namespace LobsterFramework.Utility {
 
     [Serializable]
     public class TypeWeaponStatDictionary : SerializableDictionary<string, WeaponStat> { }
+
     [Serializable]
-    public class WeaponAbilityAnimationSetting : SerializableDictionary<string, AnimationClip> { }
+    public class AbilityAnimationConfig : SerializableDictionary<string, AnimationClipArray> { }
 }

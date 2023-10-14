@@ -9,14 +9,15 @@ namespace LobsterFramework.AbilitySystem
     [CreateAssetMenu(menuName = "Ability/WeaponAnimationData")]
     public class WeaponAnimationData : ScriptableObject
     {
-        [SerializeField] internal List<WeaponAbilityAnimationSetting> setting;
+        [SerializeField] internal List<AbilityAnimationConfig> setting;
         [SerializeField] internal List<AnimationClip> moveSetting;
 
-        public AnimationClip GetAbilityClip(WeaponType weaponType, Type abilityType) {
-            WeaponAbilityAnimationSetting st = setting[(int)weaponType];
+        public AnimationClip GetAbilityClip(WeaponType weaponType, Type abilityType, int entry=0) {
+            AbilityAnimationConfig st = setting[(int)weaponType];
             string ability = abilityType.AssemblyQualifiedName;
             if (st.ContainsKey(ability)) {
-                return st[ability];
+                AnimationClip[] clips = st[ability];
+                return clips[entry];
             }
             return null;
         }

@@ -23,6 +23,7 @@ namespace LobsterFramework.Utility
             AddWeaponArtMenu(types);
             AddWeaponStatRequirement(types);
             AddOffhandAbilitySpec(types);
+            AddWeaponDataEntries(types);
         }
 
         private static void AddAbilityMenu(Type[] types)
@@ -110,6 +111,18 @@ namespace LobsterFramework.Utility
         private static void AddOffhandAbilitySpec(Type[] types) {
             foreach (Type type in types) {
                 OffhandWeaponAbilityAttribute info = type.GetCustomAttribute<OffhandWeaponAbilityAttribute>();
+                if (info != null)
+                {
+                    info.Init(type);
+                }
+            }
+        }
+
+        private static void AddWeaponDataEntries(Type[] types)
+        {
+            foreach (Type type in types)
+            {
+                WeaponAnimationAttribute info = type.GetCustomAttribute<WeaponAnimationAttribute>();
                 if (info != null)
                 {
                     info.Init(type);
