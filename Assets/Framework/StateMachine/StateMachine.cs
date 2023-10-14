@@ -9,15 +9,18 @@ namespace LobsterFramework.AI
     public class StateMachine : MonoBehaviour
     {
         [SerializeField] private AIController controller;
-        [SerializeField] internal List<State> allStates;
+        [SerializeField] internal XList<State> allStates;
+        [DisableInPlayMode]
         [SerializeField] private State initialState;
+        [ReadOnly]
         [SerializeField] private State currentState;
+        [SerializeField] internal string statePath;    
 
         internal readonly Dictionary<Type, State> states = new();
-        
+
 
         #region Coroutine
-        public readonly CoroutineRunner coroutineRunner = new(); 
+        public readonly CoroutineRunner coroutineRunner = new();
         private Type switchingTo = null;
 
         public Utility.Coroutine RunCoroutine(IEnumerator<CoroutineOption> coroutine) {
@@ -38,6 +41,7 @@ namespace LobsterFramework.AI
             foreach (State s in allStates)
             {
                 State state = Instantiate(s);
+                state.name = s.name;
                 states[state.GetType()] = state;
                 state.controller = controller;
                 state.stateMachine = this;
@@ -95,6 +99,35 @@ namespace LobsterFramework.AI
             {
                 Destroy(s);
             }
+        }
+
+        /// <summary>
+        /// Reset the state by replacing it with a copy with parameters set to the its initial values at the start of play mode
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        internal State ResetState(int index){
+            try { 
+                State state = allStates[index];
+                Type type = state.GetType();
+                bool currentlyRunning = states[type] == currentState;
+
+                DestroyImmediate(states[type]);
+                State newState = Instantiate(state);
+                newState.name = state.name;
+                states[type] = newState;
+                newState.controller = controller;
+                newState.stateMachine = this;
+                newState.InitializeFields(gameObject);
+                if (currentlyRunning) {
+                    newState.OnEnter();
+                    currentState = newState;
+                }
+                return newState;
+            } catch(Exception e) {
+                Debug.LogException(e);
+            }
+            return null;
         }
     }
 }

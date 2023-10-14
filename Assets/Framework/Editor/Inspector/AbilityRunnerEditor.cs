@@ -66,7 +66,8 @@ namespace LobsterFramework.Editors
                 GUILayout.FlexibleSpace();
                 if (GUILayout.Button("Save Ability Data", GUILayout.Width(150)))
                 {
-                    abilityRunner.SaveAbilityData(assetName);
+                    string path = EditorUtility.OpenFolderPanel("Select Saving Path", Application.dataPath, "");
+                    abilityRunner.SaveAbilityData(assetName, path); 
                 }
                 GUILayout.FlexibleSpace();
                 EditorGUILayout.EndHorizontal();

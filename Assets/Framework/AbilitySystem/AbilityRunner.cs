@@ -332,15 +332,17 @@ namespace LobsterFramework.AbilitySystem {
         /// Only to be called inside play mode! Save the current ability data as an asset with specified assetName to the default path.
         /// </summary>
         /// <param name="assetName">Name of the asset to be saved</param>
-        public void SaveAbilityData(string assetName)
+        public void SaveAbilityData(string assetName, string path)
         {
             if (assetName == "") {
-                Debug.LogError("Asset name cannot be empty!", this);
-                return;
+                assetName = data.name;
+            }
+            if (path.StartsWith(Application.dataPath)) {
+                path = "Assets/" + path[Application.dataPath.Length..];
             }
             if (abilityData != null)
             {
-                AssetDatabase.CreateAsset(abilityData, "Assets/Resources/Scriptable Objects/Action/ActionableData/" + assetName + ".asset");
+                AssetDatabase.CreateAsset(abilityData, path + "/" + assetName + ".asset");
                 abilityData.SaveContentsAsAsset();
                 data = abilityData;
                 abilityData = Instantiate(abilityData);

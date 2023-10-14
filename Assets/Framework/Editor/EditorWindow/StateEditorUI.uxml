@@ -1,4 +1,18 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
-    <ui:DropdownField label="State" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="selected_state" tabindex="-1" focusable="false" style="-unity-text-align: middle-left; height: 23px; width: 312px; -unity-font-style: bold; color: rgb(0, 68, 188);" />
-    <ui:IMGUIContainer name="IMGUIContainer" />
+    <uie:Toolbar name="toolbar">
+        <uie:ToolbarButton text="Currently Editing" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ping" style="justify-content: center; align-self: center; -unity-text-align: middle-center; color: rgb(255, 255, 255);" />
+        <uie:ToolbarButton text="Modified" parse-escape-sequences="true" display-tooltip-when-elided="true" name="next_modified" style="justify-content: center; align-self: center; -unity-text-align: middle-center; color: rgb(255, 255, 255);" />
+        <uie:ToolbarButton text="DiscardAll" parse-escape-sequences="true" display-tooltip-when-elided="true" name="discard_all" style="align-self: stretch; justify-content: center; width: 70px; -unity-text-align: middle-center; color: rgb(255, 12, 0); -unity-background-image-tint-color: rgb(250, 250, 250); background-color: rgb(89, 3, 0); background-image: none;" />
+        <uie:ToolbarSpacer style="width: -9px;" />
+        <uie:ToolbarButton text="SaveAll" parse-escape-sequences="true" display-tooltip-when-elided="true" name="save_all" style="white-space: nowrap; align-items: stretch; align-self: stretch; justify-content: center; width: 61px; -unity-text-align: middle-center; -unity-text-outline-color: rgba(0, 0, 0, 0); color: rgb(0, 230, 255); background-color: rgb(0, 61, 132);" />
+        <uie:ToolbarSpacer style="width: 59px;" />
+        <uie:ToolbarButton text="Discard" parse-escape-sequences="true" display-tooltip-when-elided="true" name="discard" style="align-self: stretch; justify-content: center; width: 62px; -unity-text-align: middle-center; color: rgb(255, 12, 0); -unity-background-image-tint-color: rgb(255, 164, 0); background-color: rgb(56, 56, 56);" />
+        <uie:ToolbarButton text="Save" parse-escape-sequences="true" display-tooltip-when-elided="true" name="save" style="white-space: nowrap; align-items: stretch; align-self: stretch; justify-content: center; width: 55px; -unity-text-align: middle-center; -unity-text-outline-color: rgba(0, 0, 0, 0); color: rgb(0, 230, 255); background-color: rgb(56, 56, 56);" />
+    </uie:Toolbar>
+    <ui:DropdownField label="Select State" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="state_selector" style="-unity-text-align: middle-center; -unity-font-style: bold;" />
+    <ui:TextField picking-mode="Ignore" label="Save Path" name="save_path" style="-unity-text-align: middle-center; height: 20px; justify-content: flex-start; -unity-font-style: bold;">
+        <ui:Button text=" Browse" parse-escape-sequences="true" display-tooltip-when-elided="true" name="browse_path" style="width: 57px; height: 19px;" />
+    </ui:TextField>
+    <ui:TextField picking-mode="Ignore" label="Save Name" name="save_name" style="-unity-text-align: middle-center; height: 20px; justify-content: flex-start; -unity-font-style: bold;" />
+    <ui:IMGUIContainer name="IMGUIContainer" style="margin-left: 4px; margin-right: 4px; margin-top: 18px; height: auto; margin-bottom: 12px;" />
 </ui:UXML>
