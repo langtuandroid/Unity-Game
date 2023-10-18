@@ -55,11 +55,12 @@ namespace GameScripts.InputControl
                 Vector2 input = rotate.action.ReadValue<Vector2>();
                 if (input.x != 0)
                 {
-                    float delta = input.x * Time.deltaTime * mouseSensitivity; 
+                    float delta = input.x * Time.deltaTime * mouseSensitivity;
                     rotateVelocity = Mathf.MoveTowards(rotateVelocity, -delta, rotateAcceleration * Time.deltaTime);
                     rotateVelocity = Mathf.Clamp(rotateVelocity, -moveControl.RotateSpeed, moveControl.RotateSpeed);
                 }
-                else { 
+                else
+                {
                     rotateVelocity = Mathf.MoveTowards(rotateVelocity, 0, rotateAcceleration * Time.deltaTime);
                 }
                 moveControl.RotateByDegrees(rotateVelocity);
@@ -68,7 +69,8 @@ namespace GameScripts.InputControl
 
         private void Update()
         {
-            moveControl.Move(move.action.ReadValue<Vector2>());
+            Vector2 direction = Quaternion.Inverse(transform.rotation)* move.action.ReadValue<Vector2>();
+            moveControl.Move(direction);
             GuardAction();
         }
 
@@ -239,7 +241,7 @@ namespace GameScripts.InputControl
         public void LateUpdate()
         {
             camera.transform.position = new Vector3(_transform.position.x, _transform.position.y, _transform.position.z - cameraDistance);
-            camera.transform.rotation = _transform.rotation;
+            /*camera.transform.rotation = _transform.rotation;*/
         }
     }
 }
