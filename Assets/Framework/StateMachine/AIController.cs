@@ -126,7 +126,7 @@ namespace LobsterFramework.AI
             if (info.source != null)
             {
                 target = info.source;
-                Debug.Log("Received attack from target");
+                /*Debug.Log("Received attack from target");*/
                 return true;
             }
             RaycastHit2D hit = AIUtility.Raycast2D(gameObject,  _transform.position, _transform.up, sightRange, AIUtility.VisibilityMask);
@@ -136,7 +136,7 @@ namespace LobsterFramework.AI
                 if (t != null && targetGroup.Contains(t))
                 {
                     target = t;
-                    Debug.Log("AI: Target in range " + hit.distance);
+                    /*Debug.Log("AI: Target in range " + hit.distance);*/
                     return true;
                 }
             }

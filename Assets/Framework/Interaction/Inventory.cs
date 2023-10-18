@@ -9,7 +9,9 @@ namespace LobsterFramework.Interaction
         put into the same item slot.
          */
         [SerializeField] private InventoryItem[] items;
+        [SerializeField] private Entity entity;
 
+        public Entity GetEntity { get { return entity; } }
         protected override void OnInteract(InteractableObject obj, InteractionType interactionType)
         {
             Debug.Log("Collecting Item");

@@ -18,7 +18,7 @@ namespace GameScripts.AI.DaggerEnemy
         [SerializeField] private RefInt wanderRadius;
         [SerializeField] private RefFloat idleTime;
         [SerializeField] private List<Vector3> PatrolPoint;
-        [SerializeField] private List<Vector3> holdTime;
+        [SerializeField] private int HoldTime;
         private StealthController trans;
         private float wanderTimeCounter;
         private float idleTimeCounter;
@@ -29,6 +29,7 @@ namespace GameScripts.AI.DaggerEnemy
         private WanderInternalState wanderState;
         private int PatrolNum;
         private int currentPatrolNum;
+        private float maxholdTime;
 
         private enum WanderInternalState
         {
@@ -55,19 +56,30 @@ namespace GameScripts.AI.DaggerEnemy
             wanderState = WanderInternalState.Idle;
             wanderTimeCounter = 0;
             idleTimeCounter = 0;
+            HoldTime = 0;
+            maxholdTime = 0;
         }
 
         public override void OnExit()
         {
 
         }
-        protected IEnumerator<CoroutineOption> HoldPostion()
+        protected IEnumerator<CoroutineOption> HoldPostion(float sight)
         {
-            float maxholdTime = Time.time + 10f;
+            maxholdTime = Time.time + 10f;
+            Debug.Log("inside"+ maxholdTime);
             while (Time.time < maxholdTime)
             {
-                
-                yield return null;
+                if (controller.TargetVisible(controller.transform.position, trackingData.engageDistance.Value))
+                {
+                    yield return null;
+                }
+                else
+                {
+                    Debug.Log("quit watching");
+                    maxholdTime = 0;
+                    break;
+                }
             }
         }
         public override Type Tick()
@@ -76,9 +88,16 @@ namespace GameScripts.AI.DaggerEnemy
             Debug.DrawLine(transform.position, transform.position + transform.up * sight, Color.yellow);
             if (controller.SearchTarget(sight))
             {
-                stateMachine.RunCoroutine(HoldPostion());
-                return typeof(ChaseState);
-
+                stateMachine.RunCoroutine(HoldPostion(sight));
+                if(maxholdTime!=0)
+                {
+                    if (Time.time > maxholdTime)
+                    {
+                        return typeof(ChaseState);
+                    }
+                }
+                
+                
             }
             switch (wanderState)
             {
