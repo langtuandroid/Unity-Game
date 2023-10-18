@@ -2,11 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using LobsterFramework.Interaction;
 
-namespace GameScripts.Interaction
+namespace LobsterFramework.Interaction
 {
-
     [Interaction(interactors: typeof(Inventory))]
     [RequireComponent(typeof(SpriteRenderer))]
     public class CollectableItem : InteractableObject

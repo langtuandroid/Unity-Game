@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IConsumable
+namespace LobsterFramework.Interaction
 {
-    public void Consume();
+    public interface IConsumable
+    {
+        public void Consume(Inventory intentory);
+    }
 }

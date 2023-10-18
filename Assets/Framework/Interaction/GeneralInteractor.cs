@@ -1,6 +1,6 @@
 using LobsterFramework.Interaction;
 
-namespace GameScripts.Interaction
+namespace LobsterFramework.Interaction
 {
     public class GeneralInteractor : Interactor
     {

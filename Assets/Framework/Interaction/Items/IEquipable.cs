@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IEquipable : MonoBehaviour
+namespace LobsterFramework.Interaction
 {
-    // Start is called before the first frame update
-    void Start()
+    public interface IEquipable
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void Equip(Inventory inventory);
     }
 }

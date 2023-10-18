@@ -1,7 +1,6 @@
 using UnityEngine;
-using LobsterFramework.Interaction;
 
-namespace GameScripts.Interaction
+namespace LobsterFramework.Interaction
 {
     public class Inventory : Interactor
     {
@@ -44,13 +43,26 @@ namespace GameScripts.Interaction
             }
             return -1;
         }
+
+        /// <summary>
+        /// Consume the consumable specified by index
+        /// </summary>
+        /// <param name="index"></param>
+        public void Consume(int index)
+        {
+            try {
+                ((IConsumable)items[index].itemData).Consume(this);
+            } catch {
+                Debug.Log("Cannot use consume on this item!");
+            }
+        }
     }
 
     [System.Serializable]
     public struct InventoryItem
     {
         [SerializeField] private int quantity;
-        public SimpleItem itemData;
+        public Item itemData;
 
         public int Quantity
         {

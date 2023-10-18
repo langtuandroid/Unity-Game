@@ -27,8 +27,20 @@ MonoBehaviour:
       - {fileID: 7400000, guid: 50672823cc838484f997113654d3ce00, type: 2}
     - array:
       - {fileID: 7400000, guid: 8d23a20b5d636b945818f04a157e46d9, type: 2}
-  - keys: []
-    values: []
+  - keys:
+    - LobsterFramework.AbilitySystem.LightWeaponAttack, LobsterFramework, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    - LobsterFramework.AbilitySystem.HeavyWeaponAttack, LobsterFramework, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    - LobsterFramework.AbilitySystem.Guard, LobsterFramework, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    values:
+    - array:
+      - {fileID: 0}
+    - array:
+      - {fileID: 0}
+    - array:
+      - {fileID: 0}
   - keys:
     - LobsterFramework.AbilitySystem.LightWeaponAttack, LobsterFramework, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -80,9 +92,9 @@ MonoBehaviour:
     - array:
       - {fileID: 0}
     - array:
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
+      - {fileID: 7400000, guid: 98d7bae699a65454ea84e266a3f2744d, type: 2}
+      - {fileID: 7400000, guid: 96b5f951f44537545a96f92aa4277c9d, type: 2}
+      - {fileID: 7400000, guid: 436b69414b04047fca3929c70df57c4f, type: 3}
     - array:
       - {fileID: 7400000, guid: a14df3a871ccac6428b38d318c61f77c, type: 2}
   - keys:
