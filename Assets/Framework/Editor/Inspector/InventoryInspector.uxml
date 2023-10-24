@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:EnumField label="Item Type" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" value="Center" name="item_type" include-obsolete-values="false" style="-unity-text-align: middle-left; font-size: 12px; -unity-font-style: bold; height: 20px;" />
+    <ui:ScrollView name="scroll" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Hidden" style="height: -2px;">
+        <uie:PropertyField name="items" />
+    </ui:ScrollView>
+</ui:UXML>

@@ -53,17 +53,17 @@ namespace LobsterFramework.Interaction
         // Callback before interacting with the object
         protected virtual void OnInteract(InteractableObject obj, InteractionType interactionType) { }
 
-        public bool AddInteractable(InteractableObject obj)
+        internal bool AddInteractable(InteractableObject obj)
         {
             return AddInteractable(obj, this);
         }
 
-        public bool RemoveInteractable(InteractableObject obj)
+        internal bool RemoveInteractable(InteractableObject obj)
         {
             return RemoveInteractable(obj, this);
         }
 
-        public bool AddInteractable(InteractableObject obj, Interactor interactor)
+        internal bool AddInteractable(InteractableObject obj, Interactor interactor)
         {
             // Use this method to add interactables to the interaction list without type checking
             if (isBase)
@@ -83,7 +83,7 @@ namespace LobsterFramework.Interaction
             return baseInteractor.AddInteractable(obj, this);
         }
 
-        public bool RemoveInteractable(InteractableObject obj, Interactor interactor)
+        internal bool RemoveInteractable(InteractableObject obj, Interactor interactor)
         {
             // Use this method to remove interactables from the interaction list without type checking
             if (isBase)

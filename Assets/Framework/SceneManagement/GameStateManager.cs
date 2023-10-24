@@ -35,18 +35,6 @@ namespace LobsterFramework
             ResumeGame();
         }
 
-        public void PauseOrResume()
-        {
-            if (!gamePause.Value)
-            {
-                PauseGame();
-            }
-            else
-            {
-                ResumeGame();
-            }
-        }
-
         public void OnPlayerDeath()
         {
             Debug.Log("Waiting for Respawn!");
@@ -68,7 +56,21 @@ namespace LobsterFramework
         {
             if (context.started)
             {
-                PauseOrResume();
+                if (!gamePause.Value)
+                {
+                    pauseMenu.gameObject.SetActive(true);
+                    gameplayMenu.gameObject.SetActive(false);
+                    Cursor.lockState = CursorLockMode.Locked;
+                    
+                    PauseGame();
+                }
+                else
+                {
+                    gameplayMenu.gameObject.SetActive(true);
+                    pauseMenu.gameObject.SetActive(false);
+                    Cursor.lockState = CursorLockMode.None;
+                    ResumeGame();
+                }
             }
         }
 
@@ -76,10 +78,7 @@ namespace LobsterFramework
         {
             Debug.Log("Game Pause!");
             Time.timeScale = 0f;
-            pauseMenu.gameObject.SetActive(true);
-            gameplayMenu.gameObject.SetActive(false);
             gamePause.Value = true;
-            Cursor.lockState = CursorLockMode.None;
         }
 
         public void ResumeGame()
@@ -87,10 +86,7 @@ namespace LobsterFramework
             Debug.Log("Game Resume!");
             Time.timeScale = 1;
             gamePause.Value = false;
-            gameplayMenu.gameObject.SetActive(true);
-            pauseMenu.gameObject.SetActive(false);
             gameResumeChannel.RaiseEvent();
-            Cursor.lockState = CursorLockMode.Locked;
         }
 
         public void ExitToMenu()

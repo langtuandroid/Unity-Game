@@ -98,6 +98,9 @@ namespace LobsterFramework.Editors
         }
 
         private void LoadElements() {
+            if (uiPrefab == null) {
+                uiPrefab = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Framework/Editor/EditorWindow/StateEditorUI.uxml");
+            }
             if (icon != null)
             {
                 titleContent.image = icon;

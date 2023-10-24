@@ -163,6 +163,15 @@ namespace GameScripts
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Mouse"",
+                    ""type"": ""Value"",
+                    ""id"": ""c80d25c8-0a0a-40ac-8683-8d7ce03d3f50"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -374,6 +383,17 @@ namespace GameScripts
                     ""action"": ""Switch Offhand Weapon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f0caf45c-c091-4be0-8bfd-7ec869756b6e"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -397,6 +417,7 @@ namespace GameScripts
             m_Player_OffhandAbility = m_Player.FindAction("Offhand Ability", throwIfNotFound: true);
             m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
             m_Player_WeaponArt = m_Player.FindAction("Weapon Art", throwIfNotFound: true);
+            m_Player_Mouse = m_Player.FindAction("Mouse", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -473,6 +494,7 @@ namespace GameScripts
         private readonly InputAction m_Player_OffhandAbility;
         private readonly InputAction m_Player_Dash;
         private readonly InputAction m_Player_WeaponArt;
+        private readonly InputAction m_Player_Mouse;
         public struct PlayerActions
         {
             private @PlayerInput m_Wrapper;
@@ -492,6 +514,7 @@ namespace GameScripts
             public InputAction @OffhandAbility => m_Wrapper.m_Player_OffhandAbility;
             public InputAction @Dash => m_Wrapper.m_Player_Dash;
             public InputAction @WeaponArt => m_Wrapper.m_Player_WeaponArt;
+            public InputAction @Mouse => m_Wrapper.m_Player_Mouse;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -546,6 +569,9 @@ namespace GameScripts
                 @WeaponArt.started += instance.OnWeaponArt;
                 @WeaponArt.performed += instance.OnWeaponArt;
                 @WeaponArt.canceled += instance.OnWeaponArt;
+                @Mouse.started += instance.OnMouse;
+                @Mouse.performed += instance.OnMouse;
+                @Mouse.canceled += instance.OnMouse;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -595,6 +621,9 @@ namespace GameScripts
                 @WeaponArt.started -= instance.OnWeaponArt;
                 @WeaponArt.performed -= instance.OnWeaponArt;
                 @WeaponArt.canceled -= instance.OnWeaponArt;
+                @Mouse.started -= instance.OnMouse;
+                @Mouse.performed -= instance.OnMouse;
+                @Mouse.canceled -= instance.OnMouse;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -629,6 +658,7 @@ namespace GameScripts
             void OnOffhandAbility(InputAction.CallbackContext context);
             void OnDash(InputAction.CallbackContext context);
             void OnWeaponArt(InputAction.CallbackContext context);
+            void OnMouse(InputAction.CallbackContext context);
         }
     }
 }

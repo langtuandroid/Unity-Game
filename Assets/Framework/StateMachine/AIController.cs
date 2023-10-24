@@ -18,6 +18,8 @@ namespace LobsterFramework.AI
         [SerializeField] private StateMachine stateMachine;
         [SerializeField] private AbilityRunner playerAbilityRunner;
         [SerializeField] private float visableDegree;
+        [SerializeField] private List<MonoBehaviour> utilities;
+
         public Entity target;
         private Transform _transform;
         private Collider2D _collider;
@@ -63,6 +65,15 @@ namespace LobsterFramework.AI
                 Draw.Gizmos.Line(_transform.position, pathFinder.Destination, Color.yellow);
             }
           
+        }
+
+        public T GetUtil<T>() where T : MonoBehaviour {
+            foreach (MonoBehaviour item in utilities) {
+                if (item.GetType() == typeof(T)) {
+                    return (T)item;
+                }
+            }
+            return default;
         }
 
         private void BlockMovement(bool value)

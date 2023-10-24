@@ -53,6 +53,13 @@ namespace LobsterFramework
             rotateSpeedModifier.onValueChanged += OnRotateSpeedChanged;
         }
 
+        private void OnDestroy()
+        {
+            movementLock.onValueChanged -= OnMovementStatusChanged;
+            moveSpeedModifier.onValueChanged -= OnMoveSpeedChanged;
+            rotateSpeedModifier.onValueChanged -= OnRotateSpeedChanged;
+        }
+
         private void FixedUpdate()
         {
             if (targetVelocity != Vector2.zero) {

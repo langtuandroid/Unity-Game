@@ -3,6 +3,8 @@ using UnityEngine;
 using System;
 using UnityEngine.Events;
 using LobsterFramework.Utility;
+using static Animancer.Validate;
+using Codice.Client.Common.GameUI;
 
 namespace LobsterFramework
 {
@@ -49,7 +51,7 @@ namespace LobsterFramework
         public UnityAction<Damage> onDamaged;
         public UnityAction<bool> onPostureStatusChange;
 
-        private int pbHealthDamageModifierKey;
+        private BufferedValueAccessor<float> pbHealthDamageModifierAccessor;
 
         public bool IsDead { get; private set; }
         public bool PostureBroken { get; private set; }
@@ -72,8 +74,10 @@ namespace LobsterFramework
         }
         #endregion
         // Buffers
-        private RegenBuffer regenBuffer = new(true);
-        private DamageBuffer damageBuffer = new(true);
+        private RegenBuffer regenBuffer = new();
+        private DamageBuffer damageBuffer = new();
+        private BufferedValueAccessor<float> baseHealthRegenAccessor;
+        private BufferedValueAccessor<float> basePostureRegenAccessor;
 
         #endregion
         
@@ -86,8 +90,13 @@ namespace LobsterFramework
             Posture = MaxPosture;
             damagedSince = Time.time;
 
-            regenBuffer.AddHealth(baseHealthRegen.Value);
-            regenBuffer.AddPosture(basePostureRegen.Value);
+            baseHealthRegenAccessor = regenBuffer.healthRegen.GetAccessor();
+            baseHealthRegenAccessor.Acquire(baseHealthRegen.Value);
+
+            basePostureRegenAccessor = regenBuffer.postureRegen.GetAccessor();
+            basePostureRegenAccessor.Acquire(basePostureRegen.Value);
+
+            pbHealthDamageModifierAccessor = damageBuffer.healthDamageModifier.GetAccessor();
         }
         
 
@@ -95,8 +104,7 @@ namespace LobsterFramework
         {
             Health -= damageBuffer.HealthDamage;
             posture -= damageBuffer.PostureDamage;
-            damageBuffer.ResetDamage();
-            damageBuffer.ResetDefense();
+            damageBuffer.Reset();
             if (Health <= 0) { Die(); }
             if (!PostureBroken && Posture <= 0) { PostureBreak(); }
 
@@ -116,6 +124,10 @@ namespace LobsterFramework
             }
             
             Regen();
+            Damage healing = regenBuffer.Heal;
+            regenBuffer.Reset();
+            Health += healing.health;
+            Posture += healing.posture;
         }
 
         /// <summary>
@@ -132,8 +144,8 @@ namespace LobsterFramework
                         Health = lowHealthThreshold.Value;
                     }
                 }
-                Health += regenBuffer.HealthRegen * Time.deltaTime;
-                Posture += regenBuffer.PostureRegen * Time.deltaTime;
+                Health += regenBuffer.HealthRegen * regenBuffer.HealthModifier * Time.deltaTime;
+                Posture += regenBuffer.PostureRegen * regenBuffer.PostureModifier * Time.deltaTime;
             }
         }
 
@@ -161,7 +173,7 @@ namespace LobsterFramework
         }
 
         private void PostureBreak() {
-            pbHealthDamageModifierKey = damageBuffer.AddHealthModifier(GameManager.Instance.POSTURE_BROKEN_DAMAGE_MODIFIER);
+            pbHealthDamageModifierAccessor.Acquire(GameManager.Instance.POSTURE_BROKEN_DAMAGE_MODIFIER);
             pbCounter = 0;
             PostureBroken = true;
             if (onPostureStatusChange != null) { 
@@ -170,7 +182,7 @@ namespace LobsterFramework
         }
 
         private void PostureRecover() {
-            damageBuffer.RemoveHealthModifier(pbHealthDamageModifierKey);
+            pbHealthDamageModifierAccessor.Release();
             Posture = 0.7f * MaxPosture;
             PostureBroken = false;
             if (onPostureStatusChange != null)
@@ -232,8 +244,11 @@ namespace LobsterFramework
         /// </summary>
         /// <param name="healthDefense">The amount of health defense</param>
         /// <param name="postureDefense">The amount of posture defense</param>
-        public void Defense(int healthDefense, int postureDefense) { 
-            damageBuffer.AddDefense(healthDefense, postureDefense);
+        public void Defense(Damage defense) {
+            damageBuffer.AddDefense(defense);
+        }
+        public void Heal(Damage heal) {
+            regenBuffer.AddHeal(heal);
         }
 
         #endregion
@@ -310,208 +325,110 @@ namespace LobsterFramework
             return a.health != b.health || a.posture != b.posture || a.source != b.source || a.type != b.type;
         }
     }
-    public struct DamageBuffer {
-        private FloatSum healthDamage;
-        private FloatSum postureDamage;
+    internal class DamageBuffer {
+        private readonly List<Damage> damages;
+        private readonly List<Damage> defenses;
 
-        private FloatSum healthDefense;
-        private FloatSum postureDefense;
+        public readonly FloatProduct healthDamageModifier;
+        public readonly FloatProduct postureDamageModifier;
 
-        private FloatProduct hdModifier;
-        private FloatProduct pdModifier;
+        public DamageBuffer() {
+            damages = new();
+            defenses = new();
 
-        public DamageBuffer(bool defaultSetting=true) { 
-            healthDamage = new(0, true);
-            postureDamage = new(0, true);
-
-            healthDefense = new(0, true);
-            postureDefense = new(0, true);
-
-            hdModifier = new(1, true);
-            pdModifier = new(1, true);
+            healthDamageModifier = new(1, true);
+            postureDamageModifier = new(1, true);
             HealthDamage = 0;
             PostureDamage = 0;
+            healthDamageModifier.onValueChanged += ComputeDamage;
+            postureDamageModifier.onValueChanged += ComputeDamage;
+        }
+
+        ~DamageBuffer() {
+            healthDamageModifier.onValueChanged -= ComputeDamage;
+            postureDamageModifier.onValueChanged -= ComputeDamage;
         }
 
         public float HealthDamage {get; private set; }
 
         public float PostureDamage {get;private set; }
 
-        private void ComputeDamage() {
-            HealthDamage = Math.Max(healthDamage.Value - healthDefense.Value, 0) * hdModifier.Value;
-            PostureDamage = Math.Max(postureDamage.Value - postureDefense.Value, 0) * pdModifier.Value;
+        private void ComputeDamage(float doNotUseThisParameter=0) {
+            float health = 0;
+            float posture = 0;
+            foreach (Damage damage in damages) {
+                health += damage.health;
+                posture += damage.posture;
+            }
+            foreach (Damage defense in defenses)
+            {
+                health -= defense.health;
+                posture -= defense.posture;
+            }
+
+            HealthDamage = Math.Max(health, 0) * healthDamageModifier.Value;
+            PostureDamage = Math.Max(posture, 0) * postureDamageModifier.Value;
         }
 
         public void AddDamage(Damage damage) { 
-            healthDamage.AddEffector(damage.health);
-            postureDamage.AddEffector(damage.posture);
+            damages.Add(damage);
             ComputeDamage();
         }
 
-        public void AddDefense(int healthDefense, int postureDefense) {
-            if (healthDefense > 0) {this.healthDefense.AddEffector(healthDefense);}
-            if (postureDefense > 0) {this.postureDefense.AddEffector(postureDefense);}
+        public void AddDefense(Damage defense) {
+            defenses.Add(defense);
             ComputeDamage();
         }
 
-        #region Health/Posture Modifiers
-        public int AddHealthModifier(float factor) {
-           int key = hdModifier.AddEffector(factor);
-           ComputeDamage();
-           return key;
-        }
-
-        public bool RemoveHealthModifier(int key)
-        {
-            bool result = hdModifier.RemoveEffector(key);
-            ComputeDamage();
-            return result;
-        }
-
-        public int AddPostureModifier(float factor)
-        {
-            int key = pdModifier.AddEffector(factor);
-            ComputeDamage();
-            return key;
-        }
-        public bool RemovePostureModifier(int key)
-        {
-            bool result = pdModifier.RemoveEffector(key);
-            ComputeDamage();
-            return result;
-        }
-        #endregion
-        #region Reset
-        public void ResetDamage() {
-            healthDamage.ClearEffectors();
-            postureDamage.ClearEffectors();
+        public void Reset() {
+            damages.Clear();
             ComputeDamage();
         }
-
-        public void ResetDefense() {
-            healthDefense.ClearEffectors();
-            postureDefense.ClearEffectors();
-            ComputeDamage();
-        }
-
-        public void ResetModifiers() {
-            hdModifier.ClearEffectors();
-            pdModifier.ClearEffectors();
-            ComputeDamage();
-        }
-
-        public void Reset() { 
-            healthDamage.ClearEffectors();
-            postureDamage.ClearEffectors();
-
-            healthDefense.ClearEffectors();
-            postureDefense.ClearEffectors();
-
-            hdModifier.ClearEffectors();
-            pdModifier.ClearEffectors();
-            ComputeDamage();
-        }
-        #endregion
     }
 
-    public struct RegenBuffer
+    internal class RegenBuffer
     {
-        private FloatSum healthRegen;
-        private FloatSum postureRegen;
+        public readonly FloatSum healthRegen;
+        public readonly FloatSum postureRegen;
 
-        private FloatProduct hrModifier;
-        private FloatProduct prModifier;
+        public readonly FloatProduct hrModifier;
+        public readonly FloatProduct prModifier;
 
-        public RegenBuffer(bool defaultSetting = true)
+        private List<Damage> heals;
+
+        public RegenBuffer()
         {
             healthRegen = new(0, true);
             postureRegen = new(0, true);
 
             hrModifier = new(1, true);
             prModifier = new(1, true);
-            HealthRegen = 0;
-            PostureRegen = 0;
-            HealthModifier = 1;
-            PostureModifier = 1;
+
+            heals = new();
         }
 
-        public float HealthRegen { get; private set; }
-
-        public float PostureRegen { get; private set; }
-        public float PostureModifier { get; private set; }
-        public float HealthModifier { get; private set; }
-
-        private void ComputeRegen()
-        {
-            HealthRegen = healthRegen.Value * hrModifier.Value;
-            PostureRegen = postureRegen.Value * prModifier.Value;
-            PostureModifier = prModifier.Value;
-            HealthModifier = hrModifier.Value;
+        public Damage Heal { get {
+                Damage healing = new();
+                foreach (Damage heal in heals) {
+                    healing += heal;
+                }
+                return healing;
+            } 
         }
 
-        public void AddHealth(float health)
-        {
-            healthRegen.AddEffector(health);
-            ComputeRegen();
+        internal void AddHeal(Damage heal) {
+            heals.Add(heal);
         }
 
-        public void AddPosture(float posture) { 
-            postureRegen.AddEffector(posture);
-            ComputeRegen();
+        internal void Reset() {
+            heals.Clear();
         }
 
-        public int AddHealthModifier(float factor)
-        {
-            int key = hrModifier.AddEffector(factor);
-            ComputeRegen();
-            return key;
-        }
+        public float HealthRegen { get { return healthRegen.Value* hrModifier.Value; } }
 
-        public bool RemoveHealthModifier(int key)
-        {
-            bool result = hrModifier.RemoveEffector(key);
-            ComputeRegen();
-            return result;
-        }
-
-        public int AddPostureModifier(float factor)
-        {
-            int key = prModifier.AddEffector(factor);
-            ComputeRegen();
-            return key;
-        }
-
-        public bool RemovePostureModifier(int key)
-        {
-            bool result = prModifier.RemoveEffector(key);
-            ComputeRegen();
-            return result;
-        }
-
-        public void ResetRegen()
-        {
-            healthRegen.ClearEffectors();
-            postureRegen.ClearEffectors();
-            ComputeRegen();
-        }
-
-        public void ResetModifiers()
-        {
-            hrModifier.ClearEffectors();
-            prModifier.ClearEffectors();
-            ComputeRegen();
-        }
-
-        public void Reset()
-        {
-            healthRegen.ClearEffectors();
-            postureRegen.ClearEffectors();
-
-            hrModifier.ClearEffectors();
-            prModifier.ClearEffectors();
-            ComputeRegen();
-        }
-
+        public float PostureRegen { get { return postureRegen.Value * prModifier.Value; } }
+        public float PostureModifier { get { return prModifier.Value; } }
+        public float HealthModifier { get { return hrModifier.Value; } }
     }
 }
 #endregion

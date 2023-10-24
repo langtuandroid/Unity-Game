@@ -22,7 +22,6 @@ namespace LobsterFramework.Interaction
             spriteRenderer = GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = item.itemData.Icon;
             item.itemData = Instantiate(item.itemData);
-            item.CorrectInventoryQuantity(false);
         }
 
         public InventoryItem Item

@@ -7,6 +7,7 @@ namespace LobsterFramework.Interaction
     public abstract class Item : ScriptableObject
     {
         [SerializeField] private string itemName;
+        [SerializeField] private ItemType itemType;
         [SerializeField] private int itemLimit;
         [SerializeField] private Sprite icon;
         [TextArea]
@@ -15,11 +16,16 @@ namespace LobsterFramework.Interaction
         public string ItemName { get { return itemName; } }
 
         public int ItemLimit { get { return itemLimit; } }
+        public ItemType ItemType { get { return itemType; } }
 
         public Sprite Icon { get { return icon; } }
 
         public string Description { get { return description; } }
+    }
 
-        public virtual void Initialize(GameObject obj) { }
+    public enum ItemType { 
+        Key,
+        Equipment,
+        Consumable
     }
 }
