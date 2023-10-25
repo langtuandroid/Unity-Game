@@ -14,6 +14,7 @@ namespace GameScripts.InputControl
         [SerializeField] private Camera camera;
         [SerializeField] private float cameraDistance;
         [SerializeField] private VarBool gamePause;
+        [SerializeField] private Vector2 cameraDeviation;
 
         [Header("Event Channels")]
         [SerializeField] private VoidEventChannel gameEndChannel;
@@ -31,6 +32,7 @@ namespace GameScripts.InputControl
         [Header("Inputs")]
         [SerializeField] private InputActionReference rotate;
         [SerializeField] private InputActionReference move;
+        [SerializeField] private InputActionReference mouse;
         [SerializeField] private float rotateAcceleration;
         [SerializeField] private float mouseSensitivity;
         private float rotateVelocity;
@@ -52,25 +54,37 @@ namespace GameScripts.InputControl
         {
             if (!gamePause.Value)
             {
-                Vector2 input = rotate.action.ReadValue<Vector2>();
-                if (input.x != 0)
+                if (GameManager.Instance.UseAlternativeInput)
                 {
-                    float delta = input.x * Time.deltaTime * mouseSensitivity;
-                    rotateVelocity = Mathf.MoveTowards(rotateVelocity, -delta, rotateAcceleration * Time.deltaTime);
-                    rotateVelocity = Mathf.Clamp(rotateVelocity, -moveControl.RotateSpeed, moveControl.RotateSpeed);
+                    moveControl.RotateTowards(camera.ScreenToWorldPoint(mouse.action.ReadValue<Vector2>()) - transform.position);
                 }
-                else
-                {
-                    rotateVelocity = Mathf.MoveTowards(rotateVelocity, 0, rotateAcceleration * Time.deltaTime);
+                else {
+                    Vector2 input = rotate.action.ReadValue<Vector2>();
+                    if (input.x != 0)
+                    {
+                        float delta = input.x * Time.deltaTime * mouseSensitivity;
+                        rotateVelocity = Mathf.MoveTowards(rotateVelocity, -delta, rotateAcceleration * Time.deltaTime);
+                        rotateVelocity = Mathf.Clamp(rotateVelocity, -moveControl.RotateSpeed, moveControl.RotateSpeed);
+                    }
+                    else
+                    {
+                        rotateVelocity = Mathf.MoveTowards(rotateVelocity, 0, rotateAcceleration * Time.deltaTime);
+                    }
+                    moveControl.RotateByDegrees(rotateVelocity);
                 }
-                moveControl.RotateByDegrees(rotateVelocity);
             }
         }
 
         private void Update()
         {
-            // Vector2 direction = Quaternion.Inverse(transform.rotation)* move.action.ReadValue<Vector2>();
-            Vector2 direction = move.action.ReadValue<Vector2>();
+            Vector2 direction;
+            if (GameManager.Instance.UseAlternativeInput)
+            {
+                direction = Quaternion.Inverse(transform.rotation) * move.action.ReadValue<Vector2>();
+            }
+            else {
+                direction = move.action.ReadValue<Vector2>();
+            }
             moveControl.Move(direction);
             GuardAction();
         }
@@ -234,7 +248,14 @@ namespace GameScripts.InputControl
             {
                 Ability.AbilityPipe raw = abilityRunner.GetAbilityPipe<Dash>();
                 Dash.DashPipe pipe = (Dash.DashPipe)raw;
-                pipe.DashDirection = abilityRunner.TopLevelTransform.rotation * move.action.ReadValue<Vector2>();
+                if (GameManager.Instance.UseAlternativeInput)
+                {
+                    pipe.DashDirection = move.action.ReadValue<Vector2>();
+                }
+                else {
+                    pipe.DashDirection = abilityRunner.TopLevelTransform.rotation * move.action.ReadValue<Vector2>();
+                }
+                
                 abilityRunner.EnqueueAbility<Dash>();
             }   
         }
@@ -242,7 +263,23 @@ namespace GameScripts.InputControl
         public void LateUpdate()
         {
             camera.transform.position = new Vector3(_transform.position.x, _transform.position.y, _transform.position.z - cameraDistance);
-            camera.transform.rotation = _transform.rotation;
+            if (!GameManager.Instance.UseAlternativeInput)
+            {
+                if (Cursor.lockState != CursorLockMode.Locked)
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                }
+                camera.transform.rotation = _transform.rotation;
+                Vector3 deviation = new Vector3(cameraDeviation.x, cameraDeviation.y, 0);
+                deviation = camera.transform.rotation * deviation;
+                camera.transform.position += deviation;
+            }
+            else {
+                if (Cursor.lockState != CursorLockMode.None) {
+                    Cursor.lockState = CursorLockMode.None;
+                }
+                camera.transform.rotation = Quaternion.identity;
+            }
         }
     }
 }

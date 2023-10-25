@@ -58,17 +58,12 @@ namespace LobsterFramework
             {
                 if (!gamePause.Value)
                 {
-                    pauseMenu.gameObject.SetActive(true);
-                    gameplayMenu.gameObject.SetActive(false);
-                    Cursor.lockState = CursorLockMode.Locked;
                     
                     PauseGame();
                 }
                 else
                 {
-                    gameplayMenu.gameObject.SetActive(true);
-                    pauseMenu.gameObject.SetActive(false);
-                    Cursor.lockState = CursorLockMode.None;
+                    
                     ResumeGame();
                 }
             }
@@ -77,6 +72,10 @@ namespace LobsterFramework
         public void PauseGame()
         {
             Debug.Log("Game Pause!");
+            pauseMenu.gameObject.SetActive(true);
+            gameplayMenu.gameObject.SetActive(false);
+            Cursor.lockState = CursorLockMode.None;
+
             Time.timeScale = 0f;
             gamePause.Value = true;
         }
@@ -84,6 +83,9 @@ namespace LobsterFramework
         public void ResumeGame()
         {
             Debug.Log("Game Resume!");
+            gameplayMenu.gameObject.SetActive(true);
+            pauseMenu.gameObject.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
             gamePause.Value = false;
             gameResumeChannel.RaiseEvent();

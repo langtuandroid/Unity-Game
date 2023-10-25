@@ -17,6 +17,7 @@ namespace LobsterFramework
         private static GameManager instance;
 
         public static GameManager Instance { get { return instance; } }
+        [field: SerializeField] public bool UseAlternativeInput { get; private set; }
 
         [SerializeField] private VoidEventChannel exitChannel;
         // Game Settings

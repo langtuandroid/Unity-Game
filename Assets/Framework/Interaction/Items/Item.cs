@@ -12,6 +12,8 @@ namespace LobsterFramework.Interaction
         [SerializeField] private Sprite icon;
         [TextArea]
         [SerializeField] private string description;
+        [SerializeField] private bool discardable;
+        [SerializeField] private bool persistent;
 
         public string ItemName { get { return itemName; } }
 
@@ -21,6 +23,8 @@ namespace LobsterFramework.Interaction
         public Sprite Icon { get { return icon; } }
 
         public string Description { get { return description; } }
+        public bool Discardable { get { return discardable; } }
+        public bool Persistent { get { return persistent; } }   
     }
 
     public enum ItemType { 

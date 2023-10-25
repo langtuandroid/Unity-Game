@@ -10,6 +10,8 @@ namespace LobsterFramework.UI
 {
     public class InventoryUI : MonoBehaviour
     {
+        [Header("Clear Popups")]
+        [SerializeField] Button clearButton;
         [Header("Tabs")]
         [SerializeField] private GameObject tabLocation;
         [SerializeField] private GameObject tabTemplate;
@@ -37,11 +39,16 @@ namespace LobsterFramework.UI
                 tab.GetComponent<Button>().onClick.AddListener(()=> { currentType = type; DisplayTabContent(); });
                 tab.transform.SetParent(tabLocation.transform);
             }
+
+            clearButton.onClick.AddListener(() =>
+            {
+                itemPopupMenu.SetActive(false);
+            });
         }
 
         private void DisplayTabContent() { 
             foreach (Transform obj in tabContentDisplay.transform) {
-                if (obj.gameObject.activeInHierarchy) {
+                if (obj.gameObject != itemEntryTemplate) {
                     Destroy(obj.gameObject);
                 }
             }
@@ -52,19 +59,18 @@ namespace LobsterFramework.UI
                 }
                 GameObject obj = Instantiate(itemEntryTemplate);
                 obj.SetActive(true);
-                if (item.itemData.Icon != null) {
-                    obj.GetComponent<Image>().sprite = item.itemData.Icon;
-                }
-                obj.GetComponent<Button>().onClick.AddListener(() => { DisplayItemPopupMenu(item); });
+                ItemEntryUI itemEntryUI = obj.GetComponent<ItemEntryUI>();
+                obj.GetComponent<Button>().onClick.AddListener(() => { DisplayItemPopupMenu(item, itemEntryUI);});
+                itemEntryUI.DisplayItem(item);
                 obj.transform.SetParent(tabContentDisplay.transform);
             }
         }
-        private void DisplayItemPopupMenu(InventoryItem item) {
+        private void DisplayItemPopupMenu(InventoryItem item, ItemEntryUI itemEntryUI) {
             // Generate Options
             List<GameObject> options = new();
             if (item.IsComsumable) {
                 GameObject option = Instantiate(itemPopupOptionTemplate);
-                option.GetComponent<Button>().onClick.AddListener(() => { item.Consume(inventory); itemPopupMenu.SetActive(false); });
+                option.GetComponent<Button>().onClick.AddListener(() => { item.Consume(inventory); itemEntryUI.DisplayItem(item); itemPopupMenu.SetActive(false); });
                 options.Add(option);
                 option.GetComponentInChildren<TextMeshProUGUI>().text = "Consume";
             }
@@ -80,7 +86,7 @@ namespace LobsterFramework.UI
 
             // Clear options
             foreach (Transform child in itemPopupMenu.transform) {
-                if (child.gameObject.activeInHierarchy) {
+                if (child.gameObject != itemPopupOptionTemplate) {
                     Destroy(child.gameObject);
                 }                
             }

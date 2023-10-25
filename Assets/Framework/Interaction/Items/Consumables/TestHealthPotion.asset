@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Health Potion
   itemType: 2
-  itemLimit: 1
+  itemLimit: 10
   icon: {fileID: 21300000, guid: 70792714b82cede449ab06f9bdd60fad, type: 3}
   description: Potion used to restore health.
+  discardable: 0
+  persistent: 1
   regenAmount: 100
