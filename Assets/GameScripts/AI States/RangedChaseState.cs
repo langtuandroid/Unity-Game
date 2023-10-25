@@ -47,7 +47,7 @@ namespace GameScripts.AI
                 return typeof(WanderState);
             }
             Debug.DrawLine(transform.position, (aiController.target.transform.position - transform.position).normalized * trackData.engageDistance.Value + transform.position, Color.red);
-            if (aiController.TargetVisible(aiController.transform.position, trackData.engageDistance.Value))
+            if (aiController.TargetVisible(aiController.transform.position, aiController.transform.up, trackData.engageDistance.Value))
             {
                 aiController.LookTowards();
                 if (aiController.TargetInRange(trackData.keepDistance.Value))

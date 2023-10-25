@@ -33,7 +33,6 @@ namespace GameScripts.AI.StickEnemy
         
         private float posture;
         private float moveDistance;
-        private bool isResting;
         public override void InitializeFields(GameObject obj)
         {
             abilityRunner = controller.AbilityRunner;
@@ -50,7 +49,6 @@ namespace GameScripts.AI.StickEnemy
             playerAbilityRunner.onAbilityEnqueued += OnPlayerAction;
             posture = controller.target.Posture / controller.target.MaxPosture;
             moveDistance = 0;
-            isResting = false;
         }
 
         public override void OnExit()

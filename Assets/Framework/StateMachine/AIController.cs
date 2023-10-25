@@ -62,6 +62,9 @@ namespace LobsterFramework.AI
         {
             if (_transform != null)
             {
+                
+                Draw.Gizmos.Line(_transform.position, _transform.position + (Quaternion.Euler(0, 0, 45) * transform.up).normalized * 5, Color.blue);
+                Draw.Gizmos.Line(_transform.position, _transform.position + (Quaternion.Euler(0, 0, -45) * transform.up).normalized * 5, Color.blue);
                 Draw.Gizmos.Line(_transform.position, pathFinder.Destination, Color.yellow);
             }
           
@@ -153,11 +156,14 @@ namespace LobsterFramework.AI
             }
             return false;
         }
-        public bool TargetVisible(Vector3 position, float range)
+        public bool TargetVisible(Vector3 position,Vector3 direction, float range)
         {
-            float angle = Vector3.Angle(position, target.transform.position);
-            if(angle > visableDegree || angle < -visableDegree)
+            
+            float angle = Vector3.Angle(direction, target.transform.position-position);
+            Debug.Log(angle);
+            if (angle > visableDegree || angle < -visableDegree)
             {
+                Debug.Log("check false");
                 return false;
             }
             RaycastHit2D hit = AIUtility.Raycast2D(gameObject, position, target.transform.position - position, range, AIUtility.VisibilityMask);
@@ -166,9 +172,11 @@ namespace LobsterFramework.AI
                 Entity t = hit.collider.GetComponent<Entity>();
                 if (t != null && t == target)
                 {
+                    Debug.Log("check true");
                     return true;
                 }
             }
+            Debug.Log("check false");
             return false;
         }
         public void PatrolLine(Vector3 postion)

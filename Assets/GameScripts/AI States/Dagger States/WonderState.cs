@@ -8,6 +8,8 @@ using LobsterFramework;
 using UnityEngine.InputSystem.XR;
 using LobsterFramework.AbilitySystem;
 using GameScripts.Abilities;
+using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
 
 namespace GameScripts.AI.DaggerEnemy
 {
@@ -18,7 +20,9 @@ namespace GameScripts.AI.DaggerEnemy
         [SerializeField] private RefInt wanderRadius;
         [SerializeField] private RefFloat idleTime;
         [SerializeField] private List<Vector3> PatrolPoint;
-        [SerializeField] private int HoldTime;
+        [SerializeField] private float holdTime=3f;
+        [SerializeField] private float dangerDistance = 3f;
+        private EntityAlertBar alertBar;
         private StealthController trans;
         private float wanderTimeCounter;
         private float idleTimeCounter;
@@ -30,6 +34,8 @@ namespace GameScripts.AI.DaggerEnemy
         private int PatrolNum;
         private int currentPatrolNum;
         private float maxholdTime;
+        private float currentHealth;
+        private float pastHealth;
 
         private enum WanderInternalState
         {
@@ -48,7 +54,9 @@ namespace GameScripts.AI.DaggerEnemy
             trackingData = controller.GetControllerData<AITrackData>();
             currentPatrolNum = 0;
             PatrolNum = PatrolPoint.Count;
-
+            currentHealth = controller.GetEntity.Health;
+            pastHealth = controller.GetEntity.Health;
+            alertBar = controller.GetUtil<EntityAlertBar>();
         }
 
         public override void OnEnter()
@@ -56,7 +64,6 @@ namespace GameScripts.AI.DaggerEnemy
             wanderState = WanderInternalState.Idle;
             wanderTimeCounter = 0;
             idleTimeCounter = 0;
-            HoldTime = 0;
             maxholdTime = 0;
         }
 
@@ -66,38 +73,55 @@ namespace GameScripts.AI.DaggerEnemy
         }
         protected IEnumerator<CoroutineOption> HoldPostion(float sight)
         {
-            maxholdTime = Time.time + 10f;
-            Debug.Log("inside"+ maxholdTime);
+            pastHealth = controller.GetEntity.Health;
+            maxholdTime = Time.time + holdTime;
             while (Time.time < maxholdTime)
             {
-                if (controller.TargetVisible(controller.transform.position, trackingData.engageDistance.Value))
+                currentHealth = controller.GetEntity.Health;
+                if (currentHealth != pastHealth || controller.GetTargetDistance() < dangerDistance)
                 {
+                    alertBar.Hide();
+                    maxholdTime = -1;
+                    break;
+                }
+                pastHealth = currentHealth;
+                if (controller.TargetVisible(controller.transform.position,controller.transform.up, trackingData.engageDistance.Value))
+                {
+                    alertBar.SetAlert(Time.deltaTime / holdTime);
                     yield return null;
                 }
                 else
                 {
-                    Debug.Log("quit watching");
+                    alertBar.Hide();
                     maxholdTime = 0;
                     break;
                 }
+                
             }
         }
         public override Type Tick()
         {
+            
             float sight = trackingData.sightRange.Value;
             Debug.DrawLine(transform.position, transform.position + transform.up * sight, Color.yellow);
+            currentHealth = controller.GetEntity.Health;
             if (controller.SearchTarget(sight))
             {
-                stateMachine.RunCoroutine(HoldPostion(sight));
-                if(maxholdTime!=0)
+                
+                if (currentHealth != pastHealth || controller.GetTargetDistance() < dangerDistance)
                 {
-                    if (Time.time > maxholdTime)
+                    return typeof(ChaseState);
+                }
+                pastHealth = currentHealth;
+                stateMachine.RunCoroutine(HoldPostion(sight));
+                alertBar.Hide();
+                if (maxholdTime!=0)
+                {
+                    if (Time.time > maxholdTime || maxholdTime == -1)
                     {
                         return typeof(ChaseState);
-                    }
-                }
-                
-                
+                    } 
+                }    
             }
             switch (wanderState)
             {

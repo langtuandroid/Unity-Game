@@ -103,7 +103,7 @@ namespace GameScripts.AI.DaggerEnemy
                 controller.KeepDistanceFromTarget(transform.position, keepDistance, moveDistance);
                 maxWalkTime = Time.time + walkInterval;
             }
-            if (controller.TargetVisible(controller.transform.position, trackData.engageDistance.Value)) //if in visible area
+            if (controller.TargetVisible(controller.transform.position, controller.transform.up, trackData.engageDistance.Value)) //if in visible area
             {
                 abilityRunner.EnqueueAbility<Shoot>();
                 return null;
@@ -151,9 +151,6 @@ namespace GameScripts.AI.DaggerEnemy
             }
             else
             {
-                /*float meleeDesire = meleeAttackProbability;
-                float diffinHealth = healthThreshold - enemyHealth;
-                meleeDesire += diffinHealth / healthThreshold * (1f- meleeDesire);*/
                 float randomNumber = UnityEngine.Random.Range(0f, 1f);
                 
                 if (meleeHoldTime < Time.time)

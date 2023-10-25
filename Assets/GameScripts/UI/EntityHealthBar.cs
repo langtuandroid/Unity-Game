@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using LobsterFramework;
 
-namespace GameScripts.UI
+namespace LobsterFramework.AI
 {
     public class EntityHealthBar : MonoBehaviour
     {
