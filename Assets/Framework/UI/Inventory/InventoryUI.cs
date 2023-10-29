@@ -81,8 +81,9 @@ namespace LobsterFramework.UI
 
             // Enable popup
             Vector3 mousePos = mouse.action.ReadValue<Vector2>();
+            Debug.Log(mousePos);
             itemPopupMenu.SetActive(true);
-            itemPopupMenu.GetComponent<RectTransform>().position = mousePos;
+            itemPopupMenu.transform.position = mousePos;
 
             // Clear options
             foreach (Transform child in itemPopupMenu.transform) {

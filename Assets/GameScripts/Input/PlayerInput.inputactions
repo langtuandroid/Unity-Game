@@ -2,6 +2,34 @@
     "name": "PlayerInput",
     "maps": [
         {
+            "name": "Utility",
+            "id": "7a9524ff-1d3a-4099-afc2-e2f99b9d8ced",
+            "actions": [
+                {
+                    "name": "Mouse",
+                    "type": "Value",
+                    "id": "340214aa-3c5f-4bd4-99da-d47ff5832894",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b5b004f4-aeca-46e5-b4a8-eab94ad71baa",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Player",
             "id": "6e045d59-e3b2-4dfe-9c41-bbf9e90271ee",
             "actions": [
@@ -33,7 +61,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Pause/Resume",
+                    "name": "Pause",
                     "type": "Button",
                     "id": "8e76cc6e-dc7e-42f6-aa70-02b297d66c30",
                     "expectedControlType": "Button",
@@ -141,13 +169,13 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Mouse",
-                    "type": "Value",
-                    "id": "c80d25c8-0a0a-40ac-8683-8d7ce03d3f50",
-                    "expectedControlType": "Vector2",
+                    "name": "InventoryOpen",
+                    "type": "Button",
+                    "id": "8c8d92f8-7868-4f38-b1ea-1f671e998333",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -224,7 +252,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Pause/Resume",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -362,12 +390,68 @@
                 },
                 {
                     "name": "",
-                    "id": "f0caf45c-c091-4be0-8bfd-7ec869756b6e",
-                    "path": "<Mouse>/position",
+                    "id": "df8fa404-746e-4d34-a487-50c25bb6b7b8",
+                    "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Mouse",
+                    "action": "InventoryOpen",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Inventory",
+            "id": "ea5b9aa4-7418-491e-a201-ffcd46bbfe1b",
+            "actions": [
+                {
+                    "name": "InventoryClose",
+                    "type": "Button",
+                    "id": "9177ec81-b19e-4be2-8ab7-71c7fbf94a9f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ec06d5ba-231e-41ff-9965-2a6e1a31e62b",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "InventoryClose",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "PauseMenu",
+            "id": "17641fa9-17bb-4cf9-b3de-fab2c75ee763",
+            "actions": [
+                {
+                    "name": "Resume",
+                    "type": "Button",
+                    "id": "a0b8eec5-1bb1-4ac0-bc11-2310ae3446cf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7f3bb5ef-842d-4902-888f-a781d14df89a",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Resume",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

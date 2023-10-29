@@ -3,6 +3,8 @@ using UnityEngine;
 using System.Reflection;
 using UnityEngine.Events;
 using LobsterFramework.Utility;
+using UnityEngine.InputSystem;
+using System;
 
 namespace LobsterFramework
 {
@@ -30,14 +32,21 @@ namespace LobsterFramework
         [field: SerializeField] public float POSTURE_BROKEN_DAMAGE_MODIFIER { get; private set; }
         [field: SerializeField] public float POSTURE_BROKEN_DURATION { get; private set; }
         [field: SerializeField] public float SUPPRESS_REGEN_DURATION { get; private set; }
-        [field: SerializeField] public string TAG_ENTITY { get; private set; }
-        [field: SerializeField] public string TAG_PROJECTILE { get; private set; }
-        [field: SerializeField] public string TAG_PLAYER { get; private set; }
-        [field: SerializeField] public string TAG_INTERACTABLE { get; private set; }
-
-        [field: SerializeField] public string TAG_INTERACTOR { get; private set; }
 
         private Dictionary<UnityAction, float> delegates;
+
+        #region Inquiries
+        private static bool gamePaused;
+        public static bool GamePaused { get { return gamePaused; }
+            set {
+                bool temp = gamePaused;
+                gamePaused = value;
+                if (temp != value && onGamePaused != null) {
+                    onGamePaused.Invoke(value);
+                }
+         } }
+        public static Action<bool> onGamePaused;
+        #endregion
 
         private void Awake()
         {
@@ -58,6 +67,7 @@ namespace LobsterFramework
             QualitySettings.vSyncCount = 0;
             exitChannel.OnEventRaised += ExitGame;
             delegates = new();
+            GamePaused = false;
         }
 
         public void Update()

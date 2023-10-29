@@ -26,6 +26,34 @@ namespace GameScripts
     ""name"": ""PlayerInput"",
     ""maps"": [
         {
+            ""name"": ""Utility"",
+            ""id"": ""7a9524ff-1d3a-4099-afc2-e2f99b9d8ced"",
+            ""actions"": [
+                {
+                    ""name"": ""Mouse"",
+                    ""type"": ""Value"",
+                    ""id"": ""340214aa-3c5f-4bd4-99da-d47ff5832894"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""b5b004f4-aeca-46e5-b4a8-eab94ad71baa"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""Player"",
             ""id"": ""6e045d59-e3b2-4dfe-9c41-bbf9e90271ee"",
             ""actions"": [
@@ -57,7 +85,7 @@ namespace GameScripts
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Pause/Resume"",
+                    ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""8e76cc6e-dc7e-42f6-aa70-02b297d66c30"",
                     ""expectedControlType"": ""Button"",
@@ -165,13 +193,13 @@ namespace GameScripts
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Mouse"",
-                    ""type"": ""Value"",
-                    ""id"": ""c80d25c8-0a0a-40ac-8683-8d7ce03d3f50"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""name"": ""InventoryOpen"",
+                    ""type"": ""Button"",
+                    ""id"": ""8c8d92f8-7868-4f38-b1ea-1f671e998333"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -248,7 +276,7 @@ namespace GameScripts
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Pause/Resume"",
+                    ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -386,12 +414,68 @@ namespace GameScripts
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f0caf45c-c091-4be0-8bfd-7ec869756b6e"",
-                    ""path"": ""<Mouse>/position"",
+                    ""id"": ""df8fa404-746e-4d34-a487-50c25bb6b7b8"",
+                    ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Mouse"",
+                    ""action"": ""InventoryOpen"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Inventory"",
+            ""id"": ""ea5b9aa4-7418-491e-a201-ffcd46bbfe1b"",
+            ""actions"": [
+                {
+                    ""name"": ""InventoryClose"",
+                    ""type"": ""Button"",
+                    ""id"": ""9177ec81-b19e-4be2-8ab7-71c7fbf94a9f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ec06d5ba-231e-41ff-9965-2a6e1a31e62b"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InventoryClose"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""PauseMenu"",
+            ""id"": ""17641fa9-17bb-4cf9-b3de-fab2c75ee763"",
+            ""actions"": [
+                {
+                    ""name"": ""Resume"",
+                    ""type"": ""Button"",
+                    ""id"": ""a0b8eec5-1bb1-4ac0-bc11-2310ae3446cf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""7f3bb5ef-842d-4902-888f-a781d14df89a"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Resume"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -400,12 +484,15 @@ namespace GameScripts
     ],
     ""controlSchemes"": []
 }");
+            // Utility
+            m_Utility = asset.FindActionMap("Utility", throwIfNotFound: true);
+            m_Utility_Mouse = m_Utility.FindAction("Mouse", throwIfNotFound: true);
             // Player
             m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
             m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
             m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
             m_Player_ChargeAttack = m_Player.FindAction("ChargeAttack", throwIfNotFound: true);
-            m_Player_PauseResume = m_Player.FindAction("Pause/Resume", throwIfNotFound: true);
+            m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
             m_Player_PrimaryInteraction = m_Player.FindAction("Primary Interaction", throwIfNotFound: true);
             m_Player_SecondaryInteraction = m_Player.FindAction("Secondary Interaction", throwIfNotFound: true);
             m_Player_NextInteractable = m_Player.FindAction("Next Interactable", throwIfNotFound: true);
@@ -417,7 +504,13 @@ namespace GameScripts
             m_Player_OffhandAbility = m_Player.FindAction("Offhand Ability", throwIfNotFound: true);
             m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
             m_Player_WeaponArt = m_Player.FindAction("Weapon Art", throwIfNotFound: true);
-            m_Player_Mouse = m_Player.FindAction("Mouse", throwIfNotFound: true);
+            m_Player_InventoryOpen = m_Player.FindAction("InventoryOpen", throwIfNotFound: true);
+            // Inventory
+            m_Inventory = asset.FindActionMap("Inventory", throwIfNotFound: true);
+            m_Inventory_InventoryClose = m_Inventory.FindAction("InventoryClose", throwIfNotFound: true);
+            // PauseMenu
+            m_PauseMenu = asset.FindActionMap("PauseMenu", throwIfNotFound: true);
+            m_PauseMenu_Resume = m_PauseMenu.FindAction("Resume", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -476,13 +569,59 @@ namespace GameScripts
             return asset.FindBinding(bindingMask, out action);
         }
 
+        // Utility
+        private readonly InputActionMap m_Utility;
+        private List<IUtilityActions> m_UtilityActionsCallbackInterfaces = new List<IUtilityActions>();
+        private readonly InputAction m_Utility_Mouse;
+        public struct UtilityActions
+        {
+            private @PlayerInput m_Wrapper;
+            public UtilityActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Mouse => m_Wrapper.m_Utility_Mouse;
+            public InputActionMap Get() { return m_Wrapper.m_Utility; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(UtilityActions set) { return set.Get(); }
+            public void AddCallbacks(IUtilityActions instance)
+            {
+                if (instance == null || m_Wrapper.m_UtilityActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_UtilityActionsCallbackInterfaces.Add(instance);
+                @Mouse.started += instance.OnMouse;
+                @Mouse.performed += instance.OnMouse;
+                @Mouse.canceled += instance.OnMouse;
+            }
+
+            private void UnregisterCallbacks(IUtilityActions instance)
+            {
+                @Mouse.started -= instance.OnMouse;
+                @Mouse.performed -= instance.OnMouse;
+                @Mouse.canceled -= instance.OnMouse;
+            }
+
+            public void RemoveCallbacks(IUtilityActions instance)
+            {
+                if (m_Wrapper.m_UtilityActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            public void SetCallbacks(IUtilityActions instance)
+            {
+                foreach (var item in m_Wrapper.m_UtilityActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_UtilityActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        public UtilityActions @Utility => new UtilityActions(this);
+
         // Player
         private readonly InputActionMap m_Player;
         private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
         private readonly InputAction m_Player_Move;
         private readonly InputAction m_Player_Attack;
         private readonly InputAction m_Player_ChargeAttack;
-        private readonly InputAction m_Player_PauseResume;
+        private readonly InputAction m_Player_Pause;
         private readonly InputAction m_Player_PrimaryInteraction;
         private readonly InputAction m_Player_SecondaryInteraction;
         private readonly InputAction m_Player_NextInteractable;
@@ -494,7 +633,7 @@ namespace GameScripts
         private readonly InputAction m_Player_OffhandAbility;
         private readonly InputAction m_Player_Dash;
         private readonly InputAction m_Player_WeaponArt;
-        private readonly InputAction m_Player_Mouse;
+        private readonly InputAction m_Player_InventoryOpen;
         public struct PlayerActions
         {
             private @PlayerInput m_Wrapper;
@@ -502,7 +641,7 @@ namespace GameScripts
             public InputAction @Move => m_Wrapper.m_Player_Move;
             public InputAction @Attack => m_Wrapper.m_Player_Attack;
             public InputAction @ChargeAttack => m_Wrapper.m_Player_ChargeAttack;
-            public InputAction @PauseResume => m_Wrapper.m_Player_PauseResume;
+            public InputAction @Pause => m_Wrapper.m_Player_Pause;
             public InputAction @PrimaryInteraction => m_Wrapper.m_Player_PrimaryInteraction;
             public InputAction @SecondaryInteraction => m_Wrapper.m_Player_SecondaryInteraction;
             public InputAction @NextInteractable => m_Wrapper.m_Player_NextInteractable;
@@ -514,7 +653,7 @@ namespace GameScripts
             public InputAction @OffhandAbility => m_Wrapper.m_Player_OffhandAbility;
             public InputAction @Dash => m_Wrapper.m_Player_Dash;
             public InputAction @WeaponArt => m_Wrapper.m_Player_WeaponArt;
-            public InputAction @Mouse => m_Wrapper.m_Player_Mouse;
+            public InputAction @InventoryOpen => m_Wrapper.m_Player_InventoryOpen;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -533,9 +672,9 @@ namespace GameScripts
                 @ChargeAttack.started += instance.OnChargeAttack;
                 @ChargeAttack.performed += instance.OnChargeAttack;
                 @ChargeAttack.canceled += instance.OnChargeAttack;
-                @PauseResume.started += instance.OnPauseResume;
-                @PauseResume.performed += instance.OnPauseResume;
-                @PauseResume.canceled += instance.OnPauseResume;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
                 @PrimaryInteraction.started += instance.OnPrimaryInteraction;
                 @PrimaryInteraction.performed += instance.OnPrimaryInteraction;
                 @PrimaryInteraction.canceled += instance.OnPrimaryInteraction;
@@ -569,9 +708,9 @@ namespace GameScripts
                 @WeaponArt.started += instance.OnWeaponArt;
                 @WeaponArt.performed += instance.OnWeaponArt;
                 @WeaponArt.canceled += instance.OnWeaponArt;
-                @Mouse.started += instance.OnMouse;
-                @Mouse.performed += instance.OnMouse;
-                @Mouse.canceled += instance.OnMouse;
+                @InventoryOpen.started += instance.OnInventoryOpen;
+                @InventoryOpen.performed += instance.OnInventoryOpen;
+                @InventoryOpen.canceled += instance.OnInventoryOpen;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -585,9 +724,9 @@ namespace GameScripts
                 @ChargeAttack.started -= instance.OnChargeAttack;
                 @ChargeAttack.performed -= instance.OnChargeAttack;
                 @ChargeAttack.canceled -= instance.OnChargeAttack;
-                @PauseResume.started -= instance.OnPauseResume;
-                @PauseResume.performed -= instance.OnPauseResume;
-                @PauseResume.canceled -= instance.OnPauseResume;
+                @Pause.started -= instance.OnPause;
+                @Pause.performed -= instance.OnPause;
+                @Pause.canceled -= instance.OnPause;
                 @PrimaryInteraction.started -= instance.OnPrimaryInteraction;
                 @PrimaryInteraction.performed -= instance.OnPrimaryInteraction;
                 @PrimaryInteraction.canceled -= instance.OnPrimaryInteraction;
@@ -621,9 +760,9 @@ namespace GameScripts
                 @WeaponArt.started -= instance.OnWeaponArt;
                 @WeaponArt.performed -= instance.OnWeaponArt;
                 @WeaponArt.canceled -= instance.OnWeaponArt;
-                @Mouse.started -= instance.OnMouse;
-                @Mouse.performed -= instance.OnMouse;
-                @Mouse.canceled -= instance.OnMouse;
+                @InventoryOpen.started -= instance.OnInventoryOpen;
+                @InventoryOpen.performed -= instance.OnInventoryOpen;
+                @InventoryOpen.canceled -= instance.OnInventoryOpen;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -641,12 +780,108 @@ namespace GameScripts
             }
         }
         public PlayerActions @Player => new PlayerActions(this);
+
+        // Inventory
+        private readonly InputActionMap m_Inventory;
+        private List<IInventoryActions> m_InventoryActionsCallbackInterfaces = new List<IInventoryActions>();
+        private readonly InputAction m_Inventory_InventoryClose;
+        public struct InventoryActions
+        {
+            private @PlayerInput m_Wrapper;
+            public InventoryActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+            public InputAction @InventoryClose => m_Wrapper.m_Inventory_InventoryClose;
+            public InputActionMap Get() { return m_Wrapper.m_Inventory; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(InventoryActions set) { return set.Get(); }
+            public void AddCallbacks(IInventoryActions instance)
+            {
+                if (instance == null || m_Wrapper.m_InventoryActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_InventoryActionsCallbackInterfaces.Add(instance);
+                @InventoryClose.started += instance.OnInventoryClose;
+                @InventoryClose.performed += instance.OnInventoryClose;
+                @InventoryClose.canceled += instance.OnInventoryClose;
+            }
+
+            private void UnregisterCallbacks(IInventoryActions instance)
+            {
+                @InventoryClose.started -= instance.OnInventoryClose;
+                @InventoryClose.performed -= instance.OnInventoryClose;
+                @InventoryClose.canceled -= instance.OnInventoryClose;
+            }
+
+            public void RemoveCallbacks(IInventoryActions instance)
+            {
+                if (m_Wrapper.m_InventoryActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            public void SetCallbacks(IInventoryActions instance)
+            {
+                foreach (var item in m_Wrapper.m_InventoryActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_InventoryActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        public InventoryActions @Inventory => new InventoryActions(this);
+
+        // PauseMenu
+        private readonly InputActionMap m_PauseMenu;
+        private List<IPauseMenuActions> m_PauseMenuActionsCallbackInterfaces = new List<IPauseMenuActions>();
+        private readonly InputAction m_PauseMenu_Resume;
+        public struct PauseMenuActions
+        {
+            private @PlayerInput m_Wrapper;
+            public PauseMenuActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Resume => m_Wrapper.m_PauseMenu_Resume;
+            public InputActionMap Get() { return m_Wrapper.m_PauseMenu; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(PauseMenuActions set) { return set.Get(); }
+            public void AddCallbacks(IPauseMenuActions instance)
+            {
+                if (instance == null || m_Wrapper.m_PauseMenuActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_PauseMenuActionsCallbackInterfaces.Add(instance);
+                @Resume.started += instance.OnResume;
+                @Resume.performed += instance.OnResume;
+                @Resume.canceled += instance.OnResume;
+            }
+
+            private void UnregisterCallbacks(IPauseMenuActions instance)
+            {
+                @Resume.started -= instance.OnResume;
+                @Resume.performed -= instance.OnResume;
+                @Resume.canceled -= instance.OnResume;
+            }
+
+            public void RemoveCallbacks(IPauseMenuActions instance)
+            {
+                if (m_Wrapper.m_PauseMenuActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            public void SetCallbacks(IPauseMenuActions instance)
+            {
+                foreach (var item in m_Wrapper.m_PauseMenuActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_PauseMenuActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        public PauseMenuActions @PauseMenu => new PauseMenuActions(this);
+        public interface IUtilityActions
+        {
+            void OnMouse(InputAction.CallbackContext context);
+        }
         public interface IPlayerActions
         {
             void OnMove(InputAction.CallbackContext context);
             void OnAttack(InputAction.CallbackContext context);
             void OnChargeAttack(InputAction.CallbackContext context);
-            void OnPauseResume(InputAction.CallbackContext context);
+            void OnPause(InputAction.CallbackContext context);
             void OnPrimaryInteraction(InputAction.CallbackContext context);
             void OnSecondaryInteraction(InputAction.CallbackContext context);
             void OnNextInteractable(InputAction.CallbackContext context);
@@ -658,7 +893,15 @@ namespace GameScripts
             void OnOffhandAbility(InputAction.CallbackContext context);
             void OnDash(InputAction.CallbackContext context);
             void OnWeaponArt(InputAction.CallbackContext context);
-            void OnMouse(InputAction.CallbackContext context);
+            void OnInventoryOpen(InputAction.CallbackContext context);
+        }
+        public interface IInventoryActions
+        {
+            void OnInventoryClose(InputAction.CallbackContext context);
+        }
+        public interface IPauseMenuActions
+        {
+            void OnResume(InputAction.CallbackContext context);
         }
     }
 }
