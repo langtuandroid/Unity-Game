@@ -74,6 +74,9 @@ namespace LobsterFramework.UI
                 options.Add(option);
                 option.GetComponentInChildren<TextMeshProUGUI>().text = "Consume";
             }
+            if (item.itemData.Discardable) {
+                options.Add(CreateDiscardOption(item, itemEntryUI));
+            }
 
             if (options.Count == 0) {
                 return;
@@ -97,6 +100,13 @@ namespace LobsterFramework.UI
                 option.SetActive(true);
                 option.transform.SetParent(itemPopupMenu.transform);
             }
+        }
+
+        private GameObject CreateDiscardOption(InventoryItem item, ItemEntryUI itemEntryUI) {
+            GameObject option = Instantiate(itemPopupOptionTemplate);
+            option.GetComponent<Button>().onClick.AddListener(() => { inventory.DropItem(item); itemEntryUI.DisplayItem(item); itemPopupMenu.SetActive(false); });
+            option.GetComponentInChildren<TextMeshProUGUI>().text = "Discard";
+            return option;
         }
     }
 }

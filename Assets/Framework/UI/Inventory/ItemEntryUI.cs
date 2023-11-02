@@ -19,7 +19,7 @@ namespace LobsterFramework
         }
 
         public void DisplayItem(InventoryItem item) {
-            if (item.Quantity > 0 || item.itemData.Persistent)
+            if (item.itemData != null && (item.Quantity > 0 || item.itemData.Persistent))
             {
                 itemName.text = item.itemData.ItemName;
                 itemQuantity.text = item.Quantity.ToString();

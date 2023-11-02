@@ -7,21 +7,21 @@ namespace LobsterFramework.Interaction
 {
     [Interaction(interactors: typeof(Inventory))]
     [RequireComponent(typeof(SpriteRenderer))]
-    public class CollectableItem : InteractableObject
+    public sealed class CollectableItem : InteractableObject
     {
-        [SerializeField] private RefBool destroyWhenDeplete;
+        [SerializeField] internal bool destroyWhenDeplete;
         [SerializeField] private InventoryItem item;
 
         private SpriteRenderer spriteRenderer;
 
         private InteractionPrompt prompt = new() { Primary = "Collect" };
 
-        private new void Start()
+        private void Awake()
         {
-            base.Start();
             spriteRenderer = GetComponent<SpriteRenderer>();
-            spriteRenderer.sprite = item.itemData.Icon;
-            item.itemData = Instantiate(item.itemData);
+            if (item != null) {
+                spriteRenderer.sprite = item.itemData.Icon;
+            }
         }
 
         public InventoryItem Item
@@ -30,8 +30,8 @@ namespace LobsterFramework.Interaction
             set
             {
                 item = value;
-                spriteRenderer.sprite = item.itemData.Icon;
-                if (destroyWhenDeplete.Value)
+                spriteRenderer.sprite = item.itemData.Icon; 
+                if (destroyWhenDeplete)
                 {
                     if (item.Quantity == 0)
                     {
@@ -41,9 +41,24 @@ namespace LobsterFramework.Interaction
             }
         }
 
+        public void CheckStatus()
+        {
+            if (destroyWhenDeplete)
+            {
+                if (item.Quantity == 0)
+                {
+                    Destroy(gameObject);
+                }
+            }
+        }
+
         public override InteractionPrompt GetInteractionOptions(Type t)
         {
             return prompt;
+        }
+        public override void OnInteract(Interactor interactor, InteractionType interactType)
+        {
+            base.OnInteract(interactor, interactType);
         }
     }
 }

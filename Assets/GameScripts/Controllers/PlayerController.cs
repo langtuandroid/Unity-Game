@@ -351,6 +351,25 @@ namespace GameScripts.InputControl
                 Time.timeScale = 1;
             }
         }
+        public void ResumeGame()
+        {
+            Debug.Log("Game Resume!");
+            GameManager.GamePaused = false;
+            gameplayInputs.Enable();
+            pauseMenuInputs.Disable();
+            gameplayUI.SetActive(true);
+            pauseUI.SetActive(false);
+            if (GameManager.Instance.UseAlternativeInput)
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+
+            Time.timeScale = 1;
+        }
 
         public void LateUpdate()
         {

@@ -11,7 +11,13 @@ namespace LobsterFramework.Interaction
          regardless of their other properties such as description, icon and itemLimit, and therefore are 
         put into the same item slot.
          */
+        /// <summary>
+        /// Container for the items inside this inventory, contains arrays of items of each item type indexed by the Enum ItemType. 
+        /// </summary>
         [SerializeField] internal List<ItemContainer> items;
+        /// <summary>
+        /// The entity holding this inventory
+        /// </summary>
         [SerializeField] private Entity entity;
 
         #region EditorFields
@@ -33,6 +39,9 @@ namespace LobsterFramework.Interaction
                     return;
                 }
 
+                // Make sure the quantity does not exceed max quantity allowed for this item
+                itemToCollect.Quantity = itemToCollect.Quantity;
+
                 // Attempt to merge item with existing items in inventory
                 ItemType itemType = itemToCollect.itemData.ItemType;
                 ItemContainer container = items[(int)itemType];
@@ -44,16 +53,44 @@ namespace LobsterFramework.Interaction
                     }
                 }
 
-                // Move the rest to empty slots
-                for (int i = 0; i < container.Count && itemToCollect.Quantity > 0; i++)
+                if (itemToCollect.Quantity == 0)
                 {
-                    if (container[i].itemData == null || container[i].itemData.ItemType != itemType)
-                    {
-                        container[i].AddItem(itemToCollect);
-                    }
+                    item.CheckStatus();
+                    return;
                 }
 
-                item.Item = itemToCollect;
+                // Move the rest to empty slots
+                for (int i = 0; i < container.Count; i++)
+                {
+                    if (container[i].itemData == null || (container[i].itemData.ItemType != itemType && !container[i].itemData.Persistent))
+                    {
+                        container[i].AddItem(itemToCollect.Clone());
+                        item.Item.Quantity = 0;
+                        item.CheckStatus();
+                        return;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Drop specified inventory item by removing it from the inventory and generating a CollectableItem on the ground
+        /// </summary>
+        /// <param name="itemToDrop">The item to be dropped, must be present in the inventory, otherwise this method do nothing</param>
+        public void DropItem(InventoryItem itemToDrop) {
+            ItemType type = itemToDrop.itemData.ItemType;
+            ItemContainer container = items[(int)type];
+            int index = container.IndexOf(itemToDrop);
+            if (index == -1) {
+                return;
+            }
+            InventoryUtil.GenerateItem(itemToDrop, transform.position);
+            if (itemToDrop.itemData.Persistent)
+            {
+                itemToDrop.Quantity = 0;
+            }
+            else {
+                container[index].itemData = null;
             }
         }
     }
@@ -62,7 +99,6 @@ namespace LobsterFramework.Interaction
     public class InventoryItem
     {
         [SerializeField] private int quantity;
-        private int maxQuantity;
         public Item itemData;
 
         public int Quantity
@@ -71,8 +107,8 @@ namespace LobsterFramework.Interaction
                 return quantity;
             }
             set {
-                if (value >= 0) {
-                    quantity = Mathf.Max(maxQuantity, value);
+                if (value >= 0 && itemData != null) {
+                    quantity = Mathf.Min(itemData.ItemLimit, value);
                 }
             }
         }
@@ -88,12 +124,11 @@ namespace LobsterFramework.Interaction
             }
 
             // Overwrite the empty slot data with the incoming item
-            if (itemData == null)
+            if (itemData == null) 
             {
                 itemData = itemToAdd.itemData;
-                maxQuantity = itemToAdd.maxQuantity;
                 Quantity = itemToAdd.quantity;
-                itemToAdd.quantity -= quantity;
+                itemToAdd.quantity = 0;
                 return;
             }
 
@@ -122,6 +157,13 @@ namespace LobsterFramework.Interaction
             {
                 Debug.Log("Cannot use consume on this item!");
             }
+        }
+
+        public InventoryItem Clone() {
+            InventoryItem obj = new();
+            obj.quantity = quantity;
+            obj.itemData = itemData;
+            return obj;
         }
     }
     [System.Serializable]

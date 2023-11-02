@@ -4,7 +4,6 @@ using LobsterFramework.Interaction;
 
 namespace GameScripts.Interaction
 {
-
     [RequireComponent(typeof(Collider2D), typeof(SpriteRenderer))]
     [Interaction(interactors: typeof(GeneralInteractor))]
     public class SimpleDoor : InteractableObject
@@ -21,8 +20,8 @@ namespace GameScripts.Interaction
 
         private readonly InteractionPrompt OpenedInfo = new() { Primary = "Close" };
 
-        private readonly string responseOpen = "Door Opened";
-        private readonly string responseClose = "Door Closed";
+        private static readonly string responseOpen = "Door Opened";
+        private static readonly string responseClose = "Door Closed";
 
         public bool IsClosed
         {

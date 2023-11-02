@@ -20,6 +20,7 @@ namespace LobsterFramework
 
         public static GameManager Instance { get { return instance; } }
         [field: SerializeField] public bool UseAlternativeInput { get; private set; }
+        [field: SerializeField] public bool DefaultInteractionRadius { get; private set; }
 
         [SerializeField] private VoidEventChannel exitChannel;
         // Game Settings
