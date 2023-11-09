@@ -21,12 +21,24 @@ namespace LobsterFramework.Utility
         internal Action onEffectorCleared;
         internal Action<T> onValueChanged;
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="baseValue"> The base value when no effectors are present </param>
         public BufferedValue(T baseValue) { this.baseValue = baseValue; }
 
+        /// <summary>
+        /// Return thec cached buffered value
+        /// </summary>
         public T Value { 
             get { return stats.Count == 0 ? baseValue : value; }
         }
 
+        /// <summary>
+        /// Determines if the effector can be added
+        /// </summary>
+        /// <param name="obj">The value of the effector to be examined</param>
+        /// <returns>true if can be added, otherwise false</returns>
         public virtual bool Compatible(T obj) { return true; }
 
         internal int AddEffector(T obj) {
@@ -59,12 +71,19 @@ namespace LobsterFramework.Utility
 
         internal bool SetEffector(int id, T obj)
         {
+            if (!Compatible(obj)) {
+                return false;
+            }
             if (stats.ContainsKey(id)) {
                 stats[id] = obj;
                 return true;
             }
             return false;
         }
+
+        /// <summary>
+        /// Remove all effectors
+        /// </summary>
         public void ClearEffectors() {
             foreach (int id in stats.Keys) {
                 distributor.RecycleID(id);
@@ -86,6 +105,10 @@ namespace LobsterFramework.Utility
         /// </summary>
         public int EffectorCount { get { return stats.Count; } }
 
+        /// <summary>
+        /// Compute the value taking all effectors into account
+        /// </summary>
+        /// <returns></returns>
         protected abstract T ComputeValue();
     }
 
@@ -129,14 +152,21 @@ namespace LobsterFramework.Utility
                 effectorID = -1;
             }
         }
-        public void Set(T value) {
+
+        /// <summary>
+        /// Change the value of the effector added, effector value must be compatible
+        /// </summary>
+        /// <param name="value"> The value to change to </param>
+        /// <returns> true if the effector value has been changed, otherwise false </returns>
+        public bool Set(T value) {
             if (effectorID != -1)
             {
-                stat.SetEffector(effectorID, value);
+                return stat.SetEffector(effectorID, value);
             }
             else {
                 Debug.LogWarning("Attempting to set effector value without acquiring!");
             }
+            return false;
         }
     }
 

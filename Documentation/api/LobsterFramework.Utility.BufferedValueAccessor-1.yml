@@ -1,0 +1,256 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility.BufferedValueAccessor`1
+  commentId: T:LobsterFramework.Utility.BufferedValueAccessor`1
+  id: BufferedValueAccessor`1
+  parent: LobsterFramework.Utility
+  children:
+  - LobsterFramework.Utility.BufferedValueAccessor`1.Acquire(`0)
+  - LobsterFramework.Utility.BufferedValueAccessor`1.Finalize
+  - LobsterFramework.Utility.BufferedValueAccessor`1.Release
+  - LobsterFramework.Utility.BufferedValueAccessor`1.Set(`0)
+  langs:
+  - csharp
+  - vb
+  name: BufferedValueAccessor<T>
+  nameWithType: BufferedValueAccessor<T>
+  fullName: LobsterFramework.Utility.BufferedValueAccessor<T>
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedValue.cs
+    id: BufferedValueAccessor
+    path: ../Assets/Framework/Utility/BufferedValue.cs
+    startLine: 114
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: 'public class BufferedValueAccessor<T> where T : IEquatable<T>'
+    typeParameters:
+    - id: T
+    content.vb: Public Class BufferedValueAccessor(Of T As IEquatable(Of T))
+  inheritance:
+  - System.Object
+  nameWithType.vb: BufferedValueAccessor(Of T)
+  fullName.vb: LobsterFramework.Utility.BufferedValueAccessor(Of T)
+  name.vb: BufferedValueAccessor(Of T)
+- uid: LobsterFramework.Utility.BufferedValueAccessor`1.Finalize
+  commentId: M:LobsterFramework.Utility.BufferedValueAccessor`1.Finalize
+  id: Finalize
+  parent: LobsterFramework.Utility.BufferedValueAccessor`1
+  langs:
+  - csharp
+  - vb
+  name: ~BufferedValueAccessor()
+  nameWithType: BufferedValueAccessor<T>.~BufferedValueAccessor()
+  fullName: LobsterFramework.Utility.BufferedValueAccessor<T>.~BufferedValueAccessor()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedValue.cs
+    id: Finalize
+    path: ../Assets/Framework/Utility/BufferedValue.cs
+    startLine: 124
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: protected ~BufferedValueAccessor()
+    content.vb: 'Protected '
+  overload: LobsterFramework.Utility.BufferedValueAccessor`1.Finalize*
+  nameWithType.vb: ''
+  fullName.vb: ''
+  name.vb: ''
+- uid: LobsterFramework.Utility.BufferedValueAccessor`1.Acquire(`0)
+  commentId: M:LobsterFramework.Utility.BufferedValueAccessor`1.Acquire(`0)
+  id: Acquire(`0)
+  parent: LobsterFramework.Utility.BufferedValueAccessor`1
+  langs:
+  - csharp
+  - vb
+  name: Acquire(T)
+  nameWithType: BufferedValueAccessor<T>.Acquire(T)
+  fullName: LobsterFramework.Utility.BufferedValueAccessor<T>.Acquire(T)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedValue.cs
+    id: Acquire
+    path: ../Assets/Framework/Utility/BufferedValue.cs
+    startLine: 134
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: Acquire an ID from BufferedValue by setting a effector of specified value
+  example: []
+  syntax:
+    content: public void Acquire(T value)
+    parameters:
+    - id: value
+      type: '{T}'
+      description: The value of the effector to be added
+    content.vb: Public Sub Acquire(value As T)
+  overload: LobsterFramework.Utility.BufferedValueAccessor`1.Acquire*
+  nameWithType.vb: BufferedValueAccessor(Of T).Acquire(T)
+  fullName.vb: LobsterFramework.Utility.BufferedValueAccessor(Of T).Acquire(T)
+- uid: LobsterFramework.Utility.BufferedValueAccessor`1.Release
+  commentId: M:LobsterFramework.Utility.BufferedValueAccessor`1.Release
+  id: Release
+  parent: LobsterFramework.Utility.BufferedValueAccessor`1
+  langs:
+  - csharp
+  - vb
+  name: Release()
+  nameWithType: BufferedValueAccessor<T>.Release()
+  fullName: LobsterFramework.Utility.BufferedValueAccessor<T>.Release()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedValue.cs
+    id: Release
+    path: ../Assets/Framework/Utility/BufferedValue.cs
+    startLine: 147
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: Remove the effector from BufferedValue and release the ID to be used by others
+  example: []
+  syntax:
+    content: public void Release()
+    content.vb: Public Sub Release()
+  overload: LobsterFramework.Utility.BufferedValueAccessor`1.Release*
+  nameWithType.vb: BufferedValueAccessor(Of T).Release()
+  fullName.vb: LobsterFramework.Utility.BufferedValueAccessor(Of T).Release()
+- uid: LobsterFramework.Utility.BufferedValueAccessor`1.Set(`0)
+  commentId: M:LobsterFramework.Utility.BufferedValueAccessor`1.Set(`0)
+  id: Set(`0)
+  parent: LobsterFramework.Utility.BufferedValueAccessor`1
+  langs:
+  - csharp
+  - vb
+  name: Set(T)
+  nameWithType: BufferedValueAccessor<T>.Set(T)
+  fullName: LobsterFramework.Utility.BufferedValueAccessor<T>.Set(T)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedValue.cs
+    id: Set
+    path: ../Assets/Framework/Utility/BufferedValue.cs
+    startLine: 160
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: Change the value of the effector added, effector value must be compatible
+  example: []
+  syntax:
+    content: public bool Set(T value)
+    parameters:
+    - id: value
+      type: '{T}'
+      description: The value to change to
+    return:
+      type: System.Boolean
+      description: true if the effector value has been changed, otherwise false
+    content.vb: Public Function [Set](value As T) As Boolean
+  overload: LobsterFramework.Utility.BufferedValueAccessor`1.Set*
+  nameWithType.vb: BufferedValueAccessor(Of T).Set(T)
+  fullName.vb: LobsterFramework.Utility.BufferedValueAccessor(Of T).Set(T)
+references:
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Utility.BufferedValueAccessor`1.Finalize*
+  commentId: Overload:LobsterFramework.Utility.BufferedValueAccessor`1.Finalize
+  href: LobsterFramework.Utility.BufferedValueAccessor-1.html#LobsterFramework.Utility.BufferedValueAccessor`1.Finalize
+  name: ~BufferedValueAccessor
+  nameWithType: BufferedValueAccessor<T>.~BufferedValueAccessor
+  fullName: LobsterFramework.Utility.BufferedValueAccessor<T>.~BufferedValueAccessor
+  spec.csharp:
+  - name: "~"
+  - uid: LobsterFramework.Utility.BufferedValueAccessor`1.Finalize*
+    name: BufferedValueAccessor
+    href: LobsterFramework.Utility.BufferedValueAccessor-1.html#LobsterFramework.Utility.BufferedValueAccessor`1.Finalize
+- uid: LobsterFramework.Utility.BufferedValueAccessor`1.Acquire*
+  commentId: Overload:LobsterFramework.Utility.BufferedValueAccessor`1.Acquire
+  href: LobsterFramework.Utility.BufferedValueAccessor-1.html#LobsterFramework.Utility.BufferedValueAccessor`1.Acquire(`0)
+  name: Acquire
+  nameWithType: BufferedValueAccessor<T>.Acquire
+  fullName: LobsterFramework.Utility.BufferedValueAccessor<T>.Acquire
+  nameWithType.vb: BufferedValueAccessor(Of T).Acquire
+  fullName.vb: LobsterFramework.Utility.BufferedValueAccessor(Of T).Acquire
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: LobsterFramework.Utility.BufferedValueAccessor`1.Release*
+  commentId: Overload:LobsterFramework.Utility.BufferedValueAccessor`1.Release
+  href: LobsterFramework.Utility.BufferedValueAccessor-1.html#LobsterFramework.Utility.BufferedValueAccessor`1.Release
+  name: Release
+  nameWithType: BufferedValueAccessor<T>.Release
+  fullName: LobsterFramework.Utility.BufferedValueAccessor<T>.Release
+  nameWithType.vb: BufferedValueAccessor(Of T).Release
+  fullName.vb: LobsterFramework.Utility.BufferedValueAccessor(Of T).Release
+- uid: LobsterFramework.Utility.BufferedValueAccessor`1.Set*
+  commentId: Overload:LobsterFramework.Utility.BufferedValueAccessor`1.Set
+  href: LobsterFramework.Utility.BufferedValueAccessor-1.html#LobsterFramework.Utility.BufferedValueAccessor`1.Set(`0)
+  name: Set
+  nameWithType: BufferedValueAccessor<T>.Set
+  fullName: LobsterFramework.Utility.BufferedValueAccessor<T>.Set
+  nameWithType.vb: BufferedValueAccessor(Of T).Set
+  fullName.vb: LobsterFramework.Utility.BufferedValueAccessor(Of T).Set
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

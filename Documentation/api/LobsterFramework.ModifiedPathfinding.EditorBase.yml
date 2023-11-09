@@ -1,0 +1,2912 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase
+  commentId: T:LobsterFramework.ModifiedPathfinding.EditorBase
+  id: EditorBase
+  parent: LobsterFramework.ModifiedPathfinding
+  children:
+  - LobsterFramework.ModifiedPathfinding.EditorBase.Clamp(System.String,System.Single,System.Single)
+  - LobsterFramework.ModifiedPathfinding.EditorBase.Clamp(UnityEditor.SerializedProperty,System.Single,System.Single)
+  - LobsterFramework.ModifiedPathfinding.EditorBase.ClampInt(System.String,System.Int32,System.Int32)
+  - LobsterFramework.ModifiedPathfinding.EditorBase.FindProperty(System.String)
+  - LobsterFramework.ModifiedPathfinding.EditorBase.FloatField(System.String,System.String,System.String,System.Single,System.Single)
+  - LobsterFramework.ModifiedPathfinding.EditorBase.FloatField(UnityEditor.SerializedProperty,System.String,System.String,System.Single,System.Single)
+  - LobsterFramework.ModifiedPathfinding.EditorBase.Inspector
+  - LobsterFramework.ModifiedPathfinding.EditorBase.IntSlider(System.String,System.Int32,System.Int32)
+  - LobsterFramework.ModifiedPathfinding.EditorBase.Mask(System.String,System.String[],System.String)
+  - LobsterFramework.ModifiedPathfinding.EditorBase.OnEnable
+  - LobsterFramework.ModifiedPathfinding.EditorBase.OnInspectorGUI
+  - LobsterFramework.ModifiedPathfinding.EditorBase.Popup(System.String,UnityEngine.GUIContent[],System.String)
+  - LobsterFramework.ModifiedPathfinding.EditorBase.PropertyField(System.String,System.String,System.String)
+  - LobsterFramework.ModifiedPathfinding.EditorBase.PropertyField(UnityEditor.SerializedProperty,System.String,System.String)
+  - LobsterFramework.ModifiedPathfinding.EditorBase.Section(System.String)
+  - LobsterFramework.ModifiedPathfinding.EditorBase.Slider(System.String,System.Single,System.Single)
+  - LobsterFramework.ModifiedPathfinding.EditorBase.getDocumentationURL
+  langs:
+  - csharp
+  - vb
+  name: EditorBase
+  nameWithType: EditorBase
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Inspector/EditorBase.cs
+    id: EditorBase
+    path: ../Assets/Framework/Editor/Inspector/EditorBase.cs
+    startLine: 9
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.ModifiedPathfinding
+  summary: Helper for creating editors
+  example: []
+  syntax:
+    content: >-
+      [CustomEditor(typeof(VersionedMonoBehaviour), true)]
+
+      [CanEditMultipleObjects]
+
+      public class EditorBase : Editor
+    content.vb: >-
+      <CustomEditor(GetType(VersionedMonoBehaviour), True)>
+
+      <CanEditMultipleObjects>
+
+      Public Class EditorBase Inherits Editor
+  inheritance:
+  - System.Object
+  - UnityEngine.Object
+  - UnityEngine.ScriptableObject
+  - UnityEditor.Editor
+  inheritedMembers:
+  - UnityEngine.ScriptableObject.SetDirty
+  - UnityEngine.ScriptableObject.CreateInstance(System.String)
+  - UnityEngine.ScriptableObject.CreateInstance(System.Type)
+  - UnityEngine.ScriptableObject.CreateInstance``1
+  - UnityEngine.Object.GetInstanceID
+  - UnityEngine.Object.GetHashCode
+  - UnityEngine.Object.Equals(System.Object)
+  - UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+  - UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+  - UnityEngine.Object.Instantiate(UnityEngine.Object)
+  - UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform)
+  - UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
+  - UnityEngine.Object.Instantiate``1({T})
+  - UnityEngine.Object.Instantiate``1({T},UnityEngine.Vector3,UnityEngine.Quaternion)
+  - UnityEngine.Object.Instantiate``1({T},UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+  - UnityEngine.Object.Instantiate``1({T},UnityEngine.Transform)
+  - UnityEngine.Object.Instantiate``1({T},UnityEngine.Transform,System.Boolean)
+  - UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
+  - UnityEngine.Object.Destroy(UnityEngine.Object)
+  - UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
+  - UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
+  - UnityEngine.Object.FindObjectsOfType(System.Type)
+  - UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
+  - UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsSortMode)
+  - UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
+  - UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
+  - UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
+  - UnityEngine.Object.DestroyObject(UnityEngine.Object)
+  - UnityEngine.Object.FindSceneObjectsOfType(System.Type)
+  - UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
+  - UnityEngine.Object.FindObjectsOfType``1
+  - UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsSortMode)
+  - UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
+  - UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
+  - UnityEngine.Object.FindObjectOfType``1
+  - UnityEngine.Object.FindObjectOfType``1(System.Boolean)
+  - UnityEngine.Object.FindFirstObjectByType``1
+  - UnityEngine.Object.FindAnyObjectByType``1
+  - UnityEngine.Object.FindFirstObjectByType``1(UnityEngine.FindObjectsInactive)
+  - UnityEngine.Object.FindAnyObjectByType``1(UnityEngine.FindObjectsInactive)
+  - UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
+  - UnityEngine.Object.FindObjectOfType(System.Type)
+  - UnityEngine.Object.FindFirstObjectByType(System.Type)
+  - UnityEngine.Object.FindAnyObjectByType(System.Type)
+  - UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
+  - UnityEngine.Object.FindFirstObjectByType(System.Type,UnityEngine.FindObjectsInactive)
+  - UnityEngine.Object.FindAnyObjectByType(System.Type,UnityEngine.FindObjectsInactive)
+  - UnityEngine.Object.ToString
+  - UnityEngine.Object.name
+  - UnityEngine.Object.hideFlags
+  attributes:
+  - type: UnityEditor.CanEditMultipleObjects
+    ctor: UnityEditor.CanEditMultipleObjects.#ctor
+    arguments: []
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.getDocumentationURL
+  commentId: F:LobsterFramework.ModifiedPathfinding.EditorBase.getDocumentationURL
+  id: getDocumentationURL
+  parent: LobsterFramework.ModifiedPathfinding.EditorBase
+  langs:
+  - csharp
+  - vb
+  name: getDocumentationURL
+  nameWithType: EditorBase.getDocumentationURL
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.getDocumentationURL
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Inspector/EditorBase.cs
+    id: getDocumentationURL
+    path: ../Assets/Framework/Editor/Inspector/EditorBase.cs
+    startLine: 21
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.ModifiedPathfinding
+  syntax:
+    content: public static Func<string> getDocumentationURL
+    return:
+      type: System.Func{System.String}
+    content.vb: Public Shared getDocumentationURL As Func(Of String)
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.OnEnable
+  commentId: M:LobsterFramework.ModifiedPathfinding.EditorBase.OnEnable
+  id: OnEnable
+  parent: LobsterFramework.ModifiedPathfinding.EditorBase
+  langs:
+  - csharp
+  - vb
+  name: OnEnable()
+  nameWithType: EditorBase.OnEnable()
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.OnEnable()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Inspector/EditorBase.cs
+    id: OnEnable
+    path: ../Assets/Framework/Editor/Inspector/EditorBase.cs
+    startLine: 103
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.ModifiedPathfinding
+  syntax:
+    content: protected virtual void OnEnable()
+    content.vb: Protected Overridable Sub OnEnable()
+  overload: LobsterFramework.ModifiedPathfinding.EditorBase.OnEnable*
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.OnInspectorGUI
+  commentId: M:LobsterFramework.ModifiedPathfinding.EditorBase.OnInspectorGUI
+  id: OnInspectorGUI
+  parent: LobsterFramework.ModifiedPathfinding.EditorBase
+  langs:
+  - csharp
+  - vb
+  name: OnInspectorGUI()
+  nameWithType: EditorBase.OnInspectorGUI()
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.OnInspectorGUI()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Inspector/EditorBase.cs
+    id: OnInspectorGUI
+    path: ../Assets/Framework/Editor/Inspector/EditorBase.cs
+    startLine: 108
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.ModifiedPathfinding
+  summary: <p>Implement this function to make a custom inspector.</p>
+  example: []
+  syntax:
+    content: public override sealed void OnInspectorGUI()
+    content.vb: Public NotOverridable Overrides Sub OnInspectorGUI()
+  overridden: UnityEditor.Editor.OnInspectorGUI
+  overload: LobsterFramework.ModifiedPathfinding.EditorBase.OnInspectorGUI*
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.Inspector
+  commentId: M:LobsterFramework.ModifiedPathfinding.EditorBase.Inspector
+  id: Inspector
+  parent: LobsterFramework.ModifiedPathfinding.EditorBase
+  langs:
+  - csharp
+  - vb
+  name: Inspector()
+  nameWithType: EditorBase.Inspector()
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.Inspector()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Inspector/EditorBase.cs
+    id: Inspector
+    path: ../Assets/Framework/Editor/Inspector/EditorBase.cs
+    startLine: 139
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.ModifiedPathfinding
+  syntax:
+    content: protected virtual void Inspector()
+    content.vb: Protected Overridable Sub Inspector()
+  overload: LobsterFramework.ModifiedPathfinding.EditorBase.Inspector*
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.FindProperty(System.String)
+  commentId: M:LobsterFramework.ModifiedPathfinding.EditorBase.FindProperty(System.String)
+  id: FindProperty(System.String)
+  parent: LobsterFramework.ModifiedPathfinding.EditorBase
+  langs:
+  - csharp
+  - vb
+  name: FindProperty(string)
+  nameWithType: EditorBase.FindProperty(string)
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.FindProperty(string)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Inspector/EditorBase.cs
+    id: FindProperty
+    path: ../Assets/Framework/Editor/Inspector/EditorBase.cs
+    startLine: 150
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.ModifiedPathfinding
+  syntax:
+    content: protected SerializedProperty FindProperty(string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: UnityEditor.SerializedProperty
+    content.vb: Protected Function FindProperty(name As String) As SerializedProperty
+  overload: LobsterFramework.ModifiedPathfinding.EditorBase.FindProperty*
+  nameWithType.vb: EditorBase.FindProperty(String)
+  fullName.vb: LobsterFramework.ModifiedPathfinding.EditorBase.FindProperty(String)
+  name.vb: FindProperty(String)
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.Section(System.String)
+  commentId: M:LobsterFramework.ModifiedPathfinding.EditorBase.Section(System.String)
+  id: Section(System.String)
+  parent: LobsterFramework.ModifiedPathfinding.EditorBase
+  langs:
+  - csharp
+  - vb
+  name: Section(string)
+  nameWithType: EditorBase.Section(string)
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.Section(string)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Inspector/EditorBase.cs
+    id: Section
+    path: ../Assets/Framework/Editor/Inspector/EditorBase.cs
+    startLine: 157
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.ModifiedPathfinding
+  syntax:
+    content: protected void Section(string label)
+    parameters:
+    - id: label
+      type: System.String
+    content.vb: Protected Sub Section(label As String)
+  overload: LobsterFramework.ModifiedPathfinding.EditorBase.Section*
+  nameWithType.vb: EditorBase.Section(String)
+  fullName.vb: LobsterFramework.ModifiedPathfinding.EditorBase.Section(String)
+  name.vb: Section(String)
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.FloatField(System.String,System.String,System.String,System.Single,System.Single)
+  commentId: M:LobsterFramework.ModifiedPathfinding.EditorBase.FloatField(System.String,System.String,System.String,System.Single,System.Single)
+  id: FloatField(System.String,System.String,System.String,System.Single,System.Single)
+  parent: LobsterFramework.ModifiedPathfinding.EditorBase
+  langs:
+  - csharp
+  - vb
+  name: FloatField(string, string, string, float, float)
+  nameWithType: EditorBase.FloatField(string, string, string, float, float)
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.FloatField(string, string, string, float, float)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Inspector/EditorBase.cs
+    id: FloatField
+    path: ../Assets/Framework/Editor/Inspector/EditorBase.cs
+    startLine: 163
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.ModifiedPathfinding
+  syntax:
+    content: protected void FloatField(string propertyPath, string label = null, string tooltip = null, float min = -Infinity, float max = Infinity)
+    parameters:
+    - id: propertyPath
+      type: System.String
+    - id: label
+      type: System.String
+    - id: tooltip
+      type: System.String
+    - id: min
+      type: System.Single
+    - id: max
+      type: System.Single
+    content.vb: Protected Sub FloatField(propertyPath As String, label As String = Nothing, tooltip As String = Nothing, min As Single = -Infinity, max As Single = Infinity)
+  overload: LobsterFramework.ModifiedPathfinding.EditorBase.FloatField*
+  nameWithType.vb: EditorBase.FloatField(String, String, String, Single, Single)
+  fullName.vb: LobsterFramework.ModifiedPathfinding.EditorBase.FloatField(String, String, String, Single, Single)
+  name.vb: FloatField(String, String, String, Single, Single)
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.FloatField(UnityEditor.SerializedProperty,System.String,System.String,System.Single,System.Single)
+  commentId: M:LobsterFramework.ModifiedPathfinding.EditorBase.FloatField(UnityEditor.SerializedProperty,System.String,System.String,System.Single,System.Single)
+  id: FloatField(UnityEditor.SerializedProperty,System.String,System.String,System.Single,System.Single)
+  parent: LobsterFramework.ModifiedPathfinding.EditorBase
+  langs:
+  - csharp
+  - vb
+  name: FloatField(SerializedProperty, string, string, float, float)
+  nameWithType: EditorBase.FloatField(SerializedProperty, string, string, float, float)
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.FloatField(UnityEditor.SerializedProperty, string, string, float, float)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Inspector/EditorBase.cs
+    id: FloatField
+    path: ../Assets/Framework/Editor/Inspector/EditorBase.cs
+    startLine: 169
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.ModifiedPathfinding
+  syntax:
+    content: protected void FloatField(SerializedProperty prop, string label = null, string tooltip = null, float min = -Infinity, float max = Infinity)
+    parameters:
+    - id: prop
+      type: UnityEditor.SerializedProperty
+    - id: label
+      type: System.String
+    - id: tooltip
+      type: System.String
+    - id: min
+      type: System.Single
+    - id: max
+      type: System.Single
+    content.vb: Protected Sub FloatField(prop As SerializedProperty, label As String = Nothing, tooltip As String = Nothing, min As Single = -Infinity, max As Single = Infinity)
+  overload: LobsterFramework.ModifiedPathfinding.EditorBase.FloatField*
+  nameWithType.vb: EditorBase.FloatField(SerializedProperty, String, String, Single, Single)
+  fullName.vb: LobsterFramework.ModifiedPathfinding.EditorBase.FloatField(UnityEditor.SerializedProperty, String, String, Single, Single)
+  name.vb: FloatField(SerializedProperty, String, String, Single, Single)
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.PropertyField(System.String,System.String,System.String)
+  commentId: M:LobsterFramework.ModifiedPathfinding.EditorBase.PropertyField(System.String,System.String,System.String)
+  id: PropertyField(System.String,System.String,System.String)
+  parent: LobsterFramework.ModifiedPathfinding.EditorBase
+  langs:
+  - csharp
+  - vb
+  name: PropertyField(string, string, string)
+  nameWithType: EditorBase.PropertyField(string, string, string)
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.PropertyField(string, string, string)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Inspector/EditorBase.cs
+    id: PropertyField
+    path: ../Assets/Framework/Editor/Inspector/EditorBase.cs
+    startLine: 175
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.ModifiedPathfinding
+  syntax:
+    content: protected bool PropertyField(string propertyPath, string label = null, string tooltip = null)
+    parameters:
+    - id: propertyPath
+      type: System.String
+    - id: label
+      type: System.String
+    - id: tooltip
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Protected Function PropertyField(propertyPath As String, label As String = Nothing, tooltip As String = Nothing) As Boolean
+  overload: LobsterFramework.ModifiedPathfinding.EditorBase.PropertyField*
+  nameWithType.vb: EditorBase.PropertyField(String, String, String)
+  fullName.vb: LobsterFramework.ModifiedPathfinding.EditorBase.PropertyField(String, String, String)
+  name.vb: PropertyField(String, String, String)
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.PropertyField(UnityEditor.SerializedProperty,System.String,System.String)
+  commentId: M:LobsterFramework.ModifiedPathfinding.EditorBase.PropertyField(UnityEditor.SerializedProperty,System.String,System.String)
+  id: PropertyField(UnityEditor.SerializedProperty,System.String,System.String)
+  parent: LobsterFramework.ModifiedPathfinding.EditorBase
+  langs:
+  - csharp
+  - vb
+  name: PropertyField(SerializedProperty, string, string)
+  nameWithType: EditorBase.PropertyField(SerializedProperty, string, string)
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.PropertyField(UnityEditor.SerializedProperty, string, string)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Inspector/EditorBase.cs
+    id: PropertyField
+    path: ../Assets/Framework/Editor/Inspector/EditorBase.cs
+    startLine: 180
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.ModifiedPathfinding
+  syntax:
+    content: protected bool PropertyField(SerializedProperty prop, string label = null, string tooltip = null)
+    parameters:
+    - id: prop
+      type: UnityEditor.SerializedProperty
+    - id: label
+      type: System.String
+    - id: tooltip
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Protected Function PropertyField(prop As SerializedProperty, label As String = Nothing, tooltip As String = Nothing) As Boolean
+  overload: LobsterFramework.ModifiedPathfinding.EditorBase.PropertyField*
+  nameWithType.vb: EditorBase.PropertyField(SerializedProperty, String, String)
+  fullName.vb: LobsterFramework.ModifiedPathfinding.EditorBase.PropertyField(UnityEditor.SerializedProperty, String, String)
+  name.vb: PropertyField(SerializedProperty, String, String)
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.Popup(System.String,UnityEngine.GUIContent[],System.String)
+  commentId: M:LobsterFramework.ModifiedPathfinding.EditorBase.Popup(System.String,UnityEngine.GUIContent[],System.String)
+  id: Popup(System.String,UnityEngine.GUIContent[],System.String)
+  parent: LobsterFramework.ModifiedPathfinding.EditorBase
+  langs:
+  - csharp
+  - vb
+  name: Popup(string, GUIContent[], string)
+  nameWithType: EditorBase.Popup(string, GUIContent[], string)
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.Popup(string, UnityEngine.GUIContent[], string)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Inspector/EditorBase.cs
+    id: Popup
+    path: ../Assets/Framework/Editor/Inspector/EditorBase.cs
+    startLine: 217
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.ModifiedPathfinding
+  syntax:
+    content: protected void Popup(string propertyPath, GUIContent[] options, string label = null)
+    parameters:
+    - id: propertyPath
+      type: System.String
+    - id: options
+      type: UnityEngine.GUIContent[]
+    - id: label
+      type: System.String
+    content.vb: Protected Sub Popup(propertyPath As String, options As GUIContent(), label As String = Nothing)
+  overload: LobsterFramework.ModifiedPathfinding.EditorBase.Popup*
+  nameWithType.vb: EditorBase.Popup(String, GUIContent(), String)
+  fullName.vb: LobsterFramework.ModifiedPathfinding.EditorBase.Popup(String, UnityEngine.GUIContent(), String)
+  name.vb: Popup(String, GUIContent(), String)
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.Mask(System.String,System.String[],System.String)
+  commentId: M:LobsterFramework.ModifiedPathfinding.EditorBase.Mask(System.String,System.String[],System.String)
+  id: Mask(System.String,System.String[],System.String)
+  parent: LobsterFramework.ModifiedPathfinding.EditorBase
+  langs:
+  - csharp
+  - vb
+  name: Mask(string, string[], string)
+  nameWithType: EditorBase.Mask(string, string[], string)
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.Mask(string, string[], string)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Inspector/EditorBase.cs
+    id: Mask
+    path: ../Assets/Framework/Editor/Inspector/EditorBase.cs
+    startLine: 236
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.ModifiedPathfinding
+  syntax:
+    content: protected void Mask(string propertyPath, string[] options, string label = null)
+    parameters:
+    - id: propertyPath
+      type: System.String
+    - id: options
+      type: System.String[]
+    - id: label
+      type: System.String
+    content.vb: Protected Sub Mask(propertyPath As String, options As String(), label As String = Nothing)
+  overload: LobsterFramework.ModifiedPathfinding.EditorBase.Mask*
+  nameWithType.vb: EditorBase.Mask(String, String(), String)
+  fullName.vb: LobsterFramework.ModifiedPathfinding.EditorBase.Mask(String, String(), String)
+  name.vb: Mask(String, String(), String)
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.IntSlider(System.String,System.Int32,System.Int32)
+  commentId: M:LobsterFramework.ModifiedPathfinding.EditorBase.IntSlider(System.String,System.Int32,System.Int32)
+  id: IntSlider(System.String,System.Int32,System.Int32)
+  parent: LobsterFramework.ModifiedPathfinding.EditorBase
+  langs:
+  - csharp
+  - vb
+  name: IntSlider(string, int, int)
+  nameWithType: EditorBase.IntSlider(string, int, int)
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.IntSlider(string, int, int)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Inspector/EditorBase.cs
+    id: IntSlider
+    path: ../Assets/Framework/Editor/Inspector/EditorBase.cs
+    startLine: 254
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.ModifiedPathfinding
+  syntax:
+    content: protected void IntSlider(string propertyPath, int left, int right)
+    parameters:
+    - id: propertyPath
+      type: System.String
+    - id: left
+      type: System.Int32
+    - id: right
+      type: System.Int32
+    content.vb: Protected Sub IntSlider(propertyPath As String, left As Integer, right As Integer)
+  overload: LobsterFramework.ModifiedPathfinding.EditorBase.IntSlider*
+  nameWithType.vb: EditorBase.IntSlider(String, Integer, Integer)
+  fullName.vb: LobsterFramework.ModifiedPathfinding.EditorBase.IntSlider(String, Integer, Integer)
+  name.vb: IntSlider(String, Integer, Integer)
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.Slider(System.String,System.Single,System.Single)
+  commentId: M:LobsterFramework.ModifiedPathfinding.EditorBase.Slider(System.String,System.Single,System.Single)
+  id: Slider(System.String,System.Single,System.Single)
+  parent: LobsterFramework.ModifiedPathfinding.EditorBase
+  langs:
+  - csharp
+  - vb
+  name: Slider(string, float, float)
+  nameWithType: EditorBase.Slider(string, float, float)
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.Slider(string, float, float)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Inspector/EditorBase.cs
+    id: Slider
+    path: ../Assets/Framework/Editor/Inspector/EditorBase.cs
+    startLine: 265
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.ModifiedPathfinding
+  syntax:
+    content: protected void Slider(string propertyPath, float left, float right)
+    parameters:
+    - id: propertyPath
+      type: System.String
+    - id: left
+      type: System.Single
+    - id: right
+      type: System.Single
+    content.vb: Protected Sub Slider(propertyPath As String, left As Single, right As Single)
+  overload: LobsterFramework.ModifiedPathfinding.EditorBase.Slider*
+  nameWithType.vb: EditorBase.Slider(String, Single, Single)
+  fullName.vb: LobsterFramework.ModifiedPathfinding.EditorBase.Slider(String, Single, Single)
+  name.vb: Slider(String, Single, Single)
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.Clamp(UnityEditor.SerializedProperty,System.Single,System.Single)
+  commentId: M:LobsterFramework.ModifiedPathfinding.EditorBase.Clamp(UnityEditor.SerializedProperty,System.Single,System.Single)
+  id: Clamp(UnityEditor.SerializedProperty,System.Single,System.Single)
+  parent: LobsterFramework.ModifiedPathfinding.EditorBase
+  langs:
+  - csharp
+  - vb
+  name: Clamp(SerializedProperty, float, float)
+  nameWithType: EditorBase.Clamp(SerializedProperty, float, float)
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.Clamp(UnityEditor.SerializedProperty, float, float)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Inspector/EditorBase.cs
+    id: Clamp
+    path: ../Assets/Framework/Editor/Inspector/EditorBase.cs
+    startLine: 276
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.ModifiedPathfinding
+  syntax:
+    content: protected void Clamp(SerializedProperty prop, float min, float max = Infinity)
+    parameters:
+    - id: prop
+      type: UnityEditor.SerializedProperty
+    - id: min
+      type: System.Single
+    - id: max
+      type: System.Single
+    content.vb: Protected Sub Clamp(prop As SerializedProperty, min As Single, max As Single = Infinity)
+  overload: LobsterFramework.ModifiedPathfinding.EditorBase.Clamp*
+  nameWithType.vb: EditorBase.Clamp(SerializedProperty, Single, Single)
+  fullName.vb: LobsterFramework.ModifiedPathfinding.EditorBase.Clamp(UnityEditor.SerializedProperty, Single, Single)
+  name.vb: Clamp(SerializedProperty, Single, Single)
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.Clamp(System.String,System.Single,System.Single)
+  commentId: M:LobsterFramework.ModifiedPathfinding.EditorBase.Clamp(System.String,System.Single,System.Single)
+  id: Clamp(System.String,System.Single,System.Single)
+  parent: LobsterFramework.ModifiedPathfinding.EditorBase
+  langs:
+  - csharp
+  - vb
+  name: Clamp(string, float, float)
+  nameWithType: EditorBase.Clamp(string, float, float)
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.Clamp(string, float, float)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Inspector/EditorBase.cs
+    id: Clamp
+    path: ../Assets/Framework/Editor/Inspector/EditorBase.cs
+    startLine: 281
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.ModifiedPathfinding
+  syntax:
+    content: protected void Clamp(string name, float min, float max = Infinity)
+    parameters:
+    - id: name
+      type: System.String
+    - id: min
+      type: System.Single
+    - id: max
+      type: System.Single
+    content.vb: Protected Sub Clamp(name As String, min As Single, max As Single = Infinity)
+  overload: LobsterFramework.ModifiedPathfinding.EditorBase.Clamp*
+  nameWithType.vb: EditorBase.Clamp(String, Single, Single)
+  fullName.vb: LobsterFramework.ModifiedPathfinding.EditorBase.Clamp(String, Single, Single)
+  name.vb: Clamp(String, Single, Single)
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.ClampInt(System.String,System.Int32,System.Int32)
+  commentId: M:LobsterFramework.ModifiedPathfinding.EditorBase.ClampInt(System.String,System.Int32,System.Int32)
+  id: ClampInt(System.String,System.Int32,System.Int32)
+  parent: LobsterFramework.ModifiedPathfinding.EditorBase
+  langs:
+  - csharp
+  - vb
+  name: ClampInt(string, int, int)
+  nameWithType: EditorBase.ClampInt(string, int, int)
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.ClampInt(string, int, int)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Inspector/EditorBase.cs
+    id: ClampInt
+    path: ../Assets/Framework/Editor/Inspector/EditorBase.cs
+    startLine: 286
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.ModifiedPathfinding
+  syntax:
+    content: protected void ClampInt(string name, int min, int max = 2147483647)
+    parameters:
+    - id: name
+      type: System.String
+    - id: min
+      type: System.Int32
+    - id: max
+      type: System.Int32
+    content.vb: Protected Sub ClampInt(name As String, min As Integer, max As Integer = 2147483647)
+  overload: LobsterFramework.ModifiedPathfinding.EditorBase.ClampInt*
+  nameWithType.vb: EditorBase.ClampInt(String, Integer, Integer)
+  fullName.vb: LobsterFramework.ModifiedPathfinding.EditorBase.ClampInt(String, Integer, Integer)
+  name.vb: ClampInt(String, Integer, Integer)
+references:
+- uid: LobsterFramework.ModifiedPathfinding
+  commentId: N:LobsterFramework.ModifiedPathfinding
+  href: LobsterFramework.html
+  name: LobsterFramework.ModifiedPathfinding
+  nameWithType: LobsterFramework.ModifiedPathfinding
+  fullName: LobsterFramework.ModifiedPathfinding
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.ModifiedPathfinding
+    name: ModifiedPathfinding
+    href: LobsterFramework.ModifiedPathfinding.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.ModifiedPathfinding
+    name: ModifiedPathfinding
+    href: LobsterFramework.ModifiedPathfinding.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine.ScriptableObject
+  commentId: T:UnityEngine.ScriptableObject
+  parent: UnityEngine
+  isExternal: true
+  name: ScriptableObject
+  nameWithType: ScriptableObject
+  fullName: UnityEngine.ScriptableObject
+- uid: UnityEditor.Editor
+  commentId: T:UnityEditor.Editor
+  parent: UnityEditor
+  isExternal: true
+  name: Editor
+  nameWithType: Editor
+  fullName: UnityEditor.Editor
+- uid: UnityEngine.ScriptableObject.SetDirty
+  commentId: M:UnityEngine.ScriptableObject.SetDirty
+  parent: UnityEngine.ScriptableObject
+  isExternal: true
+  name: SetDirty()
+  nameWithType: ScriptableObject.SetDirty()
+  fullName: UnityEngine.ScriptableObject.SetDirty()
+  spec.csharp:
+  - uid: UnityEngine.ScriptableObject.SetDirty
+    name: SetDirty
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.ScriptableObject.SetDirty
+    name: SetDirty
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UnityEngine.ScriptableObject.CreateInstance(System.String)
+  commentId: M:UnityEngine.ScriptableObject.CreateInstance(System.String)
+  parent: UnityEngine.ScriptableObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: CreateInstance(string)
+  nameWithType: ScriptableObject.CreateInstance(string)
+  fullName: UnityEngine.ScriptableObject.CreateInstance(string)
+  nameWithType.vb: ScriptableObject.CreateInstance(String)
+  fullName.vb: UnityEngine.ScriptableObject.CreateInstance(String)
+  name.vb: CreateInstance(String)
+  spec.csharp:
+  - uid: UnityEngine.ScriptableObject.CreateInstance(System.String)
+    name: CreateInstance
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.ScriptableObject.CreateInstance(System.String)
+    name: CreateInstance
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: UnityEngine.ScriptableObject.CreateInstance(System.Type)
+  commentId: M:UnityEngine.ScriptableObject.CreateInstance(System.Type)
+  parent: UnityEngine.ScriptableObject
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: CreateInstance(Type)
+  nameWithType: ScriptableObject.CreateInstance(Type)
+  fullName: UnityEngine.ScriptableObject.CreateInstance(System.Type)
+  spec.csharp:
+  - uid: UnityEngine.ScriptableObject.CreateInstance(System.Type)
+    name: CreateInstance
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.ScriptableObject.CreateInstance(System.Type)
+    name: CreateInstance
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: UnityEngine.ScriptableObject.CreateInstance``1
+  commentId: M:UnityEngine.ScriptableObject.CreateInstance``1
+  parent: UnityEngine.ScriptableObject
+  isExternal: true
+  name: CreateInstance<T>()
+  nameWithType: ScriptableObject.CreateInstance<T>()
+  fullName: UnityEngine.ScriptableObject.CreateInstance<T>()
+  nameWithType.vb: ScriptableObject.CreateInstance(Of T)()
+  fullName.vb: UnityEngine.ScriptableObject.CreateInstance(Of T)()
+  name.vb: CreateInstance(Of T)()
+  spec.csharp:
+  - uid: UnityEngine.ScriptableObject.CreateInstance``1
+    name: CreateInstance
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.ScriptableObject.CreateInstance``1
+    name: CreateInstance
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: UnityEngine.Object.GetInstanceID
+  commentId: M:UnityEngine.Object.GetInstanceID
+  parent: UnityEngine.Object
+  isExternal: true
+  name: GetInstanceID()
+  nameWithType: Object.GetInstanceID()
+  fullName: UnityEngine.Object.GetInstanceID()
+  spec.csharp:
+  - uid: UnityEngine.Object.GetInstanceID
+    name: GetInstanceID
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.GetInstanceID
+    name: GetInstanceID
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UnityEngine.Object.GetHashCode
+  commentId: M:UnityEngine.Object.GetHashCode
+  parent: UnityEngine.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: UnityEngine.Object.GetHashCode()
+  spec.csharp:
+  - uid: UnityEngine.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UnityEngine.Object.Equals(System.Object)
+  commentId: M:UnityEngine.Object.Equals(System.Object)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: Equals(object)
+  nameWithType: Object.Equals(object)
+  fullName: UnityEngine.Object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: UnityEngine.Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: UnityEngine.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+  commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: Instantiate(Object, Vector3, Quaternion)
+  nameWithType: Object.Instantiate(Object, Vector3, Quaternion)
+  fullName: UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Vector3, UnityEngine.Quaternion)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+  commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: Instantiate(Object, Vector3, Quaternion, Transform)
+  nameWithType: Object.Instantiate(Object, Vector3, Quaternion, Transform)
+  fullName: UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Transform
+    name: Transform
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Transform
+    name: Transform
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.Instantiate(UnityEngine.Object)
+  commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: Instantiate(Object)
+  nameWithType: Object.Instantiate(Object)
+  fullName: UnityEngine.Object.Instantiate(UnityEngine.Object)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform)
+  commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: Instantiate(Object, Transform)
+  nameWithType: Object.Instantiate(Object, Transform)
+  fullName: UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Transform)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Transform
+    name: Transform
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Transform
+    name: Transform
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
+  commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: Instantiate(Object, Transform, bool)
+  nameWithType: Object.Instantiate(Object, Transform, bool)
+  fullName: UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Transform, bool)
+  nameWithType.vb: Object.Instantiate(Object, Transform, Boolean)
+  fullName.vb: UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Transform, Boolean)
+  name.vb: Instantiate(Object, Transform, Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Transform
+    name: Transform
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Transform
+    name: Transform
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: UnityEngine.Object.Instantiate``1({T})
+  commentId: M:UnityEngine.Object.Instantiate``1(``0)
+  parent: UnityEngine.Object
+  definition: UnityEngine.Object.Instantiate``1(``0)
+  name: Instantiate<T>(T)
+  nameWithType: Object.Instantiate<T>(T)
+  fullName: UnityEngine.Object.Instantiate<T>(T)
+  nameWithType.vb: Object.Instantiate(Of T)(T)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T)
+  name.vb: Instantiate(Of T)(T)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0)
+    name: Instantiate
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: )
+- uid: UnityEngine.Object.Instantiate``1({T},UnityEngine.Vector3,UnityEngine.Quaternion)
+  commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)
+  parent: UnityEngine.Object
+  definition: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)
+  name: Instantiate<T>(T, Vector3, Quaternion)
+  nameWithType: Object.Instantiate<T>(T, Vector3, Quaternion)
+  fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Vector3, UnityEngine.Quaternion)
+  nameWithType.vb: Object.Instantiate(Of T)(T, Vector3, Quaternion)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T, UnityEngine.Vector3, UnityEngine.Quaternion)
+  name.vb: Instantiate(Of T)(T, Vector3, Quaternion)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)
+    name: Instantiate
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.Instantiate``1({T},UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+  commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+  parent: UnityEngine.Object
+  definition: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+  name: Instantiate<T>(T, Vector3, Quaternion, Transform)
+  nameWithType: Object.Instantiate<T>(T, Vector3, Quaternion, Transform)
+  fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)
+  nameWithType.vb: Object.Instantiate(Of T)(T, Vector3, Quaternion, Transform)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)
+  name.vb: Instantiate(Of T)(T, Vector3, Quaternion, Transform)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+    name: Instantiate
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Transform
+    name: Transform
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Transform
+    name: Transform
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.Instantiate``1({T},UnityEngine.Transform)
+  commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)
+  parent: UnityEngine.Object
+  definition: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)
+  name: Instantiate<T>(T, Transform)
+  nameWithType: Object.Instantiate<T>(T, Transform)
+  fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Transform)
+  nameWithType.vb: Object.Instantiate(Of T)(T, Transform)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T, UnityEngine.Transform)
+  name.vb: Instantiate(Of T)(T, Transform)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)
+    name: Instantiate
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Transform
+    name: Transform
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Transform
+    name: Transform
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.Instantiate``1({T},UnityEngine.Transform,System.Boolean)
+  commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+  parent: UnityEngine.Object
+  definition: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: Instantiate<T>(T, Transform, bool)
+  nameWithType: Object.Instantiate<T>(T, Transform, bool)
+  fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Transform, bool)
+  nameWithType.vb: Object.Instantiate(Of T)(T, Transform, Boolean)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T, UnityEngine.Transform, Boolean)
+  name.vb: Instantiate(Of T)(T, Transform, Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+    name: Instantiate
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Transform
+    name: Transform
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Transform
+    name: Transform
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
+  commentId: M:UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: Destroy(Object, float)
+  nameWithType: Object.Destroy(Object, float)
+  fullName: UnityEngine.Object.Destroy(UnityEngine.Object, float)
+  nameWithType.vb: Object.Destroy(Object, Single)
+  fullName.vb: UnityEngine.Object.Destroy(UnityEngine.Object, Single)
+  name.vb: Destroy(Object, Single)
+  spec.csharp:
+  - uid: UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
+    name: Destroy
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
+    name: Destroy
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: UnityEngine.Object.Destroy(UnityEngine.Object)
+  commentId: M:UnityEngine.Object.Destroy(UnityEngine.Object)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: Destroy(Object)
+  nameWithType: Object.Destroy(Object)
+  fullName: UnityEngine.Object.Destroy(UnityEngine.Object)
+  spec.csharp:
+  - uid: UnityEngine.Object.Destroy(UnityEngine.Object)
+    name: Destroy
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.Destroy(UnityEngine.Object)
+    name: Destroy
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
+  commentId: M:UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: DestroyImmediate(Object, bool)
+  nameWithType: Object.DestroyImmediate(Object, bool)
+  fullName: UnityEngine.Object.DestroyImmediate(UnityEngine.Object, bool)
+  nameWithType.vb: Object.DestroyImmediate(Object, Boolean)
+  fullName.vb: UnityEngine.Object.DestroyImmediate(UnityEngine.Object, Boolean)
+  name.vb: DestroyImmediate(Object, Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
+    name: DestroyImmediate
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
+    name: DestroyImmediate
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
+  commentId: M:UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: DestroyImmediate(Object)
+  nameWithType: Object.DestroyImmediate(Object)
+  fullName: UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
+  spec.csharp:
+  - uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
+    name: DestroyImmediate
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
+    name: DestroyImmediate
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.FindObjectsOfType(System.Type)
+  commentId: M:UnityEngine.Object.FindObjectsOfType(System.Type)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: FindObjectsOfType(Type)
+  nameWithType: Object.FindObjectsOfType(Type)
+  fullName: UnityEngine.Object.FindObjectsOfType(System.Type)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsOfType(System.Type)
+    name: FindObjectsOfType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsOfType(System.Type)
+    name: FindObjectsOfType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
+  commentId: M:UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: FindObjectsOfType(Type, bool)
+  nameWithType: Object.FindObjectsOfType(Type, bool)
+  fullName: UnityEngine.Object.FindObjectsOfType(System.Type, bool)
+  nameWithType.vb: Object.FindObjectsOfType(Type, Boolean)
+  fullName.vb: UnityEngine.Object.FindObjectsOfType(System.Type, Boolean)
+  name.vb: FindObjectsOfType(Type, Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
+    name: FindObjectsOfType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
+    name: FindObjectsOfType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsSortMode)
+  commentId: M:UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsSortMode)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: FindObjectsByType(Type, FindObjectsSortMode)
+  nameWithType: Object.FindObjectsByType(Type, FindObjectsSortMode)
+  fullName: UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsSortMode)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsSortMode)
+    name: FindObjectsByType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.FindObjectsSortMode
+    name: FindObjectsSortMode
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsSortMode)
+    name: FindObjectsByType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.FindObjectsSortMode
+    name: FindObjectsSortMode
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
+  commentId: M:UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)
+  nameWithType: Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)
+  fullName: UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsInactive, UnityEngine.FindObjectsSortMode)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
+    name: FindObjectsByType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.FindObjectsInactive
+    name: FindObjectsInactive
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.FindObjectsSortMode
+    name: FindObjectsSortMode
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
+    name: FindObjectsByType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.FindObjectsInactive
+    name: FindObjectsInactive
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.FindObjectsSortMode
+    name: FindObjectsSortMode
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
+  commentId: M:UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: DontDestroyOnLoad(Object)
+  nameWithType: Object.DontDestroyOnLoad(Object)
+  fullName: UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
+  spec.csharp:
+  - uid: UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
+    name: DontDestroyOnLoad
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
+    name: DontDestroyOnLoad
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
+  commentId: M:UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: DestroyObject(Object, float)
+  nameWithType: Object.DestroyObject(Object, float)
+  fullName: UnityEngine.Object.DestroyObject(UnityEngine.Object, float)
+  nameWithType.vb: Object.DestroyObject(Object, Single)
+  fullName.vb: UnityEngine.Object.DestroyObject(UnityEngine.Object, Single)
+  name.vb: DestroyObject(Object, Single)
+  spec.csharp:
+  - uid: UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
+    name: DestroyObject
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
+    name: DestroyObject
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: UnityEngine.Object.DestroyObject(UnityEngine.Object)
+  commentId: M:UnityEngine.Object.DestroyObject(UnityEngine.Object)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: DestroyObject(Object)
+  nameWithType: Object.DestroyObject(Object)
+  fullName: UnityEngine.Object.DestroyObject(UnityEngine.Object)
+  spec.csharp:
+  - uid: UnityEngine.Object.DestroyObject(UnityEngine.Object)
+    name: DestroyObject
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.DestroyObject(UnityEngine.Object)
+    name: DestroyObject
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.FindSceneObjectsOfType(System.Type)
+  commentId: M:UnityEngine.Object.FindSceneObjectsOfType(System.Type)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: FindSceneObjectsOfType(Type)
+  nameWithType: Object.FindSceneObjectsOfType(Type)
+  fullName: UnityEngine.Object.FindSceneObjectsOfType(System.Type)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindSceneObjectsOfType(System.Type)
+    name: FindSceneObjectsOfType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindSceneObjectsOfType(System.Type)
+    name: FindSceneObjectsOfType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
+  commentId: M:UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: FindObjectsOfTypeIncludingAssets(Type)
+  nameWithType: Object.FindObjectsOfTypeIncludingAssets(Type)
+  fullName: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
+    name: FindObjectsOfTypeIncludingAssets
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
+    name: FindObjectsOfTypeIncludingAssets
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: UnityEngine.Object.FindObjectsOfType``1
+  commentId: M:UnityEngine.Object.FindObjectsOfType``1
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectsOfType<T>()
+  nameWithType: Object.FindObjectsOfType<T>()
+  fullName: UnityEngine.Object.FindObjectsOfType<T>()
+  nameWithType.vb: Object.FindObjectsOfType(Of T)()
+  fullName.vb: UnityEngine.Object.FindObjectsOfType(Of T)()
+  name.vb: FindObjectsOfType(Of T)()
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsOfType``1
+    name: FindObjectsOfType
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsOfType``1
+    name: FindObjectsOfType
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsSortMode)
+  commentId: M:UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsSortMode)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectsByType<T>(FindObjectsSortMode)
+  nameWithType: Object.FindObjectsByType<T>(FindObjectsSortMode)
+  fullName: UnityEngine.Object.FindObjectsByType<T>(UnityEngine.FindObjectsSortMode)
+  nameWithType.vb: Object.FindObjectsByType(Of T)(FindObjectsSortMode)
+  fullName.vb: UnityEngine.Object.FindObjectsByType(Of T)(UnityEngine.FindObjectsSortMode)
+  name.vb: FindObjectsByType(Of T)(FindObjectsSortMode)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsSortMode)
+    name: FindObjectsByType
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: UnityEngine.FindObjectsSortMode
+    name: FindObjectsSortMode
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsSortMode)
+    name: FindObjectsByType
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: UnityEngine.FindObjectsSortMode
+    name: FindObjectsSortMode
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
+  commentId: M:UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: FindObjectsOfType<T>(bool)
+  nameWithType: Object.FindObjectsOfType<T>(bool)
+  fullName: UnityEngine.Object.FindObjectsOfType<T>(bool)
+  nameWithType.vb: Object.FindObjectsOfType(Of T)(Boolean)
+  fullName.vb: UnityEngine.Object.FindObjectsOfType(Of T)(Boolean)
+  name.vb: FindObjectsOfType(Of T)(Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
+    name: FindObjectsOfType
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
+    name: FindObjectsOfType
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
+  commentId: M:UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)
+  nameWithType: Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)
+  fullName: UnityEngine.Object.FindObjectsByType<T>(UnityEngine.FindObjectsInactive, UnityEngine.FindObjectsSortMode)
+  nameWithType.vb: Object.FindObjectsByType(Of T)(FindObjectsInactive, FindObjectsSortMode)
+  fullName.vb: UnityEngine.Object.FindObjectsByType(Of T)(UnityEngine.FindObjectsInactive, UnityEngine.FindObjectsSortMode)
+  name.vb: FindObjectsByType(Of T)(FindObjectsInactive, FindObjectsSortMode)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
+    name: FindObjectsByType
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: UnityEngine.FindObjectsInactive
+    name: FindObjectsInactive
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.FindObjectsSortMode
+    name: FindObjectsSortMode
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)
+    name: FindObjectsByType
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: UnityEngine.FindObjectsInactive
+    name: FindObjectsInactive
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.FindObjectsSortMode
+    name: FindObjectsSortMode
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.FindObjectOfType``1
+  commentId: M:UnityEngine.Object.FindObjectOfType``1
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectOfType<T>()
+  nameWithType: Object.FindObjectOfType<T>()
+  fullName: UnityEngine.Object.FindObjectOfType<T>()
+  nameWithType.vb: Object.FindObjectOfType(Of T)()
+  fullName.vb: UnityEngine.Object.FindObjectOfType(Of T)()
+  name.vb: FindObjectOfType(Of T)()
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectOfType``1
+    name: FindObjectOfType
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectOfType``1
+    name: FindObjectOfType
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: UnityEngine.Object.FindObjectOfType``1(System.Boolean)
+  commentId: M:UnityEngine.Object.FindObjectOfType``1(System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: FindObjectOfType<T>(bool)
+  nameWithType: Object.FindObjectOfType<T>(bool)
+  fullName: UnityEngine.Object.FindObjectOfType<T>(bool)
+  nameWithType.vb: Object.FindObjectOfType(Of T)(Boolean)
+  fullName.vb: UnityEngine.Object.FindObjectOfType(Of T)(Boolean)
+  name.vb: FindObjectOfType(Of T)(Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectOfType``1(System.Boolean)
+    name: FindObjectOfType
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectOfType``1(System.Boolean)
+    name: FindObjectOfType
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: UnityEngine.Object.FindFirstObjectByType``1
+  commentId: M:UnityEngine.Object.FindFirstObjectByType``1
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindFirstObjectByType<T>()
+  nameWithType: Object.FindFirstObjectByType<T>()
+  fullName: UnityEngine.Object.FindFirstObjectByType<T>()
+  nameWithType.vb: Object.FindFirstObjectByType(Of T)()
+  fullName.vb: UnityEngine.Object.FindFirstObjectByType(Of T)()
+  name.vb: FindFirstObjectByType(Of T)()
+  spec.csharp:
+  - uid: UnityEngine.Object.FindFirstObjectByType``1
+    name: FindFirstObjectByType
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindFirstObjectByType``1
+    name: FindFirstObjectByType
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: UnityEngine.Object.FindAnyObjectByType``1
+  commentId: M:UnityEngine.Object.FindAnyObjectByType``1
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindAnyObjectByType<T>()
+  nameWithType: Object.FindAnyObjectByType<T>()
+  fullName: UnityEngine.Object.FindAnyObjectByType<T>()
+  nameWithType.vb: Object.FindAnyObjectByType(Of T)()
+  fullName.vb: UnityEngine.Object.FindAnyObjectByType(Of T)()
+  name.vb: FindAnyObjectByType(Of T)()
+  spec.csharp:
+  - uid: UnityEngine.Object.FindAnyObjectByType``1
+    name: FindAnyObjectByType
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindAnyObjectByType``1
+    name: FindAnyObjectByType
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: UnityEngine.Object.FindFirstObjectByType``1(UnityEngine.FindObjectsInactive)
+  commentId: M:UnityEngine.Object.FindFirstObjectByType``1(UnityEngine.FindObjectsInactive)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindFirstObjectByType<T>(FindObjectsInactive)
+  nameWithType: Object.FindFirstObjectByType<T>(FindObjectsInactive)
+  fullName: UnityEngine.Object.FindFirstObjectByType<T>(UnityEngine.FindObjectsInactive)
+  nameWithType.vb: Object.FindFirstObjectByType(Of T)(FindObjectsInactive)
+  fullName.vb: UnityEngine.Object.FindFirstObjectByType(Of T)(UnityEngine.FindObjectsInactive)
+  name.vb: FindFirstObjectByType(Of T)(FindObjectsInactive)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindFirstObjectByType``1(UnityEngine.FindObjectsInactive)
+    name: FindFirstObjectByType
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: UnityEngine.FindObjectsInactive
+    name: FindObjectsInactive
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindFirstObjectByType``1(UnityEngine.FindObjectsInactive)
+    name: FindFirstObjectByType
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: UnityEngine.FindObjectsInactive
+    name: FindObjectsInactive
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.FindAnyObjectByType``1(UnityEngine.FindObjectsInactive)
+  commentId: M:UnityEngine.Object.FindAnyObjectByType``1(UnityEngine.FindObjectsInactive)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindAnyObjectByType<T>(FindObjectsInactive)
+  nameWithType: Object.FindAnyObjectByType<T>(FindObjectsInactive)
+  fullName: UnityEngine.Object.FindAnyObjectByType<T>(UnityEngine.FindObjectsInactive)
+  nameWithType.vb: Object.FindAnyObjectByType(Of T)(FindObjectsInactive)
+  fullName.vb: UnityEngine.Object.FindAnyObjectByType(Of T)(UnityEngine.FindObjectsInactive)
+  name.vb: FindAnyObjectByType(Of T)(FindObjectsInactive)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindAnyObjectByType``1(UnityEngine.FindObjectsInactive)
+    name: FindAnyObjectByType
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: UnityEngine.FindObjectsInactive
+    name: FindObjectsInactive
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindAnyObjectByType``1(UnityEngine.FindObjectsInactive)
+    name: FindAnyObjectByType
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: UnityEngine.FindObjectsInactive
+    name: FindObjectsInactive
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
+  commentId: M:UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: FindObjectsOfTypeAll(Type)
+  nameWithType: Object.FindObjectsOfTypeAll(Type)
+  fullName: UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
+    name: FindObjectsOfTypeAll
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
+    name: FindObjectsOfTypeAll
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: UnityEngine.Object.FindObjectOfType(System.Type)
+  commentId: M:UnityEngine.Object.FindObjectOfType(System.Type)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: FindObjectOfType(Type)
+  nameWithType: Object.FindObjectOfType(Type)
+  fullName: UnityEngine.Object.FindObjectOfType(System.Type)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectOfType(System.Type)
+    name: FindObjectOfType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectOfType(System.Type)
+    name: FindObjectOfType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: UnityEngine.Object.FindFirstObjectByType(System.Type)
+  commentId: M:UnityEngine.Object.FindFirstObjectByType(System.Type)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: FindFirstObjectByType(Type)
+  nameWithType: Object.FindFirstObjectByType(Type)
+  fullName: UnityEngine.Object.FindFirstObjectByType(System.Type)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindFirstObjectByType(System.Type)
+    name: FindFirstObjectByType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindFirstObjectByType(System.Type)
+    name: FindFirstObjectByType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: UnityEngine.Object.FindAnyObjectByType(System.Type)
+  commentId: M:UnityEngine.Object.FindAnyObjectByType(System.Type)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: FindAnyObjectByType(Type)
+  nameWithType: Object.FindAnyObjectByType(Type)
+  fullName: UnityEngine.Object.FindAnyObjectByType(System.Type)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindAnyObjectByType(System.Type)
+    name: FindAnyObjectByType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindAnyObjectByType(System.Type)
+    name: FindAnyObjectByType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
+  commentId: M:UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: FindObjectOfType(Type, bool)
+  nameWithType: Object.FindObjectOfType(Type, bool)
+  fullName: UnityEngine.Object.FindObjectOfType(System.Type, bool)
+  nameWithType.vb: Object.FindObjectOfType(Type, Boolean)
+  fullName.vb: UnityEngine.Object.FindObjectOfType(System.Type, Boolean)
+  name.vb: FindObjectOfType(Type, Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
+    name: FindObjectOfType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
+    name: FindObjectOfType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: UnityEngine.Object.FindFirstObjectByType(System.Type,UnityEngine.FindObjectsInactive)
+  commentId: M:UnityEngine.Object.FindFirstObjectByType(System.Type,UnityEngine.FindObjectsInactive)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: FindFirstObjectByType(Type, FindObjectsInactive)
+  nameWithType: Object.FindFirstObjectByType(Type, FindObjectsInactive)
+  fullName: UnityEngine.Object.FindFirstObjectByType(System.Type, UnityEngine.FindObjectsInactive)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindFirstObjectByType(System.Type,UnityEngine.FindObjectsInactive)
+    name: FindFirstObjectByType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.FindObjectsInactive
+    name: FindObjectsInactive
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindFirstObjectByType(System.Type,UnityEngine.FindObjectsInactive)
+    name: FindFirstObjectByType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.FindObjectsInactive
+    name: FindObjectsInactive
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.FindAnyObjectByType(System.Type,UnityEngine.FindObjectsInactive)
+  commentId: M:UnityEngine.Object.FindAnyObjectByType(System.Type,UnityEngine.FindObjectsInactive)
+  parent: UnityEngine.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: FindAnyObjectByType(Type, FindObjectsInactive)
+  nameWithType: Object.FindAnyObjectByType(Type, FindObjectsInactive)
+  fullName: UnityEngine.Object.FindAnyObjectByType(System.Type, UnityEngine.FindObjectsInactive)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindAnyObjectByType(System.Type,UnityEngine.FindObjectsInactive)
+    name: FindAnyObjectByType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.FindObjectsInactive
+    name: FindObjectsInactive
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindAnyObjectByType(System.Type,UnityEngine.FindObjectsInactive)
+    name: FindAnyObjectByType
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.FindObjectsInactive
+    name: FindObjectsInactive
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.ToString
+  commentId: M:UnityEngine.Object.ToString
+  parent: UnityEngine.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: UnityEngine.Object.ToString()
+  spec.csharp:
+  - uid: UnityEngine.Object.ToString
+    name: ToString
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.ToString
+    name: ToString
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UnityEngine.Object.name
+  commentId: P:UnityEngine.Object.name
+  parent: UnityEngine.Object
+  isExternal: true
+  name: name
+  nameWithType: Object.name
+  fullName: UnityEngine.Object.name
+- uid: UnityEngine.Object.hideFlags
+  commentId: P:UnityEngine.Object.hideFlags
+  parent: UnityEngine.Object
+  isExternal: true
+  name: hideFlags
+  nameWithType: Object.hideFlags
+  fullName: UnityEngine.Object.hideFlags
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: UnityEditor
+  commentId: N:UnityEditor
+  isExternal: true
+  name: UnityEditor
+  nameWithType: UnityEditor
+  fullName: UnityEditor
+- uid: UnityEngine.Object.Instantiate``1(``0)
+  commentId: M:UnityEngine.Object.Instantiate``1(``0)
+  isExternal: true
+  name: Instantiate<T>(T)
+  nameWithType: Object.Instantiate<T>(T)
+  fullName: UnityEngine.Object.Instantiate<T>(T)
+  nameWithType.vb: Object.Instantiate(Of T)(T)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T)
+  name.vb: Instantiate(Of T)(T)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0)
+    name: Instantiate
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: )
+- uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)
+  commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)
+  isExternal: true
+  name: Instantiate<T>(T, Vector3, Quaternion)
+  nameWithType: Object.Instantiate<T>(T, Vector3, Quaternion)
+  fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Vector3, UnityEngine.Quaternion)
+  nameWithType.vb: Object.Instantiate(Of T)(T, Vector3, Quaternion)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T, UnityEngine.Vector3, UnityEngine.Quaternion)
+  name.vb: Instantiate(Of T)(T, Vector3, Quaternion)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)
+    name: Instantiate
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+  commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+  isExternal: true
+  name: Instantiate<T>(T, Vector3, Quaternion, Transform)
+  nameWithType: Object.Instantiate<T>(T, Vector3, Quaternion, Transform)
+  fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)
+  nameWithType.vb: Object.Instantiate(Of T)(T, Vector3, Quaternion, Transform)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)
+  name.vb: Instantiate(Of T)(T, Vector3, Quaternion, Transform)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+    name: Instantiate
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Transform
+    name: Transform
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Transform
+    name: Transform
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)
+  commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)
+  isExternal: true
+  name: Instantiate<T>(T, Transform)
+  nameWithType: Object.Instantiate<T>(T, Transform)
+  fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Transform)
+  nameWithType.vb: Object.Instantiate(Of T)(T, Transform)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T, UnityEngine.Transform)
+  name.vb: Instantiate(Of T)(T, Transform)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)
+    name: Instantiate
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Transform
+    name: Transform
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Transform
+    name: Transform
+    isExternal: true
+  - name: )
+- uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+  commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: Instantiate<T>(T, Transform, bool)
+  nameWithType: Object.Instantiate<T>(T, Transform, bool)
+  fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Transform, bool)
+  nameWithType.vb: Object.Instantiate(Of T)(T, Transform, Boolean)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T, UnityEngine.Transform, Boolean)
+  name.vb: Instantiate(Of T)(T, Transform, Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+    name: Instantiate
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Transform
+    name: Transform
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+    name: Instantiate
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Transform
+    name: Transform
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Func{System.String}
+  commentId: T:System.Func{System.String}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<string>
+  nameWithType: Func<string>
+  fullName: System.Func<string>
+  nameWithType.vb: Func(Of String)
+  fullName.vb: System.Func(Of String)
+  name.vb: Func(Of String)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.OnEnable*
+  commentId: Overload:LobsterFramework.ModifiedPathfinding.EditorBase.OnEnable
+  href: LobsterFramework.ModifiedPathfinding.EditorBase.html#LobsterFramework.ModifiedPathfinding.EditorBase.OnEnable
+  name: OnEnable
+  nameWithType: EditorBase.OnEnable
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.OnEnable
+- uid: UnityEditor.Editor.OnInspectorGUI
+  commentId: M:UnityEditor.Editor.OnInspectorGUI
+  parent: UnityEditor.Editor
+  isExternal: true
+  name: OnInspectorGUI()
+  nameWithType: Editor.OnInspectorGUI()
+  fullName: UnityEditor.Editor.OnInspectorGUI()
+  spec.csharp:
+  - uid: UnityEditor.Editor.OnInspectorGUI
+    name: OnInspectorGUI
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.Editor.OnInspectorGUI
+    name: OnInspectorGUI
+    isExternal: true
+  - name: (
+  - name: )
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.OnInspectorGUI*
+  commentId: Overload:LobsterFramework.ModifiedPathfinding.EditorBase.OnInspectorGUI
+  href: LobsterFramework.ModifiedPathfinding.EditorBase.html#LobsterFramework.ModifiedPathfinding.EditorBase.OnInspectorGUI
+  name: OnInspectorGUI
+  nameWithType: EditorBase.OnInspectorGUI
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.OnInspectorGUI
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.Inspector*
+  commentId: Overload:LobsterFramework.ModifiedPathfinding.EditorBase.Inspector
+  href: LobsterFramework.ModifiedPathfinding.EditorBase.html#LobsterFramework.ModifiedPathfinding.EditorBase.Inspector
+  name: Inspector
+  nameWithType: EditorBase.Inspector
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.Inspector
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.FindProperty*
+  commentId: Overload:LobsterFramework.ModifiedPathfinding.EditorBase.FindProperty
+  href: LobsterFramework.ModifiedPathfinding.EditorBase.html#LobsterFramework.ModifiedPathfinding.EditorBase.FindProperty(System.String)
+  name: FindProperty
+  nameWithType: EditorBase.FindProperty
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.FindProperty
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: UnityEditor.SerializedProperty
+  commentId: T:UnityEditor.SerializedProperty
+  parent: UnityEditor
+  isExternal: true
+  name: SerializedProperty
+  nameWithType: SerializedProperty
+  fullName: UnityEditor.SerializedProperty
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.Section*
+  commentId: Overload:LobsterFramework.ModifiedPathfinding.EditorBase.Section
+  href: LobsterFramework.ModifiedPathfinding.EditorBase.html#LobsterFramework.ModifiedPathfinding.EditorBase.Section(System.String)
+  name: Section
+  nameWithType: EditorBase.Section
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.Section
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.FloatField*
+  commentId: Overload:LobsterFramework.ModifiedPathfinding.EditorBase.FloatField
+  href: LobsterFramework.ModifiedPathfinding.EditorBase.html#LobsterFramework.ModifiedPathfinding.EditorBase.FloatField(System.String,System.String,System.String,System.Single,System.Single)
+  name: FloatField
+  nameWithType: EditorBase.FloatField
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.FloatField
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.PropertyField*
+  commentId: Overload:LobsterFramework.ModifiedPathfinding.EditorBase.PropertyField
+  href: LobsterFramework.ModifiedPathfinding.EditorBase.html#LobsterFramework.ModifiedPathfinding.EditorBase.PropertyField(System.String,System.String,System.String)
+  name: PropertyField
+  nameWithType: EditorBase.PropertyField
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.PropertyField
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.Popup*
+  commentId: Overload:LobsterFramework.ModifiedPathfinding.EditorBase.Popup
+  href: LobsterFramework.ModifiedPathfinding.EditorBase.html#LobsterFramework.ModifiedPathfinding.EditorBase.Popup(System.String,UnityEngine.GUIContent[],System.String)
+  name: Popup
+  nameWithType: EditorBase.Popup
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.Popup
+- uid: UnityEngine.GUIContent[]
+  isExternal: true
+  name: GUIContent[]
+  nameWithType: GUIContent[]
+  fullName: UnityEngine.GUIContent[]
+  nameWithType.vb: GUIContent()
+  fullName.vb: UnityEngine.GUIContent()
+  name.vb: GUIContent()
+  spec.csharp:
+  - uid: UnityEngine.GUIContent
+    name: GUIContent
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: UnityEngine.GUIContent
+    name: GUIContent
+    isExternal: true
+  - name: (
+  - name: )
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.Mask*
+  commentId: Overload:LobsterFramework.ModifiedPathfinding.EditorBase.Mask
+  href: LobsterFramework.ModifiedPathfinding.EditorBase.html#LobsterFramework.ModifiedPathfinding.EditorBase.Mask(System.String,System.String[],System.String)
+  name: Mask
+  nameWithType: EditorBase.Mask
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.Mask
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.IntSlider*
+  commentId: Overload:LobsterFramework.ModifiedPathfinding.EditorBase.IntSlider
+  href: LobsterFramework.ModifiedPathfinding.EditorBase.html#LobsterFramework.ModifiedPathfinding.EditorBase.IntSlider(System.String,System.Int32,System.Int32)
+  name: IntSlider
+  nameWithType: EditorBase.IntSlider
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.IntSlider
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.Slider*
+  commentId: Overload:LobsterFramework.ModifiedPathfinding.EditorBase.Slider
+  href: LobsterFramework.ModifiedPathfinding.EditorBase.html#LobsterFramework.ModifiedPathfinding.EditorBase.Slider(System.String,System.Single,System.Single)
+  name: Slider
+  nameWithType: EditorBase.Slider
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.Slider
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.Clamp*
+  commentId: Overload:LobsterFramework.ModifiedPathfinding.EditorBase.Clamp
+  href: LobsterFramework.ModifiedPathfinding.EditorBase.html#LobsterFramework.ModifiedPathfinding.EditorBase.Clamp(UnityEditor.SerializedProperty,System.Single,System.Single)
+  name: Clamp
+  nameWithType: EditorBase.Clamp
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.Clamp
+- uid: LobsterFramework.ModifiedPathfinding.EditorBase.ClampInt*
+  commentId: Overload:LobsterFramework.ModifiedPathfinding.EditorBase.ClampInt
+  href: LobsterFramework.ModifiedPathfinding.EditorBase.html#LobsterFramework.ModifiedPathfinding.EditorBase.ClampInt(System.String,System.Int32,System.Int32)
+  name: ClampInt
+  nameWithType: EditorBase.ClampInt
+  fullName: LobsterFramework.ModifiedPathfinding.EditorBase.ClampInt

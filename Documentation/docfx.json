@@ -8,7 +8,9 @@
                         "*.csproj"
                     ],
                     "exclude": [
-                        "Assets/Plugins/**"
+                        "Assets/Plugins/**",
+                        "Animancer.csproj",
+                        "Animancer.FSM.csproj"
                     ]
                 }
             ],

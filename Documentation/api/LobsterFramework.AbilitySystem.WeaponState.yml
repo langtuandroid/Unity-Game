@@ -1,0 +1,181 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AbilitySystem.WeaponState
+  commentId: T:LobsterFramework.AbilitySystem.WeaponState
+  id: WeaponState
+  parent: LobsterFramework.AbilitySystem
+  children:
+  - LobsterFramework.AbilitySystem.WeaponState.Attacking
+  - LobsterFramework.AbilitySystem.WeaponState.Deflecting
+  - LobsterFramework.AbilitySystem.WeaponState.Guarding
+  - LobsterFramework.AbilitySystem.WeaponState.Idle
+  - LobsterFramework.AbilitySystem.WeaponState.Occupied
+  langs:
+  - csharp
+  - vb
+  name: WeaponState
+  nameWithType: WeaponState
+  fullName: LobsterFramework.AbilitySystem.WeaponState
+  type: Enum
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    id: WeaponState
+    path: ../Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    startLine: 320
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public enum WeaponState
+    content.vb: Public Enum WeaponState
+- uid: LobsterFramework.AbilitySystem.WeaponState.Attacking
+  commentId: F:LobsterFramework.AbilitySystem.WeaponState.Attacking
+  id: Attacking
+  parent: LobsterFramework.AbilitySystem.WeaponState
+  langs:
+  - csharp
+  - vb
+  name: Attacking
+  nameWithType: WeaponState.Attacking
+  fullName: LobsterFramework.AbilitySystem.WeaponState.Attacking
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    id: Attacking
+    path: ../Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    startLine: 321
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: Attacking = 0
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponState
+- uid: LobsterFramework.AbilitySystem.WeaponState.Guarding
+  commentId: F:LobsterFramework.AbilitySystem.WeaponState.Guarding
+  id: Guarding
+  parent: LobsterFramework.AbilitySystem.WeaponState
+  langs:
+  - csharp
+  - vb
+  name: Guarding
+  nameWithType: WeaponState.Guarding
+  fullName: LobsterFramework.AbilitySystem.WeaponState.Guarding
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    id: Guarding
+    path: ../Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    startLine: 322
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: Guarding = 1
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponState
+- uid: LobsterFramework.AbilitySystem.WeaponState.Deflecting
+  commentId: F:LobsterFramework.AbilitySystem.WeaponState.Deflecting
+  id: Deflecting
+  parent: LobsterFramework.AbilitySystem.WeaponState
+  langs:
+  - csharp
+  - vb
+  name: Deflecting
+  nameWithType: WeaponState.Deflecting
+  fullName: LobsterFramework.AbilitySystem.WeaponState.Deflecting
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    id: Deflecting
+    path: ../Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    startLine: 323
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: Deflecting = 2
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponState
+- uid: LobsterFramework.AbilitySystem.WeaponState.Occupied
+  commentId: F:LobsterFramework.AbilitySystem.WeaponState.Occupied
+  id: Occupied
+  parent: LobsterFramework.AbilitySystem.WeaponState
+  langs:
+  - csharp
+  - vb
+  name: Occupied
+  nameWithType: WeaponState.Occupied
+  fullName: LobsterFramework.AbilitySystem.WeaponState.Occupied
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    id: Occupied
+    path: ../Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    startLine: 324
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: Occupied = 3
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponState
+- uid: LobsterFramework.AbilitySystem.WeaponState.Idle
+  commentId: F:LobsterFramework.AbilitySystem.WeaponState.Idle
+  id: Idle
+  parent: LobsterFramework.AbilitySystem.WeaponState
+  langs:
+  - csharp
+  - vb
+  name: Idle
+  nameWithType: WeaponState.Idle
+  fullName: LobsterFramework.AbilitySystem.WeaponState.Idle
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    id: Idle
+    path: ../Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    startLine: 325
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: Idle = 4
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponState
+references:
+- uid: LobsterFramework.AbilitySystem
+  commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
+  name: LobsterFramework.AbilitySystem
+  nameWithType: LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+- uid: LobsterFramework.AbilitySystem.WeaponState
+  commentId: T:LobsterFramework.AbilitySystem.WeaponState
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.WeaponState.html
+  name: WeaponState
+  nameWithType: WeaponState
+  fullName: LobsterFramework.AbilitySystem.WeaponState

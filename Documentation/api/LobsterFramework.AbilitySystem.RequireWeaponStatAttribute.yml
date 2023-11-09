@@ -1,0 +1,262 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute
+  commentId: T:LobsterFramework.AbilitySystem.RequireWeaponStatAttribute
+  id: RequireWeaponStatAttribute
+  parent: LobsterFramework.AbilitySystem
+  children:
+  - LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.#ctor(System.Type[])
+  - LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.HasWeaponStats(System.Type,LobsterFramework.AbilitySystem.WeaponWielder)
+  - LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.Init(System.Type)
+  langs:
+  - csharp
+  - vb
+  name: RequireWeaponStatAttribute
+  nameWithType: RequireWeaponStatAttribute
+  fullName: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Attributes/RequireWeaponStatAttribute.cs
+    id: RequireWeaponStatAttribute
+    path: ../Assets/Framework/AbilitySystem/Attributes/RequireWeaponStatAttribute.cs
+    startLine: 8
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: >-
+      [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
+
+      public class RequireWeaponStatAttribute : Attribute
+    content.vb: >-
+      <AttributeUsage(AttributeTargets.Class, AllowMultiple:=True, Inherited:=True)>
+
+      Public Class RequireWeaponStatAttribute Inherits Attribute
+  inheritance:
+  - System.Object
+  - System.Attribute
+  attributes:
+  - type: System.AttributeUsageAttribute
+    ctor: System.AttributeUsageAttribute.#ctor(System.AttributeTargets)
+    arguments:
+    - type: System.AttributeTargets
+      value: 4
+    namedArguments:
+    - name: AllowMultiple
+      type: System.Boolean
+      value: true
+    - name: Inherited
+      type: System.Boolean
+      value: true
+- uid: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.#ctor(System.Type[])
+  commentId: M:LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.#ctor(System.Type[])
+  id: '#ctor(System.Type[])'
+  parent: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute
+  langs:
+  - csharp
+  - vb
+  name: RequireWeaponStatAttribute(params Type[])
+  nameWithType: RequireWeaponStatAttribute.RequireWeaponStatAttribute(params Type[])
+  fullName: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.RequireWeaponStatAttribute(params System.Type[])
+  type: Constructor
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Attributes/RequireWeaponStatAttribute.cs
+    id: .ctor
+    path: ../Assets/Framework/AbilitySystem/Attributes/RequireWeaponStatAttribute.cs
+    startLine: 14
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public RequireWeaponStatAttribute(params Type[] weaponStats)
+    parameters:
+    - id: weaponStats
+      type: System.Type[]
+    content.vb: Public Sub New(ParamArray weaponStats As Type())
+  overload: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.#ctor*
+  nameWithType.vb: RequireWeaponStatAttribute.New(ParamArray Type())
+  fullName.vb: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.New(ParamArray System.Type())
+  name.vb: New(ParamArray Type())
+- uid: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.Init(System.Type)
+  commentId: M:LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.Init(System.Type)
+  id: Init(System.Type)
+  parent: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute
+  langs:
+  - csharp
+  - vb
+  name: Init(Type)
+  nameWithType: RequireWeaponStatAttribute.Init(Type)
+  fullName: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.Init(System.Type)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Attributes/RequireWeaponStatAttribute.cs
+    id: Init
+    path: ../Assets/Framework/AbilitySystem/Attributes/RequireWeaponStatAttribute.cs
+    startLine: 27
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public void Init(Type type)
+    parameters:
+    - id: type
+      type: System.Type
+    content.vb: Public Sub Init(type As Type)
+  overload: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.Init*
+- uid: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.HasWeaponStats(System.Type,LobsterFramework.AbilitySystem.WeaponWielder)
+  commentId: M:LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.HasWeaponStats(System.Type,LobsterFramework.AbilitySystem.WeaponWielder)
+  id: HasWeaponStats(System.Type,LobsterFramework.AbilitySystem.WeaponWielder)
+  parent: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute
+  langs:
+  - csharp
+  - vb
+  name: HasWeaponStats(Type, WeaponWielder)
+  nameWithType: RequireWeaponStatAttribute.HasWeaponStats(Type, WeaponWielder)
+  fullName: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.HasWeaponStats(System.Type, LobsterFramework.AbilitySystem.WeaponWielder)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Attributes/RequireWeaponStatAttribute.cs
+    id: HasWeaponStats
+    path: ../Assets/Framework/AbilitySystem/Attributes/RequireWeaponStatAttribute.cs
+    startLine: 42
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  summary: Check to see if the weapon contains all the WeaponStats required by the ability
+  example: []
+  syntax:
+    content: public static bool HasWeaponStats(Type abilityType, WeaponWielder weaponWielder)
+    parameters:
+    - id: abilityType
+      type: System.Type
+      description: The type of the ability being queried
+    - id: weaponWielder
+      type: LobsterFramework.AbilitySystem.WeaponWielder
+    return:
+      type: System.Boolean
+      description: True if the weapon contains all of the required stats, otherwise false
+    content.vb: Public Shared Function HasWeaponStats(abilityType As Type, weaponWielder As WeaponWielder) As Boolean
+  overload: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.HasWeaponStats*
+references:
+- uid: LobsterFramework.AbilitySystem
+  commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
+  name: LobsterFramework.AbilitySystem
+  nameWithType: LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Attribute
+  commentId: T:System.Attribute
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.attribute
+  name: Attribute
+  nameWithType: Attribute
+  fullName: System.Attribute
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.#ctor*
+  commentId: Overload:LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.#ctor
+  href: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.html#LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.#ctor(System.Type[])
+  name: RequireWeaponStatAttribute
+  nameWithType: RequireWeaponStatAttribute.RequireWeaponStatAttribute
+  fullName: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.RequireWeaponStatAttribute
+  nameWithType.vb: RequireWeaponStatAttribute.New
+  fullName.vb: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.New
+  name.vb: New
+- uid: System.Type[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type[]
+  nameWithType: Type[]
+  fullName: System.Type[]
+  nameWithType.vb: Type()
+  fullName.vb: System.Type()
+  name.vb: Type()
+  spec.csharp:
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: (
+  - name: )
+- uid: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.Init*
+  commentId: Overload:LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.Init
+  href: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.html#LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.Init(System.Type)
+  name: Init
+  nameWithType: RequireWeaponStatAttribute.Init
+  fullName: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.Init
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.HasWeaponStats*
+  commentId: Overload:LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.HasWeaponStats
+  href: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.html#LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.HasWeaponStats(System.Type,LobsterFramework.AbilitySystem.WeaponWielder)
+  name: HasWeaponStats
+  nameWithType: RequireWeaponStatAttribute.HasWeaponStats
+  fullName: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.HasWeaponStats
+- uid: LobsterFramework.AbilitySystem.WeaponWielder
+  commentId: T:LobsterFramework.AbilitySystem.WeaponWielder
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.WeaponWielder.html
+  name: WeaponWielder
+  nameWithType: WeaponWielder
+  fullName: LobsterFramework.AbilitySystem.WeaponWielder
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

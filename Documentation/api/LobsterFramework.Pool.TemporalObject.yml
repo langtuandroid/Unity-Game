@@ -5,7 +5,7 @@ items:
   id: TemporalObject
   parent: LobsterFramework.Pool
   children:
-  - LobsterFramework.Pool.TemporalObject.DisableObject
+  - LobsterFramework.Pool.TemporalObject.OnEnable
   - LobsterFramework.Pool.TemporalObject.ResetCounter
   - LobsterFramework.Pool.TemporalObject.duration
   langs:
@@ -17,9 +17,9 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Object Pooling/Common Pooled Objects/TemporalObject.cs
+      path: H:/Stuff/BallField/Assets/Framework/Object Pooling/Common Pooled Objects/TemporalObject.cs
     id: TemporalObject
-    path: ../Assets/Framework/Components/Object Pooling/Common Pooled Objects/TemporalObject.cs
+    path: ../Assets/Framework/Object Pooling/Common Pooled Objects/TemporalObject.cs
     startLine: 6
   assemblies:
   - LobsterFramework
@@ -157,9 +157,9 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Object Pooling/Common Pooled Objects/TemporalObject.cs
+      path: H:/Stuff/BallField/Assets/Framework/Object Pooling/Common Pooled Objects/TemporalObject.cs
     id: duration
-    path: ../Assets/Framework/Components/Object Pooling/Common Pooled Objects/TemporalObject.cs
+    path: ../Assets/Framework/Object Pooling/Common Pooled Objects/TemporalObject.cs
     startLine: 8
   assemblies:
   - LobsterFramework
@@ -182,9 +182,9 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Object Pooling/Common Pooled Objects/TemporalObject.cs
+      path: H:/Stuff/BallField/Assets/Framework/Object Pooling/Common Pooled Objects/TemporalObject.cs
     id: ResetCounter
-    path: ../Assets/Framework/Components/Object Pooling/Common Pooled Objects/TemporalObject.cs
+    path: ../Assets/Framework/Object Pooling/Common Pooled Objects/TemporalObject.cs
     startLine: 11
   assemblies:
   - LobsterFramework
@@ -193,30 +193,30 @@ items:
     content: public void ResetCounter()
     content.vb: Public Sub ResetCounter()
   overload: LobsterFramework.Pool.TemporalObject.ResetCounter*
-- uid: LobsterFramework.Pool.TemporalObject.DisableObject
-  commentId: M:LobsterFramework.Pool.TemporalObject.DisableObject
-  id: DisableObject
+- uid: LobsterFramework.Pool.TemporalObject.OnEnable
+  commentId: M:LobsterFramework.Pool.TemporalObject.OnEnable
+  id: OnEnable
   parent: LobsterFramework.Pool.TemporalObject
   langs:
   - csharp
   - vb
-  name: DisableObject()
-  nameWithType: TemporalObject.DisableObject()
-  fullName: LobsterFramework.Pool.TemporalObject.DisableObject()
+  name: OnEnable()
+  nameWithType: TemporalObject.OnEnable()
+  fullName: LobsterFramework.Pool.TemporalObject.OnEnable()
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Object Pooling/Common Pooled Objects/TemporalObject.cs
-    id: DisableObject
-    path: ../Assets/Framework/Components/Object Pooling/Common Pooled Objects/TemporalObject.cs
+      path: H:/Stuff/BallField/Assets/Framework/Object Pooling/Common Pooled Objects/TemporalObject.cs
+    id: OnEnable
+    path: ../Assets/Framework/Object Pooling/Common Pooled Objects/TemporalObject.cs
     startLine: 31
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Pool
   syntax:
-    content: public void DisableObject()
-    content.vb: Public Sub DisableObject()
-  overload: LobsterFramework.Pool.TemporalObject.DisableObject*
+    content: public void OnEnable()
+    content.vb: Public Sub OnEnable()
+  overload: LobsterFramework.Pool.TemporalObject.OnEnable*
 references:
 - uid: LobsterFramework.Pool
   commentId: N:LobsterFramework.Pool
@@ -4467,9 +4467,9 @@ references:
   name: ResetCounter
   nameWithType: TemporalObject.ResetCounter
   fullName: LobsterFramework.Pool.TemporalObject.ResetCounter
-- uid: LobsterFramework.Pool.TemporalObject.DisableObject*
-  commentId: Overload:LobsterFramework.Pool.TemporalObject.DisableObject
-  href: LobsterFramework.Pool.TemporalObject.html#LobsterFramework.Pool.TemporalObject.DisableObject
-  name: DisableObject
-  nameWithType: TemporalObject.DisableObject
-  fullName: LobsterFramework.Pool.TemporalObject.DisableObject
+- uid: LobsterFramework.Pool.TemporalObject.OnEnable*
+  commentId: Overload:LobsterFramework.Pool.TemporalObject.OnEnable
+  href: LobsterFramework.Pool.TemporalObject.html#LobsterFramework.Pool.TemporalObject.OnEnable
+  name: OnEnable
+  nameWithType: TemporalObject.OnEnable
+  fullName: LobsterFramework.Pool.TemporalObject.OnEnable

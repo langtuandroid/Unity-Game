@@ -1,0 +1,299 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility.CoroutineRunner
+  commentId: T:LobsterFramework.Utility.CoroutineRunner
+  id: CoroutineRunner
+  parent: LobsterFramework.Utility
+  children:
+  - LobsterFramework.Utility.CoroutineRunner.AddCoroutine(System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption})
+  - LobsterFramework.Utility.CoroutineRunner.Run
+  - LobsterFramework.Utility.CoroutineRunner.Size
+  langs:
+  - csharp
+  - vb
+  name: CoroutineRunner
+  nameWithType: CoroutineRunner
+  fullName: LobsterFramework.Utility.CoroutineRunner
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/Coroutine/CoroutineRunner.cs
+    id: CoroutineRunner
+    path: ../Assets/Framework/Utility/Coroutine/CoroutineRunner.cs
+    startLine: 9
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: Manages coroutine running operations
+  example: []
+  syntax:
+    content: public class CoroutineRunner
+    content.vb: Public Class CoroutineRunner
+  inheritance:
+  - System.Object
+- uid: LobsterFramework.Utility.CoroutineRunner.AddCoroutine(System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption})
+  commentId: M:LobsterFramework.Utility.CoroutineRunner.AddCoroutine(System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption})
+  id: AddCoroutine(System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption})
+  parent: LobsterFramework.Utility.CoroutineRunner
+  langs:
+  - csharp
+  - vb
+  name: AddCoroutine(IEnumerator<CoroutineOption>)
+  nameWithType: CoroutineRunner.AddCoroutine(IEnumerator<CoroutineOption>)
+  fullName: LobsterFramework.Utility.CoroutineRunner.AddCoroutine(System.Collections.Generic.IEnumerator<LobsterFramework.CoroutineOption>)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/Coroutine/CoroutineRunner.cs
+    id: AddCoroutine
+    path: ../Assets/Framework/Utility/Coroutine/CoroutineRunner.cs
+    startLine: 20
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: Add a coroutine to the running queue
+  example: []
+  syntax:
+    content: public Coroutine AddCoroutine(IEnumerator<CoroutineOption> coroutine)
+    parameters:
+    - id: coroutine
+      type: System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption}
+      description: The coroutine to be runned
+    return:
+      type: LobsterFramework.Utility.Coroutine
+      description: The Coroutine Object that represents the state of coroutine
+    content.vb: Public Function AddCoroutine(coroutine As IEnumerator(Of CoroutineOption)) As Coroutine
+  overload: LobsterFramework.Utility.CoroutineRunner.AddCoroutine*
+  nameWithType.vb: CoroutineRunner.AddCoroutine(IEnumerator(Of CoroutineOption))
+  fullName.vb: LobsterFramework.Utility.CoroutineRunner.AddCoroutine(System.Collections.Generic.IEnumerator(Of LobsterFramework.CoroutineOption))
+  name.vb: AddCoroutine(IEnumerator(Of CoroutineOption))
+- uid: LobsterFramework.Utility.CoroutineRunner.Run
+  commentId: M:LobsterFramework.Utility.CoroutineRunner.Run
+  id: Run
+  parent: LobsterFramework.Utility.CoroutineRunner
+  langs:
+  - csharp
+  - vb
+  name: Run()
+  nameWithType: CoroutineRunner.Run()
+  fullName: LobsterFramework.Utility.CoroutineRunner.Run()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/Coroutine/CoroutineRunner.cs
+    id: Run
+    path: ../Assets/Framework/Utility/Coroutine/CoroutineRunner.cs
+    startLine: 29
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: Run through coroutines added to the running queue in a FIFO order. Child coroutines can be added and runned dynamically.
+  example: []
+  syntax:
+    content: public void Run()
+    content.vb: Public Sub Run()
+  overload: LobsterFramework.Utility.CoroutineRunner.Run*
+- uid: LobsterFramework.Utility.CoroutineRunner.Size
+  commentId: P:LobsterFramework.Utility.CoroutineRunner.Size
+  id: Size
+  parent: LobsterFramework.Utility.CoroutineRunner
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: CoroutineRunner.Size
+  fullName: LobsterFramework.Utility.CoroutineRunner.Size
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/Coroutine/CoroutineRunner.cs
+    id: Size
+    path: ../Assets/Framework/Utility/Coroutine/CoroutineRunner.cs
+    startLine: 45
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: The number of Coroutines currently active
+  example: []
+  syntax:
+    content: public int Size { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Size As Integer
+  overload: LobsterFramework.Utility.CoroutineRunner.Size*
+references:
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Utility.CoroutineRunner.AddCoroutine*
+  commentId: Overload:LobsterFramework.Utility.CoroutineRunner.AddCoroutine
+  href: LobsterFramework.Utility.CoroutineRunner.html#LobsterFramework.Utility.CoroutineRunner.AddCoroutine(System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption})
+  name: AddCoroutine
+  nameWithType: CoroutineRunner.AddCoroutine
+  fullName: LobsterFramework.Utility.CoroutineRunner.AddCoroutine
+- uid: System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption}
+  commentId: T:System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<CoroutineOption>
+  nameWithType: IEnumerator<CoroutineOption>
+  fullName: System.Collections.Generic.IEnumerator<LobsterFramework.CoroutineOption>
+  nameWithType.vb: IEnumerator(Of CoroutineOption)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of LobsterFramework.CoroutineOption)
+  name.vb: IEnumerator(Of CoroutineOption)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - uid: LobsterFramework.CoroutineOption
+    name: CoroutineOption
+    href: LobsterFramework.CoroutineOption.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.CoroutineOption
+    name: CoroutineOption
+    href: LobsterFramework.CoroutineOption.html
+  - name: )
+- uid: LobsterFramework.Utility.Coroutine
+  commentId: T:LobsterFramework.Utility.Coroutine
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.Coroutine.html
+  name: Coroutine
+  nameWithType: Coroutine
+  fullName: LobsterFramework.Utility.Coroutine
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: LobsterFramework.Utility.CoroutineRunner.Run*
+  commentId: Overload:LobsterFramework.Utility.CoroutineRunner.Run
+  href: LobsterFramework.Utility.CoroutineRunner.html#LobsterFramework.Utility.CoroutineRunner.Run
+  name: Run
+  nameWithType: CoroutineRunner.Run
+  fullName: LobsterFramework.Utility.CoroutineRunner.Run
+- uid: LobsterFramework.Utility.CoroutineRunner.Size*
+  commentId: Overload:LobsterFramework.Utility.CoroutineRunner.Size
+  href: LobsterFramework.Utility.CoroutineRunner.html#LobsterFramework.Utility.CoroutineRunner.Size
+  name: Size
+  nameWithType: CoroutineRunner.Size
+  fullName: LobsterFramework.Utility.CoroutineRunner.Size
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer

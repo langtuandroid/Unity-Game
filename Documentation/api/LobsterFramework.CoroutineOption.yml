@@ -1,0 +1,414 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.CoroutineOption
+  commentId: T:LobsterFramework.CoroutineOption
+  id: CoroutineOption
+  parent: LobsterFramework
+  children:
+  - LobsterFramework.CoroutineOption.Exit
+  - LobsterFramework.CoroutineOption.Reset
+  - LobsterFramework.CoroutineOption.WaitForCoroutine(System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption})
+  - LobsterFramework.CoroutineOption.WaitForSeconds(System.Single)
+  - LobsterFramework.CoroutineOption.exit
+  - LobsterFramework.CoroutineOption.reset
+  - LobsterFramework.CoroutineOption.waitFor
+  - LobsterFramework.CoroutineOption.waitTime
+  langs:
+  - csharp
+  - vb
+  name: CoroutineOption
+  nameWithType: CoroutineOption
+  fullName: LobsterFramework.CoroutineOption
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/Coroutine/CoroutineOption.cs
+    id: CoroutineOption
+    path: ../Assets/Framework/Utility/Coroutine/CoroutineOption.cs
+    startLine: 6
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public class CoroutineOption
+    content.vb: Public Class CoroutineOption
+  inheritance:
+  - System.Object
+- uid: LobsterFramework.CoroutineOption.exit
+  commentId: F:LobsterFramework.CoroutineOption.exit
+  id: exit
+  parent: LobsterFramework.CoroutineOption
+  langs:
+  - csharp
+  - vb
+  name: exit
+  nameWithType: CoroutineOption.exit
+  fullName: LobsterFramework.CoroutineOption.exit
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/Coroutine/CoroutineOption.cs
+    id: exit
+    path: ../Assets/Framework/Utility/Coroutine/CoroutineOption.cs
+    startLine: 8
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public bool exit
+    return:
+      type: System.Boolean
+    content.vb: Public [exit] As Boolean
+- uid: LobsterFramework.CoroutineOption.reset
+  commentId: F:LobsterFramework.CoroutineOption.reset
+  id: reset
+  parent: LobsterFramework.CoroutineOption
+  langs:
+  - csharp
+  - vb
+  name: reset
+  nameWithType: CoroutineOption.reset
+  fullName: LobsterFramework.CoroutineOption.reset
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/Coroutine/CoroutineOption.cs
+    id: reset
+    path: ../Assets/Framework/Utility/Coroutine/CoroutineOption.cs
+    startLine: 9
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public bool reset
+    return:
+      type: System.Boolean
+    content.vb: Public reset As Boolean
+- uid: LobsterFramework.CoroutineOption.waitTime
+  commentId: F:LobsterFramework.CoroutineOption.waitTime
+  id: waitTime
+  parent: LobsterFramework.CoroutineOption
+  langs:
+  - csharp
+  - vb
+  name: waitTime
+  nameWithType: CoroutineOption.waitTime
+  fullName: LobsterFramework.CoroutineOption.waitTime
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/Coroutine/CoroutineOption.cs
+    id: waitTime
+    path: ../Assets/Framework/Utility/Coroutine/CoroutineOption.cs
+    startLine: 10
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public float waitTime
+    return:
+      type: System.Single
+    content.vb: Public waitTime As Single
+- uid: LobsterFramework.CoroutineOption.waitFor
+  commentId: F:LobsterFramework.CoroutineOption.waitFor
+  id: waitFor
+  parent: LobsterFramework.CoroutineOption
+  langs:
+  - csharp
+  - vb
+  name: waitFor
+  nameWithType: CoroutineOption.waitFor
+  fullName: LobsterFramework.CoroutineOption.waitFor
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/Coroutine/CoroutineOption.cs
+    id: waitFor
+    path: ../Assets/Framework/Utility/Coroutine/CoroutineOption.cs
+    startLine: 11
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public IEnumerator<CoroutineOption> waitFor
+    return:
+      type: System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption}
+    content.vb: Public waitFor As IEnumerator(Of CoroutineOption)
+- uid: LobsterFramework.CoroutineOption.Exit
+  commentId: F:LobsterFramework.CoroutineOption.Exit
+  id: Exit
+  parent: LobsterFramework.CoroutineOption
+  langs:
+  - csharp
+  - vb
+  name: Exit
+  nameWithType: CoroutineOption.Exit
+  fullName: LobsterFramework.CoroutineOption.Exit
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/Coroutine/CoroutineOption.cs
+    id: Exit
+    path: ../Assets/Framework/Utility/Coroutine/CoroutineOption.cs
+    startLine: 13
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public static CoroutineOption Exit
+    return:
+      type: LobsterFramework.CoroutineOption
+    content.vb: Public Shared [Exit] As CoroutineOption
+- uid: LobsterFramework.CoroutineOption.Reset
+  commentId: F:LobsterFramework.CoroutineOption.Reset
+  id: Reset
+  parent: LobsterFramework.CoroutineOption
+  langs:
+  - csharp
+  - vb
+  name: Reset
+  nameWithType: CoroutineOption.Reset
+  fullName: LobsterFramework.CoroutineOption.Reset
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/Coroutine/CoroutineOption.cs
+    id: Reset
+    path: ../Assets/Framework/Utility/Coroutine/CoroutineOption.cs
+    startLine: 14
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public static CoroutineOption Reset
+    return:
+      type: LobsterFramework.CoroutineOption
+    content.vb: Public Shared Reset As CoroutineOption
+- uid: LobsterFramework.CoroutineOption.WaitForSeconds(System.Single)
+  commentId: M:LobsterFramework.CoroutineOption.WaitForSeconds(System.Single)
+  id: WaitForSeconds(System.Single)
+  parent: LobsterFramework.CoroutineOption
+  langs:
+  - csharp
+  - vb
+  name: WaitForSeconds(float)
+  nameWithType: CoroutineOption.WaitForSeconds(float)
+  fullName: LobsterFramework.CoroutineOption.WaitForSeconds(float)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/Coroutine/CoroutineOption.cs
+    id: WaitForSeconds
+    path: ../Assets/Framework/Utility/Coroutine/CoroutineOption.cs
+    startLine: 16
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public static CoroutineOption WaitForSeconds(float time)
+    parameters:
+    - id: time
+      type: System.Single
+    return:
+      type: LobsterFramework.CoroutineOption
+    content.vb: Public Shared Function WaitForSeconds(time As Single) As CoroutineOption
+  overload: LobsterFramework.CoroutineOption.WaitForSeconds*
+  nameWithType.vb: CoroutineOption.WaitForSeconds(Single)
+  fullName.vb: LobsterFramework.CoroutineOption.WaitForSeconds(Single)
+  name.vb: WaitForSeconds(Single)
+- uid: LobsterFramework.CoroutineOption.WaitForCoroutine(System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption})
+  commentId: M:LobsterFramework.CoroutineOption.WaitForCoroutine(System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption})
+  id: WaitForCoroutine(System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption})
+  parent: LobsterFramework.CoroutineOption
+  langs:
+  - csharp
+  - vb
+  name: WaitForCoroutine(IEnumerator<CoroutineOption>)
+  nameWithType: CoroutineOption.WaitForCoroutine(IEnumerator<CoroutineOption>)
+  fullName: LobsterFramework.CoroutineOption.WaitForCoroutine(System.Collections.Generic.IEnumerator<LobsterFramework.CoroutineOption>)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/Coroutine/CoroutineOption.cs
+    id: WaitForCoroutine
+    path: ../Assets/Framework/Utility/Coroutine/CoroutineOption.cs
+    startLine: 21
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public static CoroutineOption WaitForCoroutine(IEnumerator<CoroutineOption> coroutine)
+    parameters:
+    - id: coroutine
+      type: System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption}
+    return:
+      type: LobsterFramework.CoroutineOption
+    content.vb: Public Shared Function WaitForCoroutine(coroutine As IEnumerator(Of CoroutineOption)) As CoroutineOption
+  overload: LobsterFramework.CoroutineOption.WaitForCoroutine*
+  nameWithType.vb: CoroutineOption.WaitForCoroutine(IEnumerator(Of CoroutineOption))
+  fullName.vb: LobsterFramework.CoroutineOption.WaitForCoroutine(System.Collections.Generic.IEnumerator(Of LobsterFramework.CoroutineOption))
+  name.vb: WaitForCoroutine(IEnumerator(Of CoroutineOption))
+references:
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption}
+  commentId: T:System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<CoroutineOption>
+  nameWithType: IEnumerator<CoroutineOption>
+  fullName: System.Collections.Generic.IEnumerator<LobsterFramework.CoroutineOption>
+  nameWithType.vb: IEnumerator(Of CoroutineOption)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of LobsterFramework.CoroutineOption)
+  name.vb: IEnumerator(Of CoroutineOption)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - uid: LobsterFramework.CoroutineOption
+    name: CoroutineOption
+    href: LobsterFramework.CoroutineOption.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.CoroutineOption
+    name: CoroutineOption
+    href: LobsterFramework.CoroutineOption.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: LobsterFramework.CoroutineOption
+  commentId: T:LobsterFramework.CoroutineOption
+  parent: LobsterFramework
+  href: LobsterFramework.CoroutineOption.html
+  name: CoroutineOption
+  nameWithType: CoroutineOption
+  fullName: LobsterFramework.CoroutineOption
+- uid: LobsterFramework.CoroutineOption.WaitForSeconds*
+  commentId: Overload:LobsterFramework.CoroutineOption.WaitForSeconds
+  href: LobsterFramework.CoroutineOption.html#LobsterFramework.CoroutineOption.WaitForSeconds(System.Single)
+  name: WaitForSeconds
+  nameWithType: CoroutineOption.WaitForSeconds
+  fullName: LobsterFramework.CoroutineOption.WaitForSeconds
+- uid: LobsterFramework.CoroutineOption.WaitForCoroutine*
+  commentId: Overload:LobsterFramework.CoroutineOption.WaitForCoroutine
+  href: LobsterFramework.CoroutineOption.html#LobsterFramework.CoroutineOption.WaitForCoroutine(System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption})
+  name: WaitForCoroutine
+  nameWithType: CoroutineOption.WaitForCoroutine
+  fullName: LobsterFramework.CoroutineOption.WaitForCoroutine

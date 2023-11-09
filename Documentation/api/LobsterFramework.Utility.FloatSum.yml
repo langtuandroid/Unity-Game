@@ -1,0 +1,546 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility.FloatSum
+  commentId: T:LobsterFramework.Utility.FloatSum
+  id: FloatSum
+  parent: LobsterFramework.Utility
+  children:
+  - LobsterFramework.Utility.FloatSum.#ctor(System.Int32,System.Boolean,System.Boolean)
+  - LobsterFramework.Utility.FloatSum.Compatible(System.Single)
+  - LobsterFramework.Utility.FloatSum.ComputeValue
+  langs:
+  - csharp
+  - vb
+  name: FloatSum
+  nameWithType: FloatSum
+  fullName: LobsterFramework.Utility.FloatSum
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedValue.cs
+    id: FloatSum
+    path: ../Assets/Framework/Utility/BufferedValue.cs
+    startLine: 190
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: Value is the sum of all effectors
+  example: []
+  syntax:
+    content: 'public class FloatSum : BufferedValue<float>'
+    content.vb: Public Class FloatSum Inherits BufferedValue(Of Single)
+  inheritance:
+  - System.Object
+  - LobsterFramework.Utility.BufferedValue{System.Single}
+  inheritedMembers:
+  - LobsterFramework.Utility.BufferedValue{System.Single}.stats
+  - LobsterFramework.Utility.BufferedValue{System.Single}.baseValue
+  - LobsterFramework.Utility.BufferedValue{System.Single}.Value
+  - LobsterFramework.Utility.BufferedValue{System.Single}.ClearEffectors
+  - LobsterFramework.Utility.BufferedValue{System.Single}.GetAccessor
+  - LobsterFramework.Utility.BufferedValue{System.Single}.EffectorCount
+- uid: LobsterFramework.Utility.FloatSum.#ctor(System.Int32,System.Boolean,System.Boolean)
+  commentId: M:LobsterFramework.Utility.FloatSum.#ctor(System.Int32,System.Boolean,System.Boolean)
+  id: '#ctor(System.Int32,System.Boolean,System.Boolean)'
+  parent: LobsterFramework.Utility.FloatSum
+  langs:
+  - csharp
+  - vb
+  name: FloatSum(int, bool, bool)
+  nameWithType: FloatSum.FloatSum(int, bool, bool)
+  fullName: LobsterFramework.Utility.FloatSum.FloatSum(int, bool, bool)
+  type: Constructor
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedValue.cs
+    id: .ctor
+    path: ../Assets/Framework/Utility/BufferedValue.cs
+    startLine: 194
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public FloatSum(int value, bool nonNegative = false, bool addNegative = true)
+    parameters:
+    - id: value
+      type: System.Int32
+    - id: nonNegative
+      type: System.Boolean
+    - id: addNegative
+      type: System.Boolean
+    content.vb: Public Sub New(value As Integer, nonNegative As Boolean = False, addNegative As Boolean = True)
+  overload: LobsterFramework.Utility.FloatSum.#ctor*
+  nameWithType.vb: FloatSum.New(Integer, Boolean, Boolean)
+  fullName.vb: LobsterFramework.Utility.FloatSum.New(Integer, Boolean, Boolean)
+  name.vb: New(Integer, Boolean, Boolean)
+- uid: LobsterFramework.Utility.FloatSum.Compatible(System.Single)
+  commentId: M:LobsterFramework.Utility.FloatSum.Compatible(System.Single)
+  id: Compatible(System.Single)
+  parent: LobsterFramework.Utility.FloatSum
+  langs:
+  - csharp
+  - vb
+  name: Compatible(float)
+  nameWithType: FloatSum.Compatible(float)
+  fullName: LobsterFramework.Utility.FloatSum.Compatible(float)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedValue.cs
+    id: Compatible
+    path: ../Assets/Framework/Utility/BufferedValue.cs
+    startLine: 200
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: Determines if the effector can be added
+  example: []
+  syntax:
+    content: public override bool Compatible(float obj)
+    parameters:
+    - id: obj
+      type: System.Single
+      description: The value of the effector to be examined
+    return:
+      type: System.Boolean
+      description: true if can be added, otherwise false
+    content.vb: Public Overrides Function Compatible(obj As Single) As Boolean
+  overridden: LobsterFramework.Utility.BufferedValue{System.Single}.Compatible(System.Single)
+  overload: LobsterFramework.Utility.FloatSum.Compatible*
+  nameWithType.vb: FloatSum.Compatible(Single)
+  fullName.vb: LobsterFramework.Utility.FloatSum.Compatible(Single)
+  name.vb: Compatible(Single)
+- uid: LobsterFramework.Utility.FloatSum.ComputeValue
+  commentId: M:LobsterFramework.Utility.FloatSum.ComputeValue
+  id: ComputeValue
+  parent: LobsterFramework.Utility.FloatSum
+  langs:
+  - csharp
+  - vb
+  name: ComputeValue()
+  nameWithType: FloatSum.ComputeValue()
+  fullName: LobsterFramework.Utility.FloatSum.ComputeValue()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/BufferedValue.cs
+    id: ComputeValue
+    path: ../Assets/Framework/Utility/BufferedValue.cs
+    startLine: 208
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: Compute the value taking all effectors into account
+  example: []
+  syntax:
+    content: protected override float ComputeValue()
+    return:
+      type: System.Single
+      description: ''
+    content.vb: Protected Overrides Function ComputeValue() As Single
+  overridden: LobsterFramework.Utility.BufferedValue{System.Single}.ComputeValue
+  overload: LobsterFramework.Utility.FloatSum.ComputeValue*
+references:
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: LobsterFramework.Utility.BufferedValue{System.Single}
+  commentId: T:LobsterFramework.Utility.BufferedValue{System.Single}
+  parent: LobsterFramework.Utility
+  definition: LobsterFramework.Utility.BufferedValue`1
+  href: LobsterFramework.Utility.BufferedValue-1.html
+  name: BufferedValue<float>
+  nameWithType: BufferedValue<float>
+  fullName: LobsterFramework.Utility.BufferedValue<float>
+  nameWithType.vb: BufferedValue(Of Single)
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of Single)
+  name.vb: BufferedValue(Of Single)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.BufferedValue`1
+    name: BufferedValue
+    href: LobsterFramework.Utility.BufferedValue-1.html
+  - name: <
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.BufferedValue`1
+    name: BufferedValue
+    href: LobsterFramework.Utility.BufferedValue-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: LobsterFramework.Utility.BufferedValue{System.Single}.stats
+  commentId: F:LobsterFramework.Utility.BufferedValue{System.Single}.stats
+  parent: LobsterFramework.Utility.BufferedValue{System.Single}
+  definition: LobsterFramework.Utility.BufferedValue`1.stats
+  href: LobsterFramework.Utility.BufferedValue{System.Single}.html#LobsterFramework.Utility.BufferedValue{System.Single}.stats
+  name: stats
+  nameWithType: BufferedValue<float>.stats
+  fullName: LobsterFramework.Utility.BufferedValue<float>.stats
+  nameWithType.vb: BufferedValue(Of Single).stats
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of Single).stats
+- uid: LobsterFramework.Utility.BufferedValue{System.Single}.baseValue
+  commentId: F:LobsterFramework.Utility.BufferedValue{System.Single}.baseValue
+  parent: LobsterFramework.Utility.BufferedValue{System.Single}
+  definition: LobsterFramework.Utility.BufferedValue`1.baseValue
+  href: LobsterFramework.Utility.BufferedValue{System.Single}.html#LobsterFramework.Utility.BufferedValue{System.Single}.baseValue
+  name: baseValue
+  nameWithType: BufferedValue<float>.baseValue
+  fullName: LobsterFramework.Utility.BufferedValue<float>.baseValue
+  nameWithType.vb: BufferedValue(Of Single).baseValue
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of Single).baseValue
+- uid: LobsterFramework.Utility.BufferedValue{System.Single}.Value
+  commentId: P:LobsterFramework.Utility.BufferedValue{System.Single}.Value
+  parent: LobsterFramework.Utility.BufferedValue{System.Single}
+  definition: LobsterFramework.Utility.BufferedValue`1.Value
+  href: LobsterFramework.Utility.BufferedValue{System.Single}.html#LobsterFramework.Utility.BufferedValue{System.Single}.Value
+  name: Value
+  nameWithType: BufferedValue<float>.Value
+  fullName: LobsterFramework.Utility.BufferedValue<float>.Value
+  nameWithType.vb: BufferedValue(Of Single).Value
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of Single).Value
+- uid: LobsterFramework.Utility.BufferedValue{System.Single}.ClearEffectors
+  commentId: M:LobsterFramework.Utility.BufferedValue{System.Single}.ClearEffectors
+  parent: LobsterFramework.Utility.BufferedValue{System.Single}
+  definition: LobsterFramework.Utility.BufferedValue`1.ClearEffectors
+  href: LobsterFramework.Utility.BufferedValue{System.Single}.html#LobsterFramework.Utility.BufferedValue{System.Single}.ClearEffectors
+  name: ClearEffectors()
+  nameWithType: BufferedValue<float>.ClearEffectors()
+  fullName: LobsterFramework.Utility.BufferedValue<float>.ClearEffectors()
+  nameWithType.vb: BufferedValue(Of Single).ClearEffectors()
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of Single).ClearEffectors()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.BufferedValue{System.Single}.ClearEffectors
+    name: ClearEffectors
+    href: LobsterFramework.Utility.BufferedValue{System.Single}.html#LobsterFramework.Utility.BufferedValue{System.Single}.ClearEffectors
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.BufferedValue{System.Single}.ClearEffectors
+    name: ClearEffectors
+    href: LobsterFramework.Utility.BufferedValue{System.Single}.html#LobsterFramework.Utility.BufferedValue{System.Single}.ClearEffectors
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.BufferedValue{System.Single}.GetAccessor
+  commentId: M:LobsterFramework.Utility.BufferedValue{System.Single}.GetAccessor
+  parent: LobsterFramework.Utility.BufferedValue{System.Single}
+  definition: LobsterFramework.Utility.BufferedValue`1.GetAccessor
+  href: LobsterFramework.Utility.BufferedValue{System.Single}.html#LobsterFramework.Utility.BufferedValue{System.Single}.GetAccessor
+  name: GetAccessor()
+  nameWithType: BufferedValue<float>.GetAccessor()
+  fullName: LobsterFramework.Utility.BufferedValue<float>.GetAccessor()
+  nameWithType.vb: BufferedValue(Of Single).GetAccessor()
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of Single).GetAccessor()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.BufferedValue{System.Single}.GetAccessor
+    name: GetAccessor
+    href: LobsterFramework.Utility.BufferedValue{System.Single}.html#LobsterFramework.Utility.BufferedValue{System.Single}.GetAccessor
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.BufferedValue{System.Single}.GetAccessor
+    name: GetAccessor
+    href: LobsterFramework.Utility.BufferedValue{System.Single}.html#LobsterFramework.Utility.BufferedValue{System.Single}.GetAccessor
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.BufferedValue{System.Single}.EffectorCount
+  commentId: P:LobsterFramework.Utility.BufferedValue{System.Single}.EffectorCount
+  parent: LobsterFramework.Utility.BufferedValue{System.Single}
+  definition: LobsterFramework.Utility.BufferedValue`1.EffectorCount
+  href: LobsterFramework.Utility.BufferedValue{System.Single}.html#LobsterFramework.Utility.BufferedValue{System.Single}.EffectorCount
+  name: EffectorCount
+  nameWithType: BufferedValue<float>.EffectorCount
+  fullName: LobsterFramework.Utility.BufferedValue<float>.EffectorCount
+  nameWithType.vb: BufferedValue(Of Single).EffectorCount
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of Single).EffectorCount
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Utility.BufferedValue`1
+  commentId: T:LobsterFramework.Utility.BufferedValue`1
+  href: LobsterFramework.Utility.BufferedValue-1.html
+  name: BufferedValue<T>
+  nameWithType: BufferedValue<T>
+  fullName: LobsterFramework.Utility.BufferedValue<T>
+  nameWithType.vb: BufferedValue(Of T)
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of T)
+  name.vb: BufferedValue(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.BufferedValue`1
+    name: BufferedValue
+    href: LobsterFramework.Utility.BufferedValue-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.BufferedValue`1
+    name: BufferedValue
+    href: LobsterFramework.Utility.BufferedValue-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.BufferedValue`1.stats
+  commentId: F:LobsterFramework.Utility.BufferedValue`1.stats
+  href: LobsterFramework.Utility.BufferedValue-1.html#LobsterFramework.Utility.BufferedValue`1.stats
+  name: stats
+  nameWithType: BufferedValue<T>.stats
+  fullName: LobsterFramework.Utility.BufferedValue<T>.stats
+  nameWithType.vb: BufferedValue(Of T).stats
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of T).stats
+- uid: LobsterFramework.Utility.BufferedValue`1.baseValue
+  commentId: F:LobsterFramework.Utility.BufferedValue`1.baseValue
+  href: LobsterFramework.Utility.BufferedValue-1.html#LobsterFramework.Utility.BufferedValue`1.baseValue
+  name: baseValue
+  nameWithType: BufferedValue<T>.baseValue
+  fullName: LobsterFramework.Utility.BufferedValue<T>.baseValue
+  nameWithType.vb: BufferedValue(Of T).baseValue
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of T).baseValue
+- uid: LobsterFramework.Utility.BufferedValue`1.Value
+  commentId: P:LobsterFramework.Utility.BufferedValue`1.Value
+  href: LobsterFramework.Utility.BufferedValue-1.html#LobsterFramework.Utility.BufferedValue`1.Value
+  name: Value
+  nameWithType: BufferedValue<T>.Value
+  fullName: LobsterFramework.Utility.BufferedValue<T>.Value
+  nameWithType.vb: BufferedValue(Of T).Value
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of T).Value
+- uid: LobsterFramework.Utility.BufferedValue`1.ClearEffectors
+  commentId: M:LobsterFramework.Utility.BufferedValue`1.ClearEffectors
+  href: LobsterFramework.Utility.BufferedValue-1.html#LobsterFramework.Utility.BufferedValue`1.ClearEffectors
+  name: ClearEffectors()
+  nameWithType: BufferedValue<T>.ClearEffectors()
+  fullName: LobsterFramework.Utility.BufferedValue<T>.ClearEffectors()
+  nameWithType.vb: BufferedValue(Of T).ClearEffectors()
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of T).ClearEffectors()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.BufferedValue`1.ClearEffectors
+    name: ClearEffectors
+    href: LobsterFramework.Utility.BufferedValue-1.html#LobsterFramework.Utility.BufferedValue`1.ClearEffectors
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.BufferedValue`1.ClearEffectors
+    name: ClearEffectors
+    href: LobsterFramework.Utility.BufferedValue-1.html#LobsterFramework.Utility.BufferedValue`1.ClearEffectors
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.BufferedValue`1.GetAccessor
+  commentId: M:LobsterFramework.Utility.BufferedValue`1.GetAccessor
+  href: LobsterFramework.Utility.BufferedValue-1.html#LobsterFramework.Utility.BufferedValue`1.GetAccessor
+  name: GetAccessor()
+  nameWithType: BufferedValue<T>.GetAccessor()
+  fullName: LobsterFramework.Utility.BufferedValue<T>.GetAccessor()
+  nameWithType.vb: BufferedValue(Of T).GetAccessor()
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of T).GetAccessor()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.BufferedValue`1.GetAccessor
+    name: GetAccessor
+    href: LobsterFramework.Utility.BufferedValue-1.html#LobsterFramework.Utility.BufferedValue`1.GetAccessor
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.BufferedValue`1.GetAccessor
+    name: GetAccessor
+    href: LobsterFramework.Utility.BufferedValue-1.html#LobsterFramework.Utility.BufferedValue`1.GetAccessor
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.BufferedValue`1.EffectorCount
+  commentId: P:LobsterFramework.Utility.BufferedValue`1.EffectorCount
+  href: LobsterFramework.Utility.BufferedValue-1.html#LobsterFramework.Utility.BufferedValue`1.EffectorCount
+  name: EffectorCount
+  nameWithType: BufferedValue<T>.EffectorCount
+  fullName: LobsterFramework.Utility.BufferedValue<T>.EffectorCount
+  nameWithType.vb: BufferedValue(Of T).EffectorCount
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of T).EffectorCount
+- uid: LobsterFramework.Utility.FloatSum.#ctor*
+  commentId: Overload:LobsterFramework.Utility.FloatSum.#ctor
+  href: LobsterFramework.Utility.FloatSum.html#LobsterFramework.Utility.FloatSum.#ctor(System.Int32,System.Boolean,System.Boolean)
+  name: FloatSum
+  nameWithType: FloatSum.FloatSum
+  fullName: LobsterFramework.Utility.FloatSum.FloatSum
+  nameWithType.vb: FloatSum.New
+  fullName.vb: LobsterFramework.Utility.FloatSum.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: LobsterFramework.Utility.BufferedValue{System.Single}.Compatible(System.Single)
+  commentId: M:LobsterFramework.Utility.BufferedValue{System.Single}.Compatible(System.Single)
+  parent: LobsterFramework.Utility.BufferedValue{System.Single}
+  definition: LobsterFramework.Utility.BufferedValue`1.Compatible(`0)
+  href: LobsterFramework.Utility.BufferedValue{System.Single}.html#LobsterFramework.Utility.BufferedValue{System.Single}.Compatible(System.Single)
+  name: Compatible(float)
+  nameWithType: BufferedValue<float>.Compatible(float)
+  fullName: LobsterFramework.Utility.BufferedValue<float>.Compatible(float)
+  nameWithType.vb: BufferedValue(Of Single).Compatible(Single)
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of Single).Compatible(Single)
+  name.vb: Compatible(Single)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.BufferedValue{System.Single}.Compatible(System.Single)
+    name: Compatible
+    href: LobsterFramework.Utility.BufferedValue{System.Single}.html#LobsterFramework.Utility.BufferedValue{System.Single}.Compatible(System.Single)
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.BufferedValue{System.Single}.Compatible(System.Single)
+    name: Compatible
+    href: LobsterFramework.Utility.BufferedValue{System.Single}.html#LobsterFramework.Utility.BufferedValue{System.Single}.Compatible(System.Single)
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: LobsterFramework.Utility.FloatSum.Compatible*
+  commentId: Overload:LobsterFramework.Utility.FloatSum.Compatible
+  href: LobsterFramework.Utility.FloatSum.html#LobsterFramework.Utility.FloatSum.Compatible(System.Single)
+  name: Compatible
+  nameWithType: FloatSum.Compatible
+  fullName: LobsterFramework.Utility.FloatSum.Compatible
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: LobsterFramework.Utility.BufferedValue`1.Compatible(`0)
+  commentId: M:LobsterFramework.Utility.BufferedValue`1.Compatible(`0)
+  href: LobsterFramework.Utility.BufferedValue-1.html#LobsterFramework.Utility.BufferedValue`1.Compatible(`0)
+  name: Compatible(T)
+  nameWithType: BufferedValue<T>.Compatible(T)
+  fullName: LobsterFramework.Utility.BufferedValue<T>.Compatible(T)
+  nameWithType.vb: BufferedValue(Of T).Compatible(T)
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of T).Compatible(T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.BufferedValue`1.Compatible(`0)
+    name: Compatible
+    href: LobsterFramework.Utility.BufferedValue-1.html#LobsterFramework.Utility.BufferedValue`1.Compatible(`0)
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.BufferedValue`1.Compatible(`0)
+    name: Compatible
+    href: LobsterFramework.Utility.BufferedValue-1.html#LobsterFramework.Utility.BufferedValue`1.Compatible(`0)
+  - name: (
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.BufferedValue{System.Single}.ComputeValue
+  commentId: M:LobsterFramework.Utility.BufferedValue{System.Single}.ComputeValue
+  parent: LobsterFramework.Utility.BufferedValue{System.Single}
+  definition: LobsterFramework.Utility.BufferedValue`1.ComputeValue
+  href: LobsterFramework.Utility.BufferedValue{System.Single}.html#LobsterFramework.Utility.BufferedValue{System.Single}.ComputeValue
+  name: ComputeValue()
+  nameWithType: BufferedValue<float>.ComputeValue()
+  fullName: LobsterFramework.Utility.BufferedValue<float>.ComputeValue()
+  nameWithType.vb: BufferedValue(Of Single).ComputeValue()
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of Single).ComputeValue()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.BufferedValue{System.Single}.ComputeValue
+    name: ComputeValue
+    href: LobsterFramework.Utility.BufferedValue{System.Single}.html#LobsterFramework.Utility.BufferedValue{System.Single}.ComputeValue
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.BufferedValue{System.Single}.ComputeValue
+    name: ComputeValue
+    href: LobsterFramework.Utility.BufferedValue{System.Single}.html#LobsterFramework.Utility.BufferedValue{System.Single}.ComputeValue
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.FloatSum.ComputeValue*
+  commentId: Overload:LobsterFramework.Utility.FloatSum.ComputeValue
+  href: LobsterFramework.Utility.FloatSum.html#LobsterFramework.Utility.FloatSum.ComputeValue
+  name: ComputeValue
+  nameWithType: FloatSum.ComputeValue
+  fullName: LobsterFramework.Utility.FloatSum.ComputeValue
+- uid: LobsterFramework.Utility.BufferedValue`1.ComputeValue
+  commentId: M:LobsterFramework.Utility.BufferedValue`1.ComputeValue
+  href: LobsterFramework.Utility.BufferedValue-1.html#LobsterFramework.Utility.BufferedValue`1.ComputeValue
+  name: ComputeValue()
+  nameWithType: BufferedValue<T>.ComputeValue()
+  fullName: LobsterFramework.Utility.BufferedValue<T>.ComputeValue()
+  nameWithType.vb: BufferedValue(Of T).ComputeValue()
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of T).ComputeValue()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.BufferedValue`1.ComputeValue
+    name: ComputeValue
+    href: LobsterFramework.Utility.BufferedValue-1.html#LobsterFramework.Utility.BufferedValue`1.ComputeValue
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.BufferedValue`1.ComputeValue
+    name: ComputeValue
+    href: LobsterFramework.Utility.BufferedValue-1.html#LobsterFramework.Utility.BufferedValue`1.ComputeValue
+  - name: (
+  - name: )

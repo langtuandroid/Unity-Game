@@ -6,6 +6,7 @@ items:
   parent: LobsterFramework.AbilitySystem
   children:
   - LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute.Init(System.Type)
+  - LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute.icons
   - LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute.types
   langs:
   - csharp
@@ -16,10 +17,10 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Attributes/AddAbilityStatMenuAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Attributes/AddAbilityStatMenuAttribute.cs
     id: AddAbilityStatMenuAttribute
-    path: ../Assets/Framework/Attributes/AddAbilityStatMenuAttribute.cs
-    startLine: 7
+    path: ../Assets/Framework/AbilitySystem/Attributes/AddAbilityStatMenuAttribute.cs
+    startLine: 10
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -61,10 +62,10 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Attributes/AddAbilityStatMenuAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Attributes/AddAbilityStatMenuAttribute.cs
     id: types
-    path: ../Assets/Framework/Attributes/AddAbilityStatMenuAttribute.cs
-    startLine: 10
+    path: ../Assets/Framework/AbilitySystem/Attributes/AddAbilityStatMenuAttribute.cs
+    startLine: 13
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -73,6 +74,31 @@ items:
     return:
       type: System.Collections.Generic.HashSet{System.Type}
     content.vb: Public Shared types As HashSet(Of Type)
+- uid: LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute.icons
+  commentId: F:LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute.icons
+  id: icons
+  parent: LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute
+  langs:
+  - csharp
+  - vb
+  name: icons
+  nameWithType: AddAbilityStatMenuAttribute.icons
+  fullName: LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute.icons
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Attributes/AddAbilityStatMenuAttribute.cs
+    id: icons
+    path: ../Assets/Framework/AbilitySystem/Attributes/AddAbilityStatMenuAttribute.cs
+    startLine: 14
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public static Dictionary<Type, Texture2D> icons
+    return:
+      type: System.Collections.Generic.Dictionary{System.Type,UnityEngine.Texture2D}
+    content.vb: Public Shared icons As Dictionary(Of Type, Texture2D)
 - uid: LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute.Init(System.Type)
   commentId: M:LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute.Init(System.Type)
   id: Init(System.Type)
@@ -86,10 +112,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Attributes/AddAbilityStatMenuAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Attributes/AddAbilityStatMenuAttribute.cs
     id: Init
-    path: ../Assets/Framework/Attributes/AddAbilityStatMenuAttribute.cs
-    startLine: 12
+    path: ../Assets/Framework/AbilitySystem/Attributes/AddAbilityStatMenuAttribute.cs
+    startLine: 15
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -249,6 +275,85 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.Dictionary{System.Type,UnityEngine.Texture2D}
+  commentId: T:System.Collections.Generic.Dictionary{System.Type,UnityEngine.Texture2D}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<Type, Texture2D>
+  nameWithType: Dictionary<Type, Texture2D>
+  fullName: System.Collections.Generic.Dictionary<System.Type, UnityEngine.Texture2D>
+  nameWithType.vb: Dictionary(Of Type, Texture2D)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.Type, UnityEngine.Texture2D)
+  name.vb: Dictionary(Of Type, Texture2D)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
 - uid: LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute.Init*
   commentId: Overload:LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute.Init
   href: LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute.html#LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute.Init(System.Type)

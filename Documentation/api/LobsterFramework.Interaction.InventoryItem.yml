@@ -5,8 +5,10 @@ items:
   id: InventoryItem
   parent: LobsterFramework.Interaction
   children:
-  - LobsterFramework.Interaction.InventoryItem.AddItem(LobsterFramework.Interaction.InventoryItem@)
-  - LobsterFramework.Interaction.InventoryItem.CorrectInventoryQuantity(System.Boolean)
+  - LobsterFramework.Interaction.InventoryItem.AddItem(LobsterFramework.Interaction.InventoryItem)
+  - LobsterFramework.Interaction.InventoryItem.Clone
+  - LobsterFramework.Interaction.InventoryItem.Consume(LobsterFramework.Interaction.Inventory)
+  - LobsterFramework.Interaction.InventoryItem.IsComsumable
   - LobsterFramework.Interaction.InventoryItem.Quantity
   - LobsterFramework.Interaction.InventoryItem.itemData
   langs:
@@ -15,25 +17,27 @@ items:
   name: InventoryItem
   nameWithType: InventoryItem
   fullName: LobsterFramework.Interaction.InventoryItem
-  type: Struct
+  type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Interactors/Inventory.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Inventory.cs
     id: InventoryItem
-    path: ../Assets/GameScripts/Interactors/Inventory.cs
-    startLine: 47
+    path: ../Assets/Framework/Interaction/Inventory.cs
+    startLine: 97
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.Interaction
   syntax:
     content: >-
       [Serializable]
 
-      public struct InventoryItem
+      public class InventoryItem
     content.vb: >-
       <Serializable>
 
-      Public Structure InventoryItem
+      Public Class InventoryItem
+  inheritance:
+  - System.Object
   attributes:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
@@ -51,18 +55,18 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Interactors/Inventory.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Inventory.cs
     id: itemData
-    path: ../Assets/GameScripts/Interactors/Inventory.cs
-    startLine: 51
+    path: ../Assets/Framework/Interaction/Inventory.cs
+    startLine: 101
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.Interaction
   syntax:
-    content: public SimpleItem itemData
+    content: public Item itemData
     return:
-      type: Global.SimpleItem
-    content.vb: Public itemData As SimpleItem
+      type: LobsterFramework.Interaction.Item
+    content.vb: Public itemData As Item
 - uid: LobsterFramework.Interaction.InventoryItem.Quantity
   commentId: P:LobsterFramework.Interaction.InventoryItem.Quantity
   id: Quantity
@@ -76,80 +80,130 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Interactors/Inventory.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Inventory.cs
     id: Quantity
-    path: ../Assets/GameScripts/Interactors/Inventory.cs
-    startLine: 53
+    path: ../Assets/Framework/Interaction/Inventory.cs
+    startLine: 103
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.Interaction
   syntax:
-    content: public int Quantity { get; }
+    content: public int Quantity { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public ReadOnly Property Quantity As Integer
+    content.vb: Public Property Quantity As Integer
   overload: LobsterFramework.Interaction.InventoryItem.Quantity*
-- uid: LobsterFramework.Interaction.InventoryItem.AddItem(LobsterFramework.Interaction.InventoryItem@)
-  commentId: M:LobsterFramework.Interaction.InventoryItem.AddItem(LobsterFramework.Interaction.InventoryItem@)
-  id: AddItem(LobsterFramework.Interaction.InventoryItem@)
+- uid: LobsterFramework.Interaction.InventoryItem.IsComsumable
+  commentId: P:LobsterFramework.Interaction.InventoryItem.IsComsumable
+  id: IsComsumable
   parent: LobsterFramework.Interaction.InventoryItem
   langs:
   - csharp
   - vb
-  name: AddItem(ref InventoryItem)
-  nameWithType: InventoryItem.AddItem(ref InventoryItem)
-  fullName: LobsterFramework.Interaction.InventoryItem.AddItem(ref LobsterFramework.Interaction.InventoryItem)
-  type: Method
+  name: IsComsumable
+  nameWithType: InventoryItem.IsComsumable
+  fullName: LobsterFramework.Interaction.InventoryItem.IsComsumable
+  type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Interactors/Inventory.cs
-    id: AddItem
-    path: ../Assets/GameScripts/Interactors/Inventory.cs
-    startLine: 58
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Inventory.cs
+    id: IsComsumable
+    path: ../Assets/Framework/Interaction/Inventory.cs
+    startLine: 115
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.Interaction
   syntax:
-    content: public void AddItem(ref InventoryItem itemToMerge)
-    parameters:
-    - id: itemToMerge
-      type: LobsterFramework.Interaction.InventoryItem
-    content.vb: Public Sub AddItem(itemToMerge As InventoryItem)
-  overload: LobsterFramework.Interaction.InventoryItem.AddItem*
-  nameWithType.vb: InventoryItem.AddItem(InventoryItem)
-  fullName.vb: LobsterFramework.Interaction.InventoryItem.AddItem(LobsterFramework.Interaction.InventoryItem)
-  name.vb: AddItem(InventoryItem)
-- uid: LobsterFramework.Interaction.InventoryItem.CorrectInventoryQuantity(System.Boolean)
-  commentId: M:LobsterFramework.Interaction.InventoryItem.CorrectInventoryQuantity(System.Boolean)
-  id: CorrectInventoryQuantity(System.Boolean)
-  parent: LobsterFramework.Interaction.InventoryItem
-  langs:
-  - csharp
-  - vb
-  name: CorrectInventoryQuantity(bool)
-  nameWithType: InventoryItem.CorrectInventoryQuantity(bool)
-  fullName: LobsterFramework.Interaction.InventoryItem.CorrectInventoryQuantity(bool)
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Interactors/Inventory.cs
-    id: CorrectInventoryQuantity
-    path: ../Assets/GameScripts/Interactors/Inventory.cs
-    startLine: 85
-  assemblies:
-  - GameScripts
-  namespace: LobsterFramework.Interaction
-  syntax:
-    content: public void CorrectInventoryQuantity(bool enforceLimit = true)
-    parameters:
-    - id: enforceLimit
+    content: public bool IsComsumable { get; }
+    parameters: []
+    return:
       type: System.Boolean
-    content.vb: Public Sub CorrectInventoryQuantity(enforceLimit As Boolean = True)
-  overload: LobsterFramework.Interaction.InventoryItem.CorrectInventoryQuantity*
-  nameWithType.vb: InventoryItem.CorrectInventoryQuantity(Boolean)
-  fullName.vb: LobsterFramework.Interaction.InventoryItem.CorrectInventoryQuantity(Boolean)
-  name.vb: CorrectInventoryQuantity(Boolean)
+    content.vb: Public ReadOnly Property IsComsumable As Boolean
+  overload: LobsterFramework.Interaction.InventoryItem.IsComsumable*
+- uid: LobsterFramework.Interaction.InventoryItem.AddItem(LobsterFramework.Interaction.InventoryItem)
+  commentId: M:LobsterFramework.Interaction.InventoryItem.AddItem(LobsterFramework.Interaction.InventoryItem)
+  id: AddItem(LobsterFramework.Interaction.InventoryItem)
+  parent: LobsterFramework.Interaction.InventoryItem
+  langs:
+  - csharp
+  - vb
+  name: AddItem(InventoryItem)
+  nameWithType: InventoryItem.AddItem(InventoryItem)
+  fullName: LobsterFramework.Interaction.InventoryItem.AddItem(LobsterFramework.Interaction.InventoryItem)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Inventory.cs
+    id: AddItem
+    path: ../Assets/Framework/Interaction/Inventory.cs
+    startLine: 119
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public void AddItem(InventoryItem itemToAdd)
+    parameters:
+    - id: itemToAdd
+      type: LobsterFramework.Interaction.InventoryItem
+    content.vb: Public Sub AddItem(itemToAdd As InventoryItem)
+  overload: LobsterFramework.Interaction.InventoryItem.AddItem*
+- uid: LobsterFramework.Interaction.InventoryItem.Consume(LobsterFramework.Interaction.Inventory)
+  commentId: M:LobsterFramework.Interaction.InventoryItem.Consume(LobsterFramework.Interaction.Inventory)
+  id: Consume(LobsterFramework.Interaction.Inventory)
+  parent: LobsterFramework.Interaction.InventoryItem
+  langs:
+  - csharp
+  - vb
+  name: Consume(Inventory)
+  nameWithType: InventoryItem.Consume(Inventory)
+  fullName: LobsterFramework.Interaction.InventoryItem.Consume(LobsterFramework.Interaction.Inventory)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Inventory.cs
+    id: Consume
+    path: ../Assets/Framework/Interaction/Inventory.cs
+    startLine: 146
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Interaction
+  summary: Attempt to apply consume effect if this item
+  example: []
+  syntax:
+    content: public void Consume(Inventory inventory)
+    parameters:
+    - id: inventory
+      type: LobsterFramework.Interaction.Inventory
+      description: ''
+    content.vb: Public Sub Consume(inventory As Inventory)
+  overload: LobsterFramework.Interaction.InventoryItem.Consume*
+- uid: LobsterFramework.Interaction.InventoryItem.Clone
+  commentId: M:LobsterFramework.Interaction.InventoryItem.Clone
+  id: Clone
+  parent: LobsterFramework.Interaction.InventoryItem
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: InventoryItem.Clone()
+  fullName: LobsterFramework.Interaction.InventoryItem.Clone()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Inventory.cs
+    id: Clone
+    path: ../Assets/Framework/Interaction/Inventory.cs
+    startLine: 161
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public InventoryItem Clone()
+    return:
+      type: LobsterFramework.Interaction.InventoryItem
+    content.vb: Public Function Clone() As InventoryItem
+  overload: LobsterFramework.Interaction.InventoryItem.Clone*
 references:
 - uid: LobsterFramework.Interaction
   commentId: N:LobsterFramework.Interaction
@@ -173,12 +227,31 @@ references:
   - uid: LobsterFramework.Interaction
     name: Interaction
     href: LobsterFramework.Interaction.html
-- uid: Global.SimpleItem
-  commentId: T:Global.SimpleItem
-  href: SimpleItem.html
-  name: SimpleItem
-  nameWithType: SimpleItem
-  fullName: SimpleItem
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Interaction.Item
+  commentId: T:LobsterFramework.Interaction.Item
+  parent: LobsterFramework.Interaction
+  href: LobsterFramework.Interaction.Item.html
+  name: Item
+  nameWithType: Item
+  fullName: LobsterFramework.Interaction.Item
 - uid: LobsterFramework.Interaction.InventoryItem.Quantity*
   commentId: Overload:LobsterFramework.Interaction.InventoryItem.Quantity
   href: LobsterFramework.Interaction.InventoryItem.html#LobsterFramework.Interaction.InventoryItem.Quantity
@@ -196,32 +269,12 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
-- uid: LobsterFramework.Interaction.InventoryItem.AddItem*
-  commentId: Overload:LobsterFramework.Interaction.InventoryItem.AddItem
-  href: LobsterFramework.Interaction.InventoryItem.html#LobsterFramework.Interaction.InventoryItem.AddItem(LobsterFramework.Interaction.InventoryItem@)
-  name: AddItem
-  nameWithType: InventoryItem.AddItem
-  fullName: LobsterFramework.Interaction.InventoryItem.AddItem
-- uid: LobsterFramework.Interaction.InventoryItem
-  commentId: T:LobsterFramework.Interaction.InventoryItem
-  parent: LobsterFramework.Interaction
-  href: LobsterFramework.Interaction.InventoryItem.html
-  name: InventoryItem
-  nameWithType: InventoryItem
-  fullName: LobsterFramework.Interaction.InventoryItem
-- uid: LobsterFramework.Interaction.InventoryItem.CorrectInventoryQuantity*
-  commentId: Overload:LobsterFramework.Interaction.InventoryItem.CorrectInventoryQuantity
-  href: LobsterFramework.Interaction.InventoryItem.html#LobsterFramework.Interaction.InventoryItem.CorrectInventoryQuantity(System.Boolean)
-  name: CorrectInventoryQuantity
-  nameWithType: InventoryItem.CorrectInventoryQuantity
-  fullName: LobsterFramework.Interaction.InventoryItem.CorrectInventoryQuantity
+- uid: LobsterFramework.Interaction.InventoryItem.IsComsumable*
+  commentId: Overload:LobsterFramework.Interaction.InventoryItem.IsComsumable
+  href: LobsterFramework.Interaction.InventoryItem.html#LobsterFramework.Interaction.InventoryItem.IsComsumable
+  name: IsComsumable
+  nameWithType: InventoryItem.IsComsumable
+  fullName: LobsterFramework.Interaction.InventoryItem.IsComsumable
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -233,3 +286,35 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: LobsterFramework.Interaction.InventoryItem.AddItem*
+  commentId: Overload:LobsterFramework.Interaction.InventoryItem.AddItem
+  href: LobsterFramework.Interaction.InventoryItem.html#LobsterFramework.Interaction.InventoryItem.AddItem(LobsterFramework.Interaction.InventoryItem)
+  name: AddItem
+  nameWithType: InventoryItem.AddItem
+  fullName: LobsterFramework.Interaction.InventoryItem.AddItem
+- uid: LobsterFramework.Interaction.InventoryItem
+  commentId: T:LobsterFramework.Interaction.InventoryItem
+  parent: LobsterFramework.Interaction
+  href: LobsterFramework.Interaction.InventoryItem.html
+  name: InventoryItem
+  nameWithType: InventoryItem
+  fullName: LobsterFramework.Interaction.InventoryItem
+- uid: LobsterFramework.Interaction.InventoryItem.Consume*
+  commentId: Overload:LobsterFramework.Interaction.InventoryItem.Consume
+  href: LobsterFramework.Interaction.InventoryItem.html#LobsterFramework.Interaction.InventoryItem.Consume(LobsterFramework.Interaction.Inventory)
+  name: Consume
+  nameWithType: InventoryItem.Consume
+  fullName: LobsterFramework.Interaction.InventoryItem.Consume
+- uid: LobsterFramework.Interaction.Inventory
+  commentId: T:LobsterFramework.Interaction.Inventory
+  parent: LobsterFramework.Interaction
+  href: LobsterFramework.Interaction.Inventory.html
+  name: Inventory
+  nameWithType: Inventory
+  fullName: LobsterFramework.Interaction.Inventory
+- uid: LobsterFramework.Interaction.InventoryItem.Clone*
+  commentId: Overload:LobsterFramework.Interaction.InventoryItem.Clone
+  href: LobsterFramework.Interaction.InventoryItem.html#LobsterFramework.Interaction.InventoryItem.Clone
+  name: Clone
+  nameWithType: InventoryItem.Clone
+  fullName: LobsterFramework.Interaction.InventoryItem.Clone

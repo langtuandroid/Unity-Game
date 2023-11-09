@@ -12,6 +12,8 @@ items:
   - LobsterFramework.Interaction.InteractableObject.OnInteract(LobsterFramework.Interaction.Interactor,LobsterFramework.Interaction.InteractionType)
   - LobsterFramework.Interaction.InteractableObject.Start
   - LobsterFramework.Interaction.InteractableObject.Update
+  - LobsterFramework.Interaction.InteractableObject.interactEnabled
+  - LobsterFramework.Interaction.InteractableObject.interactRadius
   - LobsterFramework.Interaction.InteractableObject.interactionChannel
   langs:
   - csharp
@@ -22,9 +24,9 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/InteractableObject.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/InteractableObject.cs
     id: InteractableObject
-    path: ../Assets/Framework/Components/Interaction/InteractableObject.cs
+    path: ../Assets/Framework/Interaction/InteractableObject.cs
     startLine: 25
   assemblies:
   - LobsterFramework
@@ -38,6 +40,8 @@ items:
   - UnityEngine.Component
   - UnityEngine.Behaviour
   - UnityEngine.MonoBehaviour
+  derivedClasses:
+  - LobsterFramework.Interaction.CollectableItem
   inheritedMembers:
   - UnityEngine.MonoBehaviour.IsInvoking
   - UnityEngine.MonoBehaviour.CancelInvoke
@@ -149,6 +153,76 @@ items:
   - UnityEngine.Object.ToString
   - UnityEngine.Object.name
   - UnityEngine.Object.hideFlags
+- uid: LobsterFramework.Interaction.InteractableObject.interactRadius
+  commentId: F:LobsterFramework.Interaction.InteractableObject.interactRadius
+  id: interactRadius
+  parent: LobsterFramework.Interaction.InteractableObject
+  langs:
+  - csharp
+  - vb
+  name: interactRadius
+  nameWithType: InteractableObject.interactRadius
+  fullName: LobsterFramework.Interaction.InteractableObject.interactRadius
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/InteractableObject.cs
+    id: interactRadius
+    path: ../Assets/Framework/Interaction/InteractableObject.cs
+    startLine: 31
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: >-
+      [SerializeField]
+
+      protected float interactRadius
+    return:
+      type: System.Single
+    content.vb: >-
+      <SerializeField>
+
+      Protected interactRadius As Single
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
+- uid: LobsterFramework.Interaction.InteractableObject.interactEnabled
+  commentId: F:LobsterFramework.Interaction.InteractableObject.interactEnabled
+  id: interactEnabled
+  parent: LobsterFramework.Interaction.InteractableObject
+  langs:
+  - csharp
+  - vb
+  name: interactEnabled
+  nameWithType: InteractableObject.interactEnabled
+  fullName: LobsterFramework.Interaction.InteractableObject.interactEnabled
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/InteractableObject.cs
+    id: interactEnabled
+    path: ../Assets/Framework/Interaction/InteractableObject.cs
+    startLine: 32
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: >-
+      [SerializeField]
+
+      protected bool interactEnabled
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <SerializeField>
+
+      Protected interactEnabled As Boolean
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
 - uid: LobsterFramework.Interaction.InteractableObject.interactionChannel
   commentId: F:LobsterFramework.Interaction.InteractableObject.interactionChannel
   id: interactionChannel
@@ -162,9 +236,9 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/InteractableObject.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/InteractableObject.cs
     id: interactionChannel
-    path: ../Assets/Framework/Components/Interaction/InteractableObject.cs
+    path: ../Assets/Framework/Interaction/InteractableObject.cs
     startLine: 33
   assemblies:
   - LobsterFramework
@@ -197,9 +271,9 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/InteractableObject.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/InteractableObject.cs
     id: Start
-    path: ../Assets/Framework/Components/Interaction/InteractableObject.cs
+    path: ../Assets/Framework/Interaction/InteractableObject.cs
     startLine: 38
   assemblies:
   - LobsterFramework
@@ -221,10 +295,10 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/InteractableObject.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/InteractableObject.cs
     id: InteractEnabled
-    path: ../Assets/Framework/Components/Interaction/InteractableObject.cs
-    startLine: 52
+    path: ../Assets/Framework/Interaction/InteractableObject.cs
+    startLine: 55
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Interaction
@@ -248,10 +322,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/InteractableObject.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/InteractableObject.cs
     id: OnInteract
-    path: ../Assets/Framework/Components/Interaction/InteractableObject.cs
-    startLine: 68
+    path: ../Assets/Framework/Interaction/InteractableObject.cs
+    startLine: 71
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Interaction
@@ -277,10 +351,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/InteractableObject.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/InteractableObject.cs
     id: GetInteractionOptions
-    path: ../Assets/Framework/Components/Interaction/InteractableObject.cs
-    startLine: 70
+    path: ../Assets/Framework/Interaction/InteractableObject.cs
+    startLine: 73
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Interaction
@@ -306,10 +380,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/InteractableObject.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/InteractableObject.cs
     id: Update
-    path: ../Assets/Framework/Components/Interaction/InteractableObject.cs
-    startLine: 72
+    path: ../Assets/Framework/Interaction/InteractableObject.cs
+    startLine: 75
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Interaction
@@ -330,10 +404,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/InteractableObject.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/InteractableObject.cs
     id: IUpdate
-    path: ../Assets/Framework/Components/Interaction/InteractableObject.cs
-    startLine: 85
+    path: ../Assets/Framework/Interaction/InteractableObject.cs
+    startLine: 88
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Interaction
@@ -354,10 +428,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/InteractableObject.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/InteractableObject.cs
     id: OnDisable
-    path: ../Assets/Framework/Components/Interaction/InteractableObject.cs
-    startLine: 87
+    path: ../Assets/Framework/Interaction/InteractableObject.cs
+    startLine: 90
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Interaction
@@ -4598,6 +4672,28 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: Global.StringEventChannel
   commentId: T:Global.StringEventChannel
   href: StringEventChannel.html
@@ -4616,17 +4712,6 @@ references:
   name: InteractEnabled
   nameWithType: InteractableObject.InteractEnabled
   fullName: LobsterFramework.Interaction.InteractableObject.InteractEnabled
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
 - uid: LobsterFramework.Interaction.InteractableObject.OnInteract*
   commentId: Overload:LobsterFramework.Interaction.InteractableObject.OnInteract
   href: LobsterFramework.Interaction.InteractableObject.html#LobsterFramework.Interaction.InteractableObject.OnInteract(LobsterFramework.Interaction.Interactor,LobsterFramework.Interaction.InteractionType)

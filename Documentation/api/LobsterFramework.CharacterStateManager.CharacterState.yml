@@ -1,0 +1,211 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.CharacterStateManager.CharacterState
+  commentId: T:LobsterFramework.CharacterStateManager.CharacterState
+  id: CharacterStateManager.CharacterState
+  parent: LobsterFramework
+  children:
+  - LobsterFramework.CharacterStateManager.CharacterState.AbilityCasting
+  - LobsterFramework.CharacterStateManager.CharacterState.Dashing
+  - LobsterFramework.CharacterStateManager.CharacterState.Normal
+  - LobsterFramework.CharacterStateManager.CharacterState.PoiseBroken
+  - LobsterFramework.CharacterStateManager.CharacterState.PostureBroken
+  - LobsterFramework.CharacterStateManager.CharacterState.Suppressed
+  langs:
+  - csharp
+  - vb
+  name: CharacterStateManager.CharacterState
+  nameWithType: CharacterStateManager.CharacterState
+  fullName: LobsterFramework.CharacterStateManager.CharacterState
+  type: Enum
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/CharacterStateManager.cs
+    id: CharacterState
+    path: ../Assets/Framework/Components/CharacterStateManager.cs
+    startLine: 191
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  summary: >-
+    The state of the character, ordered by their priorities. If the conditions for multiple character states are met, only the one with the highest
+
+    priority will take place.
+  example: []
+  syntax:
+    content: public enum CharacterStateManager.CharacterState
+    content.vb: Public Enum CharacterStateManager.CharacterState
+- uid: LobsterFramework.CharacterStateManager.CharacterState.PostureBroken
+  commentId: F:LobsterFramework.CharacterStateManager.CharacterState.PostureBroken
+  id: PostureBroken
+  parent: LobsterFramework.CharacterStateManager.CharacterState
+  langs:
+  - csharp
+  - vb
+  name: PostureBroken
+  nameWithType: CharacterStateManager.CharacterState.PostureBroken
+  fullName: LobsterFramework.CharacterStateManager.CharacterState.PostureBroken
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/CharacterStateManager.cs
+    id: PostureBroken
+    path: ../Assets/Framework/Components/CharacterStateManager.cs
+    startLine: 193
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: PostureBroken = 0
+    return:
+      type: LobsterFramework.CharacterStateManager.CharacterState
+- uid: LobsterFramework.CharacterStateManager.CharacterState.PoiseBroken
+  commentId: F:LobsterFramework.CharacterStateManager.CharacterState.PoiseBroken
+  id: PoiseBroken
+  parent: LobsterFramework.CharacterStateManager.CharacterState
+  langs:
+  - csharp
+  - vb
+  name: PoiseBroken
+  nameWithType: CharacterStateManager.CharacterState.PoiseBroken
+  fullName: LobsterFramework.CharacterStateManager.CharacterState.PoiseBroken
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/CharacterStateManager.cs
+    id: PoiseBroken
+    path: ../Assets/Framework/Components/CharacterStateManager.cs
+    startLine: 194
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: PoiseBroken = 1
+    return:
+      type: LobsterFramework.CharacterStateManager.CharacterState
+- uid: LobsterFramework.CharacterStateManager.CharacterState.Suppressed
+  commentId: F:LobsterFramework.CharacterStateManager.CharacterState.Suppressed
+  id: Suppressed
+  parent: LobsterFramework.CharacterStateManager.CharacterState
+  langs:
+  - csharp
+  - vb
+  name: Suppressed
+  nameWithType: CharacterStateManager.CharacterState.Suppressed
+  fullName: LobsterFramework.CharacterStateManager.CharacterState.Suppressed
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/CharacterStateManager.cs
+    id: Suppressed
+    path: ../Assets/Framework/Components/CharacterStateManager.cs
+    startLine: 195
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: Suppressed = 2
+    return:
+      type: LobsterFramework.CharacterStateManager.CharacterState
+- uid: LobsterFramework.CharacterStateManager.CharacterState.Dashing
+  commentId: F:LobsterFramework.CharacterStateManager.CharacterState.Dashing
+  id: Dashing
+  parent: LobsterFramework.CharacterStateManager.CharacterState
+  langs:
+  - csharp
+  - vb
+  name: Dashing
+  nameWithType: CharacterStateManager.CharacterState.Dashing
+  fullName: LobsterFramework.CharacterStateManager.CharacterState.Dashing
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/CharacterStateManager.cs
+    id: Dashing
+    path: ../Assets/Framework/Components/CharacterStateManager.cs
+    startLine: 196
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: Dashing = 3
+    return:
+      type: LobsterFramework.CharacterStateManager.CharacterState
+- uid: LobsterFramework.CharacterStateManager.CharacterState.AbilityCasting
+  commentId: F:LobsterFramework.CharacterStateManager.CharacterState.AbilityCasting
+  id: AbilityCasting
+  parent: LobsterFramework.CharacterStateManager.CharacterState
+  langs:
+  - csharp
+  - vb
+  name: AbilityCasting
+  nameWithType: CharacterStateManager.CharacterState.AbilityCasting
+  fullName: LobsterFramework.CharacterStateManager.CharacterState.AbilityCasting
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/CharacterStateManager.cs
+    id: AbilityCasting
+    path: ../Assets/Framework/Components/CharacterStateManager.cs
+    startLine: 197
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: AbilityCasting = 4
+    return:
+      type: LobsterFramework.CharacterStateManager.CharacterState
+- uid: LobsterFramework.CharacterStateManager.CharacterState.Normal
+  commentId: F:LobsterFramework.CharacterStateManager.CharacterState.Normal
+  id: Normal
+  parent: LobsterFramework.CharacterStateManager.CharacterState
+  langs:
+  - csharp
+  - vb
+  name: Normal
+  nameWithType: CharacterStateManager.CharacterState.Normal
+  fullName: LobsterFramework.CharacterStateManager.CharacterState.Normal
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/CharacterStateManager.cs
+    id: Normal
+    path: ../Assets/Framework/Components/CharacterStateManager.cs
+    startLine: 198
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: Normal = 5
+    return:
+      type: LobsterFramework.CharacterStateManager.CharacterState
+references:
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: LobsterFramework.CharacterStateManager.CharacterState
+  commentId: T:LobsterFramework.CharacterStateManager.CharacterState
+  parent: LobsterFramework
+  href: LobsterFramework.CharacterStateManager.html
+  name: CharacterStateManager.CharacterState
+  nameWithType: CharacterStateManager.CharacterState
+  fullName: LobsterFramework.CharacterStateManager.CharacterState
+  spec.csharp:
+  - uid: LobsterFramework.CharacterStateManager
+    name: CharacterStateManager
+    href: LobsterFramework.CharacterStateManager.html
+  - name: .
+  - uid: LobsterFramework.CharacterStateManager.CharacterState
+    name: CharacterState
+    href: LobsterFramework.CharacterStateManager.CharacterState.html
+  spec.vb:
+  - uid: LobsterFramework.CharacterStateManager
+    name: CharacterStateManager
+    href: LobsterFramework.CharacterStateManager.html
+  - name: .
+  - uid: LobsterFramework.CharacterStateManager.CharacterState
+    name: CharacterState
+    href: LobsterFramework.CharacterStateManager.CharacterState.html

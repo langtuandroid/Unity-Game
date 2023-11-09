@@ -1,0 +1,710 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility.XList`1
+  commentId: T:LobsterFramework.Utility.XList`1
+  id: XList`1
+  parent: LobsterFramework.Utility
+  children:
+  - LobsterFramework.Utility.XList`1.Add(`0)
+  - LobsterFramework.Utility.XList`1.Clear
+  - LobsterFramework.Utility.XList`1.Contains(`0)
+  - LobsterFramework.Utility.XList`1.CopyTo(`0[],System.Int32)
+  - LobsterFramework.Utility.XList`1.Count
+  - LobsterFramework.Utility.XList`1.GetEnumerator
+  - LobsterFramework.Utility.XList`1.IndexOf(`0)
+  - LobsterFramework.Utility.XList`1.Insert(System.Int32,`0)
+  - LobsterFramework.Utility.XList`1.IsReadOnly
+  - LobsterFramework.Utility.XList`1.Item(System.Int32)
+  - LobsterFramework.Utility.XList`1.Remove(`0)
+  - LobsterFramework.Utility.XList`1.RemoveAt(System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: XList<T>
+  nameWithType: XList<T>
+  fullName: LobsterFramework.Utility.XList<T>
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/XList.cs
+    id: XList
+    path: ../Assets/Framework/Utility/XList.cs
+    startLine: 10
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: A list that disables editing when entering playmode
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class XList<T>
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: >-
+      <Serializable>
+
+      Public Class XList(Of T)
+  inheritance:
+  - System.Object
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  nameWithType.vb: XList(Of T)
+  fullName.vb: LobsterFramework.Utility.XList(Of T)
+  name.vb: XList(Of T)
+- uid: LobsterFramework.Utility.XList`1.Item(System.Int32)
+  commentId: P:LobsterFramework.Utility.XList`1.Item(System.Int32)
+  id: Item(System.Int32)
+  parent: LobsterFramework.Utility.XList`1
+  langs:
+  - csharp
+  - vb
+  name: this[int]
+  nameWithType: XList<T>.this[int]
+  fullName: LobsterFramework.Utility.XList<T>.this[int]
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/XList.cs
+    id: this[]
+    path: ../Assets/Framework/Utility/XList.cs
+    startLine: 15
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  example: []
+  syntax:
+    content: public T this[int index] { get; set; }
+    parameters:
+    - id: index
+      type: System.Int32
+    return:
+      type: '{T}'
+    content.vb: Public Default Property this[](index As Integer) As T
+  overload: LobsterFramework.Utility.XList`1.Item*
+  nameWithType.vb: XList(Of T).this[](Integer)
+  fullName.vb: LobsterFramework.Utility.XList(Of T).this[](Integer)
+  name.vb: this[](Integer)
+- uid: LobsterFramework.Utility.XList`1.Count
+  commentId: P:LobsterFramework.Utility.XList`1.Count
+  id: Count
+  parent: LobsterFramework.Utility.XList`1
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: XList<T>.Count
+  fullName: LobsterFramework.Utility.XList<T>.Count
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/XList.cs
+    id: Count
+    path: ../Assets/Framework/Utility/XList.cs
+    startLine: 17
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  example: []
+  syntax:
+    content: public int Count { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Count As Integer
+  overload: LobsterFramework.Utility.XList`1.Count*
+  nameWithType.vb: XList(Of T).Count
+  fullName.vb: LobsterFramework.Utility.XList(Of T).Count
+- uid: LobsterFramework.Utility.XList`1.IsReadOnly
+  commentId: P:LobsterFramework.Utility.XList`1.IsReadOnly
+  id: IsReadOnly
+  parent: LobsterFramework.Utility.XList`1
+  langs:
+  - csharp
+  - vb
+  name: IsReadOnly
+  nameWithType: XList<T>.IsReadOnly
+  fullName: LobsterFramework.Utility.XList<T>.IsReadOnly
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/XList.cs
+    id: IsReadOnly
+    path: ../Assets/Framework/Utility/XList.cs
+    startLine: 19
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  example: []
+  syntax:
+    content: public bool IsReadOnly { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsReadOnly As Boolean
+  overload: LobsterFramework.Utility.XList`1.IsReadOnly*
+  nameWithType.vb: XList(Of T).IsReadOnly
+  fullName.vb: LobsterFramework.Utility.XList(Of T).IsReadOnly
+- uid: LobsterFramework.Utility.XList`1.Add(`0)
+  commentId: M:LobsterFramework.Utility.XList`1.Add(`0)
+  id: Add(`0)
+  parent: LobsterFramework.Utility.XList`1
+  langs:
+  - csharp
+  - vb
+  name: Add(T)
+  nameWithType: XList<T>.Add(T)
+  fullName: LobsterFramework.Utility.XList<T>.Add(T)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/XList.cs
+    id: Add
+    path: ../Assets/Framework/Utility/XList.cs
+    startLine: 21
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  example: []
+  syntax:
+    content: public void Add(T item)
+    parameters:
+    - id: item
+      type: '{T}'
+    content.vb: Public Sub Add(item As T)
+  overload: LobsterFramework.Utility.XList`1.Add*
+  nameWithType.vb: XList(Of T).Add(T)
+  fullName.vb: LobsterFramework.Utility.XList(Of T).Add(T)
+- uid: LobsterFramework.Utility.XList`1.Clear
+  commentId: M:LobsterFramework.Utility.XList`1.Clear
+  id: Clear
+  parent: LobsterFramework.Utility.XList`1
+  langs:
+  - csharp
+  - vb
+  name: Clear()
+  nameWithType: XList<T>.Clear()
+  fullName: LobsterFramework.Utility.XList<T>.Clear()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/XList.cs
+    id: Clear
+    path: ../Assets/Framework/Utility/XList.cs
+    startLine: 26
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  example: []
+  syntax:
+    content: public void Clear()
+    content.vb: Public Sub Clear()
+  overload: LobsterFramework.Utility.XList`1.Clear*
+  nameWithType.vb: XList(Of T).Clear()
+  fullName.vb: LobsterFramework.Utility.XList(Of T).Clear()
+- uid: LobsterFramework.Utility.XList`1.Contains(`0)
+  commentId: M:LobsterFramework.Utility.XList`1.Contains(`0)
+  id: Contains(`0)
+  parent: LobsterFramework.Utility.XList`1
+  langs:
+  - csharp
+  - vb
+  name: Contains(T)
+  nameWithType: XList<T>.Contains(T)
+  fullName: LobsterFramework.Utility.XList<T>.Contains(T)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/XList.cs
+    id: Contains
+    path: ../Assets/Framework/Utility/XList.cs
+    startLine: 31
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  example: []
+  syntax:
+    content: public bool Contains(T item)
+    parameters:
+    - id: item
+      type: '{T}'
+    return:
+      type: System.Boolean
+    content.vb: Public Function Contains(item As T) As Boolean
+  overload: LobsterFramework.Utility.XList`1.Contains*
+  nameWithType.vb: XList(Of T).Contains(T)
+  fullName.vb: LobsterFramework.Utility.XList(Of T).Contains(T)
+- uid: LobsterFramework.Utility.XList`1.CopyTo(`0[],System.Int32)
+  commentId: M:LobsterFramework.Utility.XList`1.CopyTo(`0[],System.Int32)
+  id: CopyTo(`0[],System.Int32)
+  parent: LobsterFramework.Utility.XList`1
+  langs:
+  - csharp
+  - vb
+  name: CopyTo(T[], int)
+  nameWithType: XList<T>.CopyTo(T[], int)
+  fullName: LobsterFramework.Utility.XList<T>.CopyTo(T[], int)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/XList.cs
+    id: CopyTo
+    path: ../Assets/Framework/Utility/XList.cs
+    startLine: 36
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  example: []
+  syntax:
+    content: public void CopyTo(T[] array, int arrayIndex)
+    parameters:
+    - id: array
+      type: '{T}[]'
+    - id: arrayIndex
+      type: System.Int32
+    content.vb: Public Sub CopyTo(array As T(), arrayIndex As Integer)
+  overload: LobsterFramework.Utility.XList`1.CopyTo*
+  nameWithType.vb: XList(Of T).CopyTo(T(), Integer)
+  fullName.vb: LobsterFramework.Utility.XList(Of T).CopyTo(T(), Integer)
+  name.vb: CopyTo(T(), Integer)
+- uid: LobsterFramework.Utility.XList`1.GetEnumerator
+  commentId: M:LobsterFramework.Utility.XList`1.GetEnumerator
+  id: GetEnumerator
+  parent: LobsterFramework.Utility.XList`1
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: XList<T>.GetEnumerator()
+  fullName: LobsterFramework.Utility.XList<T>.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/XList.cs
+    id: GetEnumerator
+    path: ../Assets/Framework/Utility/XList.cs
+    startLine: 41
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  example: []
+  syntax:
+    content: public IEnumerator<T> GetEnumerator()
+    return:
+      type: System.Collections.Generic.IEnumerator{{T}}
+    content.vb: Public Function GetEnumerator() As IEnumerator(Of T)
+  overload: LobsterFramework.Utility.XList`1.GetEnumerator*
+  nameWithType.vb: XList(Of T).GetEnumerator()
+  fullName.vb: LobsterFramework.Utility.XList(Of T).GetEnumerator()
+- uid: LobsterFramework.Utility.XList`1.IndexOf(`0)
+  commentId: M:LobsterFramework.Utility.XList`1.IndexOf(`0)
+  id: IndexOf(`0)
+  parent: LobsterFramework.Utility.XList`1
+  langs:
+  - csharp
+  - vb
+  name: IndexOf(T)
+  nameWithType: XList<T>.IndexOf(T)
+  fullName: LobsterFramework.Utility.XList<T>.IndexOf(T)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/XList.cs
+    id: IndexOf
+    path: ../Assets/Framework/Utility/XList.cs
+    startLine: 46
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  example: []
+  syntax:
+    content: public int IndexOf(T item)
+    parameters:
+    - id: item
+      type: '{T}'
+    return:
+      type: System.Int32
+    content.vb: Public Function IndexOf(item As T) As Integer
+  overload: LobsterFramework.Utility.XList`1.IndexOf*
+  nameWithType.vb: XList(Of T).IndexOf(T)
+  fullName.vb: LobsterFramework.Utility.XList(Of T).IndexOf(T)
+- uid: LobsterFramework.Utility.XList`1.Insert(System.Int32,`0)
+  commentId: M:LobsterFramework.Utility.XList`1.Insert(System.Int32,`0)
+  id: Insert(System.Int32,`0)
+  parent: LobsterFramework.Utility.XList`1
+  langs:
+  - csharp
+  - vb
+  name: Insert(int, T)
+  nameWithType: XList<T>.Insert(int, T)
+  fullName: LobsterFramework.Utility.XList<T>.Insert(int, T)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/XList.cs
+    id: Insert
+    path: ../Assets/Framework/Utility/XList.cs
+    startLine: 51
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  example: []
+  syntax:
+    content: public void Insert(int index, T item)
+    parameters:
+    - id: index
+      type: System.Int32
+    - id: item
+      type: '{T}'
+    content.vb: Public Sub Insert(index As Integer, item As T)
+  overload: LobsterFramework.Utility.XList`1.Insert*
+  nameWithType.vb: XList(Of T).Insert(Integer, T)
+  fullName.vb: LobsterFramework.Utility.XList(Of T).Insert(Integer, T)
+  name.vb: Insert(Integer, T)
+- uid: LobsterFramework.Utility.XList`1.Remove(`0)
+  commentId: M:LobsterFramework.Utility.XList`1.Remove(`0)
+  id: Remove(`0)
+  parent: LobsterFramework.Utility.XList`1
+  langs:
+  - csharp
+  - vb
+  name: Remove(T)
+  nameWithType: XList<T>.Remove(T)
+  fullName: LobsterFramework.Utility.XList<T>.Remove(T)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/XList.cs
+    id: Remove
+    path: ../Assets/Framework/Utility/XList.cs
+    startLine: 56
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  example: []
+  syntax:
+    content: public bool Remove(T item)
+    parameters:
+    - id: item
+      type: '{T}'
+    return:
+      type: System.Boolean
+    content.vb: Public Function Remove(item As T) As Boolean
+  overload: LobsterFramework.Utility.XList`1.Remove*
+  nameWithType.vb: XList(Of T).Remove(T)
+  fullName.vb: LobsterFramework.Utility.XList(Of T).Remove(T)
+- uid: LobsterFramework.Utility.XList`1.RemoveAt(System.Int32)
+  commentId: M:LobsterFramework.Utility.XList`1.RemoveAt(System.Int32)
+  id: RemoveAt(System.Int32)
+  parent: LobsterFramework.Utility.XList`1
+  langs:
+  - csharp
+  - vb
+  name: RemoveAt(int)
+  nameWithType: XList<T>.RemoveAt(int)
+  fullName: LobsterFramework.Utility.XList<T>.RemoveAt(int)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/XList.cs
+    id: RemoveAt
+    path: ../Assets/Framework/Utility/XList.cs
+    startLine: 61
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  example: []
+  syntax:
+    content: public void RemoveAt(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+    content.vb: Public Sub RemoveAt(index As Integer)
+  overload: LobsterFramework.Utility.XList`1.RemoveAt*
+  nameWithType.vb: XList(Of T).RemoveAt(Integer)
+  fullName.vb: LobsterFramework.Utility.XList(Of T).RemoveAt(Integer)
+  name.vb: RemoveAt(Integer)
+references:
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Utility.XList`1.Item*
+  commentId: Overload:LobsterFramework.Utility.XList`1.Item
+  href: LobsterFramework.Utility.XList-1.html#LobsterFramework.Utility.XList`1.Item(System.Int32)
+  name: this
+  nameWithType: XList<T>.this
+  fullName: LobsterFramework.Utility.XList<T>.this
+  nameWithType.vb: XList(Of T).this[]
+  fullName.vb: LobsterFramework.Utility.XList(Of T).this[]
+  name.vb: this[]
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: LobsterFramework.Utility.XList`1.Count*
+  commentId: Overload:LobsterFramework.Utility.XList`1.Count
+  href: LobsterFramework.Utility.XList-1.html#LobsterFramework.Utility.XList`1.Count
+  name: Count
+  nameWithType: XList<T>.Count
+  fullName: LobsterFramework.Utility.XList<T>.Count
+  nameWithType.vb: XList(Of T).Count
+  fullName.vb: LobsterFramework.Utility.XList(Of T).Count
+- uid: LobsterFramework.Utility.XList`1.IsReadOnly*
+  commentId: Overload:LobsterFramework.Utility.XList`1.IsReadOnly
+  href: LobsterFramework.Utility.XList-1.html#LobsterFramework.Utility.XList`1.IsReadOnly
+  name: IsReadOnly
+  nameWithType: XList<T>.IsReadOnly
+  fullName: LobsterFramework.Utility.XList<T>.IsReadOnly
+  nameWithType.vb: XList(Of T).IsReadOnly
+  fullName.vb: LobsterFramework.Utility.XList(Of T).IsReadOnly
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: LobsterFramework.Utility.XList`1.Add*
+  commentId: Overload:LobsterFramework.Utility.XList`1.Add
+  href: LobsterFramework.Utility.XList-1.html#LobsterFramework.Utility.XList`1.Add(`0)
+  name: Add
+  nameWithType: XList<T>.Add
+  fullName: LobsterFramework.Utility.XList<T>.Add
+  nameWithType.vb: XList(Of T).Add
+  fullName.vb: LobsterFramework.Utility.XList(Of T).Add
+- uid: LobsterFramework.Utility.XList`1.Clear*
+  commentId: Overload:LobsterFramework.Utility.XList`1.Clear
+  href: LobsterFramework.Utility.XList-1.html#LobsterFramework.Utility.XList`1.Clear
+  name: Clear
+  nameWithType: XList<T>.Clear
+  fullName: LobsterFramework.Utility.XList<T>.Clear
+  nameWithType.vb: XList(Of T).Clear
+  fullName.vb: LobsterFramework.Utility.XList(Of T).Clear
+- uid: LobsterFramework.Utility.XList`1.Contains*
+  commentId: Overload:LobsterFramework.Utility.XList`1.Contains
+  href: LobsterFramework.Utility.XList-1.html#LobsterFramework.Utility.XList`1.Contains(`0)
+  name: Contains
+  nameWithType: XList<T>.Contains
+  fullName: LobsterFramework.Utility.XList<T>.Contains
+  nameWithType.vb: XList(Of T).Contains
+  fullName.vb: LobsterFramework.Utility.XList(Of T).Contains
+- uid: LobsterFramework.Utility.XList`1.CopyTo*
+  commentId: Overload:LobsterFramework.Utility.XList`1.CopyTo
+  href: LobsterFramework.Utility.XList-1.html#LobsterFramework.Utility.XList`1.CopyTo(`0[],System.Int32)
+  name: CopyTo
+  nameWithType: XList<T>.CopyTo
+  fullName: LobsterFramework.Utility.XList<T>.CopyTo
+  nameWithType.vb: XList(Of T).CopyTo
+  fullName.vb: LobsterFramework.Utility.XList(Of T).CopyTo
+- uid: '{T}[]'
+  isExternal: true
+  name: T[]
+  nameWithType: T[]
+  fullName: T[]
+  nameWithType.vb: T()
+  fullName.vb: T()
+  name.vb: T()
+  spec.csharp:
+  - name: T
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - name: T
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.XList`1.GetEnumerator*
+  commentId: Overload:LobsterFramework.Utility.XList`1.GetEnumerator
+  href: LobsterFramework.Utility.XList-1.html#LobsterFramework.Utility.XList`1.GetEnumerator
+  name: GetEnumerator
+  nameWithType: XList<T>.GetEnumerator
+  fullName: LobsterFramework.Utility.XList<T>.GetEnumerator
+  nameWithType.vb: XList(Of T).GetEnumerator
+  fullName.vb: LobsterFramework.Utility.XList(Of T).GetEnumerator
+- uid: System.Collections.Generic.IEnumerator{{T}}
+  commentId: T:System.Collections.Generic.IEnumerator{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: LobsterFramework.Utility.XList`1.IndexOf*
+  commentId: Overload:LobsterFramework.Utility.XList`1.IndexOf
+  href: LobsterFramework.Utility.XList-1.html#LobsterFramework.Utility.XList`1.IndexOf(`0)
+  name: IndexOf
+  nameWithType: XList<T>.IndexOf
+  fullName: LobsterFramework.Utility.XList<T>.IndexOf
+  nameWithType.vb: XList(Of T).IndexOf
+  fullName.vb: LobsterFramework.Utility.XList(Of T).IndexOf
+- uid: LobsterFramework.Utility.XList`1.Insert*
+  commentId: Overload:LobsterFramework.Utility.XList`1.Insert
+  href: LobsterFramework.Utility.XList-1.html#LobsterFramework.Utility.XList`1.Insert(System.Int32,`0)
+  name: Insert
+  nameWithType: XList<T>.Insert
+  fullName: LobsterFramework.Utility.XList<T>.Insert
+  nameWithType.vb: XList(Of T).Insert
+  fullName.vb: LobsterFramework.Utility.XList(Of T).Insert
+- uid: LobsterFramework.Utility.XList`1.Remove*
+  commentId: Overload:LobsterFramework.Utility.XList`1.Remove
+  href: LobsterFramework.Utility.XList-1.html#LobsterFramework.Utility.XList`1.Remove(`0)
+  name: Remove
+  nameWithType: XList<T>.Remove
+  fullName: LobsterFramework.Utility.XList<T>.Remove
+  nameWithType.vb: XList(Of T).Remove
+  fullName.vb: LobsterFramework.Utility.XList(Of T).Remove
+- uid: LobsterFramework.Utility.XList`1.RemoveAt*
+  commentId: Overload:LobsterFramework.Utility.XList`1.RemoveAt
+  href: LobsterFramework.Utility.XList-1.html#LobsterFramework.Utility.XList`1.RemoveAt(System.Int32)
+  name: RemoveAt
+  nameWithType: XList<T>.RemoveAt
+  fullName: LobsterFramework.Utility.XList<T>.RemoveAt
+  nameWithType.vb: XList(Of T).RemoveAt
+  fullName.vb: LobsterFramework.Utility.XList(Of T).RemoveAt

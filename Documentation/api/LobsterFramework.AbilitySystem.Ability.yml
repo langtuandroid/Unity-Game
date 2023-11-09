@@ -5,28 +5,30 @@ items:
   id: Ability
   parent: LobsterFramework.AbilitySystem
   children:
-  - LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  - LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityPipe)
   - LobsterFramework.AbilitySystem.Ability.CleanUp
   - LobsterFramework.AbilitySystem.Ability.CompareByEnqueuePriority(LobsterFramework.AbilitySystem.Ability)
   - LobsterFramework.AbilitySystem.Ability.CompareByExecutionPriority(LobsterFramework.AbilitySystem.Ability)
   - LobsterFramework.AbilitySystem.Ability.ConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  - LobsterFramework.AbilitySystem.Ability.HaltAbilities
+  - LobsterFramework.AbilitySystem.Ability.CurrentConfig
+  - LobsterFramework.AbilitySystem.Ability.CurrentConfigName
+  - LobsterFramework.AbilitySystem.Ability.GetAbilityPipe(System.String)
   - LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution(System.String)
+  - LobsterFramework.AbilitySystem.Ability.HaltOnAllConfigs
   - LobsterFramework.AbilitySystem.Ability.HasConfig(System.String)
   - LobsterFramework.AbilitySystem.Ability.Initialize
   - LobsterFramework.AbilitySystem.Ability.IsExecuting(System.String)
   - LobsterFramework.AbilitySystem.Ability.IsReady(System.String)
-  - LobsterFramework.AbilitySystem.Ability.OnActionFinish(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  - LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  - LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig,System.String)
-  - LobsterFramework.AbilitySystem.Ability.OnStartUp
-  - LobsterFramework.AbilitySystem.Ability.OnTermination
+  - LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type,System.String)
+  - LobsterFramework.AbilitySystem.Ability.JoinAsSecondary``1(System.String)
+  - LobsterFramework.AbilitySystem.Ability.OnActionFinish
+  - LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(Animancer.AnimancerState)
+  - LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityPipe)
   - LobsterFramework.AbilitySystem.Ability.RemoveConfig(System.String)
-  - LobsterFramework.AbilitySystem.Ability.ResetStatus
   - LobsterFramework.AbilitySystem.Ability.RunningCount
   - LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
-  - LobsterFramework.AbilitySystem.Ability.Signal(System.String)
-  - LobsterFramework.AbilitySystem.Ability.SignalBody(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  - LobsterFramework.AbilitySystem.Ability.Signal(System.String,UnityEngine.AnimationEvent)
+  - LobsterFramework.AbilitySystem.Ability.Signal(UnityEngine.AnimationEvent)
   - LobsterFramework.AbilitySystem.Ability.abilityPriority
   - LobsterFramework.AbilitySystem.Ability.abilityRunner
   langs:
@@ -38,10 +40,10 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: Ability
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 32
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 15
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -58,7 +60,9 @@ items:
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
   derivedClasses:
-  - LobsterFramework.AbilitySystem.Weapon.WeaponAbility
+  - LobsterFramework.AbilitySystem.AbilityCoroutine
+  - LobsterFramework.AbilitySystem.OffhandAbility
+  - LobsterFramework.AbilitySystem.WeaponArt
   inheritedMembers:
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
@@ -123,10 +127,10 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: abilityRunner
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 37
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 18
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -134,13 +138,13 @@ items:
     content: >-
       [HideInInspector]
 
-      public AbilityRunner abilityRunner
+      protected AbilityRunner abilityRunner
     return:
       type: LobsterFramework.AbilitySystem.AbilityRunner
     content.vb: >-
       <HideInInspector>
 
-      Public abilityRunner As AbilityRunner
+      Protected abilityRunner As AbilityRunner
   attributes:
   - type: UnityEngine.HideInInspector
     ctor: UnityEngine.HideInInspector.#ctor
@@ -158,10 +162,10 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: abilityPriority
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 38
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 20
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -170,6 +174,60 @@ items:
     return:
       type: Global.RefAbilityPriority
     content.vb: Public abilityPriority As RefAbilityPriority
+- uid: LobsterFramework.AbilitySystem.Ability.CurrentConfigName
+  commentId: P:LobsterFramework.AbilitySystem.Ability.CurrentConfigName
+  id: CurrentConfigName
+  parent: LobsterFramework.AbilitySystem.Ability
+  langs:
+  - csharp
+  - vb
+  name: CurrentConfigName
+  nameWithType: Ability.CurrentConfigName
+  fullName: LobsterFramework.AbilitySystem.Ability.CurrentConfigName
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
+    id: CurrentConfigName
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 29
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: protected string CurrentConfigName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Protected Property CurrentConfigName As String
+  overload: LobsterFramework.AbilitySystem.Ability.CurrentConfigName*
+- uid: LobsterFramework.AbilitySystem.Ability.CurrentConfig
+  commentId: P:LobsterFramework.AbilitySystem.Ability.CurrentConfig
+  id: CurrentConfig
+  parent: LobsterFramework.AbilitySystem.Ability
+  langs:
+  - csharp
+  - vb
+  name: CurrentConfig
+  nameWithType: Ability.CurrentConfig
+  fullName: LobsterFramework.AbilitySystem.Ability.CurrentConfig
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
+    id: CurrentConfig
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 30
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: protected Ability.AbilityConfig CurrentConfig { get; }
+    parameters: []
+    return:
+      type: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+    content.vb: Protected Property CurrentConfig As Ability.AbilityConfig
+  overload: LobsterFramework.AbilitySystem.Ability.CurrentConfig*
 - uid: LobsterFramework.AbilitySystem.Ability.RemoveConfig(System.String)
   commentId: M:LobsterFramework.AbilitySystem.Ability.RemoveConfig(System.String)
   id: RemoveConfig(System.String)
@@ -183,10 +241,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: RemoveConfig
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 92
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 81
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -219,10 +277,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: CleanUp
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 108
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 97
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -245,10 +303,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: CompareByExecutionPriority
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 111
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 100
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -274,10 +332,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: CompareByEnqueuePriority
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 116
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 105
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -303,10 +361,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: ConditionSatisfied
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 126
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 115
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -324,30 +382,31 @@ items:
     content.vb: Protected Overridable Function ConditionSatisfied(config As Ability.AbilityConfig) As Boolean
   overload: LobsterFramework.AbilitySystem.Ability.ConditionSatisfied*
 - uid: LobsterFramework.AbilitySystem.Ability.RunningCount
-  commentId: M:LobsterFramework.AbilitySystem.Ability.RunningCount
+  commentId: P:LobsterFramework.AbilitySystem.Ability.RunningCount
   id: RunningCount
   parent: LobsterFramework.AbilitySystem.Ability
   langs:
   - csharp
   - vb
-  name: RunningCount()
-  nameWithType: Ability.RunningCount()
-  fullName: LobsterFramework.AbilitySystem.Ability.RunningCount()
-  type: Method
+  name: RunningCount
+  nameWithType: Ability.RunningCount
+  fullName: LobsterFramework.AbilitySystem.Ability.RunningCount
+  type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: RunningCount
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 178
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 173
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
-    content: public int RunningCount()
+    content: public int RunningCount { get; }
+    parameters: []
     return:
       type: System.Int32
-    content.vb: Public Function RunningCount() As Integer
+    content.vb: Public ReadOnly Property RunningCount As Integer
   overload: LobsterFramework.AbilitySystem.Ability.RunningCount*
 - uid: LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution(System.String)
   commentId: M:LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution(System.String)
@@ -362,10 +421,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: HaltAbilityExecution
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 185
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 180
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -379,38 +438,38 @@ items:
       description: Name of the configuration to terminate
     return:
       type: System.Boolean
-      description: The status of this operation
+      description: true if the config exists and is halted, otherwise false
     content.vb: Public Function HaltAbilityExecution(name As String) As Boolean
   overload: LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution*
   nameWithType.vb: Ability.HaltAbilityExecution(String)
   fullName.vb: LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution(String)
   name.vb: HaltAbilityExecution(String)
-- uid: LobsterFramework.AbilitySystem.Ability.HaltAbilities
-  commentId: M:LobsterFramework.AbilitySystem.Ability.HaltAbilities
-  id: HaltAbilities
+- uid: LobsterFramework.AbilitySystem.Ability.HaltOnAllConfigs
+  commentId: M:LobsterFramework.AbilitySystem.Ability.HaltOnAllConfigs
+  id: HaltOnAllConfigs
   parent: LobsterFramework.AbilitySystem.Ability
   langs:
   - csharp
   - vb
-  name: HaltAbilities()
-  nameWithType: Ability.HaltAbilities()
-  fullName: LobsterFramework.AbilitySystem.Ability.HaltAbilities()
+  name: HaltOnAllConfigs()
+  nameWithType: Ability.HaltOnAllConfigs()
+  fullName: LobsterFramework.AbilitySystem.Ability.HaltOnAllConfigs()
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
-    id: HaltAbilities
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 208
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
+    id: HaltOnAllConfigs
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 203
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Halt the execution of all abilities
+  summary: Halt the execution of all configs
   example: []
   syntax:
-    content: public void HaltAbilities()
-    content.vb: Public Sub HaltAbilities()
-  overload: LobsterFramework.AbilitySystem.Ability.HaltAbilities*
+    content: public void HaltOnAllConfigs()
+    content.vb: Public Sub HaltOnAllConfigs()
+  overload: LobsterFramework.AbilitySystem.Ability.HaltOnAllConfigs*
 - uid: LobsterFramework.AbilitySystem.Ability.Initialize
   commentId: M:LobsterFramework.AbilitySystem.Ability.Initialize
   id: Initialize
@@ -424,10 +483,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: Initialize
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 219
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 214
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -450,10 +509,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: IsExecuting
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 226
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 221
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -486,10 +545,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: IsReady
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 232
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 227
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -505,78 +564,6 @@ items:
   nameWithType.vb: Ability.IsReady(String)
   fullName.vb: LobsterFramework.AbilitySystem.Ability.IsReady(String)
   name.vb: IsReady(String)
-- uid: LobsterFramework.AbilitySystem.Ability.OnStartUp
-  commentId: M:LobsterFramework.AbilitySystem.Ability.OnStartUp
-  id: OnStartUp
-  parent: LobsterFramework.AbilitySystem.Ability
-  langs:
-  - csharp
-  - vb
-  name: OnStartUp()
-  nameWithType: Ability.OnStartUp()
-  fullName: LobsterFramework.AbilitySystem.Ability.OnStartUp()
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
-    id: OnStartUp
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 244
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: public void OnStartUp()
-    content.vb: Public Sub OnStartUp()
-  overload: LobsterFramework.AbilitySystem.Ability.OnStartUp*
-- uid: LobsterFramework.AbilitySystem.Ability.OnTermination
-  commentId: M:LobsterFramework.AbilitySystem.Ability.OnTermination
-  id: OnTermination
-  parent: LobsterFramework.AbilitySystem.Ability
-  langs:
-  - csharp
-  - vb
-  name: OnTermination()
-  nameWithType: Ability.OnTermination()
-  fullName: LobsterFramework.AbilitySystem.Ability.OnTermination()
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
-    id: OnTermination
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 258
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: public void OnTermination()
-    content.vb: Public Sub OnTermination()
-  overload: LobsterFramework.AbilitySystem.Ability.OnTermination*
-- uid: LobsterFramework.AbilitySystem.Ability.ResetStatus
-  commentId: M:LobsterFramework.AbilitySystem.Ability.ResetStatus
-  id: ResetStatus
-  parent: LobsterFramework.AbilitySystem.Ability
-  langs:
-  - csharp
-  - vb
-  name: ResetStatus()
-  nameWithType: Ability.ResetStatus()
-  fullName: LobsterFramework.AbilitySystem.Ability.ResetStatus()
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
-    id: ResetStatus
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 268
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: public void ResetStatus()
-    content.vb: Public Sub ResetStatus()
-  overload: LobsterFramework.AbilitySystem.Ability.ResetStatus*
 - uid: LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
   commentId: M:LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
   id: SaveConfigsAsAsset
@@ -590,10 +577,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: SaveConfigsAsAsset
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 283
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 294
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -601,135 +588,198 @@ items:
     content: public void SaveConfigsAsAsset()
     content.vb: Public Sub SaveConfigsAsAsset()
   overload: LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset*
-- uid: LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  id: Action(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+- uid: LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityPipe)
+  commentId: M:LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityPipe)
+  id: Action(LobsterFramework.AbilitySystem.Ability.AbilityPipe)
   parent: LobsterFramework.AbilitySystem.Ability
   langs:
   - csharp
   - vb
-  name: Action(AbilityConfig)
-  nameWithType: Ability.Action(Ability.AbilityConfig)
-  fullName: LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  name: Action(AbilityPipe)
+  nameWithType: Ability.Action(Ability.AbilityPipe)
+  fullName: LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityPipe)
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: Action
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 295
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 306
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   summary: Main body of the ability execution, implement this to create different abilities!
   example: []
   syntax:
-    content: protected abstract bool Action(Ability.AbilityConfig config)
+    content: protected abstract bool Action(Ability.AbilityPipe pipe)
     parameters:
-    - id: config
-      type: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-      description: The config being executed with
+    - id: pipe
+      type: LobsterFramework.AbilitySystem.Ability.AbilityPipe
     return:
       type: System.Boolean
       description: False if the ability has finished, otherwise true
-    content.vb: Protected MustOverride Function Action(config As Ability.AbilityConfig) As Boolean
+    content.vb: Protected MustOverride Function Action(pipe As Ability.AbilityPipe) As Boolean
   overload: LobsterFramework.AbilitySystem.Ability.Action*
-- uid: LobsterFramework.AbilitySystem.Ability.OnActionFinish(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.OnActionFinish(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  id: OnActionFinish(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+- uid: LobsterFramework.AbilitySystem.Ability.OnActionFinish
+  commentId: M:LobsterFramework.AbilitySystem.Ability.OnActionFinish
+  id: OnActionFinish
   parent: LobsterFramework.AbilitySystem.Ability
   langs:
   - csharp
   - vb
-  name: OnActionFinish(AbilityConfig)
-  nameWithType: Ability.OnActionFinish(Ability.AbilityConfig)
-  fullName: LobsterFramework.AbilitySystem.Ability.OnActionFinish(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  name: OnActionFinish()
+  nameWithType: Ability.OnActionFinish()
+  fullName: LobsterFramework.AbilitySystem.Ability.OnActionFinish()
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: OnActionFinish
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 301
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 312
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   summary: Callback when the action is finished or halted, override this to clean up temporary data generated during the action.
   example: []
   syntax:
-    content: protected virtual void OnActionFinish(Ability.AbilityConfig config)
-    parameters:
-    - id: config
-      type: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-      description: The config being processed
-    content.vb: Protected Overridable Sub OnActionFinish(config As Ability.AbilityConfig)
+    content: protected virtual void OnActionFinish()
+    content.vb: Protected Overridable Sub OnActionFinish()
   overload: LobsterFramework.AbilitySystem.Ability.OnActionFinish*
-- uid: LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  id: OnAnimationInterrupt(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+- uid: LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(Animancer.AnimancerState)
+  commentId: M:LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(Animancer.AnimancerState)
+  id: OnAnimationInterrupt(Animancer.AnimancerState)
   parent: LobsterFramework.AbilitySystem.Ability
   langs:
   - csharp
   - vb
-  name: OnAnimationInterrupt(AbilityConfig)
-  nameWithType: Ability.OnAnimationInterrupt(Ability.AbilityConfig)
-  fullName: LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  name: OnAnimationInterrupt(AnimancerState)
+  nameWithType: Ability.OnAnimationInterrupt(AnimancerState)
+  fullName: LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(Animancer.AnimancerState)
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: OnAnimationInterrupt
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 307
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 318
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   summary: Callback when the animation of the ability is interrupted by other abilities. Useful when abilities relies on animation events.
   example: []
   syntax:
-    content: protected virtual void OnAnimationInterrupt(Ability.AbilityConfig config)
+    content: protected virtual void OnAnimationInterrupt(AnimancerState state)
     parameters:
-    - id: config
-      type: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-      description: ''
-    content.vb: Protected Overridable Sub OnAnimationInterrupt(config As Ability.AbilityConfig)
+    - id: state
+      type: Animancer.AnimancerState
+    content.vb: Protected Overridable Sub OnAnimationInterrupt(state As AnimancerState)
   overload: LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt*
-- uid: LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig,System.String)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig,System.String)
-  id: OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig,System.String)
+- uid: LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityPipe)
+  commentId: M:LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityPipe)
+  id: OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityPipe)
   parent: LobsterFramework.AbilitySystem.Ability
   langs:
   - csharp
   - vb
-  name: OnEnqueue(AbilityConfig, string)
-  nameWithType: Ability.OnEnqueue(Ability.AbilityConfig, string)
-  fullName: LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig, string)
+  name: OnEnqueue(AbilityPipe)
+  nameWithType: Ability.OnEnqueue(Ability.AbilityPipe)
+  fullName: LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityPipe)
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: OnEnqueue
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 323
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 335
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   summary: Callback when the ability is added to the action executing queue
   example: []
   syntax:
-    content: protected virtual void OnEnqueue(Ability.AbilityConfig config, string configName)
+    content: protected virtual void OnEnqueue(Ability.AbilityPipe pipe)
     parameters:
-    - id: config
-      type: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-      description: ''
+    - id: pipe
+      type: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+    content.vb: Protected Overridable Sub OnEnqueue(pipe As Ability.AbilityPipe)
+  overload: LobsterFramework.AbilitySystem.Ability.OnEnqueue*
+- uid: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary``1(System.String)
+  commentId: M:LobsterFramework.AbilitySystem.Ability.JoinAsSecondary``1(System.String)
+  id: JoinAsSecondary``1(System.String)
+  parent: LobsterFramework.AbilitySystem.Ability
+  langs:
+  - csharp
+  - vb
+  name: JoinAsSecondary<T>(string)
+  nameWithType: Ability.JoinAsSecondary<T>(string)
+  fullName: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary<T>(string)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
+    id: JoinAsSecondary
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 345
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  summary: >-
+    Attempt to join the current running ability with another ability that is running. 
+
+    On success, the current running ability will terminate no later than the joined ability.
+  example: []
+  syntax:
+    content: 'protected bool JoinAsSecondary<T>(string configName) where T : Ability'
+    parameters:
     - id: configName
       type: System.String
-      description: ''
-    content.vb: Protected Overridable Sub OnEnqueue(config As Ability.AbilityConfig, configName As String)
-  overload: LobsterFramework.AbilitySystem.Ability.OnEnqueue*
-  nameWithType.vb: Ability.OnEnqueue(Ability.AbilityConfig, String)
-  fullName.vb: LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig, String)
-  name.vb: OnEnqueue(AbilityConfig, String)
+      description: The name of the config of the running ability to be joined
+    typeParameters:
+    - id: T
+      description: The type of the ability to be joined with
+    return:
+      type: System.Boolean
+      description: Return true on success, otherwise false
+    content.vb: Protected Function JoinAsSecondary(Of T As Ability)(configName As String) As Boolean
+  overload: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary*
+  nameWithType.vb: Ability.JoinAsSecondary(Of T)(String)
+  fullName.vb: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(Of T)(String)
+  name.vb: JoinAsSecondary(Of T)(String)
+- uid: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type,System.String)
+  commentId: M:LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type,System.String)
+  id: JoinAsSecondary(System.Type,System.String)
+  parent: LobsterFramework.AbilitySystem.Ability
+  langs:
+  - csharp
+  - vb
+  name: JoinAsSecondary(Type, string)
+  nameWithType: Ability.JoinAsSecondary(Type, string)
+  fullName: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type, string)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
+    id: JoinAsSecondary
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 349
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: protected bool JoinAsSecondary(Type abilityType, string configName)
+    parameters:
+    - id: abilityType
+      type: System.Type
+    - id: configName
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Protected Function JoinAsSecondary(abilityType As Type, configName As String) As Boolean
+  overload: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary*
+  nameWithType.vb: Ability.JoinAsSecondary(Type, String)
+  fullName.vb: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary(System.Type, String)
+  name.vb: JoinAsSecondary(Type, String)
 - uid: LobsterFramework.AbilitySystem.Ability.HasConfig(System.String)
   commentId: M:LobsterFramework.AbilitySystem.Ability.HasConfig(System.String)
   id: HasConfig(System.String)
@@ -743,10 +793,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: HasConfig
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 340
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 407
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -762,66 +812,99 @@ items:
   nameWithType.vb: Ability.HasConfig(String)
   fullName.vb: LobsterFramework.AbilitySystem.Ability.HasConfig(String)
   name.vb: HasConfig(String)
-- uid: LobsterFramework.AbilitySystem.Ability.Signal(System.String)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.Signal(System.String)
-  id: Signal(System.String)
+- uid: LobsterFramework.AbilitySystem.Ability.Signal(System.String,UnityEngine.AnimationEvent)
+  commentId: M:LobsterFramework.AbilitySystem.Ability.Signal(System.String,UnityEngine.AnimationEvent)
+  id: Signal(System.String,UnityEngine.AnimationEvent)
   parent: LobsterFramework.AbilitySystem.Ability
   langs:
   - csharp
   - vb
-  name: Signal(string)
-  nameWithType: Ability.Signal(string)
-  fullName: LobsterFramework.AbilitySystem.Ability.Signal(string)
+  name: Signal(string, AnimationEvent)
+  nameWithType: Ability.Signal(string, AnimationEvent)
+  fullName: LobsterFramework.AbilitySystem.Ability.Signal(string, UnityEngine.AnimationEvent)
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: Signal
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 344
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 411
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
-    content: public void Signal(string configName)
+    content: public void Signal(string configName, AnimationEvent animationEvent)
     parameters:
     - id: configName
       type: System.String
-    content.vb: Public Sub Signal(configName As String)
+    - id: animationEvent
+      type: UnityEngine.AnimationEvent
+    content.vb: Public Sub Signal(configName As String, animationEvent As AnimationEvent)
   overload: LobsterFramework.AbilitySystem.Ability.Signal*
-  nameWithType.vb: Ability.Signal(String)
-  fullName.vb: LobsterFramework.AbilitySystem.Ability.Signal(String)
-  name.vb: Signal(String)
-- uid: LobsterFramework.AbilitySystem.Ability.SignalBody(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  commentId: M:LobsterFramework.AbilitySystem.Ability.SignalBody(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  id: SignalBody(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  nameWithType.vb: Ability.Signal(String, AnimationEvent)
+  fullName.vb: LobsterFramework.AbilitySystem.Ability.Signal(String, UnityEngine.AnimationEvent)
+  name.vb: Signal(String, AnimationEvent)
+- uid: LobsterFramework.AbilitySystem.Ability.Signal(UnityEngine.AnimationEvent)
+  commentId: M:LobsterFramework.AbilitySystem.Ability.Signal(UnityEngine.AnimationEvent)
+  id: Signal(UnityEngine.AnimationEvent)
   parent: LobsterFramework.AbilitySystem.Ability
   langs:
   - csharp
   - vb
-  name: SignalBody(AbilityConfig)
-  nameWithType: Ability.SignalBody(Ability.AbilityConfig)
-  fullName: LobsterFramework.AbilitySystem.Ability.SignalBody(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  name: Signal(AnimationEvent)
+  nameWithType: Ability.Signal(AnimationEvent)
+  fullName: LobsterFramework.AbilitySystem.Ability.Signal(UnityEngine.AnimationEvent)
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
-    id: SignalBody
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 354
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
+    id: Signal
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 423
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   summary: Override this to implement signal event handler
   example: []
   syntax:
-    content: protected virtual void SignalBody(Ability.AbilityConfig config)
+    content: protected virtual void Signal(AnimationEvent animationEvent)
     parameters:
-    - id: config
-      type: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-      description: Config to be signaled
-    content.vb: Protected Overridable Sub SignalBody(config As Ability.AbilityConfig)
-  overload: LobsterFramework.AbilitySystem.Ability.SignalBody*
+    - id: animationEvent
+      type: UnityEngine.AnimationEvent
+    content.vb: Protected Overridable Sub Signal(animationEvent As AnimationEvent)
+  overload: LobsterFramework.AbilitySystem.Ability.Signal*
+- uid: LobsterFramework.AbilitySystem.Ability.GetAbilityPipe(System.String)
+  commentId: M:LobsterFramework.AbilitySystem.Ability.GetAbilityPipe(System.String)
+  id: GetAbilityPipe(System.String)
+  parent: LobsterFramework.AbilitySystem.Ability
+  langs:
+  - csharp
+  - vb
+  name: GetAbilityPipe(string)
+  nameWithType: Ability.GetAbilityPipe(string)
+  fullName: LobsterFramework.AbilitySystem.Ability.GetAbilityPipe(string)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
+    id: GetAbilityPipe
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 425
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public Ability.AbilityPipe GetAbilityPipe(string configName)
+    parameters:
+    - id: configName
+      type: System.String
+    return:
+      type: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+    content.vb: Public Function GetAbilityPipe(configName As String) As Ability.AbilityPipe
+  overload: LobsterFramework.AbilitySystem.Ability.GetAbilityPipe*
+  nameWithType.vb: Ability.GetAbilityPipe(String)
+  fullName.vb: LobsterFramework.AbilitySystem.Ability.GetAbilityPipe(String)
+  name.vb: GetAbilityPipe(String)
 references:
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
@@ -2817,12 +2900,12 @@ references:
   name: RefAbilityPriority
   nameWithType: RefAbilityPriority
   fullName: RefAbilityPriority
-- uid: LobsterFramework.AbilitySystem.Ability.RemoveConfig*
-  commentId: Overload:LobsterFramework.AbilitySystem.Ability.RemoveConfig
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.RemoveConfig(System.String)
-  name: RemoveConfig
-  nameWithType: Ability.RemoveConfig
-  fullName: LobsterFramework.AbilitySystem.Ability.RemoveConfig
+- uid: LobsterFramework.AbilitySystem.Ability.CurrentConfigName*
+  commentId: Overload:LobsterFramework.AbilitySystem.Ability.CurrentConfigName
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CurrentConfigName
+  name: CurrentConfigName
+  nameWithType: Ability.CurrentConfigName
+  fullName: LobsterFramework.AbilitySystem.Ability.CurrentConfigName
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -2834,6 +2917,41 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: LobsterFramework.AbilitySystem.Ability.CurrentConfig*
+  commentId: Overload:LobsterFramework.AbilitySystem.Ability.CurrentConfig
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.CurrentConfig
+  name: CurrentConfig
+  nameWithType: Ability.CurrentConfig
+  fullName: LobsterFramework.AbilitySystem.Ability.CurrentConfig
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+  commentId: T:LobsterFramework.AbilitySystem.Ability.AbilityConfig
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.Ability.html
+  name: Ability.AbilityConfig
+  nameWithType: Ability.AbilityConfig
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.Ability
+    name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+    name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.Ability
+    name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+    name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
+- uid: LobsterFramework.AbilitySystem.Ability.RemoveConfig*
+  commentId: Overload:LobsterFramework.AbilitySystem.Ability.RemoveConfig
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.RemoveConfig(System.String)
+  name: RemoveConfig
+  nameWithType: Ability.RemoveConfig
+  fullName: LobsterFramework.AbilitySystem.Ability.RemoveConfig
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -2887,29 +3005,6 @@ references:
   name: ConditionSatisfied
   nameWithType: Ability.ConditionSatisfied
   fullName: LobsterFramework.AbilitySystem.Ability.ConditionSatisfied
-- uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-  commentId: T:LobsterFramework.AbilitySystem.Ability.AbilityConfig
-  parent: LobsterFramework.AbilitySystem
-  href: LobsterFramework.AbilitySystem.Ability.html
-  name: Ability.AbilityConfig
-  nameWithType: Ability.AbilityConfig
-  fullName: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-  spec.csharp:
-  - uid: LobsterFramework.AbilitySystem.Ability
-    name: Ability
-    href: LobsterFramework.AbilitySystem.Ability.html
-  - name: .
-  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-    name: AbilityConfig
-    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
-  spec.vb:
-  - uid: LobsterFramework.AbilitySystem.Ability
-    name: Ability
-    href: LobsterFramework.AbilitySystem.Ability.html
-  - name: .
-  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-    name: AbilityConfig
-    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
 - uid: LobsterFramework.AbilitySystem.Ability.RunningCount*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.RunningCount
   href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.RunningCount
@@ -2922,12 +3017,12 @@ references:
   name: HaltAbilityExecution
   nameWithType: Ability.HaltAbilityExecution
   fullName: LobsterFramework.AbilitySystem.Ability.HaltAbilityExecution
-- uid: LobsterFramework.AbilitySystem.Ability.HaltAbilities*
-  commentId: Overload:LobsterFramework.AbilitySystem.Ability.HaltAbilities
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.HaltAbilities
-  name: HaltAbilities
-  nameWithType: Ability.HaltAbilities
-  fullName: LobsterFramework.AbilitySystem.Ability.HaltAbilities
+- uid: LobsterFramework.AbilitySystem.Ability.HaltOnAllConfigs*
+  commentId: Overload:LobsterFramework.AbilitySystem.Ability.HaltOnAllConfigs
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.HaltOnAllConfigs
+  name: HaltOnAllConfigs
+  nameWithType: Ability.HaltOnAllConfigs
+  fullName: LobsterFramework.AbilitySystem.Ability.HaltOnAllConfigs
 - uid: LobsterFramework.AbilitySystem.Ability.Initialize*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.Initialize
   href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Initialize
@@ -2946,24 +3041,6 @@ references:
   name: IsReady
   nameWithType: Ability.IsReady
   fullName: LobsterFramework.AbilitySystem.Ability.IsReady
-- uid: LobsterFramework.AbilitySystem.Ability.OnStartUp*
-  commentId: Overload:LobsterFramework.AbilitySystem.Ability.OnStartUp
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnStartUp
-  name: OnStartUp
-  nameWithType: Ability.OnStartUp
-  fullName: LobsterFramework.AbilitySystem.Ability.OnStartUp
-- uid: LobsterFramework.AbilitySystem.Ability.OnTermination*
-  commentId: Overload:LobsterFramework.AbilitySystem.Ability.OnTermination
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnTermination
-  name: OnTermination
-  nameWithType: Ability.OnTermination
-  fullName: LobsterFramework.AbilitySystem.Ability.OnTermination
-- uid: LobsterFramework.AbilitySystem.Ability.ResetStatus*
-  commentId: Overload:LobsterFramework.AbilitySystem.Ability.ResetStatus
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.ResetStatus
-  name: ResetStatus
-  nameWithType: Ability.ResetStatus
-  fullName: LobsterFramework.AbilitySystem.Ability.ResetStatus
 - uid: LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
   href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
@@ -2972,28 +3049,78 @@ references:
   fullName: LobsterFramework.AbilitySystem.Ability.SaveConfigsAsAsset
 - uid: LobsterFramework.AbilitySystem.Ability.Action*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.Action
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Action(LobsterFramework.AbilitySystem.Ability.AbilityPipe)
   name: Action
   nameWithType: Ability.Action
   fullName: LobsterFramework.AbilitySystem.Ability.Action
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  commentId: T:LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.Ability.html
+  name: Ability.AbilityPipe
+  nameWithType: Ability.AbilityPipe
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.Ability
+    name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+    name: AbilityPipe
+    href: LobsterFramework.AbilitySystem.Ability.AbilityPipe.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.Ability
+    name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+    name: AbilityPipe
+    href: LobsterFramework.AbilitySystem.Ability.AbilityPipe.html
 - uid: LobsterFramework.AbilitySystem.Ability.OnActionFinish*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.OnActionFinish
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnActionFinish(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnActionFinish
   name: OnActionFinish
   nameWithType: Ability.OnActionFinish
   fullName: LobsterFramework.AbilitySystem.Ability.OnActionFinish
 - uid: LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt(Animancer.AnimancerState)
   name: OnAnimationInterrupt
   nameWithType: Ability.OnAnimationInterrupt
   fullName: LobsterFramework.AbilitySystem.Ability.OnAnimationInterrupt
+- uid: Animancer.AnimancerState
+  commentId: T:Animancer.AnimancerState
+  parent: Animancer
+  isExternal: true
+  name: AnimancerState
+  nameWithType: AnimancerState
+  fullName: Animancer.AnimancerState
+- uid: Animancer
+  commentId: N:Animancer
+  isExternal: true
+  name: Animancer
+  nameWithType: Animancer
+  fullName: Animancer
 - uid: LobsterFramework.AbilitySystem.Ability.OnEnqueue*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.OnEnqueue
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityConfig,System.String)
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.OnEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityPipe)
   name: OnEnqueue
   nameWithType: Ability.OnEnqueue
   fullName: LobsterFramework.AbilitySystem.Ability.OnEnqueue
+- uid: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary*
+  commentId: Overload:LobsterFramework.AbilitySystem.Ability.JoinAsSecondary
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.JoinAsSecondary``1(System.String)
+  name: JoinAsSecondary
+  nameWithType: Ability.JoinAsSecondary
+  fullName: LobsterFramework.AbilitySystem.Ability.JoinAsSecondary
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
 - uid: LobsterFramework.AbilitySystem.Ability.HasConfig*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.HasConfig
   href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.HasConfig(System.String)
@@ -3002,13 +3129,20 @@ references:
   fullName: LobsterFramework.AbilitySystem.Ability.HasConfig
 - uid: LobsterFramework.AbilitySystem.Ability.Signal*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.Signal
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Signal(System.String)
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.Signal(System.String,UnityEngine.AnimationEvent)
   name: Signal
   nameWithType: Ability.Signal
   fullName: LobsterFramework.AbilitySystem.Ability.Signal
-- uid: LobsterFramework.AbilitySystem.Ability.SignalBody*
-  commentId: Overload:LobsterFramework.AbilitySystem.Ability.SignalBody
-  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.SignalBody(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
-  name: SignalBody
-  nameWithType: Ability.SignalBody
-  fullName: LobsterFramework.AbilitySystem.Ability.SignalBody
+- uid: UnityEngine.AnimationEvent
+  commentId: T:UnityEngine.AnimationEvent
+  parent: UnityEngine
+  isExternal: true
+  name: AnimationEvent
+  nameWithType: AnimationEvent
+  fullName: UnityEngine.AnimationEvent
+- uid: LobsterFramework.AbilitySystem.Ability.GetAbilityPipe*
+  commentId: Overload:LobsterFramework.AbilitySystem.Ability.GetAbilityPipe
+  href: LobsterFramework.AbilitySystem.Ability.html#LobsterFramework.AbilitySystem.Ability.GetAbilityPipe(System.String)
+  name: GetAbilityPipe
+  nameWithType: Ability.GetAbilityPipe
+  fullName: LobsterFramework.AbilitySystem.Ability.GetAbilityPipe

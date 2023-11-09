@@ -1,0 +1,383 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Editors.EditorUtils
+  commentId: T:LobsterFramework.Editors.EditorUtils
+  id: EditorUtils
+  parent: LobsterFramework.Editors
+  children:
+  - LobsterFramework.Editors.EditorUtils.BoldButtonStyle
+  - LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color,System.String,UnityEngine.GUILayoutOption[])
+  - LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color,System.String,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])
+  - LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color,UnityEngine.GUIContent,UnityEngine.GUILayoutOption[])
+  - LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color,UnityEngine.GUIContent,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])
+  - LobsterFramework.Editors.EditorUtils.SetPropertyPointer(UnityEditor.SerializedProperty,System.String)
+  langs:
+  - csharp
+  - vb
+  name: EditorUtils
+  nameWithType: EditorUtils
+  fullName: LobsterFramework.Editors.EditorUtils
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/EditorUtils.cs
+    id: EditorUtils
+    path: ../Assets/Framework/Editor/EditorUtils.cs
+    startLine: 7
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: public class EditorUtils
+    content.vb: Public Class EditorUtils
+  inheritance:
+  - System.Object
+- uid: LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color,UnityEngine.GUIContent,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])
+  commentId: M:LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color,UnityEngine.GUIContent,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])
+  id: Button(UnityEngine.Color,UnityEngine.GUIContent,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])
+  parent: LobsterFramework.Editors.EditorUtils
+  langs:
+  - csharp
+  - vb
+  name: Button(Color, GUIContent, GUIStyle, params GUILayoutOption[])
+  nameWithType: EditorUtils.Button(Color, GUIContent, GUIStyle, params GUILayoutOption[])
+  fullName: LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color, UnityEngine.GUIContent, UnityEngine.GUIStyle, params UnityEngine.GUILayoutOption[])
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/EditorUtils.cs
+    id: Button
+    path: ../Assets/Framework/Editor/EditorUtils.cs
+    startLine: 10
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: public static bool Button(Color color, GUIContent content, GUIStyle style, params GUILayoutOption[] options)
+    parameters:
+    - id: color
+      type: UnityEngine.Color
+    - id: content
+      type: UnityEngine.GUIContent
+    - id: style
+      type: UnityEngine.GUIStyle
+    - id: options
+      type: UnityEngine.GUILayoutOption[]
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function Button(color As Color, content As GUIContent, style As GUIStyle, ParamArray options As GUILayoutOption()) As Boolean
+  overload: LobsterFramework.Editors.EditorUtils.Button*
+  nameWithType.vb: EditorUtils.Button(Color, GUIContent, GUIStyle, ParamArray GUILayoutOption())
+  fullName.vb: LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color, UnityEngine.GUIContent, UnityEngine.GUIStyle, ParamArray UnityEngine.GUILayoutOption())
+  name.vb: Button(Color, GUIContent, GUIStyle, ParamArray GUILayoutOption())
+- uid: LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color,UnityEngine.GUIContent,UnityEngine.GUILayoutOption[])
+  commentId: M:LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color,UnityEngine.GUIContent,UnityEngine.GUILayoutOption[])
+  id: Button(UnityEngine.Color,UnityEngine.GUIContent,UnityEngine.GUILayoutOption[])
+  parent: LobsterFramework.Editors.EditorUtils
+  langs:
+  - csharp
+  - vb
+  name: Button(Color, GUIContent, params GUILayoutOption[])
+  nameWithType: EditorUtils.Button(Color, GUIContent, params GUILayoutOption[])
+  fullName: LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color, UnityEngine.GUIContent, params UnityEngine.GUILayoutOption[])
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/EditorUtils.cs
+    id: Button
+    path: ../Assets/Framework/Editor/EditorUtils.cs
+    startLine: 19
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: public static bool Button(Color color, GUIContent content, params GUILayoutOption[] options)
+    parameters:
+    - id: color
+      type: UnityEngine.Color
+    - id: content
+      type: UnityEngine.GUIContent
+    - id: options
+      type: UnityEngine.GUILayoutOption[]
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function Button(color As Color, content As GUIContent, ParamArray options As GUILayoutOption()) As Boolean
+  overload: LobsterFramework.Editors.EditorUtils.Button*
+  nameWithType.vb: EditorUtils.Button(Color, GUIContent, ParamArray GUILayoutOption())
+  fullName.vb: LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color, UnityEngine.GUIContent, ParamArray UnityEngine.GUILayoutOption())
+  name.vb: Button(Color, GUIContent, ParamArray GUILayoutOption())
+- uid: LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color,System.String,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])
+  commentId: M:LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color,System.String,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])
+  id: Button(UnityEngine.Color,System.String,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])
+  parent: LobsterFramework.Editors.EditorUtils
+  langs:
+  - csharp
+  - vb
+  name: Button(Color, string, GUIStyle, params GUILayoutOption[])
+  nameWithType: EditorUtils.Button(Color, string, GUIStyle, params GUILayoutOption[])
+  fullName: LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color, string, UnityEngine.GUIStyle, params UnityEngine.GUILayoutOption[])
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/EditorUtils.cs
+    id: Button
+    path: ../Assets/Framework/Editor/EditorUtils.cs
+    startLine: 28
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: public static bool Button(Color color, string content, GUIStyle style, params GUILayoutOption[] options)
+    parameters:
+    - id: color
+      type: UnityEngine.Color
+    - id: content
+      type: System.String
+    - id: style
+      type: UnityEngine.GUIStyle
+    - id: options
+      type: UnityEngine.GUILayoutOption[]
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function Button(color As Color, content As String, style As GUIStyle, ParamArray options As GUILayoutOption()) As Boolean
+  overload: LobsterFramework.Editors.EditorUtils.Button*
+  nameWithType.vb: EditorUtils.Button(Color, String, GUIStyle, ParamArray GUILayoutOption())
+  fullName.vb: LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color, String, UnityEngine.GUIStyle, ParamArray UnityEngine.GUILayoutOption())
+  name.vb: Button(Color, String, GUIStyle, ParamArray GUILayoutOption())
+- uid: LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color,System.String,UnityEngine.GUILayoutOption[])
+  commentId: M:LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color,System.String,UnityEngine.GUILayoutOption[])
+  id: Button(UnityEngine.Color,System.String,UnityEngine.GUILayoutOption[])
+  parent: LobsterFramework.Editors.EditorUtils
+  langs:
+  - csharp
+  - vb
+  name: Button(Color, string, params GUILayoutOption[])
+  nameWithType: EditorUtils.Button(Color, string, params GUILayoutOption[])
+  fullName: LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color, string, params UnityEngine.GUILayoutOption[])
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/EditorUtils.cs
+    id: Button
+    path: ../Assets/Framework/Editor/EditorUtils.cs
+    startLine: 37
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: public static bool Button(Color color, string content, params GUILayoutOption[] options)
+    parameters:
+    - id: color
+      type: UnityEngine.Color
+    - id: content
+      type: System.String
+    - id: options
+      type: UnityEngine.GUILayoutOption[]
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function Button(color As Color, content As String, ParamArray options As GUILayoutOption()) As Boolean
+  overload: LobsterFramework.Editors.EditorUtils.Button*
+  nameWithType.vb: EditorUtils.Button(Color, String, ParamArray GUILayoutOption())
+  fullName.vb: LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color, String, ParamArray UnityEngine.GUILayoutOption())
+  name.vb: Button(Color, String, ParamArray GUILayoutOption())
+- uid: LobsterFramework.Editors.EditorUtils.BoldButtonStyle
+  commentId: M:LobsterFramework.Editors.EditorUtils.BoldButtonStyle
+  id: BoldButtonStyle
+  parent: LobsterFramework.Editors.EditorUtils
+  langs:
+  - csharp
+  - vb
+  name: BoldButtonStyle()
+  nameWithType: EditorUtils.BoldButtonStyle()
+  fullName: LobsterFramework.Editors.EditorUtils.BoldButtonStyle()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/EditorUtils.cs
+    id: BoldButtonStyle
+    path: ../Assets/Framework/Editor/EditorUtils.cs
+    startLine: 47
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: public static GUIStyle BoldButtonStyle()
+    return:
+      type: UnityEngine.GUIStyle
+    content.vb: Public Shared Function BoldButtonStyle() As GUIStyle
+  overload: LobsterFramework.Editors.EditorUtils.BoldButtonStyle*
+- uid: LobsterFramework.Editors.EditorUtils.SetPropertyPointer(UnityEditor.SerializedProperty,System.String)
+  commentId: M:LobsterFramework.Editors.EditorUtils.SetPropertyPointer(UnityEditor.SerializedProperty,System.String)
+  id: SetPropertyPointer(UnityEditor.SerializedProperty,System.String)
+  parent: LobsterFramework.Editors.EditorUtils
+  langs:
+  - csharp
+  - vb
+  name: SetPropertyPointer(SerializedProperty, string)
+  nameWithType: EditorUtils.SetPropertyPointer(SerializedProperty, string)
+  fullName: LobsterFramework.Editors.EditorUtils.SetPropertyPointer(UnityEditor.SerializedProperty, string)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/EditorUtils.cs
+    id: SetPropertyPointer
+    path: ../Assets/Framework/Editor/EditorUtils.cs
+    startLine: 54
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: public static bool SetPropertyPointer(SerializedProperty property, string name)
+    parameters:
+    - id: property
+      type: UnityEditor.SerializedProperty
+    - id: name
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function SetPropertyPointer([property] As SerializedProperty, name As String) As Boolean
+  overload: LobsterFramework.Editors.EditorUtils.SetPropertyPointer*
+  nameWithType.vb: EditorUtils.SetPropertyPointer(SerializedProperty, String)
+  fullName.vb: LobsterFramework.Editors.EditorUtils.SetPropertyPointer(UnityEditor.SerializedProperty, String)
+  name.vb: SetPropertyPointer(SerializedProperty, String)
+references:
+- uid: LobsterFramework.Editors
+  commentId: N:LobsterFramework.Editors
+  href: LobsterFramework.html
+  name: LobsterFramework.Editors
+  nameWithType: LobsterFramework.Editors
+  fullName: LobsterFramework.Editors
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Editors
+    name: Editors
+    href: LobsterFramework.Editors.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Editors
+    name: Editors
+    href: LobsterFramework.Editors.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Editors.EditorUtils.Button*
+  commentId: Overload:LobsterFramework.Editors.EditorUtils.Button
+  href: LobsterFramework.Editors.EditorUtils.html#LobsterFramework.Editors.EditorUtils.Button(UnityEngine.Color,UnityEngine.GUIContent,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])
+  name: Button
+  nameWithType: EditorUtils.Button
+  fullName: LobsterFramework.Editors.EditorUtils.Button
+- uid: UnityEngine.Color
+  commentId: T:UnityEngine.Color
+  parent: UnityEngine
+  isExternal: true
+  name: Color
+  nameWithType: Color
+  fullName: UnityEngine.Color
+- uid: UnityEngine.GUIContent
+  commentId: T:UnityEngine.GUIContent
+  parent: UnityEngine
+  isExternal: true
+  name: GUIContent
+  nameWithType: GUIContent
+  fullName: UnityEngine.GUIContent
+- uid: UnityEngine.GUIStyle
+  commentId: T:UnityEngine.GUIStyle
+  parent: UnityEngine
+  isExternal: true
+  name: GUIStyle
+  nameWithType: GUIStyle
+  fullName: UnityEngine.GUIStyle
+- uid: UnityEngine.GUILayoutOption[]
+  isExternal: true
+  name: GUILayoutOption[]
+  nameWithType: GUILayoutOption[]
+  fullName: UnityEngine.GUILayoutOption[]
+  nameWithType.vb: GUILayoutOption()
+  fullName.vb: UnityEngine.GUILayoutOption()
+  name.vb: GUILayoutOption()
+  spec.csharp:
+  - uid: UnityEngine.GUILayoutOption
+    name: GUILayoutOption
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: UnityEngine.GUILayoutOption
+    name: GUILayoutOption
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: LobsterFramework.Editors.EditorUtils.BoldButtonStyle*
+  commentId: Overload:LobsterFramework.Editors.EditorUtils.BoldButtonStyle
+  href: LobsterFramework.Editors.EditorUtils.html#LobsterFramework.Editors.EditorUtils.BoldButtonStyle
+  name: BoldButtonStyle
+  nameWithType: EditorUtils.BoldButtonStyle
+  fullName: LobsterFramework.Editors.EditorUtils.BoldButtonStyle
+- uid: LobsterFramework.Editors.EditorUtils.SetPropertyPointer*
+  commentId: Overload:LobsterFramework.Editors.EditorUtils.SetPropertyPointer
+  href: LobsterFramework.Editors.EditorUtils.html#LobsterFramework.Editors.EditorUtils.SetPropertyPointer(UnityEditor.SerializedProperty,System.String)
+  name: SetPropertyPointer
+  nameWithType: EditorUtils.SetPropertyPointer
+  fullName: LobsterFramework.Editors.EditorUtils.SetPropertyPointer
+- uid: UnityEditor.SerializedProperty
+  commentId: T:UnityEditor.SerializedProperty
+  parent: UnityEditor
+  isExternal: true
+  name: SerializedProperty
+  nameWithType: SerializedProperty
+  fullName: UnityEditor.SerializedProperty
+- uid: UnityEditor
+  commentId: N:UnityEditor
+  isExternal: true
+  name: UnityEditor
+  nameWithType: UnityEditor
+  fullName: UnityEditor

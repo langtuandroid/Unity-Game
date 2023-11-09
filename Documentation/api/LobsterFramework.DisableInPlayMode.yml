@@ -1,0 +1,87 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.DisableInPlayMode
+  commentId: T:LobsterFramework.DisableInPlayMode
+  id: DisableInPlayMode
+  parent: LobsterFramework
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: DisableInPlayMode
+  nameWithType: DisableInPlayMode
+  fullName: LobsterFramework.DisableInPlayMode
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Attributes/PropertyAttribute/DisableInPlayMode.cs
+    id: DisableInPlayMode
+    path: ../Assets/Framework/Attributes/PropertyAttribute/DisableInPlayMode.cs
+    startLine: 9
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  summary: Disable editing of this property in editor while in Play Mode
+  example: []
+  syntax:
+    content: 'public class DisableInPlayMode : PropertyAttribute'
+    content.vb: Public Class DisableInPlayMode Inherits PropertyAttribute
+  inheritance:
+  - System.Object
+  - System.Attribute
+  - UnityEngine.PropertyAttribute
+  inheritedMembers:
+  - UnityEngine.PropertyAttribute.order
+references:
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Attribute
+  commentId: T:System.Attribute
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.attribute
+  name: Attribute
+  nameWithType: Attribute
+  fullName: System.Attribute
+- uid: UnityEngine.PropertyAttribute
+  commentId: T:UnityEngine.PropertyAttribute
+  parent: UnityEngine
+  isExternal: true
+  name: PropertyAttribute
+  nameWithType: PropertyAttribute
+  fullName: UnityEngine.PropertyAttribute
+- uid: UnityEngine.PropertyAttribute.order
+  commentId: P:UnityEngine.PropertyAttribute.order
+  parent: UnityEngine.PropertyAttribute
+  isExternal: true
+  name: order
+  nameWithType: PropertyAttribute.order
+  fullName: UnityEngine.PropertyAttribute.order
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine

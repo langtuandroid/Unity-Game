@@ -14,12 +14,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Interactors/GeneralInteractor.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/GeneralInteractor.cs
     id: GeneralInteractor
-    path: ../Assets/GameScripts/Interactors/GeneralInteractor.cs
-    startLine: 6
+    path: ../Assets/Framework/Interaction/GeneralInteractor.cs
+    startLine: 4
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.Interaction
   syntax:
     content: 'public class GeneralInteractor : Interactor'
@@ -38,10 +38,6 @@ items:
   - LobsterFramework.Interaction.Interactor.OnEnable
   - LobsterFramework.Interaction.Interactor.OnDisable
   - LobsterFramework.Interaction.Interactor.OnInteract(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.InteractionType)
-  - LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  - LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  - LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  - LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
   - LobsterFramework.Interaction.Interactor.Interact(System.Type,LobsterFramework.Interaction.InteractionType)
   - LobsterFramework.Interaction.Interactor.Interact(LobsterFramework.Interaction.InteractionType)
   - LobsterFramework.Interaction.Interactor.Interact(LobsterFramework.Interaction.InteractionType,LobsterFramework.Interaction.InteractableObject)
@@ -344,126 +340,6 @@ references:
   - uid: LobsterFramework.Interaction.InteractionType
     name: InteractionType
     href: LobsterFramework.Interaction.InteractionType.html
-  - name: )
-- uid: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  commentId: M:LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  parent: LobsterFramework.Interaction.Interactor
-  href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  name: AddInteractable(InteractableObject)
-  nameWithType: Interactor.AddInteractable(InteractableObject)
-  fullName: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  spec.csharp:
-  - uid: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-    name: AddInteractable
-    href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  - name: (
-  - uid: LobsterFramework.Interaction.InteractableObject
-    name: InteractableObject
-    href: LobsterFramework.Interaction.InteractableObject.html
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-    name: AddInteractable
-    href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  - name: (
-  - uid: LobsterFramework.Interaction.InteractableObject
-    name: InteractableObject
-    href: LobsterFramework.Interaction.InteractableObject.html
-  - name: )
-- uid: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  commentId: M:LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  parent: LobsterFramework.Interaction.Interactor
-  href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  name: RemoveInteractable(InteractableObject)
-  nameWithType: Interactor.RemoveInteractable(InteractableObject)
-  fullName: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  spec.csharp:
-  - uid: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-    name: RemoveInteractable
-    href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  - name: (
-  - uid: LobsterFramework.Interaction.InteractableObject
-    name: InteractableObject
-    href: LobsterFramework.Interaction.InteractableObject.html
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-    name: RemoveInteractable
-    href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  - name: (
-  - uid: LobsterFramework.Interaction.InteractableObject
-    name: InteractableObject
-    href: LobsterFramework.Interaction.InteractableObject.html
-  - name: )
-- uid: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  commentId: M:LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  parent: LobsterFramework.Interaction.Interactor
-  href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  name: AddInteractable(InteractableObject, Interactor)
-  nameWithType: Interactor.AddInteractable(InteractableObject, Interactor)
-  fullName: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject, LobsterFramework.Interaction.Interactor)
-  spec.csharp:
-  - uid: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-    name: AddInteractable
-    href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  - name: (
-  - uid: LobsterFramework.Interaction.InteractableObject
-    name: InteractableObject
-    href: LobsterFramework.Interaction.InteractableObject.html
-  - name: ','
-  - name: " "
-  - uid: LobsterFramework.Interaction.Interactor
-    name: Interactor
-    href: LobsterFramework.Interaction.Interactor.html
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-    name: AddInteractable
-    href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  - name: (
-  - uid: LobsterFramework.Interaction.InteractableObject
-    name: InteractableObject
-    href: LobsterFramework.Interaction.InteractableObject.html
-  - name: ','
-  - name: " "
-  - uid: LobsterFramework.Interaction.Interactor
-    name: Interactor
-    href: LobsterFramework.Interaction.Interactor.html
-  - name: )
-- uid: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  commentId: M:LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  parent: LobsterFramework.Interaction.Interactor
-  href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  name: RemoveInteractable(InteractableObject, Interactor)
-  nameWithType: Interactor.RemoveInteractable(InteractableObject, Interactor)
-  fullName: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject, LobsterFramework.Interaction.Interactor)
-  spec.csharp:
-  - uid: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-    name: RemoveInteractable
-    href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  - name: (
-  - uid: LobsterFramework.Interaction.InteractableObject
-    name: InteractableObject
-    href: LobsterFramework.Interaction.InteractableObject.html
-  - name: ','
-  - name: " "
-  - uid: LobsterFramework.Interaction.Interactor
-    name: Interactor
-    href: LobsterFramework.Interaction.Interactor.html
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-    name: RemoveInteractable
-    href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  - name: (
-  - uid: LobsterFramework.Interaction.InteractableObject
-    name: InteractableObject
-    href: LobsterFramework.Interaction.InteractableObject.html
-  - name: ','
-  - name: " "
-  - uid: LobsterFramework.Interaction.Interactor
-    name: Interactor
-    href: LobsterFramework.Interaction.Interactor.html
   - name: )
 - uid: LobsterFramework.Interaction.Interactor.Interact(System.Type,LobsterFramework.Interaction.InteractionType)
   commentId: M:LobsterFramework.Interaction.Interactor.Interact(System.Type,LobsterFramework.Interaction.InteractionType)

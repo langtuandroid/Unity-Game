@@ -5,21 +5,24 @@ items:
   id: AIController
   parent: LobsterFramework.AI
   children:
-  - LobsterFramework.AI.AIController.AutoRotation
-  - LobsterFramework.AI.AIController.BackStep
+  - LobsterFramework.AI.AIController.AbilityRunner
   - LobsterFramework.AI.AIController.ChaseTarget
-  - LobsterFramework.AI.AIController.ClearPath
   - LobsterFramework.AI.AIController.GetControllerData``1
+  - LobsterFramework.AI.AIController.GetEntity
   - LobsterFramework.AI.AIController.GetTargetDistance
+  - LobsterFramework.AI.AIController.GetUtil``1
+  - LobsterFramework.AI.AIController.KeepDistanceFromTarget(UnityEngine.Vector3,System.Single,System.Single)
   - LobsterFramework.AI.AIController.LookTowards
   - LobsterFramework.AI.AIController.MoveInDirection(UnityEngine.Vector3,System.Single)
-  - LobsterFramework.AI.AIController.NextWayPoint
+  - LobsterFramework.AI.AIController.PatrolLine(UnityEngine.Vector3)
+  - LobsterFramework.AI.AIController.PlayerAbilityRunner
   - LobsterFramework.AI.AIController.ReachedDestination
+  - LobsterFramework.AI.AIController.ResetTarget
   - LobsterFramework.AI.AIController.SearchTarget(System.Single)
-  - LobsterFramework.AI.AIController.Stopped
   - LobsterFramework.AI.AIController.TargetInRange(System.Single)
-  - LobsterFramework.AI.AIController.TargetVisible(UnityEngine.Vector3,System.Single)
+  - LobsterFramework.AI.AIController.TargetVisible(UnityEngine.Vector3,UnityEngine.Vector3,System.Single)
   - LobsterFramework.AI.AIController.Wander(System.Int32)
+  - LobsterFramework.AI.AIController.stopChaseTarget
   - LobsterFramework.AI.AIController.target
   langs:
   - csharp
@@ -30,12 +33,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Controllers/AIController.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
     id: AIController
-    path: ../Assets/GameScripts/Controllers/AIController.cs
-    startLine: 10
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 12
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.AI
   syntax:
     content: 'public class AIController : MonoBehaviour'
@@ -170,18 +173,130 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Controllers/AIController.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
     id: target
-    path: ../Assets/GameScripts/Controllers/AIController.cs
-    startLine: 16
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 22
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.AI
   syntax:
     content: public Entity target
     return:
-      type: LobsterFramework.EntitySystem.Entity
+      type: LobsterFramework.Entity
     content.vb: Public target As Entity
+- uid: LobsterFramework.AI.AIController.AbilityRunner
+  commentId: P:LobsterFramework.AI.AIController.AbilityRunner
+  id: AbilityRunner
+  parent: LobsterFramework.AI.AIController
+  langs:
+  - csharp
+  - vb
+  name: AbilityRunner
+  nameWithType: AIController.AbilityRunner
+  fullName: LobsterFramework.AI.AIController.AbilityRunner
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
+    id: AbilityRunner
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 32
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: public AbilityRunner AbilityRunner { get; }
+    parameters: []
+    return:
+      type: LobsterFramework.AbilitySystem.AbilityRunner
+    content.vb: Public ReadOnly Property AbilityRunner As AbilityRunner
+  overload: LobsterFramework.AI.AIController.AbilityRunner*
+- uid: LobsterFramework.AI.AIController.PlayerAbilityRunner
+  commentId: P:LobsterFramework.AI.AIController.PlayerAbilityRunner
+  id: PlayerAbilityRunner
+  parent: LobsterFramework.AI.AIController
+  langs:
+  - csharp
+  - vb
+  name: PlayerAbilityRunner
+  nameWithType: AIController.PlayerAbilityRunner
+  fullName: LobsterFramework.AI.AIController.PlayerAbilityRunner
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
+    id: PlayerAbilityRunner
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 33
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: public AbilityRunner PlayerAbilityRunner { get; }
+    parameters: []
+    return:
+      type: LobsterFramework.AbilitySystem.AbilityRunner
+    content.vb: Public ReadOnly Property PlayerAbilityRunner As AbilityRunner
+  overload: LobsterFramework.AI.AIController.PlayerAbilityRunner*
+- uid: LobsterFramework.AI.AIController.GetEntity
+  commentId: P:LobsterFramework.AI.AIController.GetEntity
+  id: GetEntity
+  parent: LobsterFramework.AI.AIController
+  langs:
+  - csharp
+  - vb
+  name: GetEntity
+  nameWithType: AIController.GetEntity
+  fullName: LobsterFramework.AI.AIController.GetEntity
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
+    id: GetEntity
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 34
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: public Entity GetEntity { get; }
+    parameters: []
+    return:
+      type: LobsterFramework.Entity
+    content.vb: Public ReadOnly Property GetEntity As Entity
+  overload: LobsterFramework.AI.AIController.GetEntity*
+- uid: LobsterFramework.AI.AIController.GetUtil``1
+  commentId: M:LobsterFramework.AI.AIController.GetUtil``1
+  id: GetUtil``1
+  parent: LobsterFramework.AI.AIController
+  langs:
+  - csharp
+  - vb
+  name: GetUtil<T>()
+  nameWithType: AIController.GetUtil<T>()
+  fullName: LobsterFramework.AI.AIController.GetUtil<T>()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
+    id: GetUtil
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 72
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: 'public T GetUtil<T>() where T : MonoBehaviour'
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+    content.vb: Public Function GetUtil(Of T As MonoBehaviour)() As T
+  overload: LobsterFramework.AI.AIController.GetUtil*
+  nameWithType.vb: AIController.GetUtil(Of T)()
+  fullName.vb: LobsterFramework.AI.AIController.GetUtil(Of T)()
+  name.vb: GetUtil(Of T)()
 - uid: LobsterFramework.AI.AIController.GetControllerData``1
   commentId: M:LobsterFramework.AI.AIController.GetControllerData``1
   id: GetControllerData``1
@@ -195,12 +310,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Controllers/AIController.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
     id: GetControllerData
-    path: ../Assets/GameScripts/Controllers/AIController.cs
-    startLine: 70
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 93
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.AI
   syntax:
     content: 'public T GetControllerData<T>() where T : ControllerData'
@@ -226,12 +341,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Controllers/AIController.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
     id: TargetInRange
-    path: ../Assets/GameScripts/Controllers/AIController.cs
-    startLine: 80
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 103
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.AI
   syntax:
     content: public bool TargetInRange(float range)
@@ -258,12 +373,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Controllers/AIController.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
     id: GetTargetDistance
-    path: ../Assets/GameScripts/Controllers/AIController.cs
-    startLine: 85
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 108
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.AI
   syntax:
     content: public float GetTargetDistance()
@@ -284,17 +399,65 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Controllers/AIController.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
     id: ChaseTarget
-    path: ../Assets/GameScripts/Controllers/AIController.cs
-    startLine: 90
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 113
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.AI
   syntax:
     content: public void ChaseTarget()
     content.vb: Public Sub ChaseTarget()
   overload: LobsterFramework.AI.AIController.ChaseTarget*
+- uid: LobsterFramework.AI.AIController.ResetTarget
+  commentId: M:LobsterFramework.AI.AIController.ResetTarget
+  id: ResetTarget
+  parent: LobsterFramework.AI.AIController
+  langs:
+  - csharp
+  - vb
+  name: ResetTarget()
+  nameWithType: AIController.ResetTarget()
+  fullName: LobsterFramework.AI.AIController.ResetTarget()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
+    id: ResetTarget
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 121
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: public void ResetTarget()
+    content.vb: Public Sub ResetTarget()
+  overload: LobsterFramework.AI.AIController.ResetTarget*
+- uid: LobsterFramework.AI.AIController.stopChaseTarget
+  commentId: M:LobsterFramework.AI.AIController.stopChaseTarget
+  id: stopChaseTarget
+  parent: LobsterFramework.AI.AIController
+  langs:
+  - csharp
+  - vb
+  name: stopChaseTarget()
+  nameWithType: AIController.stopChaseTarget()
+  fullName: LobsterFramework.AI.AIController.stopChaseTarget()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
+    id: stopChaseTarget
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 129
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: public void stopChaseTarget()
+    content.vb: Public Sub stopChaseTarget()
+  overload: LobsterFramework.AI.AIController.stopChaseTarget*
 - uid: LobsterFramework.AI.AIController.SearchTarget(System.Single)
   commentId: M:LobsterFramework.AI.AIController.SearchTarget(System.Single)
   id: SearchTarget(System.Single)
@@ -308,12 +471,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Controllers/AIController.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
     id: SearchTarget
-    path: ../Assets/GameScripts/Controllers/AIController.cs
-    startLine: 98
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 136
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.AI
   syntax:
     content: public bool SearchTarget(float sightRange)
@@ -327,40 +490,103 @@ items:
   nameWithType.vb: AIController.SearchTarget(Single)
   fullName.vb: LobsterFramework.AI.AIController.SearchTarget(Single)
   name.vb: SearchTarget(Single)
-- uid: LobsterFramework.AI.AIController.TargetVisible(UnityEngine.Vector3,System.Single)
-  commentId: M:LobsterFramework.AI.AIController.TargetVisible(UnityEngine.Vector3,System.Single)
-  id: TargetVisible(UnityEngine.Vector3,System.Single)
+- uid: LobsterFramework.AI.AIController.TargetVisible(UnityEngine.Vector3,UnityEngine.Vector3,System.Single)
+  commentId: M:LobsterFramework.AI.AIController.TargetVisible(UnityEngine.Vector3,UnityEngine.Vector3,System.Single)
+  id: TargetVisible(UnityEngine.Vector3,UnityEngine.Vector3,System.Single)
   parent: LobsterFramework.AI.AIController
   langs:
   - csharp
   - vb
-  name: TargetVisible(Vector3, float)
-  nameWithType: AIController.TargetVisible(Vector3, float)
-  fullName: LobsterFramework.AI.AIController.TargetVisible(UnityEngine.Vector3, float)
+  name: TargetVisible(Vector3, Vector3, float)
+  nameWithType: AIController.TargetVisible(Vector3, Vector3, float)
+  fullName: LobsterFramework.AI.AIController.TargetVisible(UnityEngine.Vector3, UnityEngine.Vector3, float)
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Controllers/AIController.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
     id: TargetVisible
-    path: ../Assets/GameScripts/Controllers/AIController.cs
-    startLine: 121
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 158
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.AI
   syntax:
-    content: public bool TargetVisible(Vector3 position, float range)
+    content: public bool TargetVisible(Vector3 position, Vector3 direction, float range)
     parameters:
     - id: position
+      type: UnityEngine.Vector3
+    - id: direction
       type: UnityEngine.Vector3
     - id: range
       type: System.Single
     return:
       type: System.Boolean
-    content.vb: Public Function TargetVisible(position As Vector3, range As Single) As Boolean
+    content.vb: Public Function TargetVisible(position As Vector3, direction As Vector3, range As Single) As Boolean
   overload: LobsterFramework.AI.AIController.TargetVisible*
-  nameWithType.vb: AIController.TargetVisible(Vector3, Single)
-  fullName.vb: LobsterFramework.AI.AIController.TargetVisible(UnityEngine.Vector3, Single)
-  name.vb: TargetVisible(Vector3, Single)
+  nameWithType.vb: AIController.TargetVisible(Vector3, Vector3, Single)
+  fullName.vb: LobsterFramework.AI.AIController.TargetVisible(UnityEngine.Vector3, UnityEngine.Vector3, Single)
+  name.vb: TargetVisible(Vector3, Vector3, Single)
+- uid: LobsterFramework.AI.AIController.PatrolLine(UnityEngine.Vector3)
+  commentId: M:LobsterFramework.AI.AIController.PatrolLine(UnityEngine.Vector3)
+  id: PatrolLine(UnityEngine.Vector3)
+  parent: LobsterFramework.AI.AIController
+  langs:
+  - csharp
+  - vb
+  name: PatrolLine(Vector3)
+  nameWithType: AIController.PatrolLine(Vector3)
+  fullName: LobsterFramework.AI.AIController.PatrolLine(UnityEngine.Vector3)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
+    id: PatrolLine
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 181
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: public void PatrolLine(Vector3 postion)
+    parameters:
+    - id: postion
+      type: UnityEngine.Vector3
+    content.vb: Public Sub PatrolLine(postion As Vector3)
+  overload: LobsterFramework.AI.AIController.PatrolLine*
+- uid: LobsterFramework.AI.AIController.KeepDistanceFromTarget(UnityEngine.Vector3,System.Single,System.Single)
+  commentId: M:LobsterFramework.AI.AIController.KeepDistanceFromTarget(UnityEngine.Vector3,System.Single,System.Single)
+  id: KeepDistanceFromTarget(UnityEngine.Vector3,System.Single,System.Single)
+  parent: LobsterFramework.AI.AIController
+  langs:
+  - csharp
+  - vb
+  name: KeepDistanceFromTarget(Vector3, float, float)
+  nameWithType: AIController.KeepDistanceFromTarget(Vector3, float, float)
+  fullName: LobsterFramework.AI.AIController.KeepDistanceFromTarget(UnityEngine.Vector3, float, float)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
+    id: KeepDistanceFromTarget
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 185
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: public void KeepDistanceFromTarget(Vector3 position, float distanceNeeded, float movedistance)
+    parameters:
+    - id: position
+      type: UnityEngine.Vector3
+    - id: distanceNeeded
+      type: System.Single
+    - id: movedistance
+      type: System.Single
+    content.vb: Public Sub KeepDistanceFromTarget(position As Vector3, distanceNeeded As Single, movedistance As Single)
+  overload: LobsterFramework.AI.AIController.KeepDistanceFromTarget*
+  nameWithType.vb: AIController.KeepDistanceFromTarget(Vector3, Single, Single)
+  fullName.vb: LobsterFramework.AI.AIController.KeepDistanceFromTarget(UnityEngine.Vector3, Single, Single)
+  name.vb: KeepDistanceFromTarget(Vector3, Single, Single)
 - uid: LobsterFramework.AI.AIController.Wander(System.Int32)
   commentId: M:LobsterFramework.AI.AIController.Wander(System.Int32)
   id: Wander(System.Int32)
@@ -374,12 +600,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Controllers/AIController.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
     id: Wander
-    path: ../Assets/GameScripts/Controllers/AIController.cs
-    startLine: 135
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 192
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.AI
   syntax:
     content: public void Wander(int wanderRadius)
@@ -404,41 +630,17 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Controllers/AIController.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
     id: LookTowards
-    path: ../Assets/GameScripts/Controllers/AIController.cs
-    startLine: 146
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 203
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.AI
   syntax:
     content: public void LookTowards()
     content.vb: Public Sub LookTowards()
   overload: LobsterFramework.AI.AIController.LookTowards*
-- uid: LobsterFramework.AI.AIController.BackStep
-  commentId: M:LobsterFramework.AI.AIController.BackStep
-  id: BackStep
-  parent: LobsterFramework.AI.AIController
-  langs:
-  - csharp
-  - vb
-  name: BackStep()
-  nameWithType: AIController.BackStep()
-  fullName: LobsterFramework.AI.AIController.BackStep()
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Controllers/AIController.cs
-    id: BackStep
-    path: ../Assets/GameScripts/Controllers/AIController.cs
-    startLine: 156
-  assemblies:
-  - GameScripts
-  namespace: LobsterFramework.AI
-  syntax:
-    content: public void BackStep()
-    content.vb: Public Sub BackStep()
-  overload: LobsterFramework.AI.AIController.BackStep*
 - uid: LobsterFramework.AI.AIController.MoveInDirection(UnityEngine.Vector3,System.Single)
   commentId: M:LobsterFramework.AI.AIController.MoveInDirection(UnityEngine.Vector3,System.Single)
   id: MoveInDirection(UnityEngine.Vector3,System.Single)
@@ -452,12 +654,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Controllers/AIController.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
     id: MoveInDirection
-    path: ../Assets/GameScripts/Controllers/AIController.cs
-    startLine: 165
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 208
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.AI
   syntax:
     content: public void MoveInDirection(Vector3 direction, float distance)
@@ -471,110 +673,6 @@ items:
   nameWithType.vb: AIController.MoveInDirection(Vector3, Single)
   fullName.vb: LobsterFramework.AI.AIController.MoveInDirection(UnityEngine.Vector3, Single)
   name.vb: MoveInDirection(Vector3, Single)
-- uid: LobsterFramework.AI.AIController.ClearPath
-  commentId: M:LobsterFramework.AI.AIController.ClearPath
-  id: ClearPath
-  parent: LobsterFramework.AI.AIController
-  langs:
-  - csharp
-  - vb
-  name: ClearPath()
-  nameWithType: AIController.ClearPath()
-  fullName: LobsterFramework.AI.AIController.ClearPath()
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Controllers/AIController.cs
-    id: ClearPath
-    path: ../Assets/GameScripts/Controllers/AIController.cs
-    startLine: 184
-  assemblies:
-  - GameScripts
-  namespace: LobsterFramework.AI
-  syntax:
-    content: public void ClearPath()
-    content.vb: Public Sub ClearPath()
-  overload: LobsterFramework.AI.AIController.ClearPath*
-- uid: LobsterFramework.AI.AIController.NextWayPoint
-  commentId: M:LobsterFramework.AI.AIController.NextWayPoint
-  id: NextWayPoint
-  parent: LobsterFramework.AI.AIController
-  langs:
-  - csharp
-  - vb
-  name: NextWayPoint()
-  nameWithType: AIController.NextWayPoint()
-  fullName: LobsterFramework.AI.AIController.NextWayPoint()
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Controllers/AIController.cs
-    id: NextWayPoint
-    path: ../Assets/GameScripts/Controllers/AIController.cs
-    startLine: 190
-  assemblies:
-  - GameScripts
-  namespace: LobsterFramework.AI
-  syntax:
-    content: public Vector3 NextWayPoint()
-    return:
-      type: UnityEngine.Vector3
-    content.vb: Public Function NextWayPoint() As Vector3
-  overload: LobsterFramework.AI.AIController.NextWayPoint*
-- uid: LobsterFramework.AI.AIController.Stopped
-  commentId: P:LobsterFramework.AI.AIController.Stopped
-  id: Stopped
-  parent: LobsterFramework.AI.AIController
-  langs:
-  - csharp
-  - vb
-  name: Stopped
-  nameWithType: AIController.Stopped
-  fullName: LobsterFramework.AI.AIController.Stopped
-  type: Property
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Controllers/AIController.cs
-    id: Stopped
-    path: ../Assets/GameScripts/Controllers/AIController.cs
-    startLine: 195
-  assemblies:
-  - GameScripts
-  namespace: LobsterFramework.AI
-  syntax:
-    content: public bool Stopped { get; set; }
-    parameters: []
-    return:
-      type: System.Boolean
-    content.vb: Public Property Stopped As Boolean
-  overload: LobsterFramework.AI.AIController.Stopped*
-- uid: LobsterFramework.AI.AIController.AutoRotation
-  commentId: P:LobsterFramework.AI.AIController.AutoRotation
-  id: AutoRotation
-  parent: LobsterFramework.AI.AIController
-  langs:
-  - csharp
-  - vb
-  name: AutoRotation
-  nameWithType: AIController.AutoRotation
-  fullName: LobsterFramework.AI.AIController.AutoRotation
-  type: Property
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Controllers/AIController.cs
-    id: AutoRotation
-    path: ../Assets/GameScripts/Controllers/AIController.cs
-    startLine: 201
-  assemblies:
-  - GameScripts
-  namespace: LobsterFramework.AI
-  syntax:
-    content: public bool AutoRotation { get; set; }
-    parameters: []
-    return:
-      type: System.Boolean
-    content.vb: Public Property AutoRotation As Boolean
-  overload: LobsterFramework.AI.AIController.AutoRotation*
 - uid: LobsterFramework.AI.AIController.ReachedDestination
   commentId: M:LobsterFramework.AI.AIController.ReachedDestination
   id: ReachedDestination
@@ -588,12 +686,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Controllers/AIController.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/AIController.cs
     id: ReachedDestination
-    path: ../Assets/GameScripts/Controllers/AIController.cs
-    startLine: 207
+    path: ../Assets/Framework/StateMachine/AIController.cs
+    startLine: 227
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.AI
   syntax:
     content: public bool ReachedDestination()
@@ -4834,41 +4932,72 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: LobsterFramework.EntitySystem.Entity
-  commentId: T:LobsterFramework.EntitySystem.Entity
-  parent: LobsterFramework.EntitySystem
-  href: LobsterFramework.EntitySystem.Entity.html
+- uid: LobsterFramework.Entity
+  commentId: T:LobsterFramework.Entity
+  parent: LobsterFramework
+  href: LobsterFramework.Entity.html
   name: Entity
   nameWithType: Entity
-  fullName: LobsterFramework.EntitySystem.Entity
-- uid: LobsterFramework.EntitySystem
-  commentId: N:LobsterFramework.EntitySystem
+  fullName: LobsterFramework.Entity
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
   href: LobsterFramework.html
-  name: LobsterFramework.EntitySystem
-  nameWithType: LobsterFramework.EntitySystem
-  fullName: LobsterFramework.EntitySystem
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: LobsterFramework.AI.AIController.AbilityRunner*
+  commentId: Overload:LobsterFramework.AI.AIController.AbilityRunner
+  href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.AbilityRunner
+  name: AbilityRunner
+  nameWithType: AIController.AbilityRunner
+  fullName: LobsterFramework.AI.AIController.AbilityRunner
+- uid: LobsterFramework.AbilitySystem.AbilityRunner
+  commentId: T:LobsterFramework.AbilitySystem.AbilityRunner
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html
+  name: AbilityRunner
+  nameWithType: AbilityRunner
+  fullName: LobsterFramework.AbilitySystem.AbilityRunner
+- uid: LobsterFramework.AbilitySystem
+  commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
+  name: LobsterFramework.AbilitySystem
+  nameWithType: LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem
   spec.csharp:
   - uid: LobsterFramework
     name: LobsterFramework
     href: LobsterFramework.html
   - name: .
-  - uid: LobsterFramework.EntitySystem
-    name: EntitySystem
-    href: LobsterFramework.EntitySystem.html
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
   spec.vb:
   - uid: LobsterFramework
     name: LobsterFramework
     href: LobsterFramework.html
   - name: .
-  - uid: LobsterFramework.EntitySystem
-    name: EntitySystem
-    href: LobsterFramework.EntitySystem.html
-- uid: LobsterFramework.AI.AIController.GetControllerData*
-  commentId: Overload:LobsterFramework.AI.AIController.GetControllerData
-  href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.GetControllerData``1
-  name: GetControllerData
-  nameWithType: AIController.GetControllerData
-  fullName: LobsterFramework.AI.AIController.GetControllerData
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+- uid: LobsterFramework.AI.AIController.PlayerAbilityRunner*
+  commentId: Overload:LobsterFramework.AI.AIController.PlayerAbilityRunner
+  href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.PlayerAbilityRunner
+  name: PlayerAbilityRunner
+  nameWithType: AIController.PlayerAbilityRunner
+  fullName: LobsterFramework.AI.AIController.PlayerAbilityRunner
+- uid: LobsterFramework.AI.AIController.GetEntity*
+  commentId: Overload:LobsterFramework.AI.AIController.GetEntity
+  href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.GetEntity
+  name: GetEntity
+  nameWithType: AIController.GetEntity
+  fullName: LobsterFramework.AI.AIController.GetEntity
+- uid: LobsterFramework.AI.AIController.GetUtil*
+  commentId: Overload:LobsterFramework.AI.AIController.GetUtil
+  href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.GetUtil``1
+  name: GetUtil
+  nameWithType: AIController.GetUtil
+  fullName: LobsterFramework.AI.AIController.GetUtil
 - uid: '{T}'
   commentId: '!:T'
   definition: T
@@ -4879,6 +5008,12 @@ references:
   name: T
   nameWithType: T
   fullName: T
+- uid: LobsterFramework.AI.AIController.GetControllerData*
+  commentId: Overload:LobsterFramework.AI.AIController.GetControllerData
+  href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.GetControllerData``1
+  name: GetControllerData
+  nameWithType: AIController.GetControllerData
+  fullName: LobsterFramework.AI.AIController.GetControllerData
 - uid: LobsterFramework.AI.AIController.TargetInRange*
   commentId: Overload:LobsterFramework.AI.AIController.TargetInRange
   href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.TargetInRange(System.Single)
@@ -4919,6 +5054,18 @@ references:
   name: ChaseTarget
   nameWithType: AIController.ChaseTarget
   fullName: LobsterFramework.AI.AIController.ChaseTarget
+- uid: LobsterFramework.AI.AIController.ResetTarget*
+  commentId: Overload:LobsterFramework.AI.AIController.ResetTarget
+  href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.ResetTarget
+  name: ResetTarget
+  nameWithType: AIController.ResetTarget
+  fullName: LobsterFramework.AI.AIController.ResetTarget
+- uid: LobsterFramework.AI.AIController.stopChaseTarget*
+  commentId: Overload:LobsterFramework.AI.AIController.stopChaseTarget
+  href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.stopChaseTarget
+  name: stopChaseTarget
+  nameWithType: AIController.stopChaseTarget
+  fullName: LobsterFramework.AI.AIController.stopChaseTarget
 - uid: LobsterFramework.AI.AIController.SearchTarget*
   commentId: Overload:LobsterFramework.AI.AIController.SearchTarget
   href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.SearchTarget(System.Single)
@@ -4927,7 +5074,7 @@ references:
   fullName: LobsterFramework.AI.AIController.SearchTarget
 - uid: LobsterFramework.AI.AIController.TargetVisible*
   commentId: Overload:LobsterFramework.AI.AIController.TargetVisible
-  href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.TargetVisible(UnityEngine.Vector3,System.Single)
+  href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.TargetVisible(UnityEngine.Vector3,UnityEngine.Vector3,System.Single)
   name: TargetVisible
   nameWithType: AIController.TargetVisible
   fullName: LobsterFramework.AI.AIController.TargetVisible
@@ -4938,6 +5085,18 @@ references:
   name: Vector3
   nameWithType: Vector3
   fullName: UnityEngine.Vector3
+- uid: LobsterFramework.AI.AIController.PatrolLine*
+  commentId: Overload:LobsterFramework.AI.AIController.PatrolLine
+  href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.PatrolLine(UnityEngine.Vector3)
+  name: PatrolLine
+  nameWithType: AIController.PatrolLine
+  fullName: LobsterFramework.AI.AIController.PatrolLine
+- uid: LobsterFramework.AI.AIController.KeepDistanceFromTarget*
+  commentId: Overload:LobsterFramework.AI.AIController.KeepDistanceFromTarget
+  href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.KeepDistanceFromTarget(UnityEngine.Vector3,System.Single,System.Single)
+  name: KeepDistanceFromTarget
+  nameWithType: AIController.KeepDistanceFromTarget
+  fullName: LobsterFramework.AI.AIController.KeepDistanceFromTarget
 - uid: LobsterFramework.AI.AIController.Wander*
   commentId: Overload:LobsterFramework.AI.AIController.Wander
   href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.Wander(System.Int32)
@@ -4961,42 +5120,12 @@ references:
   name: LookTowards
   nameWithType: AIController.LookTowards
   fullName: LobsterFramework.AI.AIController.LookTowards
-- uid: LobsterFramework.AI.AIController.BackStep*
-  commentId: Overload:LobsterFramework.AI.AIController.BackStep
-  href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.BackStep
-  name: BackStep
-  nameWithType: AIController.BackStep
-  fullName: LobsterFramework.AI.AIController.BackStep
 - uid: LobsterFramework.AI.AIController.MoveInDirection*
   commentId: Overload:LobsterFramework.AI.AIController.MoveInDirection
   href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.MoveInDirection(UnityEngine.Vector3,System.Single)
   name: MoveInDirection
   nameWithType: AIController.MoveInDirection
   fullName: LobsterFramework.AI.AIController.MoveInDirection
-- uid: LobsterFramework.AI.AIController.ClearPath*
-  commentId: Overload:LobsterFramework.AI.AIController.ClearPath
-  href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.ClearPath
-  name: ClearPath
-  nameWithType: AIController.ClearPath
-  fullName: LobsterFramework.AI.AIController.ClearPath
-- uid: LobsterFramework.AI.AIController.NextWayPoint*
-  commentId: Overload:LobsterFramework.AI.AIController.NextWayPoint
-  href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.NextWayPoint
-  name: NextWayPoint
-  nameWithType: AIController.NextWayPoint
-  fullName: LobsterFramework.AI.AIController.NextWayPoint
-- uid: LobsterFramework.AI.AIController.Stopped*
-  commentId: Overload:LobsterFramework.AI.AIController.Stopped
-  href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.Stopped
-  name: Stopped
-  nameWithType: AIController.Stopped
-  fullName: LobsterFramework.AI.AIController.Stopped
-- uid: LobsterFramework.AI.AIController.AutoRotation*
-  commentId: Overload:LobsterFramework.AI.AIController.AutoRotation
-  href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.AutoRotation
-  name: AutoRotation
-  nameWithType: AIController.AutoRotation
-  fullName: LobsterFramework.AI.AIController.AutoRotation
 - uid: LobsterFramework.AI.AIController.ReachedDestination*
   commentId: Overload:LobsterFramework.AI.AIController.ReachedDestination
   href: LobsterFramework.AI.AIController.html#LobsterFramework.AI.AIController.ReachedDestination

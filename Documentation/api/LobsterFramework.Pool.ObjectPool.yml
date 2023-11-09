@@ -6,7 +6,6 @@ items:
   parent: LobsterFramework.Pool
   children:
   - LobsterFramework.Pool.ObjectPool.GetObject(System.String,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform,System.Boolean)
-  - LobsterFramework.Pool.ObjectPool.Instance
   langs:
   - csharp
   - vb
@@ -16,9 +15,9 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Object Pooling/ObjectPool.cs
+      path: H:/Stuff/BallField/Assets/Framework/Object Pooling/ObjectPool.cs
     id: ObjectPool
-    path: ../Assets/Framework/Components/Object Pooling/ObjectPool.cs
+    path: ../Assets/Framework/Object Pooling/ObjectPool.cs
     startLine: 6
   assemblies:
   - LobsterFramework
@@ -143,33 +142,6 @@ items:
   - UnityEngine.Object.ToString
   - UnityEngine.Object.name
   - UnityEngine.Object.hideFlags
-- uid: LobsterFramework.Pool.ObjectPool.Instance
-  commentId: P:LobsterFramework.Pool.ObjectPool.Instance
-  id: Instance
-  parent: LobsterFramework.Pool.ObjectPool
-  langs:
-  - csharp
-  - vb
-  name: Instance
-  nameWithType: ObjectPool.Instance
-  fullName: LobsterFramework.Pool.ObjectPool.Instance
-  type: Property
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Object Pooling/ObjectPool.cs
-    id: Instance
-    path: ../Assets/Framework/Components/Object Pooling/ObjectPool.cs
-    startLine: 67
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.Pool
-  syntax:
-    content: public static ObjectPool Instance { get; }
-    parameters: []
-    return:
-      type: LobsterFramework.Pool.ObjectPool
-    content.vb: Public Shared ReadOnly Property Instance As ObjectPool
-  overload: LobsterFramework.Pool.ObjectPool.Instance*
 - uid: LobsterFramework.Pool.ObjectPool.GetObject(System.String,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform,System.Boolean)
   commentId: M:LobsterFramework.Pool.ObjectPool.GetObject(System.String,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform,System.Boolean)
   id: GetObject(System.String,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform,System.Boolean)
@@ -183,15 +155,15 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Object Pooling/ObjectPool.cs
+      path: H:/Stuff/BallField/Assets/Framework/Object Pooling/ObjectPool.cs
     id: GetObject
-    path: ../Assets/Framework/Components/Object Pooling/ObjectPool.cs
-    startLine: 90
+    path: ../Assets/Framework/Object Pooling/ObjectPool.cs
+    startLine: 67
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Pool
   syntax:
-    content: public GameObject GetObject(string tag, Vector3 position, Quaternion rotation, Transform parentTransform = null, bool keepWorldPosition = false)
+    content: public static GameObject GetObject(string tag, Vector3 position, Quaternion rotation, Transform parentTransform = null, bool keepWorldPosition = false)
     parameters:
     - id: tag
       type: System.String
@@ -205,7 +177,7 @@ items:
       type: System.Boolean
     return:
       type: UnityEngine.GameObject
-    content.vb: Public Function GetObject(tag As String, position As Vector3, rotation As Quaternion, parentTransform As Transform = Nothing, keepWorldPosition As Boolean = False) As GameObject
+    content.vb: Public Shared Function GetObject(tag As String, position As Vector3, rotation As Quaternion, parentTransform As Transform = Nothing, keepWorldPosition As Boolean = False) As GameObject
   overload: LobsterFramework.Pool.ObjectPool.GetObject*
   nameWithType.vb: ObjectPool.GetObject(String, Vector3, Quaternion, Transform, Boolean)
   fullName.vb: LobsterFramework.Pool.ObjectPool.GetObject(String, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform, Boolean)
@@ -4443,19 +4415,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: LobsterFramework.Pool.ObjectPool.Instance*
-  commentId: Overload:LobsterFramework.Pool.ObjectPool.Instance
-  href: LobsterFramework.Pool.ObjectPool.html#LobsterFramework.Pool.ObjectPool.Instance
-  name: Instance
-  nameWithType: ObjectPool.Instance
-  fullName: LobsterFramework.Pool.ObjectPool.Instance
-- uid: LobsterFramework.Pool.ObjectPool
-  commentId: T:LobsterFramework.Pool.ObjectPool
-  parent: LobsterFramework.Pool
-  href: LobsterFramework.Pool.ObjectPool.html
-  name: ObjectPool
-  nameWithType: ObjectPool
-  fullName: LobsterFramework.Pool.ObjectPool
 - uid: LobsterFramework.Pool.ObjectPool.GetObject*
   commentId: Overload:LobsterFramework.Pool.ObjectPool.GetObject
   href: LobsterFramework.Pool.ObjectPool.html#LobsterFramework.Pool.ObjectPool.GetObject(System.String,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform,System.Boolean)

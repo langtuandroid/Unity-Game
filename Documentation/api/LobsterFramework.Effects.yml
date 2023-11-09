@@ -1,0 +1,60 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Effects
+  commentId: N:LobsterFramework.Effects
+  id: LobsterFramework.Effects
+  children:
+  - LobsterFramework.Effects.Effect
+  - LobsterFramework.Effects.SilentEffect
+  - LobsterFramework.Effects.StunEffect
+  langs:
+  - csharp
+  - vb
+  name: LobsterFramework.Effects
+  nameWithType: LobsterFramework.Effects
+  fullName: LobsterFramework.Effects
+  type: Namespace
+  assemblies:
+  - LobsterFramework
+references:
+- uid: LobsterFramework.Effects.SilentEffect
+  commentId: T:LobsterFramework.Effects.SilentEffect
+  href: LobsterFramework.Effects.SilentEffect.html
+  name: SilentEffect
+  nameWithType: SilentEffect
+  fullName: LobsterFramework.Effects.SilentEffect
+- uid: LobsterFramework.Effects.Effect
+  commentId: T:LobsterFramework.Effects.Effect
+  parent: LobsterFramework.Effects
+  href: LobsterFramework.Effects.Effect.html
+  name: Effect
+  nameWithType: Effect
+  fullName: LobsterFramework.Effects.Effect
+- uid: LobsterFramework.Effects.StunEffect
+  commentId: T:LobsterFramework.Effects.StunEffect
+  href: LobsterFramework.Effects.StunEffect.html
+  name: StunEffect
+  nameWithType: StunEffect
+  fullName: LobsterFramework.Effects.StunEffect
+- uid: LobsterFramework.Effects
+  commentId: N:LobsterFramework.Effects
+  href: LobsterFramework.html
+  name: LobsterFramework.Effects
+  nameWithType: LobsterFramework.Effects
+  fullName: LobsterFramework.Effects
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Effects
+    name: Effects
+    href: LobsterFramework.Effects.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Effects
+    name: Effects
+    href: LobsterFramework.Effects.html

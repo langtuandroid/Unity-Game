@@ -5,8 +5,8 @@ items:
   id: AbilityStat
   parent: LobsterFramework.AbilitySystem
   children:
-  - LobsterFramework.AbilitySystem.AbilityStat.CleanUp
   - LobsterFramework.AbilitySystem.AbilityStat.Initialize
+  - LobsterFramework.AbilitySystem.AbilityStat.OnClose
   - LobsterFramework.AbilitySystem.AbilityStat.Reset
   - LobsterFramework.AbilitySystem.AbilityStat.Update
   langs:
@@ -18,9 +18,9 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Action/AbilityStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/AbilityStat.cs
     id: AbilityStat
-    path: ../Assets/Framework/Scriptable Objects/Action/AbilityStat.cs
+    path: ../Assets/Framework/AbilitySystem/AbilityStat.cs
     startLine: 6
   assemblies:
   - LobsterFramework
@@ -32,6 +32,8 @@ items:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
+  derivedClasses:
+  - LobsterFramework.AbilitySystem.DamageModifier
   inheritedMembers:
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
@@ -96,9 +98,9 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Action/AbilityStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/AbilityStat.cs
     id: Reset
-    path: ../Assets/Framework/Scriptable Objects/Action/AbilityStat.cs
+    path: ../Assets/Framework/AbilitySystem/AbilityStat.cs
     startLine: 8
   assemblies:
   - LobsterFramework
@@ -120,9 +122,9 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Action/AbilityStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/AbilityStat.cs
     id: Initialize
-    path: ../Assets/Framework/Scriptable Objects/Action/AbilityStat.cs
+    path: ../Assets/Framework/AbilitySystem/AbilityStat.cs
     startLine: 17
   assemblies:
   - LobsterFramework
@@ -133,22 +135,22 @@ items:
     content: public virtual void Initialize()
     content.vb: Public Overridable Sub Initialize()
   overload: LobsterFramework.AbilitySystem.AbilityStat.Initialize*
-- uid: LobsterFramework.AbilitySystem.AbilityStat.CleanUp
-  commentId: M:LobsterFramework.AbilitySystem.AbilityStat.CleanUp
-  id: CleanUp
+- uid: LobsterFramework.AbilitySystem.AbilityStat.OnClose
+  commentId: M:LobsterFramework.AbilitySystem.AbilityStat.OnClose
+  id: OnClose
   parent: LobsterFramework.AbilitySystem.AbilityStat
   langs:
   - csharp
   - vb
-  name: CleanUp()
-  nameWithType: AbilityStat.CleanUp()
-  fullName: LobsterFramework.AbilitySystem.AbilityStat.CleanUp()
+  name: OnClose()
+  nameWithType: AbilityStat.OnClose()
+  fullName: LobsterFramework.AbilitySystem.AbilityStat.OnClose()
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Action/AbilityStat.cs
-    id: CleanUp
-    path: ../Assets/Framework/Scriptable Objects/Action/AbilityStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/AbilityStat.cs
+    id: OnClose
+    path: ../Assets/Framework/AbilitySystem/AbilityStat.cs
     startLine: 22
   assemblies:
   - LobsterFramework
@@ -156,9 +158,9 @@ items:
   summary: Callback before the parent operator is disabled
   example: []
   syntax:
-    content: public virtual void CleanUp()
-    content.vb: Public Overridable Sub CleanUp()
-  overload: LobsterFramework.AbilitySystem.AbilityStat.CleanUp*
+    content: public virtual void OnClose()
+    content.vb: Public Overridable Sub OnClose()
+  overload: LobsterFramework.AbilitySystem.AbilityStat.OnClose*
 - uid: LobsterFramework.AbilitySystem.AbilityStat.Update
   commentId: M:LobsterFramework.AbilitySystem.AbilityStat.Update
   id: Update
@@ -172,9 +174,9 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Action/AbilityStat.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/AbilityStat.cs
     id: Update
-    path: ../Assets/Framework/Scriptable Objects/Action/AbilityStat.cs
+    path: ../Assets/Framework/AbilitySystem/AbilityStat.cs
     startLine: 27
   assemblies:
   - LobsterFramework
@@ -2179,12 +2181,12 @@ references:
   name: Initialize
   nameWithType: AbilityStat.Initialize
   fullName: LobsterFramework.AbilitySystem.AbilityStat.Initialize
-- uid: LobsterFramework.AbilitySystem.AbilityStat.CleanUp*
-  commentId: Overload:LobsterFramework.AbilitySystem.AbilityStat.CleanUp
-  href: LobsterFramework.AbilitySystem.AbilityStat.html#LobsterFramework.AbilitySystem.AbilityStat.CleanUp
-  name: CleanUp
-  nameWithType: AbilityStat.CleanUp
-  fullName: LobsterFramework.AbilitySystem.AbilityStat.CleanUp
+- uid: LobsterFramework.AbilitySystem.AbilityStat.OnClose*
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilityStat.OnClose
+  href: LobsterFramework.AbilitySystem.AbilityStat.html#LobsterFramework.AbilitySystem.AbilityStat.OnClose
+  name: OnClose
+  nameWithType: AbilityStat.OnClose
+  fullName: LobsterFramework.AbilitySystem.AbilityStat.OnClose
 - uid: LobsterFramework.AbilitySystem.AbilityStat.Update*
   commentId: Overload:LobsterFramework.AbilitySystem.AbilityStat.Update
   href: LobsterFramework.AbilitySystem.AbilityStat.html#LobsterFramework.AbilitySystem.AbilityStat.Update

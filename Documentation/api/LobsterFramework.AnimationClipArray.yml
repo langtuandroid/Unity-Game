@@ -1,0 +1,857 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AnimationClipArray
+  commentId: T:LobsterFramework.AnimationClipArray
+  id: AnimationClipArray
+  parent: LobsterFramework
+  children:
+  - LobsterFramework.AnimationClipArray.op_Implicit(LobsterFramework.AnimationClipArray)~UnityEngine.AnimationClip[]
+  - LobsterFramework.AnimationClipArray.op_Implicit(UnityEngine.AnimationClip[])~LobsterFramework.AnimationClipArray
+  langs:
+  - csharp
+  - vb
+  name: AnimationClipArray
+  nameWithType: AnimationClipArray
+  fullName: LobsterFramework.AnimationClipArray
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    id: AnimationClipArray
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    startLine: 73
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class AnimationClipArray : SerializableArray<AnimationClip>
+    content.vb: >-
+      <Serializable>
+
+      Public Class AnimationClipArray Inherits SerializableArray(Of AnimationClip)
+  inheritance:
+  - System.Object
+  - LobsterFramework.SerializableArray{UnityEngine.AnimationClip}
+  inheritedMembers:
+  - LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.items
+  - LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Item(System.Int32)
+  - LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Count
+  - LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.IsReadOnly
+  - LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Add(UnityEngine.AnimationClip)
+  - LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Clear
+  - LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Contains(UnityEngine.AnimationClip)
+  - LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.CopyTo(UnityEngine.AnimationClip[],System.Int32)
+  - LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.GetEnumerator
+  - LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.IndexOf(UnityEngine.AnimationClip)
+  - LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Insert(System.Int32,UnityEngine.AnimationClip)
+  - LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Remove(UnityEngine.AnimationClip)
+  - LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.RemoveAt(System.Int32)
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: LobsterFramework.AnimationClipArray.op_Implicit(LobsterFramework.AnimationClipArray)~UnityEngine.AnimationClip[]
+  commentId: M:LobsterFramework.AnimationClipArray.op_Implicit(LobsterFramework.AnimationClipArray)~UnityEngine.AnimationClip[]
+  id: op_Implicit(LobsterFramework.AnimationClipArray)~UnityEngine.AnimationClip[]
+  parent: LobsterFramework.AnimationClipArray
+  langs:
+  - csharp
+  - vb
+  name: implicit operator AnimationClip[](AnimationClipArray)
+  nameWithType: AnimationClipArray.implicit operator AnimationClip[](AnimationClipArray)
+  fullName: LobsterFramework.AnimationClipArray.implicit operator UnityEngine.AnimationClip[](LobsterFramework.AnimationClipArray)
+  type: Operator
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    id: op_Implicit
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    startLine: 75
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public static implicit operator AnimationClip[](AnimationClipArray array)
+    parameters:
+    - id: array
+      type: LobsterFramework.AnimationClipArray
+    return:
+      type: UnityEngine.AnimationClip[]
+    content.vb: Public Shared Widening Operator CType(array As AnimationClipArray) As AnimationClip()
+  overload: LobsterFramework.AnimationClipArray.op_Implicit*
+  nameWithType.vb: AnimationClipArray.CType(AnimationClipArray)
+  fullName.vb: LobsterFramework.AnimationClipArray.CType(LobsterFramework.AnimationClipArray)
+  name.vb: CType(AnimationClipArray)
+- uid: LobsterFramework.AnimationClipArray.op_Implicit(UnityEngine.AnimationClip[])~LobsterFramework.AnimationClipArray
+  commentId: M:LobsterFramework.AnimationClipArray.op_Implicit(UnityEngine.AnimationClip[])~LobsterFramework.AnimationClipArray
+  id: op_Implicit(UnityEngine.AnimationClip[])~LobsterFramework.AnimationClipArray
+  parent: LobsterFramework.AnimationClipArray
+  langs:
+  - csharp
+  - vb
+  name: implicit operator AnimationClipArray(AnimationClip[])
+  nameWithType: AnimationClipArray.implicit operator AnimationClipArray(AnimationClip[])
+  fullName: LobsterFramework.AnimationClipArray.implicit operator LobsterFramework.AnimationClipArray(UnityEngine.AnimationClip[])
+  type: Operator
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    id: op_Implicit
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    startLine: 76
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public static implicit operator AnimationClipArray(AnimationClip[] array)
+    parameters:
+    - id: array
+      type: UnityEngine.AnimationClip[]
+    return:
+      type: LobsterFramework.AnimationClipArray
+    content.vb: Public Shared Widening Operator CType(array As AnimationClip()) As AnimationClipArray
+  overload: LobsterFramework.AnimationClipArray.op_Implicit*
+  nameWithType.vb: AnimationClipArray.CType(AnimationClip())
+  fullName.vb: LobsterFramework.AnimationClipArray.CType(UnityEngine.AnimationClip())
+  name.vb: CType(AnimationClip())
+references:
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}
+  commentId: T:LobsterFramework.SerializableArray{UnityEngine.AnimationClip}
+  parent: LobsterFramework
+  definition: LobsterFramework.SerializableArray`1
+  href: LobsterFramework.SerializableArray-1.html
+  name: SerializableArray<AnimationClip>
+  nameWithType: SerializableArray<AnimationClip>
+  fullName: LobsterFramework.SerializableArray<UnityEngine.AnimationClip>
+  nameWithType.vb: SerializableArray(Of AnimationClip)
+  fullName.vb: LobsterFramework.SerializableArray(Of UnityEngine.AnimationClip)
+  name.vb: SerializableArray(Of AnimationClip)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray`1
+    name: SerializableArray
+    href: LobsterFramework.SerializableArray-1.html
+  - name: <
+  - uid: UnityEngine.AnimationClip
+    name: AnimationClip
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray`1
+    name: SerializableArray
+    href: LobsterFramework.SerializableArray-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UnityEngine.AnimationClip
+    name: AnimationClip
+    isExternal: true
+  - name: )
+- uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.items
+  commentId: F:LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.items
+  parent: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}
+  definition: LobsterFramework.SerializableArray`1.items
+  href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.items
+  name: items
+  nameWithType: SerializableArray<AnimationClip>.items
+  fullName: LobsterFramework.SerializableArray<UnityEngine.AnimationClip>.items
+  nameWithType.vb: SerializableArray(Of AnimationClip).items
+  fullName.vb: LobsterFramework.SerializableArray(Of UnityEngine.AnimationClip).items
+- uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Item(System.Int32)
+  commentId: P:LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Item(System.Int32)
+  parent: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}
+  definition: LobsterFramework.SerializableArray`1.Item(System.Int32)
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: this[int]
+  nameWithType: SerializableArray<AnimationClip>.this[int]
+  fullName: LobsterFramework.SerializableArray<UnityEngine.AnimationClip>.this[int]
+  nameWithType.vb: SerializableArray(Of AnimationClip).this[](Integer)
+  fullName.vb: LobsterFramework.SerializableArray(Of UnityEngine.AnimationClip).this[](Integer)
+  name.vb: this[](Integer)
+  spec.csharp:
+  - name: this
+  - name: '['
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ']'
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Item(System.Int32)
+    name: this[]
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Item(System.Int32)
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Count
+  commentId: P:LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Count
+  parent: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}
+  definition: LobsterFramework.SerializableArray`1.Count
+  href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Count
+  name: Count
+  nameWithType: SerializableArray<AnimationClip>.Count
+  fullName: LobsterFramework.SerializableArray<UnityEngine.AnimationClip>.Count
+  nameWithType.vb: SerializableArray(Of AnimationClip).Count
+  fullName.vb: LobsterFramework.SerializableArray(Of UnityEngine.AnimationClip).Count
+- uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.IsReadOnly
+  commentId: P:LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.IsReadOnly
+  parent: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}
+  definition: LobsterFramework.SerializableArray`1.IsReadOnly
+  href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.IsReadOnly
+  name: IsReadOnly
+  nameWithType: SerializableArray<AnimationClip>.IsReadOnly
+  fullName: LobsterFramework.SerializableArray<UnityEngine.AnimationClip>.IsReadOnly
+  nameWithType.vb: SerializableArray(Of AnimationClip).IsReadOnly
+  fullName.vb: LobsterFramework.SerializableArray(Of UnityEngine.AnimationClip).IsReadOnly
+- uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Add(UnityEngine.AnimationClip)
+  commentId: M:LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Add(UnityEngine.AnimationClip)
+  parent: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}
+  definition: LobsterFramework.SerializableArray`1.Add(`0)
+  href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Add(UnityEngine.AnimationClip)
+  name: Add(AnimationClip)
+  nameWithType: SerializableArray<AnimationClip>.Add(AnimationClip)
+  fullName: LobsterFramework.SerializableArray<UnityEngine.AnimationClip>.Add(UnityEngine.AnimationClip)
+  nameWithType.vb: SerializableArray(Of AnimationClip).Add(AnimationClip)
+  fullName.vb: LobsterFramework.SerializableArray(Of UnityEngine.AnimationClip).Add(UnityEngine.AnimationClip)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Add(UnityEngine.AnimationClip)
+    name: Add
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Add(UnityEngine.AnimationClip)
+  - name: (
+  - uid: UnityEngine.AnimationClip
+    name: AnimationClip
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Add(UnityEngine.AnimationClip)
+    name: Add
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Add(UnityEngine.AnimationClip)
+  - name: (
+  - uid: UnityEngine.AnimationClip
+    name: AnimationClip
+    isExternal: true
+  - name: )
+- uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Clear
+  commentId: M:LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Clear
+  parent: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}
+  definition: LobsterFramework.SerializableArray`1.Clear
+  href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Clear
+  name: Clear()
+  nameWithType: SerializableArray<AnimationClip>.Clear()
+  fullName: LobsterFramework.SerializableArray<UnityEngine.AnimationClip>.Clear()
+  nameWithType.vb: SerializableArray(Of AnimationClip).Clear()
+  fullName.vb: LobsterFramework.SerializableArray(Of UnityEngine.AnimationClip).Clear()
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Clear
+    name: Clear
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Clear
+    name: Clear
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Clear
+  - name: (
+  - name: )
+- uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Contains(UnityEngine.AnimationClip)
+  commentId: M:LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Contains(UnityEngine.AnimationClip)
+  parent: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}
+  definition: LobsterFramework.SerializableArray`1.Contains(`0)
+  href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Contains(UnityEngine.AnimationClip)
+  name: Contains(AnimationClip)
+  nameWithType: SerializableArray<AnimationClip>.Contains(AnimationClip)
+  fullName: LobsterFramework.SerializableArray<UnityEngine.AnimationClip>.Contains(UnityEngine.AnimationClip)
+  nameWithType.vb: SerializableArray(Of AnimationClip).Contains(AnimationClip)
+  fullName.vb: LobsterFramework.SerializableArray(Of UnityEngine.AnimationClip).Contains(UnityEngine.AnimationClip)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Contains(UnityEngine.AnimationClip)
+    name: Contains
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Contains(UnityEngine.AnimationClip)
+  - name: (
+  - uid: UnityEngine.AnimationClip
+    name: AnimationClip
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Contains(UnityEngine.AnimationClip)
+    name: Contains
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Contains(UnityEngine.AnimationClip)
+  - name: (
+  - uid: UnityEngine.AnimationClip
+    name: AnimationClip
+    isExternal: true
+  - name: )
+- uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.CopyTo(UnityEngine.AnimationClip[],System.Int32)
+  commentId: M:LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.CopyTo(UnityEngine.AnimationClip[],System.Int32)
+  parent: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}
+  definition: LobsterFramework.SerializableArray`1.CopyTo(`0[],System.Int32)
+  href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.CopyTo(UnityEngine.AnimationClip[],System.Int32)
+  name: CopyTo(AnimationClip[], int)
+  nameWithType: SerializableArray<AnimationClip>.CopyTo(AnimationClip[], int)
+  fullName: LobsterFramework.SerializableArray<UnityEngine.AnimationClip>.CopyTo(UnityEngine.AnimationClip[], int)
+  nameWithType.vb: SerializableArray(Of AnimationClip).CopyTo(AnimationClip(), Integer)
+  fullName.vb: LobsterFramework.SerializableArray(Of UnityEngine.AnimationClip).CopyTo(UnityEngine.AnimationClip(), Integer)
+  name.vb: CopyTo(AnimationClip(), Integer)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.CopyTo(UnityEngine.AnimationClip[],System.Int32)
+    name: CopyTo
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.CopyTo(UnityEngine.AnimationClip[],System.Int32)
+  - name: (
+  - uid: UnityEngine.AnimationClip
+    name: AnimationClip
+    isExternal: true
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.CopyTo(UnityEngine.AnimationClip[],System.Int32)
+    name: CopyTo
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.CopyTo(UnityEngine.AnimationClip[],System.Int32)
+  - name: (
+  - uid: UnityEngine.AnimationClip
+    name: AnimationClip
+    isExternal: true
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.GetEnumerator
+  commentId: M:LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.GetEnumerator
+  parent: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}
+  definition: LobsterFramework.SerializableArray`1.GetEnumerator
+  href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: SerializableArray<AnimationClip>.GetEnumerator()
+  fullName: LobsterFramework.SerializableArray<UnityEngine.AnimationClip>.GetEnumerator()
+  nameWithType.vb: SerializableArray(Of AnimationClip).GetEnumerator()
+  fullName.vb: LobsterFramework.SerializableArray(Of UnityEngine.AnimationClip).GetEnumerator()
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.GetEnumerator
+    name: GetEnumerator
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.GetEnumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.GetEnumerator
+    name: GetEnumerator
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.GetEnumerator
+  - name: (
+  - name: )
+- uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.IndexOf(UnityEngine.AnimationClip)
+  commentId: M:LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.IndexOf(UnityEngine.AnimationClip)
+  parent: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}
+  definition: LobsterFramework.SerializableArray`1.IndexOf(`0)
+  href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.IndexOf(UnityEngine.AnimationClip)
+  name: IndexOf(AnimationClip)
+  nameWithType: SerializableArray<AnimationClip>.IndexOf(AnimationClip)
+  fullName: LobsterFramework.SerializableArray<UnityEngine.AnimationClip>.IndexOf(UnityEngine.AnimationClip)
+  nameWithType.vb: SerializableArray(Of AnimationClip).IndexOf(AnimationClip)
+  fullName.vb: LobsterFramework.SerializableArray(Of UnityEngine.AnimationClip).IndexOf(UnityEngine.AnimationClip)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.IndexOf(UnityEngine.AnimationClip)
+    name: IndexOf
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.IndexOf(UnityEngine.AnimationClip)
+  - name: (
+  - uid: UnityEngine.AnimationClip
+    name: AnimationClip
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.IndexOf(UnityEngine.AnimationClip)
+    name: IndexOf
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.IndexOf(UnityEngine.AnimationClip)
+  - name: (
+  - uid: UnityEngine.AnimationClip
+    name: AnimationClip
+    isExternal: true
+  - name: )
+- uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Insert(System.Int32,UnityEngine.AnimationClip)
+  commentId: M:LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Insert(System.Int32,UnityEngine.AnimationClip)
+  parent: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}
+  definition: LobsterFramework.SerializableArray`1.Insert(System.Int32,`0)
+  href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Insert(System.Int32,UnityEngine.AnimationClip)
+  name: Insert(int, AnimationClip)
+  nameWithType: SerializableArray<AnimationClip>.Insert(int, AnimationClip)
+  fullName: LobsterFramework.SerializableArray<UnityEngine.AnimationClip>.Insert(int, UnityEngine.AnimationClip)
+  nameWithType.vb: SerializableArray(Of AnimationClip).Insert(Integer, AnimationClip)
+  fullName.vb: LobsterFramework.SerializableArray(Of UnityEngine.AnimationClip).Insert(Integer, UnityEngine.AnimationClip)
+  name.vb: Insert(Integer, AnimationClip)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Insert(System.Int32,UnityEngine.AnimationClip)
+    name: Insert
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Insert(System.Int32,UnityEngine.AnimationClip)
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.AnimationClip
+    name: AnimationClip
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Insert(System.Int32,UnityEngine.AnimationClip)
+    name: Insert
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Insert(System.Int32,UnityEngine.AnimationClip)
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.AnimationClip
+    name: AnimationClip
+    isExternal: true
+  - name: )
+- uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Remove(UnityEngine.AnimationClip)
+  commentId: M:LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Remove(UnityEngine.AnimationClip)
+  parent: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}
+  definition: LobsterFramework.SerializableArray`1.Remove(`0)
+  href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Remove(UnityEngine.AnimationClip)
+  name: Remove(AnimationClip)
+  nameWithType: SerializableArray<AnimationClip>.Remove(AnimationClip)
+  fullName: LobsterFramework.SerializableArray<UnityEngine.AnimationClip>.Remove(UnityEngine.AnimationClip)
+  nameWithType.vb: SerializableArray(Of AnimationClip).Remove(AnimationClip)
+  fullName.vb: LobsterFramework.SerializableArray(Of UnityEngine.AnimationClip).Remove(UnityEngine.AnimationClip)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Remove(UnityEngine.AnimationClip)
+    name: Remove
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Remove(UnityEngine.AnimationClip)
+  - name: (
+  - uid: UnityEngine.AnimationClip
+    name: AnimationClip
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Remove(UnityEngine.AnimationClip)
+    name: Remove
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.Remove(UnityEngine.AnimationClip)
+  - name: (
+  - uid: UnityEngine.AnimationClip
+    name: AnimationClip
+    isExternal: true
+  - name: )
+- uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.RemoveAt(System.Int32)
+  commentId: M:LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.RemoveAt(System.Int32)
+  parent: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}
+  definition: LobsterFramework.SerializableArray`1.RemoveAt(System.Int32)
+  href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.RemoveAt(System.Int32)
+  name: RemoveAt(int)
+  nameWithType: SerializableArray<AnimationClip>.RemoveAt(int)
+  fullName: LobsterFramework.SerializableArray<UnityEngine.AnimationClip>.RemoveAt(int)
+  nameWithType.vb: SerializableArray(Of AnimationClip).RemoveAt(Integer)
+  fullName.vb: LobsterFramework.SerializableArray(Of UnityEngine.AnimationClip).RemoveAt(Integer)
+  name.vb: RemoveAt(Integer)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.RemoveAt(System.Int32)
+    name: RemoveAt
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.RemoveAt(System.Int32)
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.RemoveAt(System.Int32)
+    name: RemoveAt
+    href: LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.html#LobsterFramework.SerializableArray{UnityEngine.AnimationClip}.RemoveAt(System.Int32)
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.SerializableArray`1
+  commentId: T:LobsterFramework.SerializableArray`1
+  href: LobsterFramework.SerializableArray-1.html
+  name: SerializableArray<T>
+  nameWithType: SerializableArray<T>
+  fullName: LobsterFramework.SerializableArray<T>
+  nameWithType.vb: SerializableArray(Of T)
+  fullName.vb: LobsterFramework.SerializableArray(Of T)
+  name.vb: SerializableArray(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray`1
+    name: SerializableArray
+    href: LobsterFramework.SerializableArray-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray`1
+    name: SerializableArray
+    href: LobsterFramework.SerializableArray-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.SerializableArray`1.items
+  commentId: F:LobsterFramework.SerializableArray`1.items
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.items
+  name: items
+  nameWithType: SerializableArray<T>.items
+  fullName: LobsterFramework.SerializableArray<T>.items
+  nameWithType.vb: SerializableArray(Of T).items
+  fullName.vb: LobsterFramework.SerializableArray(Of T).items
+- uid: LobsterFramework.SerializableArray`1.Item(System.Int32)
+  commentId: P:LobsterFramework.SerializableArray`1.Item(System.Int32)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: this[int]
+  nameWithType: SerializableArray<T>.this[int]
+  fullName: LobsterFramework.SerializableArray<T>.this[int]
+  nameWithType.vb: SerializableArray(Of T).this[](Integer)
+  fullName.vb: LobsterFramework.SerializableArray(Of T).this[](Integer)
+  name.vb: this[](Integer)
+  spec.csharp:
+  - name: this
+  - name: '['
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ']'
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray`1.Item(System.Int32)
+    name: this[]
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Item(System.Int32)
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: LobsterFramework.SerializableArray`1.Count
+  commentId: P:LobsterFramework.SerializableArray`1.Count
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Count
+  name: Count
+  nameWithType: SerializableArray<T>.Count
+  fullName: LobsterFramework.SerializableArray<T>.Count
+  nameWithType.vb: SerializableArray(Of T).Count
+  fullName.vb: LobsterFramework.SerializableArray(Of T).Count
+- uid: LobsterFramework.SerializableArray`1.IsReadOnly
+  commentId: P:LobsterFramework.SerializableArray`1.IsReadOnly
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.IsReadOnly
+  name: IsReadOnly
+  nameWithType: SerializableArray<T>.IsReadOnly
+  fullName: LobsterFramework.SerializableArray<T>.IsReadOnly
+  nameWithType.vb: SerializableArray(Of T).IsReadOnly
+  fullName.vb: LobsterFramework.SerializableArray(Of T).IsReadOnly
+- uid: LobsterFramework.SerializableArray`1.Add(`0)
+  commentId: M:LobsterFramework.SerializableArray`1.Add(`0)
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Add(`0)
+  name: Add(T)
+  nameWithType: SerializableArray<T>.Add(T)
+  fullName: LobsterFramework.SerializableArray<T>.Add(T)
+  nameWithType.vb: SerializableArray(Of T).Add(T)
+  fullName.vb: LobsterFramework.SerializableArray(Of T).Add(T)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray`1.Add(`0)
+    name: Add
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Add(`0)
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray`1.Add(`0)
+    name: Add
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Add(`0)
+  - name: (
+  - name: T
+  - name: )
+- uid: LobsterFramework.SerializableArray`1.Clear
+  commentId: M:LobsterFramework.SerializableArray`1.Clear
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Clear
+  name: Clear()
+  nameWithType: SerializableArray<T>.Clear()
+  fullName: LobsterFramework.SerializableArray<T>.Clear()
+  nameWithType.vb: SerializableArray(Of T).Clear()
+  fullName.vb: LobsterFramework.SerializableArray(Of T).Clear()
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray`1.Clear
+    name: Clear
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray`1.Clear
+    name: Clear
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Clear
+  - name: (
+  - name: )
+- uid: LobsterFramework.SerializableArray`1.Contains(`0)
+  commentId: M:LobsterFramework.SerializableArray`1.Contains(`0)
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Contains(`0)
+  name: Contains(T)
+  nameWithType: SerializableArray<T>.Contains(T)
+  fullName: LobsterFramework.SerializableArray<T>.Contains(T)
+  nameWithType.vb: SerializableArray(Of T).Contains(T)
+  fullName.vb: LobsterFramework.SerializableArray(Of T).Contains(T)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray`1.Contains(`0)
+    name: Contains
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Contains(`0)
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray`1.Contains(`0)
+    name: Contains
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Contains(`0)
+  - name: (
+  - name: T
+  - name: )
+- uid: LobsterFramework.SerializableArray`1.CopyTo(`0[],System.Int32)
+  commentId: M:LobsterFramework.SerializableArray`1.CopyTo(`0[],System.Int32)
+  isExternal: true
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.CopyTo(`0[],System.Int32)
+  name: CopyTo(T[], int)
+  nameWithType: SerializableArray<T>.CopyTo(T[], int)
+  fullName: LobsterFramework.SerializableArray<T>.CopyTo(T[], int)
+  nameWithType.vb: SerializableArray(Of T).CopyTo(T(), Integer)
+  fullName.vb: LobsterFramework.SerializableArray(Of T).CopyTo(T(), Integer)
+  name.vb: CopyTo(T(), Integer)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.CopyTo(`0[],System.Int32)
+  - name: (
+  - name: T
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.CopyTo(`0[],System.Int32)
+  - name: (
+  - name: T
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: LobsterFramework.SerializableArray`1.GetEnumerator
+  commentId: M:LobsterFramework.SerializableArray`1.GetEnumerator
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: SerializableArray<T>.GetEnumerator()
+  fullName: LobsterFramework.SerializableArray<T>.GetEnumerator()
+  nameWithType.vb: SerializableArray(Of T).GetEnumerator()
+  fullName.vb: LobsterFramework.SerializableArray(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray`1.GetEnumerator
+    name: GetEnumerator
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.GetEnumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray`1.GetEnumerator
+    name: GetEnumerator
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.GetEnumerator
+  - name: (
+  - name: )
+- uid: LobsterFramework.SerializableArray`1.IndexOf(`0)
+  commentId: M:LobsterFramework.SerializableArray`1.IndexOf(`0)
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.IndexOf(`0)
+  name: IndexOf(T)
+  nameWithType: SerializableArray<T>.IndexOf(T)
+  fullName: LobsterFramework.SerializableArray<T>.IndexOf(T)
+  nameWithType.vb: SerializableArray(Of T).IndexOf(T)
+  fullName.vb: LobsterFramework.SerializableArray(Of T).IndexOf(T)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray`1.IndexOf(`0)
+    name: IndexOf
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.IndexOf(`0)
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray`1.IndexOf(`0)
+    name: IndexOf
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.IndexOf(`0)
+  - name: (
+  - name: T
+  - name: )
+- uid: LobsterFramework.SerializableArray`1.Insert(System.Int32,`0)
+  commentId: M:LobsterFramework.SerializableArray`1.Insert(System.Int32,`0)
+  isExternal: true
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Insert(System.Int32,`0)
+  name: Insert(int, T)
+  nameWithType: SerializableArray<T>.Insert(int, T)
+  fullName: LobsterFramework.SerializableArray<T>.Insert(int, T)
+  nameWithType.vb: SerializableArray(Of T).Insert(Integer, T)
+  fullName.vb: LobsterFramework.SerializableArray(Of T).Insert(Integer, T)
+  name.vb: Insert(Integer, T)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray`1.Insert(System.Int32,`0)
+    name: Insert
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Insert(System.Int32,`0)
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray`1.Insert(System.Int32,`0)
+    name: Insert
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Insert(System.Int32,`0)
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.SerializableArray`1.Remove(`0)
+  commentId: M:LobsterFramework.SerializableArray`1.Remove(`0)
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Remove(`0)
+  name: Remove(T)
+  nameWithType: SerializableArray<T>.Remove(T)
+  fullName: LobsterFramework.SerializableArray<T>.Remove(T)
+  nameWithType.vb: SerializableArray(Of T).Remove(T)
+  fullName.vb: LobsterFramework.SerializableArray(Of T).Remove(T)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray`1.Remove(`0)
+    name: Remove
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Remove(`0)
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray`1.Remove(`0)
+    name: Remove
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Remove(`0)
+  - name: (
+  - name: T
+  - name: )
+- uid: LobsterFramework.SerializableArray`1.RemoveAt(System.Int32)
+  commentId: M:LobsterFramework.SerializableArray`1.RemoveAt(System.Int32)
+  isExternal: true
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.RemoveAt(System.Int32)
+  name: RemoveAt(int)
+  nameWithType: SerializableArray<T>.RemoveAt(int)
+  fullName: LobsterFramework.SerializableArray<T>.RemoveAt(int)
+  nameWithType.vb: SerializableArray(Of T).RemoveAt(Integer)
+  fullName.vb: LobsterFramework.SerializableArray(Of T).RemoveAt(Integer)
+  name.vb: RemoveAt(Integer)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray`1.RemoveAt(System.Int32)
+    name: RemoveAt
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.RemoveAt(System.Int32)
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray`1.RemoveAt(System.Int32)
+    name: RemoveAt
+    href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.RemoveAt(System.Int32)
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: LobsterFramework.AnimationClipArray.op_Implicit*
+  commentId: Overload:LobsterFramework.AnimationClipArray.op_Implicit
+  name: implicit operator
+  nameWithType: AnimationClipArray.implicit operator
+  fullName: LobsterFramework.AnimationClipArray.implicit operator
+  nameWithType.vb: AnimationClipArray.CType
+  fullName.vb: LobsterFramework.AnimationClipArray.CType
+  name.vb: CType
+  spec.csharp:
+  - name: implicit
+  - name: " "
+  - name: operator
+- uid: LobsterFramework.AnimationClipArray
+  commentId: T:LobsterFramework.AnimationClipArray
+  parent: LobsterFramework
+  href: LobsterFramework.AnimationClipArray.html
+  name: AnimationClipArray
+  nameWithType: AnimationClipArray
+  fullName: LobsterFramework.AnimationClipArray
+- uid: UnityEngine.AnimationClip[]
+  isExternal: true
+  name: AnimationClip[]
+  nameWithType: AnimationClip[]
+  fullName: UnityEngine.AnimationClip[]
+  nameWithType.vb: AnimationClip()
+  fullName.vb: UnityEngine.AnimationClip()
+  name.vb: AnimationClip()
+  spec.csharp:
+  - uid: UnityEngine.AnimationClip
+    name: AnimationClip
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: UnityEngine.AnimationClip
+    name: AnimationClip
+    isExternal: true
+  - name: (
+  - name: )

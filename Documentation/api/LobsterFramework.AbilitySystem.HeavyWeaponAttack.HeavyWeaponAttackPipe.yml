@@ -1,0 +1,293 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe
+  commentId: T:LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe
+  id: HeavyWeaponAttack.HeavyWeaponAttackPipe
+  parent: LobsterFramework.AbilitySystem
+  children:
+  - LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.BaseDamageModifier
+  - LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.Construct
+  - LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeDamageIncrease
+  - LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeTime
+  langs:
+  - csharp
+  - vb
+  name: HeavyWeaponAttack.HeavyWeaponAttackPipe
+  nameWithType: HeavyWeaponAttack.HeavyWeaponAttackPipe
+  fullName: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Abilities/HeavyWeaponAttack.cs
+    id: HeavyWeaponAttackPipe
+    path: ../Assets/Framework/AbilitySystem/Abilities/HeavyWeaponAttack.cs
+    startLine: 178
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: 'public class HeavyWeaponAttack.HeavyWeaponAttackPipe : Ability.AbilityPipe'
+    content.vb: Public Class HeavyWeaponAttack.HeavyWeaponAttackPipe Inherits Ability.AbilityPipe
+  inheritance:
+  - System.Object
+  - LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  inheritedMembers:
+  - LobsterFramework.AbilitySystem.Ability.AbilityPipe.config
+  - LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+- uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeTime
+  commentId: P:LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeTime
+  id: MaxChargeTime
+  parent: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe
+  langs:
+  - csharp
+  - vb
+  name: MaxChargeTime
+  nameWithType: HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeTime
+  fullName: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeTime
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Abilities/HeavyWeaponAttack.cs
+    id: MaxChargeTime
+    path: ../Assets/Framework/AbilitySystem/Abilities/HeavyWeaponAttack.cs
+    startLine: 181
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public float MaxChargeTime { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property MaxChargeTime As Single
+  overload: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeTime*
+- uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeDamageIncrease
+  commentId: P:LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeDamageIncrease
+  id: MaxChargeDamageIncrease
+  parent: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe
+  langs:
+  - csharp
+  - vb
+  name: MaxChargeDamageIncrease
+  nameWithType: HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeDamageIncrease
+  fullName: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeDamageIncrease
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Abilities/HeavyWeaponAttack.cs
+    id: MaxChargeDamageIncrease
+    path: ../Assets/Framework/AbilitySystem/Abilities/HeavyWeaponAttack.cs
+    startLine: 182
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public float MaxChargeDamageIncrease { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property MaxChargeDamageIncrease As Single
+  overload: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeDamageIncrease*
+- uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.BaseDamageModifier
+  commentId: P:LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.BaseDamageModifier
+  id: BaseDamageModifier
+  parent: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe
+  langs:
+  - csharp
+  - vb
+  name: BaseDamageModifier
+  nameWithType: HeavyWeaponAttack.HeavyWeaponAttackPipe.BaseDamageModifier
+  fullName: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.BaseDamageModifier
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Abilities/HeavyWeaponAttack.cs
+    id: BaseDamageModifier
+    path: ../Assets/Framework/AbilitySystem/Abilities/HeavyWeaponAttack.cs
+    startLine: 183
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public float BaseDamageModifier { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property BaseDamageModifier As Single
+  overload: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.BaseDamageModifier*
+- uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.Construct
+  commentId: M:LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.Construct
+  id: Construct
+  parent: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe
+  langs:
+  - csharp
+  - vb
+  name: Construct()
+  nameWithType: HeavyWeaponAttack.HeavyWeaponAttackPipe.Construct()
+  fullName: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.Construct()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Abilities/HeavyWeaponAttack.cs
+    id: Construct
+    path: ../Assets/Framework/AbilitySystem/Abilities/HeavyWeaponAttack.cs
+    startLine: 185
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  example: []
+  syntax:
+    content: public override void Construct()
+    content.vb: Public Overrides Sub Construct()
+  overridden: LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct
+  overload: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.Construct*
+references:
+- uid: LobsterFramework.AbilitySystem
+  commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
+  name: LobsterFramework.AbilitySystem
+  nameWithType: LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  commentId: T:LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.Ability.html
+  name: Ability.AbilityPipe
+  nameWithType: Ability.AbilityPipe
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.Ability
+    name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+    name: AbilityPipe
+    href: LobsterFramework.AbilitySystem.Ability.AbilityPipe.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.Ability
+    name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+    name: AbilityPipe
+    href: LobsterFramework.AbilitySystem.Ability.AbilityPipe.html
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe.config
+  commentId: F:LobsterFramework.AbilitySystem.Ability.AbilityPipe.config
+  parent: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  href: LobsterFramework.AbilitySystem.Ability.AbilityPipe.html#LobsterFramework.AbilitySystem.Ability.AbilityPipe.config
+  name: config
+  nameWithType: Ability.AbilityPipe.config
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityPipe.config
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  commentId: M:LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  parent: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  href: LobsterFramework.AbilitySystem.Ability.AbilityPipe.html#LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  name: Construct(AbilityConfig)
+  nameWithType: Ability.AbilityPipe.Construct(Ability.AbilityConfig)
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+    name: Construct
+    href: LobsterFramework.AbilitySystem.Ability.AbilityPipe.html#LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  - name: (
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+    name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+    name: Construct
+    href: LobsterFramework.AbilitySystem.Ability.AbilityPipe.html#LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  - name: (
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+    name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeTime*
+  commentId: Overload:LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeTime
+  href: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.html#LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeTime
+  name: MaxChargeTime
+  nameWithType: HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeTime
+  fullName: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeTime
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeDamageIncrease*
+  commentId: Overload:LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeDamageIncrease
+  href: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.html#LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeDamageIncrease
+  name: MaxChargeDamageIncrease
+  nameWithType: HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeDamageIncrease
+  fullName: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.MaxChargeDamageIncrease
+- uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.BaseDamageModifier*
+  commentId: Overload:LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.BaseDamageModifier
+  href: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.html#LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.BaseDamageModifier
+  name: BaseDamageModifier
+  nameWithType: HeavyWeaponAttack.HeavyWeaponAttackPipe.BaseDamageModifier
+  fullName: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.BaseDamageModifier
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct
+  commentId: M:LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct
+  parent: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  href: LobsterFramework.AbilitySystem.Ability.AbilityPipe.html#LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct
+  name: Construct()
+  nameWithType: Ability.AbilityPipe.Construct()
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct()
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct
+    name: Construct
+    href: LobsterFramework.AbilitySystem.Ability.AbilityPipe.html#LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct
+    name: Construct
+    href: LobsterFramework.AbilitySystem.Ability.AbilityPipe.html#LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct
+  - name: (
+  - name: )
+- uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.Construct*
+  commentId: Overload:LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.Construct
+  href: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.html#LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.Construct
+  name: Construct
+  nameWithType: HeavyWeaponAttack.HeavyWeaponAttackPipe.Construct
+  fullName: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.Construct

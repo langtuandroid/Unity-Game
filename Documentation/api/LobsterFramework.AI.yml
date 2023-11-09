@@ -4,6 +4,9 @@ items:
   commentId: N:LobsterFramework.AI
   id: LobsterFramework.AI
   children:
+  - LobsterFramework.AI.AIController
+  - LobsterFramework.AI.EntityAlertBar
+  - LobsterFramework.AI.EntityHealthBar
   - LobsterFramework.AI.State
   - LobsterFramework.AI.StateMachine
   - LobsterFramework.AI.Transition
@@ -16,27 +19,20 @@ items:
   fullName: LobsterFramework.AI
   type: Namespace
   assemblies:
-  - LobsterFramework
+  - GameScripts
 references:
-- uid: LobsterFramework.AI.Transition
-  commentId: T:LobsterFramework.AI.Transition
-  parent: LobsterFramework.AI
-  href: LobsterFramework.AI.Transition.html
-  name: Transition
-  nameWithType: Transition
-  fullName: LobsterFramework.AI.Transition
-- uid: LobsterFramework.AI.StateMachine
-  commentId: T:LobsterFramework.AI.StateMachine
-  href: LobsterFramework.AI.StateMachine.html
-  name: StateMachine
-  nameWithType: StateMachine
-  fullName: LobsterFramework.AI.StateMachine
-- uid: LobsterFramework.AI.TransitionTable
-  commentId: T:LobsterFramework.AI.TransitionTable
-  href: LobsterFramework.AI.TransitionTable.html
-  name: TransitionTable
-  nameWithType: TransitionTable
-  fullName: LobsterFramework.AI.TransitionTable
+- uid: LobsterFramework.AI.EntityAlertBar
+  commentId: T:LobsterFramework.AI.EntityAlertBar
+  href: LobsterFramework.AI.EntityAlertBar.html
+  name: EntityAlertBar
+  nameWithType: EntityAlertBar
+  fullName: LobsterFramework.AI.EntityAlertBar
+- uid: LobsterFramework.AI.EntityHealthBar
+  commentId: T:LobsterFramework.AI.EntityHealthBar
+  href: LobsterFramework.AI.EntityHealthBar.html
+  name: EntityHealthBar
+  nameWithType: EntityHealthBar
+  fullName: LobsterFramework.AI.EntityHealthBar
 - uid: LobsterFramework.AI.State
   commentId: T:LobsterFramework.AI.State
   parent: LobsterFramework.AI
@@ -44,6 +40,33 @@ references:
   name: State
   nameWithType: State
   fullName: LobsterFramework.AI.State
+- uid: LobsterFramework.AI.TransitionTable
+  commentId: T:LobsterFramework.AI.TransitionTable
+  href: LobsterFramework.AI.TransitionTable.html
+  name: TransitionTable
+  nameWithType: TransitionTable
+  fullName: LobsterFramework.AI.TransitionTable
+- uid: LobsterFramework.AI.StateMachine
+  commentId: T:LobsterFramework.AI.StateMachine
+  parent: LobsterFramework.AI
+  href: LobsterFramework.AI.StateMachine.html
+  name: StateMachine
+  nameWithType: StateMachine
+  fullName: LobsterFramework.AI.StateMachine
+- uid: LobsterFramework.AI.Transition
+  commentId: T:LobsterFramework.AI.Transition
+  parent: LobsterFramework.AI
+  href: LobsterFramework.AI.Transition.html
+  name: Transition
+  nameWithType: Transition
+  fullName: LobsterFramework.AI.Transition
+- uid: LobsterFramework.AI.AIController
+  commentId: T:LobsterFramework.AI.AIController
+  parent: LobsterFramework.AI
+  href: LobsterFramework.AI.AIController.html
+  name: AIController
+  nameWithType: AIController
+  fullName: LobsterFramework.AI.AIController
 - uid: LobsterFramework.AI
   commentId: N:LobsterFramework.AI
   href: LobsterFramework.html

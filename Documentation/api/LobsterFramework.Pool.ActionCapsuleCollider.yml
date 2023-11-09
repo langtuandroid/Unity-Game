@@ -19,7 +19,7 @@ items:
       path: H:/Stuff/BallField/Assets/Framework/Action Colliders/ActionCapsuleCollider.cs
     id: ActionCapsuleCollider
     path: ../Assets/Framework/Action Colliders/ActionCapsuleCollider.cs
-    startLine: 8
+    startLine: 6
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Pool
@@ -180,14 +180,14 @@ items:
       path: H:/Stuff/BallField/Assets/Framework/Action Colliders/ActionCapsuleCollider.cs
     id: entityEvent
     path: ../Assets/Framework/Action Colliders/ActionCapsuleCollider.cs
-    startLine: 12
+    startLine: 10
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Pool
   syntax:
     content: public UnityEvent<Entity> entityEvent
     return:
-      type: UnityEngine.Events.UnityEvent{LobsterFramework.EntitySystem.Entity}
+      type: UnityEngine.Events.UnityEvent{LobsterFramework.Entity}
     content.vb: Public entityEvent As UnityEvent(Of Entity)
 - uid: LobsterFramework.Pool.ActionCapsuleCollider.SetColliderSize(UnityEngine.Vector2)
   commentId: M:LobsterFramework.Pool.ActionCapsuleCollider.SetColliderSize(UnityEngine.Vector2)
@@ -205,7 +205,7 @@ items:
       path: H:/Stuff/BallField/Assets/Framework/Action Colliders/ActionCapsuleCollider.cs
     id: SetColliderSize
     path: ../Assets/Framework/Action Colliders/ActionCapsuleCollider.cs
-    startLine: 40
+    startLine: 38
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Pool
@@ -4449,25 +4449,25 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: UnityEngine.Events.UnityEvent{LobsterFramework.EntitySystem.Entity}
-  commentId: T:UnityEngine.Events.UnityEvent{LobsterFramework.EntitySystem.Entity}
+- uid: UnityEngine.Events.UnityEvent{LobsterFramework.Entity}
+  commentId: T:UnityEngine.Events.UnityEvent{LobsterFramework.Entity}
   parent: UnityEngine.Events
   definition: UnityEngine.Events.UnityEvent`1
-  href: LobsterFramework.EntitySystem.Entity.html
+  href: LobsterFramework.Entity.html
   name: UnityEvent<Entity>
   nameWithType: UnityEvent<Entity>
-  fullName: UnityEngine.Events.UnityEvent<LobsterFramework.EntitySystem.Entity>
+  fullName: UnityEngine.Events.UnityEvent<LobsterFramework.Entity>
   nameWithType.vb: UnityEvent(Of Entity)
-  fullName.vb: UnityEngine.Events.UnityEvent(Of LobsterFramework.EntitySystem.Entity)
+  fullName.vb: UnityEngine.Events.UnityEvent(Of LobsterFramework.Entity)
   name.vb: UnityEvent(Of Entity)
   spec.csharp:
   - uid: UnityEngine.Events.UnityEvent`1
     name: UnityEvent
     isExternal: true
   - name: <
-  - uid: LobsterFramework.EntitySystem.Entity
+  - uid: LobsterFramework.Entity
     name: Entity
-    href: LobsterFramework.EntitySystem.Entity.html
+    href: LobsterFramework.Entity.html
   - name: '>'
   spec.vb:
   - uid: UnityEngine.Events.UnityEvent`1
@@ -4476,9 +4476,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: LobsterFramework.EntitySystem.Entity
+  - uid: LobsterFramework.Entity
     name: Entity
-    href: LobsterFramework.EntitySystem.Entity.html
+    href: LobsterFramework.Entity.html
   - name: )
 - uid: UnityEngine.Events.UnityEvent`1
   commentId: T:UnityEngine.Events.UnityEvent`1

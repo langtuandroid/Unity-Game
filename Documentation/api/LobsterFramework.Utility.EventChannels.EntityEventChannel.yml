@@ -5,7 +5,7 @@ items:
   id: EntityEventChannel
   parent: LobsterFramework.Utility.EventChannels
   children:
-  - LobsterFramework.Utility.EventChannels.EntityEventChannel.RaiseEvent(LobsterFramework.EntitySystem.Entity)
+  - LobsterFramework.Utility.EventChannels.EntityEventChannel.RaiseEvent(LobsterFramework.Entity)
   - LobsterFramework.Utility.EventChannels.EntityEventChannel.onEventRaised
   langs:
   - csharp
@@ -19,7 +19,7 @@ items:
       path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/EventChannels/EntityEventChannel.cs
     id: EntityEventChannel
     path: ../Assets/Framework/Scriptable Objects/EventChannels/EntityEventChannel.cs
-    startLine: 8
+    startLine: 5
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility.EventChannels
@@ -97,32 +97,32 @@ items:
       path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/EventChannels/EntityEventChannel.cs
     id: onEventRaised
     path: ../Assets/Framework/Scriptable Objects/EventChannels/EntityEventChannel.cs
-    startLine: 10
+    startLine: 7
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility.EventChannels
   syntax:
     content: public UnityAction<Entity> onEventRaised
     return:
-      type: UnityEngine.Events.UnityAction{LobsterFramework.EntitySystem.Entity}
+      type: UnityEngine.Events.UnityAction{LobsterFramework.Entity}
     content.vb: Public onEventRaised As UnityAction(Of Entity)
-- uid: LobsterFramework.Utility.EventChannels.EntityEventChannel.RaiseEvent(LobsterFramework.EntitySystem.Entity)
-  commentId: M:LobsterFramework.Utility.EventChannels.EntityEventChannel.RaiseEvent(LobsterFramework.EntitySystem.Entity)
-  id: RaiseEvent(LobsterFramework.EntitySystem.Entity)
+- uid: LobsterFramework.Utility.EventChannels.EntityEventChannel.RaiseEvent(LobsterFramework.Entity)
+  commentId: M:LobsterFramework.Utility.EventChannels.EntityEventChannel.RaiseEvent(LobsterFramework.Entity)
+  id: RaiseEvent(LobsterFramework.Entity)
   parent: LobsterFramework.Utility.EventChannels.EntityEventChannel
   langs:
   - csharp
   - vb
   name: RaiseEvent(Entity)
   nameWithType: EntityEventChannel.RaiseEvent(Entity)
-  fullName: LobsterFramework.Utility.EventChannels.EntityEventChannel.RaiseEvent(LobsterFramework.EntitySystem.Entity)
+  fullName: LobsterFramework.Utility.EventChannels.EntityEventChannel.RaiseEvent(LobsterFramework.Entity)
   type: Method
   source:
     remote:
       path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/EventChannels/EntityEventChannel.cs
     id: RaiseEvent
     path: ../Assets/Framework/Scriptable Objects/EventChannels/EntityEventChannel.cs
-    startLine: 12
+    startLine: 9
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility.EventChannels
@@ -130,7 +130,7 @@ items:
     content: public void RaiseEvent(Entity entity)
     parameters:
     - id: entity
-      type: LobsterFramework.EntitySystem.Entity
+      type: LobsterFramework.Entity
     content.vb: Public Sub [RaiseEvent](entity As Entity)
   overload: LobsterFramework.Utility.EventChannels.EntityEventChannel.RaiseEvent*
 references:
@@ -2123,25 +2123,25 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: UnityEngine.Events.UnityAction{LobsterFramework.EntitySystem.Entity}
-  commentId: T:UnityEngine.Events.UnityAction{LobsterFramework.EntitySystem.Entity}
+- uid: UnityEngine.Events.UnityAction{LobsterFramework.Entity}
+  commentId: T:UnityEngine.Events.UnityAction{LobsterFramework.Entity}
   parent: UnityEngine.Events
   definition: UnityEngine.Events.UnityAction`1
-  href: LobsterFramework.EntitySystem.Entity.html
+  href: LobsterFramework.Entity.html
   name: UnityAction<Entity>
   nameWithType: UnityAction<Entity>
-  fullName: UnityEngine.Events.UnityAction<LobsterFramework.EntitySystem.Entity>
+  fullName: UnityEngine.Events.UnityAction<LobsterFramework.Entity>
   nameWithType.vb: UnityAction(Of Entity)
-  fullName.vb: UnityEngine.Events.UnityAction(Of LobsterFramework.EntitySystem.Entity)
+  fullName.vb: UnityEngine.Events.UnityAction(Of LobsterFramework.Entity)
   name.vb: UnityAction(Of Entity)
   spec.csharp:
   - uid: UnityEngine.Events.UnityAction`1
     name: UnityAction
     isExternal: true
   - name: <
-  - uid: LobsterFramework.EntitySystem.Entity
+  - uid: LobsterFramework.Entity
     name: Entity
-    href: LobsterFramework.EntitySystem.Entity.html
+    href: LobsterFramework.Entity.html
   - name: '>'
   spec.vb:
   - uid: UnityEngine.Events.UnityAction`1
@@ -2150,9 +2150,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: LobsterFramework.EntitySystem.Entity
+  - uid: LobsterFramework.Entity
     name: Entity
-    href: LobsterFramework.EntitySystem.Entity.html
+    href: LobsterFramework.Entity.html
   - name: )
 - uid: UnityEngine.Events.UnityAction`1
   commentId: T:UnityEngine.Events.UnityAction`1
@@ -2203,36 +2203,20 @@ references:
     isExternal: true
 - uid: LobsterFramework.Utility.EventChannels.EntityEventChannel.RaiseEvent*
   commentId: Overload:LobsterFramework.Utility.EventChannels.EntityEventChannel.RaiseEvent
-  href: LobsterFramework.Utility.EventChannels.EntityEventChannel.html#LobsterFramework.Utility.EventChannels.EntityEventChannel.RaiseEvent(LobsterFramework.EntitySystem.Entity)
+  href: LobsterFramework.Utility.EventChannels.EntityEventChannel.html#LobsterFramework.Utility.EventChannels.EntityEventChannel.RaiseEvent(LobsterFramework.Entity)
   name: RaiseEvent
   nameWithType: EntityEventChannel.RaiseEvent
   fullName: LobsterFramework.Utility.EventChannels.EntityEventChannel.RaiseEvent
-- uid: LobsterFramework.EntitySystem.Entity
-  commentId: T:LobsterFramework.EntitySystem.Entity
-  parent: LobsterFramework.EntitySystem
-  href: LobsterFramework.EntitySystem.Entity.html
+- uid: LobsterFramework.Entity
+  commentId: T:LobsterFramework.Entity
+  parent: LobsterFramework
+  href: LobsterFramework.Entity.html
   name: Entity
   nameWithType: Entity
-  fullName: LobsterFramework.EntitySystem.Entity
-- uid: LobsterFramework.EntitySystem
-  commentId: N:LobsterFramework.EntitySystem
+  fullName: LobsterFramework.Entity
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
   href: LobsterFramework.html
-  name: LobsterFramework.EntitySystem
-  nameWithType: LobsterFramework.EntitySystem
-  fullName: LobsterFramework.EntitySystem
-  spec.csharp:
-  - uid: LobsterFramework
-    name: LobsterFramework
-    href: LobsterFramework.html
-  - name: .
-  - uid: LobsterFramework.EntitySystem
-    name: EntitySystem
-    href: LobsterFramework.EntitySystem.html
-  spec.vb:
-  - uid: LobsterFramework
-    name: LobsterFramework
-    href: LobsterFramework.html
-  - name: .
-  - uid: LobsterFramework.EntitySystem
-    name: EntitySystem
-    href: LobsterFramework.EntitySystem.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework

@@ -1,0 +1,169 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.OffhandWeaponAbilityAttribute
+  commentId: T:LobsterFramework.OffhandWeaponAbilityAttribute
+  id: OffhandWeaponAbilityAttribute
+  parent: LobsterFramework
+  children:
+  - LobsterFramework.OffhandWeaponAbilityAttribute.Init(System.Type)
+  - LobsterFramework.OffhandWeaponAbilityAttribute.IsOffhand(System.Type)
+  langs:
+  - csharp
+  - vb
+  name: OffhandWeaponAbilityAttribute
+  nameWithType: OffhandWeaponAbilityAttribute
+  fullName: LobsterFramework.OffhandWeaponAbilityAttribute
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Attributes/OffhandWeaponAbilityAttribute.cs
+    id: OffhandWeaponAbilityAttribute
+    path: ../Assets/Framework/AbilitySystem/Attributes/OffhandWeaponAbilityAttribute.cs
+    startLine: 11
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  summary: Mark the WeaponAbility as an offhand WeaponAbility
+  example: []
+  syntax:
+    content: >-
+      [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
+
+      public class OffhandWeaponAbilityAttribute : Attribute
+    content.vb: >-
+      <AttributeUsage(AttributeTargets.Class, AllowMultiple:=False)>
+
+      Public Class OffhandWeaponAbilityAttribute Inherits Attribute
+  inheritance:
+  - System.Object
+  - System.Attribute
+  attributes:
+  - type: System.AttributeUsageAttribute
+    ctor: System.AttributeUsageAttribute.#ctor(System.AttributeTargets)
+    arguments:
+    - type: System.AttributeTargets
+      value: 4
+    namedArguments:
+    - name: AllowMultiple
+      type: System.Boolean
+      value: false
+- uid: LobsterFramework.OffhandWeaponAbilityAttribute.IsOffhand(System.Type)
+  commentId: M:LobsterFramework.OffhandWeaponAbilityAttribute.IsOffhand(System.Type)
+  id: IsOffhand(System.Type)
+  parent: LobsterFramework.OffhandWeaponAbilityAttribute
+  langs:
+  - csharp
+  - vb
+  name: IsOffhand(Type)
+  nameWithType: OffhandWeaponAbilityAttribute.IsOffhand(Type)
+  fullName: LobsterFramework.OffhandWeaponAbilityAttribute.IsOffhand(System.Type)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Attributes/OffhandWeaponAbilityAttribute.cs
+    id: IsOffhand
+    path: ../Assets/Framework/AbilitySystem/Attributes/OffhandWeaponAbilityAttribute.cs
+    startLine: 16
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public static bool IsOffhand(Type type)
+    parameters:
+    - id: type
+      type: System.Type
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsOffhand(type As Type) As Boolean
+  overload: LobsterFramework.OffhandWeaponAbilityAttribute.IsOffhand*
+- uid: LobsterFramework.OffhandWeaponAbilityAttribute.Init(System.Type)
+  commentId: M:LobsterFramework.OffhandWeaponAbilityAttribute.Init(System.Type)
+  id: Init(System.Type)
+  parent: LobsterFramework.OffhandWeaponAbilityAttribute
+  langs:
+  - csharp
+  - vb
+  name: Init(Type)
+  nameWithType: OffhandWeaponAbilityAttribute.Init(Type)
+  fullName: LobsterFramework.OffhandWeaponAbilityAttribute.Init(System.Type)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Attributes/OffhandWeaponAbilityAttribute.cs
+    id: Init
+    path: ../Assets/Framework/AbilitySystem/Attributes/OffhandWeaponAbilityAttribute.cs
+    startLine: 21
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public void Init(Type abilityType)
+    parameters:
+    - id: abilityType
+      type: System.Type
+    content.vb: Public Sub Init(abilityType As Type)
+  overload: LobsterFramework.OffhandWeaponAbilityAttribute.Init*
+references:
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Attribute
+  commentId: T:System.Attribute
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.attribute
+  name: Attribute
+  nameWithType: Attribute
+  fullName: System.Attribute
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.OffhandWeaponAbilityAttribute.IsOffhand*
+  commentId: Overload:LobsterFramework.OffhandWeaponAbilityAttribute.IsOffhand
+  href: LobsterFramework.OffhandWeaponAbilityAttribute.html#LobsterFramework.OffhandWeaponAbilityAttribute.IsOffhand(System.Type)
+  name: IsOffhand
+  nameWithType: OffhandWeaponAbilityAttribute.IsOffhand
+  fullName: LobsterFramework.OffhandWeaponAbilityAttribute.IsOffhand
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: LobsterFramework.OffhandWeaponAbilityAttribute.Init*
+  commentId: Overload:LobsterFramework.OffhandWeaponAbilityAttribute.Init
+  href: LobsterFramework.OffhandWeaponAbilityAttribute.html#LobsterFramework.OffhandWeaponAbilityAttribute.Init(System.Type)
+  name: Init
+  nameWithType: OffhandWeaponAbilityAttribute.Init
+  fullName: LobsterFramework.OffhandWeaponAbilityAttribute.Init

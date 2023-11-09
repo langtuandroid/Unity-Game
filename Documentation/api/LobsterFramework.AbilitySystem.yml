@@ -6,16 +6,55 @@ items:
   children:
   - LobsterFramework.AbilitySystem.Ability
   - LobsterFramework.AbilitySystem.Ability.AbilityConfig
+  - LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  - LobsterFramework.AbilitySystem.AbilityCoroutine
+  - LobsterFramework.AbilitySystem.AbilityCoroutine.AbilityCoroutineConfig
   - LobsterFramework.AbilitySystem.AbilityData
   - LobsterFramework.AbilitySystem.AbilityRunner
+  - LobsterFramework.AbilitySystem.AbilitySelector
   - LobsterFramework.AbilitySystem.AbilityStat
   - LobsterFramework.AbilitySystem.ActionOverseer
   - LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
   - LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute
-  - LobsterFramework.AbilitySystem.ClassNode
+  - LobsterFramework.AbilitySystem.AddWeaponArtMenuAttribute
+  - LobsterFramework.AbilitySystem.AddWeaponStatMenuAttribute
   - LobsterFramework.AbilitySystem.ComponentRequiredAttribute
+  - LobsterFramework.AbilitySystem.DamageModifier
+  - LobsterFramework.AbilitySystem.Guard
+  - LobsterFramework.AbilitySystem.Guard.GuardConfig
+  - LobsterFramework.AbilitySystem.Guard.GuardPipe
+  - LobsterFramework.AbilitySystem.HeavyWeaponAttack
+  - LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackConfig
+  - LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe
+  - LobsterFramework.AbilitySystem.LightWeaponAttack
+  - LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackConfig
+  - LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackPipe
+  - LobsterFramework.AbilitySystem.OffhandAbility
+  - LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityConfig
+  - LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityPipe
   - LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute
+  - LobsterFramework.AbilitySystem.RequireWeaponStatAttribute
   - LobsterFramework.AbilitySystem.TargetSetting
+  - LobsterFramework.AbilitySystem.TestAnimationEntries
+  - LobsterFramework.AbilitySystem.TestCoroutine
+  - LobsterFramework.AbilitySystem.TestCoroutine.TestCoroutineConfig
+  - LobsterFramework.AbilitySystem.TestWeaponAbility
+  - LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityConfig
+  - LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityPipe
+  - LobsterFramework.AbilitySystem.Weapon
+  - LobsterFramework.AbilitySystem.WeaponAbility
+  - LobsterFramework.AbilitySystem.WeaponAnimationAttribute
+  - LobsterFramework.AbilitySystem.WeaponAnimationData
+  - LobsterFramework.AbilitySystem.WeaponArt
+  - LobsterFramework.AbilitySystem.WeaponArt.WeaponArtConfig
+  - LobsterFramework.AbilitySystem.WeaponArt.WeaponArtPipe
+  - LobsterFramework.AbilitySystem.WeaponArtSelector
+  - LobsterFramework.AbilitySystem.WeaponData
+  - LobsterFramework.AbilitySystem.WeaponStat
+  - LobsterFramework.AbilitySystem.WeaponState
+  - LobsterFramework.AbilitySystem.WeaponType
+  - LobsterFramework.AbilitySystem.WeaponUtility
+  - LobsterFramework.AbilitySystem.WeaponWielder
   langs:
   - csharp
   - vb
@@ -26,57 +65,420 @@ items:
   assemblies:
   - LobsterFramework
 references:
-- uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
-  commentId: T:LobsterFramework.AbilitySystem.ComponentRequiredAttribute
+- uid: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute
+  commentId: T:LobsterFramework.AbilitySystem.RequireWeaponStatAttribute
+  href: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute.html
+  name: RequireWeaponStatAttribute
+  nameWithType: RequireWeaponStatAttribute
+  fullName: LobsterFramework.AbilitySystem.RequireWeaponStatAttribute
+- uid: LobsterFramework.AbilitySystem.LightWeaponAttack
+  commentId: T:LobsterFramework.AbilitySystem.LightWeaponAttack
+  href: LobsterFramework.AbilitySystem.LightWeaponAttack.html
+  name: LightWeaponAttack
+  nameWithType: LightWeaponAttack
+  fullName: LobsterFramework.AbilitySystem.LightWeaponAttack
+- uid: LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackConfig
+  commentId: T:LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackConfig
+  href: LobsterFramework.AbilitySystem.LightWeaponAttack.html
+  name: LightWeaponAttack.LightWeaponAttackConfig
+  nameWithType: LightWeaponAttack.LightWeaponAttackConfig
+  fullName: LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackConfig
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.LightWeaponAttack
+    name: LightWeaponAttack
+    href: LobsterFramework.AbilitySystem.LightWeaponAttack.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackConfig
+    name: LightWeaponAttackConfig
+    href: LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackConfig.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.LightWeaponAttack
+    name: LightWeaponAttack
+    href: LobsterFramework.AbilitySystem.LightWeaponAttack.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackConfig
+    name: LightWeaponAttackConfig
+    href: LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackConfig.html
+- uid: LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackPipe
+  commentId: T:LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackPipe
+  href: LobsterFramework.AbilitySystem.LightWeaponAttack.html
+  name: LightWeaponAttack.LightWeaponAttackPipe
+  nameWithType: LightWeaponAttack.LightWeaponAttackPipe
+  fullName: LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackPipe
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.LightWeaponAttack
+    name: LightWeaponAttack
+    href: LobsterFramework.AbilitySystem.LightWeaponAttack.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackPipe
+    name: LightWeaponAttackPipe
+    href: LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackPipe.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.LightWeaponAttack
+    name: LightWeaponAttack
+    href: LobsterFramework.AbilitySystem.LightWeaponAttack.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackPipe
+    name: LightWeaponAttackPipe
+    href: LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackPipe.html
+- uid: LobsterFramework.AbilitySystem.WeaponArtSelector
+  commentId: T:LobsterFramework.AbilitySystem.WeaponArtSelector
   parent: LobsterFramework.AbilitySystem
-  href: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.html
-  name: ComponentRequiredAttribute
-  nameWithType: ComponentRequiredAttribute
-  fullName: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
-- uid: LobsterFramework.AbilitySystem.ClassNode
-  commentId: T:LobsterFramework.AbilitySystem.ClassNode
+  href: LobsterFramework.AbilitySystem.WeaponArtSelector.html
+  name: WeaponArtSelector
+  nameWithType: WeaponArtSelector
+  fullName: LobsterFramework.AbilitySystem.WeaponArtSelector
+- uid: LobsterFramework.AbilitySystem.WeaponAnimationData
+  commentId: T:LobsterFramework.AbilitySystem.WeaponAnimationData
   parent: LobsterFramework.AbilitySystem
-  href: LobsterFramework.AbilitySystem.ClassNode.html
-  name: ClassNode
-  nameWithType: ClassNode
-  fullName: LobsterFramework.AbilitySystem.ClassNode
-- uid: LobsterFramework.AbilitySystem.TargetSetting
-  commentId: T:LobsterFramework.AbilitySystem.TargetSetting
+  href: LobsterFramework.AbilitySystem.WeaponAnimationData.html
+  name: WeaponAnimationData
+  nameWithType: WeaponAnimationData
+  fullName: LobsterFramework.AbilitySystem.WeaponAnimationData
+- uid: LobsterFramework.AbilitySystem.WeaponAbility
+  commentId: T:LobsterFramework.AbilitySystem.WeaponAbility
   parent: LobsterFramework.AbilitySystem
-  href: LobsterFramework.AbilitySystem.TargetSetting.html
-  name: TargetSetting
-  nameWithType: TargetSetting
-  fullName: LobsterFramework.AbilitySystem.TargetSetting
-- uid: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute
-  commentId: T:LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute
-  href: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.html
-  name: RequireAbilityStatsAttribute
-  nameWithType: RequireAbilityStatsAttribute
-  fullName: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute
+  href: LobsterFramework.AbilitySystem.WeaponAbility.html
+  name: WeaponAbility
+  nameWithType: WeaponAbility
+  fullName: LobsterFramework.AbilitySystem.WeaponAbility
+- uid: LobsterFramework.AbilitySystem.AddWeaponStatMenuAttribute
+  commentId: T:LobsterFramework.AbilitySystem.AddWeaponStatMenuAttribute
+  href: LobsterFramework.AbilitySystem.AddWeaponStatMenuAttribute.html
+  name: AddWeaponStatMenuAttribute
+  nameWithType: AddWeaponStatMenuAttribute
+  fullName: LobsterFramework.AbilitySystem.AddWeaponStatMenuAttribute
+- uid: LobsterFramework.AbilitySystem.TestCoroutine
+  commentId: T:LobsterFramework.AbilitySystem.TestCoroutine
+  href: LobsterFramework.AbilitySystem.TestCoroutine.html
+  name: TestCoroutine
+  nameWithType: TestCoroutine
+  fullName: LobsterFramework.AbilitySystem.TestCoroutine
+- uid: LobsterFramework.AbilitySystem.TestCoroutine.TestCoroutineConfig
+  commentId: T:LobsterFramework.AbilitySystem.TestCoroutine.TestCoroutineConfig
+  href: LobsterFramework.AbilitySystem.TestCoroutine.html
+  name: TestCoroutine.TestCoroutineConfig
+  nameWithType: TestCoroutine.TestCoroutineConfig
+  fullName: LobsterFramework.AbilitySystem.TestCoroutine.TestCoroutineConfig
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.TestCoroutine
+    name: TestCoroutine
+    href: LobsterFramework.AbilitySystem.TestCoroutine.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.TestCoroutine.TestCoroutineConfig
+    name: TestCoroutineConfig
+    href: LobsterFramework.AbilitySystem.TestCoroutine.TestCoroutineConfig.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.TestCoroutine
+    name: TestCoroutine
+    href: LobsterFramework.AbilitySystem.TestCoroutine.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.TestCoroutine.TestCoroutineConfig
+    name: TestCoroutineConfig
+    href: LobsterFramework.AbilitySystem.TestCoroutine.TestCoroutineConfig.html
+- uid: LobsterFramework.AbilitySystem.OffhandAbility
+  commentId: T:LobsterFramework.AbilitySystem.OffhandAbility
+  href: LobsterFramework.AbilitySystem.OffhandAbility.html
+  name: OffhandAbility
+  nameWithType: OffhandAbility
+  fullName: LobsterFramework.AbilitySystem.OffhandAbility
+- uid: LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityConfig
+  commentId: T:LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityConfig
+  href: LobsterFramework.AbilitySystem.OffhandAbility.html
+  name: OffhandAbility.OffhandAbilityConfig
+  nameWithType: OffhandAbility.OffhandAbilityConfig
+  fullName: LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityConfig
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.OffhandAbility
+    name: OffhandAbility
+    href: LobsterFramework.AbilitySystem.OffhandAbility.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityConfig
+    name: OffhandAbilityConfig
+    href: LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityConfig.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.OffhandAbility
+    name: OffhandAbility
+    href: LobsterFramework.AbilitySystem.OffhandAbility.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityConfig
+    name: OffhandAbilityConfig
+    href: LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityConfig.html
+- uid: LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityPipe
+  commentId: T:LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityPipe
+  href: LobsterFramework.AbilitySystem.OffhandAbility.html
+  name: OffhandAbility.OffhandAbilityPipe
+  nameWithType: OffhandAbility.OffhandAbilityPipe
+  fullName: LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityPipe
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.OffhandAbility
+    name: OffhandAbility
+    href: LobsterFramework.AbilitySystem.OffhandAbility.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityPipe
+    name: OffhandAbilityPipe
+    href: LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityPipe.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.OffhandAbility
+    name: OffhandAbility
+    href: LobsterFramework.AbilitySystem.OffhandAbility.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityPipe
+    name: OffhandAbilityPipe
+    href: LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityPipe.html
+- uid: LobsterFramework.AbilitySystem.WeaponUtility
+  commentId: T:LobsterFramework.AbilitySystem.WeaponUtility
+  href: LobsterFramework.AbilitySystem.WeaponUtility.html
+  name: WeaponUtility
+  nameWithType: WeaponUtility
+  fullName: LobsterFramework.AbilitySystem.WeaponUtility
 - uid: LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute
   commentId: T:LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute
   href: LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute.html
   name: AddAbilityStatMenuAttribute
   nameWithType: AddAbilityStatMenuAttribute
   fullName: LobsterFramework.AbilitySystem.AddAbilityStatMenuAttribute
-- uid: LobsterFramework.AbilitySystem.AbilityStat
-  commentId: T:LobsterFramework.AbilitySystem.AbilityStat
-  href: LobsterFramework.AbilitySystem.AbilityStat.html
-  name: AbilityStat
-  nameWithType: AbilityStat
-  fullName: LobsterFramework.AbilitySystem.AbilityStat
+- uid: LobsterFramework.AbilitySystem.WeaponAnimationAttribute
+  commentId: T:LobsterFramework.AbilitySystem.WeaponAnimationAttribute
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.WeaponAnimationAttribute.html
+  name: WeaponAnimationAttribute
+  nameWithType: WeaponAnimationAttribute
+  fullName: LobsterFramework.AbilitySystem.WeaponAnimationAttribute
+- uid: LobsterFramework.AbilitySystem.WeaponArt
+  commentId: T:LobsterFramework.AbilitySystem.WeaponArt
+  href: LobsterFramework.AbilitySystem.WeaponArt.html
+  name: WeaponArt
+  nameWithType: WeaponArt
+  fullName: LobsterFramework.AbilitySystem.WeaponArt
+- uid: LobsterFramework.AbilitySystem.WeaponArt.WeaponArtConfig
+  commentId: T:LobsterFramework.AbilitySystem.WeaponArt.WeaponArtConfig
+  href: LobsterFramework.AbilitySystem.WeaponArt.html
+  name: WeaponArt.WeaponArtConfig
+  nameWithType: WeaponArt.WeaponArtConfig
+  fullName: LobsterFramework.AbilitySystem.WeaponArt.WeaponArtConfig
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.WeaponArt
+    name: WeaponArt
+    href: LobsterFramework.AbilitySystem.WeaponArt.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.WeaponArt.WeaponArtConfig
+    name: WeaponArtConfig
+    href: LobsterFramework.AbilitySystem.WeaponArt.WeaponArtConfig.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.WeaponArt
+    name: WeaponArt
+    href: LobsterFramework.AbilitySystem.WeaponArt.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.WeaponArt.WeaponArtConfig
+    name: WeaponArtConfig
+    href: LobsterFramework.AbilitySystem.WeaponArt.WeaponArtConfig.html
+- uid: LobsterFramework.AbilitySystem.WeaponArt.WeaponArtPipe
+  commentId: T:LobsterFramework.AbilitySystem.WeaponArt.WeaponArtPipe
+  href: LobsterFramework.AbilitySystem.WeaponArt.html
+  name: WeaponArt.WeaponArtPipe
+  nameWithType: WeaponArt.WeaponArtPipe
+  fullName: LobsterFramework.AbilitySystem.WeaponArt.WeaponArtPipe
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.WeaponArt
+    name: WeaponArt
+    href: LobsterFramework.AbilitySystem.WeaponArt.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.WeaponArt.WeaponArtPipe
+    name: WeaponArtPipe
+    href: LobsterFramework.AbilitySystem.WeaponArt.WeaponArtPipe.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.WeaponArt
+    name: WeaponArt
+    href: LobsterFramework.AbilitySystem.WeaponArt.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.WeaponArt.WeaponArtPipe
+    name: WeaponArtPipe
+    href: LobsterFramework.AbilitySystem.WeaponArt.WeaponArtPipe.html
+- uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack
+  commentId: T:LobsterFramework.AbilitySystem.HeavyWeaponAttack
+  href: LobsterFramework.AbilitySystem.HeavyWeaponAttack.html
+  name: HeavyWeaponAttack
+  nameWithType: HeavyWeaponAttack
+  fullName: LobsterFramework.AbilitySystem.HeavyWeaponAttack
+- uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackConfig
+  commentId: T:LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackConfig
+  href: LobsterFramework.AbilitySystem.HeavyWeaponAttack.html
+  name: HeavyWeaponAttack.HeavyWeaponAttackConfig
+  nameWithType: HeavyWeaponAttack.HeavyWeaponAttackConfig
+  fullName: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackConfig
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack
+    name: HeavyWeaponAttack
+    href: LobsterFramework.AbilitySystem.HeavyWeaponAttack.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackConfig
+    name: HeavyWeaponAttackConfig
+    href: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackConfig.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack
+    name: HeavyWeaponAttack
+    href: LobsterFramework.AbilitySystem.HeavyWeaponAttack.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackConfig
+    name: HeavyWeaponAttackConfig
+    href: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackConfig.html
+- uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe
+  commentId: T:LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe
+  href: LobsterFramework.AbilitySystem.HeavyWeaponAttack.html
+  name: HeavyWeaponAttack.HeavyWeaponAttackPipe
+  nameWithType: HeavyWeaponAttack.HeavyWeaponAttackPipe
+  fullName: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack
+    name: HeavyWeaponAttack
+    href: LobsterFramework.AbilitySystem.HeavyWeaponAttack.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe
+    name: HeavyWeaponAttackPipe
+    href: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack
+    name: HeavyWeaponAttack
+    href: LobsterFramework.AbilitySystem.HeavyWeaponAttack.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe
+    name: HeavyWeaponAttackPipe
+    href: LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe.html
+- uid: LobsterFramework.AbilitySystem.WeaponStat
+  commentId: T:LobsterFramework.AbilitySystem.WeaponStat
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.WeaponStat.html
+  name: WeaponStat
+  nameWithType: WeaponStat
+  fullName: LobsterFramework.AbilitySystem.WeaponStat
+- uid: LobsterFramework.AbilitySystem.Guard
+  commentId: T:LobsterFramework.AbilitySystem.Guard
+  href: LobsterFramework.AbilitySystem.Guard.html
+  name: Guard
+  nameWithType: Guard
+  fullName: LobsterFramework.AbilitySystem.Guard
+- uid: LobsterFramework.AbilitySystem.Guard.GuardConfig
+  commentId: T:LobsterFramework.AbilitySystem.Guard.GuardConfig
+  href: LobsterFramework.AbilitySystem.Guard.html
+  name: Guard.GuardConfig
+  nameWithType: Guard.GuardConfig
+  fullName: LobsterFramework.AbilitySystem.Guard.GuardConfig
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.Guard
+    name: Guard
+    href: LobsterFramework.AbilitySystem.Guard.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Guard.GuardConfig
+    name: GuardConfig
+    href: LobsterFramework.AbilitySystem.Guard.GuardConfig.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.Guard
+    name: Guard
+    href: LobsterFramework.AbilitySystem.Guard.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Guard.GuardConfig
+    name: GuardConfig
+    href: LobsterFramework.AbilitySystem.Guard.GuardConfig.html
+- uid: LobsterFramework.AbilitySystem.Guard.GuardPipe
+  commentId: T:LobsterFramework.AbilitySystem.Guard.GuardPipe
+  href: LobsterFramework.AbilitySystem.Guard.html
+  name: Guard.GuardPipe
+  nameWithType: Guard.GuardPipe
+  fullName: LobsterFramework.AbilitySystem.Guard.GuardPipe
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.Guard
+    name: Guard
+    href: LobsterFramework.AbilitySystem.Guard.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Guard.GuardPipe
+    name: GuardPipe
+    href: LobsterFramework.AbilitySystem.Guard.GuardPipe.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.Guard
+    name: Guard
+    href: LobsterFramework.AbilitySystem.Guard.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Guard.GuardPipe
+    name: GuardPipe
+    href: LobsterFramework.AbilitySystem.Guard.GuardPipe.html
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutine
+  commentId: T:LobsterFramework.AbilitySystem.AbilityCoroutine
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityCoroutine.html
+  name: AbilityCoroutine
+  nameWithType: AbilityCoroutine
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutine
+- uid: LobsterFramework.AbilitySystem.AbilityCoroutine.AbilityCoroutineConfig
+  commentId: T:LobsterFramework.AbilitySystem.AbilityCoroutine.AbilityCoroutineConfig
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityCoroutine.html
+  name: AbilityCoroutine.AbilityCoroutineConfig
+  nameWithType: AbilityCoroutine.AbilityCoroutineConfig
+  fullName: LobsterFramework.AbilitySystem.AbilityCoroutine.AbilityCoroutineConfig
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine
+    name: AbilityCoroutine
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.AbilityCoroutineConfig
+    name: AbilityCoroutineConfig
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.AbilityCoroutineConfig.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine
+    name: AbilityCoroutine
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.AbilityCoroutine.AbilityCoroutineConfig
+    name: AbilityCoroutineConfig
+    href: LobsterFramework.AbilitySystem.AbilityCoroutine.AbilityCoroutineConfig.html
 - uid: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
   commentId: T:LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
   href: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute.html
   name: AddAbilityMenuAttribute
   nameWithType: AddAbilityMenuAttribute
   fullName: LobsterFramework.AbilitySystem.AddAbilityMenuAttribute
+- uid: LobsterFramework.AbilitySystem.WeaponData
+  commentId: T:LobsterFramework.AbilitySystem.WeaponData
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.WeaponData.html
+  name: WeaponData
+  nameWithType: WeaponData
+  fullName: LobsterFramework.AbilitySystem.WeaponData
+- uid: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute
+  commentId: T:LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.html
+  name: RequireAbilityStatsAttribute
+  nameWithType: RequireAbilityStatsAttribute
+  fullName: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute
 - uid: LobsterFramework.AbilitySystem.ActionOverseer
   commentId: T:LobsterFramework.AbilitySystem.ActionOverseer
   href: LobsterFramework.AbilitySystem.ActionOverseer.html
   name: ActionOverseer
   nameWithType: ActionOverseer
   fullName: LobsterFramework.AbilitySystem.ActionOverseer
+- uid: LobsterFramework.AbilitySystem.AddWeaponArtMenuAttribute
+  commentId: T:LobsterFramework.AbilitySystem.AddWeaponArtMenuAttribute
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AddWeaponArtMenuAttribute.html
+  name: AddWeaponArtMenuAttribute
+  nameWithType: AddWeaponArtMenuAttribute
+  fullName: LobsterFramework.AbilitySystem.AddWeaponArtMenuAttribute
+- uid: LobsterFramework.AbilitySystem.AbilityRunner
+  commentId: T:LobsterFramework.AbilitySystem.AbilityRunner
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityRunner.html
+  name: AbilityRunner
+  nameWithType: AbilityRunner
+  fullName: LobsterFramework.AbilitySystem.AbilityRunner
+- uid: LobsterFramework.AbilitySystem.AbilityStat
+  commentId: T:LobsterFramework.AbilitySystem.AbilityStat
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilityStat.html
+  name: AbilityStat
+  nameWithType: AbilityStat
+  fullName: LobsterFramework.AbilitySystem.AbilityStat
 - uid: LobsterFramework.AbilitySystem.Ability
   commentId: T:LobsterFramework.AbilitySystem.Ability
   parent: LobsterFramework.AbilitySystem
@@ -107,13 +509,85 @@ references:
   - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
     name: AbilityConfig
     href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
-- uid: LobsterFramework.AbilitySystem.AbilityRunner
-  commentId: T:LobsterFramework.AbilitySystem.AbilityRunner
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  commentId: T:LobsterFramework.AbilitySystem.Ability.AbilityPipe
   parent: LobsterFramework.AbilitySystem
-  href: LobsterFramework.AbilitySystem.AbilityRunner.html
-  name: AbilityRunner
-  nameWithType: AbilityRunner
-  fullName: LobsterFramework.AbilitySystem.AbilityRunner
+  href: LobsterFramework.AbilitySystem.Ability.html
+  name: Ability.AbilityPipe
+  nameWithType: Ability.AbilityPipe
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.Ability
+    name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+    name: AbilityPipe
+    href: LobsterFramework.AbilitySystem.Ability.AbilityPipe.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.Ability
+    name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+    name: AbilityPipe
+    href: LobsterFramework.AbilitySystem.Ability.AbilityPipe.html
+- uid: LobsterFramework.AbilitySystem.Weapon
+  commentId: T:LobsterFramework.AbilitySystem.Weapon
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.Weapon.html
+  name: Weapon
+  nameWithType: Weapon
+  fullName: LobsterFramework.AbilitySystem.Weapon
+- uid: LobsterFramework.AbilitySystem.WeaponType
+  commentId: T:LobsterFramework.AbilitySystem.WeaponType
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.WeaponType.html
+  name: WeaponType
+  nameWithType: WeaponType
+  fullName: LobsterFramework.AbilitySystem.WeaponType
+- uid: LobsterFramework.AbilitySystem.WeaponState
+  commentId: T:LobsterFramework.AbilitySystem.WeaponState
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.WeaponState.html
+  name: WeaponState
+  nameWithType: WeaponState
+  fullName: LobsterFramework.AbilitySystem.WeaponState
+- uid: LobsterFramework.AbilitySystem.WeaponWielder
+  commentId: T:LobsterFramework.AbilitySystem.WeaponWielder
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.WeaponWielder.html
+  name: WeaponWielder
+  nameWithType: WeaponWielder
+  fullName: LobsterFramework.AbilitySystem.WeaponWielder
+- uid: LobsterFramework.AbilitySystem.AbilitySelector
+  commentId: T:LobsterFramework.AbilitySystem.AbilitySelector
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.AbilitySelector.html
+  name: AbilitySelector
+  nameWithType: AbilitySelector
+  fullName: LobsterFramework.AbilitySystem.AbilitySelector
+- uid: LobsterFramework.AbilitySystem.TargetSetting
+  commentId: T:LobsterFramework.AbilitySystem.TargetSetting
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.TargetSetting.html
+  name: TargetSetting
+  nameWithType: TargetSetting
+  fullName: LobsterFramework.AbilitySystem.TargetSetting
+- uid: LobsterFramework.AbilitySystem.DamageModifier
+  commentId: T:LobsterFramework.AbilitySystem.DamageModifier
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.DamageModifier.html
+  name: DamageModifier
+  nameWithType: DamageModifier
+  fullName: LobsterFramework.AbilitySystem.DamageModifier
+- uid: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
+  commentId: T:LobsterFramework.AbilitySystem.ComponentRequiredAttribute
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.ComponentRequiredAttribute.html
+  name: ComponentRequiredAttribute
+  nameWithType: ComponentRequiredAttribute
+  fullName: LobsterFramework.AbilitySystem.ComponentRequiredAttribute
 - uid: LobsterFramework.AbilitySystem.AbilityData
   commentId: T:LobsterFramework.AbilitySystem.AbilityData
   parent: LobsterFramework.AbilitySystem
@@ -121,6 +595,63 @@ references:
   name: AbilityData
   nameWithType: AbilityData
   fullName: LobsterFramework.AbilitySystem.AbilityData
+- uid: LobsterFramework.AbilitySystem.TestWeaponAbility
+  commentId: T:LobsterFramework.AbilitySystem.TestWeaponAbility
+  href: LobsterFramework.AbilitySystem.TestWeaponAbility.html
+  name: TestWeaponAbility
+  nameWithType: TestWeaponAbility
+  fullName: LobsterFramework.AbilitySystem.TestWeaponAbility
+- uid: LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityConfig
+  commentId: T:LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityConfig
+  href: LobsterFramework.AbilitySystem.TestWeaponAbility.html
+  name: TestWeaponAbility.TestWeaponAbilityConfig
+  nameWithType: TestWeaponAbility.TestWeaponAbilityConfig
+  fullName: LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityConfig
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.TestWeaponAbility
+    name: TestWeaponAbility
+    href: LobsterFramework.AbilitySystem.TestWeaponAbility.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityConfig
+    name: TestWeaponAbilityConfig
+    href: LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityConfig.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.TestWeaponAbility
+    name: TestWeaponAbility
+    href: LobsterFramework.AbilitySystem.TestWeaponAbility.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityConfig
+    name: TestWeaponAbilityConfig
+    href: LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityConfig.html
+- uid: LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityPipe
+  commentId: T:LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityPipe
+  href: LobsterFramework.AbilitySystem.TestWeaponAbility.html
+  name: TestWeaponAbility.TestWeaponAbilityPipe
+  nameWithType: TestWeaponAbility.TestWeaponAbilityPipe
+  fullName: LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityPipe
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.TestWeaponAbility
+    name: TestWeaponAbility
+    href: LobsterFramework.AbilitySystem.TestWeaponAbility.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityPipe
+    name: TestWeaponAbilityPipe
+    href: LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityPipe.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.TestWeaponAbility
+    name: TestWeaponAbility
+    href: LobsterFramework.AbilitySystem.TestWeaponAbility.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityPipe
+    name: TestWeaponAbilityPipe
+    href: LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityPipe.html
+- uid: LobsterFramework.AbilitySystem.TestAnimationEntries
+  commentId: T:LobsterFramework.AbilitySystem.TestAnimationEntries
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.TestAnimationEntries.html
+  name: TestAnimationEntries
+  nameWithType: TestAnimationEntries
+  fullName: LobsterFramework.AbilitySystem.TestAnimationEntries
 - uid: LobsterFramework.AbilitySystem
   commentId: N:LobsterFramework.AbilitySystem
   href: LobsterFramework.html

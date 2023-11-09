@@ -4,19 +4,32 @@ items:
   commentId: N:LobsterFramework.Utility
   id: LobsterFramework.Utility
   children:
+  - LobsterFramework.Utility.AbilityAnimationConfig
   - LobsterFramework.Utility.AbilitySet
   - LobsterFramework.Utility.AttributeInitializer
+  - LobsterFramework.Utility.BaseAnd
+  - LobsterFramework.Utility.BaseOr
+  - LobsterFramework.Utility.BufferedValueAccessor`1
+  - LobsterFramework.Utility.BufferedValue`1
   - LobsterFramework.Utility.CollisionTrigger
   - LobsterFramework.Utility.Condition
+  - LobsterFramework.Utility.Coroutine
+  - LobsterFramework.Utility.CoroutineRunner
+  - LobsterFramework.Utility.FloatProduct
+  - LobsterFramework.Utility.FloatSum
   - LobsterFramework.Utility.GameUtility
   - LobsterFramework.Utility.IdDistributor
+  - LobsterFramework.Utility.IntSum
   - LobsterFramework.Utility.ManagedSet`1
   - LobsterFramework.Utility.SerializableDictionary`2
   - LobsterFramework.Utility.SerializableHashSet`1
+  - LobsterFramework.Utility.SerializableType`1
   - LobsterFramework.Utility.SortableItem`1
   - LobsterFramework.Utility.StringAbilityConfigDictionary
   - LobsterFramework.Utility.TypeAbilityDictionary
   - LobsterFramework.Utility.TypeAbilityStatDictionary
+  - LobsterFramework.Utility.TypeWeaponStatDictionary
+  - LobsterFramework.Utility.XList`1
   langs:
   - csharp
   - vb
@@ -33,45 +46,26 @@ references:
   name: AttributeInitializer
   nameWithType: AttributeInitializer
   fullName: LobsterFramework.Utility.AttributeInitializer
-- uid: LobsterFramework.Utility.CollisionTrigger
-  commentId: T:LobsterFramework.Utility.CollisionTrigger
-  href: LobsterFramework.Utility.CollisionTrigger.html
-  name: CollisionTrigger
-  nameWithType: CollisionTrigger
-  fullName: LobsterFramework.Utility.CollisionTrigger
-- uid: LobsterFramework.Utility.IdDistributor
-  commentId: T:LobsterFramework.Utility.IdDistributor
-  href: LobsterFramework.Utility.IdDistributor.html
-  name: IdDistributor
-  nameWithType: IdDistributor
-  fullName: LobsterFramework.Utility.IdDistributor
-- uid: LobsterFramework.Utility.Condition
-  commentId: T:LobsterFramework.Utility.Condition
-  href: LobsterFramework.Utility.Condition.html
-  name: Condition
-  nameWithType: Condition
-  fullName: LobsterFramework.Utility.Condition
-- uid: LobsterFramework.Utility.SortableItem`1
-  commentId: T:LobsterFramework.Utility.SortableItem`1
-  parent: LobsterFramework.Utility
-  href: LobsterFramework.Utility.SortableItem-1.html
-  name: SortableItem<T>
-  nameWithType: SortableItem<T>
-  fullName: LobsterFramework.Utility.SortableItem<T>
-  nameWithType.vb: SortableItem(Of T)
-  fullName.vb: LobsterFramework.Utility.SortableItem(Of T)
-  name.vb: SortableItem(Of T)
+- uid: LobsterFramework.Utility.SerializableType`1
+  commentId: T:LobsterFramework.Utility.SerializableType`1
+  href: LobsterFramework.Utility.SerializableType-1.html
+  name: SerializableType<T>
+  nameWithType: SerializableType<T>
+  fullName: LobsterFramework.Utility.SerializableType<T>
+  nameWithType.vb: SerializableType(Of T)
+  fullName.vb: LobsterFramework.Utility.SerializableType(Of T)
+  name.vb: SerializableType(Of T)
   spec.csharp:
-  - uid: LobsterFramework.Utility.SortableItem`1
-    name: SortableItem
-    href: LobsterFramework.Utility.SortableItem-1.html
+  - uid: LobsterFramework.Utility.SerializableType`1
+    name: SerializableType
+    href: LobsterFramework.Utility.SerializableType-1.html
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: LobsterFramework.Utility.SortableItem`1
-    name: SortableItem
-    href: LobsterFramework.Utility.SortableItem-1.html
+  - uid: LobsterFramework.Utility.SerializableType`1
+    name: SerializableType
+    href: LobsterFramework.Utility.SerializableType-1.html
   - name: (
   - name: Of
   - name: " "
@@ -128,12 +122,37 @@ references:
   name: StringAbilityConfigDictionary
   nameWithType: StringAbilityConfigDictionary
   fullName: LobsterFramework.Utility.StringAbilityConfigDictionary
+- uid: LobsterFramework.Utility.TypeWeaponStatDictionary
+  commentId: T:LobsterFramework.Utility.TypeWeaponStatDictionary
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.TypeWeaponStatDictionary.html
+  name: TypeWeaponStatDictionary
+  nameWithType: TypeWeaponStatDictionary
+  fullName: LobsterFramework.Utility.TypeWeaponStatDictionary
+- uid: LobsterFramework.Utility.AbilityAnimationConfig
+  commentId: T:LobsterFramework.Utility.AbilityAnimationConfig
+  href: LobsterFramework.Utility.AbilityAnimationConfig.html
+  name: AbilityAnimationConfig
+  nameWithType: AbilityAnimationConfig
+  fullName: LobsterFramework.Utility.AbilityAnimationConfig
 - uid: LobsterFramework.Utility.GameUtility
   commentId: T:LobsterFramework.Utility.GameUtility
   href: LobsterFramework.Utility.GameUtility.html
   name: GameUtility
   nameWithType: GameUtility
   fullName: LobsterFramework.Utility.GameUtility
+- uid: LobsterFramework.Utility.CollisionTrigger
+  commentId: T:LobsterFramework.Utility.CollisionTrigger
+  href: LobsterFramework.Utility.CollisionTrigger.html
+  name: CollisionTrigger
+  nameWithType: CollisionTrigger
+  fullName: LobsterFramework.Utility.CollisionTrigger
+- uid: LobsterFramework.Utility.IdDistributor
+  commentId: T:LobsterFramework.Utility.IdDistributor
+  href: LobsterFramework.Utility.IdDistributor.html
+  name: IdDistributor
+  nameWithType: IdDistributor
+  fullName: LobsterFramework.Utility.IdDistributor
 - uid: LobsterFramework.Utility.SerializableHashSet`1
   commentId: T:LobsterFramework.Utility.SerializableHashSet`1
   href: LobsterFramework.Utility.SerializableHashSet-1.html
@@ -165,6 +184,135 @@ references:
   name: AbilitySet
   nameWithType: AbilitySet
   fullName: LobsterFramework.Utility.AbilitySet
+- uid: LobsterFramework.Utility.BufferedValue`1
+  commentId: T:LobsterFramework.Utility.BufferedValue`1
+  href: LobsterFramework.Utility.BufferedValue-1.html
+  name: BufferedValue<T>
+  nameWithType: BufferedValue<T>
+  fullName: LobsterFramework.Utility.BufferedValue<T>
+  nameWithType.vb: BufferedValue(Of T)
+  fullName.vb: LobsterFramework.Utility.BufferedValue(Of T)
+  name.vb: BufferedValue(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.BufferedValue`1
+    name: BufferedValue
+    href: LobsterFramework.Utility.BufferedValue-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.BufferedValue`1
+    name: BufferedValue
+    href: LobsterFramework.Utility.BufferedValue-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.BufferedValueAccessor`1
+  commentId: T:LobsterFramework.Utility.BufferedValueAccessor`1
+  href: LobsterFramework.Utility.BufferedValueAccessor-1.html
+  name: BufferedValueAccessor<T>
+  nameWithType: BufferedValueAccessor<T>
+  fullName: LobsterFramework.Utility.BufferedValueAccessor<T>
+  nameWithType.vb: BufferedValueAccessor(Of T)
+  fullName.vb: LobsterFramework.Utility.BufferedValueAccessor(Of T)
+  name.vb: BufferedValueAccessor(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.BufferedValueAccessor`1
+    name: BufferedValueAccessor
+    href: LobsterFramework.Utility.BufferedValueAccessor-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.BufferedValueAccessor`1
+    name: BufferedValueAccessor
+    href: LobsterFramework.Utility.BufferedValueAccessor-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.IntSum
+  commentId: T:LobsterFramework.Utility.IntSum
+  href: LobsterFramework.Utility.IntSum.html
+  name: IntSum
+  nameWithType: IntSum
+  fullName: LobsterFramework.Utility.IntSum
+- uid: LobsterFramework.Utility.FloatSum
+  commentId: T:LobsterFramework.Utility.FloatSum
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.FloatSum.html
+  name: FloatSum
+  nameWithType: FloatSum
+  fullName: LobsterFramework.Utility.FloatSum
+- uid: LobsterFramework.Utility.FloatProduct
+  commentId: T:LobsterFramework.Utility.FloatProduct
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.FloatProduct.html
+  name: FloatProduct
+  nameWithType: FloatProduct
+  fullName: LobsterFramework.Utility.FloatProduct
+- uid: LobsterFramework.Utility.BaseOr
+  commentId: T:LobsterFramework.Utility.BaseOr
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.BaseOr.html
+  name: BaseOr
+  nameWithType: BaseOr
+  fullName: LobsterFramework.Utility.BaseOr
+- uid: LobsterFramework.Utility.BaseAnd
+  commentId: T:LobsterFramework.Utility.BaseAnd
+  href: LobsterFramework.Utility.BaseAnd.html
+  name: BaseAnd
+  nameWithType: BaseAnd
+  fullName: LobsterFramework.Utility.BaseAnd
+- uid: LobsterFramework.Utility.CoroutineRunner
+  commentId: T:LobsterFramework.Utility.CoroutineRunner
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.CoroutineRunner.html
+  name: CoroutineRunner
+  nameWithType: CoroutineRunner
+  fullName: LobsterFramework.Utility.CoroutineRunner
+- uid: LobsterFramework.Utility.Coroutine
+  commentId: T:LobsterFramework.Utility.Coroutine
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.Coroutine.html
+  name: Coroutine
+  nameWithType: Coroutine
+  fullName: LobsterFramework.Utility.Coroutine
+- uid: LobsterFramework.Utility.Condition
+  commentId: T:LobsterFramework.Utility.Condition
+  href: LobsterFramework.Utility.Condition.html
+  name: Condition
+  nameWithType: Condition
+  fullName: LobsterFramework.Utility.Condition
+- uid: LobsterFramework.Utility.SortableItem`1
+  commentId: T:LobsterFramework.Utility.SortableItem`1
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.SortableItem-1.html
+  name: SortableItem<T>
+  nameWithType: SortableItem<T>
+  fullName: LobsterFramework.Utility.SortableItem<T>
+  nameWithType.vb: SortableItem(Of T)
+  fullName.vb: LobsterFramework.Utility.SortableItem(Of T)
+  name.vb: SortableItem(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SortableItem`1
+    name: SortableItem
+    href: LobsterFramework.Utility.SortableItem-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SortableItem`1
+    name: SortableItem
+    href: LobsterFramework.Utility.SortableItem-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: LobsterFramework.Utility.ManagedSet`1
   commentId: T:LobsterFramework.Utility.ManagedSet`1
   href: LobsterFramework.Utility.ManagedSet-1.html
@@ -185,6 +333,31 @@ references:
   - uid: LobsterFramework.Utility.ManagedSet`1
     name: ManagedSet
     href: LobsterFramework.Utility.ManagedSet-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility.XList`1
+  commentId: T:LobsterFramework.Utility.XList`1
+  href: LobsterFramework.Utility.XList-1.html
+  name: XList<T>
+  nameWithType: XList<T>
+  fullName: LobsterFramework.Utility.XList<T>
+  nameWithType.vb: XList(Of T)
+  fullName.vb: LobsterFramework.Utility.XList(Of T)
+  name.vb: XList(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.XList`1
+    name: XList
+    href: LobsterFramework.Utility.XList-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.XList`1
+    name: XList
+    href: LobsterFramework.Utility.XList-1.html
   - name: (
   - name: Of
   - name: " "

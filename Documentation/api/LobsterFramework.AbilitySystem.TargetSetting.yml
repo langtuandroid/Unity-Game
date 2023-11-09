@@ -5,7 +5,7 @@ items:
   id: TargetSetting
   parent: LobsterFramework.AbilitySystem
   children:
-  - LobsterFramework.AbilitySystem.TargetSetting.IsTarget(LobsterFramework.EntitySystem.Entity)
+  - LobsterFramework.AbilitySystem.TargetSetting.IsTarget(LobsterFramework.Entity)
   - LobsterFramework.AbilitySystem.TargetSetting.ignoreGroups
   - LobsterFramework.AbilitySystem.TargetSetting.targetGroups
   langs:
@@ -17,10 +17,10 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Action/TargetSetting.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Utility/TargetSetting.cs
     id: TargetSetting
-    path: ../Assets/Framework/Scriptable Objects/Action/TargetSetting.cs
-    startLine: 8
+    path: ../Assets/Framework/AbilitySystem/Utility/TargetSetting.cs
+    startLine: 5
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -109,18 +109,18 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Action/TargetSetting.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Utility/TargetSetting.cs
     id: targetGroups
-    path: ../Assets/Framework/Scriptable Objects/Action/TargetSetting.cs
-    startLine: 11
+    path: ../Assets/Framework/AbilitySystem/Utility/TargetSetting.cs
+    startLine: 8
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
-    content: public EntityGroup[] targetGroups
+    content: public List<EntityGroup> targetGroups
     return:
-      type: LobsterFramework.Utility.Groups.EntityGroup[]
-    content.vb: Public targetGroups As EntityGroup()
+      type: System.Collections.Generic.List{LobsterFramework.EntityGroup}
+    content.vb: Public targetGroups As List(Of EntityGroup)
 - uid: LobsterFramework.AbilitySystem.TargetSetting.ignoreGroups
   commentId: F:LobsterFramework.AbilitySystem.TargetSetting.ignoreGroups
   id: ignoreGroups
@@ -134,35 +134,35 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Action/TargetSetting.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Utility/TargetSetting.cs
     id: ignoreGroups
-    path: ../Assets/Framework/Scriptable Objects/Action/TargetSetting.cs
-    startLine: 12
+    path: ../Assets/Framework/AbilitySystem/Utility/TargetSetting.cs
+    startLine: 9
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
   syntax:
-    content: public EntityGroup[] ignoreGroups
+    content: public List<EntityGroup> ignoreGroups
     return:
-      type: LobsterFramework.Utility.Groups.EntityGroup[]
-    content.vb: Public ignoreGroups As EntityGroup()
-- uid: LobsterFramework.AbilitySystem.TargetSetting.IsTarget(LobsterFramework.EntitySystem.Entity)
-  commentId: M:LobsterFramework.AbilitySystem.TargetSetting.IsTarget(LobsterFramework.EntitySystem.Entity)
-  id: IsTarget(LobsterFramework.EntitySystem.Entity)
+      type: System.Collections.Generic.List{LobsterFramework.EntityGroup}
+    content.vb: Public ignoreGroups As List(Of EntityGroup)
+- uid: LobsterFramework.AbilitySystem.TargetSetting.IsTarget(LobsterFramework.Entity)
+  commentId: M:LobsterFramework.AbilitySystem.TargetSetting.IsTarget(LobsterFramework.Entity)
+  id: IsTarget(LobsterFramework.Entity)
   parent: LobsterFramework.AbilitySystem.TargetSetting
   langs:
   - csharp
   - vb
   name: IsTarget(Entity)
   nameWithType: TargetSetting.IsTarget(Entity)
-  fullName: LobsterFramework.AbilitySystem.TargetSetting.IsTarget(LobsterFramework.EntitySystem.Entity)
+  fullName: LobsterFramework.AbilitySystem.TargetSetting.IsTarget(LobsterFramework.Entity)
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/Action/TargetSetting.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Utility/TargetSetting.cs
     id: IsTarget
-    path: ../Assets/Framework/Scriptable Objects/Action/TargetSetting.cs
-    startLine: 16
+    path: ../Assets/Framework/AbilitySystem/Utility/TargetSetting.cs
+    startLine: 13
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -170,7 +170,7 @@ items:
     content: public bool IsTarget(Entity entity)
     parameters:
     - id: entity
-      type: LobsterFramework.EntitySystem.Entity
+      type: LobsterFramework.Entity
     return:
       type: System.Boolean
     content.vb: Public Function IsTarget(entity As Entity) As Boolean
@@ -2157,40 +2157,117 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: LobsterFramework.Utility.Groups.EntityGroup[]
-  isExternal: true
-  href: LobsterFramework.Utility.Groups.EntityGroup.html
-  name: EntityGroup[]
-  nameWithType: EntityGroup[]
-  fullName: LobsterFramework.Utility.Groups.EntityGroup[]
-  nameWithType.vb: EntityGroup()
-  fullName.vb: LobsterFramework.Utility.Groups.EntityGroup()
-  name.vb: EntityGroup()
+- uid: System.Collections.Generic.List{LobsterFramework.EntityGroup}
+  commentId: T:System.Collections.Generic.List{LobsterFramework.EntityGroup}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<EntityGroup>
+  nameWithType: List<EntityGroup>
+  fullName: System.Collections.Generic.List<LobsterFramework.EntityGroup>
+  nameWithType.vb: List(Of EntityGroup)
+  fullName.vb: System.Collections.Generic.List(Of LobsterFramework.EntityGroup)
+  name.vb: List(Of EntityGroup)
   spec.csharp:
-  - uid: LobsterFramework.Utility.Groups.EntityGroup
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: LobsterFramework.EntityGroup
     name: EntityGroup
-    href: LobsterFramework.Utility.Groups.EntityGroup.html
-  - name: '['
-  - name: ']'
+    href: LobsterFramework.EntityGroup.html
+  - name: '>'
   spec.vb:
-  - uid: LobsterFramework.Utility.Groups.EntityGroup
-    name: EntityGroup
-    href: LobsterFramework.Utility.Groups.EntityGroup.html
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.EntityGroup
+    name: EntityGroup
+    href: LobsterFramework.EntityGroup.html
   - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: LobsterFramework.AbilitySystem.TargetSetting.IsTarget*
   commentId: Overload:LobsterFramework.AbilitySystem.TargetSetting.IsTarget
-  href: LobsterFramework.AbilitySystem.TargetSetting.html#LobsterFramework.AbilitySystem.TargetSetting.IsTarget(LobsterFramework.EntitySystem.Entity)
+  href: LobsterFramework.AbilitySystem.TargetSetting.html#LobsterFramework.AbilitySystem.TargetSetting.IsTarget(LobsterFramework.Entity)
   name: IsTarget
   nameWithType: TargetSetting.IsTarget
   fullName: LobsterFramework.AbilitySystem.TargetSetting.IsTarget
-- uid: LobsterFramework.EntitySystem.Entity
-  commentId: T:LobsterFramework.EntitySystem.Entity
-  parent: LobsterFramework.EntitySystem
-  href: LobsterFramework.EntitySystem.Entity.html
+- uid: LobsterFramework.Entity
+  commentId: T:LobsterFramework.Entity
+  parent: LobsterFramework
+  href: LobsterFramework.Entity.html
   name: Entity
   nameWithType: Entity
-  fullName: LobsterFramework.EntitySystem.Entity
+  fullName: LobsterFramework.Entity
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -2202,25 +2279,9 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: LobsterFramework.EntitySystem
-  commentId: N:LobsterFramework.EntitySystem
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
   href: LobsterFramework.html
-  name: LobsterFramework.EntitySystem
-  nameWithType: LobsterFramework.EntitySystem
-  fullName: LobsterFramework.EntitySystem
-  spec.csharp:
-  - uid: LobsterFramework
-    name: LobsterFramework
-    href: LobsterFramework.html
-  - name: .
-  - uid: LobsterFramework.EntitySystem
-    name: EntitySystem
-    href: LobsterFramework.EntitySystem.html
-  spec.vb:
-  - uid: LobsterFramework
-    name: LobsterFramework
-    href: LobsterFramework.html
-  - name: .
-  - uid: LobsterFramework.EntitySystem
-    name: EntitySystem
-    href: LobsterFramework.EntitySystem.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework

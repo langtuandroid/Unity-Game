@@ -1,0 +1,131 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AbilitySystem.TestAnimationEntries
+  commentId: T:LobsterFramework.AbilitySystem.TestAnimationEntries
+  id: TestAnimationEntries
+  parent: LobsterFramework.AbilitySystem
+  children:
+  - LobsterFramework.AbilitySystem.TestAnimationEntries.Entry1
+  - LobsterFramework.AbilitySystem.TestAnimationEntries.Entry2
+  - LobsterFramework.AbilitySystem.TestAnimationEntries.Entry3
+  langs:
+  - csharp
+  - vb
+  name: TestAnimationEntries
+  nameWithType: TestAnimationEntries
+  fullName: LobsterFramework.AbilitySystem.TestAnimationEntries
+  type: Enum
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Abilities/TestWeaponAbility.cs
+    id: TestAnimationEntries
+    path: ../Assets/Framework/AbilitySystem/Abilities/TestWeaponAbility.cs
+    startLine: 38
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public enum TestAnimationEntries
+    content.vb: Public Enum TestAnimationEntries
+- uid: LobsterFramework.AbilitySystem.TestAnimationEntries.Entry1
+  commentId: F:LobsterFramework.AbilitySystem.TestAnimationEntries.Entry1
+  id: Entry1
+  parent: LobsterFramework.AbilitySystem.TestAnimationEntries
+  langs:
+  - csharp
+  - vb
+  name: Entry1
+  nameWithType: TestAnimationEntries.Entry1
+  fullName: LobsterFramework.AbilitySystem.TestAnimationEntries.Entry1
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Abilities/TestWeaponAbility.cs
+    id: Entry1
+    path: ../Assets/Framework/AbilitySystem/Abilities/TestWeaponAbility.cs
+    startLine: 39
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: Entry1 = 0
+    return:
+      type: LobsterFramework.AbilitySystem.TestAnimationEntries
+- uid: LobsterFramework.AbilitySystem.TestAnimationEntries.Entry2
+  commentId: F:LobsterFramework.AbilitySystem.TestAnimationEntries.Entry2
+  id: Entry2
+  parent: LobsterFramework.AbilitySystem.TestAnimationEntries
+  langs:
+  - csharp
+  - vb
+  name: Entry2
+  nameWithType: TestAnimationEntries.Entry2
+  fullName: LobsterFramework.AbilitySystem.TestAnimationEntries.Entry2
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Abilities/TestWeaponAbility.cs
+    id: Entry2
+    path: ../Assets/Framework/AbilitySystem/Abilities/TestWeaponAbility.cs
+    startLine: 40
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: Entry2 = 1
+    return:
+      type: LobsterFramework.AbilitySystem.TestAnimationEntries
+- uid: LobsterFramework.AbilitySystem.TestAnimationEntries.Entry3
+  commentId: F:LobsterFramework.AbilitySystem.TestAnimationEntries.Entry3
+  id: Entry3
+  parent: LobsterFramework.AbilitySystem.TestAnimationEntries
+  langs:
+  - csharp
+  - vb
+  name: Entry3
+  nameWithType: TestAnimationEntries.Entry3
+  fullName: LobsterFramework.AbilitySystem.TestAnimationEntries.Entry3
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Abilities/TestWeaponAbility.cs
+    id: Entry3
+    path: ../Assets/Framework/AbilitySystem/Abilities/TestWeaponAbility.cs
+    startLine: 40
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: Entry3 = 2
+    return:
+      type: LobsterFramework.AbilitySystem.TestAnimationEntries
+references:
+- uid: LobsterFramework.AbilitySystem
+  commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
+  name: LobsterFramework.AbilitySystem
+  nameWithType: LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+- uid: LobsterFramework.AbilitySystem.TestAnimationEntries
+  commentId: T:LobsterFramework.AbilitySystem.TestAnimationEntries
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.TestAnimationEntries.html
+  name: TestAnimationEntries
+  nameWithType: TestAnimationEntries
+  fullName: LobsterFramework.AbilitySystem.TestAnimationEntries

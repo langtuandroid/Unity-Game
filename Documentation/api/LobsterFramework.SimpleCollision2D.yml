@@ -1,0 +1,105 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.SimpleCollision2D
+  commentId: T:LobsterFramework.SimpleCollision2D
+  id: SimpleCollision2D
+  parent: LobsterFramework
+  children:
+  - LobsterFramework.SimpleCollision2D.collider
+  - LobsterFramework.SimpleCollision2D.contactPoint
+  langs:
+  - csharp
+  - vb
+  name: SimpleCollision2D
+  nameWithType: SimpleCollision2D
+  fullName: LobsterFramework.SimpleCollision2D
+  type: Struct
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/ContinousCollision2D.cs
+    id: SimpleCollision2D
+    path: ../Assets/Framework/Utility/ContinousCollision2D.cs
+    startLine: 34
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public struct SimpleCollision2D
+    content.vb: Public Structure SimpleCollision2D
+- uid: LobsterFramework.SimpleCollision2D.collider
+  commentId: F:LobsterFramework.SimpleCollision2D.collider
+  id: collider
+  parent: LobsterFramework.SimpleCollision2D
+  langs:
+  - csharp
+  - vb
+  name: collider
+  nameWithType: SimpleCollision2D.collider
+  fullName: LobsterFramework.SimpleCollision2D.collider
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/ContinousCollision2D.cs
+    id: collider
+    path: ../Assets/Framework/Utility/ContinousCollision2D.cs
+    startLine: 36
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public Collider2D collider
+    return:
+      type: UnityEngine.Collider2D
+    content.vb: Public collider As Collider2D
+- uid: LobsterFramework.SimpleCollision2D.contactPoint
+  commentId: F:LobsterFramework.SimpleCollision2D.contactPoint
+  id: contactPoint
+  parent: LobsterFramework.SimpleCollision2D
+  langs:
+  - csharp
+  - vb
+  name: contactPoint
+  nameWithType: SimpleCollision2D.contactPoint
+  fullName: LobsterFramework.SimpleCollision2D.contactPoint
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/ContinousCollision2D.cs
+    id: contactPoint
+    path: ../Assets/Framework/Utility/ContinousCollision2D.cs
+    startLine: 37
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public Vector3 contactPoint
+    return:
+      type: UnityEngine.Vector3
+    content.vb: Public contactPoint As Vector3
+references:
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: UnityEngine.Collider2D
+  commentId: T:UnityEngine.Collider2D
+  parent: UnityEngine
+  isExternal: true
+  name: Collider2D
+  nameWithType: Collider2D
+  fullName: UnityEngine.Collider2D
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: UnityEngine.Vector3
+  commentId: T:UnityEngine.Vector3
+  parent: UnityEngine
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: UnityEngine.Vector3

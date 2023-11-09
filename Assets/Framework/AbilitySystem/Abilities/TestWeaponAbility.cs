@@ -7,7 +7,7 @@ namespace LobsterFramework.AbilitySystem
 {
     [AddAbilityMenu]
     [WeaponAnimation(typeof(TestAnimationEntries))]
-    [AddWeaponArtMenu(false, WeaponType.EmptyHand)]
+    [AddWeaponArtMenu(false, WeaponType.EmptyHand, WeaponType.Firearm)]
     public class TestWeaponAbility : WeaponAbility
     {
         public class TestWeaponAbilityConfig : AbilityCoroutineConfig { 

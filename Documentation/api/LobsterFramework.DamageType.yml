@@ -1,0 +1,165 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.DamageType
+  commentId: T:LobsterFramework.DamageType
+  id: DamageType
+  parent: LobsterFramework
+  children:
+  - LobsterFramework.DamageType.General
+  - LobsterFramework.DamageType.None
+  - LobsterFramework.DamageType.StatusEffect
+  - LobsterFramework.DamageType.WeaponDeflect
+  - LobsterFramework.DamageType.WeaponHit
+  langs:
+  - csharp
+  - vb
+  name: DamageType
+  nameWithType: DamageType
+  fullName: LobsterFramework.DamageType
+  type: Enum
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: DamageType
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 276
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public enum DamageType
+    content.vb: Public Enum DamageType
+- uid: LobsterFramework.DamageType.WeaponHit
+  commentId: F:LobsterFramework.DamageType.WeaponHit
+  id: WeaponHit
+  parent: LobsterFramework.DamageType
+  langs:
+  - csharp
+  - vb
+  name: WeaponHit
+  nameWithType: DamageType.WeaponHit
+  fullName: LobsterFramework.DamageType.WeaponHit
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: WeaponHit
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 277
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: WeaponHit = 0
+    return:
+      type: LobsterFramework.DamageType
+- uid: LobsterFramework.DamageType.WeaponDeflect
+  commentId: F:LobsterFramework.DamageType.WeaponDeflect
+  id: WeaponDeflect
+  parent: LobsterFramework.DamageType
+  langs:
+  - csharp
+  - vb
+  name: WeaponDeflect
+  nameWithType: DamageType.WeaponDeflect
+  fullName: LobsterFramework.DamageType.WeaponDeflect
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: WeaponDeflect
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 278
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: WeaponDeflect = 1
+    return:
+      type: LobsterFramework.DamageType
+- uid: LobsterFramework.DamageType.StatusEffect
+  commentId: F:LobsterFramework.DamageType.StatusEffect
+  id: StatusEffect
+  parent: LobsterFramework.DamageType
+  langs:
+  - csharp
+  - vb
+  name: StatusEffect
+  nameWithType: DamageType.StatusEffect
+  fullName: LobsterFramework.DamageType.StatusEffect
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: StatusEffect
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 279
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: StatusEffect = 2
+    return:
+      type: LobsterFramework.DamageType
+- uid: LobsterFramework.DamageType.General
+  commentId: F:LobsterFramework.DamageType.General
+  id: General
+  parent: LobsterFramework.DamageType
+  langs:
+  - csharp
+  - vb
+  name: General
+  nameWithType: DamageType.General
+  fullName: LobsterFramework.DamageType.General
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: General
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 280
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: General = 3
+    return:
+      type: LobsterFramework.DamageType
+- uid: LobsterFramework.DamageType.None
+  commentId: F:LobsterFramework.DamageType.None
+  id: None
+  parent: LobsterFramework.DamageType
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: DamageType.None
+  fullName: LobsterFramework.DamageType.None
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: None
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 281
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: None = 4
+    return:
+      type: LobsterFramework.DamageType
+references:
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: LobsterFramework.DamageType
+  commentId: T:LobsterFramework.DamageType
+  parent: LobsterFramework
+  href: LobsterFramework.DamageType.html
+  name: DamageType
+  nameWithType: DamageType
+  fullName: LobsterFramework.DamageType

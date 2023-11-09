@@ -4,7 +4,35 @@ items:
   commentId: N:LobsterFramework
   id: LobsterFramework
   children:
+  - LobsterFramework.AIUtility
+  - LobsterFramework.AnimationClipArray
+  - LobsterFramework.CharacterStateManager
+  - LobsterFramework.CharacterStateManager.CharacterState
+  - LobsterFramework.ContinousCollision2D
+  - LobsterFramework.CoroutineOption
+  - LobsterFramework.Damage
+  - LobsterFramework.DamageType
+  - LobsterFramework.DisableInPlayMode
+  - LobsterFramework.EffectProcessor
+  - LobsterFramework.Entity
+  - LobsterFramework.EntityGroup
   - LobsterFramework.FindMissingScript
+  - LobsterFramework.GameManager
+  - LobsterFramework.GameStateManager
+  - LobsterFramework.IntroMenu
+  - LobsterFramework.InventoryUtil
+  - LobsterFramework.ItemEntryUI
+  - LobsterFramework.LayerAttribute
+  - LobsterFramework.MovementController
+  - LobsterFramework.OffhandWeaponAbilityAttribute
+  - LobsterFramework.Poise
+  - LobsterFramework.ReadOnlyAttribute
+  - LobsterFramework.Scene
+  - LobsterFramework.SceneEventChannel
+  - LobsterFramework.SceneLoader
+  - LobsterFramework.SerializableArray`1
+  - LobsterFramework.SimpleCollision2D
+  - LobsterFramework.SubLevelComponent
   langs:
   - csharp
   - vb
@@ -15,9 +43,234 @@ items:
   assemblies:
   - LobsterFramework
 references:
+- uid: LobsterFramework.SerializableArray`1
+  commentId: T:LobsterFramework.SerializableArray`1
+  href: LobsterFramework.SerializableArray-1.html
+  name: SerializableArray<T>
+  nameWithType: SerializableArray<T>
+  fullName: LobsterFramework.SerializableArray<T>
+  nameWithType.vb: SerializableArray(Of T)
+  fullName.vb: LobsterFramework.SerializableArray(Of T)
+  name.vb: SerializableArray(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.SerializableArray`1
+    name: SerializableArray
+    href: LobsterFramework.SerializableArray-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.SerializableArray`1
+    name: SerializableArray
+    href: LobsterFramework.SerializableArray-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.AnimationClipArray
+  commentId: T:LobsterFramework.AnimationClipArray
+  parent: LobsterFramework
+  href: LobsterFramework.AnimationClipArray.html
+  name: AnimationClipArray
+  nameWithType: AnimationClipArray
+  fullName: LobsterFramework.AnimationClipArray
+- uid: LobsterFramework.CharacterStateManager
+  commentId: T:LobsterFramework.CharacterStateManager
+  href: LobsterFramework.CharacterStateManager.html
+  name: CharacterStateManager
+  nameWithType: CharacterStateManager
+  fullName: LobsterFramework.CharacterStateManager
+- uid: LobsterFramework.CharacterStateManager.CharacterState
+  commentId: T:LobsterFramework.CharacterStateManager.CharacterState
+  parent: LobsterFramework
+  href: LobsterFramework.CharacterStateManager.html
+  name: CharacterStateManager.CharacterState
+  nameWithType: CharacterStateManager.CharacterState
+  fullName: LobsterFramework.CharacterStateManager.CharacterState
+  spec.csharp:
+  - uid: LobsterFramework.CharacterStateManager
+    name: CharacterStateManager
+    href: LobsterFramework.CharacterStateManager.html
+  - name: .
+  - uid: LobsterFramework.CharacterStateManager.CharacterState
+    name: CharacterState
+    href: LobsterFramework.CharacterStateManager.CharacterState.html
+  spec.vb:
+  - uid: LobsterFramework.CharacterStateManager
+    name: CharacterStateManager
+    href: LobsterFramework.CharacterStateManager.html
+  - name: .
+  - uid: LobsterFramework.CharacterStateManager.CharacterState
+    name: CharacterState
+    href: LobsterFramework.CharacterStateManager.CharacterState.html
+- uid: LobsterFramework.Entity
+  commentId: T:LobsterFramework.Entity
+  parent: LobsterFramework
+  href: LobsterFramework.Entity.html
+  name: Entity
+  nameWithType: Entity
+  fullName: LobsterFramework.Entity
+- uid: LobsterFramework.DamageType
+  commentId: T:LobsterFramework.DamageType
+  parent: LobsterFramework
+  href: LobsterFramework.DamageType.html
+  name: DamageType
+  nameWithType: DamageType
+  fullName: LobsterFramework.DamageType
+- uid: LobsterFramework.Damage
+  commentId: T:LobsterFramework.Damage
+  parent: LobsterFramework
+  href: LobsterFramework.Damage.html
+  name: Damage
+  nameWithType: Damage
+  fullName: LobsterFramework.Damage
+- uid: LobsterFramework.GameStateManager
+  commentId: T:LobsterFramework.GameStateManager
+  href: LobsterFramework.GameStateManager.html
+  name: GameStateManager
+  nameWithType: GameStateManager
+  fullName: LobsterFramework.GameStateManager
+- uid: LobsterFramework.EntityGroup
+  commentId: T:LobsterFramework.EntityGroup
+  href: LobsterFramework.EntityGroup.html
+  name: EntityGroup
+  nameWithType: EntityGroup
+  fullName: LobsterFramework.EntityGroup
+- uid: LobsterFramework.ReadOnlyAttribute
+  commentId: T:LobsterFramework.ReadOnlyAttribute
+  parent: LobsterFramework
+  href: LobsterFramework.ReadOnlyAttribute.html
+  name: ReadOnlyAttribute
+  nameWithType: ReadOnlyAttribute
+  fullName: LobsterFramework.ReadOnlyAttribute
+- uid: LobsterFramework.SceneLoader
+  commentId: T:LobsterFramework.SceneLoader
+  href: LobsterFramework.SceneLoader.html
+  name: SceneLoader
+  nameWithType: SceneLoader
+  fullName: LobsterFramework.SceneLoader
+- uid: LobsterFramework.Poise
+  commentId: T:LobsterFramework.Poise
+  parent: LobsterFramework
+  href: LobsterFramework.Poise.html
+  name: Poise
+  nameWithType: Poise
+  fullName: LobsterFramework.Poise
+- uid: LobsterFramework.MovementController
+  commentId: T:LobsterFramework.MovementController
+  parent: LobsterFramework
+  href: LobsterFramework.MovementController.html
+  name: MovementController
+  nameWithType: MovementController
+  fullName: LobsterFramework.MovementController
+- uid: LobsterFramework.EffectProcessor
+  commentId: T:LobsterFramework.EffectProcessor
+  parent: LobsterFramework
+  href: LobsterFramework.EffectProcessor.html
+  name: EffectProcessor
+  nameWithType: EffectProcessor
+  fullName: LobsterFramework.EffectProcessor
+- uid: LobsterFramework.ItemEntryUI
+  commentId: T:LobsterFramework.ItemEntryUI
+  href: LobsterFramework.ItemEntryUI.html
+  name: ItemEntryUI
+  nameWithType: ItemEntryUI
+  fullName: LobsterFramework.ItemEntryUI
+- uid: LobsterFramework.DisableInPlayMode
+  commentId: T:LobsterFramework.DisableInPlayMode
+  parent: LobsterFramework
+  href: LobsterFramework.DisableInPlayMode.html
+  name: DisableInPlayMode
+  nameWithType: DisableInPlayMode
+  fullName: LobsterFramework.DisableInPlayMode
+- uid: LobsterFramework.OffhandWeaponAbilityAttribute
+  commentId: T:LobsterFramework.OffhandWeaponAbilityAttribute
+  href: LobsterFramework.OffhandWeaponAbilityAttribute.html
+  name: OffhandWeaponAbilityAttribute
+  nameWithType: OffhandWeaponAbilityAttribute
+  fullName: LobsterFramework.OffhandWeaponAbilityAttribute
+- uid: LobsterFramework.Scene
+  commentId: T:LobsterFramework.Scene
+  parent: LobsterFramework
+  href: LobsterFramework.Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: LobsterFramework.Scene
+- uid: LobsterFramework.GameManager
+  commentId: T:LobsterFramework.GameManager
+  parent: LobsterFramework
+  href: LobsterFramework.GameManager.html
+  name: GameManager
+  nameWithType: GameManager
+  fullName: LobsterFramework.GameManager
+- uid: LobsterFramework.SubLevelComponent
+  commentId: T:LobsterFramework.SubLevelComponent
+  parent: LobsterFramework
+  href: LobsterFramework.SubLevelComponent.html
+  name: SubLevelComponent
+  nameWithType: SubLevelComponent
+  fullName: LobsterFramework.SubLevelComponent
+- uid: LobsterFramework.ContinousCollision2D
+  commentId: T:LobsterFramework.ContinousCollision2D
+  href: LobsterFramework.ContinousCollision2D.html
+  name: ContinousCollision2D
+  nameWithType: ContinousCollision2D
+  fullName: LobsterFramework.ContinousCollision2D
+- uid: LobsterFramework.SimpleCollision2D
+  commentId: T:LobsterFramework.SimpleCollision2D
+  parent: LobsterFramework
+  href: LobsterFramework.SimpleCollision2D.html
+  name: SimpleCollision2D
+  nameWithType: SimpleCollision2D
+  fullName: LobsterFramework.SimpleCollision2D
+- uid: LobsterFramework.InventoryUtil
+  commentId: T:LobsterFramework.InventoryUtil
+  href: LobsterFramework.InventoryUtil.html
+  name: InventoryUtil
+  nameWithType: InventoryUtil
+  fullName: LobsterFramework.InventoryUtil
+- uid: LobsterFramework.SceneEventChannel
+  commentId: T:LobsterFramework.SceneEventChannel
+  href: LobsterFramework.SceneEventChannel.html
+  name: SceneEventChannel
+  nameWithType: SceneEventChannel
+  fullName: LobsterFramework.SceneEventChannel
+- uid: LobsterFramework.LayerAttribute
+  commentId: T:LobsterFramework.LayerAttribute
+  parent: LobsterFramework
+  href: LobsterFramework.LayerAttribute.html
+  name: LayerAttribute
+  nameWithType: LayerAttribute
+  fullName: LobsterFramework.LayerAttribute
+- uid: LobsterFramework.CoroutineOption
+  commentId: T:LobsterFramework.CoroutineOption
+  parent: LobsterFramework
+  href: LobsterFramework.CoroutineOption.html
+  name: CoroutineOption
+  nameWithType: CoroutineOption
+  fullName: LobsterFramework.CoroutineOption
+- uid: LobsterFramework.IntroMenu
+  commentId: T:LobsterFramework.IntroMenu
+  href: LobsterFramework.IntroMenu.html
+  name: IntroMenu
+  nameWithType: IntroMenu
+  fullName: LobsterFramework.IntroMenu
+- uid: LobsterFramework.AIUtility
+  commentId: T:LobsterFramework.AIUtility
+  href: LobsterFramework.AIUtility.html
+  name: AIUtility
+  nameWithType: AIUtility
+  fullName: LobsterFramework.AIUtility
 - uid: LobsterFramework.FindMissingScript
   commentId: T:LobsterFramework.FindMissingScript
   href: LobsterFramework.FindMissingScript.html
   name: FindMissingScript
   nameWithType: FindMissingScript
   fullName: LobsterFramework.FindMissingScript
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework

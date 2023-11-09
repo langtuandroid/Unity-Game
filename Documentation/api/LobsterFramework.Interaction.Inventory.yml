@@ -5,7 +5,8 @@ items:
   id: Inventory
   parent: LobsterFramework.Interaction
   children:
-  - LobsterFramework.Interaction.Inventory.FindSpot(LobsterFramework.Interaction.InventoryItem)
+  - LobsterFramework.Interaction.Inventory.DropItem(LobsterFramework.Interaction.InventoryItem)
+  - LobsterFramework.Interaction.Inventory.Entity
   - LobsterFramework.Interaction.Inventory.OnInteract(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.InteractionType)
   langs:
   - csharp
@@ -16,12 +17,12 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Interactors/Inventory.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Inventory.cs
     id: Inventory
-    path: ../Assets/GameScripts/Interactors/Inventory.cs
-    startLine: 4
+    path: ../Assets/Framework/Interaction/Inventory.cs
+    startLine: 7
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.Interaction
   syntax:
     content: 'public class Inventory : Interactor'
@@ -39,10 +40,6 @@ items:
   - LobsterFramework.Interaction.Interactor.Start
   - LobsterFramework.Interaction.Interactor.OnEnable
   - LobsterFramework.Interaction.Interactor.OnDisable
-  - LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  - LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  - LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  - LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
   - LobsterFramework.Interaction.Interactor.Interact(System.Type,LobsterFramework.Interaction.InteractionType)
   - LobsterFramework.Interaction.Interactor.Interact(LobsterFramework.Interaction.InteractionType)
   - LobsterFramework.Interaction.Interactor.Interact(LobsterFramework.Interaction.InteractionType,LobsterFramework.Interaction.InteractableObject)
@@ -159,6 +156,33 @@ items:
   - UnityEngine.Object.ToString
   - UnityEngine.Object.name
   - UnityEngine.Object.hideFlags
+- uid: LobsterFramework.Interaction.Inventory.Entity
+  commentId: P:LobsterFramework.Interaction.Inventory.Entity
+  id: Entity
+  parent: LobsterFramework.Interaction.Inventory
+  langs:
+  - csharp
+  - vb
+  name: Entity
+  nameWithType: Inventory.Entity
+  fullName: LobsterFramework.Interaction.Inventory.Entity
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Inventory.cs
+    id: Entity
+    path: ../Assets/Framework/Interaction/Inventory.cs
+    startLine: 26
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public Entity Entity { get; }
+    parameters: []
+    return:
+      type: LobsterFramework.Entity
+    content.vb: Public ReadOnly Property Entity As Entity
+  overload: LobsterFramework.Interaction.Inventory.Entity*
 - uid: LobsterFramework.Interaction.Inventory.OnInteract(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.InteractionType)
   commentId: M:LobsterFramework.Interaction.Inventory.OnInteract(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.InteractionType)
   id: OnInteract(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.InteractionType)
@@ -172,12 +196,12 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Interactors/Inventory.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Inventory.cs
     id: OnInteract
-    path: ../Assets/GameScripts/Interactors/Inventory.cs
-    startLine: 12
+    path: ../Assets/Framework/Interaction/Inventory.cs
+    startLine: 28
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.Interaction
   example: []
   syntax:
@@ -190,35 +214,36 @@ items:
     content.vb: Protected Overrides Sub OnInteract(obj As InteractableObject, interactionType As InteractionType)
   overridden: LobsterFramework.Interaction.Interactor.OnInteract(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.InteractionType)
   overload: LobsterFramework.Interaction.Inventory.OnInteract*
-- uid: LobsterFramework.Interaction.Inventory.FindSpot(LobsterFramework.Interaction.InventoryItem)
-  commentId: M:LobsterFramework.Interaction.Inventory.FindSpot(LobsterFramework.Interaction.InventoryItem)
-  id: FindSpot(LobsterFramework.Interaction.InventoryItem)
+- uid: LobsterFramework.Interaction.Inventory.DropItem(LobsterFramework.Interaction.InventoryItem)
+  commentId: M:LobsterFramework.Interaction.Inventory.DropItem(LobsterFramework.Interaction.InventoryItem)
+  id: DropItem(LobsterFramework.Interaction.InventoryItem)
   parent: LobsterFramework.Interaction.Inventory
   langs:
   - csharp
   - vb
-  name: FindSpot(InventoryItem)
-  nameWithType: Inventory.FindSpot(InventoryItem)
-  fullName: LobsterFramework.Interaction.Inventory.FindSpot(LobsterFramework.Interaction.InventoryItem)
+  name: DropItem(InventoryItem)
+  nameWithType: Inventory.DropItem(InventoryItem)
+  fullName: LobsterFramework.Interaction.Inventory.DropItem(LobsterFramework.Interaction.InventoryItem)
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/GameScripts/Interactors/Inventory.cs
-    id: FindSpot
-    path: ../Assets/GameScripts/Interactors/Inventory.cs
-    startLine: 33
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Inventory.cs
+    id: DropItem
+    path: ../Assets/Framework/Interaction/Inventory.cs
+    startLine: 79
   assemblies:
-  - GameScripts
+  - LobsterFramework
   namespace: LobsterFramework.Interaction
+  summary: Drop specified inventory item by removing it from the inventory and generating a CollectableItem on the ground
+  example: []
   syntax:
-    content: public int FindSpot(InventoryItem itemToCollect)
+    content: public void DropItem(InventoryItem itemToDrop)
     parameters:
-    - id: itemToCollect
+    - id: itemToDrop
       type: LobsterFramework.Interaction.InventoryItem
-    return:
-      type: System.Int32
-    content.vb: Public Function FindSpot(itemToCollect As InventoryItem) As Integer
-  overload: LobsterFramework.Interaction.Inventory.FindSpot*
+      description: The item to be dropped, must be present in the inventory, otherwise this method do nothing
+    content.vb: Public Sub DropItem(itemToDrop As InventoryItem)
+  overload: LobsterFramework.Interaction.Inventory.DropItem*
 references:
 - uid: LobsterFramework.Interaction
   commentId: N:LobsterFramework.Interaction
@@ -370,126 +395,6 @@ references:
     name: OnDisable
     href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.OnDisable
   - name: (
-  - name: )
-- uid: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  commentId: M:LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  parent: LobsterFramework.Interaction.Interactor
-  href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  name: AddInteractable(InteractableObject)
-  nameWithType: Interactor.AddInteractable(InteractableObject)
-  fullName: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  spec.csharp:
-  - uid: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-    name: AddInteractable
-    href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  - name: (
-  - uid: LobsterFramework.Interaction.InteractableObject
-    name: InteractableObject
-    href: LobsterFramework.Interaction.InteractableObject.html
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-    name: AddInteractable
-    href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  - name: (
-  - uid: LobsterFramework.Interaction.InteractableObject
-    name: InteractableObject
-    href: LobsterFramework.Interaction.InteractableObject.html
-  - name: )
-- uid: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  commentId: M:LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  parent: LobsterFramework.Interaction.Interactor
-  href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  name: RemoveInteractable(InteractableObject)
-  nameWithType: Interactor.RemoveInteractable(InteractableObject)
-  fullName: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  spec.csharp:
-  - uid: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-    name: RemoveInteractable
-    href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  - name: (
-  - uid: LobsterFramework.Interaction.InteractableObject
-    name: InteractableObject
-    href: LobsterFramework.Interaction.InteractableObject.html
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-    name: RemoveInteractable
-    href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  - name: (
-  - uid: LobsterFramework.Interaction.InteractableObject
-    name: InteractableObject
-    href: LobsterFramework.Interaction.InteractableObject.html
-  - name: )
-- uid: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  commentId: M:LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  parent: LobsterFramework.Interaction.Interactor
-  href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  name: AddInteractable(InteractableObject, Interactor)
-  nameWithType: Interactor.AddInteractable(InteractableObject, Interactor)
-  fullName: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject, LobsterFramework.Interaction.Interactor)
-  spec.csharp:
-  - uid: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-    name: AddInteractable
-    href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  - name: (
-  - uid: LobsterFramework.Interaction.InteractableObject
-    name: InteractableObject
-    href: LobsterFramework.Interaction.InteractableObject.html
-  - name: ','
-  - name: " "
-  - uid: LobsterFramework.Interaction.Interactor
-    name: Interactor
-    href: LobsterFramework.Interaction.Interactor.html
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-    name: AddInteractable
-    href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  - name: (
-  - uid: LobsterFramework.Interaction.InteractableObject
-    name: InteractableObject
-    href: LobsterFramework.Interaction.InteractableObject.html
-  - name: ','
-  - name: " "
-  - uid: LobsterFramework.Interaction.Interactor
-    name: Interactor
-    href: LobsterFramework.Interaction.Interactor.html
-  - name: )
-- uid: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  commentId: M:LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  parent: LobsterFramework.Interaction.Interactor
-  href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  name: RemoveInteractable(InteractableObject, Interactor)
-  nameWithType: Interactor.RemoveInteractable(InteractableObject, Interactor)
-  fullName: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject, LobsterFramework.Interaction.Interactor)
-  spec.csharp:
-  - uid: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-    name: RemoveInteractable
-    href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  - name: (
-  - uid: LobsterFramework.Interaction.InteractableObject
-    name: InteractableObject
-    href: LobsterFramework.Interaction.InteractableObject.html
-  - name: ','
-  - name: " "
-  - uid: LobsterFramework.Interaction.Interactor
-    name: Interactor
-    href: LobsterFramework.Interaction.Interactor.html
-  - name: )
-  spec.vb:
-  - uid: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-    name: RemoveInteractable
-    href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  - name: (
-  - uid: LobsterFramework.Interaction.InteractableObject
-    name: InteractableObject
-    href: LobsterFramework.Interaction.InteractableObject.html
-  - name: ','
-  - name: " "
-  - uid: LobsterFramework.Interaction.Interactor
-    name: Interactor
-    href: LobsterFramework.Interaction.Interactor.html
   - name: )
 - uid: LobsterFramework.Interaction.Interactor.Interact(System.Type,LobsterFramework.Interaction.InteractionType)
   commentId: M:LobsterFramework.Interaction.Interactor.Interact(System.Type,LobsterFramework.Interaction.InteractionType)
@@ -4817,6 +4722,25 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
+- uid: LobsterFramework.Interaction.Inventory.Entity*
+  commentId: Overload:LobsterFramework.Interaction.Inventory.Entity
+  href: LobsterFramework.Interaction.Inventory.html#LobsterFramework.Interaction.Inventory.Entity
+  name: Entity
+  nameWithType: Inventory.Entity
+  fullName: LobsterFramework.Interaction.Inventory.Entity
+- uid: LobsterFramework.Entity
+  commentId: T:LobsterFramework.Entity
+  parent: LobsterFramework
+  href: LobsterFramework.Entity.html
+  name: Entity
+  nameWithType: Entity
+  fullName: LobsterFramework.Entity
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
 - uid: LobsterFramework.Interaction.Interactor.OnInteract(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.InteractionType)
   commentId: M:LobsterFramework.Interaction.Interactor.OnInteract(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.InteractionType)
   parent: LobsterFramework.Interaction.Interactor
@@ -4872,12 +4796,12 @@ references:
   name: InteractionType
   nameWithType: InteractionType
   fullName: LobsterFramework.Interaction.InteractionType
-- uid: LobsterFramework.Interaction.Inventory.FindSpot*
-  commentId: Overload:LobsterFramework.Interaction.Inventory.FindSpot
-  href: LobsterFramework.Interaction.Inventory.html#LobsterFramework.Interaction.Inventory.FindSpot(LobsterFramework.Interaction.InventoryItem)
-  name: FindSpot
-  nameWithType: Inventory.FindSpot
-  fullName: LobsterFramework.Interaction.Inventory.FindSpot
+- uid: LobsterFramework.Interaction.Inventory.DropItem*
+  commentId: Overload:LobsterFramework.Interaction.Inventory.DropItem
+  href: LobsterFramework.Interaction.Inventory.html#LobsterFramework.Interaction.Inventory.DropItem(LobsterFramework.Interaction.InventoryItem)
+  name: DropItem
+  nameWithType: Inventory.DropItem
+  fullName: LobsterFramework.Interaction.Inventory.DropItem
 - uid: LobsterFramework.Interaction.InventoryItem
   commentId: T:LobsterFramework.Interaction.InventoryItem
   parent: LobsterFramework.Interaction
@@ -4885,14 +4809,3 @@ references:
   name: InventoryItem
   nameWithType: InventoryItem
   fullName: LobsterFramework.Interaction.InventoryItem
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer

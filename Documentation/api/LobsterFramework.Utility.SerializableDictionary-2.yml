@@ -56,9 +56,11 @@ items:
   inheritance:
   - System.Object
   derivedClasses:
+  - LobsterFramework.Utility.AbilityAnimationConfig
   - LobsterFramework.Utility.StringAbilityConfigDictionary
   - LobsterFramework.Utility.TypeAbilityDictionary
   - LobsterFramework.Utility.TypeAbilityStatDictionary
+  - LobsterFramework.Utility.TypeWeaponStatDictionary
   implements:
   - UnityEngine.ISerializationCallbackReceiver
   attributes:

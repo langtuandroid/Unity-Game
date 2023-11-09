@@ -1,0 +1,216 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AbilitySystem.WeaponType
+  commentId: T:LobsterFramework.AbilitySystem.WeaponType
+  id: WeaponType
+  parent: LobsterFramework.AbilitySystem
+  children:
+  - LobsterFramework.AbilitySystem.WeaponType.Dagger
+  - LobsterFramework.AbilitySystem.WeaponType.EmptyHand
+  - LobsterFramework.AbilitySystem.WeaponType.Firearm
+  - LobsterFramework.AbilitySystem.WeaponType.Hammer
+  - LobsterFramework.AbilitySystem.WeaponType.Stick
+  - LobsterFramework.AbilitySystem.WeaponType.Sword
+  langs:
+  - csharp
+  - vb
+  name: WeaponType
+  nameWithType: WeaponType
+  fullName: LobsterFramework.AbilitySystem.WeaponType
+  type: Enum
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    id: WeaponType
+    path: ../Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    startLine: 305
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: >-
+      [Serializable]
+
+      public enum WeaponType
+    content.vb: >-
+      <Serializable>
+
+      Public Enum WeaponType
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: LobsterFramework.AbilitySystem.WeaponType.Sword
+  commentId: F:LobsterFramework.AbilitySystem.WeaponType.Sword
+  id: Sword
+  parent: LobsterFramework.AbilitySystem.WeaponType
+  langs:
+  - csharp
+  - vb
+  name: Sword
+  nameWithType: WeaponType.Sword
+  fullName: LobsterFramework.AbilitySystem.WeaponType.Sword
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    id: Sword
+    path: ../Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    startLine: 308
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: Sword = 0
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponType
+- uid: LobsterFramework.AbilitySystem.WeaponType.Hammer
+  commentId: F:LobsterFramework.AbilitySystem.WeaponType.Hammer
+  id: Hammer
+  parent: LobsterFramework.AbilitySystem.WeaponType
+  langs:
+  - csharp
+  - vb
+  name: Hammer
+  nameWithType: WeaponType.Hammer
+  fullName: LobsterFramework.AbilitySystem.WeaponType.Hammer
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    id: Hammer
+    path: ../Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    startLine: 309
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: Hammer = 1
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponType
+- uid: LobsterFramework.AbilitySystem.WeaponType.Dagger
+  commentId: F:LobsterFramework.AbilitySystem.WeaponType.Dagger
+  id: Dagger
+  parent: LobsterFramework.AbilitySystem.WeaponType
+  langs:
+  - csharp
+  - vb
+  name: Dagger
+  nameWithType: WeaponType.Dagger
+  fullName: LobsterFramework.AbilitySystem.WeaponType.Dagger
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    id: Dagger
+    path: ../Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    startLine: 310
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: Dagger = 2
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponType
+- uid: LobsterFramework.AbilitySystem.WeaponType.Stick
+  commentId: F:LobsterFramework.AbilitySystem.WeaponType.Stick
+  id: Stick
+  parent: LobsterFramework.AbilitySystem.WeaponType
+  langs:
+  - csharp
+  - vb
+  name: Stick
+  nameWithType: WeaponType.Stick
+  fullName: LobsterFramework.AbilitySystem.WeaponType.Stick
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    id: Stick
+    path: ../Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    startLine: 311
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: Stick = 3
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponType
+- uid: LobsterFramework.AbilitySystem.WeaponType.EmptyHand
+  commentId: F:LobsterFramework.AbilitySystem.WeaponType.EmptyHand
+  id: EmptyHand
+  parent: LobsterFramework.AbilitySystem.WeaponType
+  langs:
+  - csharp
+  - vb
+  name: EmptyHand
+  nameWithType: WeaponType.EmptyHand
+  fullName: LobsterFramework.AbilitySystem.WeaponType.EmptyHand
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    id: EmptyHand
+    path: ../Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    startLine: 314
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: EmptyHand = 4
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponType
+- uid: LobsterFramework.AbilitySystem.WeaponType.Firearm
+  commentId: F:LobsterFramework.AbilitySystem.WeaponType.Firearm
+  id: Firearm
+  parent: LobsterFramework.AbilitySystem.WeaponType
+  langs:
+  - csharp
+  - vb
+  name: Firearm
+  nameWithType: WeaponType.Firearm
+  fullName: LobsterFramework.AbilitySystem.WeaponType.Firearm
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    id: Firearm
+    path: ../Assets/Framework/AbilitySystem/Weapon/Weapon.cs
+    startLine: 317
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: Firearm = 5
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponType
+references:
+- uid: LobsterFramework.AbilitySystem
+  commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
+  name: LobsterFramework.AbilitySystem
+  nameWithType: LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+- uid: LobsterFramework.AbilitySystem.WeaponType
+  commentId: T:LobsterFramework.AbilitySystem.WeaponType
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.WeaponType.html
+  name: WeaponType
+  nameWithType: WeaponType
+  fullName: LobsterFramework.AbilitySystem.WeaponType

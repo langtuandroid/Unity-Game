@@ -1,0 +1,247 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Editors.SelectWeaponStatPopup
+  commentId: T:LobsterFramework.Editors.SelectWeaponStatPopup
+  id: SelectWeaponStatPopup
+  parent: LobsterFramework.Editors
+  children:
+  - LobsterFramework.Editors.SelectWeaponStatPopup.OnGUI(UnityEngine.Rect)
+  - LobsterFramework.Editors.SelectWeaponStatPopup.data
+  - LobsterFramework.Editors.SelectWeaponStatPopup.editor
+  langs:
+  - csharp
+  - vb
+  name: SelectWeaponStatPopup
+  nameWithType: SelectWeaponStatPopup
+  fullName: LobsterFramework.Editors.SelectWeaponStatPopup
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/PopupWindow/SelectWeaponStatPopup.cs
+    id: SelectWeaponStatPopup
+    path: ../Assets/Framework/Editor/PopupWindow/SelectWeaponStatPopup.cs
+    startLine: 7
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: 'public class SelectWeaponStatPopup : PopupWindowContent'
+    content.vb: Public Class SelectWeaponStatPopup Inherits PopupWindowContent
+  inheritance:
+  - System.Object
+  - UnityEditor.PopupWindowContent
+- uid: LobsterFramework.Editors.SelectWeaponStatPopup.editor
+  commentId: F:LobsterFramework.Editors.SelectWeaponStatPopup.editor
+  id: editor
+  parent: LobsterFramework.Editors.SelectWeaponStatPopup
+  langs:
+  - csharp
+  - vb
+  name: editor
+  nameWithType: SelectWeaponStatPopup.editor
+  fullName: LobsterFramework.Editors.SelectWeaponStatPopup.editor
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/PopupWindow/SelectWeaponStatPopup.cs
+    id: editor
+    path: ../Assets/Framework/Editor/PopupWindow/SelectWeaponStatPopup.cs
+    startLine: 9
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: public WeaponDataEditor editor
+    return:
+      type: LobsterFramework.Editors.WeaponDataEditor
+    content.vb: Public editor As WeaponDataEditor
+- uid: LobsterFramework.Editors.SelectWeaponStatPopup.data
+  commentId: F:LobsterFramework.Editors.SelectWeaponStatPopup.data
+  id: data
+  parent: LobsterFramework.Editors.SelectWeaponStatPopup
+  langs:
+  - csharp
+  - vb
+  name: data
+  nameWithType: SelectWeaponStatPopup.data
+  fullName: LobsterFramework.Editors.SelectWeaponStatPopup.data
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/PopupWindow/SelectWeaponStatPopup.cs
+    id: data
+    path: ../Assets/Framework/Editor/PopupWindow/SelectWeaponStatPopup.cs
+    startLine: 10
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: public WeaponData data
+    return:
+      type: LobsterFramework.AbilitySystem.WeaponData
+    content.vb: Public data As WeaponData
+- uid: LobsterFramework.Editors.SelectWeaponStatPopup.OnGUI(UnityEngine.Rect)
+  commentId: M:LobsterFramework.Editors.SelectWeaponStatPopup.OnGUI(UnityEngine.Rect)
+  id: OnGUI(UnityEngine.Rect)
+  parent: LobsterFramework.Editors.SelectWeaponStatPopup
+  langs:
+  - csharp
+  - vb
+  name: OnGUI(Rect)
+  nameWithType: SelectWeaponStatPopup.OnGUI(Rect)
+  fullName: LobsterFramework.Editors.SelectWeaponStatPopup.OnGUI(UnityEngine.Rect)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/PopupWindow/SelectWeaponStatPopup.cs
+    id: OnGUI
+    path: ../Assets/Framework/Editor/PopupWindow/SelectWeaponStatPopup.cs
+    startLine: 13
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  summary: <p>Callback for drawing GUI controls for the popup window.</p>
+  example: []
+  syntax:
+    content: public override void OnGUI(Rect rect)
+    parameters:
+    - id: rect
+      type: UnityEngine.Rect
+      description: The rectangle to draw the GUI inside.
+    content.vb: Public Overrides Sub OnGUI(rect As Rect)
+  overridden: UnityEditor.PopupWindowContent.OnGUI(UnityEngine.Rect)
+  overload: LobsterFramework.Editors.SelectWeaponStatPopup.OnGUI*
+references:
+- uid: LobsterFramework.Editors
+  commentId: N:LobsterFramework.Editors
+  href: LobsterFramework.html
+  name: LobsterFramework.Editors
+  nameWithType: LobsterFramework.Editors
+  fullName: LobsterFramework.Editors
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Editors
+    name: Editors
+    href: LobsterFramework.Editors.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Editors
+    name: Editors
+    href: LobsterFramework.Editors.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEditor.PopupWindowContent
+  commentId: T:UnityEditor.PopupWindowContent
+  parent: UnityEditor
+  isExternal: true
+  name: PopupWindowContent
+  nameWithType: PopupWindowContent
+  fullName: UnityEditor.PopupWindowContent
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEditor
+  commentId: N:UnityEditor
+  isExternal: true
+  name: UnityEditor
+  nameWithType: UnityEditor
+  fullName: UnityEditor
+- uid: LobsterFramework.Editors.WeaponDataEditor
+  commentId: T:LobsterFramework.Editors.WeaponDataEditor
+  parent: LobsterFramework.Editors
+  href: LobsterFramework.Editors.WeaponDataEditor.html
+  name: WeaponDataEditor
+  nameWithType: WeaponDataEditor
+  fullName: LobsterFramework.Editors.WeaponDataEditor
+- uid: LobsterFramework.AbilitySystem.WeaponData
+  commentId: T:LobsterFramework.AbilitySystem.WeaponData
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.WeaponData.html
+  name: WeaponData
+  nameWithType: WeaponData
+  fullName: LobsterFramework.AbilitySystem.WeaponData
+- uid: LobsterFramework.AbilitySystem
+  commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
+  name: LobsterFramework.AbilitySystem
+  nameWithType: LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+- uid: UnityEditor.PopupWindowContent.OnGUI(UnityEngine.Rect)
+  commentId: M:UnityEditor.PopupWindowContent.OnGUI(UnityEngine.Rect)
+  parent: UnityEditor.PopupWindowContent
+  isExternal: true
+  name: OnGUI(Rect)
+  nameWithType: PopupWindowContent.OnGUI(Rect)
+  fullName: UnityEditor.PopupWindowContent.OnGUI(UnityEngine.Rect)
+  spec.csharp:
+  - uid: UnityEditor.PopupWindowContent.OnGUI(UnityEngine.Rect)
+    name: OnGUI
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UnityEditor.PopupWindowContent.OnGUI(UnityEngine.Rect)
+    name: OnGUI
+    isExternal: true
+  - name: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    isExternal: true
+  - name: )
+- uid: LobsterFramework.Editors.SelectWeaponStatPopup.OnGUI*
+  commentId: Overload:LobsterFramework.Editors.SelectWeaponStatPopup.OnGUI
+  href: LobsterFramework.Editors.SelectWeaponStatPopup.html#LobsterFramework.Editors.SelectWeaponStatPopup.OnGUI(UnityEngine.Rect)
+  name: OnGUI
+  nameWithType: SelectWeaponStatPopup.OnGUI
+  fullName: LobsterFramework.Editors.SelectWeaponStatPopup.OnGUI
+- uid: UnityEngine.Rect
+  commentId: T:UnityEngine.Rect
+  parent: UnityEngine
+  isExternal: true
+  name: Rect
+  nameWithType: Rect
+  fullName: UnityEngine.Rect
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine

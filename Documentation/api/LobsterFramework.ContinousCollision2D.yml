@@ -1,0 +1,217 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.ContinousCollision2D
+  commentId: T:LobsterFramework.ContinousCollision2D
+  id: ContinousCollision2D
+  parent: LobsterFramework
+  children:
+  - LobsterFramework.ContinousCollision2D.#ctor(UnityEngine.Transform,UnityEngine.LayerMask)
+  - LobsterFramework.ContinousCollision2D.Draw
+  - LobsterFramework.ContinousCollision2D.HasCollision
+  - LobsterFramework.ContinousCollision2D.Reset
+  langs:
+  - csharp
+  - vb
+  name: ContinousCollision2D
+  nameWithType: ContinousCollision2D
+  fullName: LobsterFramework.ContinousCollision2D
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/ContinousCollision2D.cs
+    id: ContinousCollision2D
+    path: ../Assets/Framework/Utility/ContinousCollision2D.cs
+    startLine: 6
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public class ContinousCollision2D
+    content.vb: Public Class ContinousCollision2D
+  inheritance:
+  - System.Object
+- uid: LobsterFramework.ContinousCollision2D.#ctor(UnityEngine.Transform,UnityEngine.LayerMask)
+  commentId: M:LobsterFramework.ContinousCollision2D.#ctor(UnityEngine.Transform,UnityEngine.LayerMask)
+  id: '#ctor(UnityEngine.Transform,UnityEngine.LayerMask)'
+  parent: LobsterFramework.ContinousCollision2D
+  langs:
+  - csharp
+  - vb
+  name: ContinousCollision2D(Transform, LayerMask)
+  nameWithType: ContinousCollision2D.ContinousCollision2D(Transform, LayerMask)
+  fullName: LobsterFramework.ContinousCollision2D.ContinousCollision2D(UnityEngine.Transform, UnityEngine.LayerMask)
+  type: Constructor
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/ContinousCollision2D.cs
+    id: .ctor
+    path: ../Assets/Framework/Utility/ContinousCollision2D.cs
+    startLine: 12
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public ContinousCollision2D(Transform transform, LayerMask collisionLayer)
+    parameters:
+    - id: transform
+      type: UnityEngine.Transform
+    - id: collisionLayer
+      type: UnityEngine.LayerMask
+    content.vb: Public Sub New(transform As Transform, collisionLayer As LayerMask)
+  overload: LobsterFramework.ContinousCollision2D.#ctor*
+  nameWithType.vb: ContinousCollision2D.New(Transform, LayerMask)
+  fullName.vb: LobsterFramework.ContinousCollision2D.New(UnityEngine.Transform, UnityEngine.LayerMask)
+  name.vb: New(Transform, LayerMask)
+- uid: LobsterFramework.ContinousCollision2D.Reset
+  commentId: M:LobsterFramework.ContinousCollision2D.Reset
+  id: Reset
+  parent: LobsterFramework.ContinousCollision2D
+  langs:
+  - csharp
+  - vb
+  name: Reset()
+  nameWithType: ContinousCollision2D.Reset()
+  fullName: LobsterFramework.ContinousCollision2D.Reset()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/ContinousCollision2D.cs
+    id: Reset
+    path: ../Assets/Framework/Utility/ContinousCollision2D.cs
+    startLine: 18
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public void Reset()
+    content.vb: Public Sub Reset()
+  overload: LobsterFramework.ContinousCollision2D.Reset*
+- uid: LobsterFramework.ContinousCollision2D.HasCollision
+  commentId: M:LobsterFramework.ContinousCollision2D.HasCollision
+  id: HasCollision
+  parent: LobsterFramework.ContinousCollision2D
+  langs:
+  - csharp
+  - vb
+  name: HasCollision()
+  nameWithType: ContinousCollision2D.HasCollision()
+  fullName: LobsterFramework.ContinousCollision2D.HasCollision()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/ContinousCollision2D.cs
+    id: HasCollision
+    path: ../Assets/Framework/Utility/ContinousCollision2D.cs
+    startLine: 22
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public SimpleCollision2D HasCollision()
+    return:
+      type: LobsterFramework.SimpleCollision2D
+    content.vb: Public Function HasCollision() As SimpleCollision2D
+  overload: LobsterFramework.ContinousCollision2D.HasCollision*
+- uid: LobsterFramework.ContinousCollision2D.Draw
+  commentId: M:LobsterFramework.ContinousCollision2D.Draw
+  id: Draw
+  parent: LobsterFramework.ContinousCollision2D
+  langs:
+  - csharp
+  - vb
+  name: Draw()
+  nameWithType: ContinousCollision2D.Draw()
+  fullName: LobsterFramework.ContinousCollision2D.Draw()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/ContinousCollision2D.cs
+    id: Draw
+    path: ../Assets/Framework/Utility/ContinousCollision2D.cs
+    startLine: 29
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public void Draw()
+    content.vb: Public Sub Draw()
+  overload: LobsterFramework.ContinousCollision2D.Draw*
+references:
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.ContinousCollision2D.#ctor*
+  commentId: Overload:LobsterFramework.ContinousCollision2D.#ctor
+  href: LobsterFramework.ContinousCollision2D.html#LobsterFramework.ContinousCollision2D.#ctor(UnityEngine.Transform,UnityEngine.LayerMask)
+  name: ContinousCollision2D
+  nameWithType: ContinousCollision2D.ContinousCollision2D
+  fullName: LobsterFramework.ContinousCollision2D.ContinousCollision2D
+  nameWithType.vb: ContinousCollision2D.New
+  fullName.vb: LobsterFramework.ContinousCollision2D.New
+  name.vb: New
+- uid: UnityEngine.Transform
+  commentId: T:UnityEngine.Transform
+  parent: UnityEngine
+  isExternal: true
+  name: Transform
+  nameWithType: Transform
+  fullName: UnityEngine.Transform
+- uid: UnityEngine.LayerMask
+  commentId: T:UnityEngine.LayerMask
+  parent: UnityEngine
+  isExternal: true
+  name: LayerMask
+  nameWithType: LayerMask
+  fullName: UnityEngine.LayerMask
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: LobsterFramework.ContinousCollision2D.Reset*
+  commentId: Overload:LobsterFramework.ContinousCollision2D.Reset
+  href: LobsterFramework.ContinousCollision2D.html#LobsterFramework.ContinousCollision2D.Reset
+  name: Reset
+  nameWithType: ContinousCollision2D.Reset
+  fullName: LobsterFramework.ContinousCollision2D.Reset
+- uid: LobsterFramework.ContinousCollision2D.HasCollision*
+  commentId: Overload:LobsterFramework.ContinousCollision2D.HasCollision
+  href: LobsterFramework.ContinousCollision2D.html#LobsterFramework.ContinousCollision2D.HasCollision
+  name: HasCollision
+  nameWithType: ContinousCollision2D.HasCollision
+  fullName: LobsterFramework.ContinousCollision2D.HasCollision
+- uid: LobsterFramework.SimpleCollision2D
+  commentId: T:LobsterFramework.SimpleCollision2D
+  parent: LobsterFramework
+  href: LobsterFramework.SimpleCollision2D.html
+  name: SimpleCollision2D
+  nameWithType: SimpleCollision2D
+  fullName: LobsterFramework.SimpleCollision2D
+- uid: LobsterFramework.ContinousCollision2D.Draw*
+  commentId: Overload:LobsterFramework.ContinousCollision2D.Draw
+  href: LobsterFramework.ContinousCollision2D.html#LobsterFramework.ContinousCollision2D.Draw
+  name: Draw
+  nameWithType: ContinousCollision2D.Draw
+  fullName: LobsterFramework.ContinousCollision2D.Draw

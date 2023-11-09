@@ -1,0 +1,264 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility.SerializableType`1
+  commentId: T:LobsterFramework.Utility.SerializableType`1
+  id: SerializableType`1
+  parent: LobsterFramework.Utility
+  children:
+  - LobsterFramework.Utility.SerializableType`1.OnAfterDeserialize
+  - LobsterFramework.Utility.SerializableType`1.OnBeforeSerialize
+  - LobsterFramework.Utility.SerializableType`1.Type
+  langs:
+  - csharp
+  - vb
+  name: SerializableType<T>
+  nameWithType: SerializableType<T>
+  fullName: LobsterFramework.Utility.SerializableType<T>
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableType.cs
+    id: SerializableType
+    path: ../Assets/Framework/Utility/SerializableType.cs
+    startLine: 7
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class SerializableType<T> : ISerializationCallbackReceiver
+    typeParameters:
+    - id: T
+    content.vb: >-
+      <Serializable>
+
+      Public Class SerializableType(Of T) Implements ISerializationCallbackReceiver
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - LobsterFramework.AbilitySystem.AbilitySelector
+  - LobsterFramework.AbilitySystem.WeaponArtSelector
+  implements:
+  - UnityEngine.ISerializationCallbackReceiver
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  nameWithType.vb: SerializableType(Of T)
+  fullName.vb: LobsterFramework.Utility.SerializableType(Of T)
+  name.vb: SerializableType(Of T)
+- uid: LobsterFramework.Utility.SerializableType`1.Type
+  commentId: P:LobsterFramework.Utility.SerializableType`1.Type
+  id: Type
+  parent: LobsterFramework.Utility.SerializableType`1
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: SerializableType<T>.Type
+  fullName: LobsterFramework.Utility.SerializableType<T>.Type
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableType.cs
+    id: Type
+    path: ../Assets/Framework/Utility/SerializableType.cs
+    startLine: 13
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: public Type Type { get; set; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: Public Property Type As Type
+  overload: LobsterFramework.Utility.SerializableType`1.Type*
+  nameWithType.vb: SerializableType(Of T).Type
+  fullName.vb: LobsterFramework.Utility.SerializableType(Of T).Type
+- uid: LobsterFramework.Utility.SerializableType`1.OnAfterDeserialize
+  commentId: M:LobsterFramework.Utility.SerializableType`1.OnAfterDeserialize
+  id: OnAfterDeserialize
+  parent: LobsterFramework.Utility.SerializableType`1
+  langs:
+  - csharp
+  - vb
+  name: OnAfterDeserialize()
+  nameWithType: SerializableType<T>.OnAfterDeserialize()
+  fullName: LobsterFramework.Utility.SerializableType<T>.OnAfterDeserialize()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableType.cs
+    id: OnAfterDeserialize
+    path: ../Assets/Framework/Utility/SerializableType.cs
+    startLine: 26
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: <p>Implement this method to receive a callback after Unity deserializes your object.</p>
+  example: []
+  syntax:
+    content: public void OnAfterDeserialize()
+    content.vb: Public Sub OnAfterDeserialize()
+  overload: LobsterFramework.Utility.SerializableType`1.OnAfterDeserialize*
+  implements:
+  - UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize
+  nameWithType.vb: SerializableType(Of T).OnAfterDeserialize()
+  fullName.vb: LobsterFramework.Utility.SerializableType(Of T).OnAfterDeserialize()
+- uid: LobsterFramework.Utility.SerializableType`1.OnBeforeSerialize
+  commentId: M:LobsterFramework.Utility.SerializableType`1.OnBeforeSerialize
+  id: OnBeforeSerialize
+  parent: LobsterFramework.Utility.SerializableType`1
+  langs:
+  - csharp
+  - vb
+  name: OnBeforeSerialize()
+  nameWithType: SerializableType<T>.OnBeforeSerialize()
+  fullName: LobsterFramework.Utility.SerializableType<T>.OnBeforeSerialize()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableType.cs
+    id: OnBeforeSerialize
+    path: ../Assets/Framework/Utility/SerializableType.cs
+    startLine: 33
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  summary: <p>Implement this method to receive a callback before Unity serializes your object.</p>
+  example: []
+  syntax:
+    content: public void OnBeforeSerialize()
+    content.vb: Public Sub OnBeforeSerialize()
+  overload: LobsterFramework.Utility.SerializableType`1.OnBeforeSerialize*
+  implements:
+  - UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize
+  nameWithType.vb: SerializableType(Of T).OnBeforeSerialize()
+  fullName.vb: LobsterFramework.Utility.SerializableType(Of T).OnBeforeSerialize()
+references:
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEngine.ISerializationCallbackReceiver
+  commentId: T:UnityEngine.ISerializationCallbackReceiver
+  parent: UnityEngine
+  isExternal: true
+  name: ISerializationCallbackReceiver
+  nameWithType: ISerializationCallbackReceiver
+  fullName: UnityEngine.ISerializationCallbackReceiver
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: LobsterFramework.Utility.SerializableType`1.Type*
+  commentId: Overload:LobsterFramework.Utility.SerializableType`1.Type
+  href: LobsterFramework.Utility.SerializableType-1.html#LobsterFramework.Utility.SerializableType`1.Type
+  name: Type
+  nameWithType: SerializableType<T>.Type
+  fullName: LobsterFramework.Utility.SerializableType<T>.Type
+  nameWithType.vb: SerializableType(Of T).Type
+  fullName.vb: LobsterFramework.Utility.SerializableType(Of T).Type
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: LobsterFramework.Utility.SerializableType`1.OnAfterDeserialize*
+  commentId: Overload:LobsterFramework.Utility.SerializableType`1.OnAfterDeserialize
+  href: LobsterFramework.Utility.SerializableType-1.html#LobsterFramework.Utility.SerializableType`1.OnAfterDeserialize
+  name: OnAfterDeserialize
+  nameWithType: SerializableType<T>.OnAfterDeserialize
+  fullName: LobsterFramework.Utility.SerializableType<T>.OnAfterDeserialize
+  nameWithType.vb: SerializableType(Of T).OnAfterDeserialize
+  fullName.vb: LobsterFramework.Utility.SerializableType(Of T).OnAfterDeserialize
+- uid: UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize
+  commentId: M:UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize
+  parent: UnityEngine.ISerializationCallbackReceiver
+  isExternal: true
+  name: OnAfterDeserialize()
+  nameWithType: ISerializationCallbackReceiver.OnAfterDeserialize()
+  fullName: UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize()
+  spec.csharp:
+  - uid: UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize
+    name: OnAfterDeserialize
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize
+    name: OnAfterDeserialize
+    isExternal: true
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableType`1.OnBeforeSerialize*
+  commentId: Overload:LobsterFramework.Utility.SerializableType`1.OnBeforeSerialize
+  href: LobsterFramework.Utility.SerializableType-1.html#LobsterFramework.Utility.SerializableType`1.OnBeforeSerialize
+  name: OnBeforeSerialize
+  nameWithType: SerializableType<T>.OnBeforeSerialize
+  fullName: LobsterFramework.Utility.SerializableType<T>.OnBeforeSerialize
+  nameWithType.vb: SerializableType(Of T).OnBeforeSerialize
+  fullName.vb: LobsterFramework.Utility.SerializableType(Of T).OnBeforeSerialize
+- uid: UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize
+  commentId: M:UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize
+  parent: UnityEngine.ISerializationCallbackReceiver
+  isExternal: true
+  name: OnBeforeSerialize()
+  nameWithType: ISerializationCallbackReceiver.OnBeforeSerialize()
+  fullName: UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize()
+  spec.csharp:
+  - uid: UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize
+    name: OnBeforeSerialize
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize
+    name: OnBeforeSerialize
+    isExternal: true
+  - name: (
+  - name: )

@@ -18,9 +18,9 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Attributes/RequireAbilityStatsAttribute.cs
     id: RequireAbilityStatsAttribute
-    path: ../Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
+    path: ../Assets/Framework/AbilitySystem/Attributes/RequireAbilityStatsAttribute.cs
     startLine: 10
   assemblies:
   - LobsterFramework
@@ -29,11 +29,11 @@ items:
   example: []
   syntax:
     content: >-
-      [AttributeUsage(AttributeTargets.Class)]
+      [AttributeUsage(AttributeTargets.Class, Inherited = true, AllowMultiple = true)]
 
       public class RequireAbilityStatsAttribute : Attribute
     content.vb: >-
-      <AttributeUsage(AttributeTargets.Class)>
+      <AttributeUsage(AttributeTargets.Class, Inherited:=True, AllowMultiple:=True)>
 
       Public Class RequireAbilityStatsAttribute Inherits Attribute
   inheritance:
@@ -45,6 +45,13 @@ items:
     arguments:
     - type: System.AttributeTargets
       value: 4
+    namedArguments:
+    - name: Inherited
+      type: System.Boolean
+      value: true
+    - name: AllowMultiple
+      type: System.Boolean
+      value: true
 - uid: LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.requirement
   commentId: F:LobsterFramework.AbilitySystem.RequireAbilityStatsAttribute.requirement
   id: requirement
@@ -58,9 +65,9 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Attributes/RequireAbilityStatsAttribute.cs
     id: requirement
-    path: ../Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
+    path: ../Assets/Framework/AbilitySystem/Attributes/RequireAbilityStatsAttribute.cs
     startLine: 13
   assemblies:
   - LobsterFramework
@@ -83,9 +90,9 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Attributes/RequireAbilityStatsAttribute.cs
     id: rev_requirement
-    path: ../Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
+    path: ../Assets/Framework/AbilitySystem/Attributes/RequireAbilityStatsAttribute.cs
     startLine: 14
   assemblies:
   - LobsterFramework
@@ -108,9 +115,9 @@ items:
   type: Constructor
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Attributes/RequireAbilityStatsAttribute.cs
     id: .ctor
-    path: ../Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
+    path: ../Assets/Framework/AbilitySystem/Attributes/RequireAbilityStatsAttribute.cs
     startLine: 18
   assemblies:
   - LobsterFramework
@@ -138,9 +145,9 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Attributes/RequireAbilityStatsAttribute.cs
     id: Init
-    path: ../Assets/Framework/Attributes/RequireAbilityStatsAttribute.cs
+    path: ../Assets/Framework/AbilitySystem/Attributes/RequireAbilityStatsAttribute.cs
     startLine: 23
   assemblies:
   - LobsterFramework

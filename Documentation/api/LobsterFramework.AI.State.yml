@@ -9,6 +9,8 @@ items:
   - LobsterFramework.AI.State.OnEnter
   - LobsterFramework.AI.State.OnExit
   - LobsterFramework.AI.State.Tick
+  - LobsterFramework.AI.State.controller
+  - LobsterFramework.AI.State.stateMachine
   langs:
   - csharp
   - vb
@@ -18,9 +20,9 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/StateMachine/State.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/State.cs
     id: State
-    path: ../Assets/Framework/Scriptable Objects/StateMachine/State.cs
+    path: ../Assets/Framework/StateMachine/State.cs
     startLine: 6
   assemblies:
   - LobsterFramework
@@ -83,6 +85,76 @@ items:
   - UnityEngine.Object.ToString
   - UnityEngine.Object.name
   - UnityEngine.Object.hideFlags
+- uid: LobsterFramework.AI.State.controller
+  commentId: F:LobsterFramework.AI.State.controller
+  id: controller
+  parent: LobsterFramework.AI.State
+  langs:
+  - csharp
+  - vb
+  name: controller
+  nameWithType: State.controller
+  fullName: LobsterFramework.AI.State.controller
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/State.cs
+    id: controller
+    path: ../Assets/Framework/StateMachine/State.cs
+    startLine: 9
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: >-
+      [HideInInspector]
+
+      public AIController controller
+    return:
+      type: LobsterFramework.AI.AIController
+    content.vb: >-
+      <HideInInspector>
+
+      Public controller As AIController
+  attributes:
+  - type: UnityEngine.HideInInspector
+    ctor: UnityEngine.HideInInspector.#ctor
+    arguments: []
+- uid: LobsterFramework.AI.State.stateMachine
+  commentId: F:LobsterFramework.AI.State.stateMachine
+  id: stateMachine
+  parent: LobsterFramework.AI.State
+  langs:
+  - csharp
+  - vb
+  name: stateMachine
+  nameWithType: State.stateMachine
+  fullName: LobsterFramework.AI.State.stateMachine
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/State.cs
+    id: stateMachine
+    path: ../Assets/Framework/StateMachine/State.cs
+    startLine: 11
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: >-
+      [HideInInspector]
+
+      protected StateMachine stateMachine
+    return:
+      type: LobsterFramework.AI.StateMachine
+    content.vb: >-
+      <HideInInspector>
+
+      Protected stateMachine As StateMachine
+  attributes:
+  - type: UnityEngine.HideInInspector
+    ctor: UnityEngine.HideInInspector.#ctor
+    arguments: []
 - uid: LobsterFramework.AI.State.InitializeFields(UnityEngine.GameObject)
   commentId: M:LobsterFramework.AI.State.InitializeFields(UnityEngine.GameObject)
   id: InitializeFields(UnityEngine.GameObject)
@@ -96,10 +168,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/StateMachine/State.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/State.cs
     id: InitializeFields
-    path: ../Assets/Framework/Scriptable Objects/StateMachine/State.cs
-    startLine: 8
+    path: ../Assets/Framework/StateMachine/State.cs
+    startLine: 13
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -123,10 +195,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/StateMachine/State.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/State.cs
     id: OnExit
-    path: ../Assets/Framework/Scriptable Objects/StateMachine/State.cs
-    startLine: 9
+    path: ../Assets/Framework/StateMachine/State.cs
+    startLine: 14
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -147,10 +219,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/StateMachine/State.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/State.cs
     id: OnEnter
-    path: ../Assets/Framework/Scriptable Objects/StateMachine/State.cs
-    startLine: 11
+    path: ../Assets/Framework/StateMachine/State.cs
+    startLine: 16
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -171,10 +243,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/StateMachine/State.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/State.cs
     id: Tick
-    path: ../Assets/Framework/Scriptable Objects/StateMachine/State.cs
-    startLine: 13
+    path: ../Assets/Framework/StateMachine/State.cs
+    startLine: 18
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -2166,6 +2238,20 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
+- uid: LobsterFramework.AI.AIController
+  commentId: T:LobsterFramework.AI.AIController
+  parent: LobsterFramework.AI
+  href: LobsterFramework.AI.AIController.html
+  name: AIController
+  nameWithType: AIController
+  fullName: LobsterFramework.AI.AIController
+- uid: LobsterFramework.AI.StateMachine
+  commentId: T:LobsterFramework.AI.StateMachine
+  parent: LobsterFramework.AI
+  href: LobsterFramework.AI.StateMachine.html
+  name: StateMachine
+  nameWithType: StateMachine
+  fullName: LobsterFramework.AI.StateMachine
 - uid: LobsterFramework.AI.State.InitializeFields*
   commentId: Overload:LobsterFramework.AI.State.InitializeFields
   href: LobsterFramework.AI.State.html#LobsterFramework.AI.State.InitializeFields(UnityEngine.GameObject)

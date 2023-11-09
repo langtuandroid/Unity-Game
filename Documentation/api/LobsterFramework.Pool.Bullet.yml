@@ -5,7 +5,7 @@ items:
   id: Bullet
   parent: LobsterFramework.Pool
   children:
-  - LobsterFramework.Pool.Bullet.Initialize(LobsterFramework.AbilitySystem.TargetSetting,System.Single,LobsterFramework.EntitySystem.Entity,System.Int32,System.Int32)
+  - LobsterFramework.Pool.Bullet.Initialize(LobsterFramework.AbilitySystem.TargetSetting,System.Single,LobsterFramework.Entity,System.Single,System.Int32,System.Single)
   langs:
   - csharp
   - vb
@@ -18,7 +18,7 @@ items:
       path: H:/Stuff/BallField/Assets/Framework/Components/Projectiles/Bullet.cs
     id: Bullet
     path: ../Assets/Framework/Components/Projectiles/Bullet.cs
-    startLine: 9
+    startLine: 6
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Pool
@@ -26,13 +26,9 @@ items:
     content: >-
       [RequireComponent(typeof(Rigidbody2D))]
 
-      [RequireComponent(typeof(Collider2D))]
-
       public class Bullet : MonoBehaviour
     content.vb: >-
       <RequireComponent(GetType(Rigidbody2D))>
-
-      <RequireComponent(GetType(Collider2D))>
 
       Public Class Bullet Inherits MonoBehaviour
   inheritance:
@@ -158,49 +154,46 @@ items:
     arguments:
     - type: System.Type
       value: UnityEngine.Rigidbody2D
-  - type: UnityEngine.RequireComponent
-    ctor: UnityEngine.RequireComponent.#ctor(System.Type)
-    arguments:
-    - type: System.Type
-      value: UnityEngine.Collider2D
-- uid: LobsterFramework.Pool.Bullet.Initialize(LobsterFramework.AbilitySystem.TargetSetting,System.Single,LobsterFramework.EntitySystem.Entity,System.Int32,System.Int32)
-  commentId: M:LobsterFramework.Pool.Bullet.Initialize(LobsterFramework.AbilitySystem.TargetSetting,System.Single,LobsterFramework.EntitySystem.Entity,System.Int32,System.Int32)
-  id: Initialize(LobsterFramework.AbilitySystem.TargetSetting,System.Single,LobsterFramework.EntitySystem.Entity,System.Int32,System.Int32)
+- uid: LobsterFramework.Pool.Bullet.Initialize(LobsterFramework.AbilitySystem.TargetSetting,System.Single,LobsterFramework.Entity,System.Single,System.Int32,System.Single)
+  commentId: M:LobsterFramework.Pool.Bullet.Initialize(LobsterFramework.AbilitySystem.TargetSetting,System.Single,LobsterFramework.Entity,System.Single,System.Int32,System.Single)
+  id: Initialize(LobsterFramework.AbilitySystem.TargetSetting,System.Single,LobsterFramework.Entity,System.Single,System.Int32,System.Single)
   parent: LobsterFramework.Pool.Bullet
   langs:
   - csharp
   - vb
-  name: Initialize(TargetSetting, float, Entity, int, int)
-  nameWithType: Bullet.Initialize(TargetSetting, float, Entity, int, int)
-  fullName: LobsterFramework.Pool.Bullet.Initialize(LobsterFramework.AbilitySystem.TargetSetting, float, LobsterFramework.EntitySystem.Entity, int, int)
+  name: Initialize(TargetSetting, float, Entity, float, int, float)
+  nameWithType: Bullet.Initialize(TargetSetting, float, Entity, float, int, float)
+  fullName: LobsterFramework.Pool.Bullet.Initialize(LobsterFramework.AbilitySystem.TargetSetting, float, LobsterFramework.Entity, float, int, float)
   type: Method
   source:
     remote:
       path: H:/Stuff/BallField/Assets/Framework/Components/Projectiles/Bullet.cs
     id: Initialize
     path: ../Assets/Framework/Components/Projectiles/Bullet.cs
-    startLine: 28
+    startLine: 35
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Pool
   syntax:
-    content: public void Initialize(TargetSetting target, float duration, Entity attacker = null, int attackPower = -1, int piercePower = -1)
+    content: public void Initialize(TargetSetting target, float duration, Entity attacker, float attackPower, int piercePower, float weight)
     parameters:
     - id: target
       type: LobsterFramework.AbilitySystem.TargetSetting
     - id: duration
       type: System.Single
     - id: attacker
-      type: LobsterFramework.EntitySystem.Entity
+      type: LobsterFramework.Entity
     - id: attackPower
-      type: System.Int32
+      type: System.Single
     - id: piercePower
       type: System.Int32
-    content.vb: Public Sub Initialize(target As TargetSetting, duration As Single, attacker As Entity = Nothing, attackPower As Integer = -1, piercePower As Integer = -1)
+    - id: weight
+      type: System.Single
+    content.vb: Public Sub Initialize(target As TargetSetting, duration As Single, attacker As Entity, attackPower As Single, piercePower As Integer, weight As Single)
   overload: LobsterFramework.Pool.Bullet.Initialize*
-  nameWithType.vb: Bullet.Initialize(TargetSetting, Single, Entity, Integer, Integer)
-  fullName.vb: LobsterFramework.Pool.Bullet.Initialize(LobsterFramework.AbilitySystem.TargetSetting, Single, LobsterFramework.EntitySystem.Entity, Integer, Integer)
-  name.vb: Initialize(TargetSetting, Single, Entity, Integer, Integer)
+  nameWithType.vb: Bullet.Initialize(TargetSetting, Single, Entity, Single, Integer, Single)
+  fullName.vb: LobsterFramework.Pool.Bullet.Initialize(LobsterFramework.AbilitySystem.TargetSetting, Single, LobsterFramework.Entity, Single, Integer, Single)
+  name.vb: Initialize(TargetSetting, Single, Entity, Single, Integer, Single)
 references:
 - uid: LobsterFramework.Pool
   commentId: N:LobsterFramework.Pool
@@ -4436,7 +4429,7 @@ references:
   - name: )
 - uid: LobsterFramework.Pool.Bullet.Initialize*
   commentId: Overload:LobsterFramework.Pool.Bullet.Initialize
-  href: LobsterFramework.Pool.Bullet.html#LobsterFramework.Pool.Bullet.Initialize(LobsterFramework.AbilitySystem.TargetSetting,System.Single,LobsterFramework.EntitySystem.Entity,System.Int32,System.Int32)
+  href: LobsterFramework.Pool.Bullet.html#LobsterFramework.Pool.Bullet.Initialize(LobsterFramework.AbilitySystem.TargetSetting,System.Single,LobsterFramework.Entity,System.Single,System.Int32,System.Single)
   name: Initialize
   nameWithType: Bullet.Initialize
   fullName: LobsterFramework.Pool.Bullet.Initialize
@@ -4458,13 +4451,13 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
-- uid: LobsterFramework.EntitySystem.Entity
-  commentId: T:LobsterFramework.EntitySystem.Entity
-  parent: LobsterFramework.EntitySystem
-  href: LobsterFramework.EntitySystem.Entity.html
+- uid: LobsterFramework.Entity
+  commentId: T:LobsterFramework.Entity
+  parent: LobsterFramework
+  href: LobsterFramework.Entity.html
   name: Entity
   nameWithType: Entity
-  fullName: LobsterFramework.EntitySystem.Entity
+  fullName: LobsterFramework.Entity
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -4498,25 +4491,9 @@ references:
   - uid: LobsterFramework.AbilitySystem
     name: AbilitySystem
     href: LobsterFramework.AbilitySystem.html
-- uid: LobsterFramework.EntitySystem
-  commentId: N:LobsterFramework.EntitySystem
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
   href: LobsterFramework.html
-  name: LobsterFramework.EntitySystem
-  nameWithType: LobsterFramework.EntitySystem
-  fullName: LobsterFramework.EntitySystem
-  spec.csharp:
-  - uid: LobsterFramework
-    name: LobsterFramework
-    href: LobsterFramework.html
-  - name: .
-  - uid: LobsterFramework.EntitySystem
-    name: EntitySystem
-    href: LobsterFramework.EntitySystem.html
-  spec.vb:
-  - uid: LobsterFramework
-    name: LobsterFramework
-    href: LobsterFramework.html
-  - name: .
-  - uid: LobsterFramework.EntitySystem
-    name: EntitySystem
-    href: LobsterFramework.EntitySystem.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework

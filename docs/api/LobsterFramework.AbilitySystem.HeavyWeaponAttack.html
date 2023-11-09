@@ -1,0 +1,639 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class HeavyWeaponAttack
+ | LobsterFramework documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class HeavyWeaponAttack
+ | LobsterFramework documentation ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack">
+
+
+
+  <h1 id="LobsterFramework_AbilitySystem_HeavyWeaponAttack" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack" class="text-break">Class HeavyWeaponAttack
+</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.html">Object</a></div>
+    <div class="level2"><a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.html">ScriptableObject</a></div>
+    <div class="level3"><a class="xref" href="LobsterFramework.AbilitySystem.Ability.html">Ability</a></div>
+    <div class="level4"><a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html">AbilityCoroutine</a></div>
+    <div class="level5"><a class="xref" href="LobsterFramework.AbilitySystem.WeaponAbility.html">WeaponAbility</a></div>
+    <div class="level6"><span class="xref">HeavyWeaponAttack</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponAbility_WeaponWielder">WeaponAbility.WeaponWielder</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponAbility_IsMainhanded">WeaponAbility.IsMainhanded</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponAbility_Initialize">WeaponAbility.Initialize()</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponAbility_ConditionSatisfied_LobsterFramework_AbilitySystem_Ability_AbilityConfig_">WeaponAbility.ConditionSatisfied(Ability.AbilityConfig)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework_AbilitySystem_AbilityCoroutine_OnEnqueue_LobsterFramework_AbilitySystem_Ability_AbilityPipe_">AbilityCoroutine.OnEnqueue(Ability.AbilityPipe)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework_AbilitySystem_AbilityCoroutine_Action_LobsterFramework_AbilitySystem_Ability_AbilityPipe_">AbilityCoroutine.Action(Ability.AbilityPipe)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework_AbilitySystem_AbilityCoroutine_OnActionFinish">AbilityCoroutine.OnActionFinish()</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_abilityRunner">Ability.abilityRunner</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_abilityPriority">Ability.abilityPriority</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_CurrentConfigName">Ability.CurrentConfigName</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_CurrentConfig">Ability.CurrentConfig</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_RemoveConfig_System_String_">Ability.RemoveConfig(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_CleanUp">Ability.CleanUp()</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_CompareByExecutionPriority_LobsterFramework_AbilitySystem_Ability_">Ability.CompareByExecutionPriority(Ability)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_CompareByEnqueuePriority_LobsterFramework_AbilitySystem_Ability_">Ability.CompareByEnqueuePriority(Ability)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_RunningCount">Ability.RunningCount</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_HaltAbilityExecution_System_String_">Ability.HaltAbilityExecution(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_HaltOnAllConfigs">Ability.HaltOnAllConfigs()</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_IsExecuting_System_String_">Ability.IsExecuting(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_IsReady_System_String_">Ability.IsReady(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_SaveConfigsAsAsset">Ability.SaveConfigsAsAsset()</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_OnAnimationInterrupt_Animancer_AnimancerState_">Ability.OnAnimationInterrupt(AnimancerState)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_JoinAsSecondary__1_System_String_">Ability.JoinAsSecondary&lt;T&gt;(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_JoinAsSecondary_System_Type_System_String_">Ability.JoinAsSecondary(Type, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_HasConfig_System_String_">Ability.HasConfig(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_Signal_System_String_UnityEngine_AnimationEvent_">Ability.Signal(string, AnimationEvent)</a>
+    </div>
+    <div>
+      <a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_GetAbilityPipe_System_String_">Ability.GetAbilityPipe(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.SetDirty.html">ScriptableObject.SetDirty()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ScriptableObject.CreateInstance(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">ScriptableObject.CreateInstance(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.CreateInstance.html">ScriptableObject.CreateInstance&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.GetInstanceID.html">Object.GetInstanceID()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.GetHashCode.html">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate(Object, Vector3, Quaternion)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate(Object, Vector3, Quaternion, Transform)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate(Object, Transform)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate(Object, Transform, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, Transform)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate&lt;T&gt;(T, Transform)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate&lt;T&gt;(T, Transform, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.Destroy(Object, float)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Destroy(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.DestroyImmediate(Object, bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DestroyImmediate(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.DontDestroyOnLoad.html">Object.DontDestroyOnLoad(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.DestroyObject(Object, float)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DestroyObject(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindSceneObjectsOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeIncludingAssets(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectsOfType.html">Object.FindObjectsOfType&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectsByType.html">Object.FindObjectsByType&lt;T&gt;(FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectsOfType&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectsByType.html">Object.FindObjectsByType&lt;T&gt;(FindObjectsInactive, FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindObjectOfType.html">Object.FindObjectOfType&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectOfType&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindFirstObjectByType.html">Object.FindFirstObjectByType&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindAnyObjectByType.html">Object.FindAnyObjectByType&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindFirstObjectByType.html">Object.FindFirstObjectByType&lt;T&gt;(FindObjectsInactive)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.FindAnyObjectByType.html">Object.FindAnyObjectByType&lt;T&gt;(FindObjectsInactive)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeAll(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type, FindObjectsInactive)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type, FindObjectsInactive)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.ToString.html">Object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object-name.html">Object.name</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.unity3d.com/ScriptReference/Object-hideFlags.html">Object.hideFlags</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LobsterFramework.html">LobsterFramework</a>.<a class="xref" href="LobsterFramework.AbilitySystem.html">AbilitySystem</a></h6>
+  <h6><strong>Assembly</strong>: LobsterFramework.dll</h6>
+  <h5 id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[RequireAbilityStats(new Type[] { typeof(DamageModifier) })]
+[ComponentRequired(new Type[] { typeof(WeaponWielder) })]
+public class HeavyWeaponAttack : WeaponAbility</code></pre>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_Coroutine_" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.Coroutine*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_Coroutine_LobsterFramework_AbilitySystem_Ability_AbilityPipe_" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.Coroutine(LobsterFramework.AbilitySystem.Ability.AbilityPipe)">Coroutine(AbilityPipe)</h4>
+  <div class="markdown level1 summary"><p>The body of the ability execution, replaces Action method</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerator&lt;CoroutineOption&gt; Coroutine(Ability.AbilityPipe pipe)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.AbilitySystem.Ability.html">Ability</a>.<a class="xref" href="LobsterFramework.AbilitySystem.Ability.AbilityPipe.html">AbilityPipe</a></td>
+        <td><span class="parametername">pipe</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;<a class="xref" href="LobsterFramework.CoroutineOption.html">CoroutineOption</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework_AbilitySystem_AbilityCoroutine_Coroutine_LobsterFramework_AbilitySystem_Ability_AbilityPipe_">AbilityCoroutine.Coroutine(Ability.AbilityPipe)</a></div>
+
+
+  <a id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_Init_" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.Init*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_Init" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.Init">Init()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Init()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="LobsterFramework.AbilitySystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponAbility_Init">WeaponAbility.Init()</a></div>
+
+
+  <a id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_OnCoroutineEnqueue_" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.OnCoroutineEnqueue*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_OnCoroutineEnqueue_LobsterFramework_AbilitySystem_Ability_AbilityPipe_" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.OnCoroutineEnqueue(LobsterFramework.AbilitySystem.Ability.AbilityPipe)">OnCoroutineEnqueue(AbilityPipe)</h4>
+  <div class="markdown level1 summary"><p>Callback when the ability is enqueued, replaces OnEnqueue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnCoroutineEnqueue(Ability.AbilityPipe pipe)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.AbilitySystem.Ability.html">Ability</a>.<a class="xref" href="LobsterFramework.AbilitySystem.Ability.AbilityPipe.html">AbilityPipe</a></td>
+        <td><span class="parametername">pipe</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework_AbilitySystem_AbilityCoroutine_OnCoroutineEnqueue_LobsterFramework_AbilitySystem_Ability_AbilityPipe_">AbilityCoroutine.OnCoroutineEnqueue(Ability.AbilityPipe)</a></div>
+
+
+  <a id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_OnCoroutineFinish_" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.OnCoroutineFinish*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_OnCoroutineFinish" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.OnCoroutineFinish">OnCoroutineFinish()</h4>
+  <div class="markdown level1 summary"><p>Callback on ability finished, replaces OnActionFinish</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnCoroutineFinish()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework_AbilitySystem_AbilityCoroutine_OnCoroutineFinish">AbilityCoroutine.OnCoroutineFinish()</a></div>
+
+
+  <a id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_OnCoroutineReset_" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.OnCoroutineReset*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_OnCoroutineReset" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.OnCoroutineReset">OnCoroutineReset()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnCoroutineReset()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="LobsterFramework.AbilitySystem.AbilityCoroutine.html#LobsterFramework_AbilitySystem_AbilityCoroutine_OnCoroutineReset">AbilityCoroutine.OnCoroutineReset()</a></div>
+
+
+  <a id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_OnEntityHit_" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.OnEntityHit*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_OnEntityHit_LobsterFramework_Entity_" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.OnEntityHit(LobsterFramework.Entity)">OnEntityHit(Entity)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnEntityHit(Entity entity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.Entity.html">Entity</a></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_OnWeaponHit_" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.OnWeaponHit*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_OnWeaponHit_LobsterFramework_AbilitySystem_Weapon_" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.OnWeaponHit(LobsterFramework.AbilitySystem.Weapon)">OnWeaponHit(Weapon)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnWeaponHit(Weapon weapon)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.AbilitySystem.Weapon.html">Weapon</a></td>
+        <td><span class="parametername">weapon</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_Signal_" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.Signal*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_Signal_UnityEngine_AnimationEvent_" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.Signal(UnityEngine.AnimationEvent)">Signal(AnimationEvent)</h4>
+  <div class="markdown level1 summary"><p>Override this to implement signal event handler</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Signal(AnimationEvent animationEvent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.unity3d.com/ScriptReference/AnimationEvent.html">AnimationEvent</a></td>
+        <td><span class="parametername">animationEvent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="LobsterFramework.AbilitySystem.Ability.html#LobsterFramework_AbilitySystem_Ability_Signal_UnityEngine_AnimationEvent_">Ability.Signal(AnimationEvent)</a></div>
+
+
+  <a id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_SubscribeWeaponEvent_" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.SubscribeWeaponEvent*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_SubscribeWeaponEvent" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.SubscribeWeaponEvent">SubscribeWeaponEvent()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SubscribeWeaponEvent()</code></pre>
+  </div>
+
+
+  <a id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_UnSubscribeWeaponEvent_" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.UnSubscribeWeaponEvent*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_UnSubscribeWeaponEvent" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.UnSubscribeWeaponEvent">UnSubscribeWeaponEvent()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UnSubscribeWeaponEvent()</code></pre>
+  </div>
+
+
+  <a id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_WConditionSatisfied_" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.WConditionSatisfied*"></a>
+  <h4 id="LobsterFramework_AbilitySystem_HeavyWeaponAttack_WConditionSatisfied_LobsterFramework_AbilitySystem_Ability_AbilityConfig_" data-uid="LobsterFramework.AbilitySystem.HeavyWeaponAttack.WConditionSatisfied(LobsterFramework.AbilitySystem.Ability.AbilityConfig)">WConditionSatisfied(AbilityConfig)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool WConditionSatisfied(Ability.AbilityConfig config)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LobsterFramework.AbilitySystem.Ability.html">Ability</a>.<a class="xref" href="LobsterFramework.AbilitySystem.Ability.AbilityConfig.html">AbilityConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="LobsterFramework.AbilitySystem.WeaponAbility.html#LobsterFramework_AbilitySystem_WeaponAbility_WConditionSatisfied_LobsterFramework_AbilitySystem_Ability_AbilityConfig_">WeaponAbility.WConditionSatisfied(Ability.AbilityConfig)</a></div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      LobsterFramework documentation
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,619 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Damage
+  commentId: T:LobsterFramework.Damage
+  id: Damage
+  parent: LobsterFramework
+  children:
+  - LobsterFramework.Damage.Equals(System.Object)
+  - LobsterFramework.Damage.GetHashCode
+  - LobsterFramework.Damage.health
+  - LobsterFramework.Damage.none
+  - LobsterFramework.Damage.op_Addition(LobsterFramework.Damage,LobsterFramework.Damage)
+  - LobsterFramework.Damage.op_Equality(LobsterFramework.Damage,LobsterFramework.Damage)
+  - LobsterFramework.Damage.op_Inequality(LobsterFramework.Damage,LobsterFramework.Damage)
+  - LobsterFramework.Damage.op_Multiply(LobsterFramework.Damage,LobsterFramework.Damage)
+  - LobsterFramework.Damage.op_Multiply(LobsterFramework.Damage,System.Single)
+  - LobsterFramework.Damage.posture
+  - LobsterFramework.Damage.source
+  - LobsterFramework.Damage.type
+  langs:
+  - csharp
+  - vb
+  name: Damage
+  nameWithType: Damage
+  fullName: LobsterFramework.Damage
+  type: Struct
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: Damage
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 284
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: >-
+      [Serializable]
+
+      public struct Damage
+    content.vb: >-
+      <Serializable>
+
+      Public Structure Damage
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: LobsterFramework.Damage.health
+  commentId: F:LobsterFramework.Damage.health
+  id: health
+  parent: LobsterFramework.Damage
+  langs:
+  - csharp
+  - vb
+  name: health
+  nameWithType: Damage.health
+  fullName: LobsterFramework.Damage.health
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: health
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 288
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public float health
+    return:
+      type: System.Single
+    content.vb: Public health As Single
+- uid: LobsterFramework.Damage.posture
+  commentId: F:LobsterFramework.Damage.posture
+  id: posture
+  parent: LobsterFramework.Damage
+  langs:
+  - csharp
+  - vb
+  name: posture
+  nameWithType: Damage.posture
+  fullName: LobsterFramework.Damage.posture
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: posture
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 289
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public float posture
+    return:
+      type: System.Single
+    content.vb: Public posture As Single
+- uid: LobsterFramework.Damage.source
+  commentId: F:LobsterFramework.Damage.source
+  id: source
+  parent: LobsterFramework.Damage
+  langs:
+  - csharp
+  - vb
+  name: source
+  nameWithType: Damage.source
+  fullName: LobsterFramework.Damage.source
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: source
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 290
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public Entity source
+    return:
+      type: LobsterFramework.Entity
+    content.vb: Public source As Entity
+- uid: LobsterFramework.Damage.type
+  commentId: F:LobsterFramework.Damage.type
+  id: type
+  parent: LobsterFramework.Damage
+  langs:
+  - csharp
+  - vb
+  name: type
+  nameWithType: Damage.type
+  fullName: LobsterFramework.Damage.type
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: type
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 291
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public DamageType type
+    return:
+      type: LobsterFramework.DamageType
+    content.vb: Public type As DamageType
+- uid: LobsterFramework.Damage.none
+  commentId: F:LobsterFramework.Damage.none
+  id: none
+  parent: LobsterFramework.Damage
+  langs:
+  - csharp
+  - vb
+  name: none
+  nameWithType: Damage.none
+  fullName: LobsterFramework.Damage.none
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: none
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 293
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public static Damage none
+    return:
+      type: LobsterFramework.Damage
+    content.vb: Public Shared none As Damage
+- uid: LobsterFramework.Damage.Equals(System.Object)
+  commentId: M:LobsterFramework.Damage.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: LobsterFramework.Damage
+  langs:
+  - csharp
+  - vb
+  name: Equals(object)
+  nameWithType: Damage.Equals(object)
+  fullName: LobsterFramework.Damage.Equals(object)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: Equals
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 295
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  example: []
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.ValueType.Equals(System.Object)
+  overload: LobsterFramework.Damage.Equals*
+  nameWithType.vb: Damage.Equals(Object)
+  fullName.vb: LobsterFramework.Damage.Equals(Object)
+  name.vb: Equals(Object)
+- uid: LobsterFramework.Damage.GetHashCode
+  commentId: M:LobsterFramework.Damage.GetHashCode
+  id: GetHashCode
+  parent: LobsterFramework.Damage
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Damage.GetHashCode()
+  fullName: LobsterFramework.Damage.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: GetHashCode
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 300
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.ValueType.GetHashCode
+  overload: LobsterFramework.Damage.GetHashCode*
+- uid: LobsterFramework.Damage.op_Addition(LobsterFramework.Damage,LobsterFramework.Damage)
+  commentId: M:LobsterFramework.Damage.op_Addition(LobsterFramework.Damage,LobsterFramework.Damage)
+  id: op_Addition(LobsterFramework.Damage,LobsterFramework.Damage)
+  parent: LobsterFramework.Damage
+  langs:
+  - csharp
+  - vb
+  name: operator +(Damage, Damage)
+  nameWithType: Damage.operator +(Damage, Damage)
+  fullName: LobsterFramework.Damage.operator +(LobsterFramework.Damage, LobsterFramework.Damage)
+  type: Operator
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: op_Addition
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 305
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public static Damage operator +(Damage a, Damage b)
+    parameters:
+    - id: a
+      type: LobsterFramework.Damage
+    - id: b
+      type: LobsterFramework.Damage
+    return:
+      type: LobsterFramework.Damage
+    content.vb: Public Shared Operator +(a As Damage, b As Damage) As Damage
+  overload: LobsterFramework.Damage.op_Addition*
+  nameWithType.vb: Damage.+(Damage, Damage)
+  fullName.vb: LobsterFramework.Damage.+(LobsterFramework.Damage, LobsterFramework.Damage)
+  name.vb: +(Damage, Damage)
+- uid: LobsterFramework.Damage.op_Multiply(LobsterFramework.Damage,LobsterFramework.Damage)
+  commentId: M:LobsterFramework.Damage.op_Multiply(LobsterFramework.Damage,LobsterFramework.Damage)
+  id: op_Multiply(LobsterFramework.Damage,LobsterFramework.Damage)
+  parent: LobsterFramework.Damage
+  langs:
+  - csharp
+  - vb
+  name: operator *(Damage, Damage)
+  nameWithType: Damage.operator *(Damage, Damage)
+  fullName: LobsterFramework.Damage.operator *(LobsterFramework.Damage, LobsterFramework.Damage)
+  type: Operator
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: op_Multiply
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 310
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public static Damage operator *(Damage a, Damage b)
+    parameters:
+    - id: a
+      type: LobsterFramework.Damage
+    - id: b
+      type: LobsterFramework.Damage
+    return:
+      type: LobsterFramework.Damage
+    content.vb: Public Shared Operator *(a As Damage, b As Damage) As Damage
+  overload: LobsterFramework.Damage.op_Multiply*
+  nameWithType.vb: Damage.*(Damage, Damage)
+  fullName.vb: LobsterFramework.Damage.*(LobsterFramework.Damage, LobsterFramework.Damage)
+  name.vb: '*(Damage, Damage)'
+- uid: LobsterFramework.Damage.op_Multiply(LobsterFramework.Damage,System.Single)
+  commentId: M:LobsterFramework.Damage.op_Multiply(LobsterFramework.Damage,System.Single)
+  id: op_Multiply(LobsterFramework.Damage,System.Single)
+  parent: LobsterFramework.Damage
+  langs:
+  - csharp
+  - vb
+  name: operator *(Damage, float)
+  nameWithType: Damage.operator *(Damage, float)
+  fullName: LobsterFramework.Damage.operator *(LobsterFramework.Damage, float)
+  type: Operator
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: op_Multiply
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 315
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public static Damage operator *(Damage a, float b)
+    parameters:
+    - id: a
+      type: LobsterFramework.Damage
+    - id: b
+      type: System.Single
+    return:
+      type: LobsterFramework.Damage
+    content.vb: Public Shared Operator *(a As Damage, b As Single) As Damage
+  overload: LobsterFramework.Damage.op_Multiply*
+  nameWithType.vb: Damage.*(Damage, Single)
+  fullName.vb: LobsterFramework.Damage.*(LobsterFramework.Damage, Single)
+  name.vb: '*(Damage, Single)'
+- uid: LobsterFramework.Damage.op_Equality(LobsterFramework.Damage,LobsterFramework.Damage)
+  commentId: M:LobsterFramework.Damage.op_Equality(LobsterFramework.Damage,LobsterFramework.Damage)
+  id: op_Equality(LobsterFramework.Damage,LobsterFramework.Damage)
+  parent: LobsterFramework.Damage
+  langs:
+  - csharp
+  - vb
+  name: operator ==(Damage, Damage)
+  nameWithType: Damage.operator ==(Damage, Damage)
+  fullName: LobsterFramework.Damage.operator ==(LobsterFramework.Damage, LobsterFramework.Damage)
+  type: Operator
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: op_Equality
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 319
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public static bool operator ==(Damage a, Damage b)
+    parameters:
+    - id: a
+      type: LobsterFramework.Damage
+    - id: b
+      type: LobsterFramework.Damage
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(a As Damage, b As Damage) As Boolean
+  overload: LobsterFramework.Damage.op_Equality*
+  nameWithType.vb: Damage.=(Damage, Damage)
+  fullName.vb: LobsterFramework.Damage.=(LobsterFramework.Damage, LobsterFramework.Damage)
+  name.vb: =(Damage, Damage)
+- uid: LobsterFramework.Damage.op_Inequality(LobsterFramework.Damage,LobsterFramework.Damage)
+  commentId: M:LobsterFramework.Damage.op_Inequality(LobsterFramework.Damage,LobsterFramework.Damage)
+  id: op_Inequality(LobsterFramework.Damage,LobsterFramework.Damage)
+  parent: LobsterFramework.Damage
+  langs:
+  - csharp
+  - vb
+  name: operator !=(Damage, Damage)
+  nameWithType: Damage.operator !=(Damage, Damage)
+  fullName: LobsterFramework.Damage.operator !=(LobsterFramework.Damage, LobsterFramework.Damage)
+  type: Operator
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Components/Entity.cs
+    id: op_Inequality
+    path: ../Assets/Framework/Components/Entity.cs
+    startLine: 322
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public static bool operator !=(Damage a, Damage b)
+    parameters:
+    - id: a
+      type: LobsterFramework.Damage
+    - id: b
+      type: LobsterFramework.Damage
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(a As Damage, b As Damage) As Boolean
+  overload: LobsterFramework.Damage.op_Inequality*
+  nameWithType.vb: Damage.<>(Damage, Damage)
+  fullName.vb: LobsterFramework.Damage.<>(LobsterFramework.Damage, LobsterFramework.Damage)
+  name.vb: <>(Damage, Damage)
+references:
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Entity
+  commentId: T:LobsterFramework.Entity
+  parent: LobsterFramework
+  href: LobsterFramework.Entity.html
+  name: Entity
+  nameWithType: Entity
+  fullName: LobsterFramework.Entity
+- uid: LobsterFramework.DamageType
+  commentId: T:LobsterFramework.DamageType
+  parent: LobsterFramework
+  href: LobsterFramework.DamageType.html
+  name: DamageType
+  nameWithType: DamageType
+  fullName: LobsterFramework.DamageType
+- uid: LobsterFramework.Damage
+  commentId: T:LobsterFramework.Damage
+  parent: LobsterFramework
+  href: LobsterFramework.Damage.html
+  name: Damage
+  nameWithType: Damage
+  fullName: LobsterFramework.Damage
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: LobsterFramework.Damage.Equals*
+  commentId: Overload:LobsterFramework.Damage.Equals
+  href: LobsterFramework.Damage.html#LobsterFramework.Damage.Equals(System.Object)
+  name: Equals
+  nameWithType: Damage.Equals
+  fullName: LobsterFramework.Damage.Equals
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: LobsterFramework.Damage.GetHashCode*
+  commentId: Overload:LobsterFramework.Damage.GetHashCode
+  href: LobsterFramework.Damage.html#LobsterFramework.Damage.GetHashCode
+  name: GetHashCode
+  nameWithType: Damage.GetHashCode
+  fullName: LobsterFramework.Damage.GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: LobsterFramework.Damage.op_Addition*
+  commentId: Overload:LobsterFramework.Damage.op_Addition
+  href: LobsterFramework.Damage.html#LobsterFramework.Damage.op_Addition(LobsterFramework.Damage,LobsterFramework.Damage)
+  name: operator +
+  nameWithType: Damage.operator +
+  fullName: LobsterFramework.Damage.operator +
+  nameWithType.vb: Damage.+
+  fullName.vb: LobsterFramework.Damage.+
+  name.vb: +
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: LobsterFramework.Damage.op_Addition*
+    name: +
+    href: LobsterFramework.Damage.html#LobsterFramework.Damage.op_Addition(LobsterFramework.Damage,LobsterFramework.Damage)
+- uid: LobsterFramework.Damage.op_Multiply*
+  commentId: Overload:LobsterFramework.Damage.op_Multiply
+  href: LobsterFramework.Damage.html#LobsterFramework.Damage.op_Multiply(LobsterFramework.Damage,LobsterFramework.Damage)
+  name: operator *
+  nameWithType: Damage.operator *
+  fullName: LobsterFramework.Damage.operator *
+  nameWithType.vb: Damage.*
+  fullName.vb: LobsterFramework.Damage.*
+  name.vb: '*'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: LobsterFramework.Damage.op_Multiply*
+    name: '*'
+    href: LobsterFramework.Damage.html#LobsterFramework.Damage.op_Multiply(LobsterFramework.Damage,LobsterFramework.Damage)
+- uid: LobsterFramework.Damage.op_Equality*
+  commentId: Overload:LobsterFramework.Damage.op_Equality
+  href: LobsterFramework.Damage.html#LobsterFramework.Damage.op_Equality(LobsterFramework.Damage,LobsterFramework.Damage)
+  name: operator ==
+  nameWithType: Damage.operator ==
+  fullName: LobsterFramework.Damage.operator ==
+  nameWithType.vb: Damage.=
+  fullName.vb: LobsterFramework.Damage.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: LobsterFramework.Damage.op_Equality*
+    name: ==
+    href: LobsterFramework.Damage.html#LobsterFramework.Damage.op_Equality(LobsterFramework.Damage,LobsterFramework.Damage)
+- uid: LobsterFramework.Damage.op_Inequality*
+  commentId: Overload:LobsterFramework.Damage.op_Inequality
+  href: LobsterFramework.Damage.html#LobsterFramework.Damage.op_Inequality(LobsterFramework.Damage,LobsterFramework.Damage)
+  name: operator !=
+  nameWithType: Damage.operator !=
+  fullName: LobsterFramework.Damage.operator !=
+  nameWithType.vb: Damage.<>
+  fullName.vb: LobsterFramework.Damage.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: LobsterFramework.Damage.op_Inequality*
+    name: '!='
+    href: LobsterFramework.Damage.html#LobsterFramework.Damage.op_Inequality(LobsterFramework.Damage,LobsterFramework.Damage)

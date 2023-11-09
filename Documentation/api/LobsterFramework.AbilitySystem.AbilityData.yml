@@ -9,7 +9,6 @@ items:
   - LobsterFramework.AbilitySystem.AbilityData.SaveContentsAsAsset
   - LobsterFramework.AbilitySystem.AbilityData.allAbilities
   - LobsterFramework.AbilitySystem.AbilityData.availableAbilities
-  - LobsterFramework.AbilitySystem.AbilityData.identifier
   - LobsterFramework.AbilitySystem.AbilityData.stats
   langs:
   - csharp
@@ -20,9 +19,9 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityData.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/AbilityData.cs
     id: AbilityData
-    path: ../Assets/Framework/Components/ActionComponents/AbilityData.cs
+    path: ../Assets/Framework/AbilitySystem/AbilityData.cs
     startLine: 9
   assemblies:
   - LobsterFramework
@@ -99,31 +98,6 @@ items:
     - name: menuName
       type: System.String
       value: Ability/AbilityData
-- uid: LobsterFramework.AbilitySystem.AbilityData.identifier
-  commentId: F:LobsterFramework.AbilitySystem.AbilityData.identifier
-  id: identifier
-  parent: LobsterFramework.AbilitySystem.AbilityData
-  langs:
-  - csharp
-  - vb
-  name: identifier
-  nameWithType: AbilityData.identifier
-  fullName: LobsterFramework.AbilitySystem.AbilityData.identifier
-  type: Field
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityData.cs
-    id: identifier
-    path: ../Assets/Framework/Components/ActionComponents/AbilityData.cs
-    startLine: 12
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: public int identifier
-    return:
-      type: System.Int32
-    content.vb: Public identifier As Integer
 - uid: LobsterFramework.AbilitySystem.AbilityData.stats
   commentId: F:LobsterFramework.AbilitySystem.AbilityData.stats
   id: stats
@@ -137,10 +111,10 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityData.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/AbilityData.cs
     id: stats
-    path: ../Assets/Framework/Components/ActionComponents/AbilityData.cs
-    startLine: 13
+    path: ../Assets/Framework/AbilitySystem/AbilityData.cs
+    startLine: 12
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -162,10 +136,10 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityData.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/AbilityData.cs
     id: allAbilities
-    path: ../Assets/Framework/Components/ActionComponents/AbilityData.cs
-    startLine: 14
+    path: ../Assets/Framework/AbilitySystem/AbilityData.cs
+    startLine: 13
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -187,10 +161,10 @@ items:
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityData.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/AbilityData.cs
     id: availableAbilities
-    path: ../Assets/Framework/Components/ActionComponents/AbilityData.cs
-    startLine: 15
+    path: ../Assets/Framework/AbilitySystem/AbilityData.cs
+    startLine: 14
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -212,10 +186,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityData.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/AbilityData.cs
     id: SaveContentsAsAsset
-    path: ../Assets/Framework/Components/ActionComponents/AbilityData.cs
-    startLine: 55
+    path: ../Assets/Framework/AbilitySystem/AbilityData.cs
+    startLine: 82
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -238,14 +212,14 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/AbilityData.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/AbilityData.cs
     id: CopyActionAsset
-    path: ../Assets/Framework/Components/ActionComponents/AbilityData.cs
-    startLine: 74
+    path: ../Assets/Framework/AbilitySystem/AbilityData.cs
+    startLine: 101
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
-  summary: Deep copy of action datas. Call this method after duplicate the ActionableData to ensure all of its contents are properly duplicated.
+  summary: Deep copy of action datas. Call this method after duplicate the AbilityData to ensure all of its contents are properly duplicated.
   example: []
   syntax:
     content: public void CopyActionAsset()
@@ -2233,17 +2207,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
 - uid: LobsterFramework.Utility.TypeAbilityStatDictionary
   commentId: T:LobsterFramework.Utility.TypeAbilityStatDictionary
   parent: LobsterFramework.Utility

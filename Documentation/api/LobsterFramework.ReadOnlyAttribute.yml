@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.ReadOnlyAttribute
+  commentId: T:LobsterFramework.ReadOnlyAttribute
+  id: ReadOnlyAttribute
+  parent: LobsterFramework
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: ReadOnlyAttribute
+  nameWithType: ReadOnlyAttribute
+  fullName: LobsterFramework.ReadOnlyAttribute
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Attributes/PropertyAttribute/ReadOnlyAttribute.cs
+    id: ReadOnlyAttribute
+    path: ../Assets/Framework/Attributes/PropertyAttribute/ReadOnlyAttribute.cs
+    startLine: 7
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: 'public class ReadOnlyAttribute : PropertyAttribute'
+    content.vb: Public Class ReadOnlyAttribute Inherits PropertyAttribute
+  inheritance:
+  - System.Object
+  - System.Attribute
+  - UnityEngine.PropertyAttribute
+  inheritedMembers:
+  - UnityEngine.PropertyAttribute.order
+references:
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Attribute
+  commentId: T:System.Attribute
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.attribute
+  name: Attribute
+  nameWithType: Attribute
+  fullName: System.Attribute
+- uid: UnityEngine.PropertyAttribute
+  commentId: T:UnityEngine.PropertyAttribute
+  parent: UnityEngine
+  isExternal: true
+  name: PropertyAttribute
+  nameWithType: PropertyAttribute
+  fullName: UnityEngine.PropertyAttribute
+- uid: UnityEngine.PropertyAttribute.order
+  commentId: P:UnityEngine.PropertyAttribute.order
+  parent: UnityEngine.PropertyAttribute
+  isExternal: true
+  name: order
+  nameWithType: PropertyAttribute.order
+  fullName: UnityEngine.PropertyAttribute.order
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine

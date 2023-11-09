@@ -1,0 +1,1211 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Utility.AbilityAnimationConfig
+  commentId: T:LobsterFramework.Utility.AbilityAnimationConfig
+  id: AbilityAnimationConfig
+  parent: LobsterFramework.Utility
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: AbilityAnimationConfig
+  nameWithType: AbilityAnimationConfig
+  fullName: LobsterFramework.Utility.AbilityAnimationConfig
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
+    id: AbilityAnimationConfig
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableDictionary.cs
+    startLine: 115
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Utility
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class AbilityAnimationConfig : SerializableDictionary<string, AnimationClipArray>, ISerializationCallbackReceiver
+    content.vb: >-
+      <Serializable>
+
+      Public Class AbilityAnimationConfig Inherits SerializableDictionary(Of String, AnimationClipArray) Implements ISerializationCallbackReceiver
+  inheritance:
+  - System.Object
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  implements:
+  - UnityEngine.ISerializationCallbackReceiver
+  inheritedMembers:
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.keys
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.values
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.dictionary
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Item(System.String)
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Keys
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Values
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Count
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.IsReadOnly
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Add(System.String,LobsterFramework.AnimationClipArray)
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Clear
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.ContainsKey(System.String)
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray}[],System.Int32)
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.GetEnumerator
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.OnAfterDeserialize
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.OnBeforeSerialize
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Remove(System.String)
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+  - LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.TryGetValue(System.String,LobsterFramework.AnimationClipArray@)
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+references:
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  commentId: T:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  parent: LobsterFramework.Utility
+  definition: LobsterFramework.Utility.SerializableDictionary`2
+  href: LobsterFramework.Utility.SerializableDictionary-2.html
+  name: SerializableDictionary<string, AnimationClipArray>
+  nameWithType: SerializableDictionary<string, AnimationClipArray>
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray)
+  name.vb: SerializableDictionary(Of String, AnimationClipArray)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2
+    name: SerializableDictionary
+    href: LobsterFramework.Utility.SerializableDictionary-2.html
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.AnimationClipArray
+    name: AnimationClipArray
+    href: LobsterFramework.AnimationClipArray.html
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2
+    name: SerializableDictionary
+    href: LobsterFramework.Utility.SerializableDictionary-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.AnimationClipArray
+    name: AnimationClipArray
+    href: LobsterFramework.AnimationClipArray.html
+  - name: )
+- uid: UnityEngine.ISerializationCallbackReceiver
+  commentId: T:UnityEngine.ISerializationCallbackReceiver
+  parent: UnityEngine
+  isExternal: true
+  name: ISerializationCallbackReceiver
+  nameWithType: ISerializationCallbackReceiver
+  fullName: UnityEngine.ISerializationCallbackReceiver
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.keys
+  commentId: F:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.keys
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.keys
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.keys
+  name: keys
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.keys
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.keys
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).keys
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).keys
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.values
+  commentId: F:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.values
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.values
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.values
+  name: values
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.values
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.values
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).values
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).values
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.dictionary
+  commentId: F:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.dictionary
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.dictionary
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.dictionary
+  name: dictionary
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.dictionary
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.dictionary
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).dictionary
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).dictionary
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Item(System.String)
+  commentId: P:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Item(System.String)
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Item(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: this[string]
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.this[string]
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.this[string]
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).this[](String)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).this[](String)
+  name.vb: this[](String)
+  spec.csharp:
+  - name: this
+  - name: '['
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ']'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Item(System.String)
+    name: this[]
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Item(System.String)
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Keys
+  commentId: P:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Keys
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Keys
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Keys
+  name: Keys
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.Keys
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.Keys
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).Keys
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).Keys
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Values
+  commentId: P:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Values
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Values
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Values
+  name: Values
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.Values
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.Values
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).Values
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).Values
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Count
+  commentId: P:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Count
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Count
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Count
+  name: Count
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.Count
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.Count
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).Count
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).Count
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.IsReadOnly
+  commentId: P:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.IsReadOnly
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.IsReadOnly
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.IsReadOnly
+  name: IsReadOnly
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.IsReadOnly
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.IsReadOnly
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).IsReadOnly
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).IsReadOnly
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Add(System.String,LobsterFramework.AnimationClipArray)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Add(System.String,LobsterFramework.AnimationClipArray)
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Add(System.String,LobsterFramework.AnimationClipArray)
+  name: Add(string, AnimationClipArray)
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.Add(string, AnimationClipArray)
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.Add(string, LobsterFramework.AnimationClipArray)
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).Add(String, AnimationClipArray)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).Add(String, LobsterFramework.AnimationClipArray)
+  name.vb: Add(String, AnimationClipArray)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Add(System.String,LobsterFramework.AnimationClipArray)
+    name: Add
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Add(System.String,LobsterFramework.AnimationClipArray)
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.AnimationClipArray
+    name: AnimationClipArray
+    href: LobsterFramework.AnimationClipArray.html
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Add(System.String,LobsterFramework.AnimationClipArray)
+    name: Add
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Add(System.String,LobsterFramework.AnimationClipArray)
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.AnimationClipArray
+    name: AnimationClipArray
+    href: LobsterFramework.AnimationClipArray.html
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+  name: Add(KeyValuePair<string, AnimationClipArray>)
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.Add(KeyValuePair<string, AnimationClipArray>)
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.Add(System.Collections.Generic.KeyValuePair<string, LobsterFramework.AnimationClipArray>)
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).Add(KeyValuePair(Of String, AnimationClipArray))
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).Add(System.Collections.Generic.KeyValuePair(Of String, LobsterFramework.AnimationClipArray))
+  name.vb: Add(KeyValuePair(Of String, AnimationClipArray))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+    name: Add
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.AnimationClipArray
+    name: AnimationClipArray
+    href: LobsterFramework.AnimationClipArray.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+    name: Add
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Add(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.AnimationClipArray
+    name: AnimationClipArray
+    href: LobsterFramework.AnimationClipArray.html
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Clear
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Clear
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Clear
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Clear
+  name: Clear()
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.Clear()
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.Clear()
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).Clear()
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).Clear()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Clear
+    name: Clear
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Clear
+    name: Clear
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Clear
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+  name: Contains(KeyValuePair<string, AnimationClipArray>)
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.Contains(KeyValuePair<string, AnimationClipArray>)
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.Contains(System.Collections.Generic.KeyValuePair<string, LobsterFramework.AnimationClipArray>)
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).Contains(KeyValuePair(Of String, AnimationClipArray))
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).Contains(System.Collections.Generic.KeyValuePair(Of String, LobsterFramework.AnimationClipArray))
+  name.vb: Contains(KeyValuePair(Of String, AnimationClipArray))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+    name: Contains
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.AnimationClipArray
+    name: AnimationClipArray
+    href: LobsterFramework.AnimationClipArray.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+    name: Contains
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Contains(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.AnimationClipArray
+    name: AnimationClipArray
+    href: LobsterFramework.AnimationClipArray.html
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.ContainsKey(System.String)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.ContainsKey(System.String)
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.ContainsKey(System.String)
+  name: ContainsKey(string)
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.ContainsKey(string)
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.ContainsKey(string)
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).ContainsKey(String)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).ContainsKey(String)
+  name.vb: ContainsKey(String)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.ContainsKey(System.String)
+    name: ContainsKey
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.ContainsKey(System.String)
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.ContainsKey(System.String)
+    name: ContainsKey
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.ContainsKey(System.String)
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray}[],System.Int32)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray}[],System.Int32)
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray}[],System.Int32)
+  name: CopyTo(KeyValuePair<string, AnimationClipArray>[], int)
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.CopyTo(KeyValuePair<string, AnimationClipArray>[], int)
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.CopyTo(System.Collections.Generic.KeyValuePair<string, LobsterFramework.AnimationClipArray>[], int)
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).CopyTo(KeyValuePair(Of String, AnimationClipArray)(), Integer)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).CopyTo(System.Collections.Generic.KeyValuePair(Of String, LobsterFramework.AnimationClipArray)(), Integer)
+  name.vb: CopyTo(KeyValuePair(Of String, AnimationClipArray)(), Integer)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray}[],System.Int32)
+    name: CopyTo
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray}[],System.Int32)
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.AnimationClipArray
+    name: AnimationClipArray
+    href: LobsterFramework.AnimationClipArray.html
+  - name: '>'
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray}[],System.Int32)
+    name: CopyTo
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.CopyTo(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray}[],System.Int32)
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.AnimationClipArray
+    name: AnimationClipArray
+    href: LobsterFramework.AnimationClipArray.html
+  - name: )
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.GetEnumerator
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.GetEnumerator
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.GetEnumerator()
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.GetEnumerator()
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).GetEnumerator()
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).GetEnumerator()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.GetEnumerator
+    name: GetEnumerator
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.GetEnumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.GetEnumerator
+    name: GetEnumerator
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.GetEnumerator
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.OnAfterDeserialize
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.OnAfterDeserialize
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.OnAfterDeserialize
+  name: OnAfterDeserialize()
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.OnAfterDeserialize()
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.OnAfterDeserialize()
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).OnAfterDeserialize()
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).OnAfterDeserialize()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.OnAfterDeserialize
+    name: OnAfterDeserialize
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.OnAfterDeserialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.OnAfterDeserialize
+    name: OnAfterDeserialize
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.OnAfterDeserialize
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.OnBeforeSerialize
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.OnBeforeSerialize
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.OnBeforeSerialize
+  name: OnBeforeSerialize()
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.OnBeforeSerialize()
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.OnBeforeSerialize()
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).OnBeforeSerialize()
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).OnBeforeSerialize()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.OnBeforeSerialize
+    name: OnBeforeSerialize
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.OnBeforeSerialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.OnBeforeSerialize
+    name: OnBeforeSerialize
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.OnBeforeSerialize
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Remove(System.String)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Remove(System.String)
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Remove(System.String)
+  name: Remove(string)
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.Remove(string)
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.Remove(string)
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).Remove(String)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).Remove(String)
+  name.vb: Remove(String)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Remove(System.String)
+    name: Remove
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Remove(System.String)
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Remove(System.String)
+    name: Remove
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Remove(System.String)
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+  name: Remove(KeyValuePair<string, AnimationClipArray>)
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.Remove(KeyValuePair<string, AnimationClipArray>)
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.Remove(System.Collections.Generic.KeyValuePair<string, LobsterFramework.AnimationClipArray>)
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).Remove(KeyValuePair(Of String, AnimationClipArray))
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).Remove(System.Collections.Generic.KeyValuePair(Of String, LobsterFramework.AnimationClipArray))
+  name.vb: Remove(KeyValuePair(Of String, AnimationClipArray))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+    name: Remove
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.AnimationClipArray
+    name: AnimationClipArray
+    href: LobsterFramework.AnimationClipArray.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+    name: Remove
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.Remove(System.Collections.Generic.KeyValuePair{System.String,LobsterFramework.AnimationClipArray})
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.AnimationClipArray
+    name: AnimationClipArray
+    href: LobsterFramework.AnimationClipArray.html
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.TryGetValue(System.String,LobsterFramework.AnimationClipArray@)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.TryGetValue(System.String,LobsterFramework.AnimationClipArray@)
+  parent: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}
+  definition: LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
+  href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.TryGetValue(System.String,LobsterFramework.AnimationClipArray@)
+  name: TryGetValue(string, out AnimationClipArray)
+  nameWithType: SerializableDictionary<string, AnimationClipArray>.TryGetValue(string, out AnimationClipArray)
+  fullName: LobsterFramework.Utility.SerializableDictionary<string, LobsterFramework.AnimationClipArray>.TryGetValue(string, out LobsterFramework.AnimationClipArray)
+  nameWithType.vb: SerializableDictionary(Of String, AnimationClipArray).TryGetValue(String, AnimationClipArray)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of String, LobsterFramework.AnimationClipArray).TryGetValue(String, LobsterFramework.AnimationClipArray)
+  name.vb: TryGetValue(String, AnimationClipArray)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.TryGetValue(System.String,LobsterFramework.AnimationClipArray@)
+    name: TryGetValue
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.TryGetValue(System.String,LobsterFramework.AnimationClipArray@)
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: LobsterFramework.AnimationClipArray
+    name: AnimationClipArray
+    href: LobsterFramework.AnimationClipArray.html
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.TryGetValue(System.String,LobsterFramework.AnimationClipArray@)
+    name: TryGetValue
+    href: LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.html#LobsterFramework.Utility.SerializableDictionary{System.String,LobsterFramework.AnimationClipArray}.TryGetValue(System.String,LobsterFramework.AnimationClipArray@)
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: LobsterFramework.AnimationClipArray
+    name: AnimationClipArray
+    href: LobsterFramework.AnimationClipArray.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Utility.SerializableDictionary`2
+  commentId: T:LobsterFramework.Utility.SerializableDictionary`2
+  href: LobsterFramework.Utility.SerializableDictionary-2.html
+  name: SerializableDictionary<TKey, TValue>
+  nameWithType: SerializableDictionary<TKey, TValue>
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue)
+  name.vb: SerializableDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2
+    name: SerializableDictionary
+    href: LobsterFramework.Utility.SerializableDictionary-2.html
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2
+    name: SerializableDictionary
+    href: LobsterFramework.Utility.SerializableDictionary-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: LobsterFramework.Utility.SerializableDictionary`2.keys
+  commentId: F:LobsterFramework.Utility.SerializableDictionary`2.keys
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.keys
+  name: keys
+  nameWithType: SerializableDictionary<TKey, TValue>.keys
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.keys
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).keys
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).keys
+- uid: LobsterFramework.Utility.SerializableDictionary`2.values
+  commentId: F:LobsterFramework.Utility.SerializableDictionary`2.values
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.values
+  name: values
+  nameWithType: SerializableDictionary<TKey, TValue>.values
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.values
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).values
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).values
+- uid: LobsterFramework.Utility.SerializableDictionary`2.dictionary
+  commentId: F:LobsterFramework.Utility.SerializableDictionary`2.dictionary
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.dictionary
+  name: dictionary
+  nameWithType: SerializableDictionary<TKey, TValue>.dictionary
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.dictionary
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).dictionary
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).dictionary
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Item(`0)
+  commentId: P:LobsterFramework.Utility.SerializableDictionary`2.Item(`0)
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Item(`0)
+  name: this[TKey]
+  nameWithType: SerializableDictionary<TKey, TValue>.this[TKey]
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.this[TKey]
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).this[](TKey)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).this[](TKey)
+  name.vb: this[](TKey)
+  spec.csharp:
+  - name: this
+  - name: '['
+  - name: TKey
+  - name: ']'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Item(`0)
+    name: this[]
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Item(`0)
+  - name: (
+  - name: TKey
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Keys
+  commentId: P:LobsterFramework.Utility.SerializableDictionary`2.Keys
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Keys
+  name: Keys
+  nameWithType: SerializableDictionary<TKey, TValue>.Keys
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Keys
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).Keys
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Keys
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Values
+  commentId: P:LobsterFramework.Utility.SerializableDictionary`2.Values
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Values
+  name: Values
+  nameWithType: SerializableDictionary<TKey, TValue>.Values
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Values
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).Values
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Values
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Count
+  commentId: P:LobsterFramework.Utility.SerializableDictionary`2.Count
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Count
+  name: Count
+  nameWithType: SerializableDictionary<TKey, TValue>.Count
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Count
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).Count
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Count
+- uid: LobsterFramework.Utility.SerializableDictionary`2.IsReadOnly
+  commentId: P:LobsterFramework.Utility.SerializableDictionary`2.IsReadOnly
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.IsReadOnly
+  name: IsReadOnly
+  nameWithType: SerializableDictionary<TKey, TValue>.IsReadOnly
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.IsReadOnly
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).IsReadOnly
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).IsReadOnly
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
+  name: Add(TKey, TValue)
+  nameWithType: SerializableDictionary<TKey, TValue>.Add(TKey, TValue)
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Add(TKey, TValue)
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).Add(TKey, TValue)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Add(TKey, TValue)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
+    name: Add
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
+  - name: (
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
+    name: Add
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Add(`0,`1)
+  - name: (
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
+  isExternal: true
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
+  name: Add(KeyValuePair<TKey, TValue>)
+  nameWithType: SerializableDictionary<TKey, TValue>.Add(KeyValuePair<TKey, TValue>)
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Add(System.Collections.Generic.KeyValuePair<TKey, TValue>)
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).Add(KeyValuePair(Of TKey, TValue))
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Add(System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: Add(KeyValuePair(Of TKey, TValue))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
+    name: Add
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
+    name: Add
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Clear
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.Clear
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Clear
+  name: Clear()
+  nameWithType: SerializableDictionary<TKey, TValue>.Clear()
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Clear()
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).Clear()
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Clear()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Clear
+    name: Clear
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Clear
+    name: Clear
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Clear
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+  isExternal: true
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+  name: Contains(KeyValuePair<TKey, TValue>)
+  nameWithType: SerializableDictionary<TKey, TValue>.Contains(KeyValuePair<TKey, TValue>)
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Contains(System.Collections.Generic.KeyValuePair<TKey, TValue>)
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).Contains(KeyValuePair(Of TKey, TValue))
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Contains(System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: Contains(KeyValuePair(Of TKey, TValue))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+    name: Contains
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+    name: Contains
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
+  name: ContainsKey(TKey)
+  nameWithType: SerializableDictionary<TKey, TValue>.ContainsKey(TKey)
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.ContainsKey(TKey)
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).ContainsKey(TKey)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).ContainsKey(TKey)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
+    name: ContainsKey
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
+  - name: (
+  - name: TKey
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
+    name: ContainsKey
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.ContainsKey(`0)
+  - name: (
+  - name: TKey
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+  isExternal: true
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+  name: CopyTo(KeyValuePair<TKey, TValue>[], int)
+  nameWithType: SerializableDictionary<TKey, TValue>.CopyTo(KeyValuePair<TKey, TValue>[], int)
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.CopyTo(System.Collections.Generic.KeyValuePair<TKey, TValue>[], int)
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).CopyTo(KeyValuePair(Of TKey, TValue)(), Integer)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).CopyTo(System.Collections.Generic.KeyValuePair(Of TKey, TValue)(), Integer)
+  name.vb: CopyTo(KeyValuePair(Of TKey, TValue)(), Integer)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+    name: CopyTo
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+    name: CopyTo
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: SerializableDictionary<TKey, TValue>.GetEnumerator()
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.GetEnumerator()
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).GetEnumerator()
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).GetEnumerator()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
+    name: GetEnumerator
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
+    name: GetEnumerator
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.GetEnumerator
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
+  name: OnAfterDeserialize()
+  nameWithType: SerializableDictionary<TKey, TValue>.OnAfterDeserialize()
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.OnAfterDeserialize()
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).OnAfterDeserialize()
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).OnAfterDeserialize()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
+    name: OnAfterDeserialize
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
+    name: OnAfterDeserialize
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.OnAfterDeserialize
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
+  name: OnBeforeSerialize()
+  nameWithType: SerializableDictionary<TKey, TValue>.OnBeforeSerialize()
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.OnBeforeSerialize()
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).OnBeforeSerialize()
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).OnBeforeSerialize()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
+    name: OnBeforeSerialize
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
+    name: OnBeforeSerialize
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.OnBeforeSerialize
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
+  name: Remove(TKey)
+  nameWithType: SerializableDictionary<TKey, TValue>.Remove(TKey)
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Remove(TKey)
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).Remove(TKey)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Remove(TKey)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
+    name: Remove
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
+  - name: (
+  - name: TKey
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
+    name: Remove
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Remove(`0)
+  - name: (
+  - name: TKey
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+  isExternal: true
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+  name: Remove(KeyValuePair<TKey, TValue>)
+  nameWithType: SerializableDictionary<TKey, TValue>.Remove(KeyValuePair<TKey, TValue>)
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.Remove(System.Collections.Generic.KeyValuePair<TKey, TValue>)
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).Remove(KeyValuePair(Of TKey, TValue))
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).Remove(System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: Remove(KeyValuePair(Of TKey, TValue))
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+    name: Remove
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+    name: Remove
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+  - name: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+  - name: )
+- uid: LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
+  commentId: M:LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
+  href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
+  name: TryGetValue(TKey, out TValue)
+  nameWithType: SerializableDictionary<TKey, TValue>.TryGetValue(TKey, out TValue)
+  fullName: LobsterFramework.Utility.SerializableDictionary<TKey, TValue>.TryGetValue(TKey, out TValue)
+  nameWithType.vb: SerializableDictionary(Of TKey, TValue).TryGetValue(TKey, TValue)
+  fullName.vb: LobsterFramework.Utility.SerializableDictionary(Of TKey, TValue).TryGetValue(TKey, TValue)
+  name.vb: TryGetValue(TKey, TValue)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
+    name: TryGetValue
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
+  - name: (
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - name: TValue
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
+    name: TryGetValue
+    href: LobsterFramework.Utility.SerializableDictionary-2.html#LobsterFramework.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)
+  - name: (
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )

@@ -19,7 +19,7 @@ items:
       path: H:/Stuff/BallField/Assets/Framework/Components/CollisionTrigger.cs
     id: CollisionTrigger
     path: ../Assets/Framework/Components/CollisionTrigger.cs
-    startLine: 9
+    startLine: 7
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
@@ -171,14 +171,14 @@ items:
       path: H:/Stuff/BallField/Assets/Framework/Components/CollisionTrigger.cs
     id: OnTriggerCallBack
     path: ../Assets/Framework/Components/CollisionTrigger.cs
-    startLine: 16
+    startLine: 14
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: public UnityEvent<Entity> OnTriggerCallBack
     return:
-      type: UnityEngine.Events.UnityEvent{LobsterFramework.EntitySystem.Entity}
+      type: UnityEngine.Events.UnityEvent{LobsterFramework.Entity}
     content.vb: Public OnTriggerCallBack As UnityEvent(Of Entity)
 - uid: LobsterFramework.Utility.CollisionTrigger.OnTriggerExitCallBack
   commentId: F:LobsterFramework.Utility.CollisionTrigger.OnTriggerExitCallBack
@@ -196,14 +196,14 @@ items:
       path: H:/Stuff/BallField/Assets/Framework/Components/CollisionTrigger.cs
     id: OnTriggerExitCallBack
     path: ../Assets/Framework/Components/CollisionTrigger.cs
-    startLine: 17
+    startLine: 15
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.Utility
   syntax:
     content: public UnityEvent<Entity> OnTriggerExitCallBack
     return:
-      type: UnityEngine.Events.UnityEvent{LobsterFramework.EntitySystem.Entity}
+      type: UnityEngine.Events.UnityEvent{LobsterFramework.Entity}
     content.vb: Public OnTriggerExitCallBack As UnityEvent(Of Entity)
 references:
 - uid: LobsterFramework.Utility
@@ -4438,25 +4438,25 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: UnityEngine.Events.UnityEvent{LobsterFramework.EntitySystem.Entity}
-  commentId: T:UnityEngine.Events.UnityEvent{LobsterFramework.EntitySystem.Entity}
+- uid: UnityEngine.Events.UnityEvent{LobsterFramework.Entity}
+  commentId: T:UnityEngine.Events.UnityEvent{LobsterFramework.Entity}
   parent: UnityEngine.Events
   definition: UnityEngine.Events.UnityEvent`1
-  href: LobsterFramework.EntitySystem.Entity.html
+  href: LobsterFramework.Entity.html
   name: UnityEvent<Entity>
   nameWithType: UnityEvent<Entity>
-  fullName: UnityEngine.Events.UnityEvent<LobsterFramework.EntitySystem.Entity>
+  fullName: UnityEngine.Events.UnityEvent<LobsterFramework.Entity>
   nameWithType.vb: UnityEvent(Of Entity)
-  fullName.vb: UnityEngine.Events.UnityEvent(Of LobsterFramework.EntitySystem.Entity)
+  fullName.vb: UnityEngine.Events.UnityEvent(Of LobsterFramework.Entity)
   name.vb: UnityEvent(Of Entity)
   spec.csharp:
   - uid: UnityEngine.Events.UnityEvent`1
     name: UnityEvent
     isExternal: true
   - name: <
-  - uid: LobsterFramework.EntitySystem.Entity
+  - uid: LobsterFramework.Entity
     name: Entity
-    href: LobsterFramework.EntitySystem.Entity.html
+    href: LobsterFramework.Entity.html
   - name: '>'
   spec.vb:
   - uid: UnityEngine.Events.UnityEvent`1
@@ -4465,9 +4465,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: LobsterFramework.EntitySystem.Entity
+  - uid: LobsterFramework.Entity
     name: Entity
-    href: LobsterFramework.EntitySystem.Entity.html
+    href: LobsterFramework.Entity.html
   - name: )
 - uid: UnityEngine.Events.UnityEvent`1
   commentId: T:UnityEngine.Events.UnityEvent`1

@@ -1,0 +1,184 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  commentId: T:LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  id: Ability.AbilityPipe
+  parent: LobsterFramework.AbilitySystem
+  children:
+  - LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct
+  - LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  - LobsterFramework.AbilitySystem.Ability.AbilityPipe.config
+  langs:
+  - csharp
+  - vb
+  name: Ability.AbilityPipe
+  nameWithType: Ability.AbilityPipe
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
+    id: AbilityPipe
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 483
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public class Ability.AbilityPipe
+    content.vb: Public Class Ability.AbilityPipe
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - LobsterFramework.AbilitySystem.Guard.GuardPipe
+  - LobsterFramework.AbilitySystem.HeavyWeaponAttack.HeavyWeaponAttackPipe
+  - LobsterFramework.AbilitySystem.LightWeaponAttack.LightWeaponAttackPipe
+  - LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityPipe
+  - LobsterFramework.AbilitySystem.TestWeaponAbility.TestWeaponAbilityPipe
+  - LobsterFramework.AbilitySystem.WeaponArt.WeaponArtPipe
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe.config
+  commentId: F:LobsterFramework.AbilitySystem.Ability.AbilityPipe.config
+  id: config
+  parent: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  langs:
+  - csharp
+  - vb
+  name: config
+  nameWithType: Ability.AbilityPipe.config
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityPipe.config
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
+    id: config
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 484
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: protected Ability.AbilityConfig config
+    return:
+      type: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+    content.vb: Protected config As Ability.AbilityConfig
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  commentId: M:LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  id: Construct(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  parent: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  langs:
+  - csharp
+  - vb
+  name: Construct(AbilityConfig)
+  nameWithType: Ability.AbilityPipe.Construct(Ability.AbilityConfig)
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
+    id: Construct
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 485
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public void Construct(Ability.AbilityConfig config)
+    parameters:
+    - id: config
+      type: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+    content.vb: Public Sub Construct(config As Ability.AbilityConfig)
+  overload: LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct*
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct
+  commentId: M:LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct
+  id: Construct
+  parent: LobsterFramework.AbilitySystem.Ability.AbilityPipe
+  langs:
+  - csharp
+  - vb
+  name: Construct()
+  nameWithType: Ability.AbilityPipe.Construct()
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
+    id: Construct
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 489
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public virtual void Construct()
+    content.vb: Public Overridable Sub Construct()
+  overload: LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct*
+references:
+- uid: LobsterFramework.AbilitySystem
+  commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
+  name: LobsterFramework.AbilitySystem
+  nameWithType: LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+  commentId: T:LobsterFramework.AbilitySystem.Ability.AbilityConfig
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.Ability.html
+  name: Ability.AbilityConfig
+  nameWithType: Ability.AbilityConfig
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+  spec.csharp:
+  - uid: LobsterFramework.AbilitySystem.Ability
+    name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+    name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
+  spec.vb:
+  - uid: LobsterFramework.AbilitySystem.Ability
+    name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig
+    name: AbilityConfig
+    href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct*
+  commentId: Overload:LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct
+  href: LobsterFramework.AbilitySystem.Ability.AbilityPipe.html#LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct(LobsterFramework.AbilitySystem.Ability.AbilityConfig)
+  name: Construct
+  nameWithType: Ability.AbilityPipe.Construct
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityPipe.Construct

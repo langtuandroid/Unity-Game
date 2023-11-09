@@ -1,0 +1,90 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Interaction.IConsumable
+  commentId: T:LobsterFramework.Interaction.IConsumable
+  id: IConsumable
+  parent: LobsterFramework.Interaction
+  children:
+  - LobsterFramework.Interaction.IConsumable.Consume(LobsterFramework.Interaction.Inventory)
+  langs:
+  - csharp
+  - vb
+  name: IConsumable
+  nameWithType: IConsumable
+  fullName: LobsterFramework.Interaction.IConsumable
+  type: Interface
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Items/IConsumable.cs
+    id: IConsumable
+    path: ../Assets/Framework/Interaction/Items/IConsumable.cs
+    startLine: 6
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public interface IConsumable
+    content.vb: Public Interface IConsumable
+- uid: LobsterFramework.Interaction.IConsumable.Consume(LobsterFramework.Interaction.Inventory)
+  commentId: M:LobsterFramework.Interaction.IConsumable.Consume(LobsterFramework.Interaction.Inventory)
+  id: Consume(LobsterFramework.Interaction.Inventory)
+  parent: LobsterFramework.Interaction.IConsumable
+  langs:
+  - csharp
+  - vb
+  name: Consume(Inventory)
+  nameWithType: IConsumable.Consume(Inventory)
+  fullName: LobsterFramework.Interaction.IConsumable.Consume(LobsterFramework.Interaction.Inventory)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Items/IConsumable.cs
+    id: Consume
+    path: ../Assets/Framework/Interaction/Items/IConsumable.cs
+    startLine: 8
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: void Consume(Inventory intentory)
+    parameters:
+    - id: intentory
+      type: LobsterFramework.Interaction.Inventory
+    content.vb: Sub Consume(intentory As Inventory)
+  overload: LobsterFramework.Interaction.IConsumable.Consume*
+references:
+- uid: LobsterFramework.Interaction
+  commentId: N:LobsterFramework.Interaction
+  href: LobsterFramework.html
+  name: LobsterFramework.Interaction
+  nameWithType: LobsterFramework.Interaction
+  fullName: LobsterFramework.Interaction
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Interaction
+    name: Interaction
+    href: LobsterFramework.Interaction.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Interaction
+    name: Interaction
+    href: LobsterFramework.Interaction.html
+- uid: LobsterFramework.Interaction.IConsumable.Consume*
+  commentId: Overload:LobsterFramework.Interaction.IConsumable.Consume
+  href: LobsterFramework.Interaction.IConsumable.html#LobsterFramework.Interaction.IConsumable.Consume(LobsterFramework.Interaction.Inventory)
+  name: Consume
+  nameWithType: IConsumable.Consume
+  fullName: LobsterFramework.Interaction.IConsumable.Consume
+- uid: LobsterFramework.Interaction.Inventory
+  commentId: T:LobsterFramework.Interaction.Inventory
+  parent: LobsterFramework.Interaction
+  href: LobsterFramework.Interaction.Inventory.html
+  name: Inventory
+  nameWithType: Inventory
+  fullName: LobsterFramework.Interaction.Inventory

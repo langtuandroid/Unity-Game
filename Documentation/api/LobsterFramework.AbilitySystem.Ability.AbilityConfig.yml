@@ -12,9 +12,7 @@ items:
   - LobsterFramework.AbilitySystem.Ability.AbilityConfig.OnValidate
   - LobsterFramework.AbilitySystem.Ability.AbilityConfig.UseCooldown
   - LobsterFramework.AbilitySystem.Ability.AbilityConfig.Validate
-  - LobsterFramework.AbilitySystem.Ability.AbilityConfig.accessKey
-  - LobsterFramework.AbilitySystem.Ability.AbilityConfig.endTime
-  - LobsterFramework.AbilitySystem.Ability.AbilityConfig.isSuspended
+  - LobsterFramework.AbilitySystem.Ability.AbilityConfig.ability
   langs:
   - csharp
   - vb
@@ -24,10 +22,10 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: AbilityConfig
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 361
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 438
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -51,6 +49,10 @@ items:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
+  derivedClasses:
+  - LobsterFramework.AbilitySystem.AbilityCoroutine.AbilityCoroutineConfig
+  - LobsterFramework.AbilitySystem.OffhandAbility.OffhandAbilityConfig
+  - LobsterFramework.AbilitySystem.WeaponArt.WeaponArtConfig
   inheritedMembers:
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
@@ -106,23 +108,23 @@ items:
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
     arguments: []
-- uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig.accessKey
-  commentId: F:LobsterFramework.AbilitySystem.Ability.AbilityConfig.accessKey
-  id: accessKey
+- uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig.ability
+  commentId: F:LobsterFramework.AbilitySystem.Ability.AbilityConfig.ability
+  id: ability
   parent: LobsterFramework.AbilitySystem.Ability.AbilityConfig
   langs:
   - csharp
   - vb
-  name: accessKey
-  nameWithType: Ability.AbilityConfig.accessKey
-  fullName: LobsterFramework.AbilitySystem.Ability.AbilityConfig.accessKey
+  name: ability
+  nameWithType: Ability.AbilityConfig.ability
+  fullName: LobsterFramework.AbilitySystem.Ability.AbilityConfig.ability
   type: Field
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
-    id: accessKey
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 365
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
+    id: ability
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 441
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -130,48 +132,13 @@ items:
     content: >-
       [HideInInspector]
 
-      public int accessKey
+      protected Ability ability
     return:
-      type: System.Int32
+      type: LobsterFramework.AbilitySystem.Ability
     content.vb: >-
       <HideInInspector>
 
-      Public accessKey As Integer
-  attributes:
-  - type: UnityEngine.HideInInspector
-    ctor: UnityEngine.HideInInspector.#ctor
-    arguments: []
-- uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig.endTime
-  commentId: F:LobsterFramework.AbilitySystem.Ability.AbilityConfig.endTime
-  id: endTime
-  parent: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-  langs:
-  - csharp
-  - vb
-  name: endTime
-  nameWithType: Ability.AbilityConfig.endTime
-  fullName: LobsterFramework.AbilitySystem.Ability.AbilityConfig.endTime
-  type: Field
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
-    id: endTime
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 367
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  syntax:
-    content: >-
-      [HideInInspector]
-
-      public float endTime
-    return:
-      type: System.Single
-    content.vb: >-
-      <HideInInspector>
-
-      Public endTime As Single
+      Protected ability As Ability
   attributes:
   - type: UnityEngine.HideInInspector
     ctor: UnityEngine.HideInInspector.#ctor
@@ -189,10 +156,10 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: IsExecuting
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 371
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 449
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -216,10 +183,10 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: OnCooldown
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 372
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 450
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -243,10 +210,10 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: UseCooldown
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 373
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 451
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -257,33 +224,6 @@ items:
       type: System.Boolean
     content.vb: Public ReadOnly Property UseCooldown As Boolean
   overload: LobsterFramework.AbilitySystem.Ability.AbilityConfig.UseCooldown*
-- uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig.isSuspended
-  commentId: F:LobsterFramework.AbilitySystem.Ability.AbilityConfig.isSuspended
-  id: isSuspended
-  parent: LobsterFramework.AbilitySystem.Ability.AbilityConfig
-  langs:
-  - csharp
-  - vb
-  name: isSuspended
-  nameWithType: Ability.AbilityConfig.isSuspended
-  fullName: LobsterFramework.AbilitySystem.Ability.AbilityConfig.isSuspended
-  type: Field
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
-    id: isSuspended
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 378
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.AbilitySystem
-  summary: Whether this ability has been halted, set this to true while the ability is running will terminate it
-  example: []
-  syntax:
-    content: public bool isSuspended
-    return:
-      type: System.Boolean
-    content.vb: Public isSuspended As Boolean
 - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig.Close
   commentId: M:LobsterFramework.AbilitySystem.Ability.AbilityConfig.Close
   id: Close
@@ -297,10 +237,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: Close
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 383
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 461
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -323,10 +263,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: Initialize
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 388
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 466
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -349,10 +289,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: Validate
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 393
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 471
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -375,10 +315,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/ActionComponents/Ability.cs
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/Ability.cs
     id: OnValidate
-    path: ../Assets/Framework/Components/ActionComponents/Ability.cs
-    startLine: 396
+    path: ../Assets/Framework/AbilitySystem/Ability.cs
+    startLine: 473
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AbilitySystem
@@ -2368,28 +2308,13 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
-- uid: System.Single
-  commentId: T:System.Single
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.single
-  name: float
-  nameWithType: float
-  fullName: float
-  nameWithType.vb: Single
-  fullName.vb: Single
-  name.vb: Single
+- uid: LobsterFramework.AbilitySystem.Ability
+  commentId: T:LobsterFramework.AbilitySystem.Ability
+  parent: LobsterFramework.AbilitySystem
+  href: LobsterFramework.AbilitySystem.Ability.html
+  name: Ability
+  nameWithType: Ability
+  fullName: LobsterFramework.AbilitySystem.Ability
 - uid: LobsterFramework.AbilitySystem.Ability.AbilityConfig.IsExecuting*
   commentId: Overload:LobsterFramework.AbilitySystem.Ability.AbilityConfig.IsExecuting
   href: LobsterFramework.AbilitySystem.Ability.AbilityConfig.html#LobsterFramework.AbilitySystem.Ability.AbilityConfig.IsExecuting

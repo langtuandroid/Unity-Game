@@ -5,8 +5,6 @@ items:
   id: Interactor
   parent: LobsterFramework.Interaction
   children:
-  - LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  - LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
   - LobsterFramework.Interaction.Interactor.Awake
   - LobsterFramework.Interaction.Interactor.GetInteractionOptions
   - LobsterFramework.Interaction.Interactor.Interact(LobsterFramework.Interaction.InteractionType)
@@ -18,8 +16,6 @@ items:
   - LobsterFramework.Interaction.Interactor.OnEnable
   - LobsterFramework.Interaction.Interactor.OnInteract(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.InteractionType)
   - LobsterFramework.Interaction.Interactor.PreviousInteractable
-  - LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  - LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
   - LobsterFramework.Interaction.Interactor.Start
   langs:
   - csharp
@@ -30,9 +26,9 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/Interactor.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Interactor.cs
     id: Interactor
-    path: ../Assets/Framework/Components/Interaction/Interactor.cs
+    path: ../Assets/Framework/Interaction/Interactor.cs
     startLine: 8
   assemblies:
   - LobsterFramework
@@ -46,6 +42,9 @@ items:
   - UnityEngine.Component
   - UnityEngine.Behaviour
   - UnityEngine.MonoBehaviour
+  derivedClasses:
+  - LobsterFramework.Interaction.GeneralInteractor
+  - LobsterFramework.Interaction.Inventory
   inheritedMembers:
   - UnityEngine.MonoBehaviour.IsInvoking
   - UnityEngine.MonoBehaviour.CancelInvoke
@@ -170,9 +169,9 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/Interactor.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Interactor.cs
     id: IsBase
-    path: ../Assets/Framework/Components/Interaction/Interactor.cs
+    path: ../Assets/Framework/Interaction/Interactor.cs
     startLine: 20
   assemblies:
   - LobsterFramework
@@ -197,9 +196,9 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/Interactor.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Interactor.cs
     id: Awake
-    path: ../Assets/Framework/Components/Interaction/Interactor.cs
+    path: ../Assets/Framework/Interaction/Interactor.cs
     startLine: 22
   assemblies:
   - LobsterFramework
@@ -221,9 +220,9 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/Interactor.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Interactor.cs
     id: Start
-    path: ../Assets/Framework/Components/Interaction/Interactor.cs
+    path: ../Assets/Framework/Interaction/Interactor.cs
     startLine: 27
   assemblies:
   - LobsterFramework
@@ -245,9 +244,9 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/Interactor.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Interactor.cs
     id: OnEnable
-    path: ../Assets/Framework/Components/Interaction/Interactor.cs
+    path: ../Assets/Framework/Interaction/Interactor.cs
     startLine: 42
   assemblies:
   - LobsterFramework
@@ -269,9 +268,9 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/Interactor.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Interactor.cs
     id: OnDisable
-    path: ../Assets/Framework/Components/Interaction/Interactor.cs
+    path: ../Assets/Framework/Interaction/Interactor.cs
     startLine: 47
   assemblies:
   - LobsterFramework
@@ -293,9 +292,9 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/Interactor.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Interactor.cs
     id: OnInteract
-    path: ../Assets/Framework/Components/Interaction/Interactor.cs
+    path: ../Assets/Framework/Interaction/Interactor.cs
     startLine: 53
   assemblies:
   - LobsterFramework
@@ -309,126 +308,6 @@ items:
       type: LobsterFramework.Interaction.InteractionType
     content.vb: Protected Overridable Sub OnInteract(obj As InteractableObject, interactionType As InteractionType)
   overload: LobsterFramework.Interaction.Interactor.OnInteract*
-- uid: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  commentId: M:LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  id: AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  parent: LobsterFramework.Interaction.Interactor
-  langs:
-  - csharp
-  - vb
-  name: AddInteractable(InteractableObject)
-  nameWithType: Interactor.AddInteractable(InteractableObject)
-  fullName: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/Interactor.cs
-    id: AddInteractable
-    path: ../Assets/Framework/Components/Interaction/Interactor.cs
-    startLine: 55
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.Interaction
-  syntax:
-    content: public bool AddInteractable(InteractableObject obj)
-    parameters:
-    - id: obj
-      type: LobsterFramework.Interaction.InteractableObject
-    return:
-      type: System.Boolean
-    content.vb: Public Function AddInteractable(obj As InteractableObject) As Boolean
-  overload: LobsterFramework.Interaction.Interactor.AddInteractable*
-- uid: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  commentId: M:LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  id: RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  parent: LobsterFramework.Interaction.Interactor
-  langs:
-  - csharp
-  - vb
-  name: RemoveInteractable(InteractableObject)
-  nameWithType: Interactor.RemoveInteractable(InteractableObject)
-  fullName: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/Interactor.cs
-    id: RemoveInteractable
-    path: ../Assets/Framework/Components/Interaction/Interactor.cs
-    startLine: 60
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.Interaction
-  syntax:
-    content: public bool RemoveInteractable(InteractableObject obj)
-    parameters:
-    - id: obj
-      type: LobsterFramework.Interaction.InteractableObject
-    return:
-      type: System.Boolean
-    content.vb: Public Function RemoveInteractable(obj As InteractableObject) As Boolean
-  overload: LobsterFramework.Interaction.Interactor.RemoveInteractable*
-- uid: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  commentId: M:LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  id: AddInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  parent: LobsterFramework.Interaction.Interactor
-  langs:
-  - csharp
-  - vb
-  name: AddInteractable(InteractableObject, Interactor)
-  nameWithType: Interactor.AddInteractable(InteractableObject, Interactor)
-  fullName: LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject, LobsterFramework.Interaction.Interactor)
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/Interactor.cs
-    id: AddInteractable
-    path: ../Assets/Framework/Components/Interaction/Interactor.cs
-    startLine: 65
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.Interaction
-  syntax:
-    content: public bool AddInteractable(InteractableObject obj, Interactor interactor)
-    parameters:
-    - id: obj
-      type: LobsterFramework.Interaction.InteractableObject
-    - id: interactor
-      type: LobsterFramework.Interaction.Interactor
-    return:
-      type: System.Boolean
-    content.vb: Public Function AddInteractable(obj As InteractableObject, interactor As Interactor) As Boolean
-  overload: LobsterFramework.Interaction.Interactor.AddInteractable*
-- uid: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  commentId: M:LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  id: RemoveInteractable(LobsterFramework.Interaction.InteractableObject,LobsterFramework.Interaction.Interactor)
-  parent: LobsterFramework.Interaction.Interactor
-  langs:
-  - csharp
-  - vb
-  name: RemoveInteractable(InteractableObject, Interactor)
-  nameWithType: Interactor.RemoveInteractable(InteractableObject, Interactor)
-  fullName: LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject, LobsterFramework.Interaction.Interactor)
-  type: Method
-  source:
-    remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/Interactor.cs
-    id: RemoveInteractable
-    path: ../Assets/Framework/Components/Interaction/Interactor.cs
-    startLine: 85
-  assemblies:
-  - LobsterFramework
-  namespace: LobsterFramework.Interaction
-  syntax:
-    content: public bool RemoveInteractable(InteractableObject obj, Interactor interactor)
-    parameters:
-    - id: obj
-      type: LobsterFramework.Interaction.InteractableObject
-    - id: interactor
-      type: LobsterFramework.Interaction.Interactor
-    return:
-      type: System.Boolean
-    content.vb: Public Function RemoveInteractable(obj As InteractableObject, interactor As Interactor) As Boolean
-  overload: LobsterFramework.Interaction.Interactor.RemoveInteractable*
 - uid: LobsterFramework.Interaction.Interactor.Interact(System.Type,LobsterFramework.Interaction.InteractionType)
   commentId: M:LobsterFramework.Interaction.Interactor.Interact(System.Type,LobsterFramework.Interaction.InteractionType)
   id: Interact(System.Type,LobsterFramework.Interaction.InteractionType)
@@ -442,9 +321,9 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/Interactor.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Interactor.cs
     id: Interact
-    path: ../Assets/Framework/Components/Interaction/Interactor.cs
+    path: ../Assets/Framework/Interaction/Interactor.cs
     startLine: 113
   assemblies:
   - LobsterFramework
@@ -473,9 +352,9 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/Interactor.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Interactor.cs
     id: Interact
-    path: ../Assets/Framework/Components/Interaction/Interactor.cs
+    path: ../Assets/Framework/Interaction/Interactor.cs
     startLine: 133
   assemblies:
   - LobsterFramework
@@ -502,9 +381,9 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/Interactor.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Interactor.cs
     id: Interact
-    path: ../Assets/Framework/Components/Interaction/Interactor.cs
+    path: ../Assets/Framework/Interaction/Interactor.cs
     startLine: 155
   assemblies:
   - LobsterFramework
@@ -531,9 +410,9 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/Interactor.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Interactor.cs
     id: GetInteractionOptions
-    path: ../Assets/Framework/Components/Interaction/Interactor.cs
+    path: ../Assets/Framework/Interaction/Interactor.cs
     startLine: 163
   assemblies:
   - LobsterFramework
@@ -557,9 +436,9 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/Interactor.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Interactor.cs
     id: NextInteractable
-    path: ../Assets/Framework/Components/Interaction/Interactor.cs
+    path: ../Assets/Framework/Interaction/Interactor.cs
     startLine: 178
   assemblies:
   - LobsterFramework
@@ -581,9 +460,9 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Components/Interaction/Interactor.cs
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Interactor.cs
     id: PreviousInteractable
-    path: ../Assets/Framework/Components/Interaction/Interactor.cs
+    path: ../Assets/Framework/Interaction/Interactor.cs
     startLine: 191
   assemblies:
   - LobsterFramework
@@ -4886,25 +4765,6 @@ references:
   name: InteractionType
   nameWithType: InteractionType
   fullName: LobsterFramework.Interaction.InteractionType
-- uid: LobsterFramework.Interaction.Interactor.AddInteractable*
-  commentId: Overload:LobsterFramework.Interaction.Interactor.AddInteractable
-  href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.AddInteractable(LobsterFramework.Interaction.InteractableObject)
-  name: AddInteractable
-  nameWithType: Interactor.AddInteractable
-  fullName: LobsterFramework.Interaction.Interactor.AddInteractable
-- uid: LobsterFramework.Interaction.Interactor.RemoveInteractable*
-  commentId: Overload:LobsterFramework.Interaction.Interactor.RemoveInteractable
-  href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.RemoveInteractable(LobsterFramework.Interaction.InteractableObject)
-  name: RemoveInteractable
-  nameWithType: Interactor.RemoveInteractable
-  fullName: LobsterFramework.Interaction.Interactor.RemoveInteractable
-- uid: LobsterFramework.Interaction.Interactor
-  commentId: T:LobsterFramework.Interaction.Interactor
-  parent: LobsterFramework.Interaction
-  href: LobsterFramework.Interaction.Interactor.html
-  name: Interactor
-  nameWithType: Interactor
-  fullName: LobsterFramework.Interaction.Interactor
 - uid: LobsterFramework.Interaction.Interactor.Interact*
   commentId: Overload:LobsterFramework.Interaction.Interactor.Interact
   href: LobsterFramework.Interaction.Interactor.html#LobsterFramework.Interaction.Interactor.Interact(System.Type,LobsterFramework.Interaction.InteractionType)

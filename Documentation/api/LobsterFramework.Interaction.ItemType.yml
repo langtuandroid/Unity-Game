@@ -1,0 +1,131 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Interaction.ItemType
+  commentId: T:LobsterFramework.Interaction.ItemType
+  id: ItemType
+  parent: LobsterFramework.Interaction
+  children:
+  - LobsterFramework.Interaction.ItemType.Consumable
+  - LobsterFramework.Interaction.ItemType.Equipment
+  - LobsterFramework.Interaction.ItemType.Key
+  langs:
+  - csharp
+  - vb
+  name: ItemType
+  nameWithType: ItemType
+  fullName: LobsterFramework.Interaction.ItemType
+  type: Enum
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Items/Item.cs
+    id: ItemType
+    path: ../Assets/Framework/Interaction/Items/Item.cs
+    startLine: 29
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public enum ItemType
+    content.vb: Public Enum ItemType
+- uid: LobsterFramework.Interaction.ItemType.Key
+  commentId: F:LobsterFramework.Interaction.ItemType.Key
+  id: Key
+  parent: LobsterFramework.Interaction.ItemType
+  langs:
+  - csharp
+  - vb
+  name: Key
+  nameWithType: ItemType.Key
+  fullName: LobsterFramework.Interaction.ItemType.Key
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Items/Item.cs
+    id: Key
+    path: ../Assets/Framework/Interaction/Items/Item.cs
+    startLine: 30
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: Key = 0
+    return:
+      type: LobsterFramework.Interaction.ItemType
+- uid: LobsterFramework.Interaction.ItemType.Equipment
+  commentId: F:LobsterFramework.Interaction.ItemType.Equipment
+  id: Equipment
+  parent: LobsterFramework.Interaction.ItemType
+  langs:
+  - csharp
+  - vb
+  name: Equipment
+  nameWithType: ItemType.Equipment
+  fullName: LobsterFramework.Interaction.ItemType.Equipment
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Items/Item.cs
+    id: Equipment
+    path: ../Assets/Framework/Interaction/Items/Item.cs
+    startLine: 31
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: Equipment = 1
+    return:
+      type: LobsterFramework.Interaction.ItemType
+- uid: LobsterFramework.Interaction.ItemType.Consumable
+  commentId: F:LobsterFramework.Interaction.ItemType.Consumable
+  id: Consumable
+  parent: LobsterFramework.Interaction.ItemType
+  langs:
+  - csharp
+  - vb
+  name: Consumable
+  nameWithType: ItemType.Consumable
+  fullName: LobsterFramework.Interaction.ItemType.Consumable
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Items/Item.cs
+    id: Consumable
+    path: ../Assets/Framework/Interaction/Items/Item.cs
+    startLine: 32
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: Consumable = 2
+    return:
+      type: LobsterFramework.Interaction.ItemType
+references:
+- uid: LobsterFramework.Interaction
+  commentId: N:LobsterFramework.Interaction
+  href: LobsterFramework.html
+  name: LobsterFramework.Interaction
+  nameWithType: LobsterFramework.Interaction
+  fullName: LobsterFramework.Interaction
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Interaction
+    name: Interaction
+    href: LobsterFramework.Interaction.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Interaction
+    name: Interaction
+    href: LobsterFramework.Interaction.html
+- uid: LobsterFramework.Interaction.ItemType
+  commentId: T:LobsterFramework.Interaction.ItemType
+  parent: LobsterFramework.Interaction
+  href: LobsterFramework.Interaction.ItemType.html
+  name: ItemType
+  nameWithType: ItemType
+  fullName: LobsterFramework.Interaction.ItemType

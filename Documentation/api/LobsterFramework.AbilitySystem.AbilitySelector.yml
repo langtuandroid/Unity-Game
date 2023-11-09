@@ -1,0 +1,324 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.AbilitySystem.AbilitySelector
+  commentId: T:LobsterFramework.AbilitySystem.AbilitySelector
+  id: AbilitySelector
+  parent: LobsterFramework.AbilitySystem
+  children:
+  - LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
+  langs:
+  - csharp
+  - vb
+  name: AbilitySelector
+  nameWithType: AbilitySelector
+  fullName: LobsterFramework.AbilitySystem.AbilitySelector
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/AbilitySelector.cs
+    id: AbilitySelector
+    path: ../Assets/Framework/AbilitySystem/AbilitySelector.cs
+    startLine: 8
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class AbilitySelector : SerializableType<Ability>, ISerializationCallbackReceiver
+    content.vb: >-
+      <Serializable>
+
+      Public Class AbilitySelector Inherits SerializableType(Of Ability) Implements ISerializationCallbackReceiver
+  inheritance:
+  - System.Object
+  - LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}
+  implements:
+  - UnityEngine.ISerializationCallbackReceiver
+  inheritedMembers:
+  - LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.Type
+  - LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.OnAfterDeserialize
+  - LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.OnBeforeSerialize
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
+  commentId: P:LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
+  id: ConfigName
+  parent: LobsterFramework.AbilitySystem.AbilitySelector
+  langs:
+  - csharp
+  - vb
+  name: ConfigName
+  nameWithType: AbilitySelector.ConfigName
+  fullName: LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/AbilitySystem/AbilitySelector.cs
+    id: ConfigName
+    path: ../Assets/Framework/AbilitySystem/AbilitySelector.cs
+    startLine: 13
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AbilitySystem
+  syntax:
+    content: public string ConfigName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ConfigName As String
+  overload: LobsterFramework.AbilitySystem.AbilitySelector.ConfigName*
+references:
+- uid: LobsterFramework.AbilitySystem
+  commentId: N:LobsterFramework.AbilitySystem
+  href: LobsterFramework.html
+  name: LobsterFramework.AbilitySystem
+  nameWithType: LobsterFramework.AbilitySystem
+  fullName: LobsterFramework.AbilitySystem
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.AbilitySystem
+    name: AbilitySystem
+    href: LobsterFramework.AbilitySystem.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}
+  commentId: T:LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}
+  parent: LobsterFramework.Utility
+  definition: LobsterFramework.Utility.SerializableType`1
+  href: LobsterFramework.Utility.SerializableType-1.html
+  name: SerializableType<Ability>
+  nameWithType: SerializableType<Ability>
+  fullName: LobsterFramework.Utility.SerializableType<LobsterFramework.AbilitySystem.Ability>
+  nameWithType.vb: SerializableType(Of Ability)
+  fullName.vb: LobsterFramework.Utility.SerializableType(Of LobsterFramework.AbilitySystem.Ability)
+  name.vb: SerializableType(Of Ability)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableType`1
+    name: SerializableType
+    href: LobsterFramework.Utility.SerializableType-1.html
+  - name: <
+  - uid: LobsterFramework.AbilitySystem.Ability
+    name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableType`1
+    name: SerializableType
+    href: LobsterFramework.Utility.SerializableType-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.AbilitySystem.Ability
+    name: Ability
+    href: LobsterFramework.AbilitySystem.Ability.html
+  - name: )
+- uid: UnityEngine.ISerializationCallbackReceiver
+  commentId: T:UnityEngine.ISerializationCallbackReceiver
+  parent: UnityEngine
+  isExternal: true
+  name: ISerializationCallbackReceiver
+  nameWithType: ISerializationCallbackReceiver
+  fullName: UnityEngine.ISerializationCallbackReceiver
+- uid: LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.Type
+  commentId: P:LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.Type
+  parent: LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}
+  definition: LobsterFramework.Utility.SerializableType`1.Type
+  href: LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.Type
+  name: Type
+  nameWithType: SerializableType<Ability>.Type
+  fullName: LobsterFramework.Utility.SerializableType<LobsterFramework.AbilitySystem.Ability>.Type
+  nameWithType.vb: SerializableType(Of Ability).Type
+  fullName.vb: LobsterFramework.Utility.SerializableType(Of LobsterFramework.AbilitySystem.Ability).Type
+- uid: LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.OnAfterDeserialize
+  commentId: M:LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.OnAfterDeserialize
+  parent: LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}
+  definition: LobsterFramework.Utility.SerializableType`1.OnAfterDeserialize
+  href: LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.OnAfterDeserialize
+  name: OnAfterDeserialize()
+  nameWithType: SerializableType<Ability>.OnAfterDeserialize()
+  fullName: LobsterFramework.Utility.SerializableType<LobsterFramework.AbilitySystem.Ability>.OnAfterDeserialize()
+  nameWithType.vb: SerializableType(Of Ability).OnAfterDeserialize()
+  fullName.vb: LobsterFramework.Utility.SerializableType(Of LobsterFramework.AbilitySystem.Ability).OnAfterDeserialize()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.OnAfterDeserialize
+    name: OnAfterDeserialize
+    href: LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.OnAfterDeserialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.OnAfterDeserialize
+    name: OnAfterDeserialize
+    href: LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.OnAfterDeserialize
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.OnBeforeSerialize
+  commentId: M:LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.OnBeforeSerialize
+  parent: LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}
+  definition: LobsterFramework.Utility.SerializableType`1.OnBeforeSerialize
+  href: LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.OnBeforeSerialize
+  name: OnBeforeSerialize()
+  nameWithType: SerializableType<Ability>.OnBeforeSerialize()
+  fullName: LobsterFramework.Utility.SerializableType<LobsterFramework.AbilitySystem.Ability>.OnBeforeSerialize()
+  nameWithType.vb: SerializableType(Of Ability).OnBeforeSerialize()
+  fullName.vb: LobsterFramework.Utility.SerializableType(Of LobsterFramework.AbilitySystem.Ability).OnBeforeSerialize()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.OnBeforeSerialize
+    name: OnBeforeSerialize
+    href: LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.OnBeforeSerialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.OnBeforeSerialize
+    name: OnBeforeSerialize
+    href: LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.html#LobsterFramework.Utility.SerializableType{LobsterFramework.AbilitySystem.Ability}.OnBeforeSerialize
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Utility.SerializableType`1
+  commentId: T:LobsterFramework.Utility.SerializableType`1
+  href: LobsterFramework.Utility.SerializableType-1.html
+  name: SerializableType<T>
+  nameWithType: SerializableType<T>
+  fullName: LobsterFramework.Utility.SerializableType<T>
+  nameWithType.vb: SerializableType(Of T)
+  fullName.vb: LobsterFramework.Utility.SerializableType(Of T)
+  name.vb: SerializableType(Of T)
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableType`1
+    name: SerializableType
+    href: LobsterFramework.Utility.SerializableType-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableType`1
+    name: SerializableType
+    href: LobsterFramework.Utility.SerializableType-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: LobsterFramework.Utility.SerializableType`1.Type
+  commentId: P:LobsterFramework.Utility.SerializableType`1.Type
+  href: LobsterFramework.Utility.SerializableType-1.html#LobsterFramework.Utility.SerializableType`1.Type
+  name: Type
+  nameWithType: SerializableType<T>.Type
+  fullName: LobsterFramework.Utility.SerializableType<T>.Type
+  nameWithType.vb: SerializableType(Of T).Type
+  fullName.vb: LobsterFramework.Utility.SerializableType(Of T).Type
+- uid: LobsterFramework.Utility.SerializableType`1.OnAfterDeserialize
+  commentId: M:LobsterFramework.Utility.SerializableType`1.OnAfterDeserialize
+  href: LobsterFramework.Utility.SerializableType-1.html#LobsterFramework.Utility.SerializableType`1.OnAfterDeserialize
+  name: OnAfterDeserialize()
+  nameWithType: SerializableType<T>.OnAfterDeserialize()
+  fullName: LobsterFramework.Utility.SerializableType<T>.OnAfterDeserialize()
+  nameWithType.vb: SerializableType(Of T).OnAfterDeserialize()
+  fullName.vb: LobsterFramework.Utility.SerializableType(Of T).OnAfterDeserialize()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableType`1.OnAfterDeserialize
+    name: OnAfterDeserialize
+    href: LobsterFramework.Utility.SerializableType-1.html#LobsterFramework.Utility.SerializableType`1.OnAfterDeserialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableType`1.OnAfterDeserialize
+    name: OnAfterDeserialize
+    href: LobsterFramework.Utility.SerializableType-1.html#LobsterFramework.Utility.SerializableType`1.OnAfterDeserialize
+  - name: (
+  - name: )
+- uid: LobsterFramework.Utility.SerializableType`1.OnBeforeSerialize
+  commentId: M:LobsterFramework.Utility.SerializableType`1.OnBeforeSerialize
+  href: LobsterFramework.Utility.SerializableType-1.html#LobsterFramework.Utility.SerializableType`1.OnBeforeSerialize
+  name: OnBeforeSerialize()
+  nameWithType: SerializableType<T>.OnBeforeSerialize()
+  fullName: LobsterFramework.Utility.SerializableType<T>.OnBeforeSerialize()
+  nameWithType.vb: SerializableType(Of T).OnBeforeSerialize()
+  fullName.vb: LobsterFramework.Utility.SerializableType(Of T).OnBeforeSerialize()
+  spec.csharp:
+  - uid: LobsterFramework.Utility.SerializableType`1.OnBeforeSerialize
+    name: OnBeforeSerialize
+    href: LobsterFramework.Utility.SerializableType-1.html#LobsterFramework.Utility.SerializableType`1.OnBeforeSerialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: LobsterFramework.Utility.SerializableType`1.OnBeforeSerialize
+    name: OnBeforeSerialize
+    href: LobsterFramework.Utility.SerializableType-1.html#LobsterFramework.Utility.SerializableType`1.OnBeforeSerialize
+  - name: (
+  - name: )
+- uid: LobsterFramework.AbilitySystem.AbilitySelector.ConfigName*
+  commentId: Overload:LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
+  href: LobsterFramework.AbilitySystem.AbilitySelector.html#LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
+  name: ConfigName
+  nameWithType: AbilitySelector.ConfigName
+  fullName: LobsterFramework.AbilitySystem.AbilitySelector.ConfigName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

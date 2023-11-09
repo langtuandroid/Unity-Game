@@ -7,7 +7,9 @@ items:
   children:
   - LobsterFramework.AI.StateMachine.CurrentState
   - LobsterFramework.AI.StateMachine.OnDestroy
+  - LobsterFramework.AI.StateMachine.RunCoroutine(System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption})
   - LobsterFramework.AI.StateMachine.Update
+  - LobsterFramework.AI.StateMachine.coroutineRunner
   langs:
   - csharp
   - vb
@@ -17,10 +19,10 @@ items:
   type: Class
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/StateMachine/StateMachine.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/StateMachine.cs
     id: StateMachine
-    path: ../Assets/Framework/Scriptable Objects/StateMachine/StateMachine.cs
-    startLine: 7
+    path: ../Assets/Framework/StateMachine/StateMachine.cs
+    startLine: 8
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -144,6 +146,63 @@ items:
   - UnityEngine.Object.ToString
   - UnityEngine.Object.name
   - UnityEngine.Object.hideFlags
+- uid: LobsterFramework.AI.StateMachine.coroutineRunner
+  commentId: F:LobsterFramework.AI.StateMachine.coroutineRunner
+  id: coroutineRunner
+  parent: LobsterFramework.AI.StateMachine
+  langs:
+  - csharp
+  - vb
+  name: coroutineRunner
+  nameWithType: StateMachine.coroutineRunner
+  fullName: LobsterFramework.AI.StateMachine.coroutineRunner
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/StateMachine.cs
+    id: coroutineRunner
+    path: ../Assets/Framework/StateMachine/StateMachine.cs
+    startLine: 23
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: public readonly CoroutineRunner coroutineRunner
+    return:
+      type: LobsterFramework.Utility.CoroutineRunner
+    content.vb: Public ReadOnly coroutineRunner As CoroutineRunner
+- uid: LobsterFramework.AI.StateMachine.RunCoroutine(System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption})
+  commentId: M:LobsterFramework.AI.StateMachine.RunCoroutine(System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption})
+  id: RunCoroutine(System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption})
+  parent: LobsterFramework.AI.StateMachine
+  langs:
+  - csharp
+  - vb
+  name: RunCoroutine(IEnumerator<CoroutineOption>)
+  nameWithType: StateMachine.RunCoroutine(IEnumerator<CoroutineOption>)
+  fullName: LobsterFramework.AI.StateMachine.RunCoroutine(System.Collections.Generic.IEnumerator<LobsterFramework.CoroutineOption>)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/StateMachine.cs
+    id: RunCoroutine
+    path: ../Assets/Framework/StateMachine/StateMachine.cs
+    startLine: 26
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.AI
+  syntax:
+    content: public Coroutine RunCoroutine(IEnumerator<CoroutineOption> coroutine)
+    parameters:
+    - id: coroutine
+      type: System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption}
+    return:
+      type: LobsterFramework.Utility.Coroutine
+    content.vb: Public Function RunCoroutine(coroutine As IEnumerator(Of CoroutineOption)) As Coroutine
+  overload: LobsterFramework.AI.StateMachine.RunCoroutine*
+  nameWithType.vb: StateMachine.RunCoroutine(IEnumerator(Of CoroutineOption))
+  fullName.vb: LobsterFramework.AI.StateMachine.RunCoroutine(System.Collections.Generic.IEnumerator(Of LobsterFramework.CoroutineOption))
+  name.vb: RunCoroutine(IEnumerator(Of CoroutineOption))
 - uid: LobsterFramework.AI.StateMachine.CurrentState
   commentId: P:LobsterFramework.AI.StateMachine.CurrentState
   id: CurrentState
@@ -157,10 +216,10 @@ items:
   type: Property
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/StateMachine/StateMachine.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/StateMachine.cs
     id: CurrentState
-    path: ../Assets/Framework/Scriptable Objects/StateMachine/StateMachine.cs
-    startLine: 14
+    path: ../Assets/Framework/StateMachine/StateMachine.cs
+    startLine: 31
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -184,10 +243,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/StateMachine/StateMachine.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/StateMachine.cs
     id: Update
-    path: ../Assets/Framework/Scriptable Objects/StateMachine/StateMachine.cs
-    startLine: 45
+    path: ../Assets/Framework/StateMachine/StateMachine.cs
+    startLine: 65
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -208,10 +267,10 @@ items:
   type: Method
   source:
     remote:
-      path: H:/Stuff/BallField/Assets/Framework/Scriptable Objects/StateMachine/StateMachine.cs
+      path: H:/Stuff/BallField/Assets/Framework/StateMachine/StateMachine.cs
     id: OnDestroy
-    path: ../Assets/Framework/Scriptable Objects/StateMachine/StateMachine.cs
-    startLine: 56
+    path: ../Assets/Framework/StateMachine/StateMachine.cs
+    startLine: 96
   assemblies:
   - LobsterFramework
   namespace: LobsterFramework.AI
@@ -4452,6 +4511,146 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
+- uid: LobsterFramework.Utility.CoroutineRunner
+  commentId: T:LobsterFramework.Utility.CoroutineRunner
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.CoroutineRunner.html
+  name: CoroutineRunner
+  nameWithType: CoroutineRunner
+  fullName: LobsterFramework.Utility.CoroutineRunner
+- uid: LobsterFramework.Utility
+  commentId: N:LobsterFramework.Utility
+  href: LobsterFramework.html
+  name: LobsterFramework.Utility
+  nameWithType: LobsterFramework.Utility
+  fullName: LobsterFramework.Utility
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Utility
+    name: Utility
+    href: LobsterFramework.Utility.html
+- uid: LobsterFramework.AI.StateMachine.RunCoroutine*
+  commentId: Overload:LobsterFramework.AI.StateMachine.RunCoroutine
+  href: LobsterFramework.AI.StateMachine.html#LobsterFramework.AI.StateMachine.RunCoroutine(System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption})
+  name: RunCoroutine
+  nameWithType: StateMachine.RunCoroutine
+  fullName: LobsterFramework.AI.StateMachine.RunCoroutine
+- uid: System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption}
+  commentId: T:System.Collections.Generic.IEnumerator{LobsterFramework.CoroutineOption}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<CoroutineOption>
+  nameWithType: IEnumerator<CoroutineOption>
+  fullName: System.Collections.Generic.IEnumerator<LobsterFramework.CoroutineOption>
+  nameWithType.vb: IEnumerator(Of CoroutineOption)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of LobsterFramework.CoroutineOption)
+  name.vb: IEnumerator(Of CoroutineOption)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - uid: LobsterFramework.CoroutineOption
+    name: CoroutineOption
+    href: LobsterFramework.CoroutineOption.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LobsterFramework.CoroutineOption
+    name: CoroutineOption
+    href: LobsterFramework.CoroutineOption.html
+  - name: )
+- uid: LobsterFramework.Utility.Coroutine
+  commentId: T:LobsterFramework.Utility.Coroutine
+  parent: LobsterFramework.Utility
+  href: LobsterFramework.Utility.Coroutine.html
+  name: Coroutine
+  nameWithType: Coroutine
+  fullName: LobsterFramework.Utility.Coroutine
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: LobsterFramework.AI.StateMachine.CurrentState*
   commentId: Overload:LobsterFramework.AI.StateMachine.CurrentState
   href: LobsterFramework.AI.StateMachine.html#LobsterFramework.AI.StateMachine.CurrentState

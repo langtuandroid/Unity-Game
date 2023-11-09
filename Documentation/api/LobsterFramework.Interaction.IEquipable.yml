@@ -1,0 +1,90 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Interaction.IEquipable
+  commentId: T:LobsterFramework.Interaction.IEquipable
+  id: IEquipable
+  parent: LobsterFramework.Interaction
+  children:
+  - LobsterFramework.Interaction.IEquipable.Equip(LobsterFramework.Interaction.Inventory)
+  langs:
+  - csharp
+  - vb
+  name: IEquipable
+  nameWithType: IEquipable
+  fullName: LobsterFramework.Interaction.IEquipable
+  type: Interface
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Items/IEquipable.cs
+    id: IEquipable
+    path: ../Assets/Framework/Interaction/Items/IEquipable.cs
+    startLine: 6
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: public interface IEquipable
+    content.vb: Public Interface IEquipable
+- uid: LobsterFramework.Interaction.IEquipable.Equip(LobsterFramework.Interaction.Inventory)
+  commentId: M:LobsterFramework.Interaction.IEquipable.Equip(LobsterFramework.Interaction.Inventory)
+  id: Equip(LobsterFramework.Interaction.Inventory)
+  parent: LobsterFramework.Interaction.IEquipable
+  langs:
+  - csharp
+  - vb
+  name: Equip(Inventory)
+  nameWithType: IEquipable.Equip(Inventory)
+  fullName: LobsterFramework.Interaction.IEquipable.Equip(LobsterFramework.Interaction.Inventory)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Interaction/Items/IEquipable.cs
+    id: Equip
+    path: ../Assets/Framework/Interaction/Items/IEquipable.cs
+    startLine: 8
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Interaction
+  syntax:
+    content: void Equip(Inventory inventory)
+    parameters:
+    - id: inventory
+      type: LobsterFramework.Interaction.Inventory
+    content.vb: Sub Equip(inventory As Inventory)
+  overload: LobsterFramework.Interaction.IEquipable.Equip*
+references:
+- uid: LobsterFramework.Interaction
+  commentId: N:LobsterFramework.Interaction
+  href: LobsterFramework.html
+  name: LobsterFramework.Interaction
+  nameWithType: LobsterFramework.Interaction
+  fullName: LobsterFramework.Interaction
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Interaction
+    name: Interaction
+    href: LobsterFramework.Interaction.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Interaction
+    name: Interaction
+    href: LobsterFramework.Interaction.html
+- uid: LobsterFramework.Interaction.IEquipable.Equip*
+  commentId: Overload:LobsterFramework.Interaction.IEquipable.Equip
+  href: LobsterFramework.Interaction.IEquipable.html#LobsterFramework.Interaction.IEquipable.Equip(LobsterFramework.Interaction.Inventory)
+  name: Equip
+  nameWithType: IEquipable.Equip
+  fullName: LobsterFramework.Interaction.IEquipable.Equip
+- uid: LobsterFramework.Interaction.Inventory
+  commentId: T:LobsterFramework.Interaction.Inventory
+  parent: LobsterFramework.Interaction
+  href: LobsterFramework.Interaction.Inventory.html
+  name: Inventory
+  nameWithType: Inventory
+  fullName: LobsterFramework.Interaction.Inventory

@@ -4,11 +4,21 @@ items:
   commentId: N:LobsterFramework.Interaction
   id: LobsterFramework.Interaction
   children:
+  - LobsterFramework.Interaction.CollectableItem
+  - LobsterFramework.Interaction.GeneralInteractor
+  - LobsterFramework.Interaction.HealthPotion
+  - LobsterFramework.Interaction.IConsumable
+  - LobsterFramework.Interaction.IEquipable
   - LobsterFramework.Interaction.InteractableObject
   - LobsterFramework.Interaction.InteractionAttribute
   - LobsterFramework.Interaction.InteractionPrompt
   - LobsterFramework.Interaction.InteractionType
   - LobsterFramework.Interaction.Interactor
+  - LobsterFramework.Interaction.Inventory
+  - LobsterFramework.Interaction.InventoryItem
+  - LobsterFramework.Interaction.Item
+  - LobsterFramework.Interaction.ItemType
+  - LobsterFramework.Interaction.SimpleItem
   langs:
   - csharp
   - vb
@@ -19,12 +29,12 @@ items:
   assemblies:
   - LobsterFramework
 references:
-- uid: LobsterFramework.Interaction.InteractionAttribute
-  commentId: T:LobsterFramework.Interaction.InteractionAttribute
-  href: LobsterFramework.Interaction.InteractionAttribute.html
-  name: InteractionAttribute
-  nameWithType: InteractionAttribute
-  fullName: LobsterFramework.Interaction.InteractionAttribute
+- uid: LobsterFramework.Interaction.GeneralInteractor
+  commentId: T:LobsterFramework.Interaction.GeneralInteractor
+  href: LobsterFramework.Interaction.GeneralInteractor.html
+  name: GeneralInteractor
+  nameWithType: GeneralInteractor
+  fullName: LobsterFramework.Interaction.GeneralInteractor
 - uid: LobsterFramework.Interaction.InteractionType
   commentId: T:LobsterFramework.Interaction.InteractionType
   parent: LobsterFramework.Interaction
@@ -46,6 +56,65 @@ references:
   name: InteractableObject
   nameWithType: InteractableObject
   fullName: LobsterFramework.Interaction.InteractableObject
+- uid: LobsterFramework.Interaction.Inventory
+  commentId: T:LobsterFramework.Interaction.Inventory
+  parent: LobsterFramework.Interaction
+  href: LobsterFramework.Interaction.Inventory.html
+  name: Inventory
+  nameWithType: Inventory
+  fullName: LobsterFramework.Interaction.Inventory
+- uid: LobsterFramework.Interaction.InventoryItem
+  commentId: T:LobsterFramework.Interaction.InventoryItem
+  parent: LobsterFramework.Interaction
+  href: LobsterFramework.Interaction.InventoryItem.html
+  name: InventoryItem
+  nameWithType: InventoryItem
+  fullName: LobsterFramework.Interaction.InventoryItem
+- uid: LobsterFramework.Interaction.Item
+  commentId: T:LobsterFramework.Interaction.Item
+  parent: LobsterFramework.Interaction
+  href: LobsterFramework.Interaction.Item.html
+  name: Item
+  nameWithType: Item
+  fullName: LobsterFramework.Interaction.Item
+- uid: LobsterFramework.Interaction.ItemType
+  commentId: T:LobsterFramework.Interaction.ItemType
+  parent: LobsterFramework.Interaction
+  href: LobsterFramework.Interaction.ItemType.html
+  name: ItemType
+  nameWithType: ItemType
+  fullName: LobsterFramework.Interaction.ItemType
+- uid: LobsterFramework.Interaction.CollectableItem
+  commentId: T:LobsterFramework.Interaction.CollectableItem
+  href: LobsterFramework.Interaction.CollectableItem.html
+  name: CollectableItem
+  nameWithType: CollectableItem
+  fullName: LobsterFramework.Interaction.CollectableItem
+- uid: LobsterFramework.Interaction.InteractionAttribute
+  commentId: T:LobsterFramework.Interaction.InteractionAttribute
+  parent: LobsterFramework.Interaction
+  href: LobsterFramework.Interaction.InteractionAttribute.html
+  name: InteractionAttribute
+  nameWithType: InteractionAttribute
+  fullName: LobsterFramework.Interaction.InteractionAttribute
+- uid: LobsterFramework.Interaction.IEquipable
+  commentId: T:LobsterFramework.Interaction.IEquipable
+  href: LobsterFramework.Interaction.IEquipable.html
+  name: IEquipable
+  nameWithType: IEquipable
+  fullName: LobsterFramework.Interaction.IEquipable
+- uid: LobsterFramework.Interaction.HealthPotion
+  commentId: T:LobsterFramework.Interaction.HealthPotion
+  href: LobsterFramework.Interaction.HealthPotion.html
+  name: HealthPotion
+  nameWithType: HealthPotion
+  fullName: LobsterFramework.Interaction.HealthPotion
+- uid: LobsterFramework.Interaction.SimpleItem
+  commentId: T:LobsterFramework.Interaction.SimpleItem
+  href: LobsterFramework.Interaction.SimpleItem.html
+  name: SimpleItem
+  nameWithType: SimpleItem
+  fullName: LobsterFramework.Interaction.SimpleItem
 - uid: LobsterFramework.Interaction.Interactor
   commentId: T:LobsterFramework.Interaction.Interactor
   parent: LobsterFramework.Interaction
@@ -53,6 +122,13 @@ references:
   name: Interactor
   nameWithType: Interactor
   fullName: LobsterFramework.Interaction.Interactor
+- uid: LobsterFramework.Interaction.IConsumable
+  commentId: T:LobsterFramework.Interaction.IConsumable
+  parent: LobsterFramework.Interaction
+  href: LobsterFramework.Interaction.IConsumable.html
+  name: IConsumable
+  nameWithType: IConsumable
+  fullName: LobsterFramework.Interaction.IConsumable
 - uid: LobsterFramework.Interaction
   commentId: N:LobsterFramework.Interaction
   href: LobsterFramework.html

@@ -1,0 +1,721 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.SerializableArray`1
+  commentId: T:LobsterFramework.SerializableArray`1
+  id: SerializableArray`1
+  parent: LobsterFramework
+  children:
+  - LobsterFramework.SerializableArray`1.Add(`0)
+  - LobsterFramework.SerializableArray`1.Clear
+  - LobsterFramework.SerializableArray`1.Contains(`0)
+  - LobsterFramework.SerializableArray`1.CopyTo(`0[],System.Int32)
+  - LobsterFramework.SerializableArray`1.Count
+  - LobsterFramework.SerializableArray`1.GetEnumerator
+  - LobsterFramework.SerializableArray`1.IndexOf(`0)
+  - LobsterFramework.SerializableArray`1.Insert(System.Int32,`0)
+  - LobsterFramework.SerializableArray`1.IsReadOnly
+  - LobsterFramework.SerializableArray`1.Item(System.Int32)
+  - LobsterFramework.SerializableArray`1.Remove(`0)
+  - LobsterFramework.SerializableArray`1.RemoveAt(System.Int32)
+  - LobsterFramework.SerializableArray`1.items
+  langs:
+  - csharp
+  - vb
+  name: SerializableArray<T>
+  nameWithType: SerializableArray<T>
+  fullName: LobsterFramework.SerializableArray<T>
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    id: SerializableArray
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    startLine: 11
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: public class SerializableArray<T>
+    typeParameters:
+    - id: T
+    content.vb: Public Class SerializableArray(Of T)
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - LobsterFramework.AnimationClipArray
+  nameWithType.vb: SerializableArray(Of T)
+  fullName.vb: LobsterFramework.SerializableArray(Of T)
+  name.vb: SerializableArray(Of T)
+- uid: LobsterFramework.SerializableArray`1.items
+  commentId: F:LobsterFramework.SerializableArray`1.items
+  id: items
+  parent: LobsterFramework.SerializableArray`1
+  langs:
+  - csharp
+  - vb
+  name: items
+  nameWithType: SerializableArray<T>.items
+  fullName: LobsterFramework.SerializableArray<T>.items
+  type: Field
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    id: items
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    startLine: 13
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  syntax:
+    content: >-
+      [SerializeField]
+
+      protected T[] items
+    return:
+      type: '{T}[]'
+    content.vb: >-
+      <SerializeField>
+
+      Protected items As T()
+  attributes:
+  - type: UnityEngine.SerializeField
+    ctor: UnityEngine.SerializeField.#ctor
+    arguments: []
+  nameWithType.vb: SerializableArray(Of T).items
+  fullName.vb: LobsterFramework.SerializableArray(Of T).items
+- uid: LobsterFramework.SerializableArray`1.Item(System.Int32)
+  commentId: P:LobsterFramework.SerializableArray`1.Item(System.Int32)
+  id: Item(System.Int32)
+  parent: LobsterFramework.SerializableArray`1
+  langs:
+  - csharp
+  - vb
+  name: this[int]
+  nameWithType: SerializableArray<T>.this[int]
+  fullName: LobsterFramework.SerializableArray<T>.this[int]
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    id: this[]
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    startLine: 15
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  example: []
+  syntax:
+    content: public T this[int index] { get; set; }
+    parameters:
+    - id: index
+      type: System.Int32
+    return:
+      type: '{T}'
+    content.vb: Public Default Property this[](index As Integer) As T
+  overload: LobsterFramework.SerializableArray`1.Item*
+  nameWithType.vb: SerializableArray(Of T).this[](Integer)
+  fullName.vb: LobsterFramework.SerializableArray(Of T).this[](Integer)
+  name.vb: this[](Integer)
+- uid: LobsterFramework.SerializableArray`1.Count
+  commentId: P:LobsterFramework.SerializableArray`1.Count
+  id: Count
+  parent: LobsterFramework.SerializableArray`1
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: SerializableArray<T>.Count
+  fullName: LobsterFramework.SerializableArray<T>.Count
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    id: Count
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    startLine: 17
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  example: []
+  syntax:
+    content: public int Count { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Count As Integer
+  overload: LobsterFramework.SerializableArray`1.Count*
+  nameWithType.vb: SerializableArray(Of T).Count
+  fullName.vb: LobsterFramework.SerializableArray(Of T).Count
+- uid: LobsterFramework.SerializableArray`1.IsReadOnly
+  commentId: P:LobsterFramework.SerializableArray`1.IsReadOnly
+  id: IsReadOnly
+  parent: LobsterFramework.SerializableArray`1
+  langs:
+  - csharp
+  - vb
+  name: IsReadOnly
+  nameWithType: SerializableArray<T>.IsReadOnly
+  fullName: LobsterFramework.SerializableArray<T>.IsReadOnly
+  type: Property
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    id: IsReadOnly
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    startLine: 19
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  example: []
+  syntax:
+    content: public bool IsReadOnly { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsReadOnly As Boolean
+  overload: LobsterFramework.SerializableArray`1.IsReadOnly*
+  nameWithType.vb: SerializableArray(Of T).IsReadOnly
+  fullName.vb: LobsterFramework.SerializableArray(Of T).IsReadOnly
+- uid: LobsterFramework.SerializableArray`1.Add(`0)
+  commentId: M:LobsterFramework.SerializableArray`1.Add(`0)
+  id: Add(`0)
+  parent: LobsterFramework.SerializableArray`1
+  langs:
+  - csharp
+  - vb
+  name: Add(T)
+  nameWithType: SerializableArray<T>.Add(T)
+  fullName: LobsterFramework.SerializableArray<T>.Add(T)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    id: Add
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    startLine: 21
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  example: []
+  syntax:
+    content: public void Add(T item)
+    parameters:
+    - id: item
+      type: '{T}'
+    content.vb: Public Sub Add(item As T)
+  overload: LobsterFramework.SerializableArray`1.Add*
+  nameWithType.vb: SerializableArray(Of T).Add(T)
+  fullName.vb: LobsterFramework.SerializableArray(Of T).Add(T)
+- uid: LobsterFramework.SerializableArray`1.Clear
+  commentId: M:LobsterFramework.SerializableArray`1.Clear
+  id: Clear
+  parent: LobsterFramework.SerializableArray`1
+  langs:
+  - csharp
+  - vb
+  name: Clear()
+  nameWithType: SerializableArray<T>.Clear()
+  fullName: LobsterFramework.SerializableArray<T>.Clear()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    id: Clear
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    startLine: 26
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  example: []
+  syntax:
+    content: public void Clear()
+    content.vb: Public Sub Clear()
+  overload: LobsterFramework.SerializableArray`1.Clear*
+  nameWithType.vb: SerializableArray(Of T).Clear()
+  fullName.vb: LobsterFramework.SerializableArray(Of T).Clear()
+- uid: LobsterFramework.SerializableArray`1.Contains(`0)
+  commentId: M:LobsterFramework.SerializableArray`1.Contains(`0)
+  id: Contains(`0)
+  parent: LobsterFramework.SerializableArray`1
+  langs:
+  - csharp
+  - vb
+  name: Contains(T)
+  nameWithType: SerializableArray<T>.Contains(T)
+  fullName: LobsterFramework.SerializableArray<T>.Contains(T)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    id: Contains
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    startLine: 31
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  example: []
+  syntax:
+    content: public bool Contains(T item)
+    parameters:
+    - id: item
+      type: '{T}'
+    return:
+      type: System.Boolean
+    content.vb: Public Function Contains(item As T) As Boolean
+  overload: LobsterFramework.SerializableArray`1.Contains*
+  nameWithType.vb: SerializableArray(Of T).Contains(T)
+  fullName.vb: LobsterFramework.SerializableArray(Of T).Contains(T)
+- uid: LobsterFramework.SerializableArray`1.CopyTo(`0[],System.Int32)
+  commentId: M:LobsterFramework.SerializableArray`1.CopyTo(`0[],System.Int32)
+  id: CopyTo(`0[],System.Int32)
+  parent: LobsterFramework.SerializableArray`1
+  langs:
+  - csharp
+  - vb
+  name: CopyTo(T[], int)
+  nameWithType: SerializableArray<T>.CopyTo(T[], int)
+  fullName: LobsterFramework.SerializableArray<T>.CopyTo(T[], int)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    id: CopyTo
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    startLine: 36
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  example: []
+  syntax:
+    content: public void CopyTo(T[] array, int arrayIndex)
+    parameters:
+    - id: array
+      type: '{T}[]'
+    - id: arrayIndex
+      type: System.Int32
+    content.vb: Public Sub CopyTo(array As T(), arrayIndex As Integer)
+  overload: LobsterFramework.SerializableArray`1.CopyTo*
+  nameWithType.vb: SerializableArray(Of T).CopyTo(T(), Integer)
+  fullName.vb: LobsterFramework.SerializableArray(Of T).CopyTo(T(), Integer)
+  name.vb: CopyTo(T(), Integer)
+- uid: LobsterFramework.SerializableArray`1.GetEnumerator
+  commentId: M:LobsterFramework.SerializableArray`1.GetEnumerator
+  id: GetEnumerator
+  parent: LobsterFramework.SerializableArray`1
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: SerializableArray<T>.GetEnumerator()
+  fullName: LobsterFramework.SerializableArray<T>.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    id: GetEnumerator
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    startLine: 41
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  example: []
+  syntax:
+    content: public IEnumerator<T> GetEnumerator()
+    return:
+      type: System.Collections.Generic.IEnumerator{{T}}
+    content.vb: Public Function GetEnumerator() As IEnumerator(Of T)
+  overload: LobsterFramework.SerializableArray`1.GetEnumerator*
+  nameWithType.vb: SerializableArray(Of T).GetEnumerator()
+  fullName.vb: LobsterFramework.SerializableArray(Of T).GetEnumerator()
+- uid: LobsterFramework.SerializableArray`1.IndexOf(`0)
+  commentId: M:LobsterFramework.SerializableArray`1.IndexOf(`0)
+  id: IndexOf(`0)
+  parent: LobsterFramework.SerializableArray`1
+  langs:
+  - csharp
+  - vb
+  name: IndexOf(T)
+  nameWithType: SerializableArray<T>.IndexOf(T)
+  fullName: LobsterFramework.SerializableArray<T>.IndexOf(T)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    id: IndexOf
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    startLine: 46
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  example: []
+  syntax:
+    content: public int IndexOf(T item)
+    parameters:
+    - id: item
+      type: '{T}'
+    return:
+      type: System.Int32
+    content.vb: Public Function IndexOf(item As T) As Integer
+  overload: LobsterFramework.SerializableArray`1.IndexOf*
+  nameWithType.vb: SerializableArray(Of T).IndexOf(T)
+  fullName.vb: LobsterFramework.SerializableArray(Of T).IndexOf(T)
+- uid: LobsterFramework.SerializableArray`1.Insert(System.Int32,`0)
+  commentId: M:LobsterFramework.SerializableArray`1.Insert(System.Int32,`0)
+  id: Insert(System.Int32,`0)
+  parent: LobsterFramework.SerializableArray`1
+  langs:
+  - csharp
+  - vb
+  name: Insert(int, T)
+  nameWithType: SerializableArray<T>.Insert(int, T)
+  fullName: LobsterFramework.SerializableArray<T>.Insert(int, T)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    id: Insert
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    startLine: 51
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  example: []
+  syntax:
+    content: public void Insert(int index, T item)
+    parameters:
+    - id: index
+      type: System.Int32
+    - id: item
+      type: '{T}'
+    content.vb: Public Sub Insert(index As Integer, item As T)
+  overload: LobsterFramework.SerializableArray`1.Insert*
+  nameWithType.vb: SerializableArray(Of T).Insert(Integer, T)
+  fullName.vb: LobsterFramework.SerializableArray(Of T).Insert(Integer, T)
+  name.vb: Insert(Integer, T)
+- uid: LobsterFramework.SerializableArray`1.Remove(`0)
+  commentId: M:LobsterFramework.SerializableArray`1.Remove(`0)
+  id: Remove(`0)
+  parent: LobsterFramework.SerializableArray`1
+  langs:
+  - csharp
+  - vb
+  name: Remove(T)
+  nameWithType: SerializableArray<T>.Remove(T)
+  fullName: LobsterFramework.SerializableArray<T>.Remove(T)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    id: Remove
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    startLine: 56
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  example: []
+  syntax:
+    content: public bool Remove(T item)
+    parameters:
+    - id: item
+      type: '{T}'
+    return:
+      type: System.Boolean
+    content.vb: Public Function Remove(item As T) As Boolean
+  overload: LobsterFramework.SerializableArray`1.Remove*
+  nameWithType.vb: SerializableArray(Of T).Remove(T)
+  fullName.vb: LobsterFramework.SerializableArray(Of T).Remove(T)
+- uid: LobsterFramework.SerializableArray`1.RemoveAt(System.Int32)
+  commentId: M:LobsterFramework.SerializableArray`1.RemoveAt(System.Int32)
+  id: RemoveAt(System.Int32)
+  parent: LobsterFramework.SerializableArray`1
+  langs:
+  - csharp
+  - vb
+  name: RemoveAt(int)
+  nameWithType: SerializableArray<T>.RemoveAt(int)
+  fullName: LobsterFramework.SerializableArray<T>.RemoveAt(int)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    id: RemoveAt
+    path: ../Assets/Framework/Utility/SerializableDataStructures/SerializableArray.cs
+    startLine: 61
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework
+  example: []
+  syntax:
+    content: public void RemoveAt(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+    content.vb: Public Sub RemoveAt(index As Integer)
+  overload: LobsterFramework.SerializableArray`1.RemoveAt*
+  nameWithType.vb: SerializableArray(Of T).RemoveAt(Integer)
+  fullName.vb: LobsterFramework.SerializableArray(Of T).RemoveAt(Integer)
+  name.vb: RemoveAt(Integer)
+references:
+- uid: LobsterFramework
+  commentId: N:LobsterFramework
+  href: LobsterFramework.html
+  name: LobsterFramework
+  nameWithType: LobsterFramework
+  fullName: LobsterFramework
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: '{T}[]'
+  isExternal: true
+  name: T[]
+  nameWithType: T[]
+  fullName: T[]
+  nameWithType.vb: T()
+  fullName.vb: T()
+  name.vb: T()
+  spec.csharp:
+  - name: T
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - name: T
+  - name: (
+  - name: )
+- uid: LobsterFramework.SerializableArray`1.Item*
+  commentId: Overload:LobsterFramework.SerializableArray`1.Item
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Item(System.Int32)
+  name: this
+  nameWithType: SerializableArray<T>.this
+  fullName: LobsterFramework.SerializableArray<T>.this
+  nameWithType.vb: SerializableArray(Of T).this[]
+  fullName.vb: LobsterFramework.SerializableArray(Of T).this[]
+  name.vb: this[]
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: LobsterFramework.SerializableArray`1.Count*
+  commentId: Overload:LobsterFramework.SerializableArray`1.Count
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Count
+  name: Count
+  nameWithType: SerializableArray<T>.Count
+  fullName: LobsterFramework.SerializableArray<T>.Count
+  nameWithType.vb: SerializableArray(Of T).Count
+  fullName.vb: LobsterFramework.SerializableArray(Of T).Count
+- uid: LobsterFramework.SerializableArray`1.IsReadOnly*
+  commentId: Overload:LobsterFramework.SerializableArray`1.IsReadOnly
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.IsReadOnly
+  name: IsReadOnly
+  nameWithType: SerializableArray<T>.IsReadOnly
+  fullName: LobsterFramework.SerializableArray<T>.IsReadOnly
+  nameWithType.vb: SerializableArray(Of T).IsReadOnly
+  fullName.vb: LobsterFramework.SerializableArray(Of T).IsReadOnly
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: LobsterFramework.SerializableArray`1.Add*
+  commentId: Overload:LobsterFramework.SerializableArray`1.Add
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Add(`0)
+  name: Add
+  nameWithType: SerializableArray<T>.Add
+  fullName: LobsterFramework.SerializableArray<T>.Add
+  nameWithType.vb: SerializableArray(Of T).Add
+  fullName.vb: LobsterFramework.SerializableArray(Of T).Add
+- uid: LobsterFramework.SerializableArray`1.Clear*
+  commentId: Overload:LobsterFramework.SerializableArray`1.Clear
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Clear
+  name: Clear
+  nameWithType: SerializableArray<T>.Clear
+  fullName: LobsterFramework.SerializableArray<T>.Clear
+  nameWithType.vb: SerializableArray(Of T).Clear
+  fullName.vb: LobsterFramework.SerializableArray(Of T).Clear
+- uid: LobsterFramework.SerializableArray`1.Contains*
+  commentId: Overload:LobsterFramework.SerializableArray`1.Contains
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Contains(`0)
+  name: Contains
+  nameWithType: SerializableArray<T>.Contains
+  fullName: LobsterFramework.SerializableArray<T>.Contains
+  nameWithType.vb: SerializableArray(Of T).Contains
+  fullName.vb: LobsterFramework.SerializableArray(Of T).Contains
+- uid: LobsterFramework.SerializableArray`1.CopyTo*
+  commentId: Overload:LobsterFramework.SerializableArray`1.CopyTo
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.CopyTo(`0[],System.Int32)
+  name: CopyTo
+  nameWithType: SerializableArray<T>.CopyTo
+  fullName: LobsterFramework.SerializableArray<T>.CopyTo
+  nameWithType.vb: SerializableArray(Of T).CopyTo
+  fullName.vb: LobsterFramework.SerializableArray(Of T).CopyTo
+- uid: LobsterFramework.SerializableArray`1.GetEnumerator*
+  commentId: Overload:LobsterFramework.SerializableArray`1.GetEnumerator
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.GetEnumerator
+  name: GetEnumerator
+  nameWithType: SerializableArray<T>.GetEnumerator
+  fullName: LobsterFramework.SerializableArray<T>.GetEnumerator
+  nameWithType.vb: SerializableArray(Of T).GetEnumerator
+  fullName.vb: LobsterFramework.SerializableArray(Of T).GetEnumerator
+- uid: System.Collections.Generic.IEnumerator{{T}}
+  commentId: T:System.Collections.Generic.IEnumerator{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: LobsterFramework.SerializableArray`1.IndexOf*
+  commentId: Overload:LobsterFramework.SerializableArray`1.IndexOf
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.IndexOf(`0)
+  name: IndexOf
+  nameWithType: SerializableArray<T>.IndexOf
+  fullName: LobsterFramework.SerializableArray<T>.IndexOf
+  nameWithType.vb: SerializableArray(Of T).IndexOf
+  fullName.vb: LobsterFramework.SerializableArray(Of T).IndexOf
+- uid: LobsterFramework.SerializableArray`1.Insert*
+  commentId: Overload:LobsterFramework.SerializableArray`1.Insert
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Insert(System.Int32,`0)
+  name: Insert
+  nameWithType: SerializableArray<T>.Insert
+  fullName: LobsterFramework.SerializableArray<T>.Insert
+  nameWithType.vb: SerializableArray(Of T).Insert
+  fullName.vb: LobsterFramework.SerializableArray(Of T).Insert
+- uid: LobsterFramework.SerializableArray`1.Remove*
+  commentId: Overload:LobsterFramework.SerializableArray`1.Remove
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.Remove(`0)
+  name: Remove
+  nameWithType: SerializableArray<T>.Remove
+  fullName: LobsterFramework.SerializableArray<T>.Remove
+  nameWithType.vb: SerializableArray(Of T).Remove
+  fullName.vb: LobsterFramework.SerializableArray(Of T).Remove
+- uid: LobsterFramework.SerializableArray`1.RemoveAt*
+  commentId: Overload:LobsterFramework.SerializableArray`1.RemoveAt
+  href: LobsterFramework.SerializableArray-1.html#LobsterFramework.SerializableArray`1.RemoveAt(System.Int32)
+  name: RemoveAt
+  nameWithType: SerializableArray<T>.RemoveAt
+  fullName: LobsterFramework.SerializableArray<T>.RemoveAt
+  nameWithType.vb: SerializableArray(Of T).RemoveAt
+  fullName.vb: LobsterFramework.SerializableArray(Of T).RemoveAt

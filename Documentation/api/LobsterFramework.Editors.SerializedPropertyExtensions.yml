@@ -1,0 +1,744 @@
+### YamlMime:ManagedReference
+items:
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions
+  commentId: T:LobsterFramework.Editors.SerializedPropertyExtensions
+  id: SerializedPropertyExtensions
+  parent: LobsterFramework.Editors
+  children:
+  - LobsterFramework.Editors.SerializedPropertyExtensions.GetBaseClassesAndInterfaces(System.Type,System.Boolean)
+  - LobsterFramework.Editors.SerializedPropertyExtensions.GetFieldOrPropertyValue``1(System.String,System.Object,System.Boolean,System.Reflection.BindingFlags)
+  - LobsterFramework.Editors.SerializedPropertyExtensions.GetNestedObject``1(System.String,System.Object,System.Boolean)
+  - LobsterFramework.Editors.SerializedPropertyExtensions.GetSerializedPropertyRootComponent(UnityEditor.SerializedProperty)
+  - LobsterFramework.Editors.SerializedPropertyExtensions.GetSerializedPropertyRootScriptableObject(UnityEditor.SerializedProperty)
+  - LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromComponent``1(UnityEditor.SerializedProperty)
+  - LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromScriptableObject``1(UnityEditor.SerializedProperty)
+  - LobsterFramework.Editors.SerializedPropertyExtensions.SetFieldOrPropertyValue(System.String,System.Object,System.Object,System.Boolean,System.Reflection.BindingFlags)
+  - LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnComponent``1(UnityEditor.SerializedProperty,``0)
+  - LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnScriptableObject``1(UnityEditor.SerializedProperty,``0)
+  langs:
+  - csharp
+  - vb
+  name: SerializedPropertyExtensions
+  nameWithType: SerializedPropertyExtensions
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions
+  type: Class
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: SerializedPropertyExtensions
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 26
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  summary: >-
+    Extension class for SerializedProperties
+
+    See also: http://answers.unity3d.com/questions/627090/convert-serializedproperty-to-custom-class.html
+  example: []
+  syntax:
+    content: public static class SerializedPropertyExtensions
+    content.vb: Public Module SerializedPropertyExtensions
+  inheritance:
+  - System.Object
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromComponent``1(UnityEditor.SerializedProperty)
+  commentId: M:LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromComponent``1(UnityEditor.SerializedProperty)
+  id: GetValueFromComponent``1(UnityEditor.SerializedProperty)
+  isExtensionMethod: true
+  parent: LobsterFramework.Editors.SerializedPropertyExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetValueFromComponent<T>(SerializedProperty)
+  nameWithType: SerializedPropertyExtensions.GetValueFromComponent<T>(SerializedProperty)
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromComponent<T>(UnityEditor.SerializedProperty)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: GetValueFromComponent
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 34
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  summary: Get the object the serialized property of a Component holds by using reflection
+  example: []
+  syntax:
+    content: public static T GetValueFromComponent<T>(this SerializedProperty property)
+    parameters:
+    - id: property
+      type: UnityEditor.SerializedProperty
+      description: ''
+    typeParameters:
+    - id: T
+      description: The object type that the property contains
+    return:
+      type: '{T}'
+      description: Returns the object type T if it is the type the property actually contains
+    content.vb: Public Shared Function GetValueFromComponent(Of T)([property] As SerializedProperty) As T
+  overload: LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromComponent*
+  nameWithType.vb: SerializedPropertyExtensions.GetValueFromComponent(Of T)(SerializedProperty)
+  fullName.vb: LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromComponent(Of T)(UnityEditor.SerializedProperty)
+  name.vb: GetValueFromComponent(Of T)(SerializedProperty)
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromScriptableObject``1(UnityEditor.SerializedProperty)
+  commentId: M:LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromScriptableObject``1(UnityEditor.SerializedProperty)
+  id: GetValueFromScriptableObject``1(UnityEditor.SerializedProperty)
+  isExtensionMethod: true
+  parent: LobsterFramework.Editors.SerializedPropertyExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetValueFromScriptableObject<T>(SerializedProperty)
+  nameWithType: SerializedPropertyExtensions.GetValueFromScriptableObject<T>(SerializedProperty)
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromScriptableObject<T>(UnityEditor.SerializedProperty)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: GetValueFromScriptableObject
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 45
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  summary: Get the object the serialized property of a ScriptableObject holds by using reflection
+  example: []
+  syntax:
+    content: public static T GetValueFromScriptableObject<T>(this SerializedProperty property)
+    parameters:
+    - id: property
+      type: UnityEditor.SerializedProperty
+      description: ''
+    typeParameters:
+    - id: T
+      description: The object type that the property contains
+    return:
+      type: '{T}'
+      description: Returns the object type T if it is the type the property actually contains
+    content.vb: Public Shared Function GetValueFromScriptableObject(Of T)([property] As SerializedProperty) As T
+  overload: LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromScriptableObject*
+  nameWithType.vb: SerializedPropertyExtensions.GetValueFromScriptableObject(Of T)(SerializedProperty)
+  fullName.vb: LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromScriptableObject(Of T)(UnityEditor.SerializedProperty)
+  name.vb: GetValueFromScriptableObject(Of T)(SerializedProperty)
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnComponent``1(UnityEditor.SerializedProperty,``0)
+  commentId: M:LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnComponent``1(UnityEditor.SerializedProperty,``0)
+  id: SetValueOnComponent``1(UnityEditor.SerializedProperty,``0)
+  isExtensionMethod: true
+  parent: LobsterFramework.Editors.SerializedPropertyExtensions
+  langs:
+  - csharp
+  - vb
+  name: SetValueOnComponent<T>(SerializedProperty, T)
+  nameWithType: SerializedPropertyExtensions.SetValueOnComponent<T>(SerializedProperty, T)
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnComponent<T>(UnityEditor.SerializedProperty, T)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: SetValueOnComponent
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 57
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  summary: Set the value of a field of the property with the type T on a Component
+  example: []
+  syntax:
+    content: public static bool SetValueOnComponent<T>(this SerializedProperty property, T value)
+    parameters:
+    - id: property
+      type: UnityEditor.SerializedProperty
+      description: The serialized property that should be set
+    - id: value
+      type: '{T}'
+      description: The new value for the specified property
+    typeParameters:
+    - id: T
+      description: The type of the field that is set
+    return:
+      type: System.Boolean
+      description: Returns if the operation was successful or failed
+    content.vb: Public Shared Function SetValueOnComponent(Of T)([property] As SerializedProperty, value As T) As Boolean
+  overload: LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnComponent*
+  nameWithType.vb: SerializedPropertyExtensions.SetValueOnComponent(Of T)(SerializedProperty, T)
+  fullName.vb: LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnComponent(Of T)(UnityEditor.SerializedProperty, T)
+  name.vb: SetValueOnComponent(Of T)(SerializedProperty, T)
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnScriptableObject``1(UnityEditor.SerializedProperty,``0)
+  commentId: M:LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnScriptableObject``1(UnityEditor.SerializedProperty,``0)
+  id: SetValueOnScriptableObject``1(UnityEditor.SerializedProperty,``0)
+  isExtensionMethod: true
+  parent: LobsterFramework.Editors.SerializedPropertyExtensions
+  langs:
+  - csharp
+  - vb
+  name: SetValueOnScriptableObject<T>(SerializedProperty, T)
+  nameWithType: SerializedPropertyExtensions.SetValueOnScriptableObject<T>(SerializedProperty, T)
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnScriptableObject<T>(UnityEditor.SerializedProperty, T)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: SetValueOnScriptableObject
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 80
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  summary: Set the value of a field of the property with the type T on a ScriptableObject
+  example: []
+  syntax:
+    content: public static bool SetValueOnScriptableObject<T>(this SerializedProperty property, T value)
+    parameters:
+    - id: property
+      type: UnityEditor.SerializedProperty
+      description: The serialized property that should be set
+    - id: value
+      type: '{T}'
+      description: The new value for the specified property
+    typeParameters:
+    - id: T
+      description: The type of the field that is set
+    return:
+      type: System.Boolean
+      description: Returns if the operation was successful or failed
+    content.vb: Public Shared Function SetValueOnScriptableObject(Of T)([property] As SerializedProperty, value As T) As Boolean
+  overload: LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnScriptableObject*
+  nameWithType.vb: SerializedPropertyExtensions.SetValueOnScriptableObject(Of T)(SerializedProperty, T)
+  fullName.vb: LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnScriptableObject(Of T)(UnityEditor.SerializedProperty, T)
+  name.vb: SetValueOnScriptableObject(Of T)(SerializedProperty, T)
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.GetSerializedPropertyRootComponent(UnityEditor.SerializedProperty)
+  commentId: M:LobsterFramework.Editors.SerializedPropertyExtensions.GetSerializedPropertyRootComponent(UnityEditor.SerializedProperty)
+  id: GetSerializedPropertyRootComponent(UnityEditor.SerializedProperty)
+  parent: LobsterFramework.Editors.SerializedPropertyExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetSerializedPropertyRootComponent(SerializedProperty)
+  nameWithType: SerializedPropertyExtensions.GetSerializedPropertyRootComponent(SerializedProperty)
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.GetSerializedPropertyRootComponent(UnityEditor.SerializedProperty)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: GetSerializedPropertyRootComponent
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 101
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  summary: Get the component of a serialized property
+  example: []
+  syntax:
+    content: public static Component GetSerializedPropertyRootComponent(SerializedProperty property)
+    parameters:
+    - id: property
+      type: UnityEditor.SerializedProperty
+      description: The property that is part of the component
+    return:
+      type: UnityEngine.Component
+      description: The root component of the property
+    content.vb: Public Shared Function GetSerializedPropertyRootComponent([property] As SerializedProperty) As Component
+  overload: LobsterFramework.Editors.SerializedPropertyExtensions.GetSerializedPropertyRootComponent*
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.GetSerializedPropertyRootScriptableObject(UnityEditor.SerializedProperty)
+  commentId: M:LobsterFramework.Editors.SerializedPropertyExtensions.GetSerializedPropertyRootScriptableObject(UnityEditor.SerializedProperty)
+  id: GetSerializedPropertyRootScriptableObject(UnityEditor.SerializedProperty)
+  parent: LobsterFramework.Editors.SerializedPropertyExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetSerializedPropertyRootScriptableObject(SerializedProperty)
+  nameWithType: SerializedPropertyExtensions.GetSerializedPropertyRootScriptableObject(SerializedProperty)
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.GetSerializedPropertyRootScriptableObject(UnityEditor.SerializedProperty)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: GetSerializedPropertyRootScriptableObject
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 111
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  summary: Get the scriptable object of a serialized property
+  example: []
+  syntax:
+    content: public static ScriptableObject GetSerializedPropertyRootScriptableObject(SerializedProperty property)
+    parameters:
+    - id: property
+      type: UnityEditor.SerializedProperty
+      description: The property that is part of the scriptable object
+    return:
+      type: UnityEngine.ScriptableObject
+      description: The root scriptable object of the property
+    content.vb: Public Shared Function GetSerializedPropertyRootScriptableObject([property] As SerializedProperty) As ScriptableObject
+  overload: LobsterFramework.Editors.SerializedPropertyExtensions.GetSerializedPropertyRootScriptableObject*
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.GetNestedObject``1(System.String,System.Object,System.Boolean)
+  commentId: M:LobsterFramework.Editors.SerializedPropertyExtensions.GetNestedObject``1(System.String,System.Object,System.Boolean)
+  id: GetNestedObject``1(System.String,System.Object,System.Boolean)
+  parent: LobsterFramework.Editors.SerializedPropertyExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetNestedObject<T>(string, object, bool)
+  nameWithType: SerializedPropertyExtensions.GetNestedObject<T>(string, object, bool)
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.GetNestedObject<T>(string, object, bool)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: GetNestedObject
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 124
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  summary: Iterates through objects to handle objects that are nested in the root object
+  example: []
+  syntax:
+    content: public static T GetNestedObject<T>(string path, object obj, bool includeAllBases = false)
+    parameters:
+    - id: path
+      type: System.String
+      description: Path to the object through other properties e.g. PlayerInformation.Health
+    - id: obj
+      type: System.Object
+      description: The root object from which this path leads to the property
+    - id: includeAllBases
+      type: System.Boolean
+      description: Include base classes and interfaces as well
+    typeParameters:
+    - id: T
+      description: The type of the nested object
+    return:
+      type: '{T}'
+      description: Returns the nested object casted to the type T
+    content.vb: Public Shared Function GetNestedObject(Of T)(path As String, obj As Object, includeAllBases As Boolean = False) As T
+  overload: LobsterFramework.Editors.SerializedPropertyExtensions.GetNestedObject*
+  nameWithType.vb: SerializedPropertyExtensions.GetNestedObject(Of T)(String, Object, Boolean)
+  fullName.vb: LobsterFramework.Editors.SerializedPropertyExtensions.GetNestedObject(Of T)(String, Object, Boolean)
+  name.vb: GetNestedObject(Of T)(String, Object, Boolean)
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.GetFieldOrPropertyValue``1(System.String,System.Object,System.Boolean,System.Reflection.BindingFlags)
+  commentId: M:LobsterFramework.Editors.SerializedPropertyExtensions.GetFieldOrPropertyValue``1(System.String,System.Object,System.Boolean,System.Reflection.BindingFlags)
+  id: GetFieldOrPropertyValue``1(System.String,System.Object,System.Boolean,System.Reflection.BindingFlags)
+  parent: LobsterFramework.Editors.SerializedPropertyExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetFieldOrPropertyValue<T>(string, object, bool, BindingFlags)
+  nameWithType: SerializedPropertyExtensions.GetFieldOrPropertyValue<T>(string, object, bool, BindingFlags)
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.GetFieldOrPropertyValue<T>(string, object, bool, System.Reflection.BindingFlags)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: GetFieldOrPropertyValue
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 133
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: public static T GetFieldOrPropertyValue<T>(string fieldName, object obj, bool includeAllBases = false, BindingFlags bindings = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+    parameters:
+    - id: fieldName
+      type: System.String
+    - id: obj
+      type: System.Object
+    - id: includeAllBases
+      type: System.Boolean
+    - id: bindings
+      type: System.Reflection.BindingFlags
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+    content.vb: Public Shared Function GetFieldOrPropertyValue(Of T)(fieldName As String, obj As Object, includeAllBases As Boolean = False, bindings As BindingFlags = BindingFlags.Instance Or BindingFlags.Static Or BindingFlags.Public Or BindingFlags.NonPublic) As T
+  overload: LobsterFramework.Editors.SerializedPropertyExtensions.GetFieldOrPropertyValue*
+  nameWithType.vb: SerializedPropertyExtensions.GetFieldOrPropertyValue(Of T)(String, Object, Boolean, BindingFlags)
+  fullName.vb: LobsterFramework.Editors.SerializedPropertyExtensions.GetFieldOrPropertyValue(Of T)(String, Object, Boolean, System.Reflection.BindingFlags)
+  name.vb: GetFieldOrPropertyValue(Of T)(String, Object, Boolean, BindingFlags)
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.SetFieldOrPropertyValue(System.String,System.Object,System.Object,System.Boolean,System.Reflection.BindingFlags)
+  commentId: M:LobsterFramework.Editors.SerializedPropertyExtensions.SetFieldOrPropertyValue(System.String,System.Object,System.Object,System.Boolean,System.Reflection.BindingFlags)
+  id: SetFieldOrPropertyValue(System.String,System.Object,System.Object,System.Boolean,System.Reflection.BindingFlags)
+  parent: LobsterFramework.Editors.SerializedPropertyExtensions
+  langs:
+  - csharp
+  - vb
+  name: SetFieldOrPropertyValue(string, object, object, bool, BindingFlags)
+  nameWithType: SerializedPropertyExtensions.SetFieldOrPropertyValue(string, object, object, bool, BindingFlags)
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.SetFieldOrPropertyValue(string, object, object, bool, System.Reflection.BindingFlags)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: SetFieldOrPropertyValue
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 157
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: public static bool SetFieldOrPropertyValue(string fieldName, object obj, object value, bool includeAllBases = false, BindingFlags bindings = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+    parameters:
+    - id: fieldName
+      type: System.String
+    - id: obj
+      type: System.Object
+    - id: value
+      type: System.Object
+    - id: includeAllBases
+      type: System.Boolean
+    - id: bindings
+      type: System.Reflection.BindingFlags
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function SetFieldOrPropertyValue(fieldName As String, obj As Object, value As Object, includeAllBases As Boolean = False, bindings As BindingFlags = BindingFlags.Instance Or BindingFlags.Static Or BindingFlags.Public Or BindingFlags.NonPublic) As Boolean
+  overload: LobsterFramework.Editors.SerializedPropertyExtensions.SetFieldOrPropertyValue*
+  nameWithType.vb: SerializedPropertyExtensions.SetFieldOrPropertyValue(String, Object, Object, Boolean, BindingFlags)
+  fullName.vb: LobsterFramework.Editors.SerializedPropertyExtensions.SetFieldOrPropertyValue(String, Object, Object, Boolean, System.Reflection.BindingFlags)
+  name.vb: SetFieldOrPropertyValue(String, Object, Object, Boolean, BindingFlags)
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.GetBaseClassesAndInterfaces(System.Type,System.Boolean)
+  commentId: M:LobsterFramework.Editors.SerializedPropertyExtensions.GetBaseClassesAndInterfaces(System.Type,System.Boolean)
+  id: GetBaseClassesAndInterfaces(System.Type,System.Boolean)
+  isExtensionMethod: true
+  parent: LobsterFramework.Editors.SerializedPropertyExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetBaseClassesAndInterfaces(Type, bool)
+  nameWithType: SerializedPropertyExtensions.GetBaseClassesAndInterfaces(Type, bool)
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.GetBaseClassesAndInterfaces(System.Type, bool)
+  type: Method
+  source:
+    remote:
+      path: H:/Stuff/BallField/Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    id: GetBaseClassesAndInterfaces
+    path: ../Assets/Framework/Editor/Property Drawer/Collection/SerializedPropertyExtension.cs
+    startLine: 195
+  assemblies:
+  - LobsterFramework
+  namespace: LobsterFramework.Editors
+  syntax:
+    content: public static IEnumerable<Type> GetBaseClassesAndInterfaces(this Type type, bool includeSelf = false)
+    parameters:
+    - id: type
+      type: System.Type
+    - id: includeSelf
+      type: System.Boolean
+    return:
+      type: System.Collections.Generic.IEnumerable{System.Type}
+    content.vb: Public Shared Function GetBaseClassesAndInterfaces(type As Type, includeSelf As Boolean = False) As IEnumerable(Of Type)
+  overload: LobsterFramework.Editors.SerializedPropertyExtensions.GetBaseClassesAndInterfaces*
+  nameWithType.vb: SerializedPropertyExtensions.GetBaseClassesAndInterfaces(Type, Boolean)
+  fullName.vb: LobsterFramework.Editors.SerializedPropertyExtensions.GetBaseClassesAndInterfaces(System.Type, Boolean)
+  name.vb: GetBaseClassesAndInterfaces(Type, Boolean)
+references:
+- uid: LobsterFramework.Editors
+  commentId: N:LobsterFramework.Editors
+  href: LobsterFramework.html
+  name: LobsterFramework.Editors
+  nameWithType: LobsterFramework.Editors
+  fullName: LobsterFramework.Editors
+  spec.csharp:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Editors
+    name: Editors
+    href: LobsterFramework.Editors.html
+  spec.vb:
+  - uid: LobsterFramework
+    name: LobsterFramework
+    href: LobsterFramework.html
+  - name: .
+  - uid: LobsterFramework.Editors
+    name: Editors
+    href: LobsterFramework.Editors.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromComponent*
+  commentId: Overload:LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromComponent
+  href: LobsterFramework.Editors.SerializedPropertyExtensions.html#LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromComponent``1(UnityEditor.SerializedProperty)
+  name: GetValueFromComponent
+  nameWithType: SerializedPropertyExtensions.GetValueFromComponent
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromComponent
+- uid: UnityEditor.SerializedProperty
+  commentId: T:UnityEditor.SerializedProperty
+  parent: UnityEditor
+  isExternal: true
+  name: SerializedProperty
+  nameWithType: SerializedProperty
+  fullName: UnityEditor.SerializedProperty
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: UnityEditor
+  commentId: N:UnityEditor
+  isExternal: true
+  name: UnityEditor
+  nameWithType: UnityEditor
+  fullName: UnityEditor
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromScriptableObject*
+  commentId: Overload:LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromScriptableObject
+  href: LobsterFramework.Editors.SerializedPropertyExtensions.html#LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromScriptableObject``1(UnityEditor.SerializedProperty)
+  name: GetValueFromScriptableObject
+  nameWithType: SerializedPropertyExtensions.GetValueFromScriptableObject
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.GetValueFromScriptableObject
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnComponent*
+  commentId: Overload:LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnComponent
+  href: LobsterFramework.Editors.SerializedPropertyExtensions.html#LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnComponent``1(UnityEditor.SerializedProperty,``0)
+  name: SetValueOnComponent
+  nameWithType: SerializedPropertyExtensions.SetValueOnComponent
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnComponent
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnScriptableObject*
+  commentId: Overload:LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnScriptableObject
+  href: LobsterFramework.Editors.SerializedPropertyExtensions.html#LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnScriptableObject``1(UnityEditor.SerializedProperty,``0)
+  name: SetValueOnScriptableObject
+  nameWithType: SerializedPropertyExtensions.SetValueOnScriptableObject
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.SetValueOnScriptableObject
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.GetSerializedPropertyRootComponent*
+  commentId: Overload:LobsterFramework.Editors.SerializedPropertyExtensions.GetSerializedPropertyRootComponent
+  href: LobsterFramework.Editors.SerializedPropertyExtensions.html#LobsterFramework.Editors.SerializedPropertyExtensions.GetSerializedPropertyRootComponent(UnityEditor.SerializedProperty)
+  name: GetSerializedPropertyRootComponent
+  nameWithType: SerializedPropertyExtensions.GetSerializedPropertyRootComponent
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.GetSerializedPropertyRootComponent
+- uid: UnityEngine.Component
+  commentId: T:UnityEngine.Component
+  parent: UnityEngine
+  isExternal: true
+  name: Component
+  nameWithType: Component
+  fullName: UnityEngine.Component
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.GetSerializedPropertyRootScriptableObject*
+  commentId: Overload:LobsterFramework.Editors.SerializedPropertyExtensions.GetSerializedPropertyRootScriptableObject
+  href: LobsterFramework.Editors.SerializedPropertyExtensions.html#LobsterFramework.Editors.SerializedPropertyExtensions.GetSerializedPropertyRootScriptableObject(UnityEditor.SerializedProperty)
+  name: GetSerializedPropertyRootScriptableObject
+  nameWithType: SerializedPropertyExtensions.GetSerializedPropertyRootScriptableObject
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.GetSerializedPropertyRootScriptableObject
+- uid: UnityEngine.ScriptableObject
+  commentId: T:UnityEngine.ScriptableObject
+  parent: UnityEngine
+  isExternal: true
+  name: ScriptableObject
+  nameWithType: ScriptableObject
+  fullName: UnityEngine.ScriptableObject
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.GetNestedObject*
+  commentId: Overload:LobsterFramework.Editors.SerializedPropertyExtensions.GetNestedObject
+  href: LobsterFramework.Editors.SerializedPropertyExtensions.html#LobsterFramework.Editors.SerializedPropertyExtensions.GetNestedObject``1(System.String,System.Object,System.Boolean)
+  name: GetNestedObject
+  nameWithType: SerializedPropertyExtensions.GetNestedObject
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.GetNestedObject
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.GetFieldOrPropertyValue*
+  commentId: Overload:LobsterFramework.Editors.SerializedPropertyExtensions.GetFieldOrPropertyValue
+  href: LobsterFramework.Editors.SerializedPropertyExtensions.html#LobsterFramework.Editors.SerializedPropertyExtensions.GetFieldOrPropertyValue``1(System.String,System.Object,System.Boolean,System.Reflection.BindingFlags)
+  name: GetFieldOrPropertyValue
+  nameWithType: SerializedPropertyExtensions.GetFieldOrPropertyValue
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.GetFieldOrPropertyValue
+- uid: System.Reflection.BindingFlags
+  commentId: T:System.Reflection.BindingFlags
+  parent: System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.reflection.bindingflags
+  name: BindingFlags
+  nameWithType: BindingFlags
+  fullName: System.Reflection.BindingFlags
+- uid: System.Reflection
+  commentId: N:System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Reflection
+  nameWithType: System.Reflection
+  fullName: System.Reflection
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.SetFieldOrPropertyValue*
+  commentId: Overload:LobsterFramework.Editors.SerializedPropertyExtensions.SetFieldOrPropertyValue
+  href: LobsterFramework.Editors.SerializedPropertyExtensions.html#LobsterFramework.Editors.SerializedPropertyExtensions.SetFieldOrPropertyValue(System.String,System.Object,System.Object,System.Boolean,System.Reflection.BindingFlags)
+  name: SetFieldOrPropertyValue
+  nameWithType: SerializedPropertyExtensions.SetFieldOrPropertyValue
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.SetFieldOrPropertyValue
+- uid: LobsterFramework.Editors.SerializedPropertyExtensions.GetBaseClassesAndInterfaces*
+  commentId: Overload:LobsterFramework.Editors.SerializedPropertyExtensions.GetBaseClassesAndInterfaces
+  href: LobsterFramework.Editors.SerializedPropertyExtensions.html#LobsterFramework.Editors.SerializedPropertyExtensions.GetBaseClassesAndInterfaces(System.Type,System.Boolean)
+  name: GetBaseClassesAndInterfaces
+  nameWithType: SerializedPropertyExtensions.GetBaseClassesAndInterfaces
+  fullName: LobsterFramework.Editors.SerializedPropertyExtensions.GetBaseClassesAndInterfaces
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.Collections.Generic.IEnumerable{System.Type}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Type}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Type>
+  nameWithType: IEnumerable<Type>
+  fullName: System.Collections.Generic.IEnumerable<System.Type>
+  nameWithType.vb: IEnumerable(Of Type)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Type)
+  name.vb: IEnumerable(Of Type)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
